@@ -29,7 +29,7 @@ Internal documentation (architecture, prompts, workflow notes) may use desktop f
 ## Hard Constraints
 
 - Solo trips only. 1+ week duration only.
-- Weather ceiling: flag/exclude destinations over 27°C during trip dates.
+- Weather ceiling: flag destinations over 30°C during trip dates. For multi-stop trips, flagging is per-stop (not trip-wide).
 - Routine respected: day plans must accommodate work + sleep + exercise + healthy eating.
 - No custom dashboard — iPhone Notes + Google Maps are the front-end.
 - Anti-tourist filter active on all outputs: mass-tourism spots flagged, hidden gems prioritized.

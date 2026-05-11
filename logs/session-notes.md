@@ -124,6 +124,21 @@ None.
 
 ---
 
+## 2026-05-11 — Repo setup + restructure to travel-os
+
+**Work:** GitHub tracking + directory restructure.
+
+**What happened:**
+- Initialized separate git repo at `projects/personal/` and pushed initial commit to `https://github.com/patriklindeberg75-boop/traveling`.
+- Moved entire project root into `projects/personal/travel-os/` (including `.git/`) so GitHub tracks only `travel-os/`.
+- Symlinks in `.claude/` use absolute paths — survived the move without modification.
+
+**TODO:** Verify symlinks still resolve correctly after opening Claude Code from the new root (`projects/personal/travel-os/`). If any are broken, recreate them pointing to the correct `ai-resources/` absolute paths.
+
+**Open questions:** None.
+
+---
+
 ## 2026-05-11 — red-team fixes B3, S2, B5
 Class: execution
 
@@ -131,3 +146,27 @@ Class: execution
 - Out of scope: (none stated)
 - Files in scope: projects/personal/references/dossier-workflow.md, projects/personal/.claude/commands/trip-init.md, projects/personal/.claude/commands/destination-dossier.md, projects/personal/references/subagent-prompts.md, projects/personal/.claude/agents/dossier-orchestrator.md
 - Stop if: (none stated)
+
+### Summary
+Implemented red-team fixes B3, S2, and B5 in a single commit. Also updated CLAUDE.md Hard Constraints to reflect the previously-deferred 27°C → 30°C weather ceiling correction.
+
+### Files Modified
+- `projects/personal/.claude/commands/trip-init.md` — added timing fields to trip-context.md template; added Step 3.5 (generate Prompt T1, wait for paste-back, write timing fields)
+- `projects/personal/references/subagent-prompts.md` — added § Trip Init — Timing (Prompt T1) with multi-stop extension; replaced Prompt 5c in Pass 5 with a forwarding note; updated routing table
+- `projects/personal/references/dossier-workflow.md` — Step 1 reads timing/stop_weather fields; Halt 3 updated for per-stop weather (B5); Steps 9/10/10.5 remove 5c; Step 10.5 adds de-dup check (B3); mapping table updated
+- `projects/personal/.claude/agents/dossier-orchestrator.md` — Phase C reads timing fields; Phase D notes updated for 5c omission and B3 de-dup step
+- `projects/personal/red-team.md` — B3, S2, B5 moved from STILL OPEN to ADDRESSED; A2 and B4 remain deferred
+- `projects/personal/CLAUDE.md` — Hard Constraints weather ceiling updated to 30°C with per-stop note
+
+### Decisions Made
+- Trip-init now interactive at Step 3.5 (timing paste-back) — acceptable given it already had a viability lookup interaction.
+- `stop_weather` list uses region names (not stop names) because exact route stops aren't known at /trip-init time.
+- B3 de-dup rule: trap wins. Operator surfaced only if >3 conflicts (avoids noise for typical 1–2 conflict cases).
+
+### Next Steps
+- Push this session's commits (`git push`) — manual operator step.
+- Run `/wrap-session` to close the session.
+- Remaining red-team deferred items: B4 (ingestion quality check), A2 (per-stop PROFILE_EXTRACT) — post-first-trip retro.
+
+### Open Questions
+None.

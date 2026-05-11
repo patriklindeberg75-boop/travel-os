@@ -24,3 +24,26 @@
 **Decision:** Red-team.md is a capture-only log; entries are never directly executed from it.
 **Context:** Red-team.md was created to track system weaknesses. Execution happens only when a plan file (like the 5-pass funnel plan) is approved.
 **Rationale:** Prevents ad-hoc execution of red-team observations outside the normal plan → scope → QC → execute pipeline. Operator explicitly confirmed this rule mid-session.
+
+---
+
+## 2026-05-11 — red-team fixes B3, S2, B5
+
+**Decision:** Trip-init Step 3.5 makes `/trip-init` interactive (timing paste-back wait).
+**Context:** S2 fix moves timing prompt from Pass 5 to `/trip-init`. The command was thin/non-interactive except for the viability lookup.
+**Rationale:** Viability lookup already established that `/trip-init` can involve a pause. One additional pause for timing keeps collection atomic with trip scaffolding.
+**Alternatives considered:** Present timing prompt in Step 4 report; operator updates trip-context.md manually. Rejected — more friction and easier to skip entirely.
+
+**Decision:** `stop_weather` stores region names (not stop names) for multi-stop trips.
+**Context:** B5 requires per-location weather data, but exact route stops are not known at `/trip-init` time — they're populated during Pass 2.
+**Rationale:** Region names (e.g., "coastal south", "northern highlands") let Prompt T1 return meaningful per-area data without needing the approved route. Halt 3 matches region names against route stops by fuzzy match.
+**Alternatives considered:** Defer per-stop weather to after Pass 2. Rejected — would require re-running timing mid-dossier, defeating the S2 purpose.
+
+**Decision:** B3 de-dup rule: trap wins; operator surfaced only if >3 conflicts in a pass.
+**Context:** A place may appear in both the 5a trap short list and a Pass 3 or Pass 4 keep list.
+**Rationale:** Trap wins is the most conservative rule and aligns with the anti-tourist profile. Surfacing only for >3 conflicts avoids noise on routine 1–2 overlaps; a flood signals a research-quality issue worth operator attention.
+**Alternatives considered:** Surface every conflict (noisy); auto-resolve silently (too opaque for an anti-tourist workflow where trust in filtering matters).
+
+**Decision:** CLAUDE.md Hard Constraints weather ceiling updated to 30°C in same session (previously deferred from 2026-05-11 funnel session).
+**Context:** The prior session noted the CLAUDE.md update was deferred. This session's B5 fix created a natural opportunity to align it.
+**Rationale:** Keeps CLAUDE.md consistent with actual workflow behavior. No new decision — executing the prior deferral.

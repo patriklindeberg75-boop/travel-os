@@ -187,9 +187,11 @@ The following Phase 2 and Phase 3 entries above were addressed by the 5-pass fun
 - No trip-specific clarifying step → Pass 1 (`/destination-check`) screens destinations before scaffolding; partially addressed.
 - No early viability check → `/destination-check` command added as pre-`/trip-init` entry point.
 
+**ADDRESSED (2026-05-11 session — red-team fixes B3, S2, B5):**
+- Weather ceiling applied trip-wide not per-stop (B5) → `stop_weather` list added to trip-context.md schema; Halt 3 now flags per-stop for multi-stop trips; Prompt T1 collects per-region max temps at `/trip-init`.
+- No de-duplication contract between trap-list and keep-lists (B3) → de-duplication step added to dossier-workflow.md Step 10.5: after ingesting 5a, fuzzy-match against Pass 3/4 short lists; trap wins; conflicts logged. Operator surfaced if >3 conflicts.
+- Prompt 7 timing belongs in `/trip-init` not every dossier run (S2) → timing prompt moved to Prompt T1 in subagent-prompts.md § Trip Init; `/trip-init` Step 3.5 generates, presents, and ingests it; results stored in `trip-context.md` frontmatter (`timing_verdict`, `timing_notes`, `forecast_max_celsius`); 5c removed from Pass 5 in dossier-workflow.md.
+
 **STILL OPEN (deferred to post-first-trip retro):**
 - Ingestion validates shape but not quality (fabricated source signals) — red-team B4
-- Weather ceiling applied trip-wide not per-stop — red-team B5
-- No de-duplication contract between trap-list and keep-lists — red-team B3
 - Single PROFILE_EXTRACT can't capture mixed-mode trip facets — red-team A2
-- Prompt 7 timing belongs in `/trip-init` not every dossier run — red-team S2
