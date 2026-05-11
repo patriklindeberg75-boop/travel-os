@@ -1,0 +1,5 @@
+{
+  "_doc": "Lists project-owned files under .local. The auto-sync hook symlinks every other file from ai-resources/.claude/{commands,agents}/ on session start.",
+  "commands": { "local": ["trip-init", "destination-dossier"] },
+  "agents": { "local": ["dossier-orchestrator"] }
+}

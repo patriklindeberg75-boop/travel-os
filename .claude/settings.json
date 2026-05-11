@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Bash(*)",
+      "Read",
+      "Edit",
+      "Write",
+      "MultiEdit",
+      "Agent",
+      "Skill",
+      "TodoWrite",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "NotebookEdit",
+      "ToolSearch",
+      "Edit(**/.claude/**)",
+      "Write(**/.claude/**)",
+      "Bash(rm *)"
+    ],
+    "deny": [
+      "Bash(git push*)",
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Read(archive/**)",
+      "Read(**/*.archive.*)",
+      "Read(**/deprecated/**)",
+      "Read(**/old/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/patrik.lindeberg/Claude Code/Axcion AI Repo"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "d=\"$CLAUDE_PROJECT_DIR\"; while [ \"$d\" != '/' ]; do d=$(dirname \"$d\"); [ -x \"$d/ai-resources/.claude/hooks/auto-sync-shared.sh\" ] && { \"$d/ai-resources/.claude/hooks/auto-sync-shared.sh\"; exit; }; done",
+            "timeout": 10,
+            "statusMessage": "Syncing shared commands from ai-resources..."
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "d=\"$CLAUDE_PROJECT_DIR\"; while [ \"$d\" != '/' ]; do d=$(dirname \"$d\"); [ -x \"$d/ai-resources/.claude/hooks/check-permission-sanity.sh\" ] && { \"$d/ai-resources/.claude/hooks/check-permission-sanity.sh\"; exit; }; done",
+            "timeout": 5,
+            "statusMessage": "Permission sanity check..."
+          }
+        ]
+      }
+    ]
+  }
+}
