@@ -40,7 +40,9 @@ MVP default is manual handoff prompts (Mode 1). Do not promote to API automation
 
 ## Model Selection
 
-Default model for this project is Sonnet 1M (`claude-sonnet-4-6[1m]`, set in `.claude/settings.local.json`, which is gitignored — each operator applies the default manually per machine). Reason: mixed execution and judgment work; most sessions involve workflow execution, output formatting, and scaffolding. Analytical commands (trip research synthesis, post-trip retro, profile update proposals) should declare `model: claude-opus-4-7` in frontmatter where deep synthesis is required.
+Model is selected per session via `/model` — there is no project default. Do not declare a `"model"` field in any `.claude/settings.json` or `.claude/settings.local.json`, and do not state a default model in this CLAUDE.md. See workspace `CLAUDE.md` § Model Tier for the prohibition rationale. Per-command/per-agent tiering via `model:` frontmatter is still permitted.
+
+Recommended posture: Sonnet 1M for workflow execution, output formatting, and scaffolding (execution-tier). Opus for trip research synthesis, post-trip retro, and profile update proposals — analytical commands declare `model: claude-opus-4-7` in frontmatter where deep synthesis is required.
 
 ## Input File Handling
 
