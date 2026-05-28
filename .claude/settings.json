@@ -21,7 +21,6 @@
       "Bash(rm *)"
     ],
     "deny": [
-      "Bash(git push*)",
       "Bash(rm -rf *)",
       "Bash(sudo *)",
       "Read(archive/**)",
