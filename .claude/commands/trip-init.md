@@ -1,5 +1,5 @@
 ---
-description: Scaffold a per-trip directory under projects/personal/trips/. Creates trip-context.md (with YAML frontmatter for destination, dates, theme, work-load, budget), an empty journal.md, and a dossier/ subdirectory placeholder. Slug format is {destination-kebab}-{YYYY-MM}.
+description: Scaffold a per-trip directory under trips/. Creates trip-context.md (with YAML frontmatter for destination, dates, theme, work-load, budget), an empty journal.md, and a dossier/ subdirectory placeholder. Slug format is {destination-kebab}-{YYYY-MM}.
 model: sonnet
 ---
 
@@ -42,14 +42,14 @@ Examples:
 - `Lisbon`, `2026-06-15` → `lisbon-2026-06`
 - `San Sebastián`, `2026-09-10` → `san-sebastian-2026-09` (strip diacritics)
 
-If `projects/personal/trips/{SLUG}/` already exists, append `-b` (or `-c`, `-d`, ...) until the path is free. Report the chosen slug.
+If `trips/{SLUG}/` already exists, append `-b` (or `-c`, `-d`, ...) until the path is free. Report the chosen slug.
 
 ### Step 2.5 — Viability check lookup
 
 If `SKIP_VIABILITY` is true, set `VIABILITY_VERDICT = skipped`, `VIABILITY_NOTES = ""`, `VIABILITY_CHECKED_AT = ""` and continue to Step 3.
 
 Otherwise, look for a matching destination-check artifact at:
-`projects/personal/destination-checks/{destination-kebab}-{YYYY-MM from DATES_START}.md`
+`destination-checks/{destination-kebab}-{YYYY-MM from DATES_START}.md`
 
 Where `{destination-kebab}` is the destination lowercased with spaces and special chars replaced by hyphens (same as slug generation).
 
@@ -59,7 +59,7 @@ Where `{destination-kebab}` is the destination lowercased with spaces and specia
 ```
 Viability check not found for {DESTINATION} ({DATES_START}).
 
-Expected: projects/personal/destination-checks/{destination-kebab}-{YYYY-MM}.md
+Expected: destination-checks/{destination-kebab}-{YYYY-MM}.md
 
 Run /destination-check {DESTINATION} {DATES_START} {DATES_END} first, or pass
 --skip-viability to scaffold without a viability verdict.
@@ -67,7 +67,7 @@ Run /destination-check {DESTINATION} {DATES_START} {DATES_END} first, or pass
 
 ### Step 3 — Create the directory and scaffolding files
 
-Create the directory `projects/personal/trips/{SLUG}/`.
+Create the directory `trips/{SLUG}/`.
 
 Inside, create:
 
@@ -154,7 +154,7 @@ Return to Patrik:
 Trip scaffolded.
 
 Slug: {SLUG}
-Path: projects/personal/trips/{SLUG}/
+Path: trips/{SLUG}/
 Trip type: {TRIP_TYPE}
 Viability: {VIABILITY_VERDICT}{" — " + VIABILITY_NOTES if VIABILITY_NOTES else ""}
 
@@ -166,7 +166,7 @@ Files created:
 Next: run /destination-dossier --trip {SLUG} when the profile and principles are
 populated. The dossier workflow runs in 5 passes with operator gates — expect
 5 pause-and-paste cycles before the final dossier ships.
-(Phase 0 prerequisite — see projects/personal/CLAUDE.md § Personalization Spine Gate.)
+(Phase 0 prerequisite — see CLAUDE.md § Personalization Spine Gate.)
 ```
 
 ---

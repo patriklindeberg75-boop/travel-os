@@ -32,13 +32,13 @@ Example: /destination-check Albania 2026-05-15 2026-06-01
 Compute:
 - `DESTINATION_KEBAB` — DESTINATION lowercased, spaces and special chars replaced with hyphens.
 - `YYYY_MM` — year and month from DATES_START.
-- `CHECK_PATH` = `projects/personal/destination-checks/{DESTINATION_KEBAB}-{YYYY_MM}.md`
+- `CHECK_PATH` = `destination-checks/{DESTINATION_KEBAB}-{YYYY_MM}.md`
 
 ### Step 2 — Personalization Spine Gate
 
 Read the first 10 lines of each of:
-- `projects/personal/profile/universal-traveler-profile.md`
-- `projects/personal/profile/travel-principles.md`
+- `profile/universal-traveler-profile.md`
+- `profile/travel-principles.md`
 
 If either file is empty, contains only an unpopulated placeholder header, or does not exist, abort with:
 
@@ -50,7 +50,7 @@ Empty or missing:
 - {second path if also failed}
 
 Populate both profile files before running /destination-check. See
-projects/personal/CLAUDE.md § Personalization Spine Gate.
+CLAUDE.md § Personalization Spine Gate.
 ```
 
 If both files are populated, read them fully. Extract:

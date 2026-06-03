@@ -17,26 +17,26 @@ Input: `$ARGUMENTS` — optional. Forms:
 ### Step 1 — Resolve the trip slug
 
 1. If `$ARGUMENTS` includes `--trip {slug}`, set `SLUG = {slug}`.
-2. Otherwise, glob `projects/personal/trips/*/` and pick the directory with the most recent mtime. Set `SLUG` to that directory name.
-3. If `projects/personal/trips/` is empty, abort with:
+2. Otherwise, glob `trips/*/` and pick the directory with the most recent mtime. Set `SLUG` to that directory name.
+3. If `trips/` is empty, abort with:
 
 ```
-No trips found in projects/personal/trips/. Run /trip-init first.
+No trips found in trips/. Run /trip-init first.
 Example: /trip-init Lisbon 2026-06-15 2026-06-29 "anti-tourist remote-work"
 ```
 
-4. Verify `projects/personal/trips/{SLUG}/trip-context.md` exists. If not, abort with:
+4. Verify `trips/{SLUG}/trip-context.md` exists. If not, abort with:
 
 ```
-Trip context missing at projects/personal/trips/{SLUG}/trip-context.md.
+Trip context missing at trips/{SLUG}/trip-context.md.
 Run /trip-init for this trip, or correct the --trip slug.
 ```
 
 ### Step 2 — Spine pre-check (cheap fail-fast)
 
 Read the first 10 lines of each of:
-- `projects/personal/profile/universal-traveler-profile.md`
-- `projects/personal/profile/travel-principles.md`
+- `profile/universal-traveler-profile.md`
+- `profile/travel-principles.md`
 
 If either file is empty, contains only an unpopulated placeholder header, or does not exist, abort with:
 
@@ -48,7 +48,7 @@ Empty or missing:
 - {second path if also failed}
 
 Populate both profile files before running /destination-dossier. See
-projects/personal/CLAUDE.md § Personalization Spine Gate.
+CLAUDE.md § Personalization Spine Gate.
 ```
 
 This is the cheap version of the gate; the orchestrator agent re-checks more thoroughly in Phase B of its procedure. The redundancy is intentional — it fails fast without spinning up the agent.
@@ -62,7 +62,7 @@ You are the dossier-orchestrator. Execute the destination-dossier workflow per
 references/dossier-workflow.md.
 
 Trip slug: {SLUG}
-Trip context path: projects/personal/trips/{SLUG}/trip-context.md
+Trip context path: trips/{SLUG}/trip-context.md
 
 Apply the procedure in your agent definition. Halt on Personalization Spine Gate
 failure (Halt 1), trip context invalid (Halt 2), or viability FAIL (Step 2.5).

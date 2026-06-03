@@ -17,7 +17,7 @@
 
 **Objective:** Give the system the two input documents it reads before every dossier run. Without them, `/destination-dossier` halts immediately.
 
-**Both files are currently empty placeholders.**
+**Both files are now fully populated** (profile v1 and travel-principles v3 — Phase 0 spine complete; this step is done).
 
 **What you'll do:**
 

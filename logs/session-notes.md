@@ -133,7 +133,7 @@ None.
 - Moved entire project root into `projects/personal/travel-os/` (including `.git/`) so GitHub tracks only `travel-os/`.
 - Symlinks in `.claude/` use absolute paths — survived the move without modification.
 
-**TODO:** Verify symlinks still resolve correctly after opening Claude Code from the new root (`projects/personal/travel-os/`). If any are broken, recreate them pointing to the correct `ai-resources/` absolute paths.
+**TODO [RESOLVED 2026-06-03]:** Verify symlinks still resolve correctly after opening Claude Code from the new root (`projects/personal/travel-os/`). If any are broken, recreate them pointing to the correct `ai-resources/` absolute paths. — Verified in the 2026-06-03 repo-dd audit: all 93 symlinks resolve and are readable; both SessionStart hooks resolve and are executable.
 
 **Open questions:** None.
 

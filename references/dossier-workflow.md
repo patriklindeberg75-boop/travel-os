@@ -6,11 +6,11 @@ This document is the workflow contract the `dossier-orchestrator` agent executes
 
 In order:
 
-1. `projects/personal/profile/universal-traveler-profile.md` — must be non-empty (see Halt 1).
-2. `projects/personal/profile/travel-principles.md` — must be non-empty (see Halt 1).
-3. `projects/personal/trips/{slug}/trip-context.md` — must exist and have populated frontmatter (see Halt 2).
-4. `projects/personal/references/dossier-template.md` — output structure spec.
-5. `projects/personal/references/subagent-prompts.md` — handoff prompt library.
+1. `profile/universal-traveler-profile.md` — must be non-empty (see Halt 1).
+2. `profile/travel-principles.md` — must be non-empty (see Halt 1).
+3. `trips/{slug}/trip-context.md` — must exist and have populated frontmatter (see Halt 2).
+4. `references/dossier-template.md` — output structure spec.
+5. `references/subagent-prompts.md` — handoff prompt library.
 
 The `{slug}` is passed in by the calling command (`/destination-dossier --trip {slug}`) or resolved by the command to the most recently created `trips/*/` directory.
 
@@ -25,7 +25,7 @@ Empty or missing:
 - {path that failed}
 - {second path if also failed}
 
-Phase 0 prerequisite is not met. Populate both profile files before running /destination-dossier. See projects/personal/CLAUDE.md § Personalization Spine Gate.
+Phase 0 prerequisite is not met. Populate both profile files before running /destination-dossier. See CLAUDE.md § Personalization Spine Gate.
 ```
 
 Do not generate any dossier output. Do not proceed past this check.
@@ -92,7 +92,7 @@ If the operator pastes back raw subagent output without a verdict header, extrac
 ## Resume logic
 
 On every invocation, before starting any pass, scan:
-`projects/personal/trips/{slug}/dossier/pass-*-state.md`
+`trips/{slug}/dossier/pass-*-state.md`
 
 If state files exist:
 - Identify the highest-N pass whose state has `status: complete`.
@@ -356,11 +356,11 @@ Read `references/dossier-template.md` for the output structure. Produce the doss
 
 ### Step 13 — Write the dossier
 
-Write to `projects/personal/trips/{slug}/destination-dossier.md`. If the file already exists, write to `destination-dossier-v{n}.md` where `{n}` is the next integer after the highest existing version. Do not overwrite a prior dossier silently.
+Write to `trips/{slug}/destination-dossier.md`. If the file already exists, write to `destination-dossier-v{n}.md` where `{n}` is the next integer after the highest existing version. Do not overwrite a prior dossier silently.
 
 ### Step 14 — Append to the run log
 
-Append to `projects/personal/logs/dossier-runs.md` using the format spec in that file's header. Required fields:
+Append to `logs/dossier-runs.md` using the format spec in that file's header. Required fields:
 
 - Timestamp (`YYYY-MM-DD HH:MM` local)
 - Trip slug
