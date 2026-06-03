@@ -1,1 +1,0 @@
-/Users/patrik.lindeberg/Claude Code/Axcion AI Repo/ai-resources/.claude/commands/audit-critical-resources.md
