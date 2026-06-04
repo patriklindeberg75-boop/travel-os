@@ -11,7 +11,7 @@ cool escapes are built into each stop.
 Route: Budapest (2 nights) → Belgrade (2) → Prizren (2) → Ohrid (2) →
 Sofia (1). Poland is a separate friend visit, not covered here.
 
-Build status: Budapest complete. Belgrade, Prizren, Ohrid, and Sofia
+Build status: Budapest and Belgrade complete. Prizren, Ohrid, and Sofia
 sections are still being researched and will be added stop by stop.
 
 ---
@@ -139,5 +139,128 @@ Dates June 16 to 18: Acceptable. Peak summer season, but Budapest at around
 or holiday was flagged in this exact window — worth a quick re-check closer to
 the date. One-line verdict: a good short opener, with the cool riverside day
 in hand if it turns hot.
+
+---
+
+## Belgrade — Overview
+
+Two nights, arriving June 19 by bus from Budapest and leaving June 21 toward
+Prizren. Belgrade is heat-flagged: it can break 30°C in late June, so the
+picks below lean hard on the rivers, the forest, and the island beach. Plan
+the outdoor things for early morning and evening; keep the worst afternoon
+hours on the water or under the trees.
+
+---
+
+## Belgrade — 1. Cool neighborhoods
+
+**Donji Dorćol, Stari Grad** — gritty post-industrial cool with a hipster
+edge; dense specialty cafes, Danube nearby to take the heat off. Your base.
+Work-fit: strong cafe density and reliable WiFi; buzzy but workable.
+
+**Savski kej, Novi Beograd** — green riverfront lined with local barge cafes;
+breezy, social, no tourists.
+Work-fit: okay — river cafes have shade and basic WiFi, more hangout than work.
+
+**Donji Grad, Zemun** — Austro-Hungarian riverside village, narrow streets,
+fiercely local, off the cruise loop.
+Work-fit: solid breezy riverside cafes; shifts to a local hangout by evening.
+
+**Banovo brdo, Čukarica** — leafy and hilly, the gateway to Košutnjak forest
+and the Ada Ciganlija river-island beach; this is the cooling zone.
+Work-fit: moderate cafes — treat as a forest-and-swim day, not a work base.
+
+---
+
+## Belgrade — 2. Accommodation area recommendation
+
+**Donji Dorćol, Stari Grad** — the clear base: it has the social-hostel scene,
+the densest cafes for light work, and the Danube on its doorstep to cool off,
+without putting you in the tourist core.
+
+---
+
+## Belgrade — 3. Hidden-gem activity shortlist
+
+- **Pržionica** — Dorćol, Belgrade — top local work cafe, creative crowd,
+  strong WiFi for a midday session.
+- **Silosi** — Dorćol, Belgrade — repurposed Danube grain silos with open-air
+  art and sunsets; the city's gritty post-industrial cool.
+- **Zaokret** — Dorćol, Belgrade — the meet-people spot: a 25–35 backpacker and
+  local crowd over cheap drinks, non-touristy.
+- **Splavs on Savski kej** — Novi Beograd, Belgrade — ultra-budget sunset beer
+  on a local river barge.
+- **Ada Međica** — Belgrade — small boat to a car-free forested river island;
+  wild swimming and shade, away from the crowds.
+- **Ada Ciganlija, Makiš side** — Belgrade — the cleaner, quieter local
+  swimming stretch of the lake; the locals' side.
+- **Gavez Club** — Ada Ciganlija, Belgrade — bohemian tavern hidden deep in the
+  island forest; total midday heat escape, dirt-cheap.
+- **Košutnjak forest trails** — Belgrade — a full free day of deep-shade forest
+  walking; active without the sun.
+
+---
+
+## Belgrade — 4. Food / restaurant shortlist
+
+**Daytime / work-friendly:**
+- **Efi cafe** — Dorćol, Belgrade — air-conditioned upstairs work space, good
+  WiFi; a cool refuge.
+- **Bajloni Pijaca** — Dorćol, Belgrade — local green market for ultra-cheap
+  fruit, cheese, and cured meats.
+- **Pekara Petrović** — Zemun, Belgrade — the famous traditional bakery; cheap
+  burek with yogurt for breakfast.
+
+**Cheap eats / dinner:**
+- **Grill "Loki"** — Dorćol, Belgrade — legendary street window for a big cheap
+  pljeskavica with onions and kajmak.
+- **Stara Hercegovina** — Dorćol, Belgrade — old-school working-class kafana,
+  heavy traditional dishes, loud and real.
+- **Radecki** — Zemun, Belgrade — ramshackle fishermen's club; fresh river fish
+  and cheap beer, zero frills.
+- **Splav Koliba** — Savski kej, Belgrade — food-focused river barge (not a
+  party boat); traditional food on the water with a breeze.
+- **Čedić** — Banovo brdo, Belgrade — local institution with massive cheap
+  Serbian portions; your forest-day dinner.
+
+---
+
+## Belgrade — 5. Tourist-trap warning list
+
+- **Tri šešira** — Skadarlija; overpriced kafana, mostly tourists paying a
+  premium for a forced folklore show.
+- **Znak Pitanja "?"** — Kosančićev Venac; see the historic building over a
+  coffee, but locals say never eat there — tiny overpriced portions.
+- **Restoran April** — Obilićev Venac; about 27 euros for a basic mixed-meat
+  plate that costs half that in normal neighborhoods.
+- **Beton Hala strip (Ambar, Toro Latin)** — gentrified riverside extraction
+  zone for foreigners; polished, overpriced, no local soul.
+- **Restoran Šaran** — Zemun; good fish but overpriced and upscale-tourist —
+  use Radecki for the real fishermen vibe instead.
+- **Unmarked taxis at the airport** — unlicensed drivers charging 3–5x; use the
+  fixed-price voucher desk or a ride app.
+
+---
+
+## Belgrade — 6. Mobility recommendation
+
+Verdict: GSP public transport — buses, trams, and trolleys — which is now
+fare-free (Belgrade dropped transit fares in 2025; verify on arrival).
+Estimated cost: about 0 euros to ride, plus a couple of euros for an occasional
+app-taxi.
+Notes: walk the compact Dorćol and centre, but use transit to beat the heat —
+it covers Zemun and Savski kej directly. For Ada Ciganlija and Košutnjak in the
+peak afternoon, a CarGo or Yandex app-taxi is a few euros and saves you the
+slow forest legs. Avoid unmarked airport taxis — voucher desk or app only.
+
+---
+
+## Belgrade — 7. Optimal-timing assessment
+
+Dates June 19 to 21: Acceptable, with a heat caveat. Late June can break 30°C,
+which is why the plan is built around rivers, the island beach, and the forest.
+No specific festival or holiday was flagged in this exact window — re-check
+closer to the date. One-line verdict: good if you treat the afternoons as
+swim-and-shade time and save the city walking for morning and evening.
 
 ---

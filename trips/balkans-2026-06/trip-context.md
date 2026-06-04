@@ -25,6 +25,10 @@ approved_locations:
   - "Újlipótváros / Pozsonyi út (Dist. XIII), Budapest"
   - "Óbuda Fő tér (Dist. III), Budapest"
   - "Római-part (Dist. III), Budapest"
+  - "Donji Dorćol (Stari Grad), Belgrade — BASE"
+  - "Savski kej (Novi Beograd), Belgrade"
+  - "Donji Grad / Zemun, Belgrade"
+  - "Banovo brdo / Čukarica (Košutnjak + Ada Ciganlija), Belgrade"
 route_stops:
   - {order: 1, city: Budapest, country: Hungary, in: 2026-06-16, out: 2026-06-18, nights: 2, heat_flag: false, arrival: "evening flight from Warsaw (time TBC)"}
   - {order: 2, city: Belgrade, country: Serbia, in: 2026-06-19, out: 2026-06-21, nights: 2, heat_flag: true, transport_in: "bus from Budapest"}
