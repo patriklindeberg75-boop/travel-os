@@ -45,6 +45,27 @@ Output the {section_name} as a numbered list. For each item:
   the atmosphere").
 ```
 
+## Per-place data fields (boilerplate, embedded in Pass 3 and Pass 4 prompts)
+
+Prompts 3 and 4 ask for these structured fields per item, on top of the one-line
+why and signal, so the dossier can render the per-place card and the HTML
+companion can render a fact line. Substitute this block where a prompt references
+`{per_place_fields}`:
+
+```
+For EACH item, also give me these fields on labelled lines (write
+"unknown" for any you genuinely cannot establish — do not guess):
+- Best time: best time of day / day of week to go (note any heat-smart window)
+- Cost: a real price anchor in LOCAL currency (coffee / a meal / a beer / entry)
+- Duration: how long to budget for a visit
+- Hours: opening hours and days closed
+- Find it: nearest landmark or street; for hidden spots, how to actually find it
+- Location: street address or rough coordinates if you have them, for a map pin
+
+Do not fabricate hours, prices, or coordinates. "unknown" is an acceptable and
+useful answer; a made-up number is not.
+```
+
 ---
 
 ## Pass 1 — Destination Viability
@@ -85,11 +106,17 @@ Task: Assess whether {dates} is a good window for {destination}. Cover:
    Name the signal and the expected impact (e.g., "Italian school holidays
    July 8–Aug 31 — coastal areas 30–40% more crowded").
 
-3. Local event signal: any specific festivals, strikes, or events in
-   {destination} during {dates} that would meaningfully change the
-   experience (positive or negative). Name the event, dates, and impact.
+3. Local event signal: actually check for specific festivals, public holidays,
+   strikes, or market-closure days in {destination} during the EXACT window
+   {dates} that would meaningfully change the experience (positive or negative).
+   Name the event, its dates, and its impact (e.g., "markets shut on the public
+   holiday June 24"). If you find nothing for these exact dates, say so plainly
+   — do not give a vague "check closer to the date" non-answer.
 
-4. One-line verdict: GOOD / ACCEPTABLE / SUBOPTIMAL for these dates, given
+4. Daylight: give approximate sunrise and sunset times for {destination} during
+   {dates} (relevant for sunrise climbs and sunset viewpoints).
+
+5. One-line verdict: GOOD / ACCEPTABLE / SUBOPTIMAL for these dates, given
    weather, crowds, and event signal.
 
 Cite sources for weather and current-events claims.
@@ -98,7 +125,7 @@ Cite sources for weather and current-events claims.
 **Multi-stop extension (add when `trip_type` is `multi-stop`):**
 
 ```
-5. Per-region weather: for a multi-stop trip through {destination}, give the
+6. Per-region weather: for a multi-stop trip through {destination}, give the
    expected max temperature by region (e.g., coastal south, central highlands,
    northern mountains). Flag any region exceeding 30°C. Format:
      {Region name}: {N}°C max
@@ -109,7 +136,8 @@ Cite sources for weather and current-events claims.
 After the operator pastes back the Perplexity output, extract:
 - `forecast_max_celsius` — overall expected max temperature as an integer, or `unknown`
 - `timing_verdict` — the GOOD / ACCEPTABLE / SUBOPTIMAL verdict
-- `timing_notes` — 2–3 line summary of crowding signals and event signals
+- `timing_notes` — 2–3 line summary of crowding signals, the actual festival/
+  holiday/closure findings for the exact window, and approximate sunrise/sunset times
 - `stop_weather` — for multi-stop trips: list of `{location: "Region name", forecast_max_celsius: N}` from the per-region section; empty list for single-base trips
 
 ---
@@ -151,11 +179,19 @@ I will narrow this list to a short list after seeing all options.
 
 ---
 
-### Prompt 2b — Route and stops long list (multi-stop trips)
+### Prompt 2b — Candidate places long list (multi-stop trips)
 
 **Target tool:** ChatGPT Pro.
 
-**Expected output shape:** Numbered list of 10–15 route options or stop combinations. Each: route summary (stops in order) — total nights — per-stop vibe (one line each) — work-fit verdict (overall or per-stop if very different).
+**Expected output shape:** Numbered list of 10–15 INDIVIDUAL candidate places
+(cities / towns / regions) — NOT pre-built routes. Each: name — one-line vibe —
+who goes there — work-fit verdict — a suggested rough nights range — rough
+location/region (so they can be sequenced later).
+
+**Why this shape:** Patrik chooses which places to visit himself, in discussion,
+and then decides the order and nights. The subagent must NOT commit him to a
+single itinerary — it surfaces options to choose from, it does not decide the
+trip.
 
 **Prompt body:**
 
@@ -172,20 +208,24 @@ My travel principles (non-negotiable filters):
 
 {principles_extract}
 
-Task: Give me 10–15 possible stop combinations / route options for a
-{trip_duration_nights}-night trip through {destination}. I want to see both
-the beach and the mountains if the destination allows it. For each option:
-- Ordered list of stops (e.g., Saranda → Berat → Shkodra)
-- Rough nights per stop
-- One-line vibe per stop (what is the place like, who goes there)
-- Overall work-fit verdict: are there work-friendly cafes and reliable WiFi
-  across this route?
+Task: Give me a long list of 10–15 INDIVIDUAL candidate places (cities, towns,
+or regions) worth considering as stops on a {trip_duration_nights}-night trip
+through {destination}. I want to see both the coast and the mountains if the
+destination allows it.
 
-I will narrow this list to one approved route after seeing all options.
-Routes that include mass-tourism hubs without a counter-signal will be
-deprioritized.
+Do NOT build me a finished route or itinerary. Do NOT order them into a single
+trip. I will choose which places to visit myself and decide the order and nights
+afterwards. Just give me the menu of options to choose from. For each place:
+- Name
+- One-line vibe (what the place is like, who goes there)
+- Work-fit verdict: are there work-friendly cafes and reliable WiFi?
+- Suggested rough nights range if I were to include it (e.g., "2–3 nights")
+- Rough location / region, and which other candidates it is near (so I can
+  sequence them sensibly later)
 
-{anti_tourist_guardrail with section_name = "route options list"}
+Places that are mass-tourism hubs without a counter-signal will be deprioritized.
+
+{anti_tourist_guardrail with section_name = "candidate places list"}
 ```
 
 ---
@@ -196,7 +236,10 @@ deprioritized.
 
 **Target tool:** Perplexity Pro (source-grounded, current, good for niche signal retrieval).
 
-**Expected output shape:** Numbered list of 15–20 activities. Each: name — location, {destination} — one-line why — surfacing signal.
+**Expected output shape:** Numbered list of 15–20 activities. Each: name —
+location, {destination} — one-line why — surfacing signal — then the labelled
+per-place fields (best time, cost, duration, hours, find it, location), plus the
+hike-data line for any hike/mountain day.
 
 **Prompt body:**
 
@@ -226,6 +269,14 @@ For each item, include the specific source signal that surfaced it (Reddit
 thread, local blog, resident interview, niche guide — name it). Cite sources
 where you can.
 
+{per_place_fields}
+
+For any item that is a hike or mountain day, ALSO give me a hike-safety line:
+- Hike data: distance, elevation gain, whether there is water on the route,
+  whether there is mobile signal, and the last return-transport time (bus /
+  minibus / shared taxi). Treat the last-return time as a hard safety field —
+  if you cannot find it, say so explicitly.
+
 If you cannot find 15–20 items with real evidence for these specific areas,
 return fewer and say so.
 
@@ -240,7 +291,7 @@ return fewer and say so.
 
 **Target tool:** Perplexity Pro.
 
-**Expected output shape:** Numbered list of 15–20 places, tagged as daytime/work-friendly or dinner/memorable. Each: name — location, {destination} — type — one-line why — surfacing signal.
+**Expected output shape:** Numbered list of 15–20 places, tagged as daytime/work-friendly or dinner/memorable. Each: name — location, {destination} — type — one-line why — surfacing signal — then the labelled per-place fields (best time, cost, duration, hours, find it, location).
 
 **Prompt body:**
 
@@ -269,6 +320,8 @@ scoped to the areas above, mixing:
 Tag each as "daytime" or "dinner". For each: name, neighborhood, one-line
 why (tied to profile), and the source signal that surfaced it (Reddit, local
 food blog, resident rec — name it).
+
+{per_place_fields}
 
 If you cannot find 15–20 items with real evidence for these areas,
 return fewer and say so.
@@ -386,32 +439,44 @@ Be specific per leg and per stop. Do not generalize.
 
 ---
 
-### Prompt 5d — Music-vibe recommendation
+### Prompt 5d — Practical logistics (connectivity, offline maps, entry/admin)
 
-**Target tool:** ChatGPT Pro.
+**Target tool:** Perplexity Pro (current, source-cited — roaming/eSIM and entry
+rules change and must be verified).
 
-**Expected output shape:** 1–2 lines: a playlist name / genre / artist, Spotify-paste-ready.
+**Expected output shape:** Short labelled blocks — connectivity (per country),
+offline-map prep (per stop), entry & admin (visa / Schengen / insurance), and
+border-crossing warnings. Cite sources for entry rules and roaming claims.
 
-(This prompt deliberately omits the anti-tourist guardrail — music recommendations
-don't involve avoiding tourist traps. The intent is local authenticity, not
-anti-curation.)
+(This prompt omits the anti-tourist guardrail — it is logistics, not place
+curation.)
 
 **Prompt body:**
 
 ```
-Solo trip to {destination}, {dates}, theme "{theme}".
+Solo trip: {destination}, {dates}. Route / areas:
+{approved_locations}
 
-Profile:
-{profile_extract}
+I carry an EU mobile plan and travel light with one phone, often between cities
+with patchy signal and on an ultra-budget. Give me the practical logistics I can
+act on without a second device or a data connection:
 
-Task: Recommend 1–2 playlists, genres, or artists that capture {destination}'s
-local sound or vibe — paste-ready into Spotify. Prefer:
-- Real local artists, contemporary or canonical, over "music inspired by
-  {destination}" compilations.
-- One option that's "essential local sound" (what residents listen to)
-  and one that's "atmospheric fit for the trip theme" (matches {theme}).
+1. CONNECTIVITY (per country on this route): is a standard EU roaming plan
+   covered, or is this a non-EU country where my plan may silently stop working?
+   For any non-EU country, name the cheapest reliable eSIM option and its rough
+   cost. Be explicit about exactly which stops lose EU coverage.
 
-Just 1–2 lines. Name + one-line why. No extended explanation.
+2. OFFLINE MAPS (per stop): which map area should I download (and in which app)
+   before I lose signal, so navigation works offline.
+
+3. ENTRY & ADMIN: current visa / entry rules for any non-EU stop on this route,
+   the Schengen day-count situation if relevant, and a one-line travel-insurance
+   reminder. State the rules as of now and cite a source.
+
+4. BORDER CROSSINGS: any crossing-specific warnings on this exact route (e.g.,
+   entry-stamp issues, recognition disputes, crossings to avoid).
+
+Keep it tight and factual. Cite sources for entry rules and roaming coverage.
 ```
 
 ---
@@ -421,14 +486,14 @@ Just 1–2 lines. Name + one-line why. No extended explanation.
 | Prompt | When | Section | Target |
 |---|---|---|---|
 | T1 | /trip-init (one-time) | Timing / weather ceiling | Perplexity Pro |
-| 2a (or 2b) | Pass 2 | Cool neighborhoods / Route + stops | ChatGPT Pro |
-| 3 | Pass 3 | Hidden-gem activities | Perplexity Pro |
-| 4 | Pass 4 | Food / restaurants | Perplexity Pro |
-| 5a | Pass 5 | Tourist-trap warnings | Perplexity Pro |
+| 2a (or 2b) | Pass 2 | Cool neighborhoods / Candidate places | ChatGPT Pro |
+| 3 | Pass 3 | Hidden-gem activities (+ per-place fields, hike data) | Perplexity Pro |
+| 4 | Pass 4 | Food / restaurants (+ per-place fields) | Perplexity Pro |
+| 5a | Pass 5 | Tourist-trap warnings (skipped for ≤2-night stops) | Perplexity Pro |
 | 5b | Pass 5 | Mobility | ChatGPT Pro |
-| 5d | Pass 5 | Music vibe | ChatGPT Pro |
+| 5d | Pass 5 | Practical logistics (connectivity / maps / entry) | Perplexity Pro |
 
-Routing rationale: ChatGPT Pro for ideation / synthesis / prior-knowledge-heavy sections; Perplexity Pro for current-source-cited sections (food trends, current event signals, real-time trap signals from Reddit and local blogs, timing/weather). Pass 1 viability also uses Perplexity Pro (see `/destination-check`).
+Routing rationale: ChatGPT Pro for ideation / synthesis / prior-knowledge-heavy sections; Perplexity Pro for current-source-cited sections (food trends, current event signals, real-time trap signals from Reddit and local blogs, timing/weather, and logistics/entry-rule verification). Pass 1 viability also uses Perplexity Pro (see `/destination-check`).
 
 ## Tuning notes
 

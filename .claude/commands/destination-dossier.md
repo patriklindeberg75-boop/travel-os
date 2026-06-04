@@ -96,4 +96,4 @@ boundaries — each section is independently paste-ready.
 - The command's model is Opus per `ai-resources/docs/agent-tier-table.md` (synthesis is judgment-heavy). The agent itself is Sonnet (mechanical orchestration). If first-trip output is shallow, escalate the agent to Opus in retro (architecture.md Decision 4).
 - The redundant spine pre-check in Step 2 is a fail-fast optimization. It does not replace the agent's own Phase B gate — both must pass.
 - Auto-resume is handled by the orchestrator reading `dossier/pass-N-state.md` files (Phase C.5). No special flag or state management needed in this command shell.
-- Expect 4–5 operator interactions (one per pass) before the dossier ships. Pass 5 groups all four practicalities prompts into one batch.
+- Expect 4–6 operator interactions before the dossier ships: the Pass 2 place-selection discussion (and, for multi-stop, a route/nights confirmation), then one per remaining pass. Pass 5 groups its prompts (5a if run, 5b, 5d) into one batch.

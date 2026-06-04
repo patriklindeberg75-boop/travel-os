@@ -79,7 +79,7 @@ or the compact form:
 
 Numbers reference the long list as presented. The orchestrator does fuzzy name-matching as a fallback if the operator pastes names without numbers. If a name is ambiguous, ask for clarification — do not guess.
 
-**Verdict passes (mobility, timing, music in Pass 5):**
+**Verdict passes (mobility and logistics in Pass 5):**
 
 ```
 APPROVE
@@ -146,41 +146,59 @@ If `viability_verdict` is `conditional`, note the conditions in the run log (Ste
 
 If `viability_verdict` is `skipped` or `pass`, continue without comment.
 
-### Step 3 — Pass 2: Location long list
+### Step 3 — Pass 2: Place long list
 
 Read `references/subagent-prompts.md` § Pass 2 for the location prompt template. Branch on `trip_type`:
 
 **single-base:** Instantiate the "Neighborhoods long list" prompt template (Prompt 2a). Substitutes `{destination}`, `{dates}`, `{theme}`, `{work_load}`, `{budget_floor}`, `{profile_extract}`, `{principles_extract}`.
 
-**multi-stop:** Instantiate the "Route and stops" prompt template (Prompt 2b). Substitutes the same placeholders plus `{trip_duration_nights}`. This prompt asks for an ordered route (10–15 candidate stop combinations) with rough nights-per-stop and vibes per stop.
+**multi-stop:** Instantiate the "Candidate places long list" prompt template (Prompt 2b). Substitutes the same placeholders plus `{trip_duration_nights}`. This prompt asks for 10–15 INDIVIDUAL candidate places (cities / towns / regions) — each with vibe, work-fit, a suggested rough nights range, and rough location/region. It explicitly does NOT ask for a finished route or itinerary; sequencing and nights are decided with Patrik in Step 4.4, not by the subagent.
 
 Target tool: ChatGPT Pro.
 
-### Step 4 — PAUSE: Pass 2 operator gate
+### Step 4 — PAUSE: Pass 2 operator gate (place-selection discussion)
 
-Present the Pass 2 prompt to Patrik labeled with:
+This gate is a **discussion, not a rubber stamp**. The point of Pass 2 is that Patrik decides *which places he visits* — the orchestrator must never silently pick the destinations or the route for him. Present the Pass 2 prompt to Patrik labeled with:
 
-- `Pass 2 — Locations (single-base: neighborhoods | multi-stop: route + stops)`
+- `Pass 2 — Places (single-base: neighborhoods | multi-stop: candidate cities/towns/regions)`
 - Target tool: ChatGPT Pro
 - The full prompt body in a fenced code block, paste-ready
-- Expected output shape: "Numbered list of 10–15 candidates. Each: name — one-line vibe — work-fit verdict."
+- Expected output shape: "Numbered list of 10–15 candidate places. Each: name — one-line vibe — work-fit verdict — (multi-stop also: suggested nights range + rough region)."
 
 End the message with:
 
 ```
-Run this prompt in ChatGPT Pro. Paste the full output back here.
-Then narrow the list using the KEEP format:
+Run this prompt in ChatGPT Pro and paste the full output back here.
+
+This is a discussion, not a fixed plan. Tell me which of these places you
+actually want — and ask me anything (compare two, swap one in, drop one). We
+agree the set of places together before going any deeper. I will not pick the
+destinations for you.
+
+When you're ready, narrow with the KEEP format:
   KEEP:
   3. {name}
   7. {name}
 Or: 3, 7, 11
 ```
 
-Wait for Patrik's paste-back (the raw long list) AND the KEEP selection. Both may come in one message or two — accept either.
+Wait for Patrik's paste-back (the raw long list) AND his selection. Engage with questions or comparison requests before locking — do not jump ahead to activities. **Hard rule: do not proceed to Step 4.4 / Step 5 until Patrik has explicitly approved the set of places.** If his message is ambiguous about which places are in, ask — do not infer.
+
+### Step 4.4 — Route and nights (multi-stop only; skip for single-base)
+
+Once the *set* of places is approved, decide *order and nights* — also with Patrik, as a confirmable proposal, not a decision made for him:
+
+1. Propose a sensible sequence (geography-driven) and a nights-per-stop split that fits `{trip_duration_nights}` and the per-place suggested ranges from the long list. Present it as a proposal.
+2. Ask Patrik to confirm or adjust the order and the nights. If he adjusts, re-state the updated route back to him.
+3. Only once he confirms, treat the route as locked.
+
+This step needs no subagent — it is an orchestrator↔operator exchange. (If Patrik wants transport-feasibility input before deciding, note that Pass 5b mobility will cover it, or he can run an ad-hoc check.)
+
+For single-base trips there is no route; skip this step.
 
 ### Step 4.5 — Ingest Pass 2 short list
 
-Parse the KEEP selection against the long list. Extract the approved short list.
+Parse the approved selection against the long list. Extract the approved short list.
 
 Write `trips/{slug}/dossier/pass-2-state.md`:
 
@@ -199,13 +217,15 @@ gate_received_at: {timestamp}
 ## Short list (operator-approved)
 
 {approved items only, numbered from original long list}
-```
 
-**For multi-stop:** If approved items are stops with nights, parse `{name}: {N} nights` form. If the operator just selected names without nights, prompt: "How many nights at each?" before proceeding. Once nights are confirmed, structure as `route_stops` list.
+## Route and nights (multi-stop only)
+
+{confirmed order + nights per stop from Step 4.4, or "n/a — single-base"}
+```
 
 Update `trip-context.md` frontmatter:
 - **single-base:** write `approved_locations: [{name1}, {name2}, ...]`
-- **multi-stop:** write `approved_locations: [{name1}, {name2}, ...]` and `route_stops: [{name: name1, nights: N}, ...]`
+- **multi-stop:** write `approved_locations: [{name1}, {name2}, ...]` and `route_stops: [{name: name1, nights: N}, ...]` from the Step 4.4 confirmed route.
 
 ### Step 5 — Pass 3: Activities long list
 
@@ -259,20 +279,22 @@ Generate three sub-prompts using templates from `references/subagent-prompts.md`
 
 **5a — Tourist traps (long list → short list):** Prompt 5a asks for 10–15 named places to avoid, each with a specific trap signal. Target tool: Perplexity Pro.
 
+**Short-stop skip rule.** Tourist-trap research is not worth it for a quick stop. Scope `{approved_locations}` in the 5a prompt to stops with **3+ nights only**; omit any stop where `nights` ≤ 2 (per `route_stops`). For single-base trips (always 1+ week per the hard constraints), 5a always runs over the whole base. If *every* multi-stop stop is ≤ 2 nights, skip 5a entirely and note "5a skipped — all stops ≤ 2 nights" in the run log; Section 5 is then omitted from the dossier.
+
 **5b — Mobility verdict:** Prompt 5b asks for a single mobility recommendation for the approved route. For multi-stop: covers inter-stop transport AND local mobility per stop. For single-base: one verdict. Target tool: ChatGPT Pro.
 
-**5c — Timing (not run here):** Timing was collected at `/trip-init` time via Prompt T1 and stored in `trip-context.md` frontmatter. Section 7 (optimal timing) is synthesized from `timing_verdict` and `timing_notes`. No prompt generated at this step.
+**5c — Timing (not run here):** Timing was collected at `/trip-init` time via Prompt T1 and stored in `trip-context.md` frontmatter. Section 7 (optimal timing) is synthesized from `timing_verdict` and `timing_notes` (which now include the actual festival/holiday/closure findings and sunrise/sunset times). No prompt generated at this step.
 
-**5d — Music verdict:** Prompt 5d asks for 1–2 playlists / genres / artists matching the destination's local sound. Target tool: ChatGPT Pro.
+**5d — Practical logistics:** Prompt 5d asks for connectivity (EU vs non-EU roaming / eSIM per country), offline-map prep per stop, entry & admin (visa / Schengen / insurance), and border-crossing warnings for the approved route. Target tool: Perplexity Pro.
 
 ### Step 10 — PAUSE: Pass 5 operator gate
 
-Present all three Pass 5 prompts in one message (5a, 5b, 5d — timing was collected at `/trip-init`). Label each with its section letter, target tool, and expected output shape. For 5a only, include the KEEP format instruction. For 5b and 5d, include the APPROVE/REJECT format.
+Present the active Pass 5 prompts in one message (5a, 5b, 5d — timing was collected at `/trip-init`). Label each with its section letter, target tool, and expected output shape. For 5a only, include the KEEP format instruction. For 5b and 5d, include the APPROVE/REJECT format. **If 5a was skipped** (all stops ≤ 2 nights per the short-stop skip rule), present only 5b and 5d and say so.
 
 End with:
 
 ```
-Run all three prompts in the indicated tools. Paste all results back in a single
+Run these prompts in the indicated tools. Paste all results back in a single
 block, each labeled by section (5a, 5b, 5d).
 For 5a: include your KEEP selection after the long list.
 For 5b, 5d: include APPROVE / APPROVE WITH NOTES / REJECT after the output.
@@ -284,11 +306,11 @@ Wait for Patrik's paste-back.
 
 Parse each sub-section:
 
-- **5a (traps):** Extract long list; parse KEEP selection for short list.
+- **5a (traps):** Extract long list; parse KEEP selection for short list. (Skip if 5a was not run.)
 - **5b (mobility):** Parse APPROVE/APPROVE WITH NOTES/REJECT verdict.
-- **5d (music):** Parse verdict.
+- **5d (logistics):** Parse verdict; capture the connectivity / offline-maps / entry-admin / border content for Section 8.
 
-**De-duplication check (B3):** After parsing the 5a short list, read `pass-3-state.md` and `pass-4-state.md` short lists. For each item in the 5a short list, fuzzy-match against all items in the Pass 3 and Pass 4 approved short lists. On any name overlap:
+**De-duplication check (B3):** Skip this check entirely if 5a was not run (all stops ≤ 2 nights). Otherwise, after parsing the 5a short list, read `pass-3-state.md` and `pass-4-state.md` short lists. For each item in the 5a short list, fuzzy-match against all items in the Pass 3 and Pass 4 approved short lists. On any name overlap:
 - Remove the conflicting item from the Pass 3 or Pass 4 short list (trap wins).
 - Record each conflict in the run log (Step 14) as: `De-dup: {place name} removed from Pass {N} keep-list — appears in trap list.`
 - Do not silently remove. If more than 3 conflicts arise in a single pass, surface them to Patrik before proceeding.
@@ -312,12 +334,14 @@ gate_received_at: {timestamp}
 ## 5b — Mobility verdict
 {APPROVE/REJECT + raw output}
 
-## 5d — Music verdict
-{APPROVE/REJECT + raw output}
+## 5d — Practical logistics
+{APPROVE/REJECT + raw output: connectivity, offline maps, entry/admin, borders}
 
 ## De-duplication log
 {list of conflicts resolved, or "None"}
 ```
+
+If 5a was skipped (all stops ≤ 2 nights), record the trap sub-sections as `5a — skipped (all stops ≤ 2 nights)` rather than omitting them silently.
 
 ### Step 11 — Synthesize through profile + principles
 
@@ -326,8 +350,10 @@ For each pass's approved short list and each verdict, apply:
 - **Anti-tourist filter.** Cross-check candidate places against principles. Remove or flag any place that triggers a mass-tourism signal.
 - **Personalization filter.** For each candidate place, verify at least one PROFILE_EXTRACT preference is relevant. If no preference matches, demote or remove.
 - **Routine integration check.** For locations (Section 1) and accommodation (Section 2), verify proximity to work-friendly cafes and routine maintenance (gym / supermarket / morning coffee).
+- **Tier assignment (Sections 3 and 4).** Assign each surviving place exactly one priority tier — 🔥 HIGH, 👍 REC, or 🆗 OK — based on profile-fit strength and signal quality. Do not flatten everything to one tier; a useful split is roughly the strongest third HIGH, the middle REC, the rest OK. Float the single strongest pick to the top of its tier.
+- **Anchor selection (per stop).** Pick exactly ONE "if you do one thing here" anchor per stop (single-base: one for the trip) — the highest-value single place or experience. The anchor is always a 🔥 item and also appears in its section. Exception: if a stop has no surviving Section 3/4 places, omit the anchor and note it per `dossier-template.md` — do not fabricate one.
 
-Record per pass: which preferences were applied, which principles enforced, what was filtered out. This grounding data goes to the run log (Step 14), NOT to the dossier output (per D7).
+Record per pass: which preferences were applied, which principles enforced, what was filtered out, and the tier/anchor decisions. This grounding data goes to the run log (Step 14), NOT to the dossier output (per D7).
 
 ### Step 12 — Format the dossier
 
@@ -336,7 +362,10 @@ Read `references/dossier-template.md` for the output structure. Produce the doss
 - Trip header block (destination, dates, theme, work-load, budget posture, weather check).
 - Viability note if `viability_verdict` is `conditional` — one line: "Viability: CONDITIONAL — {viability_notes}".
 - Sections 1–8 in order, each with `## ` header, `---` divider before next, mobile-formatting rules.
-- Place lines: `Name — Neighborhood, City — one-line why`.
+- Sections 1–2: area lines `Name — Neighborhood, City — one-line why`.
+- Sections 3–4: per-place **cards** per `dossier-template.md` § Priority tiers, per-place card, and the "one thing" anchor — tier icon, one-line hook, labelled fields (best time / cost / duration / hours / find it), hike-data line for hikes. Sort by tier, float top pick. Emit the per-stop ⭐ anchor line above the stop's body.
+- Section 5: omit entirely for stops ≤ 2 nights (short-stop skip rule).
+- Section 8: Practical logistics (connectivity, offline maps, entry & admin, borders) from the 5d paste-back.
 - For multi-stop trips: apply per-section multi-stop variants per `dossier-template.md` § Multi-Stop Variants.
 - Missing/partial sections rendered as `## {n}. {Section name}\n\n_Section incomplete — re-run prompt and re-paste._\n\n---`.
 - No grounding evidence block (D7 — keep dossier clean).
@@ -347,16 +376,20 @@ Read `references/dossier-template.md` for the output structure. Produce the doss
 | Source | Dossier sections |
 |---|---|
 | Pass 2 short list | Section 1 (neighborhoods) and Section 2 (accommodation) |
-| Pass 3 short list (after de-dup) | Section 3 (hidden-gem activities) |
-| Pass 4 short list (after de-dup) | Section 4 (food / restaurants) |
-| Pass 5a short list | Section 5 (tourist-trap warnings) |
+| Pass 3 short list (after de-dup) | Section 3 (hidden-gem activities — cards + tiers + anchor) |
+| Pass 4 short list (after de-dup) | Section 4 (food / restaurants — cards + tiers) |
+| Pass 5a short list | Section 5 (tourist-trap warnings — skipped for ≤2-night stops) |
 | Pass 5b verdict | Section 6 (mobility) |
-| `timing_verdict` + `timing_notes` from trip-context.md | Section 7 (optimal timing) |
-| Pass 5d verdict | Section 8 (music vibe) |
+| `timing_verdict` + `timing_notes` from trip-context.md | Section 7 (optimal timing — incl. festivals/holidays + sunrise/sunset) |
+| Pass 5d verdict | Section 8 (practical logistics) |
+
+### Step 12.5 — Write the structured data companion
+
+After the markdown dossier is composed, render the SAME synthesized data into `trips/{slug}/dossier-data.json` per `dossier-template.md` § Structured data companion. One record per place (stable `id`, tier, hook, the labelled fields, map/coords if known, `image_query` + empty `image_url` slot), grouped under stops, plus per-stop logistics and trip-level admin. Never put a value in the JSON that is not supported by the markdown dossier; never fabricate coordinates or image URLs. If a prior `dossier-data.json` exists, version it alongside the markdown (`dossier-data-v{n}.json`).
 
 ### Step 13 — Write the dossier
 
-Write to `trips/{slug}/destination-dossier.md`. If the file already exists, write to `destination-dossier-v{n}.md` where `{n}` is the next integer after the highest existing version. Do not overwrite a prior dossier silently.
+Write to `trips/{slug}/destination-dossier.md`. If the file already exists, write to `destination-dossier-v{n}.md` where `{n}` is the next integer after the highest existing version. Do not overwrite a prior dossier silently. Write the structured companion from Step 12.5 with the matching version suffix.
 
 ### Step 14 — Append to the run log
 
