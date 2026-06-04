@@ -6,8 +6,9 @@ theme: "Balkan overland south — a budget backpacker's post-Yugoslav route, cha
 work_load_hours_per_week: 12
 budget_floor_eur_per_day: 50
 budget_total_ceiling_eur: 700
-budget_splurge_low_eur: 40
-budget_splurge_high_eur: 80
+budget_splurge_low_eur: 0
+budget_splurge_high_eur: 0
+splurge_posture: "NONE — operator confirmed no splurge anywhere this trip (2026-06-04). All stops ultra-budget; no splurge-tier picks in any pass."
 forecast_max_celsius: 31
 timing_verdict: acceptable
 timing_notes: "Peak summer season across all stops. No specific festival/holiday flagged in the Jun 16–29 window by the Pass 1 screen (confirm closer to date). Heat is the main timing risk: Belgrade and Prizren can break 30°C — time outdoor activity to early morning / late afternoon and lean on cool escapes."
@@ -18,7 +19,12 @@ stop_weather:
   - "Ohrid: 26°C (lake/altitude effect)"
   - "Sofia: 27°C"
 trip_type: multi-stop
-approved_locations: []
+approved_locations:
+  - "Palace Quarter / Józsefváros (Dist. VIII), Budapest — BASE"
+  - "Bartók Béla / Újbuda (Dist. XI), Budapest"
+  - "Újlipótváros / Pozsonyi út (Dist. XIII), Budapest"
+  - "Óbuda Fő tér (Dist. III), Budapest"
+  - "Római-part (Dist. III), Budapest"
 route_stops:
   - {order: 1, city: Budapest, country: Hungary, in: 2026-06-16, out: 2026-06-18, nights: 2, heat_flag: false, arrival: "evening flight from Warsaw (time TBC)"}
   - {order: 2, city: Belgrade, country: Serbia, in: 2026-06-19, out: 2026-06-21, nights: 2, heat_flag: true, transport_in: "bus from Budapest"}
