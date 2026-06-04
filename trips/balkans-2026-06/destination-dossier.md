@@ -11,8 +11,8 @@ cool escapes are built into each stop.
 Route: Budapest (2 nights) → Belgrade (2) → Prizren (2) → Ohrid (2) →
 Sofia (1). Poland is a separate friend visit, not covered here.
 
-Build status: Budapest, Belgrade, Prizren, and Ohrid complete. Sofia is
-the last section still to be added.
+Build status: Complete — all five stops (Budapest, Belgrade, Prizren, Ohrid,
+Sofia). An inter-city transport summary is at the very end.
 
 ---
 
@@ -244,10 +244,11 @@ without putting you in the tourist core.
 
 ## Belgrade — 6. Mobility recommendation
 
-Verdict: GSP public transport — buses, trams, and trolleys — which is now
-fare-free (Belgrade dropped transit fares in 2025; verify on arrival).
-Estimated cost: about 0 euros to ride, plus a couple of euros for an occasional
-app-taxi.
+Verdict: GSP public transport — buses, trams, and trolleys — reportedly
+fare-free (Belgrade moved to drop transit fares around 2025), but buy a ticket
+until you confirm it on the ground, so you do not risk a fine.
+Estimated cost: roughly 0 euros if it really is fare-free, otherwise a euro or
+two per ride, plus a couple of euros for an occasional app-taxi.
 Notes: walk the compact Dorćol and centre, but use transit to beat the heat —
 it covers Zemun and Savski kej directly. For Ada Ciganlija and Košutnjak in the
 peak afternoon, a CarGo or Yandex app-taxi is a few euros and saves you the
@@ -532,5 +533,102 @@ the whole plan routes you off the strip and into the mountains and quiet souther
 shore. No specific festival or holiday was flagged in this exact window — re-check
 closer to the date. One-line verdict: the trip's breathing space — cool water,
 mountain air, and the easiest pace, as long as you stay off the central boardwalk.
+
+---
+
+## Sofia — Overview
+
+This is a thin closer, not a full stop. You arrive late on June 28 off the long
+bus from Ohrid and fly out June 29, so you really have one evening and a short
+morning. The plan below is built for exactly that: a local base, a good cheap
+dinner, a place to meet people, and an authentic morning before the airport. No
+day trips, and Vitosha mountain is out — there is no time for it.
+
+---
+
+## Sofia — Base and one-night plan
+
+**Base: Oborishte and the Doctor's Garden, central Sofia** — a quiet, historic,
+tree-shaded residential pocket that local youth favour; safe late at night and a
+short walk from everything, while dodging the tacky Vitosha Boulevard tourist
+strip. If you want something more social, stay near ulitsa Tsar Shishman.
+
+---
+
+## Sofia — Evening
+
+- **Ashurbanipal (Iraqi restaurant)** — near the market, Sofia — the memorable
+  dinner: a cheap, off-beat hidden gem run by Freddie, who treats everyone like a
+  houseguest.
+- **Vkusnoto Kebapche** — San Stefano Street, Sofia — the no-frills cheap-
+  traditional fallback; rock-bottom prices, local kebapche.
+- **Bar Lorca** — 6th September Street, Sofia — underground dive bar open until 7
+  AM, alternative and backpacker crowd; the spot to meet people.
+- **Crystal Garden** — old city center, Sofia — the ultra-budget social move:
+  alternative youth gather on the benches with cheap corner-shop beer and music.
+
+---
+
+## Sofia — Morning before the airport
+
+- **Zhenski Pazar (Women's Market)** — central Sofia — the oldest open-air market
+  and immigrant quarter; gritty, authentic, cheap street food, partly shaded —
+  the best way to see real Sofia early before the heat.
+- **HleBar** — Oborishte, Sofia — a cool indoor bakery for a quality banitsa by
+  your base before the airport run.
+
+---
+
+## Sofia — Tourist-trap warning list
+
+- **Fake taxis at transit hubs** — scammers run "OK Taxi" to mimic the real OK
+  Supertrans and jump the fare 3–5 times. Never hail a cab off the street;
+  use the Yellow or TaxiMe apps.
+- **Happy Bar and Grill (all branches)** — an overpriced tourist chain locals
+  pan; skip it.
+- **Vitosha Boulevard tourist restaurants** — the central strip your base
+  deliberately avoids; overpriced for what it is.
+
+---
+
+## Sofia — Mobility
+
+Verdict: walk the center; take the metro to the airport.
+Estimated cost: about 0 euros walking; under 1 euro on the metro.
+Notes: central Sofia is walkable. For your June 29 departure, Metro Line 1 runs
+to Sofia Airport — cheap and traffic-proof — but it serves Terminal 2. If you
+fly from Terminal 1, take the free inter-terminal shuttle bus from Terminal 2, so
+check which terminal your flight leaves from first. If you need a taxi, book
+through the TaxiMe app rather than hailing one on the street.
+
+---
+
+## Inter-city transport summary
+
+All legs are overland buses except the booked flights. Times and prices are
+approximate — confirm and book the longer legs a day or two ahead, especially the
+final Ohrid to Sofia haul.
+
+- **Budapest to Belgrade** — direct bus, about 7–8 hours, roughly 15–25 euros.
+  Several daily; book ahead in summer. (Flixbus / Gea Tours operate this.)
+- **Belgrade to Prizren** — bus, about 7–9 hours, roughly 20–30 euros, often via
+  the southern route; a long travel day. This is the overland Serbia-into-Kosovo
+  leg. It is fine on this route because you exit Kosovo onward into North
+  Macedonia, not back into Serbia — just do not backtrack into Serbia from Kosovo,
+  because Serbia does not recognise Kosovo entry stamps. Check current schedules;
+  an overnight option may exist.
+- **Prizren to Ohrid** — bus, about 4–6 hours, roughly 15–25 euros, usually via
+  Tetovo and Skopje or the Albania side; fewer direct services, so check
+  connections.
+- **Ohrid to Sofia** — the hard one: 7 to 10-plus hours including the connection,
+  almost always with a change in Skopje (Ohrid to Skopje, then Skopje to Sofia),
+  roughly 25–35 euros total. Plan it as a full travel day on June 28; you arrive
+  Sofia in the evening. Confirm both the Ohrid-Skopje and Skopje-Sofia legs before
+  the day.
+- **Sofia to Warsaw to Helsinki** — your booked flights out on June 29.
+
+Local mobility per stop is covered in each stop's mobility section above. Buy the
+longer bus tickets a day ahead where you can; furgon-style minibuses (like the
+Prizren-to-Prevallë mountain run) leave when full, so allow flex.
 
 ---
