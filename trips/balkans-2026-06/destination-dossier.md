@@ -11,7 +11,7 @@ cool escapes are built into each stop.
 Route: Budapest (2 nights) → Belgrade (2) → Prizren (2) → Ohrid (2) →
 Sofia (1). Poland is a separate friend visit, not covered here.
 
-Build status: Budapest and Belgrade complete. Prizren, Ohrid, and Sofia
+Build status: Budapest, Belgrade, and Prizren complete. Ohrid and Sofia
 sections are still being researched and will be added stop by stop.
 
 ---
@@ -262,5 +262,136 @@ which is why the plan is built around rivers, the island beach, and the forest.
 No specific festival or holiday was flagged in this exact window — re-check
 closer to the date. One-line verdict: good if you treat the afternoons as
 swim-and-shade time and save the city walking for morning and evening.
+
+---
+
+## Prizren — Overview
+
+Two nights, arriving June 22 by bus from Belgrade and leaving June 24 toward
+Ohrid. Prizren is small and walkable, with a real but tiny backpacker scene.
+The town bowl is heat-flagged, so the rhythm here is: town in the early
+morning and evening, and one full day up in the Sharr Mountains, where the
+air drops to about 20°C. That mountain day is the signature "mountain air"
+experience of the whole trip.
+
+---
+
+## Prizren — 1. Cool neighborhoods
+
+**Backpacker cluster (Ura and Bushati), old-town edge** — the tight little
+social hub for the 25–35 overland crowd; your base for meeting people.
+Work-fit: hostel common rooms and nearby cafes; plug into the social scene.
+
+**Marash, riverside** — shaded riverside under a 400-year plane tree; a cool
+microclimate a few degrees below the old town. Your heat-smart work spot.
+Work-fit: good — cafe tables in real shade with workable WiFi.
+
+**Abi Çarshia, new town** — modern, air-conditioned, locals-only zone where
+Prizren actually hangs out; the spot for serious work when it is over 30°C.
+Work-fit: strong — AC and fast WiFi, no tourists.
+
+**Nënkalaja, below the fortress** — silent cobbled hillside alleys, the
+unrestored soul of the town. No cafes; walk it early morning or at dusk.
+Work-fit: none — this is an atmosphere walk, not a work zone.
+
+---
+
+## Prizren — 2. Accommodation area recommendation
+
+**Backpacker cluster (Ura and Bushati), old-town edge** — base here: it is the
+social center of Prizren's small backpacker scene, walkable to everything, and
+the easiest place to find hiking partners for the Sharr day. Marash is the
+shaded fallback if you want quiet riverside over social.
+
+---
+
+## Prizren — 3. Hidden-gem activity shortlist
+
+- **Prevallë and the Livadica glacial-lake hike** — Sharr Mountains, near
+  Prizren — the signature day: cheap morning minibus up, a full-day moderate
+  hike through pastures to a glacial lake, and a cold swim in ~20°C air.
+- **Early-morning çajtore (teahouse)** — old town, Prizren — a 30-cent black
+  tea on a low stool with older locals; the most unfiltered local routine.
+- **Sunrise fortress climb (Kalaja via Nënkalaja)** — Prizren — climb the
+  silent cobbled alleys at 6 AM to beat the heat and watch the city wake.
+- **Kino Lumbardhi** — Marash, Prizren — a locals-saved open-air cinema, now a
+  shaded cultural cafe; good for a cool two-hour work stint.
+- **Gazi Mehmet Pasha Hammam** — old town, Prizren — duck inside the
+  16th-century bathhouse's thick stone walls for art and a total midday heat
+  escape.
+- **Lumbardhi gorge walk** — Marash, Prizren — a flat, deeply shaded riverside
+  forest walk; the low-effort refuge when the town is baking.
+- **BarAca** — old-town edge, Prizren — unpretentious bar where local bohemians
+  and backpackers mix; the anti-tourist evening spot to meet people.
+
+Mountain-day alternatives: a longer 14-kilometer cultural pasture hike to
+Gornje Lubinje instead of the lake, or a side trip from Prevallë to the
+abandoned Yugoslav ski resort at Brezovica if you want an off-beat,
+post-Yugoslav detour.
+
+---
+
+## Prizren — 4. Food / restaurant shortlist
+
+**Daytime / work-friendly:**
+- **Fellas Coffee and Kitchen** — old-town edge, Prizren — tradition-meets-
+  hipster, a coffee and a cheap meal for about 3 euros, laptop-friendly.
+- **Traditional pekara (bakery), Ura** — Prizren — fresh burek or pite from the
+  oven; the ultra-budget local breakfast.
+
+**Cheap eats:**
+- **Qebaptore Bekimi** — old town, Prizren — the locals' no-nonsense best
+  qebapa, voted over the famous square spots.
+- **Tetova Sweet Shop** — old town, Prizren — open since 1956; roasted nuts,
+  dates, and Albanian sweets for pocket change.
+- **Shepherd stalls** — Prevallë, Sharr Mountains — buy fresh mountain cheese
+  and rustic bread for your glacial-lake hike picnic.
+
+**Dinner:**
+- **Restaurant Marashi** — Marash, Prizren — heavy traditional food in a shaded
+  riverside garden; cool and deeply local.
+- **Hani i Vjetër** — old town, Prizren — an old traditional inn with a
+  family-run courtyard and hearty Kosovar comfort food.
+- **Restaurant Koha** — Prevallë, Sharr Mountains — warming mountain-village
+  food in crisp alpine air after the hike.
+
+---
+
+## Prizren — 5. Tourist-trap warning list
+
+- **Besimi Beska** — Shadërvan Square; locals say it "got greedy" and now
+  targets one-time tourists.
+- **Hyska** — Shadërvan Square; one of the square's tourist qebaptores trading
+  on footfall — use Qebaptore Bekimi instead.
+- **Te Syla** — Shadërvan / riverside; guidebook-famous but locals say it
+  coasts on its location and past fame.
+- **Restaurant Ambient** — Nënkalaja hillside; you pay a big premium for the
+  view and get small tourist portions.
+- **Prince Coffee House** — Shadërvan Square; an overpriced commercial chain on
+  prime real estate, the opposite of the cheap local teahouses.
+- **Sarajeva Steakhouse (Galeria Mall)** — new-town edge; a mall franchise —
+  locals say use the independent grills instead.
+
+---
+
+## Prizren — 6. Mobility recommendation
+
+Verdict: walk the town; take the local minibus to the mountains.
+Estimated cost: about 0 euros in town, plus a few euros round trip to Prevallë.
+Notes: the old town, Marash, Nënkalaja, and Abi Çarshia are all on foot. For the
+Sharr Mountains day, catch the ultra-cheap local minibus from the Marash bridge
+in the morning (departures around 7, 8, and 10 AM), or negotiate a shared taxi
+to a specific trailhead. Confirm the return departure on the morning bus so you
+are not stranded up the mountain.
+
+---
+
+## Prizren — 7. Optimal-timing assessment
+
+Dates June 22 to 24: Acceptable, with the same heat caveat. The town bowl can
+top 30°C, so the plan splits between dawn-and-dusk town time and a full cool day
+in the Sharr Mountains. No specific festival or holiday was flagged in this exact
+window — re-check closer to the date. One-line verdict: very good if you give the
+mountains a full day and keep the town to the cooler hours.
 
 ---
