@@ -34,6 +34,11 @@ approved_locations:
   - "Abi Çarshia (new town), Prizren"
   - "Nënkalaja (below fortress), Prizren"
   - "Prevallë + Sharr Mountains (day trip), Prizren"
+  - "Varosh / upper old town (Sunny Lake Hostel), Ohrid — BASE"
+  - "Mesokastro (hillside), Ohrid"
+  - "Galičica National Park (day trip), Ohrid"
+  - "St. Naum + south lake (day trip), Ohrid"
+  - "Elshani mountain village (day trip), Ohrid"
 route_stops:
   - {order: 1, city: Budapest, country: Hungary, in: 2026-06-16, out: 2026-06-18, nights: 2, heat_flag: false, arrival: "evening flight from Warsaw (time TBC)"}
   - {order: 2, city: Belgrade, country: Serbia, in: 2026-06-19, out: 2026-06-21, nights: 2, heat_flag: true, transport_in: "bus from Budapest"}

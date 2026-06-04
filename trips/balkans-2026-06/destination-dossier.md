@@ -11,8 +11,8 @@ cool escapes are built into each stop.
 Route: Budapest (2 nights) → Belgrade (2) → Prizren (2) → Ohrid (2) →
 Sofia (1). Poland is a separate friend visit, not covered here.
 
-Build status: Budapest, Belgrade, and Prizren complete. Ohrid and Sofia
-sections are still being researched and will be added stop by stop.
+Build status: Budapest, Belgrade, Prizren, and Ohrid complete. Sofia is
+the last section still to be added.
 
 ---
 
@@ -393,5 +393,144 @@ top 30°C, so the plan splits between dawn-and-dusk town time and a full cool da
 in the Sharr Mountains. No specific festival or holiday was flagged in this exact
 window — re-check closer to the date. One-line verdict: very good if you give the
 mountains a full day and keep the town to the cooler hours.
+
+---
+
+## Ohrid — Overview
+
+Two nights, arriving June 25 from Prizren and leaving June 27 for the long haul
+to Sofia. Ohrid is your cooler stop — a lake at altitude, around 26°C — and the
+only place on the trip that is genuinely a mass-tourism resort. So the plan is
+deliberately anti-strip: base in the quiet upper old town, and spend your days
+out of the center — up in Galičica's mountains and down the quiet southern
+lakeshore. North Macedonia here is Ohrid as a base with real day trips, not just
+the one town.
+
+---
+
+## Ohrid — 1. Cool neighborhoods
+
+**Varosh, upper old town** — cobbled upper streets that stay quiet while the
+church squares below fill with tour groups; downhill to cafes, still the real
+old town. Your base area.
+Work-fit: easy access to town cafes; the upper streets stay calm.
+
+**Mesokastro, hillside** — steep, authentic residential steps above the tourist
+crush, with sweeping lake views; the quiet-room alternative.
+Work-fit: few cafes, but a cheap room with a balcony is ideal for deep work.
+
+**Galičica slopes (Elshani, Velestovo)** — traditional mountainside villages at
+cooler altitude; rustic, local, and the gateway to the national park.
+Work-fit: not a work zone — a cool village day-trip base.
+
+**Southern lakeshore (Trpejca, Lagadin, St. Naum)** — quieter villages and
+beaches down the lake, away from the central crowds.
+Work-fit: not a work zone — swim-and-eat day-trip territory.
+
+---
+
+## Ohrid — 2. Accommodation area recommendation
+
+**Varosh, upper old town** — base here for the off-beat old-town feel above the
+tourist bottleneck. For the social side, Sunny Lake Hostel is the genuine,
+non-party backpacker hub — a good place to stay or just drop into for cheap beers
+and to split a taxi up to the Galičica trailheads. Mesokastro is the quieter
+fallback if you want a balcony room over the lake.
+
+---
+
+## Ohrid — 3. Hidden-gem activity shortlist
+
+- **Elshani to Gorno Konjsko hike** — Galičica, near Ohrid — the signature day: a
+  gentle ~16-kilometer loop to a near-deserted mountain village through wildflower
+  valleys, cool air, zero crowds.
+- **Elshani village walk** — Galičica slopes, Ohrid — traditional mountainside
+  life and a cheap beer at the village shop with residents; pairs with the hike.
+- **Milenko's viewpoint, above Kaneo** — Ohrid — the secret sunset spot up the
+  dirt track, skipping the mobbed Kaneo boardwalk.
+- **Peribleptos church and its local guide** — Varosh, Ohrid — find the
+  passionate local guide woman instead of a paid tour; the real cultural intro.
+- **Mesokastro backstreets and Turkish bazaar** — Ohrid — quiet steps down to
+  cheap street food and a genuine old-town that package tourists miss.
+- **Beach Labino** — Ohrid edge — a tiny shaded wild beach a short walk from the
+  center; a cool-off swim away from the hotel strips.
+- **Trpejca to Zaumska coastal hike** — southern lakeshore, Ohrid — a rugged
+  3.5-kilometer shore walk to a secluded church and isolated beach; the active
+  alternative to a paid boat tour.
+- **St. Naum military beach and springs** — southern lakeshore, Ohrid — the easy
+  southern day: a cold-spring swim off the unpretentious military beach, dodging
+  the tourist restaurants.
+
+For a harder mountain option, Magaro peak (2,255 meters) is the full-day summit
+with views of both lakes — but it is strenuous and exposed, so only with a dawn
+start for the sun. The gentle Gorno Konjsko loop is the better fit otherwise.
+
+---
+
+## Ohrid — 4. Food / restaurant shortlist
+
+**Cheap eats / local:**
+- **Gostilnica Vkusno** — Old Bazaar, Ohrid — unpretentious old-school kafana;
+  cheap grilled meats and cold beer.
+- **Burekdžilnica Martina** — Turistichka Boulevard, Ohrid — the locals' best
+  burek and banichki, off the tourist zone.
+- **Turkish Bazaar gjomleze vendors** — Old Bazaar, Ohrid — a 2–3 euro slow-baked
+  regional pastry straight from the market stalls.
+- **Zelen Pazar (green market)** — Ohrid — buy tomatoes, goat cheese, and ajvar
+  and assemble a cheap local feast at the hostel.
+
+**Honest lake fish:**
+- **Restaurant Panorama** — uphill outskirts, Ohrid — fairly priced fish and beef
+  stew, set well back from the tourist beach.
+- **Trpejca village tavernas** — southern lakeshore, Ohrid — fresh endemic Belvica
+  trout on the water after your swim-and-hike day.
+
+**Dinner:**
+- **Domakjinska Kukja** — Velestovo, Ohrid — traditional food and sunset lake
+  views from cooler altitude; the mountain-day dinner.
+- **Restaurant Antico** — old town, Ohrid — tavče gravče and Belvica fish in a
+  stone building, honest prices without the waterfront markup.
+
+Worth-it add-ons: Antep Baklava (cheap sweets across from Vkusno), the fish stew
+at Biser in Lagadin on the way south, and the smaller Kanevče for a cheap salad
+and rakija by the water below Kaneo.
+
+---
+
+## Ohrid — 5. Tourist-trap warning list
+
+- **The Harbour and Dalga** — lakefront; visually stunning but Western-European
+  prices for what locals call disappointing food.
+- **Boardwalk and Kaneo waterfront restaurants** — you pay a premium for the
+  view, not the cooking.
+- **Lake boat-tour touts** — overpriced cruises; haggle hard or take the cheap
+  public boat instead.
+- **St. Naum monastery-complex restaurants** — tourist-trap dining right at the
+  complex; walk to the military beach instead.
+- **"Ohrid pearl" sellers** — genuine pearls come from only a couple of local
+  families, so most cheap "pearls" on offer are fakes.
+
+---
+
+## Ohrid — 6. Mobility recommendation
+
+Verdict: walk the town; cheap local buses and a shared taxi for day trips.
+Estimated cost: about 0 euros in town; 1–2 euros each way on the lakeshore buses;
+a few euros for a shared taxi up the mountain.
+Notes: the old town is compact but steep, so bring good shoes. For the southern
+lakeshore (Trpejca, Lagadin, St. Naum) take the cheap local buses south. For
+Galičica and Elshani, the trailheads are not bus-served — split a shared taxi or
+hitch, which is exactly what the hostel crowd at Sunny Lake organizes.
+
+---
+
+## Ohrid — 7. Optimal-timing assessment
+
+Dates June 25 to 27: Good. Ohrid is the coolest stop at around 26°C thanks to the
+lake and altitude, so no heat flag here. It is peak season on the lakefront, but
+the whole plan routes you off the strip and into the mountains and quiet southern
+shore. No specific festival or holiday was flagged in this exact window — re-check
+closer to the date. One-line verdict: the trip's breathing space — cool water,
+mountain air, and the easiest pace, as long as you stay off the central boardwalk.
 
 ---
