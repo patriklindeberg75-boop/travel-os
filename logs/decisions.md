@@ -79,3 +79,12 @@
 **Rationale:** Inline data = one file, opens locally (no file:// CORS), drops straight onto Cloudflare Pages as a folder deploy. Naming it `index.html` satisfies Pages' entry-point requirement. Friend-rec badge honors the standing "screen but never drop friend recs, tag distinctly" principle in a renderer that had no provenance marker.
 **Boundary:** This produced the Balkans artifact only. The dossier *workflow* was NOT changed to emit HTML — that boundary revisit was explicitly deferred (operator chose "Balkans one-off first"). Patrik still owns the HTML shell.
 **Alternatives considered:** (a) fetch-JSON split — cleaner data/render separation but breaks on local open and needs both files deployed with correct relative path; (b) save the paste verbatim — would have shipped the mojibake and the stale Belgrade section.
+
+---
+
+**Date:** 2026-06-10
+**Decision:** Set up single-source data for the Balkans dossier (Approach A): `dossier-data.json` becomes the source of truth, and a small `build.mjs` regenerates the inline `TRIP`/`LEGS` block inside `index.html` between markers. Balkans-only.
+**Context:** Patrik asked whether editing the dossier "here" could update the HTML at the same time. Inline-data means a snapshot lives in the HTML, decoupled from the markdown — this session's manual reconciliation proved the decoupling. Operator chose "Yes — Balkans only" (not the workflow-wide variant).
+**Rationale:** A JSON source + build step keeps the single uploadable self-contained file (no fetch/CORS) while giving edit-once-then-rebuild. Extracted the initial JSON by evaluating the live literals (zero transcription risk). Generator is idempotent and verified.
+**Boundary:** Balkans trip only; the dossier workflow was NOT changed to emit HTML for all trips (deferred). The markdown dossier is also not yet generated from the JSON — a data edit updates the website but not the markdown.
+**Alternatives considered:** (a) fetch-JSON live load — truly live but breaks on local open and complicates hosting; (b) keep manual two-copy sync — error-prone; (c) bake HTML generation into the workflow now — larger change, deferred per operator.

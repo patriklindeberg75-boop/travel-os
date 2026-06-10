@@ -238,3 +238,35 @@ None.
 ## 2026-06-10 — Session S1
 
 Make the Balkans dossier an uploadable website — clean UTF-8 index.html from Patrik's pasted prototype, reconcile stale Belgrade friend recs into the inline data, confirm self-contained (no fetch), provide Cloudflare Pages deploy steps.
+
+## 2026-06-10 — Session S2
+
+### Summary
+Turned the Balkans dossier into an uploadable website. Patrik pasted his existing HTML prototype (data inline as TRIP/LEGS literals, but predating last session's Belgrade friend recs and corrupted with UTF-8 mojibake from the paste). Saved a clean self-contained `index.html`, reconciled the stale Belgrade section by folding in all 22 friend recs (14 sights + 8 food) with a new lilac "friend rec" badge, and surfaced the menu-not-schedule framing. Then set up single-source data (Approach A, Balkans-only): `dossier-data.json` is the source of truth and `build.mjs` regenerates the inline data block in `index.html` — verified idempotent and self-contained.
+
+### Files Created
+- `trips/balkans-2026-06/index.html` — self-contained, uploadable travel-companion website (clean UTF-8, friend recs folded in, generated data block)
+- `trips/balkans-2026-06/dossier-data.json` — single source of truth (trip[] + legs[]), extracted from the live literals
+- `trips/balkans-2026-06/build.mjs` — generator: JSON → inline TRIP/LEGS block in index.html (idempotent)
+- `logs/scratchpads/2026-06-10-10-50-scratchpad.md` — continuity scratchpad
+
+### Files Modified
+- `logs/session-notes.md` — this entry
+- `logs/decisions.md` — two decision entries (inline-data + friend recs; single-source setup)
+
+### Decisions Made
+- Ship as self-contained `index.html` with inline data (INLINE-DATA, not fetch-JSON) — operator chose his prototype as the shell + "Balkans one-off first". (logged to decisions.md)
+- Set up single-source data (dossier-data.json + build.mjs), Balkans-only; dossier *workflow* left unchanged (deferred). (logged to decisions.md)
+- Added a "friend rec" badge to the renderer to honor the "never drop friend recs, tag distinctly" principle.
+
+### Risky actions
+None. (Fixed mojibake by reconstructing correct UTF-8 rather than saving the corrupted paste verbatim — flagged to operator; data extracted by evaluating live literals to avoid transcription error.)
+
+### Next Steps
+- Fix the travel-os git remote (`patriklindeberg75-boop`, not axcioncapital) so the unpushed commits can ship.
+- Optionally build a markdown-from-JSON generator to fully close the single-source loop (markdown currently not regenerated from the JSON).
+- Confirm the 3 interpreted Belgrade spellings (Aviation Museum, Karađorđeva šnicla, šopska salad).
+- Deferred: make the dossier workflow emit JSON+HTML for every trip.
+
+### Open Questions
+None.
