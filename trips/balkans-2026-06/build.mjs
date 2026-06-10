@@ -45,6 +45,19 @@ const mapLink = (p) => {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 };
 
+// time-of-day tag (v3 D8) — CONSERVATIVE derive from existing copy only.
+// Tags `morning` / `evening` only when the place's own text clearly implies it;
+// everything else stays `any` and is never hidden by a time filter. No fabrication:
+// this reads the authored nm/hook/facts, it does not invent a schedule.
+const deriveWhen = (p) => {
+  const t = `${p.nm || ''} ${p.hook || ''} ${(p.facts || []).map(f => f[1]).join(' ')}`.toLowerCase();
+  const morning = /\b(morning|breakfast|sunrise|early|dawn)\b/.test(t);
+  const evening = /\b(evening|sunset|nightlife|night|dinner|dusk|jazz|after dark)\b/.test(t);
+  if (morning && !evening) return 'morning';
+  if (evening && !morning) return 'evening';
+  return 'any';
+};
+
 const problems = [];
 for (const stop of data.trip) {
   for (const key of ['do', 'eat', 'avoid']) {
@@ -55,6 +68,7 @@ for (const stop of data.trip) {
       // Derive (overwrite any stale value so the build is the single authority).
       p.id = `${stop.id}-${kebab(p.nm)}`;
       p.map_link = mapLink(p);
+      if (key !== 'avoid') p.when = deriveWhen(p);   // time-of-day lens (do/eat only)
     }
   }
 }
