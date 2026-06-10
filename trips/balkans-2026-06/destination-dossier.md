@@ -14,6 +14,13 @@ Sofia (1). Poland is a separate friend visit, not covered here.
 Build status: Complete — all five stops (Budapest, Belgrade, Prizren, Ohrid,
 Sofia). An inter-city transport summary is at the very end.
 
+**How to use this dossier:** it's a *menu, not a schedule.* Every section is a
+long list of vetted options to pick from on the spot — by mood, weather, and
+energy that day. Nothing here is a fixed plan, and nothing on the trip is
+locked: night counts are a starting point, and any stop can grow or shrink if
+a place is worth more time. The dossier's only job is to make sure you always
+have good, non-touristy options within reach — never to tell you what to do.
+
 ---
 
 ## Budapest — Overview
@@ -150,6 +157,10 @@ picks below lean hard on the rivers, the forest, and the island beach. Plan
 the outdoor things for early morning and evening; keep the worst afternoon
 hours on the water or under the trees.
 
+A friend who knows Belgrade added a big list (folded in below, tagged
+**friend rec**). It's more than two days of material — if the city clicks,
+it easily justifies a third night, and nothing on this trip is locked.
+
 ---
 
 ## Belgrade — 1. Cool neighborhoods
@@ -169,6 +180,18 @@ Work-fit: solid breezy riverside cafes; shifts to a local hangout by evening.
 **Banovo brdo, Čukarica** — leafy and hilly, the gateway to Košutnjak forest
 and the Ada Ciganlija river-island beach; this is the cooling zone.
 Work-fit: moderate cafes — treat as a forest-and-swim day, not a work base.
+
+**Areas to wander (friend rec):**
+
+- **Skadarlija** — Stari Grad, Belgrade — the cobbled bohemian quarter; great
+  for an evening stroll. Note: it's the touristy old-town strip (your Tri
+  šešira trap sits here) — come for the lanes and music, not a value dinner.
+- **Belgrade Waterfront (Beograd na vodi)** — Savamala, Belgrade — modern
+  luxury riverside development; pleasant for a flat evening walk, but it's the
+  polished gentrified zone, not local soul.
+- **Knez Mihailova Street** — Stari Grad, Belgrade — the central pedestrian
+  promenade past the National Museum and National Theatre; the main artery —
+  busy and central rather than hidden.
 
 ---
 
@@ -199,6 +222,43 @@ without putting you in the tourist core.
 - **Košutnjak forest trails** — Belgrade — a full free day of deep-shade forest
   walking; active without the sun.
 
+**Friend recommendations — sights & local experiences (friend rec):**
+
+- **Kalemegdan / Belgrade Fortress, for sunset** — Stari Grad, Belgrade —
+  breezy hilltop over the Danube–Sava meeting point; free, and an evening
+  sunset here beats the afternoon heat. Cluster it with the two chapels below.
+- **Ružica Church & St. Petka Chapel** — Kalemegdan, Belgrade — a tiny
+  atmospheric church (chandeliers made from WWI shell casings) and a
+  holy-spring chapel, both inside the fortress walls.
+- **Church of Saint Sava (Hram Svetog Save)** — Vračar, Belgrade — one of the
+  largest Orthodox churches in the world; go down to the gold-mosaic crypt.
+  Indoor = a good midday heat refuge. Free.
+- **Nikola Tesla Museum** — Vračar, Belgrade — holds Tesla's ashes and live
+  demos; English tours run on a schedule, so check times and expect a queue.
+  Indoor.
+- **Museum of Yugoslavia (House of Flowers / Tito's tomb)** — Dedinje,
+  Belgrade — Tito-era collection and mausoleum; less touristy, leafy grounds,
+  indoor halls.
+- **Jevremovac Botanical Garden** — Stari Grad, Belgrade — a central pocket of
+  deep shade and a glasshouse; strong heat-escape between sights.
+- **Topčider Park (+ Residence of Prince Miloš)** — Topčider, Belgrade — big
+  shaded park for a picnic plus a small historic royal residence; an easy
+  green half-day.
+- **Gardoš / Millennium Tower** — Zemun, Belgrade — climb the old tower for the
+  Zemun-side view, then the swan promenade below. Pairs with your Zemun pick.
+- **Avala Tower (Avalski toranj)** — Mount Avala, ~16 km south of Belgrade —
+  panoramic tower in cooler forested hills; a half-day trip out, best as a
+  morning or late-afternoon run.
+- **Aviation Museum (Muzej vazduhoplovstva)** — by Nikola Tesla Airport,
+  Belgrade — Cold-War jets in the famous dome hangar; indoor, but out near the
+  airport, so pair it with arrival or departure. *(Interpreted from "Musee de
+  lavation" — tell me if you meant something else.)*
+- **Partizan vs Crvena zvezda — the Eternal Derby** — Belgrade — football or
+  basketball, this is the local experience: raucous, non-touristy, evening.
+  ⚠ Late June is off-season for both leagues, so a true derby likely won't fall
+  in your window — check the fixture calendar; a friendly or other match may
+  still be on.
+
 ---
 
 ## Belgrade — 4. Food / restaurant shortlist
@@ -223,12 +283,42 @@ without putting you in the tourist core.
 - **Čedić** — Banovo brdo, Belgrade — local institution with massive cheap
   Serbian portions; your forest-day dinner.
 
+**Friend recommendations (friend rec):**
+
+- **Iva New Balkan Cuisine** — Belgrade — modern, refined Balkan cooking; a
+  calm dinner away from the crowds.
+- **Gušti Mora** — Belgrade — seafood; a solid sit-down fish dinner.
+- **Meze Restoran Dvorište** — Belgrade — relaxed courtyard terrace; good for a
+  long dinner outdoors.
+- **Mama Shelter, rooftop** — Stari Grad, Belgrade — hip hotel rooftop for
+  lunch with a view over the oldest large-scale mural; pricier, go for the view.
+- **Zeleni Venac Market** — Stari Grad, Belgrade — central green market for
+  fruit, burek, and pljeskavica to-go; an alternative to Bajloni.
+- **20/44** — splav on the Sava, Belgrade — the cult alternative floating club;
+  late-night party on the river, not a tourist splav.
+- **Tri šešira** — Skadarlija, Belgrade — friend rec for live music + terrace.
+  ⚠ Also on your tourist-trap list (overpriced, folklore show) — go for the
+  music and atmosphere, not a value meal.
+- **Šaran** — Zemun, Belgrade — friend rec for a seafood lunch. ⚠ Also on your
+  tourist-trap list (good fish but pricey/upscale-tourist) — Radecki nearby is
+  the cheaper local alternative if you'd rather.
+
+**Dishes to try (friend rec):**
+
+- **Pljeskavica** — the big Serbian burger-patty (Grill "Loki" has this).
+- **Karađorđeva šnicla** — rolled breaded veal/pork cutlet stuffed with kajmak.
+  *(Interpreted from "Karadjordjeva palacinka.")*
+- **Šopska salad** — tomato, cucumber, onion, and grated white cheese.
+  *(Interpreted from "Shops salt.")*
+- **Burek** — flaky breakfast pastry (Pekara Petrović, Zemun).
+
 ---
 
 ## Belgrade — 5. Tourist-trap warning list
 
 - **Tri šešira** — Skadarlija; overpriced kafana, mostly tourists paying a
-  premium for a forced folklore show.
+  premium for a forced folklore show. (Also a friend rec — kept in the Food
+  list for the music + terrace; just don't expect value.)
 - **Znak Pitanja "?"** — Kosančićev Venac; see the historic building over a
   coffee, but locals say never eat there — tiny overpriced portions.
 - **Restoran April** — Obilićev Venac; about 27 euros for a basic mixed-meat
@@ -236,7 +326,8 @@ without putting you in the tourist core.
 - **Beton Hala strip (Ambar, Toro Latin)** — gentrified riverside extraction
   zone for foreigners; polished, overpriced, no local soul.
 - **Restoran Šaran** — Zemun; good fish but overpriced and upscale-tourist —
-  use Radecki for the real fishermen vibe instead.
+  use Radecki for the real fishermen vibe instead. (Also a friend rec — kept in
+  the Food list; your call between the two.)
 - **Unmarked taxis at the airport** — unlicensed drivers charging 3–5x; use the
   fixed-price voucher desk or a ride app.
 
