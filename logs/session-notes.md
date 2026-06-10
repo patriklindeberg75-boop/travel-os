@@ -301,3 +301,11 @@ None.
 
 ### Open Questions
 None.
+
+## 2026-06-10 — Session S4
+**Mandate:** Apply V1 UX fixes (A1–A3) — add stable per-place id/city/neighborhood/map_link to every place in the Balkans dossier-data.json, regenerate index.html via build.mjs, and promote those four fields to required in the spec — done when: every place carries the four fields, index.html data block is rebuilt cleanly, and the spec marks the fields required with the map_link rule documented
+- Out of scope: V2 features (saved-state, filters, search, structured hours/open-now, time-of-day, app polish); renderer/HTML shell logic (Patrik owns index.html)
+- Files in scope: trips/balkans-2026-06/dossier-data.json, trips/balkans-2026-06/index.html (build-regenerated), references/dossier-template.md, references/dossier-workflow.md (inferred)
+- Stop if: (none stated)
+
+V1 UX fixes on the Balkans dossier per ux-workflow-additions.md (V1 scope): make every recommended place actionable — emit stable per-place id, city, neighborhood, and map_link in the data + spec layers.

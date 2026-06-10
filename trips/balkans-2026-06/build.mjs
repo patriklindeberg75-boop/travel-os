@@ -23,6 +23,47 @@ if (!Array.isArray(data.trip) || !Array.isArray(data.legs)) {
   process.exit(1);
 }
 
+// --- V1 derived fields (id + map_link) ---
+// id and map_link are DETERMINISTIC, so they are derived here rather than
+// hand-authored in the JSON (which keeps it DRY and removes a 114-place error
+// surface). The authored fields (`neighborhood`, `city`) carry the human knowledge;
+// these two are computed from them. The generated TRIP block the renderer reads
+// therefore ships all four required fields. See references/dossier-workflow.md
+// Step 12.5 (A2/A3) and trips/.../ux-workflow-additions.md.
+const kebab = (s) =>
+  s.toLowerCase()
+   .normalize('NFD').replace(/[̀-ͯ]/g, '')   // strip diacritics
+   .replace(/[^a-z0-9]+/g, '-')                          // non-alnum → hyphen
+   .replace(/^-+|-+$/g, '');                             // trim hyphens
+
+const mapLink = (p) => {
+  // Coordinates win when present; never fabricate them.
+  if (typeof p.lat === 'number' && typeof p.lng === 'number') {
+    return `https://www.google.com/maps/search/?api=1&query=${p.lat}%2C${p.lng}`;
+  }
+  const q = [p.nm, p.neighborhood, p.city].filter(Boolean).join(' ');
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+};
+
+const problems = [];
+for (const stop of data.trip) {
+  for (const key of ['do', 'eat', 'avoid']) {
+    for (const p of stop[key] || []) {
+      if (!p.nm)            problems.push(`${stop.id}/${key}: place missing "nm"`);
+      if (!p.neighborhood)  problems.push(`${stop.id}/${key}: "${p.nm}" missing required "neighborhood"`);
+      if (!p.city)          problems.push(`${stop.id}/${key}: "${p.nm}" missing required "city"`);
+      // Derive (overwrite any stale value so the build is the single authority).
+      p.id = `${stop.id}-${kebab(p.nm)}`;
+      p.map_link = mapLink(p);
+    }
+  }
+}
+if (problems.length) {
+  console.error('V1 field self-check failed — every do/eat/avoid place needs nm, neighborhood, city:');
+  for (const m of problems) console.error('  ' + m);
+  process.exit(1);
+}
+
 const html = fs.readFileSync(HTML, 'utf8');
 const a = html.indexOf(START);
 const b = html.indexOf(END);

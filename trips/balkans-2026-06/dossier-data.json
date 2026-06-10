@@ -15,6 +15,8 @@
       "do": [
         {
           "nm": "Ervin Szabó Library",
+          "neighborhood": "Palace Quarter (District VIII)",
+          "city": "Budapest",
           "t": 3,
           "tags": [
             "culture",
@@ -34,6 +36,8 @@
         },
         {
           "nm": "Római-part",
+          "neighborhood": "Római-part (Óbuda, District III)",
+          "city": "Budapest",
           "t": 3,
           "tags": [
             "shade",
@@ -49,6 +53,8 @@
         },
         {
           "nm": "Lumen Café",
+          "neighborhood": "Palace Quarter (District VIII)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "work",
@@ -65,6 +71,8 @@
         },
         {
           "nm": "Kelet Kávézó",
+          "neighborhood": "Buda (District XI)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "work",
@@ -75,6 +83,8 @@
         },
         {
           "nm": "Tilos a Tilos",
+          "neighborhood": "Józsefváros (District VIII)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "social"
@@ -84,6 +94,8 @@
         },
         {
           "nm": "Lake Feneketlen",
+          "neighborhood": "Lágymányos (District XI)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "shade"
@@ -93,6 +105,8 @@
         },
         {
           "nm": "Fellini Culture Pub",
+          "neighborhood": "Római-part (Óbuda, District III)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "social",
@@ -108,6 +122,8 @@
         },
         {
           "nm": "Óbuda Fő tér",
+          "neighborhood": "Óbuda (District III)",
+          "city": "Budapest",
           "t": 1,
           "tags": [
             "culture"
@@ -139,6 +155,8 @@
       "eat": [
         {
           "nm": "Csiga Café",
+          "neighborhood": "Palace Quarter (District VIII)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "work",
@@ -149,6 +167,8 @@
         },
         {
           "nm": "Rákóczi téri Vásárcsarnok",
+          "neighborhood": "Józsefváros (District VIII)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "market",
@@ -159,6 +179,8 @@
         },
         {
           "nm": "Lehel Piac lángos",
+          "neighborhood": "Lehel tér (District XIII)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "eat",
@@ -169,6 +191,8 @@
         },
         {
           "nm": "Pozsonyi Kisvendéglő",
+          "neighborhood": "Újlipótváros (District XIII)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "eat"
@@ -183,6 +207,8 @@
         },
         {
           "nm": "Római-part hekk stalls",
+          "neighborhood": "Római-part (Óbuda, District III)",
+          "city": "Budapest",
           "t": 2,
           "tags": [
             "eat"
@@ -199,31 +225,43 @@
       "avoid": [
         {
           "nm": "Central Market Hall upper stalls",
+          "neighborhood": "Belváros (District IX, Fővám tér)",
+          "city": "Budapest",
           "where": "District IX",
           "hook": "The lángos 'hidden topping' scam pushes a basic plate to €15–20. Use Rákóczi market instead."
         },
         {
           "nm": "Szimpla Kert",
+          "neighborhood": "Jewish Quarter (District VII)",
+          "city": "Budapest",
           "where": "District VII",
           "hook": "The original ruin bar, now stag-party tourism with inflated prices; detached from local life."
         },
         {
           "nm": "New York Café",
+          "neighborhood": "Erzsébetváros (District VII)",
+          "city": "Budapest",
           "where": "Erzsébetváros",
           "hook": "Landmark interior, but hours-long lines and €10+ mediocre coffee; no locals."
         },
         {
           "nm": "Currency exchange kiosks",
+          "neighborhood": "City centre (tourist districts)",
+          "city": "Budapest",
           "where": "Deák tér / Váci utca",
           "hook": "Predatory margins up to 20%, hidden under '0% commission' signs."
         },
         {
           "nm": "Retro Lángos",
+          "neighborhood": "City centre",
+          "city": "Budapest",
           "where": "central",
           "hook": "Commercialised assembly-line lángos at a premium — the Lehel market stand is the real thing."
         },
         {
           "nm": "Váci utca 'traditional' restaurants",
+          "neighborhood": "Belváros (District V, Váci utca)",
+          "city": "Budapest",
           "where": "pedestrian strip",
           "hook": "Street touts, hidden service charges, microwaved food along the whole strip."
         }
@@ -253,6 +291,8 @@
       "do": [
         {
           "nm": "Ada Ciganlija — Makiš side",
+          "neighborhood": "Ada Ciganlija (Čukarica)",
+          "city": "Belgrade",
           "t": 3,
           "tags": [
             "swim"
@@ -271,6 +311,8 @@
         },
         {
           "nm": "Ada Međica",
+          "neighborhood": "Ada Međica (Sava island, Čukarica)",
+          "city": "Belgrade",
           "t": 3,
           "tags": [
             "swim",
@@ -281,6 +323,8 @@
         },
         {
           "nm": "Pržionica",
+          "neighborhood": "Dorćol",
+          "city": "Belgrade",
           "t": 3,
           "tags": [
             "work"
@@ -299,6 +343,8 @@
         },
         {
           "nm": "Silosi",
+          "neighborhood": "Dorćol (old port / docks)",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "culture",
@@ -309,6 +355,8 @@
         },
         {
           "nm": "Gavez Club",
+          "neighborhood": "Savamala",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "shade",
@@ -320,6 +368,8 @@
         },
         {
           "nm": "Košutnjak forest trails",
+          "neighborhood": "Košutnjak (Čukarica)",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "hike",
@@ -330,6 +380,8 @@
         },
         {
           "nm": "Zaokret",
+          "neighborhood": "Savamala",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "social"
@@ -339,6 +391,8 @@
         },
         {
           "nm": "Splavs on Savski kej",
+          "neighborhood": "Savski kej (Sava quay, Novi Beograd)",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "social"
@@ -348,6 +402,8 @@
         },
         {
           "nm": "Kalemegdan / Belgrade Fortress, for sunset",
+          "neighborhood": "Stari Grad (Kalemegdan)",
+          "city": "Belgrade",
           "t": 2,
           "fr": 1,
           "tags": [
@@ -368,6 +424,8 @@
         },
         {
           "nm": "Church of Saint Sava (Hram Svetog Save)",
+          "neighborhood": "Vračar",
+          "city": "Belgrade",
           "t": 2,
           "fr": 1,
           "tags": [
@@ -388,6 +446,8 @@
         },
         {
           "nm": "Nikola Tesla Museum",
+          "neighborhood": "Vračar",
+          "city": "Belgrade",
           "t": 2,
           "fr": 1,
           "tags": [
@@ -407,6 +467,8 @@
         },
         {
           "nm": "Ružica Church & St. Petka Chapel",
+          "neighborhood": "Stari Grad (Kalemegdan)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -422,6 +484,8 @@
         },
         {
           "nm": "Museum of Yugoslavia (House of Flowers / Tito's tomb)",
+          "neighborhood": "Dedinje",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -438,6 +502,8 @@
         },
         {
           "nm": "Jevremovac Botanical Garden",
+          "neighborhood": "Stari Grad (Dorćol edge)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -453,6 +519,8 @@
         },
         {
           "nm": "Topčider Park (+ Residence of Prince Miloš)",
+          "neighborhood": "Topčider (Savski venac)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -469,6 +537,8 @@
         },
         {
           "nm": "Gardoš / Millennium Tower",
+          "neighborhood": "Zemun (Gardoš)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -485,6 +555,8 @@
         },
         {
           "nm": "Avala Tower (Avalski toranj)",
+          "neighborhood": "Mount Avala (southern outskirts)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -501,6 +573,8 @@
         },
         {
           "nm": "Aviation Museum (Muzej vazduhoplovstva)",
+          "neighborhood": "Surčin (by Nikola Tesla Airport)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -516,6 +590,8 @@
         },
         {
           "nm": "Eternal Derby — Partizan vs Crvena zvezda",
+          "neighborhood": "Dedinje / Autokomanda (stadiums)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -531,6 +607,8 @@
         },
         {
           "nm": "Skadarlija",
+          "neighborhood": "Skadarlija (Stari Grad)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -546,6 +624,8 @@
         },
         {
           "nm": "Knez Mihailova Street",
+          "neighborhood": "Stari Grad",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -561,6 +641,8 @@
         },
         {
           "nm": "Belgrade Waterfront (Beograd na vodi)",
+          "neighborhood": "Savamala / Belgrade Waterfront",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -599,6 +681,8 @@
       "eat": [
         {
           "nm": "Grill 'Loki'",
+          "neighborhood": "Zemun",
+          "city": "Belgrade",
           "t": 3,
           "tags": [
             "eat"
@@ -608,6 +692,8 @@
         },
         {
           "nm": "Efi cafe",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "work",
@@ -618,6 +704,8 @@
         },
         {
           "nm": "Bajloni Pijaca",
+          "neighborhood": "Dorćol (Bajloni market)",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "market"
@@ -627,6 +715,8 @@
         },
         {
           "nm": "Pekara Petrović",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "eat"
@@ -641,6 +731,8 @@
         },
         {
           "nm": "Stara Hercegovina",
+          "neighborhood": "Stari Grad (near Skadarlija)",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "eat"
@@ -650,6 +742,8 @@
         },
         {
           "nm": "Radecki",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "eat"
@@ -664,6 +758,8 @@
         },
         {
           "nm": "Splav Koliba",
+          "neighborhood": "Sava riverbank (splav)",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "eat"
@@ -678,6 +774,8 @@
         },
         {
           "nm": "Čedić",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "t": 2,
           "tags": [
             "eat"
@@ -692,6 +790,8 @@
         },
         {
           "nm": "Iva New Balkan Cuisine",
+          "neighborhood": "Dorćol",
+          "city": "Belgrade",
           "t": 2,
           "fr": 1,
           "tags": [
@@ -707,6 +807,8 @@
         },
         {
           "nm": "Zeleni Venac Market",
+          "neighborhood": "Zeleni venac (central)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -723,6 +825,8 @@
         },
         {
           "nm": "Gušti Mora",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -738,6 +842,8 @@
         },
         {
           "nm": "Meze Restoran Dvorište",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -753,6 +859,8 @@
         },
         {
           "nm": "Mama Shelter rooftop",
+          "neighborhood": "Stari Grad",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -769,6 +877,8 @@
         },
         {
           "nm": "20/44",
+          "neighborhood": "Sava riverbank (splav, Brankov most)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -784,6 +894,8 @@
         },
         {
           "nm": "Tri šešira",
+          "neighborhood": "Skadarlija (Stari Grad)",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -800,6 +912,8 @@
         },
         {
           "nm": "Šaran",
+          "neighborhood": "Zemun",
+          "city": "Belgrade",
           "t": 1,
           "fr": 1,
           "tags": [
@@ -818,31 +932,43 @@
       "avoid": [
         {
           "nm": "Tri šešira",
+          "neighborhood": "Skadarlija (Stari Grad)",
+          "city": "Belgrade",
           "where": "Skadarlija",
           "hook": "Overpriced kafana, mostly tourists paying a premium for a forced folklore show. (Also a friend rec — kept in the Eat list for the music + terrace; just don't expect value.)"
         },
         {
           "nm": "Znak Pitanja (the '?' house)",
+          "neighborhood": "Stari Grad (Kralja Petra)",
+          "city": "Belgrade",
           "where": "Kosančićev Venac",
           "hook": "See the historic building over a coffee, but locals say never eat there — tiny overpriced portions."
         },
         {
           "nm": "Restoran April",
+          "neighborhood": "central Belgrade",
+          "city": "Belgrade",
           "where": "Obilićev Venac",
           "hook": "About €27 for a basic mixed-meat plate that costs half that in normal neighbourhoods."
         },
         {
           "nm": "Beton Hala strip",
+          "neighborhood": "Beton Hala (Savamala riverfront)",
+          "city": "Belgrade",
           "where": "riverside",
           "hook": "Gentrified extraction zone for foreigners (Ambar, Toro Latin) — polished, overpriced, no local soul."
         },
         {
           "nm": "Restoran Šaran",
+          "neighborhood": "Zemun",
+          "city": "Belgrade",
           "where": "Zemun",
           "hook": "Good fish but overpriced upscale-tourist — use Radecki for the real fishermen's vibe. (Also a friend rec — kept in the Eat list; your call between the two.)"
         },
         {
           "nm": "Unmarked airport taxis",
+          "neighborhood": "Nikola Tesla Airport (Surčin)",
+          "city": "Belgrade",
           "where": "airport",
           "hook": "Unlicensed drivers charging 3–5×; use the fixed-price voucher desk or a ride app."
         }
@@ -872,6 +998,8 @@
       "do": [
         {
           "nm": "Prevallë — Livadica glacial-lake hike",
+          "neighborhood": "Prevallë (Šar Mountains)",
+          "city": "Prizren",
           "t": 3,
           "tags": [
             "hike",
@@ -887,6 +1015,8 @@
         },
         {
           "nm": "Sunrise fortress climb (Kalaja)",
+          "neighborhood": "Old Town (Prizren Fortress)",
+          "city": "Prizren",
           "t": 3,
           "tags": [
             "hike",
@@ -902,6 +1032,8 @@
         },
         {
           "nm": "Early-morning çajtore",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "social",
@@ -917,6 +1049,8 @@
         },
         {
           "nm": "Kino Lumbardhi",
+          "neighborhood": "Old Town (by the Lumbardhi river)",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "work",
@@ -933,6 +1067,8 @@
         },
         {
           "nm": "Gazi Mehmet Pasha Hammam",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "culture",
@@ -943,6 +1079,8 @@
         },
         {
           "nm": "Lumbardhi gorge walk",
+          "neighborhood": "Lumbardhi gorge (above Prizren)",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "shade",
@@ -953,6 +1091,8 @@
         },
         {
           "nm": "BarAca",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "social"
@@ -985,6 +1125,8 @@
       "eat": [
         {
           "nm": "Qebaptore Bekimi",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 3,
           "tags": [
             "eat"
@@ -994,6 +1136,8 @@
         },
         {
           "nm": "Fellas Coffee & Kitchen",
+          "neighborhood": "Old Town / centre",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "work",
@@ -1009,6 +1153,8 @@
         },
         {
           "nm": "Traditional pekara, Ura",
+          "neighborhood": "Old Town (by the Ura bridge)",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "eat"
@@ -1018,6 +1164,8 @@
         },
         {
           "nm": "Tetova Sweet Shop",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "eat"
@@ -1027,6 +1175,8 @@
         },
         {
           "nm": "Shepherd stalls, Prevallë",
+          "neighborhood": "Prevallë (Šar Mountains)",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "eat",
@@ -1042,6 +1192,8 @@
         },
         {
           "nm": "Restaurant Marashi",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "eat",
@@ -1057,6 +1209,8 @@
         },
         {
           "nm": "Hani i Vjetër",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "eat"
@@ -1071,6 +1225,8 @@
         },
         {
           "nm": "Restaurant Koha, Prevallë",
+          "neighborhood": "Prevallë (Šar Mountains)",
+          "city": "Prizren",
           "t": 2,
           "tags": [
             "eat"
@@ -1087,31 +1243,43 @@
       "avoid": [
         {
           "nm": "Besimi Beska",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "where": "Shadërvan Square",
           "hook": "Locals say it 'got greedy' and now targets one-time tourists."
         },
         {
           "nm": "Hyska",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "where": "Shadërvan Square",
           "hook": "A square tourist qebaptore trading on footfall — use Qebaptore Bekimi instead."
         },
         {
           "nm": "Te Syla",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "where": "Shadërvan / riverside",
           "hook": "Guidebook-famous but locals say it coasts on its location and past fame."
         },
         {
           "nm": "Restaurant Ambient",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "where": "Nënkalaja hillside",
           "hook": "A big premium for the view, and small tourist portions."
         },
         {
           "nm": "Prince Coffee House",
+          "neighborhood": "Old Town / centre",
+          "city": "Prizren",
           "where": "Shadërvan Square",
           "hook": "An overpriced commercial chain on prime real estate — the opposite of the cheap local teahouses."
         },
         {
           "nm": "Sarajeva Steakhouse",
+          "neighborhood": "Old Town",
+          "city": "Prizren",
           "where": "Galeria Mall",
           "hook": "A mall franchise — use the independent grills instead."
         }
@@ -1141,6 +1309,8 @@
       "do": [
         {
           "nm": "Elshani — Gorno Konjsko hike",
+          "neighborhood": "Elshani / Gorno Konjsko (above the lake)",
+          "city": "Ohrid",
           "t": 3,
           "tags": [
             "hike"
@@ -1150,6 +1320,8 @@
         },
         {
           "nm": "Milenko's viewpoint, above Kaneo",
+          "neighborhood": "Kaneo",
+          "city": "Ohrid",
           "t": 3,
           "tags": [
             "view"
@@ -1159,6 +1331,8 @@
         },
         {
           "nm": "St. Naum military beach & springs",
+          "neighborhood": "St. Naum (south of Ohrid)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "swim"
@@ -1173,6 +1347,8 @@
         },
         {
           "nm": "Trpejca — Zaumska coastal hike",
+          "neighborhood": "Trpejca",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "hike",
@@ -1183,6 +1359,8 @@
         },
         {
           "nm": "Beach Labino",
+          "neighborhood": "Lagadin / Labino (south lakeside)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "swim"
@@ -1192,6 +1370,8 @@
         },
         {
           "nm": "Elshani village walk",
+          "neighborhood": "Elshani",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "social",
@@ -1202,6 +1382,8 @@
         },
         {
           "nm": "Peribleptos church & its local guide",
+          "neighborhood": "Old Town (Varosh)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "culture"
@@ -1211,6 +1393,8 @@
         },
         {
           "nm": "Mesokastro backstreets & Turkish bazaar",
+          "neighborhood": "Old Town (Mesokastro / Old Bazaar)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "culture",
@@ -1244,6 +1428,8 @@
       "eat": [
         {
           "nm": "Gostilnica Vkusno",
+          "neighborhood": "Old Town / centre",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat"
@@ -1253,6 +1439,8 @@
         },
         {
           "nm": "Burekdžilnica Martina",
+          "neighborhood": "centre",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat"
@@ -1262,6 +1450,8 @@
         },
         {
           "nm": "Turkish Bazaar gjomleze vendors",
+          "neighborhood": "Old Bazaar (Čaršija)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat",
@@ -1277,6 +1467,8 @@
         },
         {
           "nm": "Zelen Pazar (green market)",
+          "neighborhood": "centre (green market)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "market"
@@ -1286,6 +1478,8 @@
         },
         {
           "nm": "Restaurant Antico",
+          "neighborhood": "Old Town (Varosh)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat"
@@ -1295,6 +1489,8 @@
         },
         {
           "nm": "Restaurant Panorama",
+          "neighborhood": "Old Town (upper, by the fortress)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat"
@@ -1304,6 +1500,8 @@
         },
         {
           "nm": "Trpejca village tavernas",
+          "neighborhood": "Trpejca",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat"
@@ -1313,6 +1511,8 @@
         },
         {
           "nm": "Domakjinska Kukja, Velestovo",
+          "neighborhood": "Velestovo (village above Ohrid)",
+          "city": "Ohrid",
           "t": 2,
           "tags": [
             "eat",
@@ -1331,26 +1531,36 @@
       "avoid": [
         {
           "nm": "The Harbour & Dalga",
+          "neighborhood": "Old Town harbour (centre waterfront)",
+          "city": "Ohrid",
           "where": "lakefront",
           "hook": "Visually stunning but Western-European prices for what locals call disappointing food."
         },
         {
           "nm": "Boardwalk & Kaneo waterfront restaurants",
+          "neighborhood": "Kaneo",
+          "city": "Ohrid",
           "where": "lakefront",
           "hook": "You pay a premium for the view, not the cooking."
         },
         {
           "nm": "Lake boat-tour touts",
+          "neighborhood": "Old Town harbour",
+          "city": "Ohrid",
           "where": "harbour",
           "hook": "Overpriced cruises — haggle hard or take the cheap public boat instead."
         },
         {
           "nm": "St. Naum monastery-complex restaurants",
+          "neighborhood": "St. Naum",
+          "city": "Ohrid",
           "where": "St. Naum",
           "hook": "Tourist-trap dining right at the complex — walk to the military beach instead."
         },
         {
           "nm": "'Ohrid pearl' sellers",
+          "neighborhood": "Old Town / centre",
+          "city": "Ohrid",
           "where": "old town",
           "hook": "Genuine pearls come from only a couple of local families, so most cheap 'pearls' on offer are fakes."
         }
@@ -1380,6 +1590,8 @@
       "do": [
         {
           "nm": "Ashurbanipal",
+          "neighborhood": "City centre",
+          "city": "Sofia",
           "t": 3,
           "tags": [
             "eat",
@@ -1399,6 +1611,8 @@
         },
         {
           "nm": "Zhenski Pazar (Women's Market)",
+          "neighborhood": "Zhenski Pazar (centre, near Serdika)",
+          "city": "Sofia",
           "t": 3,
           "tags": [
             "market",
@@ -1414,6 +1628,8 @@
         },
         {
           "nm": "Bar Lorca",
+          "neighborhood": "City centre",
+          "city": "Sofia",
           "t": 2,
           "tags": [
             "social"
@@ -1428,6 +1644,8 @@
         },
         {
           "nm": "Crystal Garden",
+          "neighborhood": "Crystal Garden (city-centre park)",
+          "city": "Sofia",
           "t": 2,
           "tags": [
             "social"
@@ -1442,6 +1660,8 @@
         },
         {
           "nm": "Vkusnoto Kebapche",
+          "neighborhood": "City centre",
+          "city": "Sofia",
           "t": 2,
           "tags": [
             "eat"
@@ -1451,6 +1671,8 @@
         },
         {
           "nm": "HleBar",
+          "neighborhood": "City centre",
+          "city": "Sofia",
           "t": 2,
           "tags": [
             "eat"
@@ -1474,16 +1696,22 @@
       "avoid": [
         {
           "nm": "Fake taxis at transit hubs",
+          "neighborhood": "Central Station / airport",
+          "city": "Sofia",
           "where": "stations / airport",
           "hook": "Scammers run 'OK Taxi' to mimic the real OK Supertrans and jump the fare 3–5×. Never hail off the street — use the Yellow or TaxiMe apps."
         },
         {
           "nm": "Happy Bar & Grill",
+          "neighborhood": "Vitosha Boulevard",
+          "city": "Sofia",
           "where": "all branches",
           "hook": "An overpriced tourist chain locals pan — skip it."
         },
         {
           "nm": "Vitosha Boulevard tourist restaurants",
+          "neighborhood": "Vitosha Boulevard",
+          "city": "Sofia",
           "where": "central strip",
           "hook": "The strip your base deliberately avoids — overpriced for what it is."
         }

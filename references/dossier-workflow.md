@@ -389,10 +389,17 @@ Read `references/dossier-template.md` for the output structure. Produce the doss
 After the markdown dossier is composed, render the SAME synthesized data into `trips/{slug}/dossier-data.json` per `dossier-template.md` § Structured data companion. **This JSON matches the HTML renderer's data model exactly** — a `trip` array of stops (each with `do` / `eat` / `avoid` / `hoods` / `stayPick` / `mobility` / `timing`) plus a `legs` array — so the file loads directly into Patrik's HTML companion. Key load-bearing rules:
 
 - Use the controlled vocabulary only: integer tier `t` (🔥→3, 👍→2, 🆗→1), the fixed tag list (`work, eat, sleep, swim, shade, hike, social, market, culture, view`), and the fixed `facts` icon ids. Never emit a tag or icon id outside these sets.
-- Compose each place's `facts` chip array from its gathered fields (cost → `i-wallet`, best time/hours → `i-clock`, find-it → `i-pin`, etc.); carry the named fields (`hours`, `cost`, `best_time`, `find_it`, `duration`, `lat`/`lng`/`map_link`) alongside for future rendering.
+- Compose each place's `facts` chip array from its gathered fields (cost → `i-wallet`, best time/hours → `i-clock`, find-it → `i-pin`, etc.); carry the named fields (`hours`, `cost`, `best_time`, `find_it`, `duration`) and optional `lat`/`lng` alongside for future rendering.
+- **V1 required place fields (A1–A3).** Every `do` / `eat` / `avoid` place MUST end up with four fields so it is locatable and tappable in the renderer:
+  - **Author `neighborhood` + `city` in the JSON** (human knowledge — which district, which city) on every place, non-empty. The subagent's `Location` field feeds these.
+  - **Do NOT hand-author `id` or `map_link`** — they are derived deterministically by `build.mjs` (see below), which keeps the JSON DRY and removes a per-place error surface. The build overwrites any stale values.
+- **Derive via `node build.mjs`, then verify.** After writing `dossier-data.json`, run `build.mjs` (the data pipeline that injects the generated `const TRIP=[…]` block into `index.html`). It derives, per place:
+  - `id` = `{stop-id}-{place-kebab}` (kebab: lowercase, strip diacritics, non-alnum → single hyphen, trim).
+  - `map_link` = `https://www.google.com/maps/search/?api=1&query=` + URL-encoded `"{nm} {neighborhood} {city}"` — or `query={lat}%2C{lng}` when coordinates are known. Never fabricate coordinates.
+  - **Self-check:** the build aborts (non-zero exit, no write) if any place is missing `nm`, `neighborhood`, or `city`. A clean build is the gate that every place carries all four required fields.
 - Map the per-stop ⭐ anchor to the stop's `start`; map inter-stop mobility legs (5b) into `legs` (flag the punishing leg `hard: 1`, booked flights `ic: "i-route"`); map logistics (5d) to per-stop `connectivity`/`offline_map_area`/`borders` and `meta.admin`; map timing (T1) to `timing` + `sunrise`/`sunset`.
 - Omit the `avoid` array for stops ≤ 2 nights. Never put a value in the JSON the markdown dossier does not support; never fabricate coordinates or image URLs (`image_query` only).
-- The workflow produces only this data file — it does NOT generate or modify the HTML shell (Patrik owns that). If a prior `dossier-data.json` exists, version it alongside the markdown (`dossier-data-v{n}.json`).
+- The workflow produces the data file and runs `build.mjs` to regenerate the inline data block — it does NOT otherwise generate or modify the HTML shell (CSS, renderer JS, markup — Patrik owns that). If a prior `dossier-data.json` exists, version it alongside the markdown (`dossier-data-v{n}.json`).
 
 ### Step 13 — Write the dossier
 

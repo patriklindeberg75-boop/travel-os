@@ -113,8 +113,23 @@ Patrik owns and maintains the HTML shell; the workflow produces only this data
 file. The JSON is a render of the SAME synthesized data — never a fabricated
 value, and never a place the markdown dossier does not also contain. It MAY
 carry additive structured fields the current HTML does not yet render
-(coordinates, hours, connectivity, sunrise/sunset, images) — these ride along
+(`lat`/`lng`, hours, connectivity, sunrise/sunset, images) — these ride along
 for future rendering and cost nothing.
+
+**V1 required place fields (not optional).** Every `do` / `eat` / `avoid` place
+object MUST carry these four, so the place is locatable and tappable in the
+renderer (the in-trip "where is it / take me there" loop):
+
+- **`neighborhood`** and **`city`** — *authored* by the workflow (human knowledge:
+  which district, which city). Required, non-empty, on every place.
+- **`id`** and **`map_link`** — *derived deterministically by `build.mjs`* from the
+  authored fields, NOT hand-authored in the JSON. `id` = `{stop-kebab}-{place-kebab}`
+  (the kebab rule below); `map_link` = the Google-Maps search rule below. The build
+  overwrites any stale value and self-checks that every place has `neighborhood` +
+  `city` before deriving — it aborts the build if one is missing. This keeps the
+  JSON DRY (no 114 hand-typed URLs) while guaranteeing the generated data block the
+  renderer reads ships all four. `lat`/`lng` stay genuinely optional (often unknown);
+  when present they take precedence in `map_link`.
 
 ### Controlled vocabulary (canonical — do not improvise)
 
@@ -134,6 +149,11 @@ set. (Tag icons are resolved by the renderer from the tag name; `facts` icons
 are explicit ids you supply.)
 
 ### Shape
+
+The shape below is the **renderer-visible** object (post-`build.mjs`). In the
+authored `dossier-data.json` the workflow writes `neighborhood` + `city` (and any
+known `lat`/`lng`); `id` and `map_link` shown here are **build-derived** — do not
+hand-author them. See § Field mapping for the derivation rules.
 
 ```json
 {
@@ -168,7 +188,8 @@ are explicit ids you supply.)
           "facts": [["i-clock", "best midday"], ["i-wallet", "~€2 coffee"]],
           "hours": "", "cost": "", "duration": "", "best_time": "", "find_it": "",
           "neighborhood": "Józsefváros", "city": "Budapest",
-          "lat": null, "lng": null, "map_link": "",
+          "lat": null, "lng": null,
+          "map_link": "https://www.google.com/maps/search/?api=1&query=Lumen%20Caf%C3%A9%20J%C3%B3zsefv%C3%A1ros%20Budapest",
           "image_query": "Lumen Café Budapest courtyard", "image_url": "",
           "hike": null
         }
@@ -180,7 +201,7 @@ are explicit ids you supply.)
       ],
       "eat": [ "{same place-object shape as `do`}" ],
       "avoid": [
-        { "nm": "Szimpla Kert", "where": "District VII", "hook": "{why it's a trap}" }
+        { "nm": "Szimpla Kert", "neighborhood": "Jewish Quarter (District VII)", "city": "Budapest", "where": "District VII", "hook": "{why it's a trap}" }
       ],
       "mobility": { "verdict": "", "cost": "", "note": "" },
       "timing": { "verdict": "", "note": "" }
@@ -203,16 +224,29 @@ are explicit ids you supply.)
 - **Per-place fields → `facts` + additive keys.** `best_time`, `cost`,
   `hours`, `find_it`, `duration` are carried as named keys AND composed into the
   `facts` chip array (the only thing this HTML renders today) using the fixed
-  icon ids. The subagent's `Location` field feeds `lat`/`lng`/`map_link` (a maps
-  search string in `map_link` when only free text is known); it is not a card line.
+  icon ids. The subagent's `Location` field feeds `neighborhood`/`city` (required —
+  see V1 required fields above) and optional `lat`/`lng`; it is not a card line.
+- **`map_link` (derived, required).** Built by `build.mjs`, never hand-authored.
+  Construction rule:
+  - When `lat`/`lng` are known →
+    `https://www.google.com/maps/search/?api=1&query={lat}%2C{lng}`.
+  - Otherwise (the common case — only free text) →
+    `https://www.google.com/maps/search/?api=1&query=` + URL-encoded
+    `"{nm} {neighborhood} {city}"`.
+  - Never fabricate coordinates to populate it — fall back to the text query.
 - **Traps → `avoid`** (omit the `avoid` array entirely for stops ≤ 2 nights).
 - **Mobility (5b) → `mobility`** per stop; **inter-stop legs (5b) → `legs`**
   (one object per leg; `hard: 1` flags the punishing leg; booked flights use
   `ic: "i-route"`).
 - **Logistics (5d) → per-stop `connectivity` / `offline_map_area` / `borders`
   and `meta.admin`.** **Timing (T1) → `timing` + `sunrise`/`sunset`.**
-- **`id`** is `{stop-kebab}` for stops and `{stop-kebab}-{place-kebab}` for
-  places — stable across re-runs so localStorage toggles persist.
+- **`id` (derived, required).** `{stop-kebab}` for stops and
+  `{stop-kebab}-{place-kebab}` for places — stable across re-runs so localStorage
+  "tried it / want it" toggles (job E) persist. The **kebab rule**: lowercase,
+  strip diacritics (NFD-normalize then drop combining marks), replace each run of
+  non-alphanumerics with a single hyphen, trim leading/trailing hyphens. Derived by
+  `build.mjs` per place, never hand-authored; the build aborts if any place is
+  missing the authored `neighborhood`/`city` it needs.
 
 **Image slot (pending Patrik's image-source approach).** Each place carries
 `image_query` (a search string) and an empty `image_url`. The orchestrator does
