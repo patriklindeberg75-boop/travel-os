@@ -61,6 +61,8 @@ For EACH item, also give me these fields on labelled lines (write
 - Hours: opening hours and days closed
 - Find it: nearest landmark or street; for hidden spots, how to actually find it
 - Location: street address or rough coordinates if you have them, for a map pin
+- Tags: pick 1–3 from this EXACT list (no others): work, eat, sleep, swim,
+  shade, hike, social, market, culture, view
 
 Do not fabricate hours, prices, or coordinates. "unknown" is an acceptable and
 useful answer; a made-up number is not.

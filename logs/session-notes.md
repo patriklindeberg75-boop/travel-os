@@ -170,3 +170,33 @@ Implemented red-team fixes B3, S2, and B5 in a single commit. Also updated CLAUD
 
 ### Open Questions
 None.
+
+## 2026-06-10 — Belgrade friend recs + "menu, not a schedule" principle baked into dossier system
+
+### Summary
+Folded a friend's Belgrade recommendations into the balkans-2026-06 dossier as a long list of vetted options (not a fixed plan), tagged "friend rec", with the two tourist-trap conflicts kept and cross-referenced. Then baked the operator's flexibility principle — "the dossier is a menu, not a schedule; nothing is locked" — into the dossier system itself (template + workflow) so every future dossier is flexible-by-default. Saved two standing principles to memory.
+
+### Files Created
+- `logs/scratchpads/2026-06-10-15-30-scratchpad.md` — continuity scratchpad
+- Memory: `dossier-menu-not-schedule.md`, `friend-rec-screen-trust-lean.md`, `MEMORY.md` (in ~/.claude project memory dir)
+
+### Files Modified
+- `trips/balkans-2026-06/destination-dossier.md` — Belgrade §1 (areas), §3 (sights/experiences), §4 (food + dishes) friend recs added & tagged; Tri šešira + Šaran trap cross-refs both ways; top-level "How to use / menu not schedule" framing. [committed 42cd019]
+- `references/dossier-template.md` — mandatory verbatim "How to use this dossier" header block + new "Menu, not a schedule" governing-principle section. [committed 02c6fc3; further refined post-commit by operator/linter — left intact, uncommitted]
+- `references/dossier-workflow.md` — Step 12 emits the block and forbids day-by-day/hour-by-hour itineraries; schedule-shaped input mined for places, not reproduced. [committed 02c6fc3]
+
+### Decisions Made
+- Friend recs handled "screen but trust-lean": add all, tag distinctly, never drop; filter only attaches context/warnings; conflicts flagged. (operator-chosen)
+- Itinerary handling: "shortlists only, no fixed day-plan" — operator wants a menu, flexible night counts, decide on the spot. (operator-directed; promoted to a system-wide principle)
+- 3 ambiguous friend spellings interpreted and marked inline pending confirm: Aviation Museum, Karađorđeva šnicla, šopska salad.
+
+### Risky actions
+None.
+
+### Next Steps
+- Confirm/correct the 3 interpreted Belgrade spellings (Aviation Museum, Karađorđeva šnicla, šopska salad).
+- ⚠ Fix the travel-os git remote — URL `https://github.com/patriklindeberg75-boop/traveling/` returns "Repository not found"; pushes fail and commits are accumulating locally.
+- Operator/linter made further edits to `references/dossier-template.md` (structured-data companion section) that remain uncommitted — commit when ready.
+
+### Open Questions
+None.

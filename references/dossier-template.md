@@ -104,66 +104,120 @@ value. Never invent hours, prices, or coordinates.
 
 In addition to the markdown dossier, the orchestrator writes a machine-readable
 twin at `trips/{slug}/dossier-data.json`. The markdown is for iPhone Notes; the
-JSON feeds Patrik's standalone HTML renderer (a local file that may use browser
-localStorage for "tried it / want it" toggles, keyed on each record's `id`).
+JSON is loaded directly by Patrik's standalone HTML renderer (a local file that
+may use browser localStorage for "tried it / want it" toggles, keyed on `id`).
 
-The JSON is a render of the SAME synthesized data — never a fabricated value,
-and never a place or claim the markdown dossier does not also contain. The JSON
-MAY carry structured fields that have no direct markdown-card line (coordinates,
-map link, connectivity, sunrise/sunset, image slots): these come from the
-gathered data, not invention, and exist so the renderer can build map pins and
-fact lines. Shape:
+**This schema matches the HTML renderer's data model exactly** so the file drops
+straight in (the renderer reads a `trip` array of stops + a `legs` array).
+Patrik owns and maintains the HTML shell; the workflow produces only this data
+file. The JSON is a render of the SAME synthesized data — never a fabricated
+value, and never a place the markdown dossier does not also contain. It MAY
+carry additive structured fields the current HTML does not yet render
+(coordinates, hours, connectivity, sunrise/sunset, images) — these ride along
+for future rendering and cost nothing.
+
+### Controlled vocabulary (canonical — do not improvise)
+
+**Tier `t` (sorts the cards, maps to the markdown icon):**
+`3` = 🔥 HIGH · `2` = 👍 REC · `1` = 🆗 OK.
+
+**Tags (fixed set — every place tagged from this list only, so each renders an
+icon):** `work`, `eat`, `sleep`, `swim`, `shade`, `hike`, `social`, `market`,
+`culture`, `view`. (`swim` and `shade` are the heat-relief tags.)
+
+**`facts` chip icons (fixed ids the renderer ships):** `i-wallet` (cost),
+`i-clock` (best time / hours), `i-pin` (find-it / neighborhood), `i-bus`
+(transport access), `i-mountain` (on a hike), `i-eat` (also serves food),
+`i-tree` (shade), `i-coffee` (work cafe). Compose each place's `facts` from its
+gathered fields using these ids; never emit a fact with an icon id outside this
+set. (Tag icons are resolved by the renderer from the tag name; `facts` icons
+are explicit ids you supply.)
+
+### Shape
 
 ```json
 {
-  "trip": {
+  "meta": {
     "slug": "...", "destination": "...", "dates": "...",
     "trip_type": "single-base|multi-stop",
     "admin": { "visa_notes": "", "schengen_note": "", "insurance_reminder": "" }
   },
-  "stops": [
+  "trip": [
     {
-      "stop": "Budapest",
+      "id": "budapest",
+      "name": "Budapest",
+      "when": "2 nights · Jun 16–18",
       "nights": 2,
-      "anchor": { "place": "...", "why": "..." },
+      "heat": false,
+      "heatLabel": "~27°C · comfortable",
+      "climate": "~27°C, comfortable",
+      "budget": "~€50 / day",
+      "start": "{the ⭐ anchor — one line: do this one thing here}",
+      "inLeg": "Arrive ~23:00, Jun 16",
+      "outLeg": "Bus to Belgrade, Jun 18 (7–8h)",
       "connectivity": { "eu_roaming": true, "esim_note": "", "esim_cost_eur": null },
-      "offline_map_area": "...",
-      "borders": "",
-      "sunrise": "", "sunset": "",
-      "places": [
+      "offline_map_area": "", "borders": "", "sunrise": "", "sunset": "",
+      "doLabel": "Do & cool off",
+      "do": [
         {
           "id": "budapest-lumen-cafe",
-          "section": "activities|food",
-          "tier": "HIGH|REC|OK",
-          "name": "...", "neighborhood": "...", "city": "...",
-          "hook": "...",
-          "best_time": "...", "cost": "...", "duration": "...",
-          "hours": "...", "find_it": "...",
+          "nm": "Lumen Café",
+          "t": 2,
+          "tags": ["work", "social", "eat"],
+          "hook": "{one-line why-this / why-you hook}",
+          "facts": [["i-clock", "best midday"], ["i-wallet", "~€2 coffee"]],
+          "hours": "", "cost": "", "duration": "", "best_time": "", "find_it": "",
+          "neighborhood": "Józsefváros", "city": "Budapest",
           "lat": null, "lng": null, "map_link": "",
           "image_query": "Lumen Café Budapest courtyard", "image_url": "",
           "hike": null
         }
-      ]
+      ],
+      "doNote": "",
+      "stayPick": "{accommodation recommendation, one paragraph}",
+      "hoods": [
+        { "nm": "Józsefváros (VIII)", "base": 1, "d": "{one-line vibe + work-fit}" }
+      ],
+      "eat": [ "{same place-object shape as `do`}" ],
+      "avoid": [
+        { "nm": "Szimpla Kert", "where": "District VII", "hook": "{why it's a trap}" }
+      ],
+      "mobility": { "verdict": "", "cost": "", "note": "" },
+      "timing": { "verdict": "", "note": "" }
     }
+  ],
+  "legs": [
+    { "ic": "i-bus", "ttl": "Budapest → Belgrade", "spec": "direct bus · ~7–8h · ~€15–25", "ds": "Several daily; book ahead in summer.", "warn": "", "hard": 0 }
   ]
 }
 ```
 
-`id` is `{stop-kebab}-{place-kebab}`, stable across re-runs so localStorage
-toggles persist. For single-base trips, `stops` holds one entry whose `stop` is
-the destination.
+### Field mapping (where each gathered thing lands)
 
-The subagent's per-place `Location` field (street address / rough coordinates
-from Prompts 3 and 4) feeds `lat` / `lng` / `map_link` here — it is NOT rendered
-as a markdown card line; the card's human-facing locator is `Find it`. If only a
-free-text location is known, populate `map_link` with a maps search string and
-leave `lat`/`lng` null.
+- **Anchor → `start`.** The per-stop ⭐ anchor (Step 11) is the stop's `start`
+  string. If a stop has no surviving do/eat places, `start` is `""` (per the
+  anchor carve-out).
+- **Tiers.** Section 3/4 cards become `do` / `eat` entries; the markdown tier
+  icon maps to integer `t` (🔥→3, 👍→2, 🆗→1). Sort each array by `t` desc, top
+  pick first.
+- **Per-place fields → `facts` + additive keys.** `best_time`, `cost`,
+  `hours`, `find_it`, `duration` are carried as named keys AND composed into the
+  `facts` chip array (the only thing this HTML renders today) using the fixed
+  icon ids. The subagent's `Location` field feeds `lat`/`lng`/`map_link` (a maps
+  search string in `map_link` when only free text is known); it is not a card line.
+- **Traps → `avoid`** (omit the `avoid` array entirely for stops ≤ 2 nights).
+- **Mobility (5b) → `mobility`** per stop; **inter-stop legs (5b) → `legs`**
+  (one object per leg; `hard: 1` flags the punishing leg; booked flights use
+  `ic: "i-route"`).
+- **Logistics (5d) → per-stop `connectivity` / `offline_map_area` / `borders`
+  and `meta.admin`.** **Timing (T1) → `timing` + `sunrise`/`sunset`.**
+- **`id`** is `{stop-kebab}` for stops and `{stop-kebab}-{place-kebab}` for
+  places — stable across re-runs so localStorage toggles persist.
 
 **Image slot (pending Patrik's image-source approach).** Each place carries
-`image_query` (a search string the renderer can resolve to a thumbnail) and an
-empty `image_url` slot to fill later. The orchestrator does NOT fabricate or
-assert specific image URLs — it writes only the query string. This is a
-placeholder contract; swap it when the real image source is decided.
+`image_query` (a search string) and an empty `image_url`. The orchestrator does
+NOT fabricate image URLs — only the query string. The current HTML ignores both;
+this is a placeholder contract, swap it when the real image source is decided.
 
 ## Required sections (in order)
 

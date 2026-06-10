@@ -47,3 +47,17 @@
 **Decision:** CLAUDE.md Hard Constraints weather ceiling updated to 30°C in same session (previously deferred from 2026-05-11 funnel session).
 **Context:** The prior session noted the CLAUDE.md update was deferred. This session's B5 fix created a natural opportunity to align it.
 **Rationale:** Keeps CLAUDE.md consistent with actual workflow behavior. No new decision — executing the prior deferral.
+
+---
+
+## 2026-06-10 — Dossier is a "menu, not a schedule" (promoted to system-wide principle)
+
+**Decision:** The dossier is a flexible long-list of vetted options the operator picks from on the spot — never a sequenced day-by-day itinerary. Baked into `references/dossier-template.md` (mandatory header block + governing-principle section) and `references/dossier-workflow.md` (Step 12 forbids fixed itineraries). External schedule-shaped input is mined for places, not reproduced.
+**Context:** Triggered by a friend's 3-day Belgrade itinerary that exceeded the planned 2-night stop. Operator stated twice he needs a flexible system, not a rigid one, and decides on the spot.
+**Rationale:** Matches Patrik's improvisational travel style; nothing on a trip is locked (night counts/routes are starting points). The system's job is to keep good non-touristy options within reach, not dictate timing. The only time-of-day guidance retained is the per-place "Best time" card field (heat-smart windows).
+**Alternatives considered:** Add a condensed "fits-your-2-nights" suggested day-flow (rejected — reintroduces the schedule the operator explicitly rejects); keep it a one-off note on the Belgrade dossier only (rejected — operator wanted it systemic so future dossiers inherit it).
+
+**Decision:** Third-party (friend) recommendations folded in with "screen but trust-lean."
+**Context:** Friend sent Belgrade recs; some overlap the dossier's tourist-trap list (Tri šešira, Šaran).
+**Rationale:** Friend's vouch is trusted — add all, tag distinctly, never drop; run the filter only to attach context/warnings; flag conflicts rather than silently contradicting. Operator chose this over full-screening or no-screening.
+**Alternatives considered:** Full screening (could drop a friend rec — too aggressive); add as-is no filter (loses the anti-tourist guarantee).

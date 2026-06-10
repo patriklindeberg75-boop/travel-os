@@ -386,7 +386,13 @@ Read `references/dossier-template.md` for the output structure. Produce the doss
 
 ### Step 12.5 — Write the structured data companion
 
-After the markdown dossier is composed, render the SAME synthesized data into `trips/{slug}/dossier-data.json` per `dossier-template.md` § Structured data companion. One record per place (stable `id`, tier, hook, the labelled fields, map/coords if known, `image_query` + empty `image_url` slot), grouped under stops, plus per-stop logistics and trip-level admin. Never put a value in the JSON that is not supported by the markdown dossier; never fabricate coordinates or image URLs. If a prior `dossier-data.json` exists, version it alongside the markdown (`dossier-data-v{n}.json`).
+After the markdown dossier is composed, render the SAME synthesized data into `trips/{slug}/dossier-data.json` per `dossier-template.md` § Structured data companion. **This JSON matches the HTML renderer's data model exactly** — a `trip` array of stops (each with `do` / `eat` / `avoid` / `hoods` / `stayPick` / `mobility` / `timing`) plus a `legs` array — so the file loads directly into Patrik's HTML companion. Key load-bearing rules:
+
+- Use the controlled vocabulary only: integer tier `t` (🔥→3, 👍→2, 🆗→1), the fixed tag list (`work, eat, sleep, swim, shade, hike, social, market, culture, view`), and the fixed `facts` icon ids. Never emit a tag or icon id outside these sets.
+- Compose each place's `facts` chip array from its gathered fields (cost → `i-wallet`, best time/hours → `i-clock`, find-it → `i-pin`, etc.); carry the named fields (`hours`, `cost`, `best_time`, `find_it`, `duration`, `lat`/`lng`/`map_link`) alongside for future rendering.
+- Map the per-stop ⭐ anchor to the stop's `start`; map inter-stop mobility legs (5b) into `legs` (flag the punishing leg `hard: 1`, booked flights `ic: "i-route"`); map logistics (5d) to per-stop `connectivity`/`offline_map_area`/`borders` and `meta.admin`; map timing (T1) to `timing` + `sunrise`/`sunset`.
+- Omit the `avoid` array for stops ≤ 2 nights. Never put a value in the JSON the markdown dossier does not support; never fabricate coordinates or image URLs (`image_query` only).
+- The workflow produces only this data file — it does NOT generate or modify the HTML shell (Patrik owns that). If a prior `dossier-data.json` exists, version it alongside the markdown (`dossier-data-v{n}.json`).
 
 ### Step 13 — Write the dossier
 
