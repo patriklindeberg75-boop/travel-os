@@ -359,7 +359,8 @@ Record per pass: which preferences were applied, which principles enforced, what
 
 Read `references/dossier-template.md` for the output structure. Produce the dossier following:
 
-- Trip header block (destination, dates, theme, work-load, budget posture, weather check).
+- Trip header block (destination, dates, theme, work-load, budget posture, weather check), INCLUDING the mandatory verbatim **"How to use this dossier" menu-not-a-schedule block** per `dossier-template.md` § Trip header block.
+- **Menu, not a schedule (governing principle).** The dossier is a flexible long-list of vetted options the operator picks from on the spot — never a sequenced day-by-day itinerary. Do NOT emit a "Day 1 / Day 2" running order or an hour-by-hour plan. If external input arrives as a schedule (e.g. a friend's day plan), mine it for *places* and fold them into the relevant shortlists — do not reproduce the schedule. The only time-of-day guidance allowed is the per-place `Best time` card field. See `dossier-template.md` § Menu, not a schedule.
 - Viability note if `viability_verdict` is `conditional` — one line: "Viability: CONDITIONAL — {viability_notes}".
 - Sections 1–8 in order, each with `## ` header, `---` divider before next, mobile-formatting rules.
 - Sections 1–2: area lines `Name — Neighborhood, City — one-line why`.

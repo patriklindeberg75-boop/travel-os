@@ -12,9 +12,38 @@ Per Decision 7 (operator-confirmed in `pipeline/decisions.md`), the dossier outp
 Work-load: {hours}h/week
 Budget posture: ~€{floor}/day baseline; willing to splurge €{splurge_lo}–{splurge_hi}
 Weather check: {forecast_max_celsius}°C max — {PASS | FLAGGED >30°C}
+
+**How to use this dossier:** it's a *menu, not a schedule.* Every section is a
+long list of vetted options to pick from on the spot — by mood, weather, and
+energy that day. Nothing here is a fixed plan, and nothing on the trip is
+locked: night counts are a starting point, and any stop can grow or shrink if a
+place is worth more time. The dossier's only job is to keep good, non-touristy
+options within reach — never to tell you what to do.
 ```
 
 If `forecast_max_celsius` is unknown, render the weather line as `Weather check: forecast unknown — verify before booking`.
+
+**The "How to use" block is mandatory and verbatim** — it renders once at the
+top of every dossier (single-base and multi-stop alike). It encodes a hard
+operator principle: the dossier is a flexible option-menu, never a predetermined
+itinerary. This governs the whole output — see the rule below.
+
+## Menu, not a schedule (governing principle)
+
+The dossier surfaces **breadth of vetted options**, never a sequenced day-by-day
+plan. The operator decides on the spot. Apply throughout:
+
+- **Never render a fixed itinerary** (no "Day 1 / Day 2…" running order, no
+  hour-by-hour schedule). Sections are pick-from lists, not timelines.
+- **When folding in external input** that arrives as a schedule (e.g. a friend's
+  day-by-day plan), mine it for *places* and add them to the shortlists — do not
+  reproduce the schedule.
+- **Prefer more vetted options over a curated single path.** Tiers (🔥/👍/🆗)
+  and the ⭐ anchor express *strength*, not a sequence to follow.
+- **Treat night counts and routes as starting points**, not commitments.
+
+The one place a time-of-day hint belongs is the per-place `Best time` card field
+(heat-smart windows) — that guides *when an option is good*, not *what to do when*.
 
 ## Priority tiers, per-place card, and the "one thing" anchor
 
