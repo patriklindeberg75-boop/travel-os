@@ -309,3 +309,32 @@ None.
 - Stop if: (none stated)
 
 V1 UX fixes on the Balkans dossier per ux-workflow-additions.md (V1 scope): make every recommended place actionable — emit stable per-place id, city, neighborhood, and map_link in the data + spec layers.
+
+### Summary
+Shipped V1 "make the Balkans dossier actionable" — both the data layer and (operator-expanded mid-session) the renderer. Data: authored `neighborhood` + `city` on all 114 do/eat/avoid places; extended `build.mjs` to derive `id` (`{stop-id}-{kebab(nm)}`) and `map_link` (Google Maps search from nm+neighborhood+city, never fabricated coords) into the generated TRIP block, with a self-check that aborts the build if any place lacks nm/neighborhood/city. Spec: promoted the four fields from optional→required (A1) and documented the map_link + id rules and the authored-vs-derived split (A2/A3) in `references/dossier-template.md` + `dossier-workflow.md`. Renderer: place names + a new location line (neighborhood · city) are now tappable to Google Maps on each card. Two independent QC passes → both GO. Two commits landed.
+
+### Files Created
+- `logs/session-plan-2026-06-10-S4.md` — session plan for the V1 work.
+- `logs/scratchpads/2026-06-10-16-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/dossier-data.json` — added `neighborhood` + `city` to all 114 places.
+- `trips/balkans-2026-06/build.mjs` — derive `id` + `map_link`; abort-on-missing self-check.
+- `trips/balkans-2026-06/index.html` — data block rebuilt (commit 1); renderer JS/CSS for tappable name + location line (commit 2).
+- `references/dossier-template.md`, `references/dossier-workflow.md` — A1/A2/A3 spec promotions.
+
+### Decisions Made
+- Authored-vs-derived field split: author `neighborhood`+`city` in the JSON; derive `id`+`map_link` in `build.mjs` (deterministic → DRY, removes a 114-row hand-typed error surface). Generated TRIP block still ships all four. (logged to decisions.md)
+- Operator expanded scope mid-session to include the renderer (`index.html` shell JS/CSS), which the original mandate placed out of scope as Patrik-owned. Authorized at the "what's next?" gate.
+
+### Risky actions
+None. (Renderer edit touched Patrik-owned `index.html`, but only the JS/CSS outside the build.mjs data markers, with operator authorization and an independent QC GO.)
+
+### Next Steps
+- Fix the travel-os git remote (points at `patriklindeberg75-boop/traveling` → "Repository not found"); 9+ commits cannot push until corrected. Top blocker.
+- Confirm 3 interpreted Belgrade food spellings (Aviation Museum, Karađorđeva šnicla, šopska salad).
+- Optional V2: localStorage want/done toggles (data `id` is now ready), filters, search, structured hours / "open now".
+- Eyeball `trips/balkans-2026-06/index.html` on iPhone — tap a few place names to confirm they open Google Maps.
+
+### Open Questions
+None.
