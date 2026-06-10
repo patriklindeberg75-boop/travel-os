@@ -106,3 +106,12 @@
 **Rationale:** `id` and `map_link` are mechanical functions of authored data; computing them in the existing build step keeps the JSON DRY, removes a 114-row hand-typed error surface, and still ships all four fields in the renderer-visible data block. This is the most faithful reading of A2 ("map_link is constructed"). A build self-check aborts if any place lacks nm/neighborhood/city, so un-locatable places can't ship. Independent QC confirmed the design (GO).
 **Boundary:** `neighborhood`/`city` remain authored (irreducible knowledge); `lat`/`lng` stay optional and take precedence in map_link when present; coordinates are never fabricated. Spec files (dossier-template.md, dossier-workflow.md) document the authored-vs-derived split.
 **Alternatives considered:** (a) hand-author all four in the JSON — rejected (error/bloat surface, not DRY); (b) derive in the HTML renderer at load time — rejected (the workflow's job is to ship complete data; renderer stays Patrik's and should not need to compute required fields).
+
+---
+
+**Date:** 2026-06-10
+**Decision:** Ship the Balkans dossier app icon as companion files (`icons/*.png` + `manifest.webmanifest` beside `index.html`) rather than embedding it in the single HTML file.
+**Context:** The dossier's design ethos is a self-contained `index.html` (inline TRIP/LEGS data, opens offline). The #6 "Add to Home Screen" work needs a real home-screen icon. Embedding via data-URI `apple-touch-icon` would preserve single-file portability.
+**Rationale:** iOS Safari does not reliably honor inline/data-URI `apple-touch-icon` — it falls back to a page screenshot. A real PNG file is the only dependable path to a custom home-screen icon on iPhone (the project's primary target). The dossier is hosted (Cloudflare/local), so sibling asset files are standard and acceptable; the self-contained property that matters most (the DATA) stays inline.
+**Boundary:** The icon was built from the dossier's existing `i-route` glyph in its own line style (cream on accent green) to keep the icon set coherent — not a new mark. Consequence to flag at hosting time: the whole `trips/balkans-2026-06/` folder must be uploaded (index.html + icons/ + manifest), not index.html alone, or the icon won't appear.
+**Alternatives considered:** (a) embedded data-URI icon — rejected (unreliable on iOS); (b) no custom icon (screenshot fallback) — rejected (the explicit ask was to "follow the same icon set").

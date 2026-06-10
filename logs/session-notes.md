@@ -341,3 +341,33 @@ None.
 
 ## 2026-06-10 — Session S5
 V2 renderer upgrades on the Balkans dossier index.html: want/done toggles (#1), tag/tier filters (#2), safe-area + tap-target hygiene (#4), section collapse memory (#5), Add-to-Home-Screen polish (#6), masthead spacing fix (#7).
+
+### Summary
+Implemented the six operator-selected V2 interactive features (the postponed roadmap in `ux-workflow-additions.md`) entirely in the renderer layer of `trips/balkans-2026-06/index.html`, then built a real app icon + web manifest to finish #6 properly. All edits sit outside the `build.mjs`-managed data block, so future data rebuilds preserve them — verified by re-running `node build.mjs`. Cross-checked the work against the 13-finding `ux-diagnosis.md`: 10 of 13 UX findings are now fixed; the 3 still open (F4 hours/open-now, F9 time-of-day, F10 text search) are the deliberately-deferred cluster, with F4 the only meaningful remaining in-trip gap (Job D "eat tonight").
+
+### Files Created
+- `trips/balkans-2026-06/icons/apple-touch-icon.png` (180×180) — iOS home-screen icon (route glyph, cream-on-accent).
+- `trips/balkans-2026-06/icons/icon-192.png`, `icon-512.png` — Android/PWA maskable icons.
+- `trips/balkans-2026-06/manifest.webmanifest` — web app manifest (name, standalone, theme/bg, icon set).
+- `logs/scratchpads/2026-06-10-16-58-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/index.html` — V2 interactive layer (CSS + render JS + head meta + 2 SVG symbols + toolbar/filterbar HTML); then icon/manifest head links.
+
+### Decisions Made
+- Want/done + section state persisted via guarded `localStorage` (try/catch for file:// / private-mode safety), namespaced `balkans:`; not persisting filter state (resets on reload by design).
+- Authored-vs-derived split honored: filters/toggles consume the V1-derived per-place `id`; avoidCard left untouched (no toggles/filters on warning cards).
+- App icon built from the existing `i-route` glyph in the dossier's own line-icon style (cream on accent green) rather than a new mark — keeps the icon set coherent. Rendered via headless Chrome from a 512 master, downscaled with `sips`.
+- Icon shipped as companion files (`icons/` + manifest) rather than embedded — iOS ignores inline/data-URI app icons. Tradeoff: the dossier folder must be uploaded whole, not index.html alone.
+
+### Risky actions
+None. (Renderer-only edits to the operator-owned `index.html`, operator-authorized; independent QC GO; jsdom 26/26 + build-preservation verified before commit. Temp jsdom install was in /tmp, not the repo.)
+
+### Next Steps
+- **Top blocker:** fix the travel-os git remote (`patriklindeberg75-boop/traveling` → "Repository not found"); ~12 commits cannot push until corrected.
+- Decide F4 (opening hours / "open now"): build the `hours_note` renderer slot + research hours to populate, or leave for now.
+- Confirm the 3 interpreted Belgrade food spellings (Aviation Museum, Karađorđeva šnicla, šopska salad) — bad spellings → bad map links.
+- Eyeball `index.html` on iPhone: tap place names → Maps; Add-to-Home-Screen → confirm the route icon shows. Upload the whole `trips/balkans-2026-06/` folder (index.html + icons/ + manifest), not index.html alone.
+
+### Open Questions
+None.
