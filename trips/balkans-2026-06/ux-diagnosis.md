@@ -46,7 +46,7 @@ Severity key: **MUST-FIX** = blocks a named in-trip job · **SHOULD-FIX** = sign
 
 **F4 — No opening hours / "open now" signal.** `facts` occasionally holds free-text timing ("best midday") but there is no structured `hours` field and no computed open/closed state.
 - *Why it hurts in-trip:* **D** ("eat tonight") and **A** ("worth walking to now") both need to know if a place is even open; right now you'd arrive to find out.
-- *Fix direction:* capture structured `hours` per place (the spec already lists the field); render a computed "open now / closed" badge against the device clock.
+- *Fix direction:* **v1** — a lightweight optional free-text `hours_note` ("often evenings only; verify"); **v2** — structured `hours` + a computed "open now / closed" badge. Structured hours is deferred because it's fragile (changing/seasonal hours, inconsistent sources). See [`ux-workflow-additions.md`](ux-workflow-additions.md) V1.4 / V2.
 
 ### SHOULD-FIX
 
