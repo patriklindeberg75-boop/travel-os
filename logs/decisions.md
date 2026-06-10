@@ -61,3 +61,12 @@
 **Context:** Friend sent Belgrade recs; some overlap the dossier's tourist-trap list (Tri šešira, Šaran).
 **Rationale:** Friend's vouch is trusted — add all, tag distinctly, never drop; run the filter only to attach context/warnings; flag conflicts rather than silently contradicting. Operator chose this over full-screening or no-screening.
 **Alternatives considered:** Full screening (could drop a friend rec — too aggressive); add as-is no filter (loses the anti-tourist guarantee).
+
+---
+
+**Date:** 2026-06-10
+**Decision:** Align the dossier's structured JSON output (`dossier-data.json`) to the operator's HTML renderer's exact data model, rather than emitting a generic schema + adapter.
+**Context:** The dossier workflow gained a machine-readable JSON twin to feed Patrik's standalone HTML travel-companion app. The HTML prototype expects a `TRIP` array of stops + a `LEGS` array, with terse keys (`nm`, `t:1-3`, `tags[]`, `facts[[icon,label]]`). The first-pass JSON schema used different field names.
+**Rationale:** The JSON is single-consumer (only Patrik's HTML loads it), so coupling it to that renderer's model means the file drops straight in with no translation layer — lower friction than a generic schema both sides must adapt to. Controlled tag + icon vocabulary lifted in so every card renders an icon. New logistics/hours/coords fields ride along as additive keys for future rendering.
+**Alternatives considered:** (a) Generic well-named schema + a mapping step — cleaner in the abstract but needless friction for one consumer; (b) keep data inline in the HTML — simpler hosting but loses the data/render split (deferred to next session's hosting decision).
+**Boundary:** The workflow produces the data file only; it does NOT generate or own the HTML shell.

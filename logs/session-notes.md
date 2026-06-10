@@ -200,3 +200,37 @@ None.
 
 ### Open Questions
 None.
+
+## 2026-06-10 — Dossier workflow system upgrade (place-gate, cards/tiers, logistics, HTML JSON alignment)
+
+### Summary
+Five system-level changes to the destination-dossier workflow (no Balkans rebuild — operator declined), then aligned the structured JSON output to the operator's HTML travel-companion app. Place-selection became an explicit operator-gated discussion (candidate places, not pre-baked routes; new route/nights Step 4.4); tourist-trap pass skipped for ≤2-night stops; per-place card micro-template + sorting priority tiers (🔥/👍/🆗) + one "if you do one thing here" anchor per stop; a machine-readable dossier-data.json companion with a new gathered-field set; and the music section/pass removed (5d → Practical logistics). A second pass (/recommend) realigned dossier-data.json to the HTML's exact TRIP/LEGS model + controlled tag/icon vocabulary. QC ran via /pm (project-manager + qc-reviewer → GO) with three verified fixes applied.
+
+### Files Created
+- `~/.claude/.../memory/dossier-html-hosting.md` — next-session parking note (outside repo)
+- `logs/scratchpads/2026-06-10-10-24-scratchpad.md` — continuity scratchpad
+
+### Files Modified
+- `references/dossier-workflow.md` — Pass 2 discussion gate + Step 4.4, trap-skip, 5d logistics, music removal, Step 11 tier/anchor, Step 12.5 JSON companion
+- `references/dossier-template.md` — card micro-template, tiers, anchor, Section 8 = Practical logistics, structured-data companion realigned to HTML TRIP/LEGS model, weather 27°C→30°C fix
+- `references/subagent-prompts.md` — per-place fields + hike data, Prompt 2b candidate-places, T1 festivals/sunrise-sunset, Prompt 5d logistics, controlled tag vocabulary
+- `.claude/agents/dossier-orchestrator.md` — Step 4/4.4/11/12.5 behaviors
+- `.claude/commands/destination-dossier.md` — interaction-count note
+- `~/.claude/.../memory/MEMORY.md` — index line (outside repo)
+
+### Decisions Made
+- Aligned `dossier-data.json` to the HTML renderer's data model (operator /recommend judgment) rather than a generic schema + adapter — single-consumer file, so match the HTML's TRIP/LEGS shape + controlled vocabulary.
+- Workflow produces the data file only; it does NOT own or generate the HTML shell (Patrik maintains it).
+- Image handling: carry `image_query` + empty `image_url` slot, unrendered, pending the operator's image-source approach.
+- QC fixes (via /pm): weather flag string 27°C→30°C; Location field routes to JSON lat/lng (not a card line); anchor "never zero" carve-out for empty Sections 3/4.
+
+### Risky actions
+None destructive. One near-miss: an intermediate commit swept 3 hook-staged `logs/` files (decisions, session-notes, scratchpad) — verified benign (session artifacts, not secrets), left as committed.
+
+### Next Steps
+- Next session: decide **inline-data vs fetch-JSON** for hosting the HTML dossier locally / on Cloudflare (see memory `dossier-html-hosting.md`). Quick wins: rename to `index.html`, deploy as a Pages folder not a loose file.
+- Push: use the `patriklindeberg75-boop` GitHub account, not axcioncapital ("Repository not found" = wrong account).
+- Consider syncing the modified shared command/agent (`destination-dossier.md`, `dossier-orchestrator.md`) back to ai-resources if they apply elsewhere.
+
+### Open Questions
+None.
