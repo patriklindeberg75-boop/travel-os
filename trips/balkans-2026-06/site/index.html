@@ -306,6 +306,76 @@ main#app{display:block}
 .mode-banner{display:flex;gap:9px;align-items:center;background:var(--accent-bg);color:var(--accent-ink);border-radius:var(--r);padding:11px 13px;margin:10px 0;font-size:13.5px;line-height:1.45}
 .mode-banner .ic{flex:none;color:var(--accent);font-size:17px}
 .mode-banner a{color:var(--accent-ink);font-weight:600;text-decoration:none}
+
+/* ===== v3 Tier 3 ===== */
+/* manual theme override (P2-1) — beats prefers-color-scheme */
+html.theme-light{--bg:#f4efe4;--surface:#fffdf8;--surface-2:#ece5d6;--ink:#211d16;--muted:#6f685b;--faint:#9a9182;--line:rgba(33,29,22,.12);--line-2:rgba(33,29,22,.22);--accent:#0f6e56;--accent-bg:#e2efe9;--accent-ink:#0a4f3e;--heat:#a8620f;--heat-bg:#f7e9d2;--heat-ink:#7a4709;--star:#c98a12;--fr:#5a4ba8;--fr-bg:#eae7f6;--fr-ink:#3f3380}
+html.theme-dark{--bg:#16140f;--surface:#211e17;--surface-2:#2b2820;--ink:#ece6d8;--muted:#a59d8c;--faint:#7b7464;--line:rgba(236,230,216,.12);--line-2:rgba(236,230,216,.22);--accent:#4cbf9c;--accent-bg:#13332a;--accent-ink:#8fe0c8;--heat:#e0a14e;--heat-bg:#3a2a12;--heat-ink:#f0c98a;--star:#e0a93a;--fr:#9b8fe0;--fr-bg:#26203f;--fr-ink:#c3b8f2}
+
+/* travel-day leg checklist cards (P1-3) */
+.legcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:13px 15px;margin-bottom:10px}
+.legcard.hard{border-color:var(--heat)}
+.legcard-top{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.legcard-top .ic{color:var(--accent);font-size:18px;flex:none}
+.legcard.hard .legcard-top .ic{color:var(--heat)}
+.legcard-ttl{font-weight:600;font-size:15px;flex:1}
+.leg-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.leg-chip{font-size:12px;color:var(--muted);background:var(--surface-2);border-radius:999px;padding:3px 10px}
+.legcard .ds{font-size:13px;color:var(--muted);line-height:1.5}
+.legcard .warn{color:var(--danger-ink);font-style:normal}
+.verify{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--heat-ink);background:var(--heat-bg);border-radius:999px;padding:4px 10px;min-height:30px;cursor:pointer;border:none;font-family:var(--sans);-webkit-tap-highlight-color:transparent}
+.verify .ic{font-size:13px}
+.verify[aria-pressed="true"]{color:var(--accent-ink);background:var(--accent-bg)}
+
+/* per-stop utility / cash card (P1-4) */
+.util{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:13px 15px;margin:0 0 14px}
+.util .uhead{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.util .uhead .ic{color:var(--accent);font-size:17px}
+.util .ccode{font-weight:600;font-size:15px}
+.util .csym{color:var(--muted);font-weight:400;margin-left:2px}
+.util .unote{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 9px}
+.copybtn{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:12.5px;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent);border-radius:999px;padding:8px 13px;min-height:38px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.copybtn:active{opacity:.6}
+.copybtn .ic{font-size:14px}
+
+/* top-3 strip (P2-2) */
+.top3{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;margin:0 0 14px;padding-bottom:2px}
+.top3::-webkit-scrollbar{display:none}
+.top3 a{flex:none;display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 12px;text-decoration:none;white-space:nowrap;max-width:210px;overflow:hidden;text-overflow:ellipsis}
+.top3 a .ic{color:var(--star);font-size:13px;flex:none}
+.card.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,45%{box-shadow:0 0 0 2px var(--accent)}100%{box-shadow:none}}
+
+/* search (P2-3) */
+.search-wrap{margin:8px 0 4px}
+.search-wrap input{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:999px;padding:11px 16px;min-height:46px}
+.search-results{margin-top:9px;display:flex;flex-direction:column;gap:5px}
+.search-results a{display:flex;align-items:center;gap:8px;padding:10px 13px;background:var(--surface-2);border-radius:var(--r);text-decoration:none;color:var(--ink);font-size:13.5px}
+.search-results .sr-stop{margin-left:auto;font-size:11px;color:var(--faint);white-space:nowrap}
+.search-empty{color:var(--faint);font-size:13px;padding:8px 2px}
+
+/* checklist view (P1-5 / U-1) */
+.cl-tabs{display:flex;gap:6px;margin:16px 0 12px}
+.cl-tab{flex:1;font-family:var(--sans);font-size:13.5px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:9px;min-height:42px;cursor:pointer}
+.cl-tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cl-group{margin-bottom:16px}
+.cl-group h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:0 0 7px}
+.cl-item{display:flex;align-items:flex-start;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px;margin-bottom:6px;cursor:pointer}
+.cl-item .box{flex:none;width:21px;height:21px;border:1.7px solid var(--line-2);border-radius:5px;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;color:transparent}
+.cl-item.done .box{background:var(--accent);border-color:var(--accent);color:#fff}
+.cl-item.done .cl-txt{color:var(--faint);text-decoration:line-through}
+.cl-txt{font-size:13.5px;line-height:1.45}
+.cl-empty{color:var(--faint);font-size:13.5px;padding:6px 2px}
+
+/* booked stay (U-2) */
+details.booked .subhead,details.booked .hood{display:none}
+.bookbtn{font-family:var(--sans);font-size:12.5px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;min-height:38px;cursor:pointer;margin-top:8px;display:inline-flex;align-items:center;gap:6px}
+.bookbtn[aria-pressed="true"]{background:var(--accent-bg);color:var(--accent-ink);border-color:var(--accent)}
+
+/* overview tools (export + theme) */
+.ov-tools{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.ov-tools button{font-family:var(--sans);font-size:13px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:9px 14px;min-height:40px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.ov-tools button .ic{color:var(--accent);font-size:15px}
 </style>
 </head>
 <body>
@@ -380,6 +450,11 @@ const TRIP=[
   {
     "id": "budapest",
     "name": "Budapest",
+    "currency": {
+      "code": "HUF",
+      "sym": "Ft",
+      "note": "Hungary uses the forint, not the euro. Cards are widely accepted; keep some cash for markets and transit."
+    },
     "when": "2 nights · Jun 16–18",
     "heat": false,
     "heatLabel": "~27°C · comfortable",
@@ -707,6 +782,11 @@ const TRIP=[
   {
     "id": "belgrade",
     "name": "Belgrade",
+    "currency": {
+      "code": "RSD",
+      "sym": "дин",
+      "note": "Serbia uses the dinar. Cash-first culture — cards work in cafés but carry dinars for markets, kiosks and buses."
+    },
     "when": "2 nights · Jun 19–21",
     "heat": true,
     "heatLabel": "30°C+ · heat-flagged",
@@ -1540,6 +1620,11 @@ const TRIP=[
   {
     "id": "prizren",
     "name": "Prizren",
+    "currency": {
+      "code": "EUR",
+      "sym": "€",
+      "note": "Kosovo uses the euro. Very cash-based outside the centre — carry small notes; ATMs are in town."
+    },
     "when": "2 nights · Jun 22–24",
     "heat": true,
     "heatLabel": "30°C+ town bowl",
@@ -1908,6 +1993,11 @@ const TRIP=[
   {
     "id": "ohrid",
     "name": "Ohrid",
+    "currency": {
+      "code": "MKD",
+      "sym": "ден",
+      "note": "North Macedonia uses the denar. Cash-first — ATMs in town, fewer card terminals outside the centre."
+    },
     "when": "2 nights · Jun 25–27",
     "heat": false,
     "heatLabel": "~26°C · coolest stop",
@@ -2247,6 +2337,11 @@ const TRIP=[
   {
     "id": "sofia",
     "name": "Sofia",
+    "currency": {
+      "code": "BGN",
+      "sym": "лв",
+      "note": "Bulgaria uses the lev (pegged to the euro). Cards in the centre; cash for small spots and the metro."
+    },
     "when": "Closer · Jun 28–29",
     "heat": false,
     "heatLabel": "thin closer",
@@ -2536,18 +2631,32 @@ function renderStop(s){
      '<div class="transit">'+icon('i-bus')+'<div><b style="color:var(--ink);font-weight:500">In:</b> '+s.inLeg+' &nbsp;·&nbsp; <b style="color:var(--ink);font-weight:500">Out:</b> '+s.outLeg+'</div></div>'+
      '</div>';
 
+  // P2-2 — top-3 strip (drawn only from existing top-pick tags, source order)
+  let top=(s.do||[]).filter(p=>p.t===3).slice(0,3);
+  if(top.length)h+='<div class="top3">'+top.map(p=>'<a class="t3" data-jump="'+p.id+'">'+icon('i-star')+' '+p.nm+'</a>').join('')+'</div>';
+
   // do (open)
   let doBody=s.do.map(card).join('');
   if(s.doNote)doBody+='<p class="note">'+s.doNote+'</p>';
   if(s.doNote2)doBody+='<p class="note">'+s.doNote2+'</p>';
   h+=sectionFix(s.doLabel,'i-mountain',doBody,true,s.do.length+' picks','do');
 
-  // stay + neighbourhoods
+  // P1-4 — money & basics (currency from data; tap-to-copy the base area for taxis)
+  if(s.currency){
+    let base=(s.hoods||[]).find(n=>n.base);
+    let copy=base?'<button class="copybtn" type="button" data-copy="'+base.nm.replace(/"/g,'&quot;')+'">'+icon('i-pin')+' Copy base area</button>':'';
+    let uBody='<div class="uhead">'+icon('i-wallet')+'<span class="ccode">'+s.currency.code+'</span><span class="csym">'+s.currency.sym+'</span></div>'+
+      '<p class="unote">'+s.currency.note+'</p>'+copy;
+    h+=sectionFix('Money & basics','i-wallet',uBody,false,0,'util');
+  }
+
+  // stay + neighbourhoods (+ U-2 booked toggle)
   let stayBody='<p class="stay-pick"><span class="label">Base here</span><br>'+s.stayPick+'</p>';
   if(s.hoods&&s.hoods.length){
     stayBody+='<div class="subhead">Neighbourhoods</div>';
     stayBody+=s.hoods.map(n=>'<p class="hood"><b>'+n.nm+'</b>'+(n.base?' <span class="base">· YOUR BASE</span>':'')+' — '+n.d+'</p>').join('');
   }
+  stayBody+='<button class="bookbtn" type="button" data-book="'+s.id+'" aria-pressed="false">'+icon('i-bed')+' Mark booked</button>';
   h+=sectionFix('Where to stay','i-bed',stayBody,false,0,'stay');
 
   // eat
@@ -2572,10 +2681,18 @@ function renderStop(s){
   return h;
 }
 
+function kebab(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+function legNeedsConfirm(l){return !!(l.hard||/\bconfirm\b|check connections|may exist/i.test(l.ds||''));}
+// D9 — travel-day checklist card: spec parsed into chips, a "confirm before travel" verify badge on uncertain legs.
 function renderLeg(l){
-  return '<div class="leg'+(l.hard?' hard':'')+'">'+icon(l.ic)+
-    '<div class="body"><div class="ttl">'+l.ttl+'</div><div class="spec">'+l.spec+'</div>'+
-    '<div class="ds">'+l.ds+(l.warn?' <span class="warn">'+l.warn+'</span>':'')+'</div></div></div>';
+  const parts=(l.spec||'').split('·').map(x=>x.trim()).filter(Boolean);
+  const chips=parts.length?'<div class="leg-chips">'+parts.map(p=>'<span class="leg-chip">'+p+'</span>').join('')+'</div>':'';
+  const vid='leg:'+kebab(l.ttl);
+  const verify=legNeedsConfirm(l)?'<button class="verify" type="button" data-vid="'+vid+'" aria-pressed="false">'+icon('i-alert')+' confirm</button>':'';
+  return '<div class="legcard'+(l.hard?' hard':'')+'">'+
+    '<div class="legcard-top">'+icon(l.ic)+'<span class="legcard-ttl">'+l.ttl+'</span>'+verify+'</div>'+
+    chips+
+    '<div class="ds">'+l.ds+(l.warn?' <span class="warn">'+l.warn+'</span>':'')+'</div></div>';
 }
 
 /* ===== v3 routed shell ================================================= */
@@ -2613,12 +2730,16 @@ function renderOverview(){
       '<span class="pill">'+icon('i-wallet')+' ~€50 / day</span>'+
       '<span class="pill warn">'+icon('i-temp')+' Heat-aware</span>'+
     '</div></header>';
+  h+='<div class="search-wrap"><input id="search" type="search" placeholder="Search all stops — burek, swim, café…" autocomplete="off" autocapitalize="off"><div class="search-results" id="searchResults"></div></div>';
   h+='<div class="ov-stops">'+TRIP.map(s=>
     '<a class="ov-stop" href="#/'+s.id+'"><span class="ov-nm">'+s.name+'</span><span class="ov-when">'+s.when+'</span>'+
     '<span class="ov-heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></a>').join('')+'</div>';
   h+='<div class="ov-links">'+
     '<a href="#/transit">'+icon('i-bus')+' Getting between stops</a>'+
     '<a href="#/checklist">'+icon('i-check')+' Pre-trip checklist</a></div>';
+  h+='<div class="ov-tools">'+
+    '<button id="btnTheme" type="button">'+icon('i-sun')+' Theme: <span id="themeLab">auto</span></button>'+
+    '<button id="btnExport" type="button">'+icon('i-check')+' Export my picks</button></div>';
   h+='<details class="legend about"><summary>'+icon('i-view')+' About this dossier</summary><div class="sec-body">'+ABOUT_HTML+'</div></details>';
   return h;
 }
@@ -2631,9 +2752,36 @@ function renderTransit(){
   return h;
 }
 
+// D11 / U-1 — derive verify + action items from EXISTING copy only (mechanical keyword scan).
+function firstClause(s){s=(s||'').trim();const m=s.match(/^[^.;—]+/);return m?m[0].trim():s;}
+function buildChecklist(){
+  const verify=[], action=[];
+  const actRe=/\b(book|buy|confirm|download|reserve|pre-?book|pre-?purchase)\b/i;
+  const verRe=/€|closed|opening|\bhours\b|\bsunday\b|\bmonday\b|timetable|schedule|seasonal/i;
+  LEGS.forEach(l=>{ if(legNeedsConfirm(l)) verify.push({id:'leg:'+kebab(l.ttl), txt:'Confirm '+l.ttl+(l.spec?' ('+l.spec+')':''), grp:'Transport'}); });
+  TRIP.forEach(s=>{
+    [...(s.do||[]),...(s.eat||[])].forEach(p=>{
+      const txtsrc=(p.hook||'')+' '+(p.facts||[]).map(f=>f[1]).join(' ');
+      if(actRe.test(txtsrc)) action.push({id:'act:'+p.id, txt:p.nm+' — '+firstClause(p.hook), grp:s.name});
+      if(verRe.test(txtsrc)) verify.push({id:'ver:'+p.id, txt:p.nm+' — verify hours / price', grp:s.name});
+    });
+  });
+  return {verify,action};
+}
+function clGroups(items){
+  if(!items.length)return '<p class="cl-empty">Nothing flagged here.</p>';
+  const by={}; items.forEach(it=>{(by[it.grp]=by[it.grp]||[]).push(it);});
+  return Object.keys(by).map(g=>'<div class="cl-group"><h3>'+g+'</h3>'+
+    by[g].map(it=>'<div class="cl-item" data-vid="'+it.id+'"><span class="box">'+icon('i-check')+'</span><span class="cl-txt">'+it.txt+'</span></div>').join('')+'</div>').join('');
+}
 function renderChecklist(){
+  const {verify,action}=buildChecklist();
   return '<div class="stop"><div class="stop-head"><h2>Pre-trip checklist</h2></div>'+
-    '<p class="hook" style="color:var(--muted);margin-top:14px">Items to verify or action before departure are added in this build (verify badges + actions).</p></div>';
+    '<p class="hook" style="color:var(--muted);margin:12px 0 0">Tap an item to tick it off — saved on this phone. <b>Verify</b> = facts that drift (hours, prices, bus times). <b>Actions</b> = things to book or buy before you go.</p>'+
+    '<div class="cl-tabs"><button class="cl-tab" type="button" data-cl="verify" aria-pressed="true">Verify · '+verify.length+'</button>'+
+    '<button class="cl-tab" type="button" data-cl="action" aria-pressed="false">Actions · '+action.length+'</button></div>'+
+    '<div class="cl-panel" id="cl-verify">'+clGroups(verify)+'</div>'+
+    '<div class="cl-panel" id="cl-action" hidden>'+clGroups(action)+'</div></div>';
 }
 
 // --- build all views into #app ---
@@ -2683,7 +2831,56 @@ function reflow(scope){
     notes.forEach(n=>body.appendChild(n));   // keep notes after the cards
   });
 }
+/* shared state: verify ticks (badges + checklist), booked stays, search jump target */
+const verified=LS.get('verified',{});   // { vid:1 }
+const booked=LS.get('booked',{});        // { stopid:1 }
+let pendingFind=null;
+function applyVerified(){
+  document.querySelectorAll('[data-vid]').forEach(el=>{
+    const on=!!verified[el.getAttribute('data-vid')];
+    if(el.classList.contains('verify'))el.setAttribute('aria-pressed',on?'true':'false');
+    else el.classList.toggle('done',on);
+  });
+}
+function applyBooked(){
+  document.querySelectorAll('.bookbtn[data-book]').forEach(b=>{
+    const on=!!booked[b.getAttribute('data-book')];
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.innerHTML=on?icon('i-check')+' Booked':icon('i-bed')+' Mark booked';
+    const det=b.closest('details'); if(det)det.classList.toggle('booked',on);
+  });
+}
+function jumpTo(pid){
+  const view=document.querySelector('.view.active'); if(!view)return;
+  const card=view.querySelector('.card[data-id="'+pid+'"]'); if(!card)return;
+  const det=card.closest('details'); if(det&&!det.open){modeDriving=true;det.open=true;modeDriving=false;}
+  card.classList.add('flash'); setTimeout(()=>card.classList.remove('flash'),1500);
+  if(card.scrollIntoView)card.scrollIntoView({block:'center'});
+}
+function applyTheme(t){
+  const r=document.documentElement; r.classList.remove('theme-light','theme-dark');
+  if(t==='light')r.classList.add('theme-light'); else if(t==='dark')r.classList.add('theme-dark');
+  const lab=document.getElementById('themeLab'); if(lab)lab.textContent=t||'auto';
+}
+function cycleTheme(){const cur=LS.get('theme','auto');const n=cur==='auto'?'light':(cur==='light'?'dark':'auto');LS.set('theme',n);applyTheme(n);}
+function doExport(){
+  let lines=['Balkans Overland South — my picks',''];
+  TRIP.forEach(s=>{
+    const picks=[...(s.do||[]),...(s.eat||[])].map(p=>({p,st:places[p.id]||{}})).filter(x=>x.st.w||x.st.d);
+    if(!picks.length)return;
+    lines.push('## '+s.name+' · '+s.when);
+    picks.filter(x=>x.st.w&&!x.st.d).forEach(x=>lines.push('  ☆ '+x.p.nm+(x.p.neighborhood?' — '+x.p.neighborhood:'')));
+    picks.filter(x=>x.st.d).forEach(x=>lines.push('  ✓ '+x.p.nm+(x.p.neighborhood?' — '+x.p.neighborhood:'')));
+    lines.push('');
+  });
+  if(lines.length<=2)lines.push('(No saved or done places yet — tap Save / Done on cards.)');
+  const text=lines.join('\n');
+  try{if(navigator.clipboard)navigator.clipboard.writeText(text);}catch(_){}
+  try{const blob=new Blob([text],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='balkans-picks.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(_){}
+  showOff('✓ picks copied + downloaded');
+}
 app.addEventListener('click',e=>{
+  // want / done / skip
   const btn=e.target.closest('.act');
   if(btn){
     e.preventDefault();
@@ -2694,14 +2891,30 @@ app.addEventListener('click',e=>{
     else if(act==='skip'){st.s=st.s?0:1; if(st.s)st.d=0;}
     if(!st.w&&!st.d&&!st.s)delete places[id]; else places[id]=st;
     LS.set('places',places);
-    applyPlace(c);
-    reflow(document.querySelector('.view.active'));
-    applyFilters();
+    applyPlace(c); reflow(document.querySelector('.view.active')); applyFilters();
     return;
   }
+  // top-3 / search jump
+  const jump=e.target.closest('[data-jump]');
+  if(jump){e.preventDefault();jumpTo(jump.getAttribute('data-jump'));return;}
+  // verify badge (legs) + checklist item — shared verified[]
+  const vEl=e.target.closest('.verify,.cl-item');
+  if(vEl){const vid=vEl.getAttribute('data-vid');if(vid){if(verified[vid])delete verified[vid];else verified[vid]=1;LS.set('verified',verified);applyVerified();}return;}
+  // tap-to-copy base area
+  const cp=e.target.closest('.copybtn');
+  if(cp){const txt=cp.getAttribute('data-copy')||'';try{if(navigator.clipboard)navigator.clipboard.writeText(txt);}catch(_){}cp.innerHTML=icon('i-check')+' Copied';setTimeout(()=>{cp.innerHTML=icon('i-pin')+' Copy base area';},1600);return;}
+  // booked toggle
+  const bk=e.target.closest('.bookbtn');
+  if(bk){const sid=bk.getAttribute('data-book');if(booked[sid])delete booked[sid];else booked[sid]=1;LS.set('booked',booked);applyBooked();return;}
+  // checklist tabs
+  const tab=e.target.closest('.cl-tab');
+  if(tab){const which=tab.getAttribute('data-cl'),view=tab.closest('.view');view.querySelectorAll('.cl-tab').forEach(t=>t.setAttribute('aria-pressed',t===tab?'true':'false'));view.querySelector('#cl-verify').hidden=which!=='verify';view.querySelector('#cl-action').hidden=which!=='action';return;}
+  // theme + export
+  if(e.target.closest('#btnTheme')){cycleTheme();return;}
+  if(e.target.closest('#btnExport')){doExport();return;}
   // tap a folded (done/skip) card body to peek its full content
   const fc=e.target.closest('.card.is-done,.card.is-skip');
-  if(fc&&!e.target.closest('a')&&!e.target.closest('.has-tip'))fc.classList.toggle('peek');
+  if(fc&&!e.target.closest('a')&&!e.target.closest('.has-tip')&&!e.target.closest('.act'))fc.classList.toggle('peek');
 });
 
 /* --- section open/closed memory (per stop view) --- */
@@ -2806,7 +3019,7 @@ document.getElementById('collapseAll').onclick=()=>setAll(false);
 const MODES={
   explore:{lab:'Explore',ic:'i-view'},
   heat:{lab:'It’s brutal out',ic:'i-temp',cls:'heat',cool:true,open:['do','around'],hide:['stay','eat','avoid','timing']},
-  arrival:{lab:'Arrival',ic:'i-bed',open:['stay','around','eat'],hide:['timing']},
+  arrival:{lab:'Arrival',ic:'i-bed',open:['util','stay','around','eat'],hide:['timing']},
   evening:{lab:'Evening',ic:'i-music',open:['eat'],hide:['stay','around','timing']},
   travel:{lab:'Travel day',ic:'i-bus',open:['around'],hide:['do','stay','eat','avoid','timing'],banner:true}
 };
@@ -2854,9 +3067,36 @@ document.addEventListener('click',e=>{
   }
 });
 
-/* --- apply persisted want/done state + initial sort on load --- */
+/* --- apply persisted state + initial sort on load --- */
 document.querySelectorAll('#app .card[data-id]').forEach(applyPlace);
 reflow(document);
+applyVerified();
+applyBooked();
+applyTheme(LS.get('theme','auto'));
+
+/* --- search (P2-3): client-side, debounced, no library --- */
+(function(){
+  const si=document.getElementById('search'); if(!si)return;
+  const results=document.getElementById('searchResults');
+  const INDEX=[];
+  TRIP.forEach(s=>[...(s.do||[]),...(s.eat||[])].forEach(p=>INDEX.push({
+    nm:p.nm,id:p.id,stop:s.name,sid:s.id,
+    hay:((p.nm||'')+' '+(p.hook||'')+' '+(p.tags||[]).join(' ')).toLowerCase()
+  })));
+  let t;
+  si.addEventListener('input',()=>{
+    clearTimeout(t);
+    t=setTimeout(()=>{
+      const q=si.value.trim().toLowerCase();
+      if(!q){results.innerHTML='';return;}
+      const hits=INDEX.filter(x=>x.hay.indexOf(q)>=0).slice(0,12);
+      results.innerHTML=hits.length
+        ? hits.map(x=>'<a href="#/'+x.sid+'" data-find="'+x.id+'">'+x.nm+'<span class="sr-stop">'+x.stop+'</span></a>').join('')
+        : '<div class="search-empty">No matches.</div>';
+    },120);
+  });
+  results.addEventListener('click',e=>{const a=e.target.closest('a[data-find]'); if(a)pendingFind=a.getAttribute('data-find');});
+})();
 
 /* ===== router ========================================================== */
 const subbar=document.getElementById('subbar');
@@ -2871,6 +3111,7 @@ function go(route){
   closeMenu();
   window.scrollTo(0,0);
   if(stop){applyMode();reflow(document.querySelector('.view.active'));applyFilters();}
+  if(pendingFind){const pf=pendingFind;pendingFind=null;setTimeout(()=>jumpTo(pf),60);}
 }
 function parseHash(){
   let h=(location.hash||'').replace(/^#\/?/,'');   // '#/budapest' | '#budapest' | ''

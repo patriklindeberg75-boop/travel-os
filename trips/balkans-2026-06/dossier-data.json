@@ -3,6 +3,7 @@
     {
       "id": "budapest",
       "name": "Budapest",
+      "currency": { "code": "HUF", "sym": "Ft", "note": "Hungary uses the forint, not the euro. Cards are widely accepted; keep some cash for markets and transit." },
       "when": "2 nights · Jun 16–18",
       "heat": false,
       "heatLabel": "~27°C · comfortable",
@@ -279,6 +280,7 @@
     {
       "id": "belgrade",
       "name": "Belgrade",
+      "currency": { "code": "RSD", "sym": "дин", "note": "Serbia uses the dinar. Cash-first culture — cards work in cafés but carry dinars for markets, kiosks and buses." },
       "when": "2 nights · Jun 19–21",
       "heat": true,
       "heatLabel": "30°C+ · heat-flagged",
@@ -986,6 +988,7 @@
     {
       "id": "prizren",
       "name": "Prizren",
+      "currency": { "code": "EUR", "sym": "€", "note": "Kosovo uses the euro. Very cash-based outside the centre — carry small notes; ATMs are in town." },
       "when": "2 nights · Jun 22–24",
       "heat": true,
       "heatLabel": "30°C+ town bowl",
@@ -1297,6 +1300,7 @@
     {
       "id": "ohrid",
       "name": "Ohrid",
+      "currency": { "code": "MKD", "sym": "ден", "note": "North Macedonia uses the denar. Cash-first — ATMs in town, fewer card terminals outside the centre." },
       "when": "2 nights · Jun 25–27",
       "heat": false,
       "heatLabel": "~26°C · coolest stop",
@@ -1578,6 +1582,7 @@
     {
       "id": "sofia",
       "name": "Sofia",
+      "currency": { "code": "BGN", "sym": "лв", "note": "Bulgaria uses the lev (pegged to the euro). Cards in the centre; cash for small spots and the metro." },
       "when": "Closer · Jun 28–29",
       "heat": false,
       "heatLabel": "thin closer",
