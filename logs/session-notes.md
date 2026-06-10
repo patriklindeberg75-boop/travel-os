@@ -371,3 +371,43 @@ None. (Renderer-only edits to the operator-owned `index.html`, operator-authoriz
 
 ### Open Questions
 None.
+
+##  — Session 
+Balkans dossier v3 rewrite — D0 (deploy fix) through D13, full scope per approved plan.
+
+**Mandate:** Balkans dossier v3 full rewrite (hash routing, service worker, mode engine, skip+fold, filters, travel-day/cash/verify cards, P2 set) — done when: CHANGES.md written and Cloudflare deploy confirmed working.
+- Out of scope: photos, coordinate research, fabricated facts
+- Files in scope: trips/balkans-2026-06/index.html, build.mjs, dossier-data.json, manifest.webmanifest, sw.js (new), CHANGES.md (new)
+- Stop if: routing rewrite destabilises the page — stop and flag
+
+### Summary
+Full v3 rewrite of the Balkans dossier (`trips/balkans-2026-06/index.html`) from a single scrolling page into a routed, offline-capable, mode-driven app, per the larger UX report `balkans-dossier-ux-fix-report-v2.md`. Built and committed in 3 verified tiers (D0–D13): Tier 1 skeleton (per-stop hash routing, top nav, service worker, de-announce), Tier 2 decision/relevance core (want/done/skip + fold + sort, mode engine, tooltips, area chips, time-of-day), Tier 3 content + P2 (travel-day leg cards, cash cards, verify+checklist, top-3 strip, search, export, theme toggle, booked). Independent `/qc-pass` returned GO. Reconciliation up front found ~6 report items already shipped in S4/S5; D0 deploy-fix was dropped from the critical path once the operator confirmed deploy is manual file upload, not git.
+
+### Files Created
+- `trips/balkans-2026-06/sw.js` — service worker (cache-first, versioned `balkans-v3-1`, offline precache).
+- `trips/balkans-2026-06/CHANGES.md` — v3 changelog (shipped / skipped / known limits).
+- `logs/scratchpads/2026-06-10-19-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/index.html` — the v3 rewrite (routed shell, modes, decision states, filters, leg/cash/checklist cards, P2 set; data block untouched).
+- `trips/balkans-2026-06/build.mjs` — added conservative `when` (time-of-day) derivation.
+- `trips/balkans-2026-06/dossier-data.json` — added `currency` per stop (5 derivable country facts).
+- `trips/balkans-2026-06/site/index.html` + `site/sw.js` — upload bundle synced to root (verified in sync).
+
+### Decisions Made
+- Full v3 rewrite now (operator), built in 3 tier checkpoints per the plan's routing risk-gate.
+- Deploy is manual file upload to Cloudflare → git push is backup-only; D0 dropped from critical path.
+- Diverged travel-os remote left untouched (force-pushed "Add files via upload"; reconcile not worth the risk; backup-only).
+- "Skip content-dependent" = build derivable structures, omit author-only facts (no photos/coords/fabricated prices).
+- Modes implemented as section-preset + heat cool-filter view-configs (not full §9 relevance recommender).
+
+### Risky actions
+Switched `gh` active account to patriklindeberg75-boop to probe the remote, then switched back to axcioncapital. No force-push, no destructive git op. Renderer-only edits to the operator-owned index.html (data block preserved; build.mjs re-run verified non-destructive each tier). Independent QC GO before wrap.
+
+### Next Steps
+- Upload `trips/balkans-2026-06/site/` to Cloudflare and eyeball v3 on the iPhone (routing, a mode, Add-to-Home-Screen, airplane-mode offline test).
+- Confirm the 3 interpreted Belgrade food spellings (Aviation Museum, Karađorđeva šnicla, šopska salad).
+- Optional: resolve the diverged travel-os git remote if offsite backup is wanted.
+
+### Open Questions
+None.

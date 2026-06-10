@@ -115,3 +115,21 @@
 **Rationale:** iOS Safari does not reliably honor inline/data-URI `apple-touch-icon` — it falls back to a page screenshot. A real PNG file is the only dependable path to a custom home-screen icon on iPhone (the project's primary target). The dossier is hosted (Cloudflare/local), so sibling asset files are standard and acceptable; the self-contained property that matters most (the DATA) stays inline.
 **Boundary:** The icon was built from the dossier's existing `i-route` glyph in its own line style (cream on accent green) to keep the icon set coherent — not a new mark. Consequence to flag at hosting time: the whole `trips/balkans-2026-06/` folder must be uploaded (index.html + icons/ + manifest), not index.html alone, or the icon won't appear.
 **Alternatives considered:** (a) embedded data-URI icon — rejected (unreliable on iOS); (b) no custom icon (screenshot fallback) — rejected (the explicit ask was to "follow the same icon set").
+
+---
+
+**Date:** 2026-06-10 (S7)
+**Decision:** The Balkans dossier deploys to Cloudflare by MANUAL FILE UPLOAD, not git — so `git push` is backup-only, and the diverged `travel-os` remote was left untouched.
+**Context:** Plan D0 assumed Cloudflare auto-deploys from the GitHub repo (operator chose "Cloudflare URL + Add to Home Screen"). On investigation the remote had been force-pushed with a single `49ad954 "Add files via upload"` commit (GitHub web-UI manual upload), wiping ~16 commits of local history from the remote; a plain push is rejected (non-fast-forward). Operator confirmed: they upload files by hand.
+**Rationale:** If deploy is manual, pushing does nothing for the phone, and reconciling a force-diverged private remote (force-push local over it vs rebase) is risky for zero trip benefit. Local commits already protect the work laptop-side. The real deploy step is re-uploading `trips/balkans-2026-06/site/`.
+**Boundary:** D0 dropped from the critical path; `site/` kept in sync each tier as the upload bundle. Remote reconcile deferred to a deliberate future choice. Memory `travel-os-push-account` updated with the diverged-remote + manual-deploy facts.
+**Alternatives considered:** (a) force-push local over the remote — rejected (destructive, no deploy benefit); (b) rebase onto the upload commit — rejected (fiddly, mid-trip-prep risk).
+
+---
+
+**Date:** 2026-06-10 (S7)
+**Decision:** Build the v3 rewrite in 3 committed tier checkpoints (skeleton → decision/relevance core → content+P2), with the routing rewrite gated first as the risk surface.
+**Context:** Full v3 is a large, deeply-interdependent rewrite of a working 2,546-line single file, 6 days before the trip. The plan carried a routing risk-gate and a trip-critical fallback floor.
+**Rationale:** Tiers let each layer be verified (build.mjs non-destructive + jsdom smoke) and committed before the next, so a destabilising routing change would be caught at Tier 1 rather than after everything was layered on. Tiers 1–2 are the trip-critical floor; Tier 3 is upside.
+**Boundary:** Modes shipped as section-preset + heat-cool-filter view-configs, not the full §9 relevance recommender (honest in CHANGES.md). 63 jsdom assertions green; independent QC GO.
+**Alternatives considered:** one mega-edit of the whole renderer — rejected (no intermediate verification, higher blast radius on a working tool near a deadline).
