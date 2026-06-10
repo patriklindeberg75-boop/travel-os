@@ -234,3 +234,7 @@ None destructive. One near-miss: an intermediate commit swept 3 hook-staged `log
 
 ### Open Questions
 None.
+
+## 2026-06-10 — Session S1
+
+Make the Balkans dossier an uploadable website — clean UTF-8 index.html from Patrik's pasted prototype, reconcile stale Belgrade friend recs into the inline data, confirm self-contained (no fetch), provide Cloudflare Pages deploy steps.

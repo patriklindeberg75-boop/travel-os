@@ -70,3 +70,12 @@
 **Rationale:** The JSON is single-consumer (only Patrik's HTML loads it), so coupling it to that renderer's model means the file drops straight in with no translation layer — lower friction than a generic schema both sides must adapt to. Controlled tag + icon vocabulary lifted in so every card renders an icon. New logistics/hours/coords fields ride along as additive keys for future rendering.
 **Alternatives considered:** (a) Generic well-named schema + a mapping step — cleaner in the abstract but needless friction for one consumer; (b) keep data inline in the HTML — simpler hosting but loses the data/render split (deferred to next session's hosting decision).
 **Boundary:** The workflow produces the data file only; it does NOT generate or own the HTML shell.
+
+---
+
+**Date:** 2026-06-10
+**Decision:** Ship the Balkans dossier as a self-contained `trips/balkans-2026-06/index.html` with data baked inline (INLINE-DATA, not fetch-JSON). Reconciled the prototype's stale Belgrade data against the current markdown dossier (folded in 22 friend-rec cards), fixed UTF-8 mojibake corruption from the paste, and added a lilac "friend rec" badge to the renderer so friend tips stay tagged-distinct.
+**Context:** Parked decision from the prior session (inline vs fetch for hosting). Patrik wants an uploadable website; pasted his existing `balkans-dossier.html` prototype (data already inline as TRIP/LEGS literals, but predating last session's Belgrade friend recs). Operator chose: use his prototype as the shell + Balkans one-off first.
+**Rationale:** Inline data = one file, opens locally (no file:// CORS), drops straight onto Cloudflare Pages as a folder deploy. Naming it `index.html` satisfies Pages' entry-point requirement. Friend-rec badge honors the standing "screen but never drop friend recs, tag distinctly" principle in a renderer that had no provenance marker.
+**Boundary:** This produced the Balkans artifact only. The dossier *workflow* was NOT changed to emit HTML — that boundary revisit was explicitly deferred (operator chose "Balkans one-off first"). Patrik still owns the HTML shell.
+**Alternatives considered:** (a) fetch-JSON split — cleaner data/render separation but breaks on local open and needs both files deployed with correct relative path; (b) save the paste verbatim — would have shipped the mojibake and the stale Belgrade section.
