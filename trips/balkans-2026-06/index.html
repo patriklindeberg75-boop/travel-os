@@ -113,12 +113,25 @@ details[open] summary .chev{transform:rotate(180deg)}
 .facts{display:flex;flex-wrap:wrap;gap:5px 14px;font-size:12px;color:var(--faint)}
 .facts span{display:inline-flex;align-items:center;gap:5px}
 
+/* tappable place name + location → Google Maps */
+a.nm{color:var(--accent-ink);text-decoration:none}
+a.nm .ic.pin{font-size:12px;color:var(--accent);margin-left:6px;opacity:.75;vertical-align:baseline}
+a.nm:active{opacity:.6}
+.loc{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--muted);margin:-1px 0 7px;min-height:30px}
+a.loc{color:var(--accent-ink);text-decoration:none}
+a.loc .ic{color:var(--accent);font-size:13px}
+a.loc:active{opacity:.6}
+
 /* avoid */
 .card.avoid{background:var(--danger-bg);border-color:var(--danger);}
 .card.avoid .top{align-items:center}
 .card.avoid .nm{color:var(--danger-ink)}
 .card.avoid .hook{color:var(--danger-ink)}
 .card.avoid .where{font-size:12px;color:var(--danger);margin:-2px 0 6px}
+.card.avoid a.nm{color:var(--danger-ink)}
+.card.avoid a.nm .ic.pin{color:var(--danger)}
+.card.avoid a.loc{color:var(--danger-ink)}
+.card.avoid a.loc .ic{color:var(--danger)}
 .badge-avoid{flex:none;font-size:10.5px;font-weight:600;letter-spacing:.08em;color:var(--danger-ink);background:var(--surface);border-radius:999px;padding:2px 9px;display:inline-flex;align-items:center;gap:4px}
 
 /* prose blocks */
@@ -2241,16 +2254,31 @@ function icon(id){return '<svg class="ic"><use href="#'+id+'"/></svg>';}
 function stars(n){let s='<span class="stars" aria-label="'+n+' of 3">';for(let i=1;i<=3;i++)s+='<svg class="ic'+(i<=n?'':' off')+'"><use href="#i-star"/></svg>';return s+'</span>';}
 function tagHTML(k){const t=TAG[k];if(!t)return'';return '<span class="tag'+(t.cool?' cool':'')+'">'+icon(t.i)+' '+t.l+'</span>';}
 function frHTML(){return '<span class="tag fr">'+icon('i-star')+' friend rec</span>';}
+// Tappable place name → Google Maps (falls back to plain text if no map_link).
+function nmHTML(p){
+  if(!p.map_link)return '<span class="nm">'+p.nm+'</span>';
+  return '<a class="nm" href="'+p.map_link+'" target="_blank" rel="noopener" aria-label="Open '+p.nm+' in Google Maps">'+p.nm+'<svg class="ic pin"><use href="#i-pin"/></svg></a>';
+}
+// Tappable location line (neighborhood · city) → same map link. `fb` is a fallback label (avoid's `where`).
+function locHTML(p,fb){
+  let label=[p.neighborhood,p.city].filter(Boolean).join(' · ')||fb||'';
+  if(!label)return '';
+  let inner=icon('i-pin')+' '+label;
+  return p.map_link
+    ? '<a class="loc" href="'+p.map_link+'" target="_blank" rel="noopener">'+inner+'</a>'
+    : '<div class="loc">'+inner+'</div>';
+}
 function card(p){
   let f=(p.facts&&p.facts.length)?'<div class="facts">'+p.facts.map(x=>'<span>'+icon(x[0])+' '+x[1]+'</span>').join('')+'</div>':'';
   let tags=p.tags.map(tagHTML).join('')+(p.fr?frHTML():'');
-  return '<div class="card"><div class="top"><span class="nm">'+p.nm+'</span>'+stars(p.t)+'</div>'+
+  return '<div class="card"><div class="top">'+nmHTML(p)+stars(p.t)+'</div>'+
+    locHTML(p)+
     '<div class="tags">'+tags+'</div>'+
     '<p class="hook">'+p.hook+'</p>'+f+'</div>';
 }
 function avoidCard(p){
-  return '<div class="card avoid"><div class="top"><span class="nm">'+p.nm+'</span><span class="badge-avoid">'+icon('i-alert')+' AVOID</span></div>'+
-    '<div class="where">'+icon('i-pin')+' '+p.where+'</div><p class="hook">'+p.hook+'</p></div>';
+  return '<div class="card avoid"><div class="top">'+nmHTML(p)+'<span class="badge-avoid">'+icon('i-alert')+' AVOID</span></div>'+
+    locHTML(p,p.where)+'<p class="hook">'+p.hook+'</p></div>';
 }
 function sectionFix(title,iconId,bodyHTML,open,count){
   let lead='<svg class="ic lead"><use href="#'+iconId+'"/></svg>';
