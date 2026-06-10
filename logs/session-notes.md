@@ -338,3 +338,6 @@ None. (Renderer edit touched Patrik-owned `index.html`, but only the JS/CSS outs
 
 ### Open Questions
 None.
+
+## 2026-06-10 — Session S5
+V2 renderer upgrades on the Balkans dossier index.html: want/done toggles (#1), tag/tier filters (#2), safe-area + tap-target hygiene (#4), section collapse memory (#5), Add-to-Home-Screen polish (#6), masthead spacing fix (#7).

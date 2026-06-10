@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Balkans Overland South — Travel Dossier</title>
+<meta name="description" content="Balkans overland dossier — Budapest to Sofia, heat-aware, ultra-budget. A menu, not a schedule.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efe4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16140f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Balkans">
+<meta name="application-name" content="Balkans">
 <style>
 :root{
   --bg:#f4efe4; --surface:#fffdf8; --surface-2:#ece5d6;
@@ -165,6 +173,52 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 .legend .sec-body{font-size:13px;color:var(--muted);line-height:1.7}
 .legend .row{display:flex;gap:10px;align-items:center;margin-bottom:6px}
 .legend .k{flex:none;width:84px;color:var(--ink)}
+
+/* ===== V2 interactive layer (want/done · filters · section memory · mobile hygiene) ===== */
+
+/* #4 — safe-area insets (notch / home indicator) */
+.wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right));padding-bottom:max(80px,calc(env(safe-area-inset-bottom) + 48px))}
+nav.stops{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+/* #4 — tap-target hygiene on the persistent controls */
+.toolbar button{min-height:38px}
+nav.stops a{min-height:36px;display:inline-flex;align-items:center}
+
+/* #7 — masthead spacing on small viewports */
+@media (max-width:400px){
+  .mast{padding:24px 0 14px}
+  .mast h1{font-size:28px}
+  .mast .sub{font-size:14px}
+  .mast .meta{gap:6px;margin-top:13px}
+  .pill{font-size:12px;padding:4px 9px}
+}
+
+/* #1 — want / done place toggles */
+.card .acts{display:flex;gap:6px;margin-top:10px}
+.act{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,border-color .15s}
+.act .ic{font-size:15px}
+.act:active{opacity:.6}
+.act.want[aria-pressed="true"]{background:var(--accent-bg);color:var(--accent-ink);border-color:var(--accent)}
+.act.done[aria-pressed="true"]{background:var(--surface-2);color:var(--faint);border-color:var(--line-2)}
+.card.is-want{box-shadow:inset 3px 0 0 var(--accent)}
+.card.is-done{opacity:.6}
+.card.is-done .hook,.card.is-done .facts{color:var(--faint)}
+
+/* #2 — tag / tier filter bar */
+.filterbar{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:11px 0 5px}
+.filterbar[hidden]{display:none}
+.fgroup{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fsep{width:1px;align-self:stretch;min-height:22px;background:var(--line);margin:0 3px}
+.flabel{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.chip{font-family:var(--sans);font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:6px 11px;min-height:34px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,border-color .15s}
+.chip .ic{font-size:13px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.tier[aria-pressed="true"]{background:var(--star);color:#211d16;border-color:var(--star)}
+.fclear{font-family:var(--sans);font-size:12px;color:var(--muted);background:transparent;border:none;text-decoration:underline;cursor:pointer;padding:6px;min-height:34px}
+.toolbar #filterToggle{margin-right:auto}
+.toolbar #filterToggle[aria-pressed="true"]{background:var(--surface-2);color:var(--ink);border-color:var(--line-2)}
+/* filtered-out cards + emptied sections */
+.card.filtered{display:none}
+#trip details.empty{display:none}
 </style>
 </head>
 <body>
@@ -190,6 +244,8 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <symbol id="i-route" viewBox="0 0 24 24"><line x1="12" y1="3.5" x2="12" y2="20.5"/><path d="M12 6h6l-2 2 2 2h-6"/><path d="M12 12.5H6l2 2-2 2h6"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M12 3v2.4M12 18.6V21M3 12h2.4M18.6 12H21M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M16.7 7.3l1.7-1.7M5.6 18.4l1.7-1.7"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4h11l-2.2 3.5L17 11H6"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 4h10v16l-5-3.5L7 20z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
 </svg>
 
 <div class="wrap">
@@ -223,9 +279,11 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   </details>
 
   <div class="toolbar">
-    <button id="expandAll"><svg class="ic"><use href="#i-chev"/></svg> Expand all</button>
-    <button id="collapseAll">Collapse all</button>
+    <button id="filterToggle" type="button" aria-pressed="false"><svg class="ic"><use href="#i-view"/></svg> Filters</button>
+    <button id="expandAll" type="button"><svg class="ic"><use href="#i-chev"/></svg> Expand all</button>
+    <button id="collapseAll" type="button">Collapse all</button>
   </div>
+  <div class="filterbar" id="filterbar" hidden></div>
 
   <main id="trip"></main>
 
@@ -2271,10 +2329,17 @@ function locHTML(p,fb){
 function card(p){
   let f=(p.facts&&p.facts.length)?'<div class="facts">'+p.facts.map(x=>'<span>'+icon(x[0])+' '+x[1]+'</span>').join('')+'</div>':'';
   let tags=p.tags.map(tagHTML).join('')+(p.fr?frHTML():'');
-  return '<div class="card"><div class="top">'+nmHTML(p)+stars(p.t)+'</div>'+
+  // #1 want/done controls (keyed on stable place id)
+  let acts='<div class="acts">'+
+    '<button class="act want" type="button" data-act="want" aria-pressed="false">'+icon('i-bookmark')+' Save</button>'+
+    '<button class="act done" type="button" data-act="done" aria-pressed="false">'+icon('i-check')+' Done</button>'+
+    '</div>';
+  // #2 filter data: tier + tag set (fr counts as a filterable tag)
+  let dataAttr=' data-id="'+(p.id||'')+'" data-tier="'+(p.t||0)+'" data-tags="'+((p.tags||[]).join(' ')+(p.fr?' fr':'')).trim()+'"';
+  return '<div class="card"'+dataAttr+'><div class="top">'+nmHTML(p)+stars(p.t)+'</div>'+
     locHTML(p)+
     '<div class="tags">'+tags+'</div>'+
-    '<p class="hook">'+p.hook+'</p>'+f+'</div>';
+    '<p class="hook">'+p.hook+'</p>'+f+acts+'</div>';
 }
 function avoidCard(p){
   return '<div class="card avoid"><div class="top">'+nmHTML(p)+'<span class="badge-avoid">'+icon('i-alert')+' AVOID</span></div>'+
@@ -2351,9 +2416,119 @@ nav.innerHTML=TRIP.map(s=>'<a href="#'+s.id+'">'+s.name+'</a>').join('')+'<a hre
 // stagger animation
 document.querySelectorAll('.stop').forEach((el,i)=>el.style.animationDelay=(i*0.06)+'s');
 
-// expand / collapse
-document.getElementById('expandAll').onclick=()=>document.querySelectorAll('#trip details').forEach(d=>d.open=true);
-document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('#trip details').forEach(d=>d.open=false);
+/* ===== V2 interactive layer ============================================ */
+/* localStorage, guarded for file:// / private-mode (degrades to in-memory). */
+const LS={
+  get(k,d){try{const v=localStorage.getItem('balkans:'+k);return v?JSON.parse(v):d;}catch(e){return d;}},
+  set(k,v){try{localStorage.setItem('balkans:'+k,JSON.stringify(v));}catch(e){}}
+};
+
+/* --- #1 want / done place toggles (keyed on place id) --- */
+const places=LS.get('places',{});          // { id:{w:1,d:1} }
+function applyPlace(c){
+  const id=c.getAttribute('data-id'); if(!id)return;
+  const st=places[id]||{};
+  c.classList.toggle('is-want',!!st.w);
+  c.classList.toggle('is-done',!!st.d);
+  const w=c.querySelector('.act.want'), d=c.querySelector('.act.done');
+  if(w)w.setAttribute('aria-pressed',st.w?'true':'false');
+  if(d)d.setAttribute('aria-pressed',st.d?'true':'false');
+}
+document.getElementById('trip').addEventListener('click',e=>{
+  const btn=e.target.closest('.act'); if(!btn)return;
+  e.preventDefault();
+  const c=btn.closest('.card'), id=c.getAttribute('data-id'); if(!id)return;
+  const st=places[id]||{}, act=btn.getAttribute('data-act');
+  if(act==='want')st.w=st.w?0:1; else if(act==='done')st.d=st.d?0:1;
+  if(!st.w&&!st.d)delete places[id]; else places[id]=st;
+  LS.set('places',places);
+  applyPlace(c);
+  applyFilters();   // 'Saved' / 'Hide done' filters depend on this state
+});
+
+/* --- #5 section open/closed memory --- */
+const secState=LS.get('sections',{});      // { 'stopid:idx': bool }
+document.querySelectorAll('#trip > section.stop').forEach(stop=>{
+  stop.querySelectorAll(':scope > details').forEach((d,i)=>{
+    const k=stop.id+':'+i; d.setAttribute('data-sk',k);
+    if(k in secState)d.open=secState[k];
+    d.addEventListener('toggle',()=>{secState[k]=d.open;LS.set('sections',secState);});
+  });
+});
+
+/* --- #2 tag / tier (+ saved / hide-done) filters --- */
+const F={tags:new Set(),tier:0,wantOnly:false,hideDone:false};
+function applyFilters(){
+  document.querySelectorAll('#trip .card:not(.avoid)').forEach(c=>{
+    const tier=+(c.getAttribute('data-tier')||0);
+    const ctags=(c.getAttribute('data-tags')||'').split(' ').filter(Boolean);
+    const st=places[c.getAttribute('data-id')]||{};
+    let show=true;
+    if(F.tier&&tier<F.tier)show=false;
+    if(show&&F.tags.size)show=[...F.tags].some(t=>ctags.includes(t));
+    if(show&&F.wantOnly&&!st.w)show=false;
+    if(show&&F.hideDone&&st.d)show=false;
+    c.classList.toggle('filtered',!show);
+  });
+  // hide do/eat sections whose every place card is filtered out
+  document.querySelectorAll('#trip > section.stop > details').forEach(d=>{
+    const cards=d.querySelectorAll('.card:not(.avoid)');
+    if(cards.length)d.classList.toggle('empty',![...cards].some(c=>!c.classList.contains('filtered')));
+  });
+}
+(function buildFilterBar(){
+  const present=new Set();
+  TRIP.forEach(s=>[...(s.do||[]),...(s.eat||[])].forEach(p=>{(p.tags||[]).forEach(t=>present.add(t));if(p.fr)present.add('fr');}));
+  const tagOrder=Object.keys(TAG).filter(k=>present.has(k));
+  const tierChips=[['All',0],['★★+',2],['★★★',3]].map(([l,v])=>
+    '<button class="chip tier" type="button" data-tier="'+v+'" aria-pressed="'+(v===0?'true':'false')+'">'+l+'</button>').join('');
+  let tagChips=tagOrder.map(k=>'<button class="chip tag" type="button" data-tag="'+k+'" aria-pressed="false">'+icon(TAG[k].i)+' '+TAG[k].l+'</button>').join('');
+  if(present.has('fr'))tagChips+='<button class="chip tag" type="button" data-tag="fr" aria-pressed="false">'+icon('i-star')+' friend rec</button>';
+  const bar=document.getElementById('filterbar');
+  bar.innerHTML=
+    '<span class="flabel">Rank</span><div class="fgroup tiers">'+tierChips+'</div>'+
+    '<span class="fsep"></span>'+
+    '<span class="flabel">Type</span><div class="fgroup tags">'+tagChips+'</div>'+
+    '<span class="fsep"></span>'+
+    '<button class="chip" type="button" id="fWant" aria-pressed="false">'+icon('i-bookmark')+' Saved</button>'+
+    '<button class="chip" type="button" id="fHideDone" aria-pressed="false">'+icon('i-check')+' Hide done</button>'+
+    '<button class="fclear" type="button">Clear</button>';
+  bar.addEventListener('click',e=>{
+    const t=e.target.closest('.chip,.fclear'); if(!t)return;
+    if(t.classList.contains('fclear')){
+      F.tags.clear();F.tier=0;F.wantOnly=false;F.hideDone=false;
+      bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+      bar.querySelector('.chip.tier[data-tier="0"]').setAttribute('aria-pressed','true');
+    }else if(t.classList.contains('tier')){
+      F.tier=+t.getAttribute('data-tier');
+      bar.querySelectorAll('.chip.tier').forEach(c=>c.setAttribute('aria-pressed',c===t?'true':'false'));
+    }else if(t.classList.contains('tag')){
+      const tag=t.getAttribute('data-tag'), on=t.getAttribute('aria-pressed')==='true';
+      t.setAttribute('aria-pressed',on?'false':'true');
+      on?F.tags.delete(tag):F.tags.add(tag);
+    }else if(t.id==='fWant'){F.wantOnly=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.wantOnly?'true':'false');}
+    else if(t.id==='fHideDone'){F.hideDone=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.hideDone?'true':'false');}
+    applyFilters();
+  });
+})();
+document.getElementById('filterToggle').addEventListener('click',function(){
+  const bar=document.getElementById('filterbar'), show=bar.hasAttribute('hidden');
+  show?bar.removeAttribute('hidden'):bar.setAttribute('hidden','');
+  this.setAttribute('aria-pressed',show?'true':'false');
+});
+
+/* --- expand / collapse all (persists section memory) --- */
+function setAll(open){
+  document.querySelectorAll('#trip > section.stop > details').forEach(d=>{
+    d.open=open;const k=d.getAttribute('data-sk');if(k)secState[k]=open;
+  });
+  LS.set('sections',secState);
+}
+document.getElementById('expandAll').onclick=()=>setAll(true);
+document.getElementById('collapseAll').onclick=()=>setAll(false);
+
+/* --- apply persisted state on load --- */
+document.querySelectorAll('#trip .card[data-id]').forEach(applyPlace);
 
 // scrollspy
 const links=[...nav.querySelectorAll('a')];
