@@ -270,3 +270,34 @@ None. (Fixed mojibake by reconstructing correct UTF-8 rather than saving the cor
 
 ### Open Questions
 None.
+
+## 2026-06-10 — Session S3
+
+### Summary
+Ran a diagnose-only UX pass on the Balkans dossier HTML (`trips/balkans-2026-06/index.html`), evaluated for actual in-trip use on mobile Safari / iPhone 16 Pro (internet available), weighted to jobs A (near me now), D (eat tonight), E (track done/want). Verdict: strong pre-trip briefing but a read-only prototype for in-trip use — nothing is tappable to a map, no location signal, no saved state. Produced two docs (diagnosis + workflow-additions), QC'd the diagnosis (GO). On operator pushback, rescoped the workflow-additions doc into a focused V1 (make places actionable) vs a deferred V2 roadmap. Diagnose-only — no fixes to the HTML or reference files.
+
+### Files Created
+- `trips/balkans-2026-06/ux-diagnosis.md` — verdict + 13 severity-triaged findings (MUST-FIX: F1 no map links, F2 no location signal, F3 no saved state, F4 no open-now), each tied to job A/D/E or mobile context with a one-line fix direction.
+- `trips/balkans-2026-06/ux-workflow-additions.md` — V1 hard requirements (map_link, city, neighborhood, stable per-place id) vs V2 roadmap (saved-state, filters, search, structured hours/open-now, time-of-day, app polish, mobile hygiene). Core finding: the template spec is already ahead of the data + renderer.
+- `logs/scratchpads/2026-06-10-11-18-scratchpad.md` — continuity scratchpad.
+- memory: `dossier-v1-actionable-not-app.md` (+ MEMORY.md index line).
+
+### Files Modified
+- `trips/balkans-2026-06/ux-workflow-additions.md` — rewritten into V1/V2 structure after operator second opinion.
+- `trips/balkans-2026-06/ux-diagnosis.md` — F4 fix-direction reconciled to the v1/v2 split.
+- `logs/session-notes.md`, `logs/decisions.md` — this entry + one decision.
+
+### Decisions Made
+- v1 = make places **actionable** (locatable + tappable), NOT an interactive travel app; defer saved-state/filters/structured-hours to V2 until the basic loop is validated on a real trip. (operator second opinion; logged to decisions.md)
+- Structured opening hours too fragile for v1 → optional free-text `hours_note`; computed "open now" deferred to V2.
+- Renderer fixes (map links, localStorage, filters, safe-area CSS) stay Patrik's HTML — the workflow's job is to guarantee the DATA carries what those features need.
+
+### Risky actions
+None.
+
+### Next Steps
+- Run the **fix session** on the Balkans dossier: do V1 data work first (workflow emits id/city/neighborhood/map_link) — it unblocks the cheap renderer features. Then renderer (tappable cards + neighborhood shown).
+- Carryover from S1/S2: fix the travel-os git remote (`patriklindeberg75-boop`, not axcioncapital) so the unpushed-commit backlog can ship; confirm the 3 interpreted Belgrade food spellings.
+
+### Open Questions
+None.
