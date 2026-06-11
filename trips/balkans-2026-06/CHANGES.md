@@ -256,3 +256,51 @@ Domakjinska Kukja (Velestovo)
 | Vkusnoto Kebapche | Sofia / Do | Food / Street & quick eats | € — “rock-bottom prices” |
 | HleBar | Sofia / Do | Food / Cafés & sweets | € — banitsa — pocket-change item class |
 
+
+---
+
+# v4 Tier B — hero coordinates · Map & pins view
+
+Built 2026-06-11, same session as the Tier A floor.
+
+## Coordinates (hero set — verified, not guessed)
+
+Source: OpenStreetMap via Nominatim geocoding (exact OSM venue objects),
+2026-06-11. 10 ★★★ venue pins + 5 stop centers injected into
+`dossier-data.json`; `build.mjs` switches their Google-Maps links from
+name-search to exact `lat,lng` automatically, and card pages now show the raw
+coordinates as selectable text (U-12) for offline maps apps.
+
+Pinned: Ervin Szabó Library (central, Szabó Ervin tér 1) · Római-part
+promenade · Ada Ciganlija · Ada Međica · Pržionica (Dobračina 59B) · Kalaja e
+Prizrenit · Prevallë village (hike start) · Elshani village (hike start) ·
+Ashurbanipal · Zhenski Pazar.
+
+Not resolvable in OSM, left unpinned (still on `coords-missing.md`, 104 left):
+- **Grill 'Loki'** — OSM only lists a Dorćol branch; the card's legendary
+  window is in Zemun, so pinning the branch would mislead. Needs the Zemun
+  address from the author or on-the-ground confirmation.
+- **Qebaptore Bekimi**, **Milenko's viewpoint** (informal dirt-track spot) —
+  not mapped features.
+
+## Map & pins view (11.5 — honest below the pin threshold)
+
+Every stop page now carries a **Map & pins** chip (first slot of the top-pick
+strip) → `#/{stop}/map`: an "open the stop in Google Maps" center link, then
+pinned places grouped by area with raw coordinates + one-tap directions, then
+the not-yet-pinned places as name-search rows. Works fully offline (it's just
+the list — no tiles to fail).
+
+**The interactive Leaflet map is deliberately not shipped.** With hero-set
+coverage every stop has 2–3 pins — all below the agreed 5-pin threshold — so
+vendoring ~45 KB of library would buy a near-empty map. The threshold hook is
+commented at `renderMapPage` in index.html: when the long-tail coordinate pass
+brings a stop to ≥5 pins, vendor Leaflet (local, never CDN — offline-first)
+and render it behind the same route, keeping the pin list as the offline/sparse
+fallback.
+
+## QA
+
+15 additional jsdom assertions (map chips/routes, pinned grouping, raw-coords
+display, coordinate vs name-search links, center links, back links, no Leaflet
+payload) — green; full v4 suite re-run green (78 total). SW cache → `balkans-v4-2`.

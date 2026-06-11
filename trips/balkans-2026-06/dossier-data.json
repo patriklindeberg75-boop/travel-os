@@ -38,7 +38,9 @@
               "midday refuge"
             ]
           ],
-          "cat": "sights"
+          "cat": "sights",
+          "lat": 47.48945,
+          "lng": 19.0649
         },
         {
           "nm": "Római-part",
@@ -56,7 +58,9 @@
               "H5 HÉV from centre"
             ]
           ],
-          "cat": "nature"
+          "cat": "nature",
+          "lat": 47.57117,
+          "lng": 19.06515
         },
         {
           "nm": "Lumen Café",
@@ -312,6 +316,10 @@
       "timing": {
         "verdict": "Acceptable. Peak summer, but ~27°C sits below the heat ceiling.",
         "note": "No festival, strike or holiday flagged in this window — worth a quick re-check closer to the date. A good short opener, with the cool riverside day in hand if it turns hot."
+      },
+      "center": {
+        "lat": 47.49788,
+        "lng": 19.04024
       }
     },
     {
@@ -351,7 +359,9 @@
               "CarGo taxi ~€3"
             ]
           ],
-          "cat": "nature"
+          "cat": "nature",
+          "lat": 44.78444,
+          "lng": 20.38104
         },
         {
           "nm": "Ada Međica",
@@ -364,7 +374,9 @@
           ],
           "hook": "A small boat to a car-free forested river island — wild swimming and shade, away from the crowds.",
           "facts": [],
-          "cat": "nature"
+          "cat": "nature",
+          "lat": 44.79234,
+          "lng": 20.38865
         },
         {
           "nm": "Pržionica",
@@ -389,7 +401,9 @@
           "workMeta": {
             "wifi": "strong",
             "laptop": "yes — top local work café"
-          }
+          },
+          "lat": 44.82329,
+          "lng": 20.46766
         },
         {
           "nm": "Silosi",
@@ -1080,6 +1094,10 @@
       "timing": {
         "verdict": "Acceptable, with a heat caveat — late June can break 30°C.",
         "note": "That's why the plan is built around rivers, the island beach and the forest. Treat afternoons as swim-and-shade time; save the city walking for morning and evening."
+      },
+      "center": {
+        "lat": 44.81781,
+        "lng": 20.4569
       }
     },
     {
@@ -1116,7 +1134,9 @@
               "minibus ~7/8/10am, Marash bridge"
             ]
           ],
-          "cat": "nature"
+          "cat": "nature",
+          "lat": 42.1761,
+          "lng": 20.96188
         },
         {
           "nm": "Sunrise fortress climb (Kalaja)",
@@ -1134,7 +1154,9 @@
               "go ~6am"
             ]
           ],
-          "cat": "sights"
+          "cat": "sights",
+          "lat": 42.20947,
+          "lng": 20.74558
         },
         {
           "nm": "Early-morning çajtore",
@@ -1430,6 +1452,10 @@
       "timing": {
         "verdict": "Acceptable, with the same heat caveat — the town bowl can top 30°C.",
         "note": "Split between dawn-and-dusk town time and a full cool day in the Sharr. Very good if you give the mountains a full day and keep the town to the cooler hours."
+      },
+      "center": {
+        "lat": 42.21302,
+        "lng": 20.73633
       }
     },
     {
@@ -1460,7 +1486,9 @@
           ],
           "hook": "The signature day — a gentle ~16km loop to a near-deserted mountain village through wildflower valleys, cool air, zero crowds.",
           "facts": [],
-          "cat": "nature"
+          "cat": "nature",
+          "lat": 41.02631,
+          "lng": 20.8166
         },
         {
           "nm": "Milenko's viewpoint, above Kaneo",
@@ -1740,6 +1768,10 @@
       "timing": {
         "verdict": "Good. The coolest stop at ~26°C thanks to the lake and altitude — no heat flag.",
         "note": "Peak season on the lakefront, but the whole plan routes you off the strip into the mountains and quiet southern shore. The trip's breathing space — as long as you stay off the central boardwalk."
+      },
+      "center": {
+        "lat": 41.11702,
+        "lng": 20.80177
       }
     },
     {
@@ -1781,7 +1813,9 @@
             ]
           ],
           "cat": "rest",
-          "pt": 1
+          "pt": 1,
+          "lat": 42.70231,
+          "lng": 23.32066
         },
         {
           "nm": "Zhenski Pazar (Women's Market)",
@@ -1800,7 +1834,9 @@
             ]
           ],
           "cat": "street",
-          "pt": 1
+          "pt": 1,
+          "lat": 42.70286,
+          "lng": 23.31984
         },
         {
           "nm": "Bar Lorca",
@@ -1906,6 +1942,10 @@
       "timing": {
         "verdict": "A thin closer by design — one evening and a short morning before the airport.",
         "note": "No day trips. The plan does exactly what the window allows: dinner, a place to meet people, and a real Sofia morning before you fly."
+      },
+      "center": {
+        "lat": 42.6977,
+        "lng": 23.32174
       }
     }
   ],
