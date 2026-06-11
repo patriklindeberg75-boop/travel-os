@@ -3,7 +3,11 @@
     {
       "id": "budapest",
       "name": "Budapest",
-      "currency": { "code": "HUF", "sym": "Ft", "note": "Hungary uses the forint, not the euro. Cards are widely accepted; keep some cash for markets and transit." },
+      "currency": {
+        "code": "HUF",
+        "sym": "Ft",
+        "note": "Hungary uses the forint, not the euro. Cards are widely accepted; keep some cash for markets and transit."
+      },
       "when": "2 nights · Jun 16–18",
       "heat": false,
       "heatLabel": "~27°C · comfortable",
@@ -33,7 +37,8 @@
               "i-tree",
               "midday refuge"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Római-part",
@@ -50,7 +55,8 @@
               "i-bus",
               "H5 HÉV from centre"
             ]
-          ]
+          ],
+          "cat": "nature"
         },
         {
           "nm": "Lumen Café",
@@ -68,7 +74,12 @@
               "i-eat",
               "serves food too"
             ]
-          ]
+          ],
+          "cat": "work",
+          "workMeta": {
+            "laptop": "yes — work-by-day café",
+            "noise": "lively at night (jazz)"
+          }
         },
         {
           "nm": "Kelet Kávézó",
@@ -80,7 +91,11 @@
             "eat"
           ],
           "hook": "Book-lined Buda café — good for a work session or chatting with locals over a cheap lunch.",
-          "facts": []
+          "facts": [],
+          "cat": "work",
+          "workMeta": {
+            "laptop": "yes — “good for a work session”"
+          }
         },
         {
           "nm": "Tilos a Tilos",
@@ -91,7 +106,8 @@
             "social"
           ],
           "hook": "Gritty local alternative to the tourist ruin bars — live music and community murals.",
-          "facts": []
+          "facts": [],
+          "cat": "night"
         },
         {
           "nm": "Lake Feneketlen",
@@ -102,7 +118,8 @@
             "shade"
           ],
           "hook": "Deeply shaded urban lake park — a heat-smart green break in Buda.",
-          "facts": []
+          "facts": [],
+          "cat": "walks"
         },
         {
           "nm": "Fellini Culture Pub",
@@ -119,7 +136,8 @@
               "i-eat",
               "serves food too"
             ]
-          ]
+          ],
+          "cat": "night"
         },
         {
           "nm": "Óbuda Fő tér",
@@ -130,7 +148,8 @@
             "culture"
           ],
           "hook": "A preserved cobbled old-town square the tour groups skip — a calm evening stroll.",
-          "facts": []
+          "facts": [],
+          "cat": "walks"
         }
       ],
       "stayPick": "Palace Quarter / Józsefváros (District VIII). The best blend — local texture, good work cafés, and the off-beat social-hostel scene, without dropping you in the District VII party core. Walkable to the centre, one tram from Buda.",
@@ -164,7 +183,14 @@
             "eat"
           ],
           "hook": "Laptop-friendly, cheap modern Hungarian daily lunch.",
-          "facts": []
+          "facts": [],
+          "cat": "rest",
+          "also": [
+            "work"
+          ],
+          "workMeta": {
+            "laptop": "yes — laptop-friendly"
+          }
         },
         {
           "nm": "Rákóczi téri Vásárcsarnok",
@@ -176,7 +202,9 @@
             "eat"
           ],
           "hook": "A genuinely local market hall — ultra-budget street food, no tour groups.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Lehel Piac lángos",
@@ -188,7 +216,9 @@
             "market"
           ],
           "hook": "The authentic garlic lángos locals defend — not the Retro Lángos tourist version.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Pozsonyi Kisvendéglő",
@@ -204,7 +234,9 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest",
+          "pt": 2
         },
         {
           "nm": "Római-part hekk stalls",
@@ -220,7 +252,9 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "street",
+          "pt": 1
         }
       ],
       "avoid": [
@@ -229,14 +263,16 @@
           "neighborhood": "Belváros (District IX, Fővám tér)",
           "city": "Budapest",
           "where": "District IX",
-          "hook": "The lángos 'hidden topping' scam pushes a basic plate to €15–20. Use Rákóczi market instead."
+          "hook": "The lángos 'hidden topping' scam pushes a basic plate to €15–20. Use Rákóczi market instead.",
+          "instead": "budapest-rakoczi-teri-vasarcsarnok"
         },
         {
           "nm": "Szimpla Kert",
           "neighborhood": "Jewish Quarter (District VII)",
           "city": "Budapest",
           "where": "District VII",
-          "hook": "The original ruin bar, now stag-party tourism with inflated prices; detached from local life."
+          "hook": "The original ruin bar, now stag-party tourism with inflated prices; detached from local life.",
+          "instead": "budapest-tilos-a-tilos"
         },
         {
           "nm": "New York Café",
@@ -257,7 +293,8 @@
           "neighborhood": "City centre",
           "city": "Budapest",
           "where": "central",
-          "hook": "Commercialised assembly-line lángos at a premium — the Lehel market stand is the real thing."
+          "hook": "Commercialised assembly-line lángos at a premium — the Lehel market stand is the real thing.",
+          "instead": "budapest-lehel-piac-langos"
         },
         {
           "nm": "Váci utca 'traditional' restaurants",
@@ -280,7 +317,11 @@
     {
       "id": "belgrade",
       "name": "Belgrade",
-      "currency": { "code": "RSD", "sym": "дин", "note": "Serbia uses the dinar. Cash-first culture — cards work in cafés but carry dinars for markets, kiosks and buses." },
+      "currency": {
+        "code": "RSD",
+        "sym": "дин",
+        "note": "Serbia uses the dinar. Cash-first culture — cards work in cafés but carry dinars for markets, kiosks and buses."
+      },
       "when": "2 nights · Jun 19–21",
       "heat": true,
       "heatLabel": "30°C+ · heat-flagged",
@@ -309,7 +350,8 @@
               "i-bus",
               "CarGo taxi ~€3"
             ]
-          ]
+          ],
+          "cat": "nature"
         },
         {
           "nm": "Ada Međica",
@@ -321,7 +363,8 @@
             "shade"
           ],
           "hook": "A small boat to a car-free forested river island — wild swimming and shade, away from the crowds.",
-          "facts": []
+          "facts": [],
+          "cat": "nature"
         },
         {
           "nm": "Pržionica",
@@ -341,7 +384,12 @@
               "i-pin",
               "Dorćol"
             ]
-          ]
+          ],
+          "cat": "work",
+          "workMeta": {
+            "wifi": "strong",
+            "laptop": "yes — top local work café"
+          }
         },
         {
           "nm": "Silosi",
@@ -353,7 +401,8 @@
             "view"
           ],
           "hook": "Repurposed Danube grain silos with open-air art and sunsets — the city's gritty post-industrial cool.",
-          "facts": []
+          "facts": [],
+          "cat": "night"
         },
         {
           "nm": "Gavez Club",
@@ -366,7 +415,9 @@
             "social"
           ],
           "hook": "Bohemian tavern hidden deep in the island forest — a total midday heat escape, dirt-cheap.",
-          "facts": []
+          "facts": [],
+          "cat": "rest",
+          "pt": 1
         },
         {
           "nm": "Košutnjak forest trails",
@@ -378,7 +429,8 @@
             "shade"
           ],
           "hook": "A full free day of deep-shade forest walking — active without the sun.",
-          "facts": []
+          "facts": [],
+          "cat": "nature"
         },
         {
           "nm": "Zaokret",
@@ -389,7 +441,8 @@
             "social"
           ],
           "hook": "The meet-people spot: a 25–35 backpacker and local crowd over cheap drinks, non-touristy.",
-          "facts": []
+          "facts": [],
+          "cat": "night"
         },
         {
           "nm": "Splavs on Savski kej",
@@ -400,7 +453,8 @@
             "social"
           ],
           "hook": "Ultra-budget sunset beer on a local river barge.",
-          "facts": []
+          "facts": [],
+          "cat": "night"
         },
         {
           "nm": "Kalemegdan / Belgrade Fortress, for sunset",
@@ -422,7 +476,8 @@
               "i-clock",
               "sunset"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Church of Saint Sava (Hram Svetog Save)",
@@ -444,7 +499,8 @@
               "i-pin",
               "Vračar"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Nikola Tesla Museum",
@@ -465,7 +521,8 @@
               "i-pin",
               "Vračar"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Ružica Church & St. Petka Chapel",
@@ -482,7 +539,8 @@
               "i-pin",
               "Kalemegdan"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Museum of Yugoslavia (House of Flowers / Tito's tomb)",
@@ -500,7 +558,8 @@
               "i-pin",
               "Dedinje"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Jevremovac Botanical Garden",
@@ -517,7 +576,8 @@
               "i-pin",
               "Stari Grad"
             ]
-          ]
+          ],
+          "cat": "walks"
         },
         {
           "nm": "Topčider Park (+ Residence of Prince Miloš)",
@@ -535,7 +595,8 @@
               "i-pin",
               "Topčider"
             ]
-          ]
+          ],
+          "cat": "walks"
         },
         {
           "nm": "Gardoš / Millennium Tower",
@@ -553,7 +614,8 @@
               "i-pin",
               "Zemun"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Avala Tower (Avalski toranj)",
@@ -571,7 +633,8 @@
               "i-pin",
               "Mount Avala"
             ]
-          ]
+          ],
+          "cat": "nature"
         },
         {
           "nm": "Aviation Museum (Muzej vazduhoplovstva)",
@@ -588,7 +651,8 @@
               "i-pin",
               "by Nikola Tesla Airport"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Eternal Derby — Partizan vs Crvena zvezda",
@@ -605,7 +669,8 @@
               "i-clock",
               "check fixtures"
             ]
-          ]
+          ],
+          "cat": "night"
         },
         {
           "nm": "Skadarlija",
@@ -622,7 +687,8 @@
               "i-pin",
               "Stari Grad"
             ]
-          ]
+          ],
+          "cat": "walks"
         },
         {
           "nm": "Knez Mihailova Street",
@@ -639,7 +705,8 @@
               "i-pin",
               "Stari Grad"
             ]
-          ]
+          ],
+          "cat": "walks"
         },
         {
           "nm": "Belgrade Waterfront (Beograd na vodi)",
@@ -656,7 +723,8 @@
               "i-pin",
               "Savamala"
             ]
-          ]
+          ],
+          "cat": "walks"
         }
       ],
       "doNote": "Friend recs (the lilac 'friend rec' cards) came from someone who knows Belgrade — it's more than two days of material, so if the city clicks it easily justifies a third night.",
@@ -690,7 +758,9 @@
             "eat"
           ],
           "hook": "A legendary street window for a big cheap pljeskavica with onions and kajmak.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Efi cafe",
@@ -702,7 +772,12 @@
             "eat"
           ],
           "hook": "Air-conditioned upstairs work space, good WiFi — a cool refuge.",
-          "facts": []
+          "facts": [],
+          "cat": "work",
+          "workMeta": {
+            "wifi": "good",
+            "noise": "air-conditioned upstairs work space"
+          }
         },
         {
           "nm": "Bajloni Pijaca",
@@ -713,7 +788,9 @@
             "market"
           ],
           "hook": "Local green market for ultra-cheap fruit, cheese and cured meats.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Pekara Petrović",
@@ -729,7 +806,9 @@
               "i-pin",
               "Zemun"
             ]
-          ]
+          ],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Stara Hercegovina",
@@ -740,7 +819,8 @@
             "eat"
           ],
           "hook": "Old-school working-class kafana — heavy traditional dishes, loud and real.",
-          "facts": []
+          "facts": [],
+          "cat": "rest"
         },
         {
           "nm": "Radecki",
@@ -756,7 +836,8 @@
               "i-pin",
               "Zemun"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Splav Koliba",
@@ -772,7 +853,8 @@
               "i-pin",
               "Savski kej"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Čedić",
@@ -788,7 +870,9 @@
               "i-pin",
               "Banovo brdo"
             ]
-          ]
+          ],
+          "cat": "rest",
+          "pt": 1
         },
         {
           "nm": "Iva New Balkan Cuisine",
@@ -805,7 +889,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Zeleni Venac Market",
@@ -823,7 +908,9 @@
               "i-pin",
               "Stari Grad"
             ]
-          ]
+          ],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Gušti Mora",
@@ -840,7 +927,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Meze Restoran Dvorište",
@@ -857,7 +945,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Mama Shelter rooftop",
@@ -875,7 +964,9 @@
               "i-pin",
               "Stari Grad"
             ]
-          ]
+          ],
+          "cat": "rest",
+          "pt": 3
         },
         {
           "nm": "20/44",
@@ -892,7 +983,8 @@
               "i-clock",
               "late night"
             ]
-          ]
+          ],
+          "cat": "night"
         },
         {
           "nm": "Tri šešira",
@@ -910,7 +1002,9 @@
               "i-pin",
               "Skadarlija"
             ]
-          ]
+          ],
+          "cat": "rest",
+          "pt": 3
         },
         {
           "nm": "Šaran",
@@ -927,7 +1021,9 @@
               "i-pin",
               "Zemun"
             ]
-          ]
+          ],
+          "cat": "rest",
+          "pt": 3
         }
       ],
       "doNote2": "Dishes to try (friend rec): pljeskavica (the big Serbian burger-patty — Grill 'Loki'); Karađorđeva šnicla (rolled breaded veal/pork cutlet stuffed with kajmak — interpreted from 'Karadjordjeva palacinka'); šopska salad (tomato, cucumber, onion, grated white cheese — interpreted from 'Shops salt'); burek (flaky breakfast pastry — Pekara Petrović).",
@@ -965,7 +1061,8 @@
           "neighborhood": "Zemun",
           "city": "Belgrade",
           "where": "Zemun",
-          "hook": "Good fish but overpriced upscale-tourist — use Radecki for the real fishermen's vibe. (Also a friend rec — kept in the Eat list; your call between the two.)"
+          "hook": "Good fish but overpriced upscale-tourist — use Radecki for the real fishermen's vibe. (Also a friend rec — kept in the Eat list; your call between the two.)",
+          "instead": "belgrade-radecki"
         },
         {
           "nm": "Unmarked airport taxis",
@@ -988,7 +1085,11 @@
     {
       "id": "prizren",
       "name": "Prizren",
-      "currency": { "code": "EUR", "sym": "€", "note": "Kosovo uses the euro. Very cash-based outside the centre — carry small notes; ATMs are in town." },
+      "currency": {
+        "code": "EUR",
+        "sym": "€",
+        "note": "Kosovo uses the euro. Very cash-based outside the centre — carry small notes; ATMs are in town."
+      },
       "when": "2 nights · Jun 22–24",
       "heat": true,
       "heatLabel": "30°C+ town bowl",
@@ -1014,7 +1115,8 @@
               "i-bus",
               "minibus ~7/8/10am, Marash bridge"
             ]
-          ]
+          ],
+          "cat": "nature"
         },
         {
           "nm": "Sunrise fortress climb (Kalaja)",
@@ -1031,7 +1133,8 @@
               "i-clock",
               "go ~6am"
             ]
-          ]
+          ],
+          "cat": "sights"
         },
         {
           "nm": "Early-morning çajtore",
@@ -1048,7 +1151,9 @@
               "i-wallet",
               "~€0.30 tea"
             ]
-          ]
+          ],
+          "cat": "cafes",
+          "pt": 1
         },
         {
           "nm": "Kino Lumbardhi",
@@ -1066,7 +1171,15 @@
               "i-pin",
               "Marash"
             ]
-          ]
+          ],
+          "cat": "work",
+          "also": [
+            "cafes"
+          ],
+          "workMeta": {
+            "noise": "shaded open-air cultural café",
+            "longstay": "“good for a cool two-hour work stint”"
+          }
         },
         {
           "nm": "Gazi Mehmet Pasha Hammam",
@@ -1078,7 +1191,8 @@
             "shade"
           ],
           "hook": "Duck inside the 16th-century bathhouse's thick stone walls for art and a total midday heat escape.",
-          "facts": []
+          "facts": [],
+          "cat": "sights"
         },
         {
           "nm": "Lumbardhi gorge walk",
@@ -1090,7 +1204,8 @@
             "hike"
           ],
           "hook": "A flat, deeply shaded riverside forest walk — the low-effort refuge when the town is baking.",
-          "facts": []
+          "facts": [],
+          "cat": "walks"
         },
         {
           "nm": "BarAca",
@@ -1101,7 +1216,8 @@
             "social"
           ],
           "hook": "Unpretentious bar where local bohemians and backpackers mix — the anti-tourist evening spot.",
-          "facts": []
+          "facts": [],
+          "cat": "night"
         }
       ],
       "doNote": "Mountain-day alternatives: a longer 14km cultural pasture hike to Gornje Lubinje, or a detour from Prevallë to the abandoned Yugoslav ski resort at Brezovica for an off-beat post-Yugoslav side trip.",
@@ -1135,7 +1251,8 @@
             "eat"
           ],
           "hook": "The locals' no-nonsense best qebapa — voted over the famous square spots.",
-          "facts": []
+          "facts": [],
+          "cat": "street"
         },
         {
           "nm": "Fellas Coffee & Kitchen",
@@ -1152,7 +1269,15 @@
               "i-wallet",
               "~€3 meal"
             ]
-          ]
+          ],
+          "cat": "work",
+          "also": [
+            "cafes"
+          ],
+          "pt": 1,
+          "workMeta": {
+            "laptop": "yes — laptop-friendly"
+          }
         },
         {
           "nm": "Traditional pekara, Ura",
@@ -1163,7 +1288,9 @@
             "eat"
           ],
           "hook": "Fresh burek or pite straight from the oven — the ultra-budget local breakfast.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Tetova Sweet Shop",
@@ -1174,7 +1301,9 @@
             "eat"
           ],
           "hook": "Open since 1956 — roasted nuts, dates and Albanian sweets for pocket change.",
-          "facts": []
+          "facts": [],
+          "cat": "cafes",
+          "pt": 1
         },
         {
           "nm": "Shepherd stalls, Prevallë",
@@ -1191,7 +1320,8 @@
               "i-mountain",
               "on the hike"
             ]
-          ]
+          ],
+          "cat": "street"
         },
         {
           "nm": "Restaurant Marashi",
@@ -1208,7 +1338,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Hani i Vjetër",
@@ -1224,7 +1355,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         },
         {
           "nm": "Restaurant Koha, Prevallë",
@@ -1240,7 +1372,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         }
       ],
       "avoid": [
@@ -1256,7 +1389,8 @@
           "neighborhood": "Old Town",
           "city": "Prizren",
           "where": "Shadërvan Square",
-          "hook": "A square tourist qebaptore trading on footfall — use Qebaptore Bekimi instead."
+          "hook": "A square tourist qebaptore trading on footfall — use Qebaptore Bekimi instead.",
+          "instead": "prizren-qebaptore-bekimi"
         },
         {
           "nm": "Te Syla",
@@ -1277,7 +1411,8 @@
           "neighborhood": "Old Town / centre",
           "city": "Prizren",
           "where": "Shadërvan Square",
-          "hook": "An overpriced commercial chain on prime real estate — the opposite of the cheap local teahouses."
+          "hook": "An overpriced commercial chain on prime real estate — the opposite of the cheap local teahouses.",
+          "instead": "prizren-early-morning-cajtore"
         },
         {
           "nm": "Sarajeva Steakhouse",
@@ -1300,7 +1435,11 @@
     {
       "id": "ohrid",
       "name": "Ohrid",
-      "currency": { "code": "MKD", "sym": "ден", "note": "North Macedonia uses the denar. Cash-first — ATMs in town, fewer card terminals outside the centre." },
+      "currency": {
+        "code": "MKD",
+        "sym": "ден",
+        "note": "North Macedonia uses the denar. Cash-first — ATMs in town, fewer card terminals outside the centre."
+      },
       "when": "2 nights · Jun 25–27",
       "heat": false,
       "heatLabel": "~26°C · coolest stop",
@@ -1320,7 +1459,8 @@
             "hike"
           ],
           "hook": "The signature day — a gentle ~16km loop to a near-deserted mountain village through wildflower valleys, cool air, zero crowds.",
-          "facts": []
+          "facts": [],
+          "cat": "nature"
         },
         {
           "nm": "Milenko's viewpoint, above Kaneo",
@@ -1331,7 +1471,8 @@
             "view"
           ],
           "hook": "The secret sunset spot up the dirt track, skipping the mobbed Kaneo boardwalk.",
-          "facts": []
+          "facts": [],
+          "cat": "night"
         },
         {
           "nm": "St. Naum military beach & springs",
@@ -1347,7 +1488,8 @@
               "i-bus",
               "local bus south"
             ]
-          ]
+          ],
+          "cat": "nature"
         },
         {
           "nm": "Trpejca — Zaumska coastal hike",
@@ -1359,7 +1501,8 @@
             "swim"
           ],
           "hook": "A rugged 3.5km shore walk to a secluded church and isolated beach — the active alternative to a paid boat tour.",
-          "facts": []
+          "facts": [],
+          "cat": "nature"
         },
         {
           "nm": "Beach Labino",
@@ -1370,7 +1513,8 @@
             "swim"
           ],
           "hook": "A tiny shaded wild beach a short walk from the centre — a cool-off swim away from the hotel strips.",
-          "facts": []
+          "facts": [],
+          "cat": "nature"
         },
         {
           "nm": "Elshani village walk",
@@ -1382,7 +1526,8 @@
             "culture"
           ],
           "hook": "Traditional mountainside life and a cheap beer at the village shop with residents; pairs with the hike.",
-          "facts": []
+          "facts": [],
+          "cat": "nature"
         },
         {
           "nm": "Peribleptos church & its local guide",
@@ -1393,7 +1538,8 @@
             "culture"
           ],
           "hook": "Find the passionate local guide woman instead of a paid tour — the real cultural intro.",
-          "facts": []
+          "facts": [],
+          "cat": "sights"
         },
         {
           "nm": "Mesokastro backstreets & Turkish bazaar",
@@ -1405,7 +1551,8 @@
             "eat"
           ],
           "hook": "Quiet steps down to cheap street food and a genuine old-town the package tourists miss.",
-          "facts": []
+          "facts": [],
+          "cat": "walks"
         }
       ],
       "doNote": "Harder option: Magaro peak (2,255m) is the full-day summit with views of both lakes — strenuous and exposed, so only with a dawn start. The gentle Gorno Konjsko loop is the better fit otherwise.",
@@ -1439,7 +1586,9 @@
             "eat"
           ],
           "hook": "Unpretentious old-school kafana — cheap grilled meats and cold beer.",
-          "facts": []
+          "facts": [],
+          "cat": "rest",
+          "pt": 1
         },
         {
           "nm": "Burekdžilnica Martina",
@@ -1450,7 +1599,9 @@
             "eat"
           ],
           "hook": "The locals' best burek and banichki, off the tourist zone.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Turkish Bazaar gjomleze vendors",
@@ -1467,7 +1618,9 @@
               "i-wallet",
               "€2–3"
             ]
-          ]
+          ],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Zelen Pazar (green market)",
@@ -1478,7 +1631,9 @@
             "market"
           ],
           "hook": "Tomatoes, goat cheese and ajvar — assemble a cheap local feast at the hostel.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Restaurant Antico",
@@ -1489,7 +1644,9 @@
             "eat"
           ],
           "hook": "Tavče gravče and Belvica fish in a stone building — honest prices without the waterfront markup.",
-          "facts": []
+          "facts": [],
+          "cat": "rest",
+          "pt": 2
         },
         {
           "nm": "Restaurant Panorama",
@@ -1500,7 +1657,9 @@
             "eat"
           ],
           "hook": "Fairly priced fish and beef stew, set well back from the tourist beach.",
-          "facts": []
+          "facts": [],
+          "cat": "rest",
+          "pt": 2
         },
         {
           "nm": "Trpejca village tavernas",
@@ -1511,7 +1670,8 @@
             "eat"
           ],
           "hook": "Fresh endemic Belvica trout on the water after your swim-and-hike day.",
-          "facts": []
+          "facts": [],
+          "cat": "rest"
         },
         {
           "nm": "Domakjinska Kukja, Velestovo",
@@ -1528,7 +1688,8 @@
               "i-clock",
               "dinner"
             ]
-          ]
+          ],
+          "cat": "rest"
         }
       ],
       "doNote2": "Worth-it add-ons: Antep Baklava (cheap sweets across from Vkusno), the fish stew at Biser in Lagadin on the way south, and the smaller Kanevče for a cheap salad and rakija below Kaneo.",
@@ -1545,7 +1706,8 @@
           "neighborhood": "Kaneo",
           "city": "Ohrid",
           "where": "lakefront",
-          "hook": "You pay a premium for the view, not the cooking."
+          "hook": "You pay a premium for the view, not the cooking.",
+          "instead": "ohrid-milenko-s-viewpoint-above-kaneo"
         },
         {
           "nm": "Lake boat-tour touts",
@@ -1559,7 +1721,8 @@
           "neighborhood": "St. Naum",
           "city": "Ohrid",
           "where": "St. Naum",
-          "hook": "Tourist-trap dining right at the complex — walk to the military beach instead."
+          "hook": "Tourist-trap dining right at the complex — walk to the military beach instead.",
+          "instead": "ohrid-st-naum-military-beach-springs"
         },
         {
           "nm": "'Ohrid pearl' sellers",
@@ -1582,7 +1745,11 @@
     {
       "id": "sofia",
       "name": "Sofia",
-      "currency": { "code": "BGN", "sym": "лв", "note": "Bulgaria uses the lev (pegged to the euro). Cards in the centre; cash for small spots and the metro." },
+      "currency": {
+        "code": "BGN",
+        "sym": "лв",
+        "note": "Bulgaria uses the lev (pegged to the euro). Cards in the centre; cash for small spots and the metro."
+      },
       "when": "Closer · Jun 28–29",
       "heat": false,
       "heatLabel": "thin closer",
@@ -1612,7 +1779,9 @@
               "i-pin",
               "near the market"
             ]
-          ]
+          ],
+          "cat": "rest",
+          "pt": 1
         },
         {
           "nm": "Zhenski Pazar (Women's Market)",
@@ -1629,7 +1798,9 @@
               "i-clock",
               "morning"
             ]
-          ]
+          ],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "Bar Lorca",
@@ -1645,7 +1816,8 @@
               "i-clock",
               "evening"
             ]
-          ]
+          ],
+          "cat": "night"
         },
         {
           "nm": "Crystal Garden",
@@ -1661,7 +1833,8 @@
               "i-clock",
               "evening"
             ]
-          ]
+          ],
+          "cat": "night"
         },
         {
           "nm": "Vkusnoto Kebapche",
@@ -1672,7 +1845,9 @@
             "eat"
           ],
           "hook": "The no-frills cheap-traditional fallback — rock-bottom prices, local kebapche.",
-          "facts": []
+          "facts": [],
+          "cat": "street",
+          "pt": 1
         },
         {
           "nm": "HleBar",
@@ -1692,7 +1867,9 @@
               "i-pin",
               "Oborishte"
             ]
-          ]
+          ],
+          "cat": "cafes",
+          "pt": 1
         }
       ],
       "stayPick": "Oborishte & the Doctor's Garden, central Sofia — a quiet, historic, tree-shaded residential pocket local youth favour. Safe late at night and a short walk from everything, while dodging the tacky Vitosha Boulevard tourist strip. If you want something more social, stay near ulitsa Tsar Shishman.",
