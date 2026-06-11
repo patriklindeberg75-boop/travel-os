@@ -304,3 +304,35 @@ fallback.
 15 additional jsdom assertions (map chips/routes, pinned grouping, raw-coords
 display, coordinate vs name-search links, center links, back links, no Leaflet
 payload) — green; full v4 suite re-run green (78 total). SW cache → `balkans-v4-2`.
+
+---
+
+# v4.1 — author feedback round (2026-06-11)
+
+Operator's in-use feedback on v4; these override the report where they conflict.
+
+- **Green "Start here" boxes removed** from every stop (the `start` text stays
+  in the data, just not rendered).
+- **Duplicate climate chip removed** from the summary card — the stop-head pill
+  already carries it; the card now shows budget + in/out only.
+- **Sub-type merging removed** — the report's <2-items fold rule produced
+  confusing mixed groups ("Sights · Nature"); every non-empty sub-type now
+  keeps its own header even with one item. Empty sub-types still never render.
+- **Mode bar removed entirely** (Explore / It's brutal out / Arrival / Evening /
+  Travel day). Sections honour saved open/closed state (Activities open by
+  default); heat needs are served by the shade/swim tag filters.
+- **Row titles wrap** instead of truncating — full place names always visible.
+- **Top-pick mini-card strip removed** (Map & pins / top-3 chips under the
+  summary). Map & pins moved to the toolbar next to Filters.
+- **"Search all stops" bar removed** from the overview.
+- **Belgrade friend-rec meta note removed** (commentary about the dossier
+  itself, not about places). Content notes (Prizren mountain alternatives,
+  Ohrid add-ons, dishes-to-try) stay.
+
+Not done in this round:
+- **Richer card-page descriptions (3–4 sentences/place)** — the source corpus
+  (dossier-data.json + destination-dossier.md) holds only the one-sentence
+  hooks; writing more would mean fabricating or a fresh research pass. Open:
+  scoped research pass (e.g. top picks first) if the operator wants it.
+
+Tests updated to the new contract: 74 jsdom assertions green. SW → `balkans-v4-3`.

@@ -437,6 +437,12 @@ details.ninfo .sec-body{padding:0 0 12px}
 /* 11.5 — map & pins entry chip */
 .top3 a.mapbtn{color:var(--accent-ink);border-color:var(--accent);background:var(--accent-bg);text-decoration:none}
 .top3 a.mapbtn .ic{color:var(--accent)}
+
+/* author round 2026-06-11 — row titles wrap instead of truncating */
+.card.row{flex-wrap:wrap}
+.card.row .rnm{white-space:normal;overflow:visible;text-overflow:clip;min-width:55%}
+/* single-metric summary */
+.chips{grid-template-columns:1fr}
 </style>
 </head>
 <body>
@@ -476,8 +482,8 @@ details.ninfo .sec-body{padding:0 0 12px}
 </nav>
 
 <div class="subbar" id="subbar" hidden>
-  <div class="modebar" id="modebar"></div>
   <div class="toolbar">
+    <button id="mapBtn" type="button"><svg class="ic"><use href="#i-pin"/></svg> Map &amp; pins</button>
     <button id="filterToggle" type="button" aria-pressed="false"><svg class="ic"><use href="#i-view"/></svg> Filters</button>
     <button id="expandAll" type="button"><svg class="ic"><use href="#i-chev"/></svg> Expand all</button>
     <button id="collapseAll" type="button">Collapse all</button>
@@ -1366,7 +1372,6 @@ const TRIP=[
         "when": "evening"
       }
     ],
-    "doNote": "Friend recs (the lilac 'friend rec' cards) came from someone who knows Belgrade — it's more than two days of material, so if the city clicks it easily justifies a third night.",
     "stayPick": "Donji Dorćol, Stari Grad. The clear base — social-hostel scene, the densest cafés for light work, and the Danube on its doorstep to cool off, without putting you in the tourist core.",
     "hoods": [
       {
@@ -2839,26 +2844,13 @@ const FOOD_ORDER=['rest','street','cafes'];
 function allCards(s){return [...(s.do||[]),...(s.eat||[])];}
 function inCat(p,k){return p.cat===k||(p.also||[]).indexOf(k)>=0;}
 function slugOf(p,s){return p.id&&p.id.indexOf(s.id+'-')===0?p.id.slice(s.id.length+1):kebab(p.nm);}
-// 11.1 fold rule: a sub-type with <2 items folds into the next sibling (else previous);
-// a merged group of 3+ sub-types gets the generic label; a lone group shows no label
-// unless it is a single pure sub-type (then the sub-type name still informs).
-function foldGroups(order,s,fallback){
-  let groups=order.map(k=>({keys:[k],items:allCards(s).filter(p=>inCat(p,k))})).filter(g=>g.items.length);
-  let guard=0;
-  while(groups.length>1&&guard++<20){
-    const i=groups.findIndex(g=>g.items.length<2);
-    if(i<0)break;
-    const into=i<groups.length-1?groups[i+1]:groups[i-1];
-    if(i<groups.length-1){into.keys=groups[i].keys.concat(into.keys);into.items=groups[i].items.concat(into.items);}
-    else{into.keys=into.keys.concat(groups[i].keys);into.items=into.items.concat(groups[i].items);}
-    groups.splice(i,1);
-  }
-  groups.forEach(g=>{
-    if(g.keys.length===1)g.label=CATS[g.keys[0]].l;
-    else if(g.keys.length===2)g.label=g.keys.map(k=>CATS[k].s).join(' · ');
-    else g.label=groups.length===1?'':fallback;
-  });
-  return groups;
+// Sub-type grouping. The report's <2-items fold rule was overridden by the author
+// (2026-06-11 feedback round): every non-empty sub-type keeps its own header, even
+// with a single item — no cross-type merging. Empty sub-types still never render.
+function foldGroups(order,s){
+  return order
+    .map(k=>({keys:[k],items:allCards(s).filter(p=>inCat(p,k)),label:CATS[k].l}))
+    .filter(g=>g.items.length);
 }
 
 // short area label for the U-6 chip — strips the parenthetical district from neighborhood.
@@ -2934,23 +2926,16 @@ function renderStop(s){
      '<span class="heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></div>';
   if(s.photo)h+='<img class="hero" src="'+s.photo+'" alt="" width="740" height="360" loading="lazy">';
 
-  // summary card
+  // summary card — author round 2026-06-11: climate chip dropped (the stop-head
+  // pill already says it), "Start here" green box dropped, top-3 strip dropped.
   h+='<div class="summary"><div class="chips">'+
-     '<div class="metric'+(s.heat?' heat':'')+'"><div class="lab">'+icon('i-temp')+' Climate</div><div class="val">'+s.climate+'</div></div>'+
      '<div class="metric"><div class="lab">'+icon('i-wallet')+' Budget</div><div class="val">'+s.budget+'</div></div>'+
      '</div>'+
-     '<div class="start">'+icon('i-star')+'<div><b>Start here.</b> '+s.start+'</div></div>'+
      '<div class="transit">'+icon('i-bus')+'<div><b style="color:var(--ink);font-weight:500">In:</b> '+s.inLeg+' &nbsp;·&nbsp; <b style="color:var(--ink);font-weight:500">Out:</b> '+s.outLeg+'</div></div>'+
      '</div>';
 
-  // P2-2 — top-3 strip (drawn only from existing top-pick tags, source order) + 11.5 map entry
-  let top=allCards(s).filter(p=>p.t===3).slice(0,3);
-  let strip='<a class="t3 mapbtn" href="#/'+s.id+'/map">'+icon('i-pin')+' Map &amp; pins</a>';
-  strip+=top.map(p=>'<a class="t3" data-jump="'+p.id+'">'+icon('i-star')+' '+p.nm+'</a>').join('');
-  h+='<div class="top3">'+strip+'</div>';
-
   // 1 — Activities
-  const actGroups=foldGroups(ACT_ORDER,s,'Other activities');
+  const actGroups=foldGroups(ACT_ORDER,s);
   const actN=actGroups.reduce((n,g)=>n+g.items.length,0);
   if(actN){
     let body=groupsHTML(s,actGroups);
@@ -2959,7 +2944,7 @@ function renderStop(s){
   }
 
   // 2 — Food (dual-listed cafés appear here AND under Work cafés, same data-id)
-  const foodGroups=foldGroups(FOOD_ORDER,s,'More food');
+  const foodGroups=foldGroups(FOOD_ORDER,s);
   const foodN=foodGroups.reduce((n,g)=>n+g.items.length,0);
   if(foodN){
     let body=groupsHTML(s,foodGroups);
@@ -3147,7 +3132,6 @@ function renderOverview(){
       '<span class="pill">'+icon('i-wallet')+' ~€50 / day</span>'+
       '<span class="pill warn">'+icon('i-temp')+' Heat-aware</span>'+
     '</div></header>';
-  h+='<div class="search-wrap"><input id="search" type="search" placeholder="Search all stops — burek, swim, café…" autocomplete="off" autocapitalize="off"><div class="search-results" id="searchResults"></div></div>';
   h+='<div class="ov-stops">'+TRIP.map(s=>
     '<a class="ov-stop" href="#/'+s.id+'"><span class="ov-nm">'+s.name+'</span><span class="ov-when">'+s.when+'</span>'+
     '<span class="ov-heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></a>').join('')+'</div>';
@@ -3281,13 +3265,6 @@ function applyBooked(){
     const det=b.closest('details'); if(det)det.classList.toggle('booked',on);
   });
 }
-function jumpTo(pid){
-  const view=document.querySelector('.view.active'); if(!view)return;
-  const card=view.querySelector('.card[data-id="'+pid+'"]'); if(!card)return;
-  const det=card.closest('details'); if(det&&!det.open){modeDriving=true;det.open=true;modeDriving=false;}
-  card.classList.add('flash'); setTimeout(()=>card.classList.remove('flash'),1500);
-  if(card.scrollIntoView)card.scrollIntoView({block:'center'});
-}
 function applyTheme(t){
   const r=document.documentElement; r.classList.remove('theme-light','theme-dark');
   if(t==='light')r.classList.add('theme-light'); else if(t==='dark')r.classList.add('theme-dark');
@@ -3329,9 +3306,6 @@ app.addEventListener('click',e=>{
     if(av&&av.classList.contains('stopview')){reflow(av);applyFilters();}
     return;
   }
-  // top-3 jump
-  const jump=e.target.closest('[data-jump]');
-  if(jump){e.preventDefault();jumpTo(jump.getAttribute('data-jump'));return;}
   // verify badge (legs) + checklist item — shared verified[]
   const vEl=e.target.closest('.verify,.cl-item');
   if(vEl){const vid=vEl.getAttribute('data-vid');if(vid){if(verified[vid])delete verified[vid];else verified[vid]=1;LS.set('verified',verified);applyVerified();}return;}
@@ -3384,8 +3358,6 @@ document.querySelectorAll('.stopview').forEach(view=>{
 
 /* --- tag / tier / time (+ saved / hide-done) filters, scoped to the active stop view --- */
 const F={tags:new Set(),tier:0,wantOnly:false,hideDone:false,when:new Set()};
-let modeCool=false;   // set true by Heat mode — restrict Activities rows to heat-relief
-function isCool(ctags){return ctags.some(t=>TAG[t]&&TAG[t].cool);}
 function applyFilters(){
   const scope=document.querySelector('.view.active');
   if(!scope||!scope.classList.contains('stopview'))return;
@@ -3400,7 +3372,6 @@ function applyFilters(){
     if(show&&F.when.size)show=(cw==='any'||F.when.has(cw));
     if(show&&F.wantOnly&&!st.w)show=false;
     if(show&&F.hideDone&&st.d)show=false;
-    if(show&&modeCool&&c.closest('details[data-sec="acts"]'))show=isCool(ctags);
     c.classList.toggle('filtered',!show);
   });
   scope.querySelectorAll('.subgrp').forEach(sg=>{
@@ -3472,48 +3443,21 @@ function setAll(open){
 }
 document.getElementById('expandAll').onclick=()=>setAll(true);
 document.getElementById('collapseAll').onclick=()=>setAll(false);
+document.getElementById('mapBtn').onclick=()=>{if(curRoute&&isStop(curRoute))location.hash='#/'+curRoute+'/map';};
 
-/* ===== modes — view-configs over the v4 taxonomy (§9, P1-1, U-3/U-8) =====
-   Section keys: acts food work info + nested avoid around timing util stay. */
-const MODES={
-  explore:{lab:'Explore',ic:'i-view'},
-  heat:{lab:'It’s brutal out',ic:'i-temp',cls:'heat',cool:true,open:['acts'],hide:['food','work']},
-  arrival:{lab:'Arrival',ic:'i-bed',open:['info','util','stay','around','food'],hide:['acts']},
-  evening:{lab:'Evening',ic:'i-music',open:['food','acts'],hide:['work']},
-  travel:{lab:'Travel day',ic:'i-bus',open:['info','around'],hide:['acts','food','work'],banner:true}
-};
-let MODE_KEY='explore';
-function setMode(k){
-  if(!MODES[k])k='explore';
-  MODE_KEY=k; modeCool=!!MODES[k].cool;
-  document.querySelectorAll('#modebar .modechip').forEach(c=>c.setAttribute('aria-pressed',c.getAttribute('data-mode')===k?'true':'false'));
-  applyMode();
-  applyFilters();
-}
-function applyMode(){
+/* modes removed — author round 2026-06-11: the Explore/Heat/Arrival/Evening/
+   Travel-day chip bar was cut from the UI. Sections honour saved open/closed
+   state (Activities open by default); heat needs are served by the shade/swim
+   tag filters. applySections() replaces the old applyMode(). */
+function applySections(){
   const view=document.querySelector('.view.active'); if(!view||!view.classList.contains('stopview'))return;
-  const m=MODES[MODE_KEY];
   modeDriving=true;
   view.querySelectorAll('details[data-sec]').forEach(d=>{
-    const sec=d.getAttribute('data-sec');
-    d.classList.toggle('mode-hidden',!!(m.hide&&m.hide.indexOf(sec)>=0));
-    if(MODE_KEY==='explore'){const k=d.getAttribute('data-sk'); d.open=(k in secState)?secState[k]:(sec==='acts');}
-    else d.open=!!(m.open&&m.open.indexOf(sec)>=0);
+    const k=d.getAttribute('data-sk');
+    d.open=(k in secState)?secState[k]:(d.getAttribute('data-sec')==='acts');
   });
   modeDriving=false;
-  let banner=view.querySelector('.mode-banner');
-  if(m.banner){
-    if(!banner){banner=document.createElement('div');banner.className='mode-banner';
-      banner.innerHTML=icon('i-bus')+'<div>It’s a travel day — open <a href="#/transit">Getting between stops</a> for the leg checklists.</div>';
-      const firstD=view.querySelector('.stop > details'); firstD.parentNode.insertBefore(banner,firstD);}
-  }else if(banner)banner.remove();
 }
-(function buildModeBar(){
-  const bar=document.getElementById('modebar');
-  bar.innerHTML=Object.keys(MODES).map(k=>{const m=MODES[k];
-    return '<button class="modechip'+(m.cls?' '+m.cls:'')+'" type="button" data-mode="'+k+'" aria-pressed="'+(k==='explore'?'true':'false')+'">'+icon(m.ic)+' '+m.lab+'</button>';}).join('');
-  bar.addEventListener('click',e=>{const b=e.target.closest('.modechip'); if(b)setMode(b.getAttribute('data-mode'));});
-})();
 
 /* --- self-labeling badge tooltips (U-7) --- */
 document.addEventListener('click',e=>{
@@ -3532,29 +3476,6 @@ reflow(document);
 applyVerified();
 applyBooked();
 applyTheme(LS.get('theme','auto'));
-
-/* --- search (P2-3): client-side, debounced, no library — links to card pages --- */
-(function(){
-  const si=document.getElementById('search'); if(!si)return;
-  const results=document.getElementById('searchResults');
-  const INDEX=[];
-  TRIP.forEach(s=>allCards(s).forEach(p=>INDEX.push({
-    nm:p.nm,stop:s.name,href:'#/'+s.id+'/'+slugOf(p,s),
-    hay:((p.nm||'')+' '+(p.hook||'')+' '+(p.tags||[]).join(' ')).toLowerCase()
-  })));
-  let t;
-  si.addEventListener('input',()=>{
-    clearTimeout(t);
-    t=setTimeout(()=>{
-      const q=si.value.trim().toLowerCase();
-      if(!q){results.innerHTML='';return;}
-      const hits=INDEX.filter(x=>x.hay.indexOf(q)>=0).slice(0,12);
-      results.innerHTML=hits.length
-        ? hits.map(x=>'<a href="'+x.href+'">'+x.nm+'<span class="sr-stop">'+x.stop+'</span></a>').join('')
-        : '<div class="search-empty">No matches.</div>';
-    },120);
-  });
-})();
 
 /* ===== router (top-level routes + #/{stop}/{card-slug} card pages) ===== */
 const subbar=document.getElementById('subbar');
@@ -3587,7 +3508,7 @@ function go(route){
   subbar.hidden=!stop;
   if(stop)LS.set('route',route);          // default route = last stop visited
   closeMenu();
-  if(stop){applyMode();reflow(document.querySelector('.view.active'));applyFilters();}
+  if(stop){applySections();reflow(document.querySelector('.view.active'));applyFilters();}
   // back to a stop list → restore the exact scroll position; everything else → top
   if(stop&&scrollMem[route]!=null)window.scrollTo(0,scrollMem[route]);
   else window.scrollTo(0,0);
