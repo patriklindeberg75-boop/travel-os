@@ -133,3 +133,17 @@
 **Rationale:** Tiers let each layer be verified (build.mjs non-destructive + jsdom smoke) and committed before the next, so a destabilising routing change would be caught at Tier 1 rather than after everything was layered on. Tiers 1–2 are the trip-critical floor; Tier 3 is upside.
 **Boundary:** Modes shipped as section-preset + heat-cool-filter view-configs, not the full §9 relevance recommender (honest in CHANGES.md). 63 jsdom assertions green; independent QC GO.
 **Alternatives considered:** one mega-edit of the whole renderer — rejected (no intermediate verification, higher blast radius on a working tool near a deadline).
+
+---
+
+**Date:** 2026-06-11 (S1)
+**Decision:** Defer the Leaflet interactive map even though the report (§ 11.5) specifies it — ship the grouped pin-list as the only map view until a stop crosses 5 verified pins.
+**Context:** Hero-set coordinate research resolved 10 venues + 5 centers via OSM Nominatim; every stop ended at 2–3 pins, below the operator's agreed 5-pin threshold for an interactive map.
+**Rationale:** Vendoring ~45 KB of Leaflet that can never render is dead weight against the performance budget and the operator's explicit "don't ship a near-empty interactive map" rule. The pin list delivers the real value (directions + raw coords for offline apps) at zero cost, and the upgrade hook is documented in the renderer for when the long-tail coordinates arrive.
+**Alternatives considered:** (a) vendor Leaflet now with the threshold gate — rejected (dead code, weight); (b) lower the threshold to make the map render — rejected (impressive-but-empty); (c) guess coordinates to cross the threshold — rejected outright (fabrication).
+
+**Date:** 2026-06-11 (S1)
+**Decision:** Apply the operator's v4.1 feedback as binding overrides of the v3→v4 report (fold rule removed, mode bar removed, meta/UI chrome cut) rather than reconciling them with the report's specs.
+**Context:** Mid-session the operator reviewed v4 and sent a concrete declutter list that contradicts several report sections (§ 9 modes, § 11.1 fold rule, P2-2 strip, P2-3 search).
+**Rationale:** The operator is the report's author and the artifact's only user — in-use feedback on the live build outranks the document that predates it. CHANGES.md records each override explicitly so the document trail stays honest.
+**Alternatives considered:** treating the report as the contract and queuing the feedback for a v5 spec — rejected (5 days to departure; the feedback is the spec now).
