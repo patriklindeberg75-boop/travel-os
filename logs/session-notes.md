@@ -454,3 +454,42 @@ None. (Renderer/data edits to operator-owned dossier files; build.mjs re-run ver
 
 ### Open Questions
 - What was the operator's truncated "- make …" feedback item?
+
+## 2026-06-12 — Session S1
+**Mandate:** Implement the UX-PASS.md v4 fix round for the Balkans dossier — apply all 12 findings (F1–F12) to trips/balkans-2026-06/index.html in the document's fix order, chrome/behavior only — done when: all 12 fixes applied, affected jsdom journeys re-verified green, sw.js cache bumped, site/ synced, CHANGES.md updated, UX-PASS.md saved to the trip dir as the round spec.
+- Out of scope: photos; card-description research; the truncated "- make" feedback item; Belgrade spelling confirmations; localStorage schema / content / taxonomy / dependency changes
+- Files in scope: trips/balkans-2026-06/index.html, sw.js, CHANGES.md, site/, UX-PASS.md
+- Stop if: a fix would require a localStorage schema change, content/taxonomy edit, or new dependency — stop and flag
+
+Implement the UX-PASS.md v4 fix round for the Balkans dossier — 12 findings (F1 Blocker filter empty-state, F2–F4 Major nav/scroll/offline-indicator, F5–F12 Minor) per the document's fix order, chrome/behavior only (no localStorage schema, content, taxonomy, or dependency changes).
+
+### Summary
+Implemented the operator's full v4.2 UX-PASS fix round on the Balkans dossier — all 12 findings (F1 Blocker, F2–F4 Major, F5–F12 Minor) from the dropped `UX-PASS.md`, applied in the document's fix order, chrome/behaviour only. F1 added an active-filter count badge + "Nothing matches — Clear" empty-state (the cross-stop filter leak is now visible, not silently emptying a stop); F2–F4 fixed nav-tab clipping, smooth-scroll jank, and the buried offline indicator; F5–F12 covered tooltip toggle, router stop-fallback + hash correction, map-row state, sw navigate-only fallback, footer padding, tap targets, note-flush-on-nav, and dead-CSS removal. Verified by 112 jsdom assertions (61 + 15 + 36-test new suite); independent QC returned GO. Committed `81ad59c`; SW → `balkans-v4-4`; `site/` bundle re-synced.
+
+### Files Created
+- `trips/balkans-2026-06/UX-PASS.md` — the operator's UX-pass spec, saved clean UTF-8 as the round contract; Status footer updated to RESOLVED.
+- `logs/scratchpads/2026-06-12-10-37-scratchpad.md` — continuity scratchpad.
+- `/tmp/balkans-v4-smoke/test-v4c.mjs` — new 36-assertion v4.2 jsdom suite (ephemeral, not in repo).
+
+### Files Modified
+- `trips/balkans-2026-06/index.html` — F1–F7, F9–F12 (renderer + CSS); data block untouched.
+- `trips/balkans-2026-06/sw.js` — F8 navigate-only fallback + cache bump v4-3 → v4-4.
+- `trips/balkans-2026-06/CHANGES.md` — new "v4.2 — UX-PASS fix round" section.
+- `trips/balkans-2026-06/site/index.html`, `site/sw.js` — upload bundle re-synced.
+- `/tmp/balkans-v4-smoke/test-v4.mjs` — 10.6 updated to the new F6 contract (ephemeral).
+
+### Decisions Made
+- Treated `UX-PASS.md` as the binding contract; implemented exactly its 12 named "Proposed fix" entries, nothing beyond.
+- F11 scope calls: included `.view details.mode-hidden` in the mode-system deletion (named family, zero refs); deliberately KEPT `.card.flash` (dead but not in the F11 list) and `.loc`'s 30px height (F10 said "leave the rest").
+- F6: bad card slug falls back to its valid stop (not Overview) and `replaceState` cleans the stale hash — chosen over leaving the address bar stale.
+
+### Risky actions
+None. (Renderer/CSS/sw edits to operator-owned dossier files; jsdom-verified non-destructive; no schema/data changes; no deletions of live code; no push; no external publishing.)
+
+### Next Steps
+- Operator: upload `trips/balkans-2026-06/site/` to Cloudflare and eyeball v4.2 on iPhone (F2/F3/F4 need real-device visual confirmation — jsdom can't render layout).
+- Optional next build round: scoped card-description research pass (top ~15 places); recover the truncated "- make …" feedback item before the next UX round.
+- Carryover: confirm 3 Belgrade food spellings; fix the travel-os git remote if offsite backup is wanted; TODO-PRICE (15) + coords long tail (104) await input.
+
+### Open Questions
+- What was the operator's truncated "- make …" feedback item (carried from S1 prior)?
