@@ -42,7 +42,7 @@
   }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* F3 — no smooth-scroll: route changes + back-restore must jump instantly (in-page anchor nav is gone) */
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:740px;margin:0 auto;padding:0 18px 80px}
 .ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em;flex:none}
@@ -56,18 +56,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font
 .pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted)}
 .pill.warn{background:var(--heat-bg);color:var(--heat-ink)}
 
-/* menu-not-schedule banner */
-.menu-note{display:flex;gap:9px;align-items:flex-start;background:var(--accent-bg);color:var(--accent-ink);border-radius:var(--r-lg);padding:12px 14px;margin:18px 0 4px;font-size:13.5px;line-height:1.5}
-.menu-note .ic{margin-top:.18em;color:var(--accent);font-size:17px}
-.menu-note b{font-weight:600}
-
-/* sticky nav */
-nav.stops{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);margin:0 -18px 4px;padding:8px 18px}
-nav.stops .row{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-nav.stops .row::-webkit-scrollbar{display:none}
-nav.stops a{flex:none;font-size:13.5px;color:var(--muted);text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
-nav.stops a:hover{background:var(--surface-2)}
-nav.stops a.active{background:var(--ink);color:var(--bg);font-weight:500}
+/* F11 — removed dead CSS: .menu-note banner + nav.stops (both replaced by v3/v4 chrome; zero JS refs) */
 
 .toolbar{display:flex;gap:8px;justify-content:flex-end;padding:10px 0 2px}
 .toolbar button{font-family:var(--sans);font-size:12.5px;color:var(--muted);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
@@ -169,7 +158,7 @@ a.loc:active{opacity:.6}
 .leg.hard .ic{color:var(--heat)}
 .leg .warn{color:var(--danger-ink);font-style:normal}
 
-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);line-height:1.6}
+footer{margin-top:40px;padding:16px max(18px,env(safe-area-inset-left)) 24px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);line-height:1.6}
 
 /* legend */
 .legend summary{font-size:13.5px;color:var(--muted);font-weight:400;padding:12px 2px}
@@ -181,10 +170,8 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 /* #4 — safe-area insets (notch / home indicator) */
 .wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right));padding-bottom:max(80px,calc(env(safe-area-inset-bottom) + 48px))}
-nav.stops{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
 /* #4 — tap-target hygiene on the persistent controls */
 .toolbar button{min-height:38px}
-nav.stops a{min-height:36px;display:inline-flex;align-items:center}
 
 /* #7 — masthead spacing on small viewports */
 @media (max-width:400px){
@@ -212,7 +199,7 @@ nav.stops a{min-height:36px;display:inline-flex;align-items:center}
 .fgroup{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .fsep{width:1px;align-self:stretch;min-height:22px;background:var(--line);margin:0 3px}
 .flabel{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600}
-.chip{font-family:var(--sans);font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:6px 11px;min-height:34px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,border-color .15s}
+.chip{font-family:var(--sans);font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:6px 11px;min-height:40px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,border-color .15s}
 .chip .ic{font-size:13px}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .chip.tier[aria-pressed="true"]{background:var(--star);color:#211d16;border-color:var(--star)}
@@ -222,6 +209,13 @@ nav.stops a{min-height:36px;display:inline-flex;align-items:center}
 /* filtered-out cards + emptied sections */
 .card.filtered{display:none}
 .view details.empty{display:none}
+/* F1 — active-filter count badge + empty-state */
+.fbadge{display:inline-flex;align-items:center;justify-content:center;min-width:17px;height:17px;padding:0 5px;margin-left:5px;font-size:11px;font-weight:700;line-height:1;color:var(--bg);background:var(--accent);border-radius:999px}
+.fbadge[hidden]{display:none}
+.filter-empty{text-align:center;padding:34px 16px 24px;color:var(--muted)}
+.filter-empty[hidden]{display:none}
+.filter-empty p{margin:0 0 13px;font-size:14px}
+.filter-empty .fclear-inline{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent);border-radius:999px;padding:9px 18px;min-height:40px;cursor:pointer}
 
 /* ===== v3 routed shell (top nav · per-stop views · overview) ===== */
 main#app{display:block}
@@ -234,7 +228,7 @@ main#app{display:block}
 .topnav{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
 .tnrow{display:flex;align-items:center;gap:8px;max-width:740px;margin:0 auto;padding:8px max(14px,env(safe-area-inset-left)) 8px max(14px,env(safe-area-inset-left))}
 .tn-title{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);text-decoration:none;flex:none}
-.tn-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end}
+.tn-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;min-width:0;justify-content:flex-start}
 .tn-tabs::-webkit-scrollbar{display:none}
 .tn-tab{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap;min-height:38px;display:inline-flex;align-items:center;transition:background .15s,color .15s}
 .tn-tab:hover{background:var(--surface-2)}
@@ -253,7 +247,8 @@ main#app{display:block}
 .subbar[hidden]{display:none}
 
 /* offline indicator */
-.off-ind{display:inline-block;font-size:12px;font-weight:600;color:var(--accent-ink);background:var(--accent-bg);border-radius:999px;padding:3px 11px;margin-bottom:8px}
+/* F4 — fixed bottom-center so the offline / saved-for-offline signal is seen without scrolling to the footer */
+.off-ind{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom) + 14px);z-index:40;font-size:12px;font-weight:600;color:var(--accent-ink);background:var(--accent-bg);border-radius:999px;padding:6px 14px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .off-ind[hidden]{display:none}
 
 /* overview view */
@@ -281,31 +276,17 @@ main#app{display:block}
 .card.is-done .facts,.card.is-skip .facts,
 .card.is-done .loc,.card.is-skip .loc,
 .card.is-done .acts,.card.is-skip .acts{display:none}
-.card.peek{opacity:1;cursor:default}
-.card.peek .stars,.card.peek .tags,.card.peek .hook,.card.peek .facts,.card.peek .loc,.card.peek .acts{display:revert}
 .state-ic{display:none;flex:none;font-size:16px;margin-right:4px;vertical-align:-.16em}
 .card.is-done .state-ic{display:inline-block;color:var(--faint)}
 .card.is-skip .state-ic{display:inline-block;color:var(--danger-ink)}
-.card.peek .state-ic{display:none}
 /* area chip (U-6, derived from existing neighborhood) */
 .areachip{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--faint);background:transparent;border:1px solid var(--line);border-radius:999px;padding:1px 8px}
 .card.is-done .areachip,.card.is-skip .areachip{display:none}
-.card.peek .areachip{display:inline-flex}
 /* badge self-labeling tooltip (U-7) */
 .has-tip{cursor:help}
 .tags,.stars{position:relative}
 .tip-pop{position:absolute;left:0;top:calc(100% + 5px);z-index:8;background:var(--ink);color:var(--bg);font-size:11.5px;line-height:1.4;padding:7px 10px;border-radius:8px;max-width:220px;box-shadow:0 6px 18px rgba(0,0,0,.28);font-weight:400}
-/* mode chips */
-.modebar{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 0 4px}
-.modebar::-webkit-scrollbar{display:none}
-.modechip{flex:none;font-family:var(--sans);font-size:12.5px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;min-height:38px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.modechip .ic{font-size:14px}
-.modechip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
-.modechip.heat[aria-pressed="true"]{background:var(--heat);border-color:var(--heat)}
-.view details.mode-hidden{display:none}
-.mode-banner{display:flex;gap:9px;align-items:center;background:var(--accent-bg);color:var(--accent-ink);border-radius:var(--r);padding:11px 13px;margin:10px 0;font-size:13.5px;line-height:1.45}
-.mode-banner .ic{flex:none;color:var(--accent);font-size:17px}
-.mode-banner a{color:var(--accent-ink);font-weight:600;text-decoration:none}
+/* F11 — removed dead CSS: mode-preset system (.modebar/.modechip/.mode-banner + .view details.mode-hidden), removed in v4.1; zero JS refs */
 
 /* ===== v3 Tier 3 ===== */
 /* manual theme override (P2-1) — beats prefers-color-scheme */
@@ -323,7 +304,7 @@ html.theme-dark{--bg:#16140f;--surface:#211e17;--surface-2:#2b2820;--ink:#ece6d8
 .leg-chip{font-size:12px;color:var(--muted);background:var(--surface-2);border-radius:999px;padding:3px 10px}
 .legcard .ds{font-size:13px;color:var(--muted);line-height:1.5}
 .legcard .warn{color:var(--danger-ink);font-style:normal}
-.verify{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--heat-ink);background:var(--heat-bg);border-radius:999px;padding:4px 10px;min-height:30px;cursor:pointer;border:none;font-family:var(--sans);-webkit-tap-highlight-color:transparent}
+.verify{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--heat-ink);background:var(--heat-bg);border-radius:999px;padding:4px 10px;min-height:40px;cursor:pointer;border:none;font-family:var(--sans);-webkit-tap-highlight-color:transparent}
 .verify .ic{font-size:13px}
 .verify[aria-pressed="true"]{color:var(--accent-ink);background:var(--accent-bg)}
 
@@ -338,21 +319,11 @@ html.theme-dark{--bg:#16140f;--surface:#211e17;--surface-2:#2b2820;--ink:#ece6d8
 .copybtn:active{opacity:.6}
 .copybtn .ic{font-size:14px}
 
-/* top-3 strip (P2-2) */
-.top3{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;margin:0 0 14px;padding-bottom:2px}
-.top3::-webkit-scrollbar{display:none}
-.top3 a{flex:none;display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:7px 12px;text-decoration:none;white-space:nowrap;max-width:210px;overflow:hidden;text-overflow:ellipsis}
-.top3 a .ic{color:var(--star);font-size:13px;flex:none}
+/* F11 — removed dead CSS: .top3 strip (P2-2, removed in v4.1); zero JS refs */
 .card.flash{animation:flash 1.5s ease}
 @keyframes flash{0%,45%{box-shadow:0 0 0 2px var(--accent)}100%{box-shadow:none}}
 
-/* search (P2-3) */
-.search-wrap{margin:8px 0 4px}
-.search-wrap input{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:999px;padding:11px 16px;min-height:46px}
-.search-results{margin-top:9px;display:flex;flex-direction:column;gap:5px}
-.search-results a{display:flex;align-items:center;gap:8px;padding:10px 13px;background:var(--surface-2);border-radius:var(--r);text-decoration:none;color:var(--ink);font-size:13.5px}
-.search-results .sr-stop{margin-left:auto;font-size:11px;color:var(--faint);white-space:nowrap}
-.search-empty{color:var(--faint);font-size:13px;padding:8px 2px}
+/* F11 — removed dead CSS: .search-* (P2-3 overview search, removed in v4.1); zero JS refs */
 
 /* checklist view (P1-5 / U-1) */
 .cl-tabs{display:flex;gap:6px;margin:16px 0 12px}
@@ -434,9 +405,7 @@ details.ninfo:last-of-type{border-bottom:none}
 details.ninfo summary{font-size:14.5px;padding:12px 2px}
 details.ninfo .sec-body{padding:0 0 12px}
 
-/* 11.5 — map & pins entry chip */
-.top3 a.mapbtn{color:var(--accent-ink);border-color:var(--accent);background:var(--accent-bg);text-decoration:none}
-.top3 a.mapbtn .ic{color:var(--accent)}
+/* F11 — removed dead CSS: .top3 a.mapbtn (orphaned with the .top3 strip); zero JS refs */
 
 /* author round 2026-06-11 — row titles wrap instead of truncating */
 .card.row{flex-wrap:wrap}
@@ -3333,15 +3302,20 @@ app.addEventListener('keydown',e=>{
   if(r){e.preventDefault();location.hash=r.getAttribute('data-href');}
 });
 // 11.6 — per-card note field (debounced persist)
-let noteT;
+let noteT, notePending=null;
+function saveNote(){
+  clearTimeout(noteT);
+  if(!notePending)return;
+  const id=notePending.getAttribute('data-note'), v=notePending.value.trim();
+  if(v)notes[id]=v; else delete notes[id];
+  LS.set('notes',notes);
+  notePending=null;
+}
 app.addEventListener('input',e=>{
   const nf=e.target.closest('.notefield'); if(!nf)return;
+  notePending=nf;
   clearTimeout(noteT);
-  noteT=setTimeout(()=>{
-    const id=nf.getAttribute('data-note'), v=nf.value.trim();
-    if(v)notes[id]=v; else delete notes[id];
-    LS.set('notes',notes);
-  },250);
+  noteT=setTimeout(saveNote,250);
 });
 
 /* --- section open/closed memory (semantic data-sec keys, both levels) --- */
@@ -3382,6 +3356,35 @@ function applyFilters(){
     const cards=d.querySelectorAll('.card:not(.avoid)');
     if(cards.length)d.classList.toggle('empty',![...cards].some(c=>!c.classList.contains('filtered')));
   });
+  // F1 — when filters gut every section, show an inline empty-state with a working Clear
+  const anyVisible=scope.querySelector('.card:not(.avoid):not(.filtered)');
+  let es=scope.querySelector('.filter-empty');
+  if(filtersActive()&&!anyVisible){
+    if(!es){
+      es=document.createElement('div');es.className='filter-empty';
+      es.innerHTML='<p>Nothing matches the current filters.</p><button type="button" class="fclear-inline">Clear filters</button>';
+      es.querySelector('.fclear-inline').addEventListener('click',clearFilters);
+      scope.appendChild(es);
+    }
+    es.hidden=false;
+  }else if(es){es.hidden=true;}
+}
+function filtersActive(){return !!(F.tier||F.tags.size||F.when.size||F.wantOnly||F.hideDone);}
+function updateFilterBadge(){
+  const b=document.getElementById('filterToggle'); if(!b)return;
+  let badge=b.querySelector('.fbadge');
+  if(!badge){badge=document.createElement('span');badge.className='fbadge';b.appendChild(badge);}
+  const n=(F.tier?1:0)+F.tags.size+F.when.size+(F.wantOnly?1:0)+(F.hideDone?1:0);
+  if(n>0){badge.textContent=n;badge.hidden=false;}else{badge.hidden=true;}
+}
+function clearFilters(){
+  F.tags.clear();F.tier=0;F.wantOnly=false;F.hideDone=false;F.when.clear();
+  const bar=document.getElementById('filterbar');
+  if(bar){
+    bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+    const t0=bar.querySelector('.chip.tier[data-tier="0"]'); if(t0)t0.setAttribute('aria-pressed','true');
+  }
+  applyFilters();updateFilterBadge();
 }
 (function buildFilterBar(){
   const present=new Set();
@@ -3408,9 +3411,7 @@ function applyFilters(){
   bar.addEventListener('click',e=>{
     const t=e.target.closest('.chip,.fclear'); if(!t)return;
     if(t.classList.contains('fclear')){
-      F.tags.clear();F.tier=0;F.wantOnly=false;F.hideDone=false;F.when.clear();
-      bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
-      bar.querySelector('.chip.tier[data-tier="0"]').setAttribute('aria-pressed','true');
+      clearFilters(); return;
     }else if(t.classList.contains('tier')){
       F.tier=+t.getAttribute('data-tier');
       bar.querySelectorAll('.chip.tier').forEach(c=>c.setAttribute('aria-pressed',c===t?'true':'false'));
@@ -3424,7 +3425,7 @@ function applyFilters(){
       on?F.tags.delete(tag):F.tags.add(tag);
     }else if(t.id==='fWant'){F.wantOnly=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.wantOnly?'true':'false');}
     else if(t.id==='fHideDone'){F.hideDone=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.hideDone?'true':'false');}
-    applyFilters();
+    applyFilters();updateFilterBadge();
   });
 })();
 document.getElementById('filterToggle').addEventListener('click',function(){
@@ -3463,8 +3464,10 @@ function applySections(){
 document.addEventListener('click',e=>{
   const existing=document.querySelector('.tip-pop');
   const tipEl=e.target.closest('.has-tip');
-  if(existing&&(!tipEl||existing.parentNode!==tipEl))existing.remove();
-  if(tipEl&&!tipEl.querySelector('.tip-pop')){
+  // F5 — a second tap on the same badge dismisses its tip (toggle), not a no-op
+  const reTap=existing&&tipEl&&existing.parentNode===tipEl;
+  if(existing&&(!tipEl||existing.parentNode!==tipEl||reTap))existing.remove();
+  if(tipEl&&!reTap&&!tipEl.querySelector('.tip-pop')){
     const pop=document.createElement('span'); pop.className='tip-pop'; pop.textContent=tipEl.getAttribute('data-tip')||'';
     tipEl.appendChild(pop);
   }
@@ -3488,7 +3491,7 @@ function go(route){
   if(seg.length===2){
     if(seg[1]==='map'){const ms=TRIP.find(x=>x.id===seg[0]);card=ms?{s:ms,map:true}:null;}
     else card=findPlace(seg[0],seg[1]);
-    if(!card)route='overview';
+    if(!card)route=isStop(seg[0])?seg[0]:'overview';   // F6 — bad card slug falls back to its valid stop, not Overview
   }
   if(!card&&ROUTES.indexOf(route)<0)route='overview';
   // leaving a stop list → remember its scroll position
@@ -3496,7 +3499,8 @@ function go(route){
   if(card){
     const vc=document.getElementById('view-card');
     vc.innerHTML=card.map?renderMapPage(card.s):renderCardPage(card.s,card.p,card.avoid);
-    const pc=vc.querySelector('.pagecard[data-id]'); if(pc)applyPlace(pc);
+    // F7 — apply want/done/skip state to map-page rows too, not just the .pagecard
+    vc.querySelectorAll('.pagecard[data-id],.card[data-id]').forEach(applyPlace);
   }
   document.querySelectorAll('.view').forEach(v=>{
     const on=card?v.id==='view-card':v.id==='view-'+route;
@@ -3512,6 +3516,9 @@ function go(route){
   // back to a stop list → restore the exact scroll position; everything else → top
   if(stop&&scrollMem[route]!=null)window.scrollTo(0,scrollMem[route]);
   else window.scrollTo(0,0);
+  // F6 — if the requested hash was invalid and we corrected the route, replace the stale hash
+  const finalHash=card?'#/'+seg[0]+'/'+seg[1]:'#/'+route;
+  if(location.hash!==''&&location.hash!==finalHash){try{history.replaceState(null,'',finalHash);}catch(_){}}
   curRoute=card?seg[0]+'/'+seg[1]:route;
 }
 function parseHash(){
@@ -3520,7 +3527,7 @@ function parseHash(){
   if(h==='')h=LS.get('route','overview');           // bare load → last stop, else overview
   return h;
 }
-window.addEventListener('hashchange',()=>go(parseHash()));
+window.addEventListener('hashchange',()=>{saveNote();go(parseHash());});   // F12 — flush any pending note before the view re-renders
 go(parseHash());
 
 /* ===== service worker + offline indicator ============================= */

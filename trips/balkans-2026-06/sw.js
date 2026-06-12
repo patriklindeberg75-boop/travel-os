@@ -1,6 +1,6 @@
 // Balkans dossier service worker — cache-first offline precache.
 // Bump CACHE on every deploy so clients pick up the new build on next online load.
-const CACHE = 'balkans-v4-3';
+const CACHE = 'balkans-v4-4';
 const ASSETS = [
   './',
   './index.html',
@@ -35,7 +35,7 @@ self.addEventListener('fetch', e => {
           caches.open(CACHE).then(c => c.put(req, copy));
         }
         return res;
-      }).catch(() => caches.match('./index.html'))   // offline navigation fallback
+      }).catch(() => req.mode === 'navigate' ? caches.match('./index.html') : Response.error())   // F8 — fall back to index only for navigations, not every failed GET
     )
   );
 });

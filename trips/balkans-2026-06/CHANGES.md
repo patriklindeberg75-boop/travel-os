@@ -336,3 +336,66 @@ Not done in this round:
   scoped research pass (e.g. top picks first) if the operator wants it.
 
 Tests updated to the new contract: 74 jsdom assertions green. SW → `balkans-v4-3`.
+
+---
+
+# v4.2 — UX-PASS fix round (2026-06-12)
+
+Twelve findings from the operator's full-source + jsdom UX pass (`UX-PASS.md`,
+saved alongside this file). Chrome/behaviour only — no localStorage schema, no
+content/taxonomy, no new dependencies, single file stays single file. Applied in
+the document's fix order (F1→F2→F3→F4→F5→F6→F7→F8→F9→F10→F12→F11).
+
+**Blocker**
+- **F1 — filters no longer silently empty a stop.** The filter set is global and
+  leaks across stops; arriving at a stop with a leftover filter could hide every
+  row with no explanation. Two additions, no change to filter semantics: (a) an
+  **active-filter count badge** on the Filters button whenever a filter is set —
+  visible even when the panel is closed and on the *next* stop; (b) an inline
+  **"Nothing matches the current filters — Clear"** card whenever a stop's
+  sections all empty out, with a working Clear. The bar's Clear and the inline
+  Clear share one `clearFilters()`.
+
+**Major**
+- **F2 — top-nav tabs reachable at 360–390px.** `.tn-tabs` dropped the
+  `flex:1; justify-content:flex-end` pattern (start-side overflow is unreachable
+  in LTR) for `margin-left:auto; min-width:0; justify-content:flex-start` —
+  right-aligned when it fits, scrollable from the start when it doesn't.
+- **F3 — no scroll cinematic.** Deleted `html{scroll-behavior:smooth}` (a v1
+  anchor-nav leftover). Route changes and back-from-card scroll restore now jump
+  instantly — the most frequent gesture stops animating.
+- **F4 — offline / saved signal is actually visible.** `.off-ind` moved from the
+  document-bottom footer to `position:fixed` bottom-centre (+ safe-area inset),
+  same pill style. The mid-trip "offline — using saved copy" trust signal no
+  longer requires scrolling past ~38 cards.
+
+**Minor**
+- **F5 — tooltips toggle.** A second tap on the same badge now dismisses its tip
+  (was a no-op; only an outside tap closed it).
+- **F6 — router fallback + hash hygiene.** A bad card slug on a valid stop falls
+  back to that **stop** (not Overview); a corrected/invalid hash is rewritten via
+  `history.replaceState` so the address bar isn't left stale. Unknown stops still
+  go to Overview.
+- **F7 — map rows show marks.** `applyPlace` now runs over `#view-card .card[data-id]`
+  after a map render, so want/done/skip state shows on the Map & pins list (was
+  `.pagecard`-only).
+- **F8 — service-worker fallback scoped.** `sw.js` returns the cached index only
+  for `req.mode === 'navigate'` (was: HTML for any failed GET — a latent trap for
+  the future photo pass). Other failed GETs return a proper error.
+- **F9 — footer padding.** Horizontal padding added (`16px max(18px,safe-area) 24px`);
+  text no longer sits flush to the screen edge at 360px.
+- **F10 — tap targets.** `.verify` (30→40px) and the filter `.chip` (34→40px)
+  bumped to a comfortable min-height. Author chrome density elsewhere (38px
+  toolbar buttons, the `.loc` label line) deliberately left as-is.
+- **F12 — note never dropped.** A note typed and immediately left (within the
+  250 ms debounce) is flushed on `hashchange` before the view re-renders.
+- **F11 — dead CSS removed (last).** Deleted styling for removed features with
+  zero JS references: `.menu-note`, `nav.stops` (+ its responsive rules),
+  the mode-preset system (`.modebar/.modechip/.mode-banner` + `.view details.mode-hidden`),
+  `.top3` (+ `.top3 a.mapbtn`), and `.search-*`. Each verified ref-free by grep
+  before deletion. `.card.flash` (a separate, unnamed highlight animation, also
+  ref-free) was left untouched — outside the UX-PASS deletion list.
+
+Tests: 112 jsdom assertions green (61 Tier A + 15 Tier B + 36 new v4.2 suite).
+The pre-fix `test-v4.mjs` 10.6 (unknown slug → Overview) was updated to the new
+F6 contract. SW → `balkans-v4-4`. `site/` bundle re-synced.
