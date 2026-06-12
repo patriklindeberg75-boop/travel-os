@@ -493,3 +493,48 @@ None. (Renderer/CSS/sw edits to operator-owned dossier files; jsdom-verified non
 
 ### Open Questions
 - What was the operator's truncated "- make …" feedback item (carried from S1 prior)?
+
+## 2026-06-12 — Session S2
+**Mandate:** Implement the UX-PASS-MOBILE.md fix round for the Balkans dossier — apply M1–M3, M5–M11 (10 findings) in the document's fix order, chrome/CSS/one-liner fixes only — done when: all 10 fixes applied in order, affected jsdom checks green, sw.js cache bumped, site/ synced, CHANGES.md updated, UX-PASS-MOBILE.md saved to the trip dir with Status RESOLVED
+- Out of scope: M4 (parked behind device check); localStorage schema changes; content/taxonomy edits; new dependencies; photos; F-series rework
+- Files in scope: trips/balkans-2026-06/index.html, sw.js, CHANGES.md, site/, UX-PASS-MOBILE.md
+- Stop if: a fix would require a localStorage schema change, content edit, or new dependency (M2's ~6 sanctioned non-CSS lines excepted) — stop and flag
+- Allowed inputs: trips/balkans-2026-06/UX-PASS.md, trips/balkans-2026-06/build.mjs, trips/balkans-2026-06/dossier-data.json, CLAUDE.md
+- Required outputs: trips/balkans-2026-06/index.html, trips/balkans-2026-06/site/index.html, trips/balkans-2026-06/sw.js, trips/balkans-2026-06/site/sw.js, trips/balkans-2026-06/CHANGES.md, trips/balkans-2026-06/UX-PASS-MOBILE.md
+- Context pack: output/context-packs/project-20260612-b1c4e/pack.md
+Implement the UX-PASS-MOBILE.md fix round for the Balkans dossier — apply M1–M3, M5–M11 (10 findings) to trips/balkans-2026-06/index.html in the document's fix order (M1→M2→M3→M11→M5→M6→M7→M8→M9→M10), chrome/CSS/one-liner fixes only; M4 parked behind a device check.
+
+### Summary
+Implemented the operator's full mobile UX pass on the Balkans dossier — 10 of the 11 findings in `UX-PASS-MOBILE.md` (M1–M3 Major, M5–M11 Minor), applied in the document's fix order, chrome/CSS only; M4 (status-bar style) parked behind a real-device check per the spec. Majors: note field no longer triggers iOS focus-zoom (M1); localStorage marks protected against Safari's 7-day ITP eviction via `storage.persist()` + an About install/backup sentence (M2); card pages gained a second full-width back link in the bottom thumb zone, on both normal and AVOID variants (M3). Minors covered scroll-restoration, landscape island clearance, sticky hover, double-tap zoom, long-press selection, Reduce Motion, and Maps-pin separation. Verified by 153 jsdom assertions (112 regression + 41 new M-series suite); independent QC returned GO. Committed `992868d`; SW → `balkans-v4-5`; `site/` re-synced.
+
+### Files Created
+- `trips/balkans-2026-06/UX-PASS-MOBILE.md` — the operator's iPhone 16 Pro UX-pass spec, saved clean UTF-8 (mojibake restored); Status updated to M-series RESOLVED / M4 PARKED.
+- `logs/scratchpads/2026-06-12-13-30-scratchpad.md` — continuity scratchpad.
+- `logs/session-plan-2026-06-12-S2.md` — session plan.
+- `output/context-packs/project-20260612-b1c4e/pack.md` — context-engine pack (auto-generated at session start).
+- `/tmp/balkans-v4-smoke/test-v4d.mjs` — new 41-assertion M-series jsdom suite (ephemeral, not in repo).
+
+### Files Modified
+- `trips/balkans-2026-06/index.html` — M1–M3, M5–M11 (CSS + ~5 lines JS/HTML); data block untouched.
+- `trips/balkans-2026-06/sw.js` — cache bump v4-4 → v4-5.
+- `trips/balkans-2026-06/CHANGES.md` — new "# v4.3 — Mobile UX-PASS fix round" section.
+- `trips/balkans-2026-06/site/index.html`, `site/sw.js` — upload bundle re-synced (byte-identical).
+- `/tmp/balkans-v4-smoke/test-v4c.mjs` — F8b cache-version check updated to v4-5 (ephemeral).
+
+### Decisions Made
+- Treated `UX-PASS-MOBILE.md` as the binding contract; implemented exactly its 10 in-scope "Proposed fix" entries, nothing beyond. M4 left parked as the spec directs.
+- M3 applied to BOTH card-page variants (normal + AVOID) — both are card pages per the finding's rationale; the map page (no `.pgnav`) left out per the spec's named placement.
+- Footer's right-edge `safe-area-inset-left` quirk (same bug class as M5) deliberately NOT fixed — not in M5's named container list; logged as a future-round candidate (QC concurred).
+- jsdom lacks `history.scrollRestoration`, so the M11 behavioural check is guarded (`in`-check), with a source check covering presence — mirrors the code's own feature guard.
+
+### Risky actions
+None. (Renderer/CSS/sw edits to operator-owned dossier files; jsdom-verified non-destructive; no schema/data changes; no push; no external publishing.)
+
+### Next Steps
+- Operator: upload `trips/balkans-2026-06/site/` to Cloudflare and eyeball v4.3 on iPhone — M1/M3/M5/M10 are feel-on-device fixes; settle the parked M4 status-bar question in the same look (dark theme + standalone: is the clock readable?).
+- Optional follow-up round: M4 (after device check) + the footer safe-area-right quirk; card-description research pass (top ~15 places).
+- Carryover: truncated "- make …" feedback item; 3 Belgrade food spellings; fix travel-os git remote (3 unpushed commits now); TODO-PRICE (15) + coords long tail (104).
+
+### Open Questions
+- M4: does iOS 18 render the status bar unreadably in installed standalone + dark theme? (Device check required before any fix.)
+- What was the operator's truncated "- make …" feedback item (carried from 06-11)?
