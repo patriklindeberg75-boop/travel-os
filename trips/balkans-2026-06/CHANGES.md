@@ -399,3 +399,61 @@ the document's fix order (F1→F2→F3→F4→F5→F6→F7→F8→F9→F10→F12
 Tests: 112 jsdom assertions green (61 Tier A + 15 Tier B + 36 new v4.2 suite).
 The pre-fix `test-v4.mjs` 10.6 (unknown slug → Overview) was updated to the new
 F6 contract. SW → `balkans-v4-4`. `site/` bundle re-synced.
+
+# v4.3 — Mobile UX-PASS fix round (2026-06-12)
+
+Ten findings from the operator's iPhone 16 Pro pass (`UX-PASS-MOBILE.md`, saved
+alongside this file) — iOS Safari 18 + installed-PWA ergonomics on top of the
+F-series round. Chrome/CSS one-liners only; M2's `persist()` call and About
+sentence are the sole non-CSS additions (~6 lines). No localStorage schema, no
+content/taxonomy, no dependencies, single file stays single file. Applied in the
+document's fix order (M1→M2→M3→M11→M5→M6→M7→M8→M9→M10). **M4** (status-bar
+style vs dark theme) is parked behind a real-device check, per the spec.
+
+**Major**
+- **M1 — note field no longer zooms the page.** `.notefield` font-size 14→16px;
+  iOS Safari zooms the viewport on focusing any input under 16px, forcing a
+  pinch-out after every note. Visually imperceptible on a textarea.
+- **M2 — marks protected against Safari's 7-day eviction.** In a Safari tab
+  (not installed), iOS ITP evicts all localStorage after 7 days of inactivity —
+  silently wiping every save/done/skip, note and verify tick.
+  `navigator.storage?.persist?.()` now requested once at boot (best-effort,
+  no-op where unsupported), and About gained one sentence: marks live on this
+  phone — add to Home Screen to protect them, Export as backup.
+- **M3 — back from a card page without reaching for the top-left corner.**
+  Card pages (including AVOID pages) now end with a second, full-width ≥48px
+  `.backlink.btm` below the prev/next nav — the bottom thumb zone. Standalone-
+  mode swipe-back for hash history is inconsistent across iOS versions; this
+  works regardless.
+
+**Minor**
+- **M11 — single scroll authority.** `history.scrollRestoration='manual'` at
+  boot; Safari no longer race-restores scroll before `hashchange`, killing the
+  one-frame double jump on back-swipe (visible since F3 made scrolling instant).
+- **M5 — landscape island clearance.** `.view`, `.tnrow`, `.tn-menu`, `.subbar`
+  padded their *right* edge with `safe-area-inset-left`; in landscape with the
+  island on the right, content sat under the camera housing. All four now use
+  `safe-area-inset-right` on the right (4-value padding, left keeps `-left`).
+- **M6 — no stuck hover states.** The two live `:hover` rules (`.tn-tab`,
+  `.toolbar button`) wrapped in `@media (hover:hover)` — iOS applies hover on
+  first tap and leaves it stuck until the next touch elsewhere.
+- **M7 — double-tap zoom disarmed on controls.** `touch-action:manipulation` on
+  `.act,.chip,.cl-item,.verify,.tn-tab,.card.row,.toolbar button,.bookbtn,.copybtn`;
+  rapid toggles (Save→Done, tier chips, checklist ticks) no longer risk an
+  accidental viewport zoom.
+- **M8 — no long-press selection over lists.** `-webkit-user-select:none` on
+  `.card.row` and `.act`; `.coords` keeps `user-select:all` (offline-maps paste
+  path, U-12).
+- **M9 — Reduce Motion respected on route changes.** `.view.active` added to the
+  reduced-motion block; the `rise` animation no longer plays for users with
+  Reduce Motion on.
+- **M10 — Maps pin separated from the row-navigate surface.** `.rpin` 40→44px
+  min in both axes and its left margin −2→+4px; a mis-tap near the pin exits the
+  app into Google Maps (offline: a dead end), so the pin earns real separation
+  from the `.rnm` hit area.
+
+Tests: 153 jsdom assertions green — 112 regression (61 Tier A + 15 Tier B + 36
+v4.2; the v4.2 suite's cache-version check updated to the new value) + 41 new
+M-series (`test-v4d.mjs`: M2/M3/M11 behavioural via jsdom boot + card-page
+navigation, the CSS fixes as source checks). SW → `balkans-v4-5`. `site/`
+bundle re-synced.

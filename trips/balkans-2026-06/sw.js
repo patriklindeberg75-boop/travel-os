@@ -1,6 +1,6 @@
 // Balkans dossier service worker — cache-first offline precache.
 // Bump CACHE on every deploy so clients pick up the new build on next online load.
-const CACHE = 'balkans-v4-4';
+const CACHE = 'balkans-v4-5';
 const ASSETS = [
   './',
   './index.html',

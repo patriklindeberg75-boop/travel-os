@@ -60,12 +60,12 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font
 
 .toolbar{display:flex;gap:8px;justify-content:flex-end;padding:10px 0 2px}
 .toolbar button{font-family:var(--sans);font-size:12.5px;color:var(--muted);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
-.toolbar button:hover{background:var(--surface-2);color:var(--ink)}
+@media (hover:hover){.toolbar button:hover{background:var(--surface-2);color:var(--ink)}} /* M6 — iOS sticky tap-hover */
 
 /* stop */
 .stop{scroll-margin-top:58px;padding-top:26px;opacity:0;transform:translateY(8px);animation:rise .5s ease forwards}
 @keyframes rise{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.stop{animation:none;opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.stop{animation:none;opacity:1;transform:none}.view.active{animation:none}} /* M9 — gate the route-change rise too */
 .stop-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:14px}
 .stop-head h2{font-family:var(--serif);font-weight:400;font-size:27px;margin:0}
 .stop-head .when{color:var(--muted);font-size:14px}
@@ -219,31 +219,31 @@ footer{margin-top:40px;padding:16px max(18px,env(safe-area-inset-left)) 24px;bor
 
 /* ===== v3 routed shell (top nav · per-stop views · overview) ===== */
 main#app{display:block}
-.view{max-width:740px;margin:0 auto;padding:10px max(18px,env(safe-area-inset-left)) calc(env(safe-area-inset-bottom) + 64px)}
+.view{max-width:740px;margin:0 auto;padding:10px max(18px,env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 64px) max(18px,env(safe-area-inset-left))} /* M5 — right edge pads with the right inset (landscape island) */
 .view[hidden]{display:none}
 .view.active{animation:rise .32s ease}
 .stop{padding-top:6px}
 
 /* top nav bar (every route) */
 .topnav{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
-.tnrow{display:flex;align-items:center;gap:8px;max-width:740px;margin:0 auto;padding:8px max(14px,env(safe-area-inset-left)) 8px max(14px,env(safe-area-inset-left))}
+.tnrow{display:flex;align-items:center;gap:8px;max-width:740px;margin:0 auto;padding:8px max(14px,env(safe-area-inset-right)) 8px max(14px,env(safe-area-inset-left))} /* M5 */
 .tn-title{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);text-decoration:none;flex:none}
 .tn-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;min-width:0;justify-content:flex-start}
 .tn-tabs::-webkit-scrollbar{display:none}
 .tn-tab{flex:none;font-size:13px;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap;min-height:38px;display:inline-flex;align-items:center;transition:background .15s,color .15s}
-.tn-tab:hover{background:var(--surface-2)}
+@media (hover:hover){.tn-tab:hover{background:var(--surface-2)}} /* M6 */
 .tn-tab.active{background:var(--ink);color:var(--bg);font-weight:500}
 .tn-more{flex:none;background:transparent;border:1px solid var(--line-2);border-radius:999px;color:var(--muted);min-height:38px;min-width:42px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .tn-more[aria-expanded="true"]{background:var(--surface-2);color:var(--ink)}
 .tn-more .ic{transition:transform .2s}
 .tn-more[aria-expanded="true"] .ic{transform:rotate(180deg)}
-.tn-menu{max-width:740px;margin:0 auto;padding:4px max(14px,env(safe-area-inset-left)) 10px;display:flex;flex-direction:column;gap:4px}
+.tn-menu{max-width:740px;margin:0 auto;padding:4px max(14px,env(safe-area-inset-right)) 10px max(14px,env(safe-area-inset-left));display:flex;flex-direction:column;gap:4px} /* M5 */
 .tn-menu[hidden]{display:none}
 .tn-menu a{padding:11px 13px;border-radius:var(--r);color:var(--ink);text-decoration:none;font-size:14.5px;background:var(--surface-2);display:flex;align-items:center;gap:9px}
 .tn-menu a .ic{color:var(--accent);font-size:17px}
 
 /* per-stop sub-bar (filters / expand) — only on stop views */
-.subbar{max-width:740px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left))}
+.subbar{max-width:740px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-right)) 0 max(18px,env(safe-area-inset-left))} /* M5 */
 .subbar[hidden]{display:none}
 
 /* offline indicator */
@@ -354,6 +354,8 @@ details.booked .subhead,details.booked .hood{display:none}
 .subgrp .subhead{margin:10px 0 8px}
 /* index rows — one-line decision units (§9 progressive disclosure / 11.6) */
 .card.row{display:flex;align-items:center;gap:8px;padding:11px 13px;min-height:48px;cursor:pointer;margin-bottom:7px;-webkit-tap-highlight-color:transparent}
+.act,.chip,.cl-item,.verify,.tn-tab,.card.row,.toolbar button,.bookbtn,.copybtn{touch-action:manipulation} /* M7 — disarm double-tap zoom on controls */
+.card.row,.act{-webkit-user-select:none;user-select:none} /* M8 — no long-press selection/callout; .coords keeps user-select:all */
 .card.row:active{opacity:.7}
 .card.row .rnm{flex:1;font-weight:500;font-size:14.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card.row .stars{font-size:10px}
@@ -361,7 +363,7 @@ details.booked .subhead,details.booked .hood{display:none}
 .card.row .rdot.cool{color:var(--accent)}
 .card.row .rdot.fr{color:var(--fr)}
 .card.row .areachip{flex:none;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.card.row .rpin{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;margin:-8px -8px -8px -2px;color:var(--accent);border-radius:999px}
+.card.row .rpin{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin:-8px -8px -8px 4px;color:var(--accent);border-radius:999px} /* M10 — 44×44 + separation from the row-navigate area (mis-tap exits to Maps) */
 .card.row .rpin:active{opacity:.5}
 .card.row.avoid .rpin{color:var(--danger)}
 .card.row.is-done,.card.row.is-skip{opacity:.5}
@@ -371,6 +373,7 @@ details.booked .subhead,details.booked .hood{display:none}
 /* card pages (11.6) */
 .backlink{display:inline-flex;align-items:center;gap:6px;color:var(--accent-ink);text-decoration:none;font-size:14.5px;padding:10px 0;min-height:44px}
 .backlink .ic{transform:rotate(90deg);color:var(--accent)}
+.backlink.btm{display:flex;width:100%;min-height:48px;margin-top:10px} /* M3 — bottom back affordance for one-handed thumb reach */
 .pagecard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 17px;margin:2px 0 12px}
 .pagecard.is-want{box-shadow:inset 3px 0 0 var(--accent)}
 .pagecard.avoid-pg{background:var(--danger-bg);border-color:var(--danger)}
@@ -392,7 +395,7 @@ details.booked .subhead,details.booked .hood{display:none}
 .warnchip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--danger-ink);background:var(--surface);border:1px solid var(--danger);border-radius:999px;padding:6px 12px;min-height:36px;text-decoration:none;margin:6px 0 4px}
 .warnchip.good{color:var(--accent-ink);border-color:var(--accent)}
 .warnchip .ic{font-size:14px}
-.notefield{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;margin-top:12px;min-height:60px;resize:vertical}
+.notefield{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;margin-top:12px;min-height:60px;resize:vertical} /* M1 — ≥16px stops iOS focus-zoom */
 .pgnav{display:flex;gap:8px;margin:4px 0 0}
 .pgnav a{flex:1;display:flex;flex-direction:column;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 13px;text-decoration:none;color:var(--ink);font-size:13.5px;min-height:48px;justify-content:center}
 .pgnav a.next{text-align:right;align-items:flex-end}
@@ -2980,7 +2983,9 @@ function renderCardPage(s,p,isAvoid){
       const alt=allCards(s).find(x=>x.id===p.instead);
       if(alt)h+='<a class="warnchip good" href="#/'+s.id+'/'+slugOf(alt,s)+'">'+icon('i-check')+' Use instead: '+alt.nm+'</a>';
     }
-    h+='</div></div>';
+    h+='</div>';
+    h+='<a class="backlink btm" href="#/'+s.id+'">'+icon('i-chev')+' '+s.name+'</a>'; // M3
+    h+='</div>';
     return h;
   }
   const cat=CATS[p.cat];
@@ -3016,6 +3021,7 @@ function renderCardPage(s,p,isAvoid){
     h+=next?'<a class="next" href="#/'+s.id+'/'+slugOf(next,s)+'"><span class="dir">next ›</span>'+next.nm+'</a>':'';
     h+='</div>';
   }
+  h+='<a class="backlink btm" href="#/'+s.id+'">'+icon('i-chev')+' '+s.name+'</a>'; // M3 — second back affordance in the thumb zone
   h+='</div>';
   return h;
 }
@@ -3088,6 +3094,7 @@ const ABOUT_HTML=
   '<div class="row"><span class="k"><span class="pt">€ – €€€</span></span> food price tiers — € under ~€5 full meal · €€ ~€5–10 · €€€ over €10 (a splurge by this trip’s budget)</div>'+
   '<div class="row" style="margin-top:8px;align-items:flex-start"><span class="k"><span class="badge-avoid">'+icon('i-alert')+' AVOID</span></span> tourist trap — red cards are things to skip, not do</div>'+
   '<p style="margin:10px 0 0;font-size:12.5px">Tap a row to open its page (full description, map, your note). Tap any section header to open or close it. Each stop opens with its activities; food, work cafés and the practical stuff are tucked underneath.</p>'+
+  '<p style="margin:10px 0 0;font-size:12.5px">Your saves, notes and ticks live on this phone only — <b>add this page to your Home Screen</b> to protect them from Safari’s 7-day cleanup, and use Export as a backup.</p>'+
   '<p style="margin:12px 0 0;font-size:12.5px;color:var(--faint)">First-run dossier · off-laptop ~12h/week. Verify opening days, prices and bus schedules closer to travel — they drift. Poland is a separate friend visit, not covered here.</p>';
 
 function renderOverview(){
@@ -3528,6 +3535,10 @@ function parseHash(){
   return h;
 }
 window.addEventListener('hashchange',()=>{saveNote();go(parseHash());});   // F12 — flush any pending note before the view re-renders
+// M2 — best-effort persistent storage: in a Safari tab, ITP can evict localStorage after 7 days idle
+try{navigator.storage?.persist?.();}catch(_){}
+// M11 — Safari's own scroll restore on hash pops fires before hashchange; go() is the single scroll authority
+if('scrollRestoration' in history)history.scrollRestoration='manual';
 go(parseHash());
 
 /* ===== service worker + offline indicator ============================= */
