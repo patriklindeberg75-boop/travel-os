@@ -154,6 +154,183 @@
           "hook": "A preserved cobbled old-town square the tour groups skip — a calm evening stroll.",
           "facts": [],
           "cat": "walks"
+        },
+        {
+          "nm": "Erzsébet-kilátó & Normafa",
+          "neighborhood": "Buda Hills (District XII)",
+          "city": "Budapest",
+          "t": 3,
+          "tags": [
+            "nature",
+            "shade"
+          ],
+          "hook": "Forest ridge and a panorama tower a few degrees cooler than the city — the free hot-day escape, locals hiking and picnicking. The answer to the 31°C day.",
+          "facts": [
+            [
+              "i-wallet",
+              "free"
+            ],
+            [
+              "i-tree",
+              "cool forest air"
+            ],
+            [
+              "i-bus",
+              "cogwheel + bus, on the travelcard"
+            ]
+          ],
+          "cat": "nature"
+        },
+        {
+          "nm": "Cogwheel Railway (Fogaskerekű)",
+          "neighborhood": "Városmajor → Széchenyi-hegy (District XII)",
+          "city": "Budapest",
+          "t": 2,
+          "tags": [
+            "shade"
+          ],
+          "hook": "Scenic climb into the Buda hills (line 60) — covered by your BKK travelcard, the shaded way up toward Normafa.",
+          "facts": [
+            [
+              "i-wallet",
+              "on the BKK travelcard"
+            ],
+            [
+              "i-bus",
+              "line 60 from Városmajor"
+            ]
+          ],
+          "cat": "sights"
+        },
+        {
+          "nm": "Kerepesi Cemetery (Fiumei úti Sírkert)",
+          "neighborhood": "Józsefváros (District VIII)",
+          "city": "Budapest",
+          "t": 3,
+          "tags": [
+            "culture",
+            "shade"
+          ],
+          "hook": "Monumental garden-cemetery and arboretum minutes from your base — free, deep shade, deeply local, no tour groups. The easy midday heat refuge.",
+          "facts": [
+            [
+              "i-wallet",
+              "free"
+            ],
+            [
+              "i-tree",
+              "deep shade"
+            ]
+          ],
+          "cat": "walks"
+        },
+        {
+          "nm": "Tabán park",
+          "neighborhood": "Tabán (District I, below the Castle)",
+          "city": "Budapest",
+          "t": 2,
+          "tags": [
+            "shade"
+          ],
+          "hook": "Green shaded hillside where an old quarter once stood — free, calm, and the cool way up toward Gellért Hill.",
+          "facts": [
+            [
+              "i-wallet",
+              "free"
+            ],
+            [
+              "i-tree",
+              "shaded ascent to Gellért"
+            ]
+          ],
+          "cat": "walks"
+        },
+        {
+          "nm": "Gellért Hill & Citadella",
+          "neighborhood": "Gellért Hill (District XI / I)",
+          "city": "Budapest",
+          "t": 3,
+          "tags": [
+            "view",
+            "culture"
+          ],
+          "hook": "The one iconic panorama worth the crowd — free. Climb at sunset via the shaded Tabán side to dodge the midday sun and the tour buses.",
+          "facts": [
+            [
+              "i-wallet",
+              "free"
+            ],
+            [
+              "i-clock",
+              "go at sunset"
+            ]
+          ],
+          "cat": "sights"
+        },
+        {
+          "nm": "Bartók Béla boulevard",
+          "neighborhood": "Újbuda (District XI)",
+          "city": "Budapest",
+          "t": 2,
+          "tags": [
+            "culture"
+          ],
+          "hook": "Creative-Buda strip — small galleries, design shops and student bars to duck into. Free to stroll, and your rain hedge for a showery afternoon.",
+          "facts": [
+            [
+              "i-wallet",
+              "free"
+            ],
+            [
+              "i-bus",
+              "tram 19 / 47 / 49"
+            ]
+          ],
+          "cat": "walks"
+        },
+        {
+          "nm": "Margaret Island (Margitsziget)",
+          "neighborhood": "Margitsziget (Districts XIII / II)",
+          "city": "Budapest",
+          "t": 3,
+          "tags": [
+            "nature",
+            "shade"
+          ],
+          "hook": "Car-free green island where the whole city comes to run and cool off — free, shaded loop paths, local life. Best early morning or evening.",
+          "facts": [
+            [
+              "i-wallet",
+              "free"
+            ],
+            [
+              "i-bus",
+              "tram 4 / 6 onto the island"
+            ]
+          ],
+          "cat": "nature"
+        },
+        {
+          "nm": "Veli Bej Baths (Veli Bej fürdő)",
+          "neighborhood": "Buda (District II)",
+          "city": "Budapest",
+          "t": 2,
+          "tags": [
+            "culture",
+            "swim"
+          ],
+          "hook": "The oldest Ottoman thermal bath in the city — atmospheric, cheap, and far quieter than the tourist baths. A low-cost cool-off on the hot day.",
+          "facts": [
+            [
+              "i-wallet",
+              "cheap entry (~€10)"
+            ],
+            [
+              "i-clock",
+              "timed sessions — check times"
+            ]
+          ],
+          "cat": "sights"
         }
       ],
       "stayPick": "Palace Quarter / Józsefváros (District VIII). The best blend — local texture, good work cafés, and the off-beat social-hostel scene, without dropping you in the District VII party core. Walkable to the centre, one tram from Buda.",

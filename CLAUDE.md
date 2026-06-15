@@ -33,6 +33,7 @@ Internal documentation (architecture, prompts, workflow notes) may use desktop f
 - Routine respected: day plans must accommodate work + sleep + exercise + healthy eating.
 - No custom dashboard — iPhone Notes + Google Maps are the front-end.
 - Anti-tourist filter active on all outputs: mass-tourism spots flagged, hidden gems prioritized.
+- Activity cost threshold: low-cost paid activities are recommendable, not just free ones. An activity costing roughly €10–15 (or the local-currency equivalent) is fair to recommend on its merits — do not over-filter to free-only. This is a recommendation guideline within normal daily budget, not a per-trip splurge authorization; the trip's splurge posture (see `trips/{slug}/trip-context.md`) still governs higher-cost items.
 
 ## Subagent Delegation Default
 

@@ -1,3 +1,24 @@
+# v4.4 — Budapest sights expansion (2026-06-15)
+
+Content-only addition (no renderer/CSS change). Operator may extend Budapest to
+3 days; weather-shortlisted 8 new see/do cards (the Belgrade-bus shift to Jun 19
+is NOT yet applied — pending operator confirmation).
+
+- **7 weather-shortlisted must-sees added** (free + reachable on the BKK
+  travelcard, no taxis): Erzsébet-kilátó & Normafa, Cogwheel Railway
+  (Fogaskerekű), Kerepesi Cemetery (Fiumei úti Sírkert), Tabán park, Gellért
+  Hill & Citadella, Bartók Béla boulevard, Margaret Island (Margitsziget).
+  Forecast drove the picks: Jun 18 ~31°C breaks the 30°C daily ceiling, so the
+  set leans to shade / cool air / hill escapes.
+- **Veli Bej Baths added** (operator pick #7) — oldest Ottoman bath, cheap
+  (~€10), a low-cost cool-off; the only paid item in the set.
+- Budapest `do` cards: 8 → 16. No coordinates authored (build never fabricates
+  them) — all 8 use accurate name-based Maps links and join the coords-missing
+  worklist; 4 flagged ★ as top picks.
+- SW → `balkans-v4-6`; `site/` bundle re-synced. Field self-check passed.
+
+---
+
 # Balkans Dossier — v3 Rewrite · CHANGES
 
 Rewrite of the single-page dossier into a routed, offline-capable, mode-driven v3.
