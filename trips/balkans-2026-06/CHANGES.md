@@ -1,3 +1,23 @@
+# v4.5 — Flexible (date-free) itinerary (2026-06-15)
+
+Operator wants a flexible itinerary, not a fixed calendar. Removed all exact
+dates from the user-facing dossier; kept stop order + transit legs + seasonal
+heat context.
+
+- **All 5 stops' `when` → night ranges, no dates:** Budapest "2–3 nights · first
+  stop", Belgrade / Prizren / Ohrid "2–3 nights", Sofia "1–2 nights · last stop".
+- **Leg copy de-dated:** arrive/depart lines dropped Jun 16 / Jun 18 / Jun 28 /
+  Jun 29 (e.g. "Arrive late evening", "Fly out (Metro Line 1 to airport)").
+- **Transit checklist de-dated:** Ohrid→Sofia "full travel day" (was "on Jun
+  28"); flights spec "booked flights" (was "· Jun 29").
+- **Budapest day-budget softened** to "a day or two — flex it to taste".
+- **Kept (seasonal, not dates):** "peak summer", "late June can break 30°C",
+  derby "late June is off-season".
+- SW → `balkans-v4-7`; `site/` re-synced. NOTE: `trip-context.md` frontmatter
+  still holds the original Jun 16–29 dates (internal scaffolding, left intact).
+
+---
+
 # v4.4 — Budapest sights expansion (2026-06-15)
 
 Content-only addition (no renderer/CSS change). Operator may extend Budapest to
