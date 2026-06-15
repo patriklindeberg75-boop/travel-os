@@ -148,6 +148,28 @@ gathered fields using these ids; never emit a fact with an icon id outside this
 set. (Tag icons are resolved by the renderer from the tag name; `facts` icons
 are explicit ids you supply.)
 
+**v5 controlled vocabularies (canonical — do not improvise). All are authored by
+the workflow, never keyword-inferred from prose.**
+
+- **`time` (per place — array, 0+ of):** `morning`, `daytime`, `evening`. The
+  filterable time-of-day blocks (§7). A place may belong to more than one. Author
+  from practical judgment about when the place is actually good — NOT by scanning
+  the hook for keywords. Leave the array empty if you genuinely cannot say; an
+  empty `time` means the place will not match a selected time filter (correct — a
+  place must never silently match a time it was not assigned).
+- **`purpose` (per place — array, 1+ of):** `explore`, `eat`, `work`, `social`,
+  `recovery`. The coarse "what is this for" axis (§10 Purpose filter). If absent,
+  `build.mjs` derives a default from `cat` (sights/nature/walks → explore;
+  rest/street/cafes → eat; work → work; night → social; nature also → recovery).
+  Author `purpose` to override the default when the cat-derived value is wrong.
+- **`dur` (per place — single value):** `quick` (under ~1h), `2-3h`, `half-day`,
+  `full-day`. Typical visit length (§9/§10 Duration filter). Omit if unknown.
+- **`rs` (per place — research status, single value):** `needs`, `researched`,
+  `verified`. See § Research status below — this is workflow-assigned by ACTUAL
+  research completeness, never a blanket value.
+- **resource `type` (per resource):** `food`, `article`, `transport`,
+  `neighborhood`, `source`, `reference` (§6).
+
 ### Shape
 
 The shape below is the **renderer-visible** object (post-`build.mjs`). In the
@@ -253,7 +275,140 @@ hand-author them. See § Field mapping for the derivation rules.
 NOT fabricate image URLs — only the query string. The current HTML ignores both;
 this is a placeholder contract, swap it when the real image source is decided.
 
+### v5 additive fields (companion schema)
+
+These fields extend the companion so the renderer can show destination intros,
+structured tasks, a critical checklist, resources, food-to-try, base/distance,
+research status, time blocks, and richer rows. All are **optional and additive**
+— `build.mjs` validates them only when present, defaults the rest, and never
+aborts on absence. Author them where you have real knowledge; leave them out
+rather than fabricate.
+
+**Trip-level `meta` object (top level, sibling of `trip` and `legs`):**
+
+```json
+{
+  "meta": {
+    "tasks": [
+      { "title": "Book the Budapest → Belgrade bus", "due": "A few days ahead",
+        "how": "Flixbus/Gea Tours run this direct (~7–8h). Reserve a seat.",
+        "link": "https://www.flixbus.com", "stop": "belgrade" }
+    ],
+    "critical": [
+      { "title": "Travel insurance covering all five countries",
+        "how": "Confirm it covers the non-EU stops, not just the EU.",
+        "due": "Before departure" }
+    ]
+  }
+}
+```
+
+- **`meta.tasks` (§2 — practical pre-trip/in-trip actions).** Explicitly authored
+  structured tasks (book transport, activate data, confirm an uncertain
+  departure, reserve an activity that genuinely needs advance booking). Each:
+  `title` (required), optional `due`, `how` (one-line "how to do this best"),
+  `link`, and `stop` (a stop id this task associates with; omit for trip-wide).
+  `build.mjs` derives `id`. **Do NOT keyword-derive tasks from place prose** —
+  the old "every place whose text says book/price/hours becomes a task" behavior
+  is removed. Stop-scoped tasks may also live on the stop object as `tasks` (see
+  below); both feed the same Tasks view.
+- **`meta.critical` (§3 — high-consequence checklist only).** Visa/entry,
+  passport/border, travel insurance, mobile data/roaming, essential transport
+  reservations, material health/payment/documentation requirements. Each: `title`
+  (required), optional `how`, `link`, `due`. `build.mjs` derives `id`. **Keep it
+  high-consequence** — do NOT fill it with routine reminders, restaurant
+  verification, minor price checks, or ordinary opening-hour checks (those are
+  `tasks`, or just per-place `Best time`/notes).
+
+**Stop-level additive fields (on each `trip[]` object):**
+
+```json
+{
+  "intro": "What the place is like, why it's on the route, what it's good for, and how to approach it. Short.",
+  "temp": "~27°C",
+  "base": { "label": "Palace Quarter (District VIII)", "kind": "area", "lat": 47.4895, "lng": 19.068 },
+  "tasks": [ { "title": "Buy a 72-hour transit card", "due": "On arrival", "how": "..." } ],
+  "resources": [ { "title": "Seat61 — trains & buses", "type": "transport", "link": "https://www.seat61.com", "why": "Clear overland-route reference." } ],
+  "foodToTry": [ { "name": "Lángos", "what": "Deep-fried dough with sour cream, garlic, cheese.", "how": "From a market stall as a cheap snack." } ]
+}
+```
+
+- **`intro` (§1).** A concise destination introduction: what it's like, why it's
+  included, what it's especially good for, and the recommended way to approach it.
+  Keep it short and useful. No photography in this version.
+- **`temp` (§1).** The temperature or range as a PLAIN string (`"~27°C"`,
+  `"30°C+"`, `"27–31°C"`) — no commentary words like "comfortable" or
+  "heat-flagged". Omit if no real forecast is known (the renderer then shows no
+  temp pill). The `heat` boolean stays (it drives the Heat-safe filter and
+  heat-relief tagging); heat advice still lives in `timing`/notes/`bestTime`
+  where it is operationally useful.
+- **`base` (§4 — optional authored default).** `label` (required), `kind`
+  (`address` or `area`), optional `lat`/`lng` (both or neither). A user-entered
+  base (localStorage) overrides this at runtime. With coordinates the renderer
+  shows estimated "from your base" travel measures (treated as estimates, never
+  precise routes); without coordinates it offers a Google Maps directions action
+  instead of false precision. Omit `base` entirely to exercise the "no base set —
+  add it later" prompt.
+- **`tasks` (§2).** Stop-scoped tasks, same shape as `meta.tasks` (no `stop`
+  field needed — the stop is implied).
+- **`resources` (§6).** Per-destination deeper-reading material — food guides,
+  good articles, transport/neighborhood guides, research sources, saved
+  references. Each: `title`, `type` (controlled vocab above), `link`, `why`
+  (one-line usefulness). Keep resources on the relevant destination, not in one
+  trip-wide appendix. Author only links you are confident exist; never fabricate
+  a URL.
+- **`foodToTry` (§8 — dishes, NOT venues).** Local dishes, drinks, ingredients,
+  specialties. Each: `name`, `what` (what it is), optional `how` (how/where
+  locals typically eat it). This is the "food to try" half of the food split;
+  the venue list stays in `eat` ("places to eat").
+
+**Per-place additive fields (on `do`/`eat` objects):** `time`, `purpose`, `dur`,
+`bestTime` (free-text time nuance — sunrise, avoiding midday heat, market days),
+`rs`, `rsNote` (what remains to research, for `needs` items — feeds the "Research
+in Claude Code" prompt), `tips` (array of practical "how to enjoy this" advice
+that materially improves the visit — not generic filler), and `pt` (price tier,
+now allowed on activities too, e.g. an entry fee). `build.mjs` derives `bf`
+(budget-friendly) from `pt`/free signals.
+
+### Research status (`rs`) — workflow-assigned, by actual completeness
+
+This is **not** primarily a manual user status. The dossier-generation workflow
+assigns it from real research completeness, and it must **never** blanket-mark
+every generated place as `researched` or `verified`.
+
+- **`needs`** — important facts or suitability checks are still missing. Always
+  pair with `rsNote` describing what remains (the renderer turns this into a
+  focused "Research in Claude Code" prompt).
+- **`researched`** — sufficient research exists to justify inclusion.
+- **`verified`** — important time-sensitive facts have been checked for THIS
+  trip's dates. `build.mjs` NEVER auto-assigns `verified`; only an explicit
+  author/verification pass sets it.
+
+If `rs` is absent, `build.mjs` defaults it by completeness: a place with both a
+hook AND at least one fact → `researched`; anything thinner → `needs`. Override
+to `needs` (with an `rsNote`) for any place whose facts are time-sensitive and
+unverified for the trip (timetables, seasonal sessions, renovation status).
+`build.mjs` writes every `needs` place to `research-todo.md`.
+
+### Route fields are optional (§11 — unresolved product decision)
+
+`when`, `nights`, `inLeg`, `outLeg`, and the `legs` array are **optional**. The
+renderer must tolerate their absence (a stop with no `when`/`inLeg`/`outLeg`
+simply omits those lines). Do not introduce logic that assumes dates or a fixed
+stop order are permanent. Whether the dossier becomes fully destination-based or
+keeps a provisional route is an open decision recorded in
+`trips/{slug}/CHANGES.md` (or the route-decision note) — preserve existing route
+information, keep it visually subordinate on destination pages, and do not decide
+it on the user's behalf.
+
 ## Required sections (in order)
+
+### 0. Destination introduction (§1)
+
+At the top of each stop's block (multi-stop) or the dossier body (single-base),
+a short `intro`: what the place is like, why it's included, what it's good for,
+and the recommended way to approach it. Renders above the ⭐ anchor. The plain
+`temp` indicator sits in the header — temperature or range only, no commentary.
 
 ### 1. Cool neighborhoods
 
@@ -304,11 +459,23 @@ the whole dossier for single-base).
 Anti-tourist filter applied. No item should be a top-5 TripAdvisor result
 without a counter-signal. For hikes/mountain days, append the `Hike data:` line.
 
-### 4. Food / restaurant shortlist
+### 4. Food (two distinct parts — §8)
 
-6–10 items, same per-place card format as Section 3, sorted by tier within each
-subhead. Group with two short subheads: `**Daytime / work-friendly:**` and
-`**Dinner / memorable:**`.
+Food is split into two concepts that must not be mixed:
+
+**4a. Food to try** (`foodToTry`) — local *dishes*, drinks, ingredients, and
+specialties (not venues). Each: name — what it is — and, where useful, how or
+where locals typically eat it. Short list per destination.
+
+```
+- **{Dish}** — {what it is}. {How/where locals eat it.}
+```
+
+**4b. Places to eat** (`eat`) — the *venue* list: restaurants, cafés, market
+stalls, bakeries. 6–10 items, same per-place card format as Section 3, sorted by
+tier within each subhead. Group with two short subheads:
+`**Daytime / work-friendly:**` and `**Dinner / memorable:**`. Keep price,
+location, suitability, and map access.
 
 ```
 👍 **{Place name}** — {Neighborhood}, {City}
@@ -393,6 +560,51 @@ block. Multi-stop: group by stop/country where it varies.
 This section is route-critical when the trip crosses in and out of EU coverage
 or non-Schengen borders. Where a field does not apply, omit that line rather
 than writing "n/a".
+
+---
+
+### 9. Critical pre-trip checklist (§3 — `meta.critical`)
+
+High-consequence matters only — visa/entry, passport/border, travel insurance,
+mobile data/roaming, essential transport reservations, material
+health/payment/documentation requirements. NOT routine reminders, restaurant
+verification, minor price checks, or ordinary opening-hour checks.
+
+```
+- **{Title}** — {one-line how-to-do-it-best}. {When, if relevant.}
+```
+
+In the HTML companion each item renders with a completion state and an "Add to
+Todoist" action.
+
+---
+
+### 10. Tasks & reminders (§2 — `meta.tasks` + per-stop `tasks`)
+
+Practical actions: book transport, buy/activate mobile data, confirm an uncertain
+departure, reserve an activity when advance booking is genuinely required. Each
+carries a clear action title, destination/trip association, when to complete
+(where relevant), a short "how to do this best" note, and any booking/info link.
+
+```
+- **{Title}** ({stop or "Trip"}) — {how-to note}. {Due, if relevant.}
+```
+
+Explicitly authored — never keyword-derived from place prose. In the HTML
+companion each task has a local completion state (still visible after being added
+to Todoist) and an "Add to Todoist" action.
+
+---
+
+### 11. Destination resources (§6 — per-stop `resources`)
+
+Per-destination deeper-reading material — local food guides, high-quality
+articles, transport guides, neighborhood guides, research sources, useful saved
+references. Keep them on the relevant destination, not in one trip-wide appendix.
+
+```
+- **{Title}** ({type}) — {one-line why it's useful}. {link}
+```
 
 ## Optional appendix
 

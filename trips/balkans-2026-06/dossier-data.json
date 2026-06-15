@@ -1,8 +1,78 @@
 {
+  "meta": {
+    "tasks": [
+      {
+        "title": "Book the Budapest → Belgrade bus",
+        "due": "A few days ahead — sooner in peak summer",
+        "how": "Flixbus or Gea Tours run this direct (~7–8h). Reserve a seat online so a sold-out day doesn't strand the first leg.",
+        "link": "https://www.flixbus.com"
+      },
+      {
+        "title": "Set up mobile data for the non-EU stretch",
+        "due": "Before leaving Budapest",
+        "how": "Serbia, Kosovo and North Macedonia are outside EU roaming — an EU plan may silently stop. Install an eSIM (a regional Balkans data plan) while you still have signal.",
+        "stop": "belgrade"
+      },
+      {
+        "title": "Confirm the Ohrid → Sofia connection",
+        "due": "The day before you travel it",
+        "how": "The hard leg — almost always a change in Skopje (Ohrid → Skopje, then Skopje → Sofia). Check both legs the night before; it's a full travel day.",
+        "stop": "ohrid"
+      },
+      {
+        "title": "Download offline maps for each stop",
+        "due": "On arrival, while on Wi-Fi",
+        "how": "Save each city's map area in your maps app before you lose signal between cities. Paste the place coordinates from the map page into the app."
+      }
+    ],
+    "critical": [
+      {
+        "title": "Travel insurance covering all five countries",
+        "how": "Confirm the policy covers Serbia, Kosovo and North Macedonia, not just the EU. Carry the policy number offline.",
+        "due": "Before departure"
+      },
+      {
+        "title": "Passport + entry rules for the non-EU stops",
+        "how": "Check passport validity and current visa-free terms for Serbia, Kosovo and North Macedonia for your nationality. Rules change — verify, don't assume.",
+        "due": "Before departure"
+      },
+      {
+        "title": "Border rule: do NOT re-enter Serbia from Kosovo",
+        "how": "Serbia does not recognise Kosovo entry stamps. This route is fine because you exit Kosovo onward into North Macedonia — but never backtrack into Serbia from Kosovo.",
+        "due": "Know before the Prizren → Ohrid leg"
+      },
+      {
+        "title": "Cash in four currencies",
+        "how": "Hungary (forint), Serbia (dinar) and North Macedonia (denar) each use their own currency; Kosovo uses the euro; Bulgaria the lev. Carry some local cash for markets and transit at each stop.",
+        "due": "Withdraw on arrival at each stop"
+      },
+      {
+        "title": "Mobile data working before you lose EU coverage",
+        "how": "Comms safety: make sure data actually works (eSIM activated / roaming confirmed) before the Belgrade → Prizren → Ohrid non-EU stretch.",
+        "due": "Before leaving Budapest"
+      }
+    ]
+  },
   "trip": [
     {
       "id": "budapest",
       "name": "Budapest",
+      "intro": "Hungary's grand riverside capital — faded-imperial architecture, thermal baths and a deep café-and-ruin-bar culture, all walkable and cheap by EU standards. It opens the trip because it's the easy on-ramp: big, comfortable, well-connected, and full of shade and water for the hot days. Best approached at a local pace — base in one quarter, work from its cafés, and lean on the air-conditioned transit when the afternoon spikes.",
+      "temp": "~27–31°C",
+      "base": { "label": "Palace Quarter / Józsefváros (District VIII)", "kind": "area", "lat": 47.4895, "lng": 19.068 },
+      "tasks": [
+        { "title": "Buy a BKK 72-hour travelcard", "due": "On arrival", "how": "Covers trams, metro, buses, the H5 HÉV to Óbuda, and the Cogwheel Railway toward Normafa — the heat-smart way to move. Buy at any metro machine or in the BudapestGO app." }
+      ],
+      "resources": [
+        { "title": "Seat61 — trains & buses guide", "type": "transport", "link": "https://www.seat61.com", "why": "The clearest plain-English reference for the overland legs ahead — what runs and how to buy tickets." },
+        { "title": "BKK — Budapest public transport", "type": "transport", "link": "https://bkk.hu/en/", "why": "Official fares, travelcard options, and the BudapestGO ticketing app." }
+      ],
+      "foodToTry": [
+        { "name": "Lángos", "what": "Deep-fried flat dough, classically topped with sour cream, garlic and grated cheese.", "how": "Eat it standing at a market stall (try Rákóczi tér market, not the tourist Central Market upper deck) — a cheap, filling late-morning snack." },
+        { "name": "Gulyás (goulash)", "what": "The real thing is a paprika-rich beef-and-vegetable SOUP, not the thick stew sold abroad.", "how": "Order it as a starter at a neighbourhood étterem with a basket of bread." },
+        { "name": "Kürtőskalács (chimney cake)", "what": "Spit-roasted sweet dough rolled in sugar or cinnamon, hollow in the middle.", "how": "A street sweet — have it fresh and hot, skip the cold pre-made ones in the tourist core." },
+        { "name": "Pálinka", "what": "Strong Hungarian fruit brandy (plum, apricot, cherry).", "how": "A small shot before or after a meal — sip it; locals don't slam it." }
+      ],
       "currency": {
         "code": "HUF",
         "sym": "Ft",
@@ -157,6 +227,16 @@
         },
         {
           "nm": "Erzsébet-kilátó & Normafa",
+          "time": ["morning", "daytime"],
+          "dur": "half-day",
+          "purpose": ["explore", "recovery"],
+          "bestTime": "Go in the morning before the afternoon heat — the forest air stays cooler than the city all day.",
+          "rs": "researched",
+          "tips": [
+            "Take the Cogwheel Railway up and walk the ridge — both are on your BKK travelcard.",
+            "Bring water and a picnic; locals treat Normafa as a weekend hill.",
+            "The Erzsébet lookout tower is free and gives the widest panorama."
+          ],
           "neighborhood": "Buda Hills (District XII)",
           "city": "Budapest",
           "t": 3,
@@ -183,6 +263,14 @@
         },
         {
           "nm": "Cogwheel Railway (Fogaskerekű)",
+          "time": ["morning", "daytime"],
+          "dur": "quick",
+          "bestTime": "Ride it on the way up to Normafa.",
+          "rs": "researched",
+          "tips": [
+            "Covered by the BKK travelcard — no separate ticket needed.",
+            "Board at Városmajor (line 60)."
+          ],
           "neighborhood": "Városmajor → Széchenyi-hegy (District XII)",
           "city": "Budapest",
           "t": 2,
@@ -204,6 +292,14 @@
         },
         {
           "nm": "Kerepesi Cemetery (Fiumei úti Sírkert)",
+          "time": ["daytime"],
+          "dur": "2-3h",
+          "bestTime": "Midday — the deep shade makes it an easy heat refuge.",
+          "rs": "researched",
+          "tips": [
+            "Free entry; pick up a map at the gate — it's large.",
+            "An arboretum as much as a cemetery: quiet, green, and very local."
+          ],
           "neighborhood": "Józsefváros (District VIII)",
           "city": "Budapest",
           "t": 3,
@@ -247,6 +343,15 @@
         },
         {
           "nm": "Gellért Hill & Citadella",
+          "time": ["morning", "evening"],
+          "dur": "2-3h",
+          "bestTime": "Early morning or near sunset — the climb is exposed and brutal at midday.",
+          "rs": "needs",
+          "rsNote": "The Citadella has been under long-running renovation — confirm what is open at the summit and any access restrictions before going.",
+          "tips": [
+            "The climb is steep and shadeless — do it at the cool ends of the day.",
+            "Sunset over the Danube from the top is the payoff."
+          ],
           "neighborhood": "Gellért Hill (District XI / I)",
           "city": "Budapest",
           "t": 3,
@@ -290,6 +395,15 @@
         },
         {
           "nm": "Margaret Island (Margitsziget)",
+          "time": ["morning", "daytime", "evening"],
+          "dur": "half-day",
+          "purpose": ["explore", "recovery"],
+          "bestTime": "Lovely in the early evening when it cools; good any time.",
+          "rs": "researched",
+          "tips": [
+            "Rent a bike or a pedal bringó-cart at the entrance to cover its length.",
+            "Car-free — a genuine green escape mid-river."
+          ],
           "neighborhood": "Margitsziget (Districts XIII / II)",
           "city": "Budapest",
           "t": 3,
@@ -312,6 +426,17 @@
         },
         {
           "nm": "Veli Bej Baths (Veli Bej fürdő)",
+          "time": ["morning", "daytime"],
+          "dur": "2-3h",
+          "pt": 2,
+          "purpose": ["recovery"],
+          "bestTime": "Quietest in the morning; check the current session schedule first.",
+          "rs": "needs",
+          "rsNote": "Veli Bej runs time- and gender-segregated sessions that change seasonally — confirm current session times and whether advance booking is needed before going.",
+          "tips": [
+            "One of the city's most authentic Ottoman baths, far less touristy than Széchenyi.",
+            "Bring a swimsuit and flip-flops; towel rental costs extra."
+          ],
           "neighborhood": "Buda (District II)",
           "city": "Budapest",
           "t": 2,
@@ -502,6 +627,15 @@
     {
       "id": "belgrade",
       "name": "Belgrade",
+      "intro": "Serbia's big, raw, energetic capital where the Sava meets the Danube — brutalist and Habsburg facades side by side, a legendary nightlife on river barges (splavovi), and some of the best-value eating on the route. It's the cultural and social heart of the trip: gritty, unpolished, intensely local. Approach it for the street life and the river — base in walkable Dorćol, and keep activities for mornings and evenings since the midday heat is fierce.",
+      "temp": "30°C+",
+      "base": { "label": "Donji Dorćol (Stari Grad)", "kind": "area" },
+      "foodToTry": [
+        { "name": "Ćevapi", "what": "Small grilled minced-meat fingers, served with chopped onion and kajmak in a lepinja flatbread.", "how": "A cheap any-time staple — eat where locals queue at a busy ćevabdžinica, not a sit-down tourist spot." },
+        { "name": "Burek", "what": "Coiled flaky pastry filled with meat, cheese or spinach.", "how": "A breakfast food — buy it by weight at a pekara (bakery) first thing, with a drinkable yogurt." },
+        { "name": "Kajmak", "what": "Rich clotted-cream dairy spread, somewhere between butter and cheese.", "how": "Comes alongside grilled meat or bread — spread it generously; it's the soul of Serbian comfort food." },
+        { "name": "Rakija", "what": "Homemade fruit brandy, the national drink (šljivovica = plum).", "how": "Offered as a welcome or toast — accept, sip slowly, and don't refuse the first one." }
+      ],
       "currency": {
         "code": "RSD",
         "sym": "дин",
@@ -1279,6 +1413,14 @@
     {
       "id": "prizren",
       "name": "Prizren",
+      "intro": "A compact, photogenic Ottoman-era town in Kosovo — a stone bridge, a hilltop fortress, minarets and a river through the centre, ringed by mountains. It's the route's small-town breather and its biggest surprise: deeply local, cheap, and almost untouched by mass tourism. Approach it slowly — wander the old town on foot, take a furgon up to the Prevallë highlands for cool mountain air, and time the fortress for sunset.",
+      "temp": "30°C+",
+      "base": { "label": "Old-town backpacker cluster (Ura & Bushati)", "kind": "area" },
+      "foodToTry": [
+        { "name": "Flija", "what": "A labour-intensive layered crêpe-like dish — batter brushed and cooked layer by layer, served with cream or honey.", "how": "A celebration food — if a guesthouse or local offers it, say yes; it's rarely on tourist menus." },
+        { "name": "Qebapa", "what": "Kosovar grilled minced-meat kebabs, close cousin of ćevapi.", "how": "Cheap and everywhere — eat at a busy qebaptore in the old town." },
+        { "name": "Baklava & sheqerpare", "what": "Syrup-soaked filo and semolina sweets from the Ottoman tradition.", "how": "Have one with a Turkish-style coffee in the afternoon, watching the river." }
+      ],
       "currency": {
         "code": "EUR",
         "sym": "€",
@@ -1637,6 +1779,14 @@
     {
       "id": "ohrid",
       "name": "Ohrid",
+      "intro": "A lakeside town on a vast, ancient lake — Byzantine churches, a hilltop fortress, clear water, and the coolest, calmest stop on the route. It's the trip's recovery stop: swim, slow down, eat by the water. Approach it for rest and the lake — base in the old Varosh quarter above the water, swim in the mornings, and walk or boat out to the quieter southern villages.",
+      "temp": "~26°C",
+      "base": { "label": "Varosh, upper old town", "kind": "area" },
+      "foodToTry": [
+        { "name": "Ohrid trout", "what": "The lake's signature fish — note the native Ohrid trout is protected, so order the farmed/koran alternative rather than the endangered wild one.", "how": "Eat it grilled at a lakeside tavern in a quieter village (Trpejca) rather than the busy town front; ask which trout it is." },
+        { "name": "Tavče gravče", "what": "North Macedonia's national dish — baked beans with peppers and spices in an earthenware pot.", "how": "A hearty, cheap, vegetarian-friendly dinner — order it at a traditional restoran." },
+        { "name": "Ajvar", "what": "Roasted red-pepper relish, a Balkan staple.", "how": "Comes as a side or spread — scoop it with bread alongside grilled food." }
+      ],
       "currency": {
         "code": "MKD",
         "sym": "ден",
@@ -1953,6 +2103,12 @@
     {
       "id": "sofia",
       "name": "Sofia",
+      "intro": "Bulgaria's laid-back capital, ringed by the Vitosha mountain — Roman ruins under the streets, gold-domed churches, and a relaxed, leafy, affordable centre. It's the trip's wind-down before the flights out: one evening and a short morning. Approach it lightly — a single walkable loop of the centre, one good meal, and an early metro to the airport.",
+      "foodToTry": [
+        { "name": "Banitsa", "what": "Flaky filo pastry with white cheese and egg.", "how": "The classic Bulgarian breakfast — grab one warm from a bakery with a boza or ayran." },
+        { "name": "Shopska salad", "what": "Tomato, cucumber, pepper and raw onion topped with grated sirene (white brine cheese).", "how": "A summer starter — order it with the meal and a cold rakia." },
+        { "name": "Tarator", "what": "Cold cucumber-and-yogurt soup with garlic, dill and walnuts.", "how": "Perfect in the heat — a refreshing starter on a warm evening." }
+      ],
       "currency": {
         "code": "BGN",
         "sym": "лв",

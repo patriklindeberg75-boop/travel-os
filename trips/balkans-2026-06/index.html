@@ -489,6 +489,59 @@ const TRIP=[
   {
     "id": "budapest",
     "name": "Budapest",
+    "intro": "Hungary's grand riverside capital — faded-imperial architecture, thermal baths and a deep café-and-ruin-bar culture, all walkable and cheap by EU standards. It opens the trip because it's the easy on-ramp: big, comfortable, well-connected, and full of shade and water for the hot days. Best approached at a local pace — base in one quarter, work from its cafés, and lean on the air-conditioned transit when the afternoon spikes.",
+    "temp": "~27–31°C",
+    "base": {
+      "label": "Palace Quarter / Józsefváros (District VIII)",
+      "kind": "area",
+      "lat": 47.4895,
+      "lng": 19.068
+    },
+    "tasks": [
+      {
+        "title": "Buy a BKK 72-hour travelcard",
+        "due": "On arrival",
+        "how": "Covers trams, metro, buses, the H5 HÉV to Óbuda, and the Cogwheel Railway toward Normafa — the heat-smart way to move. Buy at any metro machine or in the BudapestGO app.",
+        "id": "task:budapest-buy-a-bkk-72-hour-travelcard",
+        "stop": "budapest"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Seat61 — trains & buses guide",
+        "type": "transport",
+        "link": "https://www.seat61.com",
+        "why": "The clearest plain-English reference for the overland legs ahead — what runs and how to buy tickets."
+      },
+      {
+        "title": "BKK — Budapest public transport",
+        "type": "transport",
+        "link": "https://bkk.hu/en/",
+        "why": "Official fares, travelcard options, and the BudapestGO ticketing app."
+      }
+    ],
+    "foodToTry": [
+      {
+        "name": "Lángos",
+        "what": "Deep-fried flat dough, classically topped with sour cream, garlic and grated cheese.",
+        "how": "Eat it standing at a market stall (try Rákóczi tér market, not the tourist Central Market upper deck) — a cheap, filling late-morning snack."
+      },
+      {
+        "name": "Gulyás (goulash)",
+        "what": "The real thing is a paprika-rich beef-and-vegetable SOUP, not the thick stew sold abroad.",
+        "how": "Order it as a starter at a neighbourhood étterem with a basket of bread."
+      },
+      {
+        "name": "Kürtőskalács (chimney cake)",
+        "what": "Spit-roasted sweet dough rolled in sugar or cinnamon, hollow in the middle.",
+        "how": "A street sweet — have it fresh and hot, skip the cold pre-made ones in the tourist core."
+      },
+      {
+        "name": "Pálinka",
+        "what": "Strong Hungarian fruit brandy (plum, apricot, cherry).",
+        "how": "A small shot before or after a meal — sip it; locals don't slam it."
+      }
+    ],
     "currency": {
       "code": "HUF",
       "sym": "Ft",
@@ -529,7 +582,13 @@ const TRIP=[
         "lng": 19.0649,
         "id": "budapest-ervin-szabo-library",
         "map_link": "https://www.google.com/maps/search/?api=1&query=47.48945%2C19.0649",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Római-part",
@@ -552,7 +611,14 @@ const TRIP=[
         "lng": 19.06515,
         "id": "budapest-romai-part",
         "map_link": "https://www.google.com/maps/search/?api=1&query=47.57117%2C19.06515",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Lumen Café",
@@ -578,7 +644,13 @@ const TRIP=[
         },
         "id": "budapest-lumen-cafe",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lumen%20Caf%C3%A9%20Palace%20Quarter%20(District%20VIII)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Kelet Kávézó",
@@ -597,7 +669,13 @@ const TRIP=[
         },
         "id": "budapest-kelet-kavezo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kelet%20K%C3%A1v%C3%A9z%C3%B3%20Buda%20(District%20XI)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Tilos a Tilos",
@@ -612,7 +690,13 @@ const TRIP=[
         "cat": "night",
         "id": "budapest-tilos-a-tilos",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tilos%20a%20Tilos%20J%C3%B3zsefv%C3%A1ros%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Lake Feneketlen",
@@ -627,7 +711,13 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-lake-feneketlen",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lake%20Feneketlen%20L%C3%A1gym%C3%A1nyos%20(District%20XI)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Fellini Culture Pub",
@@ -648,7 +738,13 @@ const TRIP=[
         "cat": "night",
         "id": "budapest-fellini-culture-pub",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Fellini%20Culture%20Pub%20R%C3%B3mai-part%20(%C3%93buda%2C%20District%20III)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Óbuda Fő tér",
@@ -663,10 +759,32 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-obuda-fo-ter",
         "map_link": "https://www.google.com/maps/search/?api=1&query=%C3%93buda%20F%C5%91%20t%C3%A9r%20%C3%93buda%20(District%20III)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Erzsébet-kilátó & Normafa",
+        "time": [
+          "morning",
+          "daytime"
+        ],
+        "dur": "half-day",
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bestTime": "Go in the morning before the afternoon heat — the forest air stays cooler than the city all day.",
+        "rs": "researched",
+        "tips": [
+          "Take the Cogwheel Railway up and walk the ridge — both are on your BKK travelcard.",
+          "Bring water and a picnic; locals treat Normafa as a weekend hill.",
+          "The Erzsébet lookout tower is free and gives the widest panorama."
+        ],
         "neighborhood": "Buda Hills (District XII)",
         "city": "Budapest",
         "t": 3,
@@ -692,10 +810,22 @@ const TRIP=[
         "cat": "nature",
         "id": "budapest-erzsebet-kilato-normafa",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Erzs%C3%A9bet-kil%C3%A1t%C3%B3%20%26%20Normafa%20Buda%20Hills%20(District%20XII)%20Budapest",
-        "when": "any"
+        "when": "morning",
+        "bf": true
       },
       {
         "nm": "Cogwheel Railway (Fogaskerekű)",
+        "time": [
+          "morning",
+          "daytime"
+        ],
+        "dur": "quick",
+        "bestTime": "Ride it on the way up to Normafa.",
+        "rs": "researched",
+        "tips": [
+          "Covered by the BKK travelcard — no separate ticket needed.",
+          "Board at Városmajor (line 60)."
+        ],
         "neighborhood": "Városmajor → Széchenyi-hegy (District XII)",
         "city": "Budapest",
         "t": 2,
@@ -716,10 +846,24 @@ const TRIP=[
         "cat": "sights",
         "id": "budapest-cogwheel-railway-fogaskereku",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Cogwheel%20Railway%20(Fogaskerek%C5%B1)%20V%C3%A1rosmajor%20%E2%86%92%20Sz%C3%A9chenyi-hegy%20(District%20XII)%20Budapest",
-        "when": "any"
+        "when": "morning",
+        "purpose": [
+          "explore"
+        ],
+        "bf": false
       },
       {
         "nm": "Kerepesi Cemetery (Fiumei úti Sírkert)",
+        "time": [
+          "daytime"
+        ],
+        "dur": "2-3h",
+        "bestTime": "Midday — the deep shade makes it an easy heat refuge.",
+        "rs": "researched",
+        "tips": [
+          "Free entry; pick up a map at the gate — it's large.",
+          "An arboretum as much as a cemetery: quiet, green, and very local."
+        ],
         "neighborhood": "Józsefváros (District VIII)",
         "city": "Budapest",
         "t": 3,
@@ -741,7 +885,11 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-kerepesi-cemetery-fiumei-uti-sirkert",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kerepesi%20Cemetery%20(Fiumei%20%C3%BAti%20S%C3%ADrkert)%20J%C3%B3zsefv%C3%A1ros%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "purpose": [
+          "explore"
+        ],
+        "bf": true
       },
       {
         "nm": "Tabán park",
@@ -765,10 +913,28 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-taban-park",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tab%C3%A1n%20park%20Tab%C3%A1n%20(District%20I%2C%20below%20the%20Castle)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Gellért Hill & Citadella",
+        "time": [
+          "morning",
+          "evening"
+        ],
+        "dur": "2-3h",
+        "bestTime": "Early morning or near sunset — the climb is exposed and brutal at midday.",
+        "rs": "needs",
+        "rsNote": "The Citadella has been under long-running renovation — confirm what is open at the summit and any access restrictions before going.",
+        "tips": [
+          "The climb is steep and shadeless — do it at the cool ends of the day.",
+          "Sunset over the Danube from the top is the payoff."
+        ],
         "neighborhood": "Gellért Hill (District XI / I)",
         "city": "Budapest",
         "t": 3,
@@ -790,7 +956,11 @@ const TRIP=[
         "cat": "sights",
         "id": "budapest-gellert-hill-citadella",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gell%C3%A9rt%20Hill%20%26%20Citadella%20Gell%C3%A9rt%20Hill%20(District%20XI%20%2F%20I)%20Budapest",
-        "when": "evening"
+        "when": "any",
+        "purpose": [
+          "explore"
+        ],
+        "bf": true
       },
       {
         "nm": "Bartók Béla boulevard",
@@ -814,10 +984,32 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-bartok-bela-boulevard",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Bart%C3%B3k%20B%C3%A9la%20boulevard%20%C3%9Ajbuda%20(District%20XI)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Margaret Island (Margitsziget)",
+        "time": [
+          "morning",
+          "daytime",
+          "evening"
+        ],
+        "dur": "half-day",
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bestTime": "Lovely in the early evening when it cools; good any time.",
+        "rs": "researched",
+        "tips": [
+          "Rent a bike or a pedal bringó-cart at the entrance to cover its length.",
+          "Car-free — a genuine green escape mid-river."
+        ],
         "neighborhood": "Margitsziget (Districts XIII / II)",
         "city": "Budapest",
         "t": 3,
@@ -839,10 +1031,27 @@ const TRIP=[
         "cat": "nature",
         "id": "budapest-margaret-island-margitsziget",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Margaret%20Island%20(Margitsziget)%20Margitsziget%20(Districts%20XIII%20%2F%20II)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "bf": true
       },
       {
         "nm": "Veli Bej Baths (Veli Bej fürdő)",
+        "time": [
+          "morning",
+          "daytime"
+        ],
+        "dur": "2-3h",
+        "pt": 2,
+        "purpose": [
+          "recovery"
+        ],
+        "bestTime": "Quietest in the morning; check the current session schedule first.",
+        "rs": "needs",
+        "rsNote": "Veli Bej runs time- and gender-segregated sessions that change seasonally — confirm current session times and whether advance booking is needed before going.",
+        "tips": [
+          "One of the city's most authentic Ottoman baths, far less touristy than Széchenyi.",
+          "Bring a swimsuit and flip-flops; towel rental costs extra."
+        ],
         "neighborhood": "Buda (District II)",
         "city": "Budapest",
         "t": 2,
@@ -864,7 +1073,8 @@ const TRIP=[
         "cat": "sights",
         "id": "budapest-veli-bej-baths-veli-bej-furdo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Veli%20Bej%20Baths%20(Veli%20Bej%20f%C3%BCrd%C5%91)%20Buda%20(District%20II)%20Budapest",
-        "when": "any"
+        "when": "morning",
+        "bf": true
       }
     ],
     "stayPick": "Palace Quarter / Józsefváros (District VIII). The best blend — local texture, good work cafés, and the off-beat social-hostel scene, without dropping you in the District VII party core. Walkable to the centre, one tram from Buda.",
@@ -908,7 +1118,13 @@ const TRIP=[
         },
         "id": "budapest-csiga-cafe",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Csiga%20Caf%C3%A9%20Palace%20Quarter%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Rákóczi téri Vásárcsarnok",
@@ -925,7 +1141,13 @@ const TRIP=[
         "pt": 1,
         "id": "budapest-rakoczi-teri-vasarcsarnok",
         "map_link": "https://www.google.com/maps/search/?api=1&query=R%C3%A1k%C3%B3czi%20t%C3%A9ri%20V%C3%A1s%C3%A1rcsarnok%20J%C3%B3zsefv%C3%A1ros%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Lehel Piac lángos",
@@ -942,7 +1164,13 @@ const TRIP=[
         "pt": 1,
         "id": "budapest-lehel-piac-langos",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lehel%20Piac%20l%C3%A1ngos%20Lehel%20t%C3%A9r%20(District%20XIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Pozsonyi Kisvendéglő",
@@ -963,7 +1191,13 @@ const TRIP=[
         "pt": 2,
         "id": "budapest-pozsonyi-kisvendeglo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Pozsonyi%20Kisvend%C3%A9gl%C5%91%20%C3%9Ajlip%C3%B3tv%C3%A1ros%20(District%20XIII)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Római-part hekk stalls",
@@ -984,7 +1218,13 @@ const TRIP=[
         "pt": 1,
         "id": "budapest-romai-part-hekk-stalls",
         "map_link": "https://www.google.com/maps/search/?api=1&query=R%C3%B3mai-part%20hekk%20stalls%20R%C3%B3mai-part%20(%C3%93buda%2C%20District%20III)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       }
     ],
     "avoid": [
@@ -1063,6 +1303,34 @@ const TRIP=[
   {
     "id": "belgrade",
     "name": "Belgrade",
+    "intro": "Serbia's big, raw, energetic capital where the Sava meets the Danube — brutalist and Habsburg facades side by side, a legendary nightlife on river barges (splavovi), and some of the best-value eating on the route. It's the cultural and social heart of the trip: gritty, unpolished, intensely local. Approach it for the street life and the river — base in walkable Dorćol, and keep activities for mornings and evenings since the midday heat is fierce.",
+    "temp": "30°C+",
+    "base": {
+      "label": "Donji Dorćol (Stari Grad)",
+      "kind": "area"
+    },
+    "foodToTry": [
+      {
+        "name": "Ćevapi",
+        "what": "Small grilled minced-meat fingers, served with chopped onion and kajmak in a lepinja flatbread.",
+        "how": "A cheap any-time staple — eat where locals queue at a busy ćevabdžinica, not a sit-down tourist spot."
+      },
+      {
+        "name": "Burek",
+        "what": "Coiled flaky pastry filled with meat, cheese or spinach.",
+        "how": "A breakfast food — buy it by weight at a pekara (bakery) first thing, with a drinkable yogurt."
+      },
+      {
+        "name": "Kajmak",
+        "what": "Rich clotted-cream dairy spread, somewhere between butter and cheese.",
+        "how": "Comes alongside grilled meat or bread — spread it generously; it's the soul of Serbian comfort food."
+      },
+      {
+        "name": "Rakija",
+        "what": "Homemade fruit brandy, the national drink (šljivovica = plum).",
+        "how": "Offered as a welcome or toast — accept, sip slowly, and don't refuse the first one."
+      }
+    ],
     "currency": {
       "code": "RSD",
       "sym": "дин",
@@ -1102,7 +1370,14 @@ const TRIP=[
         "lng": 20.38104,
         "id": "belgrade-ada-ciganlija-makis-side",
         "map_link": "https://www.google.com/maps/search/?api=1&query=44.78444%2C20.38104",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Ada Međica",
@@ -1120,7 +1395,14 @@ const TRIP=[
         "lng": 20.38865,
         "id": "belgrade-ada-me-ica",
         "map_link": "https://www.google.com/maps/search/?api=1&query=44.79234%2C20.38865",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Pržionica",
@@ -1150,7 +1432,13 @@ const TRIP=[
         "lng": 20.46766,
         "id": "belgrade-przionica",
         "map_link": "https://www.google.com/maps/search/?api=1&query=44.82329%2C20.46766",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Silosi",
@@ -1166,7 +1454,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-silosi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Silosi%20Dor%C4%87ol%20(old%20port%20%2F%20docks)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Gavez Club",
@@ -1184,7 +1478,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-gavez-club",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gavez%20Club%20Savamala%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Košutnjak forest trails",
@@ -1200,7 +1500,14 @@ const TRIP=[
         "cat": "nature",
         "id": "belgrade-kosutnjak-forest-trails",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Ko%C5%A1utnjak%20forest%20trails%20Ko%C5%A1utnjak%20(%C4%8Cukarica)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Zaokret",
@@ -1215,7 +1522,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-zaokret",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Zaokret%20Savamala%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Splavs on Savski kej",
@@ -1230,7 +1543,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-splavs-on-savski-kej",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Splavs%20on%20Savski%20kej%20Savski%20kej%20(Sava%20quay%2C%20Novi%20Beograd)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Kalemegdan / Belgrade Fortress, for sunset",
@@ -1256,7 +1575,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-kalemegdan-belgrade-fortress-for-sunset",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kalemegdan%20%2F%20Belgrade%20Fortress%2C%20for%20sunset%20Stari%20Grad%20(Kalemegdan)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Church of Saint Sava (Hram Svetog Save)",
@@ -1282,7 +1607,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-church-of-saint-sava-hram-svetog-save",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Church%20of%20Saint%20Sava%20(Hram%20Svetog%20Save)%20Vra%C4%8Dar%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Nikola Tesla Museum",
@@ -1307,7 +1638,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-nikola-tesla-museum",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Nikola%20Tesla%20Museum%20Vra%C4%8Dar%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Ružica Church & St. Petka Chapel",
@@ -1328,7 +1665,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-ruzica-church-st-petka-chapel",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Ru%C5%BEica%20Church%20%26%20St.%20Petka%20Chapel%20Stari%20Grad%20(Kalemegdan)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Museum of Yugoslavia (House of Flowers / Tito's tomb)",
@@ -1350,7 +1693,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-museum-of-yugoslavia-house-of-flowers-tito-s-tomb",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Museum%20of%20Yugoslavia%20(House%20of%20Flowers%20%2F%20Tito's%20tomb)%20Dedinje%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Jevremovac Botanical Garden",
@@ -1371,7 +1720,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-jevremovac-botanical-garden",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Jevremovac%20Botanical%20Garden%20Stari%20Grad%20(Dor%C4%87ol%20edge)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Topčider Park (+ Residence of Prince Miloš)",
@@ -1393,7 +1748,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-topcider-park-residence-of-prince-milos",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Top%C4%8Dider%20Park%20(%2B%20Residence%20of%20Prince%20Milo%C5%A1)%20Top%C4%8Dider%20(Savski%20venac)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Gardoš / Millennium Tower",
@@ -1415,7 +1776,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-gardos-millennium-tower",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gardo%C5%A1%20%2F%20Millennium%20Tower%20Zemun%20(Gardo%C5%A1)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Avala Tower (Avalski toranj)",
@@ -1437,7 +1804,14 @@ const TRIP=[
         "cat": "nature",
         "id": "belgrade-avala-tower-avalski-toranj",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Avala%20Tower%20(Avalski%20toranj)%20Mount%20Avala%20(southern%20outskirts)%20Belgrade",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Aviation Museum (Muzej vazduhoplovstva)",
@@ -1458,7 +1832,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-aviation-museum-muzej-vazduhoplovstva",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Aviation%20Museum%20(Muzej%20vazduhoplovstva)%20Sur%C4%8Din%20(by%20Nikola%20Tesla%20Airport)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Eternal Derby — Partizan vs Crvena zvezda",
@@ -1479,7 +1859,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-eternal-derby-partizan-vs-crvena-zvezda",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Eternal%20Derby%20%E2%80%94%20Partizan%20vs%20Crvena%20zvezda%20Dedinje%20%2F%20Autokomanda%20(stadiums)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Skadarlija",
@@ -1500,7 +1886,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-skadarlija",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Skadarlija%20Skadarlija%20(Stari%20Grad)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Knez Mihailova Street",
@@ -1521,7 +1913,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-knez-mihailova-street",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Knez%20Mihailova%20Street%20Stari%20Grad%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Belgrade Waterfront (Beograd na vodi)",
@@ -1542,7 +1940,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-belgrade-waterfront-beograd-na-vodi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Belgrade%20Waterfront%20(Beograd%20na%20vodi)%20Savamala%20%2F%20Belgrade%20Waterfront%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "stayPick": "Donji Dorćol, Stari Grad. The clear base — social-hostel scene, the densest cafés for light work, and the Danube on its doorstep to cool off, without putting you in the tourist core.",
@@ -1580,7 +1984,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-grill-loki",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Grill%20'Loki'%20Zemun%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Efi cafe",
@@ -1600,7 +2010,13 @@ const TRIP=[
         },
         "id": "belgrade-efi-cafe",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Efi%20cafe%20central%20Belgrade%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Bajloni Pijaca",
@@ -1616,7 +2032,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-bajloni-pijaca",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Bajloni%20Pijaca%20Dor%C4%87ol%20(Bajloni%20market)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Pekara Petrović",
@@ -1637,7 +2059,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-pekara-petrovic",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Pekara%20Petrovi%C4%87%20central%20Belgrade%20Belgrade",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Stara Hercegovina",
@@ -1652,7 +2080,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-stara-hercegovina",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Stara%20Hercegovina%20Stari%20Grad%20(near%20Skadarlija)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Radecki",
@@ -1672,7 +2106,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-radecki",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Radecki%20central%20Belgrade%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Splav Koliba",
@@ -1692,7 +2132,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-splav-koliba",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Splav%20Koliba%20Sava%20riverbank%20(splav)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Čedić",
@@ -1713,7 +2159,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-cedic",
         "map_link": "https://www.google.com/maps/search/?api=1&query=%C4%8Cedi%C4%87%20central%20Belgrade%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Iva New Balkan Cuisine",
@@ -1734,7 +2186,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-iva-new-balkan-cuisine",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Iva%20New%20Balkan%20Cuisine%20Dor%C4%87ol%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Zeleni Venac Market",
@@ -1757,7 +2215,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-zeleni-venac-market",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Zeleni%20Venac%20Market%20Zeleni%20venac%20(central)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Gušti Mora",
@@ -1778,7 +2242,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-gusti-mora",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gu%C5%A1ti%20Mora%20central%20Belgrade%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Meze Restoran Dvorište",
@@ -1799,7 +2269,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-meze-restoran-dvoriste",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Meze%20Restoran%20Dvori%C5%A1te%20central%20Belgrade%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Mama Shelter rooftop",
@@ -1822,7 +2298,13 @@ const TRIP=[
         "pt": 3,
         "id": "belgrade-mama-shelter-rooftop",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Mama%20Shelter%20rooftop%20Stari%20Grad%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "20/44",
@@ -1843,7 +2325,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-20-44",
         "map_link": "https://www.google.com/maps/search/?api=1&query=20%2F44%20Sava%20riverbank%20(splav%2C%20Brankov%20most)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Tri šešira",
@@ -1866,7 +2354,13 @@ const TRIP=[
         "pt": 3,
         "id": "belgrade-tri-sesira",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tri%20%C5%A1e%C5%A1ira%20Skadarlija%20(Stari%20Grad)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Šaran",
@@ -1888,7 +2382,13 @@ const TRIP=[
         "pt": 3,
         "id": "belgrade-saran",
         "map_link": "https://www.google.com/maps/search/?api=1&query=%C5%A0aran%20Zemun%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "doNote2": "Dishes to try (friend rec): pljeskavica (the big Serbian burger-patty — Grill 'Loki'); Karađorđeva šnicla (rolled breaded veal/pork cutlet stuffed with kajmak — interpreted from 'Karadjordjeva palacinka'); šopska salad (tomato, cucumber, onion, grated white cheese — interpreted from 'Shops salt'); burek (flaky breakfast pastry — Pekara Petrović).",
@@ -1966,6 +2466,29 @@ const TRIP=[
   {
     "id": "prizren",
     "name": "Prizren",
+    "intro": "A compact, photogenic Ottoman-era town in Kosovo — a stone bridge, a hilltop fortress, minarets and a river through the centre, ringed by mountains. It's the route's small-town breather and its biggest surprise: deeply local, cheap, and almost untouched by mass tourism. Approach it slowly — wander the old town on foot, take a furgon up to the Prevallë highlands for cool mountain air, and time the fortress for sunset.",
+    "temp": "30°C+",
+    "base": {
+      "label": "Old-town backpacker cluster (Ura & Bushati)",
+      "kind": "area"
+    },
+    "foodToTry": [
+      {
+        "name": "Flija",
+        "what": "A labour-intensive layered crêpe-like dish — batter brushed and cooked layer by layer, served with cream or honey.",
+        "how": "A celebration food — if a guesthouse or local offers it, say yes; it's rarely on tourist menus."
+      },
+      {
+        "name": "Qebapa",
+        "what": "Kosovar grilled minced-meat kebabs, close cousin of ćevapi.",
+        "how": "Cheap and everywhere — eat at a busy qebaptore in the old town."
+      },
+      {
+        "name": "Baklava & sheqerpare",
+        "what": "Syrup-soaked filo and semolina sweets from the Ottoman tradition.",
+        "how": "Have one with a Turkish-style coffee in the afternoon, watching the river."
+      }
+    ],
     "currency": {
       "code": "EUR",
       "sym": "€",
@@ -2002,7 +2525,14 @@ const TRIP=[
         "lng": 20.96188,
         "id": "prizren-prevalle-livadica-glacial-lake-hike",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.1761%2C20.96188",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Sunrise fortress climb (Kalaja)",
@@ -2025,7 +2555,13 @@ const TRIP=[
         "lng": 20.74558,
         "id": "prizren-sunrise-fortress-climb-kalaja",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.20947%2C20.74558",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Early-morning çajtore",
@@ -2047,7 +2583,13 @@ const TRIP=[
         "pt": 1,
         "id": "prizren-early-morning-cajtore",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Early-morning%20%C3%A7ajtore%20Old%20Town%20Prizren",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Kino Lumbardhi",
@@ -2076,7 +2618,13 @@ const TRIP=[
         },
         "id": "prizren-kino-lumbardhi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kino%20Lumbardhi%20Old%20Town%20(by%20the%20Lumbardhi%20river)%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Gazi Mehmet Pasha Hammam",
@@ -2092,7 +2640,13 @@ const TRIP=[
         "cat": "sights",
         "id": "prizren-gazi-mehmet-pasha-hammam",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gazi%20Mehmet%20Pasha%20Hammam%20Old%20Town%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Lumbardhi gorge walk",
@@ -2108,7 +2662,13 @@ const TRIP=[
         "cat": "walks",
         "id": "prizren-lumbardhi-gorge-walk",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lumbardhi%20gorge%20walk%20Lumbardhi%20gorge%20(above%20Prizren)%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "BarAca",
@@ -2123,7 +2683,13 @@ const TRIP=[
         "cat": "night",
         "id": "prizren-baraca",
         "map_link": "https://www.google.com/maps/search/?api=1&query=BarAca%20Old%20Town%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       }
     ],
     "doNote": "Mountain-day alternatives: a longer 14km cultural pasture hike to Gornje Lubinje, or a detour from Prevallë to the abandoned Yugoslav ski resort at Brezovica for an off-beat post-Yugoslav side trip.",
@@ -2161,7 +2727,13 @@ const TRIP=[
         "cat": "street",
         "id": "prizren-qebaptore-bekimi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Qebaptore%20Bekimi%20Old%20Town%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Fellas Coffee & Kitchen",
@@ -2189,7 +2761,13 @@ const TRIP=[
         },
         "id": "prizren-fellas-coffee-kitchen",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Fellas%20Coffee%20%26%20Kitchen%20Old%20Town%20%2F%20centre%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Traditional pekara, Ura",
@@ -2205,7 +2783,13 @@ const TRIP=[
         "pt": 1,
         "id": "prizren-traditional-pekara-ura",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Traditional%20pekara%2C%20Ura%20Old%20Town%20(by%20the%20Ura%20bridge)%20Prizren",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Tetova Sweet Shop",
@@ -2221,7 +2805,13 @@ const TRIP=[
         "pt": 1,
         "id": "prizren-tetova-sweet-shop",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tetova%20Sweet%20Shop%20Old%20Town%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Shepherd stalls, Prevallë",
@@ -2242,7 +2832,13 @@ const TRIP=[
         "cat": "street",
         "id": "prizren-shepherd-stalls-prevalle",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Shepherd%20stalls%2C%20Prevall%C3%AB%20Prevall%C3%AB%20(%C5%A0ar%20Mountains)%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Restaurant Marashi",
@@ -2263,7 +2859,13 @@ const TRIP=[
         "cat": "rest",
         "id": "prizren-restaurant-marashi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Marashi%20Old%20Town%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Hani i Vjetër",
@@ -2283,7 +2885,13 @@ const TRIP=[
         "cat": "rest",
         "id": "prizren-hani-i-vjeter",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Hani%20i%20Vjet%C3%ABr%20Old%20Town%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Restaurant Koha, Prevallë",
@@ -2303,7 +2911,13 @@ const TRIP=[
         "cat": "rest",
         "id": "prizren-restaurant-koha-prevalle",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Koha%2C%20Prevall%C3%AB%20Prevall%C3%AB%20(%C5%A0ar%20Mountains)%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "avoid": [
@@ -2381,6 +2995,29 @@ const TRIP=[
   {
     "id": "ohrid",
     "name": "Ohrid",
+    "intro": "A lakeside town on a vast, ancient lake — Byzantine churches, a hilltop fortress, clear water, and the coolest, calmest stop on the route. It's the trip's recovery stop: swim, slow down, eat by the water. Approach it for rest and the lake — base in the old Varosh quarter above the water, swim in the mornings, and walk or boat out to the quieter southern villages.",
+    "temp": "~26°C",
+    "base": {
+      "label": "Varosh, upper old town",
+      "kind": "area"
+    },
+    "foodToTry": [
+      {
+        "name": "Ohrid trout",
+        "what": "The lake's signature fish — note the native Ohrid trout is protected, so order the farmed/koran alternative rather than the endangered wild one.",
+        "how": "Eat it grilled at a lakeside tavern in a quieter village (Trpejca) rather than the busy town front; ask which trout it is."
+      },
+      {
+        "name": "Tavče gravče",
+        "what": "North Macedonia's national dish — baked beans with peppers and spices in an earthenware pot.",
+        "how": "A hearty, cheap, vegetarian-friendly dinner — order it at a traditional restoran."
+      },
+      {
+        "name": "Ajvar",
+        "what": "Roasted red-pepper relish, a Balkan staple.",
+        "how": "Comes as a side or spread — scoop it with bread alongside grilled food."
+      }
+    ],
     "currency": {
       "code": "MKD",
       "sym": "ден",
@@ -2411,7 +3048,14 @@ const TRIP=[
         "lng": 20.8166,
         "id": "ohrid-elshani-gorno-konjsko-hike",
         "map_link": "https://www.google.com/maps/search/?api=1&query=41.02631%2C20.8166",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Milenko's viewpoint, above Kaneo",
@@ -2426,7 +3070,13 @@ const TRIP=[
         "cat": "night",
         "id": "ohrid-milenko-s-viewpoint-above-kaneo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Milenko's%20viewpoint%2C%20above%20Kaneo%20Kaneo%20Ohrid",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "St. Naum military beach & springs",
@@ -2446,7 +3096,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-st-naum-military-beach-springs",
         "map_link": "https://www.google.com/maps/search/?api=1&query=St.%20Naum%20military%20beach%20%26%20springs%20St.%20Naum%20(south%20of%20Ohrid)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Trpejca — Zaumska coastal hike",
@@ -2462,7 +3119,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-trpejca-zaumska-coastal-hike",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Trpejca%20%E2%80%94%20Zaumska%20coastal%20hike%20Trpejca%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Beach Labino",
@@ -2477,7 +3141,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-beach-labino",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Beach%20Labino%20Lagadin%20%2F%20Labino%20(south%20lakeside)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Elshani village walk",
@@ -2493,7 +3164,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-elshani-village-walk",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Elshani%20village%20walk%20Elshani%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Peribleptos church & its local guide",
@@ -2508,7 +3186,13 @@ const TRIP=[
         "cat": "sights",
         "id": "ohrid-peribleptos-church-its-local-guide",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Peribleptos%20church%20%26%20its%20local%20guide%20Old%20Town%20(Varosh)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Mesokastro backstreets & Turkish bazaar",
@@ -2524,7 +3208,13 @@ const TRIP=[
         "cat": "walks",
         "id": "ohrid-mesokastro-backstreets-turkish-bazaar",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Mesokastro%20backstreets%20%26%20Turkish%20bazaar%20Old%20Town%20(Mesokastro%20%2F%20Old%20Bazaar)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       }
     ],
     "doNote": "Harder option: Magaro peak (2,255m) is the full-day summit with views of both lakes — strenuous and exposed, so only with a dawn start. The gentle Gorno Konjsko loop is the better fit otherwise.",
@@ -2563,7 +3253,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-gostilnica-vkusno",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gostilnica%20Vkusno%20Old%20Town%20%2F%20centre%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Burekdžilnica Martina",
@@ -2579,7 +3275,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-burekdzilnica-martina",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Burekd%C5%BEilnica%20Martina%20centre%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Turkish Bazaar gjomleze vendors",
@@ -2601,7 +3303,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-turkish-bazaar-gjomleze-vendors",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Turkish%20Bazaar%20gjomleze%20vendors%20Old%20Bazaar%20(%C4%8Car%C5%A1ija)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Zelen Pazar (green market)",
@@ -2617,7 +3325,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-zelen-pazar-green-market",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Zelen%20Pazar%20(green%20market)%20centre%20(green%20market)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Restaurant Antico",
@@ -2633,7 +3347,13 @@ const TRIP=[
         "pt": 2,
         "id": "ohrid-restaurant-antico",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Antico%20Old%20Town%20(Varosh)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Restaurant Panorama",
@@ -2649,7 +3369,13 @@ const TRIP=[
         "pt": 2,
         "id": "ohrid-restaurant-panorama",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Panorama%20Old%20Town%20(upper%2C%20by%20the%20fortress)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Trpejca village tavernas",
@@ -2664,7 +3390,13 @@ const TRIP=[
         "cat": "rest",
         "id": "ohrid-trpejca-village-tavernas",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Trpejca%20village%20tavernas%20Trpejca%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Domakjinska Kukja, Velestovo",
@@ -2685,7 +3417,13 @@ const TRIP=[
         "cat": "rest",
         "id": "ohrid-domakjinska-kukja-velestovo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Domakjinska%20Kukja%2C%20Velestovo%20Velestovo%20(village%20above%20Ohrid)%20Ohrid",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "doNote2": "Worth-it add-ons: Antep Baklava (cheap sweets across from Vkusno), the fish stew at Biser in Lagadin on the way south, and the smaller Kanevče for a cheap salad and rakija below Kaneo.",
@@ -2755,6 +3493,24 @@ const TRIP=[
   {
     "id": "sofia",
     "name": "Sofia",
+    "intro": "Bulgaria's laid-back capital, ringed by the Vitosha mountain — Roman ruins under the streets, gold-domed churches, and a relaxed, leafy, affordable centre. It's the trip's wind-down before the flights out: one evening and a short morning. Approach it lightly — a single walkable loop of the centre, one good meal, and an early metro to the airport.",
+    "foodToTry": [
+      {
+        "name": "Banitsa",
+        "what": "Flaky filo pastry with white cheese and egg.",
+        "how": "The classic Bulgarian breakfast — grab one warm from a bakery with a boza or ayran."
+      },
+      {
+        "name": "Shopska salad",
+        "what": "Tomato, cucumber, pepper and raw onion topped with grated sirene (white brine cheese).",
+        "how": "A summer starter — order it with the meal and a cold rakia."
+      },
+      {
+        "name": "Tarator",
+        "what": "Cold cucumber-and-yogurt soup with garlic, dill and walnuts.",
+        "how": "Perfect in the heat — a refreshing starter on a warm evening."
+      }
+    ],
     "currency": {
       "code": "BGN",
       "sym": "лв",
@@ -2796,7 +3552,13 @@ const TRIP=[
         "lng": 23.32066,
         "id": "sofia-ashurbanipal",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.70231%2C23.32066",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Zhenski Pazar (Women's Market)",
@@ -2820,7 +3582,13 @@ const TRIP=[
         "lng": 23.31984,
         "id": "sofia-zhenski-pazar-women-s-market",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.70286%2C23.31984",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Bar Lorca",
@@ -2840,7 +3608,13 @@ const TRIP=[
         "cat": "night",
         "id": "sofia-bar-lorca",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Bar%20Lorca%20City%20centre%20Sofia",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Crystal Garden",
@@ -2860,7 +3634,13 @@ const TRIP=[
         "cat": "night",
         "id": "sofia-crystal-garden",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Crystal%20Garden%20Crystal%20Garden%20(city-centre%20park)%20Sofia",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Vkusnoto Kebapche",
@@ -2876,7 +3656,13 @@ const TRIP=[
         "pt": 1,
         "id": "sofia-vkusnoto-kebapche",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Vkusnoto%20Kebapche%20City%20centre%20Sofia",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "HleBar",
@@ -2901,7 +3687,13 @@ const TRIP=[
         "pt": 1,
         "id": "sofia-hlebar",
         "map_link": "https://www.google.com/maps/search/?api=1&query=HleBar%20City%20centre%20Sofia",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       }
     ],
     "stayPick": "Oborishte & the Doctor's Garden, central Sofia — a quiet, historic, tree-shaded residential pocket local youth favour. Safe late at night and a short walk from everything, while dodging the tacky Vitosha Boulevard tourist strip. If you want something more social, stay near ulitsa Tsar Shishman.",
@@ -2986,6 +3778,70 @@ const LEGS=[
     "ds": "Your flights out. Metro Line 1 to the airport from central Sofia."
   }
 ];
+
+const META={
+  "tasks": [
+    {
+      "title": "Book the Budapest → Belgrade bus",
+      "due": "A few days ahead — sooner in peak summer",
+      "how": "Flixbus or Gea Tours run this direct (~7–8h). Reserve a seat online so a sold-out day doesn't strand the first leg.",
+      "link": "https://www.flixbus.com",
+      "id": "task:trip-book-the-budapest-belgrade-bus"
+    },
+    {
+      "title": "Set up mobile data for the non-EU stretch",
+      "due": "Before leaving Budapest",
+      "how": "Serbia, Kosovo and North Macedonia are outside EU roaming — an EU plan may silently stop. Install an eSIM (a regional Balkans data plan) while you still have signal.",
+      "stop": "belgrade",
+      "id": "task:trip-set-up-mobile-data-for-the-non-eu-stretch"
+    },
+    {
+      "title": "Confirm the Ohrid → Sofia connection",
+      "due": "The day before you travel it",
+      "how": "The hard leg — almost always a change in Skopje (Ohrid → Skopje, then Skopje → Sofia). Check both legs the night before; it's a full travel day.",
+      "stop": "ohrid",
+      "id": "task:trip-confirm-the-ohrid-sofia-connection"
+    },
+    {
+      "title": "Download offline maps for each stop",
+      "due": "On arrival, while on Wi-Fi",
+      "how": "Save each city's map area in your maps app before you lose signal between cities. Paste the place coordinates from the map page into the app.",
+      "id": "task:trip-download-offline-maps-for-each-stop"
+    }
+  ],
+  "critical": [
+    {
+      "title": "Travel insurance covering all five countries",
+      "how": "Confirm the policy covers Serbia, Kosovo and North Macedonia, not just the EU. Carry the policy number offline.",
+      "due": "Before departure",
+      "id": "crit:travel-insurance-covering-all-five-countries"
+    },
+    {
+      "title": "Passport + entry rules for the non-EU stops",
+      "how": "Check passport validity and current visa-free terms for Serbia, Kosovo and North Macedonia for your nationality. Rules change — verify, don't assume.",
+      "due": "Before departure",
+      "id": "crit:passport-entry-rules-for-the-non-eu-stops"
+    },
+    {
+      "title": "Border rule: do NOT re-enter Serbia from Kosovo",
+      "how": "Serbia does not recognise Kosovo entry stamps. This route is fine because you exit Kosovo onward into North Macedonia — but never backtrack into Serbia from Kosovo.",
+      "due": "Know before the Prizren → Ohrid leg",
+      "id": "crit:border-rule-do-not-re-enter-serbia-from-kosovo"
+    },
+    {
+      "title": "Cash in four currencies",
+      "how": "Hungary (forint), Serbia (dinar) and North Macedonia (denar) each use their own currency; Kosovo uses the euro; Bulgaria the lev. Carry some local cash for markets and transit at each stop.",
+      "due": "Withdraw on arrival at each stop",
+      "id": "crit:cash-in-four-currencies"
+    },
+    {
+      "title": "Mobile data working before you lose EU coverage",
+      "how": "Comms safety: make sure data actually works (eSIM activated / roaming confirmed) before the Belgrade → Prizren → Ohrid non-EU stretch.",
+      "due": "Before leaving Budapest",
+      "id": "crit:mobile-data-working-before-you-lose-eu-coverage"
+    }
+  ]
+};
 /* === END DOSSIER DATA === */
 
 function icon(id){return '<svg class="ic"><use href="#'+id+'"/></svg>';}

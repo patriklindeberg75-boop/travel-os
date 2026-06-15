@@ -56,13 +56,22 @@ companion can render a fact line. Substitute this block where a prompt reference
 For EACH item, also give me these fields on labelled lines (write
 "unknown" for any you genuinely cannot establish — do not guess):
 - Best time: best time of day / day of week to go (note any heat-smart window)
+- Time blocks: which of morning / daytime / evening this is good for (one or
+  more, comma-separated — e.g. "morning, daytime"). Base it on when the place is
+  actually good, not on the wording above.
 - Cost: a real price anchor in LOCAL currency (coffee / a meal / a beer / entry)
-- Duration: how long to budget for a visit
+- Duration: pick ONE — quick (under ~1h) / 2-3h / half-day / full-day
 - Hours: opening hours and days closed
 - Find it: nearest landmark or street; for hidden spots, how to actually find it
 - Location: street address or rough coordinates if you have them, for a map pin
 - Tags: pick 1–3 from this EXACT list (no others): work, eat, sleep, swim,
   shade, hike, social, market, culture, view
+- Tips: 1–3 short practical "how to enjoy this" notes that materially improve the
+  visit (not generic travel filler) — or "none".
+- Unverified: name any fact here that is time-sensitive and should be re-checked
+  for the exact trip dates (timetable, seasonal session, renovation, closure) —
+  or "none". (This drives the research-status field: anything listed here keeps
+  the place at "needs research" until verified.)
 
 Do not fabricate hours, prices, or coordinates. "unknown" is an acceptable and
 useful answer; a made-up number is not.
@@ -328,6 +337,15 @@ food blog, resident rec — name it).
 If you cannot find 15–20 items with real evidence for these areas,
 return fewer and say so.
 
+SEPARATELY, give me a short "FOOD TO TRY" list — local DISHES, drinks,
+ingredients and specialties (NOT venues), 4–8 per area. For each:
+- Name of the dish/drink
+- What it is (one line)
+- How or where locals typically eat it (one line) — e.g. "from a market stall",
+  "a breakfast pastry", "sipped after a meal"
+Keep these distinct from the venue list above; they are the "what to eat" half,
+the venues are the "where to eat" half.
+
 {anti_tourist_guardrail with section_name = "food/restaurant list"}
 ```
 
@@ -483,6 +501,38 @@ Keep it tight and factual. Cite sources for entry rules and roaming coverage.
 
 ---
 
+### Prompt 6 — Destination resources (optional, per stop)
+
+**Target tool:** Perplexity Pro (source-grounded — returns real, current links).
+
+**When to run:** Optional, after the short lists are settled. Populates each
+stop's `resources` (§6). Skip for a stop if good links don't surface — an empty
+Resources section is fine; a fabricated link is not.
+
+**Expected output shape:** Per approved area, 2–5 resources. Each:
+title — type — link — one-line why it's useful.
+
+**Prompt body:**
+
+```
+Solo trip to {destination}, {dates}. Areas:
+{approved_locations}
+
+For each area, give me 2–5 genuinely useful resources for deeper reading and
+planning — pick from these types only: food guide, article, transport guide,
+neighborhood guide, research source, reference. For each:
+- Title
+- Type (one of the above)
+- Link (a real, working URL — if you are not confident it exists, leave it out)
+- One line on why it's useful
+
+Prefer local food/culture blogs, resident guides, official transport sites, and
+high-quality long-form articles over generic "top 10" listicles. Do not invent
+URLs — omit anything you cannot ground in a real source.
+```
+
+---
+
 ## Routing summary
 
 | Prompt | When | Section | Target |
@@ -493,7 +543,8 @@ Keep it tight and factual. Cite sources for entry rules and roaming coverage.
 | 4 | Pass 4 | Food / restaurants (+ per-place fields) | Perplexity Pro |
 | 5a | Pass 5 | Tourist-trap warnings (skipped for ≤2-night stops) | Perplexity Pro |
 | 5b | Pass 5 | Mobility | ChatGPT Pro |
-| 5d | Pass 5 | Practical logistics (connectivity / maps / entry) | Perplexity Pro |
+| 5d | Pass 5 | Practical logistics (connectivity / maps / entry) → also feeds `meta.critical`/`meta.tasks` | Perplexity Pro |
+| 6 | Optional (post-shortlist) | Destination resources (§6) | Perplexity Pro |
 
 Routing rationale: ChatGPT Pro for ideation / synthesis / prior-knowledge-heavy sections; Perplexity Pro for current-source-cited sections (food trends, current event signals, real-time trap signals from Reddit and local blogs, timing/weather, and logistics/entry-rule verification). Pass 1 viability also uses Perplexity Pro (see `/destination-check`).
 
