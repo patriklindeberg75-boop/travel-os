@@ -147,3 +147,19 @@
 **Context:** Mid-session the operator reviewed v4 and sent a concrete declutter list that contradicts several report sections (§ 9 modes, § 11.1 fold rule, P2-2 strip, P2-3 search).
 **Rationale:** The operator is the report's author and the artifact's only user — in-use feedback on the live build outranks the document that predates it. CHANGES.md records each override explicitly so the document trail stays honest.
 **Alternatives considered:** treating the report as the contract and queuing the feedback for a v5 spec — rejected (5 days to departure; the feedback is the spec now).
+
+---
+
+**Date:** 2026-06-15 (S1)
+**Decision:** In the dossier v5 Stage 3 filter redesign, drop the legacy Rank-tier and Type-tag filters entirely and rebuild the bar as four groups — Time / Purpose / Duration / Show (constraints & state) — rather than carrying the old filters forward alongside the new ones.
+**Context:** The Stage 3 spec called for a grouped filter bar (Time/Purpose/Duration/Constraints). The existing bar also had a Rank-tier filter and per-tag Type filter. The operator's gate default (Q1) was to fold useful Type filters into Constraints and drop pure Rank-tier.
+**Rationale:** Purpose subsumes the useful part of the Type-tag axis, and Heat-safe (derived from `cool` tags) carries the one Type signal worth keeping — surfaced as a constraint toggle. A four-group bar is cleaner than five loosely-related rows, and Rank-tier filtering added little on a curated, anti-tourist-filtered list.
+**Alternatives considered:** (a) keep all old filters alongside the new groups — rejected (cluttered, redundant Purpose/Type overlap); (b) keep Rank-tier as a fifth group — rejected (low value on a pre-curated list).
+
+---
+
+**Date:** 2026-06-15 (S1)
+**Decision:** Recommend (NOT decide) keeping the provisional route as subordinate context for the §11 open product question, rather than going fully destination-based.
+**Context:** Template §11 records an unresolved decision: whether the dossier drops route/leg scaffolding entirely (destination-based) or keeps a provisional route. The operator deferred deciding; a written recommendation was owed at Stage 3 without deciding on the operator's behalf.
+**Rationale:** The renderer already no-ops on absent route fields, so keeping them costs ~nothing; meanwhile the Belgrade→Prizren border-stamp warning and the two hard travel-day legs (Ohrid→Sofia, Belgrade→Prizren) only make sense in a route context. The v4.5 de-dating already captured the "flexible, not a fixed schedule" intent without discarding stop order or legs — the right altitude. Going fully destination-based would overshoot and orphan the safety note. The decision is cheap to reverse later.
+**Alternatives considered:** (a) go fully destination-based now — rejected as premature and lossy (orphans the border warning); (b) re-elevate the route into a day-by-day itinerary — rejected (explicitly the v4.x direction away from).

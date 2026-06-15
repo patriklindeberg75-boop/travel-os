@@ -573,3 +573,46 @@ None. (Content/data edits to operator-owned dossier files + one CLAUDE.md rule a
 
 ### Open Questions
 - Does the operator want `trip-context.md` dates removed as well, or kept as the trip's scoping record?
+
+## 2026-06-15 — Session S1
+
+**Mandate:** Complete dossier v5 Stage 3 for trips/balkans-2026-06 (filter bar rebuild + `any`-defect fix + smoke tests + CHANGES.md v5 + §11 route recommendation + deploy sync + SW bump) — done when: Stage 3 committed, build green, smoke tests pass, site/ synced, SW cache bumped.
+- Out of scope: deciding the §11 route for the operator (recommend only); pushing (gated to /wrap-session)
+- Files in scope: trips/balkans-2026-06/index.html, build.mjs, dossier-data.json, test/smoke.mjs, CHANGES.md, sw.js, site/sw.js, site/index.html
+- Stop if: operator confirms imminent departure and asks to freeze the live app
+- Context pack: output/context-packs/project-20260615-7b3e2/pack.md
+
+Complete dossier v5 Stage 3: rebuild the §10 filter bar (Time/Purpose/Duration/State groups), fix the `any`-match defect, extend smoke tests, write CHANGES.md v5 entry + §11 route recommendation, sync deploy bundle, bump SW cache, commit.
+
+### Summary
+Completed dossier v5 Stage 3 for `trips/balkans-2026-06`, finishing the full v5 upgrade (Stages 1–3 now all delivered). Rebuilt the §10 filter bar into four groups (Time / Purpose / Duration / Show) with OR-within / AND-between semantics, and fixed the central time-filter defect: the old engine filtered on the derived single-value `data-when` with `cw==='any'||…` so a selected time block never excluded anything. The engine now filters on the authored `data-time[]` and enforces that a card lacking a group's attribute does not match a selection in that group. Extended the jsdom smoke suite 52 → 72 assertions, wrote the CHANGES.md v5 entry + a §11 route recommendation, synced the deploy bundle, and bumped the SW cache. Committed as `f61729c`.
+
+### Files Created
+- `logs/scratchpads/2026-06-15-15-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/index.html` — filter engine rebuilt; `any`-defect fixed; legacy Rank-tier + Type-tag chips dropped; dead `.chip.tier` CSS removed; data block rebuilt.
+- `trips/balkans-2026-06/site/index.html` — deploy bundle re-synced.
+- `trips/balkans-2026-06/sw.js` + `trips/balkans-2026-06/site/sw.js` — SW cache `balkans-v4-7` → `balkans-v5-0`.
+- `trips/balkans-2026-06/test/smoke.mjs` — extended 52 → 72 assertions (20 new filter-matrix tests).
+- `trips/balkans-2026-06/CHANGES.md` — v5 entry (Stages 1–3 recap) + §11 route recommendation.
+
+### Decisions Made
+- Filter semantics: OR within a group, AND between groups; a card lacking a group's attribute does NOT match a selection in that group (this is the defect fix). Filters on authored `data-time[]`, never derived `data-when`.
+- Q1 (operator gate default): dropped legacy Rank-tier + Type-tag filters; Heat-safe surfaced as a constraint instead.
+- Q2 (operator gate default): §11 route recommendation written into the CHANGES.md v5 entry.
+- Near base computes a live straight-line distance (≤2.0 km) at filter time, so it reflects a runtime-added base; cards without computable distance never match.
+- §11 route: wrote a recommendation (keep provisional route subordinate; do NOT go fully destination-based) — did NOT decide it; that remains the operator's call.
+
+### Risky actions
+None. Content/code edits to operator-owned dossier files within one trip; build self-check green each run; jsdom smoke 72/72; no push; no external publishing.
+
+### Next Steps
+- Push the 4 pending travel-os commits once GitHub is reachable (network was down at /prime; push gated to this wrap).
+- Operator decision owed: §11 route — keep-provisional (recommended) vs fully destination-based.
+- Optional: scrub `trip-context.md` frontmatter dates (Jun 16–29) for internal/external consistency.
+- Pre-travel: Perplexity prompt to verify Veli Bej session times + Cogwheel / Children's Railway timetables.
+- Optional: author coordinates for the new Budapest hero picks (Citadella, Margitsziget, Kerepesi, Erzsébet-kilátó).
+
+### Open Questions
+- §11 route direction (keep-provisional vs destination-based) — recommendation given, operator's call.
