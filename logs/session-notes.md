@@ -538,3 +538,38 @@ None. (Renderer/CSS/sw edits to operator-owned dossier files; jsdom-verified non
 ### Open Questions
 - M4: does iOS 18 render the status bar unreadably in installed standalone + dark theme? (Device check required before any fix.)
 - What was the operator's truncated "- make …" feedback item (carried from 06-11)?
+
+## 2026-06-15 — Budapest dossier: sights expansion + cost rule + date-free flexible itinerary
+
+### Summary
+Budapest-focused work on the Balkans dossier (`trips/balkans-2026-06/`), three commits, push pending. Added 8 new see/do cards to Budapest (do: 8 → 16) — 7 free + BKK-travelcard-only must-sees plus Veli Bej Baths — selected against the personalization spine and a live weather check (Jun 18 ~31°C breaks the 30°C daily ceiling, so the set leans shade/cool-air/hills). Added an activity cost-threshold rule to the project CLAUDE.md (~€10–15 activities are recommendable, not free-only). Then removed all exact dates from the user-facing dossier per operator request, converting the five stops to flexible night ranges.
+
+### Files Created
+- `logs/scratchpads/2026-06-15-14-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/dossier-data.json` — 8 new Budapest `do` cards (v4.4); all 5 stops' `when`/leg/transit-checklist dates removed and converted to night ranges (v4.5).
+- `trips/balkans-2026-06/index.html` — rebuilt from data (build.mjs) twice.
+- `trips/balkans-2026-06/sw.js` + `site/sw.js` — cache bump v4-5 → v4-6 → v4-7.
+- `trips/balkans-2026-06/site/index.html` — deploy bundle re-synced.
+- `trips/balkans-2026-06/coords-missing.md` — regenerated (now 112 cards; 8 new Budapest entries, 4 ★).
+- `trips/balkans-2026-06/CHANGES.md` — new v4.4 and v4.5 sections.
+- `CLAUDE.md` — added activity cost-threshold rule under Hard Constraints.
+
+### Decisions Made
+- Selected/shortlisted Budapest sights and made the must-see call when the operator explicitly asked for a recommendation (profile §1.1 normally has the system surface, operator pick; the direct ask overrides).
+- No coordinates authored for the 8 new cards — build.mjs never fabricates coords; name-based Maps links + coords worklist instead.
+- Did NOT change the route/Belgrade-bus date (operator's 3-day stay was only "might"); subsequently moot once all dates were removed in v4.5.
+- Left `trip-context.md` frontmatter dates (Jun 16–29) intact — internal scaffolding that may feed weather/heat tooling; only the user-facing dossier was de-dated.
+
+### Risky actions
+None. (Content/data edits to operator-owned dossier files + one CLAUDE.md rule addition; build self-check passed each run; no push; no external publishing. jsdom smoke suite was unavailable (/tmp cleared) but changes were data/content-only with no renderer/CSS edits.)
+
+### Next Steps
+- Operator to confirm push at the wrap push gate (3 travel-os commits queued; ai-resources also has 1 pre-existing unpushed commit).
+- Optional: scrub `trip-context.md` frontmatter dates too for full internal/external consistency.
+- Before travel: verify schedule-dependent picks (Veli Bej session times; Cogwheel / Children's Railway timetables) — offer a Perplexity prompt.
+- Optional: author coordinates for the new hero picks (Citadella, Margitsziget, Kerepesi, Erzsébet-kilátó) to put them on the in-app map.
+
+### Open Questions
+- Does the operator want `trip-context.md` dates removed as well, or kept as the trip's scoping record?
