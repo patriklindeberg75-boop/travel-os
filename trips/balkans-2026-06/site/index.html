@@ -202,7 +202,6 @@ footer{margin-top:40px;padding:16px max(18px,env(safe-area-inset-left)) 24px;bor
 .chip{font-family:var(--sans);font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:6px 11px;min-height:40px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,border-color .15s}
 .chip .ic{font-size:13px}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip.tier[aria-pressed="true"]{background:var(--star);color:#211d16;border-color:var(--star)}
 .fclear{font-family:var(--sans);font-size:12px;color:var(--muted);background:transparent;border:none;text-decoration:underline;cursor:pointer;padding:6px;min-height:34px}
 .toolbar #filterToggle{margin-right:auto}
 .toolbar #filterToggle[aria-pressed="true"]{background:var(--surface-2);color:var(--ink);border-color:var(--line-2)}
@@ -415,6 +414,104 @@ details.ninfo .sec-body{padding:0 0 12px}
 .card.row .rnm{white-space:normal;overflow:visible;text-overflow:clip;min-width:55%}
 /* single-metric summary */
 .chips{grid-template-columns:1fr}
+
+/* ===== v5 (intro · plain temp · tasks · critical · resources · base/distance · research status · food-to-try · richer rows · tips) ===== */
+/* §1 destination intro + plain temperature */
+.intro{font-size:14px;line-height:1.6;color:var(--muted);margin:12px 0 4px}
+.stop-head .tempchip{margin-left:auto;font-size:12.5px;font-weight:600;padding:3px 11px;border-radius:999px;background:var(--surface-2);color:var(--ink);display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.stop-head .tempchip .ic{font-size:13px;color:var(--muted)}
+.ov-temp{flex:none;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--surface-2);color:var(--ink);white-space:nowrap}
+
+/* §4 base + distance */
+.base-block{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:13px 15px;margin:0 0 14px}
+.base-block .bhead{display:flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:6px}
+.base-block .bhead .ic{color:var(--accent);font-size:15px}
+.base-cur{font-size:14px;line-height:1.5;margin:0 0 9px}
+.base-cur .blabel{font-weight:500}
+.base-cur .bkind{font-size:11.5px;color:var(--faint);margin-left:6px}
+.base-none{font-size:13.5px;color:var(--muted);line-height:1.5;margin:0 0 9px}
+.basebtn{font-family:var(--sans);font-size:12.5px;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent);border-radius:999px;padding:7px 13px;min-height:38px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.basebtn.ghost{color:var(--muted);background:var(--surface-2);border-color:var(--line)}
+.baseform{margin-top:10px;display:none}
+.baseform.open{display:block}
+.baseform label{display:block;font-size:11.5px;color:var(--faint);margin:6px 0 3px}
+.baseform input{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:9px 11px}
+.baseform .brow{display:flex;gap:8px;margin-top:10px}
+.baseform .brow button{flex:1;min-height:40px;border-radius:999px;font-family:var(--sans);font-size:12.5px;cursor:pointer;border:1px solid var(--line)}
+.baseform .bsave{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.baseform .bcancel{background:var(--surface-2);color:var(--muted)}
+.baseform .bhint{font-size:11.5px;color:var(--faint);margin-top:8px;line-height:1.4}
+.distchip{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--accent-ink);background:var(--accent-bg);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.distchip .ic{font-size:12px}
+a.distchip{text-decoration:none}
+.distchip.est::after{content:"~"}
+.pgdist{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent);border-radius:999px;padding:6px 12px;min-height:36px;text-decoration:none;margin:2px 0 6px}
+.pgdist .ic{font-size:14px;color:var(--accent)}
+
+/* §5 research status */
+.rs-dot{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;border-radius:999px;padding:1px 8px;letter-spacing:.02em}
+.rs-dot .ic{font-size:11px}
+.rs-needs{color:var(--heat-ink);background:var(--heat-bg)}
+.rs-researched{color:var(--muted);background:var(--surface-2)}
+.rs-verified{color:var(--accent-ink);background:var(--accent-bg)}
+.card.row .rs-dot{font-size:10px;padding:1px 7px}
+.rs-line{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:2px 0 8px}
+.researchbtn{font-family:var(--sans);font-size:12px;color:var(--heat-ink);background:var(--heat-bg);border:1px solid var(--heat);border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.researchbtn .ic{font-size:13px}
+.rs-note{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 8px;border-left:2px solid var(--heat);padding:2px 0 2px 11px}
+
+/* §8 food-to-try */
+.ftry{margin-bottom:8px}
+.ftry .fname{font-weight:600;font-size:14px}
+.ftry .fwhat{font-size:13.5px;color:var(--ink);line-height:1.5}
+.ftry .fhow{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+.ftry-item{padding:10px 0;border-bottom:1px solid var(--line)}
+.ftry-item:last-child{border-bottom:none}
+
+/* §6 resources */
+.res-item{display:block;padding:11px 13px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:7px;text-decoration:none;color:var(--ink)}
+.res-item:active{opacity:.7}
+.res-top{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.res-ttl{font-weight:500;font-size:14px;flex:1}
+.res-type{flex:none;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-bg);border-radius:999px;padding:2px 8px}
+.res-why{font-size:13px;color:var(--muted);line-height:1.45}
+.res-link{font-size:11.5px;color:var(--accent-ink);margin-top:3px;display:inline-flex;align-items:center;gap:5px;word-break:break-all}
+.res-link .ic{font-size:12px;color:var(--accent);flex:none}
+
+/* §2/§3 tasks + critical checklist */
+.cl-lede{font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 4px}
+.task{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 14px;margin-bottom:9px}
+.task.crit{border-left:3px solid var(--danger)}
+.task.is-done{opacity:.6}
+.task-top{display:flex;align-items:flex-start;gap:10px}
+.task-box{flex:none;width:22px;height:22px;border:1.7px solid var(--line-2);border-radius:6px;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;color:transparent;cursor:pointer;background:transparent}
+.task.is-done .task-box{background:var(--accent);border-color:var(--accent);color:#fff}
+.task-ttl{flex:1;font-weight:600;font-size:14.5px;line-height:1.4}
+.task.is-done .task-ttl{text-decoration:line-through;text-decoration-color:var(--faint);color:var(--muted)}
+.task-meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0 32px}
+.task-tag{font-size:10.5px;font-weight:600;letter-spacing:.03em;color:var(--muted);background:var(--surface-2);border-radius:999px;padding:2px 8px}
+.task-tag.due{color:var(--heat-ink);background:var(--heat-bg)}
+.task-how{font-size:13px;color:var(--muted);line-height:1.5;margin:7px 0 0 32px}
+.task-acts{display:flex;flex-wrap:wrap;gap:8px;margin:9px 0 0 32px}
+.tlink,.todoist{font-family:var(--sans);font-size:12px;border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.tlink{color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent)}
+.todoist{color:var(--fr-ink);background:var(--fr-bg);border:1px solid var(--fr)}
+.tlink .ic,.todoist .ic{font-size:13px}
+
+/* §9 richer index rows (secondary line) + detail tips */
+.card.row .rowsub{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:5px 9px;margin-top:3px}
+.card.row .reason{flex-basis:100%;font-size:12.5px;color:var(--muted);line-height:1.4}
+.card.row .rmeta{flex:none;font-size:11px;color:var(--faint);display:inline-flex;align-items:center;gap:3px}
+.card.row .rmeta .ic{font-size:12px}
+.card.row.is-done .rowsub,.card.row.is-skip .rowsub{display:none}
+.tips{margin:10px 0 4px;border-top:1px solid var(--line);padding-top:10px}
+.tips .tips-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.tips .tips-h .ic{color:var(--accent);font-size:14px}
+.tips ul{margin:0;padding:0;list-style:none}
+.tips li{font-size:13.5px;line-height:1.5;color:var(--ink);padding:3px 0 3px 18px;position:relative}
+.tips li::before{content:"";position:absolute;left:3px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.besttime{font-size:13px;color:var(--accent-ink);background:var(--accent-bg);border-radius:var(--r);padding:8px 11px;line-height:1.5;margin:0 0 9px;display:flex;gap:7px;align-items:flex-start}
+.besttime .ic{color:var(--accent);font-size:14px;margin-top:.15em;flex:none}
 </style>
 </head>
 <body>
@@ -442,6 +539,9 @@ details.ninfo .sec-body{padding:0 0 12px}
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4h11l-2.2 3.5L17 11H6"/></symbol>
   <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 4h10v16l-5-3.5L7 20z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M5 19h3l9-9-3-3-9 9z"/><path d="M14 6l3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.1" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.1" fill="currentColor" stroke="none"/></symbol>
 </svg>
 
 <nav class="topnav" id="topnav">
@@ -489,6 +589,59 @@ const TRIP=[
   {
     "id": "budapest",
     "name": "Budapest",
+    "intro": "Hungary's grand riverside capital — faded-imperial architecture, thermal baths and a deep café-and-ruin-bar culture, all walkable and cheap by EU standards. It opens the trip because it's the easy on-ramp: big, comfortable, well-connected, and full of shade and water for the hot days. Best approached at a local pace — base in one quarter, work from its cafés, and lean on the air-conditioned transit when the afternoon spikes.",
+    "temp": "~27–31°C",
+    "base": {
+      "label": "Palace Quarter / Józsefváros (District VIII)",
+      "kind": "area",
+      "lat": 47.4895,
+      "lng": 19.068
+    },
+    "tasks": [
+      {
+        "title": "Buy a BKK 72-hour travelcard",
+        "due": "On arrival",
+        "how": "Covers trams, metro, buses, the H5 HÉV to Óbuda, and the Cogwheel Railway toward Normafa — the heat-smart way to move. Buy at any metro machine or in the BudapestGO app.",
+        "id": "task:budapest-buy-a-bkk-72-hour-travelcard",
+        "stop": "budapest"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Seat61 — trains & buses guide",
+        "type": "transport",
+        "link": "https://www.seat61.com",
+        "why": "The clearest plain-English reference for the overland legs ahead — what runs and how to buy tickets."
+      },
+      {
+        "title": "BKK — Budapest public transport",
+        "type": "transport",
+        "link": "https://bkk.hu/en/",
+        "why": "Official fares, travelcard options, and the BudapestGO ticketing app."
+      }
+    ],
+    "foodToTry": [
+      {
+        "name": "Lángos",
+        "what": "Deep-fried flat dough, classically topped with sour cream, garlic and grated cheese.",
+        "how": "Eat it standing at a market stall (try Rákóczi tér market, not the tourist Central Market upper deck) — a cheap, filling late-morning snack."
+      },
+      {
+        "name": "Gulyás (goulash)",
+        "what": "The real thing is a paprika-rich beef-and-vegetable SOUP, not the thick stew sold abroad.",
+        "how": "Order it as a starter at a neighbourhood étterem with a basket of bread."
+      },
+      {
+        "name": "Kürtőskalács (chimney cake)",
+        "what": "Spit-roasted sweet dough rolled in sugar or cinnamon, hollow in the middle.",
+        "how": "A street sweet — have it fresh and hot, skip the cold pre-made ones in the tourist core."
+      },
+      {
+        "name": "Pálinka",
+        "what": "Strong Hungarian fruit brandy (plum, apricot, cherry).",
+        "how": "A small shot before or after a meal — sip it; locals don't slam it."
+      }
+    ],
     "currency": {
       "code": "HUF",
       "sym": "Ft",
@@ -529,7 +682,13 @@ const TRIP=[
         "lng": 19.0649,
         "id": "budapest-ervin-szabo-library",
         "map_link": "https://www.google.com/maps/search/?api=1&query=47.48945%2C19.0649",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Római-part",
@@ -552,7 +711,14 @@ const TRIP=[
         "lng": 19.06515,
         "id": "budapest-romai-part",
         "map_link": "https://www.google.com/maps/search/?api=1&query=47.57117%2C19.06515",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Lumen Café",
@@ -578,7 +744,13 @@ const TRIP=[
         },
         "id": "budapest-lumen-cafe",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lumen%20Caf%C3%A9%20Palace%20Quarter%20(District%20VIII)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Kelet Kávézó",
@@ -597,7 +769,13 @@ const TRIP=[
         },
         "id": "budapest-kelet-kavezo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kelet%20K%C3%A1v%C3%A9z%C3%B3%20Buda%20(District%20XI)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Tilos a Tilos",
@@ -612,7 +790,13 @@ const TRIP=[
         "cat": "night",
         "id": "budapest-tilos-a-tilos",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tilos%20a%20Tilos%20J%C3%B3zsefv%C3%A1ros%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Lake Feneketlen",
@@ -627,7 +811,13 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-lake-feneketlen",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lake%20Feneketlen%20L%C3%A1gym%C3%A1nyos%20(District%20XI)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Fellini Culture Pub",
@@ -648,7 +838,13 @@ const TRIP=[
         "cat": "night",
         "id": "budapest-fellini-culture-pub",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Fellini%20Culture%20Pub%20R%C3%B3mai-part%20(%C3%93buda%2C%20District%20III)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Óbuda Fő tér",
@@ -663,10 +859,32 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-obuda-fo-ter",
         "map_link": "https://www.google.com/maps/search/?api=1&query=%C3%93buda%20F%C5%91%20t%C3%A9r%20%C3%93buda%20(District%20III)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Erzsébet-kilátó & Normafa",
+        "time": [
+          "morning",
+          "daytime"
+        ],
+        "dur": "half-day",
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bestTime": "Go in the morning before the afternoon heat — the forest air stays cooler than the city all day.",
+        "rs": "researched",
+        "tips": [
+          "Take the Cogwheel Railway up and walk the ridge — both are on your BKK travelcard.",
+          "Bring water and a picnic; locals treat Normafa as a weekend hill.",
+          "The Erzsébet lookout tower is free and gives the widest panorama."
+        ],
         "neighborhood": "Buda Hills (District XII)",
         "city": "Budapest",
         "t": 3,
@@ -692,10 +910,22 @@ const TRIP=[
         "cat": "nature",
         "id": "budapest-erzsebet-kilato-normafa",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Erzs%C3%A9bet-kil%C3%A1t%C3%B3%20%26%20Normafa%20Buda%20Hills%20(District%20XII)%20Budapest",
-        "when": "any"
+        "when": "morning",
+        "bf": true
       },
       {
         "nm": "Cogwheel Railway (Fogaskerekű)",
+        "time": [
+          "morning",
+          "daytime"
+        ],
+        "dur": "quick",
+        "bestTime": "Ride it on the way up to Normafa.",
+        "rs": "researched",
+        "tips": [
+          "Covered by the BKK travelcard — no separate ticket needed.",
+          "Board at Városmajor (line 60)."
+        ],
         "neighborhood": "Városmajor → Széchenyi-hegy (District XII)",
         "city": "Budapest",
         "t": 2,
@@ -716,10 +946,24 @@ const TRIP=[
         "cat": "sights",
         "id": "budapest-cogwheel-railway-fogaskereku",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Cogwheel%20Railway%20(Fogaskerek%C5%B1)%20V%C3%A1rosmajor%20%E2%86%92%20Sz%C3%A9chenyi-hegy%20(District%20XII)%20Budapest",
-        "when": "any"
+        "when": "morning",
+        "purpose": [
+          "explore"
+        ],
+        "bf": false
       },
       {
         "nm": "Kerepesi Cemetery (Fiumei úti Sírkert)",
+        "time": [
+          "daytime"
+        ],
+        "dur": "2-3h",
+        "bestTime": "Midday — the deep shade makes it an easy heat refuge.",
+        "rs": "researched",
+        "tips": [
+          "Free entry; pick up a map at the gate — it's large.",
+          "An arboretum as much as a cemetery: quiet, green, and very local."
+        ],
         "neighborhood": "Józsefváros (District VIII)",
         "city": "Budapest",
         "t": 3,
@@ -741,7 +985,11 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-kerepesi-cemetery-fiumei-uti-sirkert",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kerepesi%20Cemetery%20(Fiumei%20%C3%BAti%20S%C3%ADrkert)%20J%C3%B3zsefv%C3%A1ros%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "purpose": [
+          "explore"
+        ],
+        "bf": true
       },
       {
         "nm": "Tabán park",
@@ -765,10 +1013,28 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-taban-park",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tab%C3%A1n%20park%20Tab%C3%A1n%20(District%20I%2C%20below%20the%20Castle)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Gellért Hill & Citadella",
+        "time": [
+          "morning",
+          "evening"
+        ],
+        "dur": "2-3h",
+        "bestTime": "Early morning or near sunset — the climb is exposed and brutal at midday.",
+        "rs": "needs",
+        "rsNote": "The Citadella has been under long-running renovation — confirm what is open at the summit and any access restrictions before going.",
+        "tips": [
+          "The climb is steep and shadeless — do it at the cool ends of the day.",
+          "Sunset over the Danube from the top is the payoff."
+        ],
         "neighborhood": "Gellért Hill (District XI / I)",
         "city": "Budapest",
         "t": 3,
@@ -790,7 +1056,11 @@ const TRIP=[
         "cat": "sights",
         "id": "budapest-gellert-hill-citadella",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gell%C3%A9rt%20Hill%20%26%20Citadella%20Gell%C3%A9rt%20Hill%20(District%20XI%20%2F%20I)%20Budapest",
-        "when": "evening"
+        "when": "any",
+        "purpose": [
+          "explore"
+        ],
+        "bf": true
       },
       {
         "nm": "Bartók Béla boulevard",
@@ -814,10 +1084,32 @@ const TRIP=[
         "cat": "walks",
         "id": "budapest-bartok-bela-boulevard",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Bart%C3%B3k%20B%C3%A9la%20boulevard%20%C3%9Ajbuda%20(District%20XI)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Margaret Island (Margitsziget)",
+        "time": [
+          "morning",
+          "daytime",
+          "evening"
+        ],
+        "dur": "half-day",
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bestTime": "Lovely in the early evening when it cools; good any time.",
+        "rs": "researched",
+        "tips": [
+          "Rent a bike or a pedal bringó-cart at the entrance to cover its length.",
+          "Car-free — a genuine green escape mid-river."
+        ],
         "neighborhood": "Margitsziget (Districts XIII / II)",
         "city": "Budapest",
         "t": 3,
@@ -839,10 +1131,27 @@ const TRIP=[
         "cat": "nature",
         "id": "budapest-margaret-island-margitsziget",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Margaret%20Island%20(Margitsziget)%20Margitsziget%20(Districts%20XIII%20%2F%20II)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "bf": true
       },
       {
         "nm": "Veli Bej Baths (Veli Bej fürdő)",
+        "time": [
+          "morning",
+          "daytime"
+        ],
+        "dur": "2-3h",
+        "pt": 2,
+        "purpose": [
+          "recovery"
+        ],
+        "bestTime": "Quietest in the morning; check the current session schedule first.",
+        "rs": "needs",
+        "rsNote": "Veli Bej runs time- and gender-segregated sessions that change seasonally — confirm current session times and whether advance booking is needed before going.",
+        "tips": [
+          "One of the city's most authentic Ottoman baths, far less touristy than Széchenyi.",
+          "Bring a swimsuit and flip-flops; towel rental costs extra."
+        ],
         "neighborhood": "Buda (District II)",
         "city": "Budapest",
         "t": 2,
@@ -864,7 +1173,8 @@ const TRIP=[
         "cat": "sights",
         "id": "budapest-veli-bej-baths-veli-bej-furdo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Veli%20Bej%20Baths%20(Veli%20Bej%20f%C3%BCrd%C5%91)%20Buda%20(District%20II)%20Budapest",
-        "when": "any"
+        "when": "morning",
+        "bf": true
       }
     ],
     "stayPick": "Palace Quarter / Józsefváros (District VIII). The best blend — local texture, good work cafés, and the off-beat social-hostel scene, without dropping you in the District VII party core. Walkable to the centre, one tram from Buda.",
@@ -908,7 +1218,13 @@ const TRIP=[
         },
         "id": "budapest-csiga-cafe",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Csiga%20Caf%C3%A9%20Palace%20Quarter%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Rákóczi téri Vásárcsarnok",
@@ -925,7 +1241,13 @@ const TRIP=[
         "pt": 1,
         "id": "budapest-rakoczi-teri-vasarcsarnok",
         "map_link": "https://www.google.com/maps/search/?api=1&query=R%C3%A1k%C3%B3czi%20t%C3%A9ri%20V%C3%A1s%C3%A1rcsarnok%20J%C3%B3zsefv%C3%A1ros%20(District%20VIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Lehel Piac lángos",
@@ -942,7 +1264,13 @@ const TRIP=[
         "pt": 1,
         "id": "budapest-lehel-piac-langos",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lehel%20Piac%20l%C3%A1ngos%20Lehel%20t%C3%A9r%20(District%20XIII)%20Budapest",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Pozsonyi Kisvendéglő",
@@ -963,7 +1291,13 @@ const TRIP=[
         "pt": 2,
         "id": "budapest-pozsonyi-kisvendeglo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Pozsonyi%20Kisvend%C3%A9gl%C5%91%20%C3%9Ajlip%C3%B3tv%C3%A1ros%20(District%20XIII)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Római-part hekk stalls",
@@ -984,7 +1318,13 @@ const TRIP=[
         "pt": 1,
         "id": "budapest-romai-part-hekk-stalls",
         "map_link": "https://www.google.com/maps/search/?api=1&query=R%C3%B3mai-part%20hekk%20stalls%20R%C3%B3mai-part%20(%C3%93buda%2C%20District%20III)%20Budapest",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       }
     ],
     "avoid": [
@@ -1063,6 +1403,34 @@ const TRIP=[
   {
     "id": "belgrade",
     "name": "Belgrade",
+    "intro": "Serbia's big, raw, energetic capital where the Sava meets the Danube — brutalist and Habsburg facades side by side, a legendary nightlife on river barges (splavovi), and some of the best-value eating on the route. It's the cultural and social heart of the trip: gritty, unpolished, intensely local. Approach it for the street life and the river — base in walkable Dorćol, and keep activities for mornings and evenings since the midday heat is fierce.",
+    "temp": "30°C+",
+    "base": {
+      "label": "Donji Dorćol (Stari Grad)",
+      "kind": "area"
+    },
+    "foodToTry": [
+      {
+        "name": "Ćevapi",
+        "what": "Small grilled minced-meat fingers, served with chopped onion and kajmak in a lepinja flatbread.",
+        "how": "A cheap any-time staple — eat where locals queue at a busy ćevabdžinica, not a sit-down tourist spot."
+      },
+      {
+        "name": "Burek",
+        "what": "Coiled flaky pastry filled with meat, cheese or spinach.",
+        "how": "A breakfast food — buy it by weight at a pekara (bakery) first thing, with a drinkable yogurt."
+      },
+      {
+        "name": "Kajmak",
+        "what": "Rich clotted-cream dairy spread, somewhere between butter and cheese.",
+        "how": "Comes alongside grilled meat or bread — spread it generously; it's the soul of Serbian comfort food."
+      },
+      {
+        "name": "Rakija",
+        "what": "Homemade fruit brandy, the national drink (šljivovica = plum).",
+        "how": "Offered as a welcome or toast — accept, sip slowly, and don't refuse the first one."
+      }
+    ],
     "currency": {
       "code": "RSD",
       "sym": "дин",
@@ -1102,7 +1470,14 @@ const TRIP=[
         "lng": 20.38104,
         "id": "belgrade-ada-ciganlija-makis-side",
         "map_link": "https://www.google.com/maps/search/?api=1&query=44.78444%2C20.38104",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Ada Međica",
@@ -1120,7 +1495,14 @@ const TRIP=[
         "lng": 20.38865,
         "id": "belgrade-ada-me-ica",
         "map_link": "https://www.google.com/maps/search/?api=1&query=44.79234%2C20.38865",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Pržionica",
@@ -1150,7 +1532,13 @@ const TRIP=[
         "lng": 20.46766,
         "id": "belgrade-przionica",
         "map_link": "https://www.google.com/maps/search/?api=1&query=44.82329%2C20.46766",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Silosi",
@@ -1166,7 +1554,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-silosi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Silosi%20Dor%C4%87ol%20(old%20port%20%2F%20docks)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Gavez Club",
@@ -1184,7 +1578,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-gavez-club",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gavez%20Club%20Savamala%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Košutnjak forest trails",
@@ -1200,7 +1600,14 @@ const TRIP=[
         "cat": "nature",
         "id": "belgrade-kosutnjak-forest-trails",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Ko%C5%A1utnjak%20forest%20trails%20Ko%C5%A1utnjak%20(%C4%8Cukarica)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Zaokret",
@@ -1215,7 +1622,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-zaokret",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Zaokret%20Savamala%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Splavs on Savski kej",
@@ -1230,7 +1643,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-splavs-on-savski-kej",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Splavs%20on%20Savski%20kej%20Savski%20kej%20(Sava%20quay%2C%20Novi%20Beograd)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Kalemegdan / Belgrade Fortress, for sunset",
@@ -1256,7 +1675,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-kalemegdan-belgrade-fortress-for-sunset",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kalemegdan%20%2F%20Belgrade%20Fortress%2C%20for%20sunset%20Stari%20Grad%20(Kalemegdan)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Church of Saint Sava (Hram Svetog Save)",
@@ -1282,7 +1707,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-church-of-saint-sava-hram-svetog-save",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Church%20of%20Saint%20Sava%20(Hram%20Svetog%20Save)%20Vra%C4%8Dar%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Nikola Tesla Museum",
@@ -1307,7 +1738,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-nikola-tesla-museum",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Nikola%20Tesla%20Museum%20Vra%C4%8Dar%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Ružica Church & St. Petka Chapel",
@@ -1328,7 +1765,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-ruzica-church-st-petka-chapel",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Ru%C5%BEica%20Church%20%26%20St.%20Petka%20Chapel%20Stari%20Grad%20(Kalemegdan)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Museum of Yugoslavia (House of Flowers / Tito's tomb)",
@@ -1350,7 +1793,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-museum-of-yugoslavia-house-of-flowers-tito-s-tomb",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Museum%20of%20Yugoslavia%20(House%20of%20Flowers%20%2F%20Tito's%20tomb)%20Dedinje%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Jevremovac Botanical Garden",
@@ -1371,7 +1820,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-jevremovac-botanical-garden",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Jevremovac%20Botanical%20Garden%20Stari%20Grad%20(Dor%C4%87ol%20edge)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Topčider Park (+ Residence of Prince Miloš)",
@@ -1393,7 +1848,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-topcider-park-residence-of-prince-milos",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Top%C4%8Dider%20Park%20(%2B%20Residence%20of%20Prince%20Milo%C5%A1)%20Top%C4%8Dider%20(Savski%20venac)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Gardoš / Millennium Tower",
@@ -1415,7 +1876,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-gardos-millennium-tower",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gardo%C5%A1%20%2F%20Millennium%20Tower%20Zemun%20(Gardo%C5%A1)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Avala Tower (Avalski toranj)",
@@ -1437,7 +1904,14 @@ const TRIP=[
         "cat": "nature",
         "id": "belgrade-avala-tower-avalski-toranj",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Avala%20Tower%20(Avalski%20toranj)%20Mount%20Avala%20(southern%20outskirts)%20Belgrade",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Aviation Museum (Muzej vazduhoplovstva)",
@@ -1458,7 +1932,13 @@ const TRIP=[
         "cat": "sights",
         "id": "belgrade-aviation-museum-muzej-vazduhoplovstva",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Aviation%20Museum%20(Muzej%20vazduhoplovstva)%20Sur%C4%8Din%20(by%20Nikola%20Tesla%20Airport)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Eternal Derby — Partizan vs Crvena zvezda",
@@ -1479,7 +1959,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-eternal-derby-partizan-vs-crvena-zvezda",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Eternal%20Derby%20%E2%80%94%20Partizan%20vs%20Crvena%20zvezda%20Dedinje%20%2F%20Autokomanda%20(stadiums)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Skadarlija",
@@ -1500,7 +1986,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-skadarlija",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Skadarlija%20Skadarlija%20(Stari%20Grad)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Knez Mihailova Street",
@@ -1521,7 +2013,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-knez-mihailova-street",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Knez%20Mihailova%20Street%20Stari%20Grad%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Belgrade Waterfront (Beograd na vodi)",
@@ -1542,7 +2040,13 @@ const TRIP=[
         "cat": "walks",
         "id": "belgrade-belgrade-waterfront-beograd-na-vodi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Belgrade%20Waterfront%20(Beograd%20na%20vodi)%20Savamala%20%2F%20Belgrade%20Waterfront%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "stayPick": "Donji Dorćol, Stari Grad. The clear base — social-hostel scene, the densest cafés for light work, and the Danube on its doorstep to cool off, without putting you in the tourist core.",
@@ -1580,7 +2084,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-grill-loki",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Grill%20'Loki'%20Zemun%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Efi cafe",
@@ -1600,7 +2110,13 @@ const TRIP=[
         },
         "id": "belgrade-efi-cafe",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Efi%20cafe%20central%20Belgrade%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Bajloni Pijaca",
@@ -1616,7 +2132,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-bajloni-pijaca",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Bajloni%20Pijaca%20Dor%C4%87ol%20(Bajloni%20market)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Pekara Petrović",
@@ -1637,7 +2159,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-pekara-petrovic",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Pekara%20Petrovi%C4%87%20central%20Belgrade%20Belgrade",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Stara Hercegovina",
@@ -1652,7 +2180,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-stara-hercegovina",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Stara%20Hercegovina%20Stari%20Grad%20(near%20Skadarlija)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Radecki",
@@ -1672,7 +2206,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-radecki",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Radecki%20central%20Belgrade%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Splav Koliba",
@@ -1692,7 +2232,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-splav-koliba",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Splav%20Koliba%20Sava%20riverbank%20(splav)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Čedić",
@@ -1713,7 +2259,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-cedic",
         "map_link": "https://www.google.com/maps/search/?api=1&query=%C4%8Cedi%C4%87%20central%20Belgrade%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Iva New Balkan Cuisine",
@@ -1734,7 +2286,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-iva-new-balkan-cuisine",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Iva%20New%20Balkan%20Cuisine%20Dor%C4%87ol%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Zeleni Venac Market",
@@ -1757,7 +2315,13 @@ const TRIP=[
         "pt": 1,
         "id": "belgrade-zeleni-venac-market",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Zeleni%20Venac%20Market%20Zeleni%20venac%20(central)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Gušti Mora",
@@ -1778,7 +2342,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-gusti-mora",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gu%C5%A1ti%20Mora%20central%20Belgrade%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Meze Restoran Dvorište",
@@ -1799,7 +2369,13 @@ const TRIP=[
         "cat": "rest",
         "id": "belgrade-meze-restoran-dvoriste",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Meze%20Restoran%20Dvori%C5%A1te%20central%20Belgrade%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Mama Shelter rooftop",
@@ -1822,7 +2398,13 @@ const TRIP=[
         "pt": 3,
         "id": "belgrade-mama-shelter-rooftop",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Mama%20Shelter%20rooftop%20Stari%20Grad%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "20/44",
@@ -1843,7 +2425,13 @@ const TRIP=[
         "cat": "night",
         "id": "belgrade-20-44",
         "map_link": "https://www.google.com/maps/search/?api=1&query=20%2F44%20Sava%20riverbank%20(splav%2C%20Brankov%20most)%20Belgrade",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Tri šešira",
@@ -1866,7 +2454,13 @@ const TRIP=[
         "pt": 3,
         "id": "belgrade-tri-sesira",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tri%20%C5%A1e%C5%A1ira%20Skadarlija%20(Stari%20Grad)%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Šaran",
@@ -1888,7 +2482,13 @@ const TRIP=[
         "pt": 3,
         "id": "belgrade-saran",
         "map_link": "https://www.google.com/maps/search/?api=1&query=%C5%A0aran%20Zemun%20Belgrade",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "doNote2": "Dishes to try (friend rec): pljeskavica (the big Serbian burger-patty — Grill 'Loki'); Karađorđeva šnicla (rolled breaded veal/pork cutlet stuffed with kajmak — interpreted from 'Karadjordjeva palacinka'); šopska salad (tomato, cucumber, onion, grated white cheese — interpreted from 'Shops salt'); burek (flaky breakfast pastry — Pekara Petrović).",
@@ -1966,6 +2566,29 @@ const TRIP=[
   {
     "id": "prizren",
     "name": "Prizren",
+    "intro": "A compact, photogenic Ottoman-era town in Kosovo — a stone bridge, a hilltop fortress, minarets and a river through the centre, ringed by mountains. It's the route's small-town breather and its biggest surprise: deeply local, cheap, and almost untouched by mass tourism. Approach it slowly — wander the old town on foot, take a furgon up to the Prevallë highlands for cool mountain air, and time the fortress for sunset.",
+    "temp": "30°C+",
+    "base": {
+      "label": "Old-town backpacker cluster (Ura & Bushati)",
+      "kind": "area"
+    },
+    "foodToTry": [
+      {
+        "name": "Flija",
+        "what": "A labour-intensive layered crêpe-like dish — batter brushed and cooked layer by layer, served with cream or honey.",
+        "how": "A celebration food — if a guesthouse or local offers it, say yes; it's rarely on tourist menus."
+      },
+      {
+        "name": "Qebapa",
+        "what": "Kosovar grilled minced-meat kebabs, close cousin of ćevapi.",
+        "how": "Cheap and everywhere — eat at a busy qebaptore in the old town."
+      },
+      {
+        "name": "Baklava & sheqerpare",
+        "what": "Syrup-soaked filo and semolina sweets from the Ottoman tradition.",
+        "how": "Have one with a Turkish-style coffee in the afternoon, watching the river."
+      }
+    ],
     "currency": {
       "code": "EUR",
       "sym": "€",
@@ -2002,7 +2625,14 @@ const TRIP=[
         "lng": 20.96188,
         "id": "prizren-prevalle-livadica-glacial-lake-hike",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.1761%2C20.96188",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Sunrise fortress climb (Kalaja)",
@@ -2025,7 +2655,13 @@ const TRIP=[
         "lng": 20.74558,
         "id": "prizren-sunrise-fortress-climb-kalaja",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.20947%2C20.74558",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Early-morning çajtore",
@@ -2047,7 +2683,13 @@ const TRIP=[
         "pt": 1,
         "id": "prizren-early-morning-cajtore",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Early-morning%20%C3%A7ajtore%20Old%20Town%20Prizren",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Kino Lumbardhi",
@@ -2076,7 +2718,13 @@ const TRIP=[
         },
         "id": "prizren-kino-lumbardhi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Kino%20Lumbardhi%20Old%20Town%20(by%20the%20Lumbardhi%20river)%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Gazi Mehmet Pasha Hammam",
@@ -2092,7 +2740,13 @@ const TRIP=[
         "cat": "sights",
         "id": "prizren-gazi-mehmet-pasha-hammam",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gazi%20Mehmet%20Pasha%20Hammam%20Old%20Town%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Lumbardhi gorge walk",
@@ -2108,7 +2762,13 @@ const TRIP=[
         "cat": "walks",
         "id": "prizren-lumbardhi-gorge-walk",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Lumbardhi%20gorge%20walk%20Lumbardhi%20gorge%20(above%20Prizren)%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "BarAca",
@@ -2123,7 +2783,13 @@ const TRIP=[
         "cat": "night",
         "id": "prizren-baraca",
         "map_link": "https://www.google.com/maps/search/?api=1&query=BarAca%20Old%20Town%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       }
     ],
     "doNote": "Mountain-day alternatives: a longer 14km cultural pasture hike to Gornje Lubinje, or a detour from Prevallë to the abandoned Yugoslav ski resort at Brezovica for an off-beat post-Yugoslav side trip.",
@@ -2161,7 +2827,13 @@ const TRIP=[
         "cat": "street",
         "id": "prizren-qebaptore-bekimi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Qebaptore%20Bekimi%20Old%20Town%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Fellas Coffee & Kitchen",
@@ -2189,7 +2861,13 @@ const TRIP=[
         },
         "id": "prizren-fellas-coffee-kitchen",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Fellas%20Coffee%20%26%20Kitchen%20Old%20Town%20%2F%20centre%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "work"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Traditional pekara, Ura",
@@ -2205,7 +2883,13 @@ const TRIP=[
         "pt": 1,
         "id": "prizren-traditional-pekara-ura",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Traditional%20pekara%2C%20Ura%20Old%20Town%20(by%20the%20Ura%20bridge)%20Prizren",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Tetova Sweet Shop",
@@ -2221,7 +2905,13 @@ const TRIP=[
         "pt": 1,
         "id": "prizren-tetova-sweet-shop",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Tetova%20Sweet%20Shop%20Old%20Town%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Shepherd stalls, Prevallë",
@@ -2242,7 +2932,13 @@ const TRIP=[
         "cat": "street",
         "id": "prizren-shepherd-stalls-prevalle",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Shepherd%20stalls%2C%20Prevall%C3%AB%20Prevall%C3%AB%20(%C5%A0ar%20Mountains)%20Prizren",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Restaurant Marashi",
@@ -2263,7 +2959,13 @@ const TRIP=[
         "cat": "rest",
         "id": "prizren-restaurant-marashi",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Marashi%20Old%20Town%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Hani i Vjetër",
@@ -2283,7 +2985,13 @@ const TRIP=[
         "cat": "rest",
         "id": "prizren-hani-i-vjeter",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Hani%20i%20Vjet%C3%ABr%20Old%20Town%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Restaurant Koha, Prevallë",
@@ -2303,7 +3011,13 @@ const TRIP=[
         "cat": "rest",
         "id": "prizren-restaurant-koha-prevalle",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Koha%2C%20Prevall%C3%AB%20Prevall%C3%AB%20(%C5%A0ar%20Mountains)%20Prizren",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "avoid": [
@@ -2381,6 +3095,29 @@ const TRIP=[
   {
     "id": "ohrid",
     "name": "Ohrid",
+    "intro": "A lakeside town on a vast, ancient lake — Byzantine churches, a hilltop fortress, clear water, and the coolest, calmest stop on the route. It's the trip's recovery stop: swim, slow down, eat by the water. Approach it for rest and the lake — base in the old Varosh quarter above the water, swim in the mornings, and walk or boat out to the quieter southern villages.",
+    "temp": "~26°C",
+    "base": {
+      "label": "Varosh, upper old town",
+      "kind": "area"
+    },
+    "foodToTry": [
+      {
+        "name": "Ohrid trout",
+        "what": "The lake's signature fish — note the native Ohrid trout is protected, so order the farmed/koran alternative rather than the endangered wild one.",
+        "how": "Eat it grilled at a lakeside tavern in a quieter village (Trpejca) rather than the busy town front; ask which trout it is."
+      },
+      {
+        "name": "Tavče gravče",
+        "what": "North Macedonia's national dish — baked beans with peppers and spices in an earthenware pot.",
+        "how": "A hearty, cheap, vegetarian-friendly dinner — order it at a traditional restoran."
+      },
+      {
+        "name": "Ajvar",
+        "what": "Roasted red-pepper relish, a Balkan staple.",
+        "how": "Comes as a side or spread — scoop it with bread alongside grilled food."
+      }
+    ],
     "currency": {
       "code": "MKD",
       "sym": "ден",
@@ -2411,7 +3148,14 @@ const TRIP=[
         "lng": 20.8166,
         "id": "ohrid-elshani-gorno-konjsko-hike",
         "map_link": "https://www.google.com/maps/search/?api=1&query=41.02631%2C20.8166",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Milenko's viewpoint, above Kaneo",
@@ -2426,7 +3170,13 @@ const TRIP=[
         "cat": "night",
         "id": "ohrid-milenko-s-viewpoint-above-kaneo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Milenko's%20viewpoint%2C%20above%20Kaneo%20Kaneo%20Ohrid",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "St. Naum military beach & springs",
@@ -2446,7 +3196,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-st-naum-military-beach-springs",
         "map_link": "https://www.google.com/maps/search/?api=1&query=St.%20Naum%20military%20beach%20%26%20springs%20St.%20Naum%20(south%20of%20Ohrid)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Trpejca — Zaumska coastal hike",
@@ -2462,7 +3219,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-trpejca-zaumska-coastal-hike",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Trpejca%20%E2%80%94%20Zaumska%20coastal%20hike%20Trpejca%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Beach Labino",
@@ -2477,7 +3241,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-beach-labino",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Beach%20Labino%20Lagadin%20%2F%20Labino%20(south%20lakeside)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Elshani village walk",
@@ -2493,7 +3264,14 @@ const TRIP=[
         "cat": "nature",
         "id": "ohrid-elshani-village-walk",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Elshani%20village%20walk%20Elshani%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore",
+          "recovery"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Peribleptos church & its local guide",
@@ -2508,7 +3286,13 @@ const TRIP=[
         "cat": "sights",
         "id": "ohrid-peribleptos-church-its-local-guide",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Peribleptos%20church%20%26%20its%20local%20guide%20Old%20Town%20(Varosh)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Mesokastro backstreets & Turkish bazaar",
@@ -2524,7 +3308,13 @@ const TRIP=[
         "cat": "walks",
         "id": "ohrid-mesokastro-backstreets-turkish-bazaar",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Mesokastro%20backstreets%20%26%20Turkish%20bazaar%20Old%20Town%20(Mesokastro%20%2F%20Old%20Bazaar)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "explore"
+        ],
+        "bf": false,
+        "rs": "needs"
       }
     ],
     "doNote": "Harder option: Magaro peak (2,255m) is the full-day summit with views of both lakes — strenuous and exposed, so only with a dawn start. The gentle Gorno Konjsko loop is the better fit otherwise.",
@@ -2563,7 +3353,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-gostilnica-vkusno",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Gostilnica%20Vkusno%20Old%20Town%20%2F%20centre%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Burekdžilnica Martina",
@@ -2579,7 +3375,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-burekdzilnica-martina",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Burekd%C5%BEilnica%20Martina%20centre%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Turkish Bazaar gjomleze vendors",
@@ -2601,7 +3403,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-turkish-bazaar-gjomleze-vendors",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Turkish%20Bazaar%20gjomleze%20vendors%20Old%20Bazaar%20(%C4%8Car%C5%A1ija)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Zelen Pazar (green market)",
@@ -2617,7 +3425,13 @@ const TRIP=[
         "pt": 1,
         "id": "ohrid-zelen-pazar-green-market",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Zelen%20Pazar%20(green%20market)%20centre%20(green%20market)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Restaurant Antico",
@@ -2633,7 +3447,13 @@ const TRIP=[
         "pt": 2,
         "id": "ohrid-restaurant-antico",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Antico%20Old%20Town%20(Varosh)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Restaurant Panorama",
@@ -2649,7 +3469,13 @@ const TRIP=[
         "pt": 2,
         "id": "ohrid-restaurant-panorama",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Panorama%20Old%20Town%20(upper%2C%20by%20the%20fortress)%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "Trpejca village tavernas",
@@ -2664,7 +3490,13 @@ const TRIP=[
         "cat": "rest",
         "id": "ohrid-trpejca-village-tavernas",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Trpejca%20village%20tavernas%20Trpejca%20Ohrid",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "needs"
       },
       {
         "nm": "Domakjinska Kukja, Velestovo",
@@ -2685,7 +3517,13 @@ const TRIP=[
         "cat": "rest",
         "id": "ohrid-domakjinska-kukja-velestovo",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Domakjinska%20Kukja%2C%20Velestovo%20Velestovo%20(village%20above%20Ohrid)%20Ohrid",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": false,
+        "rs": "researched"
       }
     ],
     "doNote2": "Worth-it add-ons: Antep Baklava (cheap sweets across from Vkusno), the fish stew at Biser in Lagadin on the way south, and the smaller Kanevče for a cheap salad and rakija below Kaneo.",
@@ -2755,6 +3593,24 @@ const TRIP=[
   {
     "id": "sofia",
     "name": "Sofia",
+    "intro": "Bulgaria's laid-back capital, ringed by the Vitosha mountain — Roman ruins under the streets, gold-domed churches, and a relaxed, leafy, affordable centre. It's the trip's wind-down before the flights out: one evening and a short morning. Approach it lightly — a single walkable loop of the centre, one good meal, and an early metro to the airport.",
+    "foodToTry": [
+      {
+        "name": "Banitsa",
+        "what": "Flaky filo pastry with white cheese and egg.",
+        "how": "The classic Bulgarian breakfast — grab one warm from a bakery with a boza or ayran."
+      },
+      {
+        "name": "Shopska salad",
+        "what": "Tomato, cucumber, pepper and raw onion topped with grated sirene (white brine cheese).",
+        "how": "A summer starter — order it with the meal and a cold rakia."
+      },
+      {
+        "name": "Tarator",
+        "what": "Cold cucumber-and-yogurt soup with garlic, dill and walnuts.",
+        "how": "Perfect in the heat — a refreshing starter on a warm evening."
+      }
+    ],
     "currency": {
       "code": "BGN",
       "sym": "лв",
@@ -2796,7 +3652,13 @@ const TRIP=[
         "lng": 23.32066,
         "id": "sofia-ashurbanipal",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.70231%2C23.32066",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Zhenski Pazar (Women's Market)",
@@ -2820,7 +3682,13 @@ const TRIP=[
         "lng": 23.31984,
         "id": "sofia-zhenski-pazar-women-s-market",
         "map_link": "https://www.google.com/maps/search/?api=1&query=42.70286%2C23.31984",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       },
       {
         "nm": "Bar Lorca",
@@ -2840,7 +3708,13 @@ const TRIP=[
         "cat": "night",
         "id": "sofia-bar-lorca",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Bar%20Lorca%20City%20centre%20Sofia",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Crystal Garden",
@@ -2860,7 +3734,13 @@ const TRIP=[
         "cat": "night",
         "id": "sofia-crystal-garden",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Crystal%20Garden%20Crystal%20Garden%20(city-centre%20park)%20Sofia",
-        "when": "evening"
+        "when": "evening",
+        "time": [],
+        "purpose": [
+          "social"
+        ],
+        "bf": false,
+        "rs": "researched"
       },
       {
         "nm": "Vkusnoto Kebapche",
@@ -2876,7 +3756,13 @@ const TRIP=[
         "pt": 1,
         "id": "sofia-vkusnoto-kebapche",
         "map_link": "https://www.google.com/maps/search/?api=1&query=Vkusnoto%20Kebapche%20City%20centre%20Sofia",
-        "when": "any"
+        "when": "any",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "needs"
       },
       {
         "nm": "HleBar",
@@ -2901,7 +3787,13 @@ const TRIP=[
         "pt": 1,
         "id": "sofia-hlebar",
         "map_link": "https://www.google.com/maps/search/?api=1&query=HleBar%20City%20centre%20Sofia",
-        "when": "morning"
+        "when": "morning",
+        "time": [],
+        "purpose": [
+          "eat"
+        ],
+        "bf": true,
+        "rs": "researched"
       }
     ],
     "stayPick": "Oborishte & the Doctor's Garden, central Sofia — a quiet, historic, tree-shaded residential pocket local youth favour. Safe late at night and a short walk from everything, while dodging the tacky Vitosha Boulevard tourist strip. If you want something more social, stay near ulitsa Tsar Shishman.",
@@ -2986,11 +3878,151 @@ const LEGS=[
     "ds": "Your flights out. Metro Line 1 to the airport from central Sofia."
   }
 ];
+
+const META={
+  "tasks": [
+    {
+      "title": "Book the Budapest → Belgrade bus",
+      "due": "A few days ahead — sooner in peak summer",
+      "how": "Flixbus or Gea Tours run this direct (~7–8h). Reserve a seat online so a sold-out day doesn't strand the first leg.",
+      "link": "https://www.flixbus.com",
+      "id": "task:trip-book-the-budapest-belgrade-bus"
+    },
+    {
+      "title": "Set up mobile data for the non-EU stretch",
+      "due": "Before leaving Budapest",
+      "how": "Serbia, Kosovo and North Macedonia are outside EU roaming — an EU plan may silently stop. Install an eSIM (a regional Balkans data plan) while you still have signal.",
+      "stop": "belgrade",
+      "id": "task:trip-set-up-mobile-data-for-the-non-eu-stretch"
+    },
+    {
+      "title": "Confirm the Ohrid → Sofia connection",
+      "due": "The day before you travel it",
+      "how": "The hard leg — almost always a change in Skopje (Ohrid → Skopje, then Skopje → Sofia). Check both legs the night before; it's a full travel day.",
+      "stop": "ohrid",
+      "id": "task:trip-confirm-the-ohrid-sofia-connection"
+    },
+    {
+      "title": "Download offline maps for each stop",
+      "due": "On arrival, while on Wi-Fi",
+      "how": "Save each city's map area in your maps app before you lose signal between cities. Paste the place coordinates from the map page into the app.",
+      "id": "task:trip-download-offline-maps-for-each-stop"
+    }
+  ],
+  "critical": [
+    {
+      "title": "Travel insurance covering all five countries",
+      "how": "Confirm the policy covers Serbia, Kosovo and North Macedonia, not just the EU. Carry the policy number offline.",
+      "due": "Before departure",
+      "id": "crit:travel-insurance-covering-all-five-countries"
+    },
+    {
+      "title": "Passport + entry rules for the non-EU stops",
+      "how": "Check passport validity and current visa-free terms for Serbia, Kosovo and North Macedonia for your nationality. Rules change — verify, don't assume.",
+      "due": "Before departure",
+      "id": "crit:passport-entry-rules-for-the-non-eu-stops"
+    },
+    {
+      "title": "Border rule: do NOT re-enter Serbia from Kosovo",
+      "how": "Serbia does not recognise Kosovo entry stamps. This route is fine because you exit Kosovo onward into North Macedonia — but never backtrack into Serbia from Kosovo.",
+      "due": "Know before the Prizren → Ohrid leg",
+      "id": "crit:border-rule-do-not-re-enter-serbia-from-kosovo"
+    },
+    {
+      "title": "Cash in four currencies",
+      "how": "Hungary (forint), Serbia (dinar) and North Macedonia (denar) each use their own currency; Kosovo uses the euro; Bulgaria the lev. Carry some local cash for markets and transit at each stop.",
+      "due": "Withdraw on arrival at each stop",
+      "id": "crit:cash-in-four-currencies"
+    },
+    {
+      "title": "Mobile data working before you lose EU coverage",
+      "how": "Comms safety: make sure data actually works (eSIM activated / roaming confirmed) before the Belgrade → Prizren → Ohrid non-EU stretch.",
+      "due": "Before leaving Budapest",
+      "id": "crit:mobile-data-working-before-you-lose-eu-coverage"
+    }
+  ]
+};
 /* === END DOSSIER DATA === */
 
 function icon(id){return '<svg class="ic"><use href="#'+id+'"/></svg>';}
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 function kebab(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+
+/* ===== v5 helpers (base/distance · research status · todoist · time blocks) ===== */
+const TIME_LABEL={morning:'Morning',daytime:'Daytime',evening:'Evening'};
+const DUR_LABEL={quick:'Quick','2-3h':'2–3 hrs','half-day':'Half-day','full-day':'Full-day'};
+const RS_META={
+  needs:{l:'Needs research',cls:'rs-needs',i:'i-alert'},
+  researched:{l:'Researched',cls:'rs-researched',i:'i-check'},
+  verified:{l:'Verified',cls:'rs-verified',i:'i-check'}
+};
+function hasCoords(p){return typeof p.lat==='number'&&typeof p.lng==='number';}
+// §4 — effective base = user-entered (localStorage) wins over authored default.
+function effectiveBase(s){
+  const u=(typeof bases!=='undefined'&&bases[s.id])||null;
+  if(u&&u.label)return u;
+  if(s.base&&s.base.label)return s.base;
+  return null;
+}
+function haversineKm(a,b){
+  const R=6371,toR=x=>x*Math.PI/180;
+  const dLat=toR(b.lat-a.lat),dLng=toR(b.lng-a.lng);
+  const h=Math.sin(dLat/2)**2+Math.cos(toR(a.lat))*Math.cos(toR(b.lat))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+// {km, walkMin} ESTIMATE (straight-line, ~5 km/h) — never a real route — or null.
+function baseDistance(s,p){
+  const b=effectiveBase(s);
+  if(!b||typeof b.lat!=='number'||typeof b.lng!=='number'||!hasCoords(p))return null;
+  const km=haversineKm(b,p);
+  return {km,walkMin:Math.max(1,Math.round(km/5*60))};
+}
+function dirLink(s,p){
+  const b=effectiveBase(s);
+  const dest=hasCoords(p)?(p.lat+','+p.lng):[p.nm,p.neighborhood,p.city].filter(Boolean).join(' ');
+  const origin=b?((typeof b.lat==='number')?(b.lat+','+b.lng):b.label):'';
+  let u='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(dest);
+  if(origin)u+='&origin='+encodeURIComponent(origin);
+  return u;
+}
+// row/detail "from your base" marker — estimate when coords allow, else a directions link, else ''.
+function baseMarker(s,p){
+  const b=effectiveBase(s); if(!b)return '';
+  const d=baseDistance(s,p);
+  const txt=d?(d.km<3?('~'+d.walkMin+' min walk'):('~'+d.km.toFixed(1)+' km')):'from base';
+  return '<a class="distchip" href="'+dirLink(s,p)+'" target="_blank" rel="noopener" aria-label="Directions from your base">'+icon('i-route')+' '+txt+'</a>';
+}
+function rsBadge(p,withLabel){
+  const m=RS_META[p.rs||'needs']; if(!m)return '';
+  return '<span class="rs-dot '+m.cls+'">'+icon(m.i)+(withLabel?' '+m.l:'')+'</span>';
+}
+// Todoist deep-link: web quick-add prefills the title where supported; the click
+// handler also copies the title as a universal fallback. No API integration.
+function todoistUrl(title,note){
+  let u='https://todoist.com/add?content='+encodeURIComponent(title);
+  if(note)u+='&description='+encodeURIComponent(note);
+  return u;
+}
+function researchPrompt(s,p){
+  const lines=['Research this place for my Balkans trip and tell me what I should know before going:','',
+    'Place: '+p.nm,'Where: '+[p.neighborhood,p.city].filter(Boolean).join(', '),'Stop: '+s.name];
+  if(p.rsNote)lines.push('Open question: '+p.rsNote);
+  lines.push('','Confirm current opening hours/days, price, and any booking or seasonal-schedule',
+    'detail. Flag anything time-sensitive to re-check for my exact dates.');
+  return lines.join('\n');
+}
+// §9 — index-row secondary line: one-line reason + time block(s) + duration + from-base distance.
+function rowSub(s,p){
+  const reason=p.hook?firstClause(p.hook):'';
+  const tb=(p.time||[]).map(t=>TIME_LABEL[t]).filter(Boolean).join(' / ');
+  let meta='';
+  if(tb)meta+='<span class="rmeta">'+icon('i-clock')+' '+tb+'</span>';
+  if(p.dur&&DUR_LABEL[p.dur])meta+='<span class="rmeta">'+icon('i-sun')+' '+DUR_LABEL[p.dur]+'</span>';
+  const dist=baseMarker(s,p);
+  const rs=(p.rs==='needs'||p.rs==='verified')?rsBadge(p,false):'';
+  if(!reason&&!meta&&!dist&&!rs)return '';
+  return '<div class="rowsub">'+(reason?'<span class="reason">'+esc(reason)+'</span>':'')+meta+dist+rs+'</div>';
+}
 
 // self-labeling badge tooltips (U-7) — tap a badge to see what it means.
 const TIP={
@@ -3042,7 +4074,13 @@ function tagHTML(k){
 function frHTML(){return '<span class="tag fr has-tip" data-tip="'+TIP.fr+'">'+icon('i-star')+' friend rec</span>';}
 function ptHTML(p){return p.pt?'<span class="pt has-tip" data-tip="'+TIP.pt+'">'+'€'.repeat(p.pt)+'</span>':'';}
 function dataAttrs(p){
-  return ' data-id="'+(p.id||'')+'" data-tier="'+(p.t||0)+'" data-when="'+(p.when||'any')+'" data-tags="'+((p.tags||[]).join(' ')+(p.fr?' fr':'')).trim()+'"';
+  return ' data-id="'+(p.id||'')+'" data-tier="'+(p.t||0)+'" data-when="'+(p.when||'any')+'"'+
+    ' data-time="'+((p.time||[]).join(' '))+'"'+
+    ' data-purpose="'+((p.purpose||[]).join(' '))+'"'+
+    ' data-dur="'+(p.dur||'')+'"'+
+    ' data-bf="'+(p.bf?'1':'')+'"'+
+    ' data-rs="'+(p.rs||'')+'"'+
+    ' data-tags="'+((p.tags||[]).join(' ')+(p.fr?' fr':'')).trim()+'"';
 }
 
 /* ===== index rows (11.6 — list rows are a pure index; prose on card page) */
@@ -3057,7 +4095,8 @@ function row(s,p){
     (p.fr?'<span class="rdot fr has-tip" data-tip="'+TIP.fr+'">'+icon('i-star')+'</span>':'')+
     stars(p.t)+ptHTML(p)+
     (area?'<span class="areachip">'+icon('i-pin')+' '+area+'</span>':'')+
-    pin+'</div>';
+    pin+
+    rowSub(s,p)+'</div>';
 }
 function avoidRow(s,p){
   const pin=p.map_link?'<a class="rpin" href="'+p.map_link+'" target="_blank" rel="noopener" aria-label="Open in Google Maps">'+icon('i-pin')+'</a>':'';
@@ -3093,19 +4132,59 @@ function stayHTML(s){
   b+='<button class="bookbtn" type="button" data-book="'+s.id+'" aria-pressed="false">'+icon('i-bed')+' Mark booked</button>';
   return b;
 }
+/* §4 — base + distance block (authored default OR user-entered; user wins) */
+function baseBlockHTML(s){
+  const b=effectiveBase(s);
+  const u=bases[s.id];
+  const isUser=!!(u&&u.label);
+  const uLabel=isUser?esc(u.label).replace(/"/g,'&quot;'):'';
+  const uCoords=(isUser&&typeof u.lat==='number')?(u.lat+', '+u.lng):'';
+  let h='<div class="base-block">';
+  h+='<div class="bhead">'+icon('i-pin')+' Your base in '+esc(s.name)+'</div>';
+  if(b){
+    h+='<p class="base-cur"><span class="blabel">'+esc(b.label)+'</span>'+
+       '<span class="bkind">'+(b.kind==='address'?'address':'area')+(isUser?' · yours':' · suggested')+'</span></p>';
+    h+='<button class="basebtn ghost" type="button" data-baseedit="'+s.id+'">'+icon('i-edit')+' '+(isUser?'Edit base':'Use my own base')+'</button>';
+  }else{
+    h+='<p class="base-none">No base set yet. Add your accommodation area or address to get estimated travel times from your base on every place — you can add it later.</p>';
+    h+='<button class="basebtn" type="button" data-baseedit="'+s.id+'">'+icon('i-pin')+' Add your base</button>';
+  }
+  h+='<div class="baseform" id="baseform-'+s.id+'">'+
+     '<label>Accommodation area or address</label>'+
+     '<input type="text" class="bf-label" value="'+uLabel+'" placeholder="e.g. Palace Quarter, District VIII">'+
+     '<label>Coordinates — optional, for distance estimates (lat, lng)</label>'+
+     '<input type="text" class="bf-coords" value="'+uCoords+'" placeholder="e.g. 47.4895, 19.068">'+
+     '<div class="brow"><button type="button" class="bsave" data-basesave="'+s.id+'">Save base</button>'+
+       (isUser?'<button type="button" class="bcancel" data-baseclear="'+s.id+'">Clear mine</button>'
+              :'<button type="button" class="bcancel" data-basecancel="'+s.id+'">Cancel</button>')+'</div>'+
+     '<p class="bhint">Distances are rough straight-line estimates for orientation — tap a place’s distance for real directions. Without coordinates you still get a directions link.</p>'+
+     '</div>';
+  h+='</div>';
+  return h;
+}
 function renderStop(s){
   let h='<div class="stop">';
-  h+='<div class="stop-head"><h2>'+s.name+'</h2><span class="when">'+s.when+'</span>'+
-     '<span class="heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></div>';
+  // §1 — plain temperature (no commentary); §11 — `when` is optional (route subordinate).
+  h+='<div class="stop-head"><h2>'+s.name+'</h2>'+
+     (s.when?'<span class="when">'+s.when+'</span>':'')+
+     (s.temp?'<span class="tempchip">'+icon('i-temp')+' '+esc(s.temp)+'</span>':'')+'</div>';
+  // §1 — destination introduction
+  if(s.intro)h+='<p class="intro">'+esc(s.intro)+'</p>';
   if(s.photo)h+='<img class="hero" src="'+s.photo+'" alt="" width="740" height="360" loading="lazy">';
 
-  // summary card — author round 2026-06-11: climate chip dropped (the stop-head
-  // pill already says it), "Start here" green box dropped, top-3 strip dropped.
+  // summary card — author round 2026-06-11: climate chip dropped, "Start here" box dropped, top-3 strip dropped.
+  // §11 — In/Out transit line renders only when route legs are present (optional).
   h+='<div class="summary"><div class="chips">'+
-     '<div class="metric"><div class="lab">'+icon('i-wallet')+' Budget</div><div class="val">'+s.budget+'</div></div>'+
+     '<div class="metric"><div class="lab">'+icon('i-wallet')+' Budget</div><div class="val">'+(s.budget||'—')+'</div></div>'+
      '</div>'+
-     '<div class="transit">'+icon('i-bus')+'<div><b style="color:var(--ink);font-weight:500">In:</b> '+s.inLeg+' &nbsp;·&nbsp; <b style="color:var(--ink);font-weight:500">Out:</b> '+s.outLeg+'</div></div>'+
+     ((s.inLeg||s.outLeg)?'<div class="transit">'+icon('i-bus')+'<div>'+
+       (s.inLeg?'<b style="color:var(--ink);font-weight:500">In:</b> '+s.inLeg:'')+
+       (s.inLeg&&s.outLeg?' &nbsp;·&nbsp; ':'')+
+       (s.outLeg?'<b style="color:var(--ink);font-weight:500">Out:</b> '+s.outLeg:'')+
+       '</div></div>':'')+
      '</div>';
+  // §4 — base + distance block
+  h+=baseBlockHTML(s);
 
   // 1 — Activities
   const actGroups=foldGroups(ACT_ORDER,s);
@@ -3122,12 +4201,30 @@ function renderStop(s){
   if(foodN){
     let body=groupsHTML(s,foodGroups);
     if(s.doNote2)body+='<p class="note">'+s.doNote2+'</p>';
-    h+=sectionFix('Food','i-eat',body,false,foodN,'food');
+    h+=sectionFix('Places to eat','i-eat',body,false,foodN,'food');
+  }
+
+  // 2b — Food to try (§8 — dishes, distinct from the venue list above)
+  if(s.foodToTry&&s.foodToTry.length){
+    const body=s.foodToTry.map(f=>'<div class="ftry-item">'+
+      '<div class="fname">'+esc(f.name)+'</div>'+
+      '<div class="fwhat">'+esc(f.what)+'</div>'+
+      (f.how?'<div class="fhow">'+esc(f.how)+'</div>':'')+'</div>').join('');
+    h+=sectionFix('Food to try','i-eat',body,false,s.foodToTry.length,'foodtry');
   }
 
   // 3 — Work cafés
   const wk=allCards(s).filter(p=>inCat(p,'work'));
   if(wk.length)h+=sectionFix('Work cafés','i-coffee','<div class="cards">'+wk.map(p=>row(s,p)).join('')+'</div>',false,wk.length,'work');
+
+  // 3b — Resources (§6 — per-destination deeper reading)
+  if(s.resources&&s.resources.length){
+    const body=s.resources.map(r=>'<a class="res-item" href="'+r.link+'" target="_blank" rel="noopener">'+
+      '<div class="res-top"><span class="res-ttl">'+esc(r.title)+'</span><span class="res-type">'+esc(r.type)+'</span></div>'+
+      '<div class="res-why">'+esc(r.why)+'</div>'+
+      '<span class="res-link">'+icon('i-link')+' '+esc(r.link.replace(/^https?:\/\//,''))+'</span></a>').join('');
+    h+=sectionFix('Resources','i-bookmark',body,false,s.resources.length,'resources');
+  }
 
   // 4 — General information (11.4: Avoid · Getting around · Timing · Money & basics · Where to stay)
   let info='';
@@ -3198,12 +4295,28 @@ function renderCardPage(s,p,isAvoid){
   (p.also||[]).forEach(k=>{if(CATS[k])tags+='<span class="tag">'+icon(CATS[k].i)+' '+CATS[k].s+'</span>';});
   tags+=ptHTML(p);
   h+='<div class="tags">'+tags+'</div>';
+  // §5 — research status (subtle badge) + "Research in Claude Code" affordance for `needs`
+  const rsv=p.rs||'needs';
+  h+='<div class="rs-line">'+rsBadge(p,true)+
+     (rsv==='needs'?'<button class="researchbtn" type="button" data-research="'+slugOf(p,s)+'" data-research-sid="'+s.id+'">'+icon('i-flag')+' Research in Claude Code</button>':'')+
+     '</div>';
+  if(rsv==='needs'&&p.rsNote)h+='<p class="rs-note">'+esc(p.rsNote)+'</p>';
   if(p.photo)h+='<img class="pgphoto" src="'+p.photo+'" alt="" loading="lazy">';
   h+='<p class="hook pg">'+p.hook+'</p>';
+  // §7 — best-time nuance (free text: sunrise, avoid-midday-heat, market days)
+  if(p.bestTime)h+='<div class="besttime">'+icon('i-clock')+'<span>'+esc(p.bestTime)+'</span></div>';
   if(p.facts&&p.facts.length)h+='<div class="facts">'+p.facts.map(x=>'<span>'+icon(x[0])+' '+x[1]+'</span>').join('')+'</div>';
   h+=workMetaHTML(p);
+  // §9 — Tips / "How to enjoy this"
+  if(p.tips&&p.tips.length)h+='<div class="tips"><div class="tips-h">'+icon('i-star')+' How to enjoy this</div><ul>'+p.tips.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></div>';
   const ar=AVOID_REF[p.id];
   if(ar)h+='<a class="warnchip" href="#/'+ar.sid+'/'+ar.slug+'">'+icon('i-alert')+' Tourist-trap counterpart: '+ar.nm+'</a>';
+  // §4 — from-your-base distance (estimate when coords allow, else directions)
+  if(effectiveBase(s)){
+    const d=baseDistance(s,p);
+    const lbl=d?(d.km<3?('~'+d.walkMin+' min walk from your base · directions'):('~'+d.km.toFixed(1)+' km from your base · directions')):'Directions from your base';
+    h+='<a class="pgdist" href="'+dirLink(s,p)+'" target="_blank" rel="noopener">'+icon('i-route')+' '+lbl+'</a>';
+  }
   h+=mapRowHTML(p);
   h+='<div class="acts">'+
     '<button class="act want" type="button" data-act="want" aria-pressed="false">'+icon('i-bookmark')+' Save</button>'+
@@ -3263,7 +4376,7 @@ function renderMapPage(s){
 const SHORT={budapest:'BUD',belgrade:'BEG',prizren:'PRZ',ohrid:'OHR',sofia:'SOF'};
 function shortName(s){return SHORT[s.id]||s.name.slice(0,3).toUpperCase();}
 const STOP_IDS=TRIP.map(s=>s.id);
-const ROUTES=['overview',...STOP_IDS,'transit','checklist'];
+const ROUTES=['overview',...STOP_IDS,'transit','tasks','checklist'];
 
 // localStorage, guarded for file:// / private-mode (degrades to in-memory).
 const LS={
@@ -3310,11 +4423,12 @@ function renderOverview(){
       '<span class="pill warn">'+icon('i-temp')+' Heat-aware</span>'+
     '</div></header>';
   h+='<div class="ov-stops">'+TRIP.map(s=>
-    '<a class="ov-stop" href="#/'+s.id+'"><span class="ov-nm">'+s.name+'</span><span class="ov-when">'+s.when+'</span>'+
-    '<span class="ov-heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></a>').join('')+'</div>';
+    '<a class="ov-stop" href="#/'+s.id+'"><span class="ov-nm">'+s.name+'</span><span class="ov-when">'+(s.when||'')+'</span>'+
+    (s.temp?'<span class="ov-temp">'+esc(s.temp)+'</span>':'')+'</a>').join('')+'</div>';
   h+='<div class="ov-links">'+
     '<a href="#/transit">'+icon('i-bus')+' Getting between stops</a>'+
-    '<a href="#/checklist">'+icon('i-check')+' Pre-trip checklist</a></div>';
+    '<a href="#/tasks">'+icon('i-list')+' Tasks &amp; reminders</a>'+
+    '<a href="#/checklist">'+icon('i-check')+' Critical pre-trip checklist</a></div>';
   h+='<div class="ov-tools">'+
     '<button id="btnTheme" type="button">'+icon('i-sun')+' Theme: <span id="themeLab">auto</span></button>'+
     '<button id="btnExport" type="button">'+icon('i-check')+' Export my picks</button></div>';
@@ -3342,36 +4456,45 @@ function renderTransit(){
   return h;
 }
 
-// D11 / U-1 — derive verify + action items from EXISTING copy only (mechanical keyword scan).
 function firstClause(s){s=(s||'').trim();const m=s.match(/^[^.;—]+/);return m?m[0].trim():s;}
-function buildChecklist(){
-  const verify=[], action=[];
-  const actRe=/\b(book|buy|confirm|download|reserve|pre-?book|pre-?purchase)\b/i;
-  const verRe=/€|closed|opening|\bhours\b|\bsunday\b|\bmonday\b|timetable|schedule|seasonal/i;
-  LEGS.forEach(l=>{ if(legNeedsConfirm(l)) verify.push({id:'leg:'+kebab(l.ttl), txt:'Confirm '+l.ttl+(l.spec?' ('+l.spec+')':''), grp:'Transport'}); });
-  TRIP.forEach(s=>{
-    allCards(s).forEach(p=>{
-      const txtsrc=(p.hook||'')+' '+(p.facts||[]).map(f=>f[1]).join(' ');
-      if(actRe.test(txtsrc)) action.push({id:'act:'+p.id, txt:p.nm+' — '+firstClause(p.hook), grp:s.name});
-      if(verRe.test(txtsrc)) verify.push({id:'ver:'+p.id, txt:p.nm+' — verify hours / price', grp:s.name});
-    });
-  });
-  return {verify,action};
+
+/* §2/§3 — authored Tasks + Critical checklist (replaces the old keyword-derived
+   verify/action scan: tasks are now explicit structured data, not text matches). */
+function renderTask(t,isCrit,assocLabel){
+  let h='<div class="task'+(isCrit?' crit':'')+'" data-task="'+t.id+'">';
+  h+='<div class="task-top"><button class="task-box" type="button" data-taskbox="'+t.id+'" aria-pressed="false" aria-label="Mark done">'+icon('i-check')+'</button>'+
+     '<span class="task-ttl">'+esc(t.title)+'</span></div>';
+  let meta='';
+  if(assocLabel)meta+='<span class="task-tag">'+esc(assocLabel)+'</span>';
+  if(t.due)meta+='<span class="task-tag due">'+esc(t.due)+'</span>';
+  if(meta)h+='<div class="task-meta">'+meta+'</div>';
+  if(t.how)h+='<p class="task-how">'+esc(t.how)+'</p>';
+  let acts='';
+  if(t.link)acts+='<a class="tlink" href="'+t.link+'" target="_blank" rel="noopener">'+icon('i-link')+' Open link</a>';
+  acts+='<a class="todoist" href="'+todoistUrl(t.title,t.how)+'" target="_blank" rel="noopener" data-todoist="'+esc(t.title).replace(/"/g,'&quot;')+'">'+icon('i-check')+' Add to Todoist</a>';
+  h+='<div class="task-acts">'+acts+'</div>';
+  return h+'</div>';
 }
-function clGroups(items){
-  if(!items.length)return '<p class="cl-empty">Nothing flagged here.</p>';
-  const by={}; items.forEach(it=>{(by[it.grp]=by[it.grp]||[]).push(it);});
-  return Object.keys(by).map(g=>'<div class="cl-group"><h3>'+g+'</h3>'+
-    by[g].map(it=>'<div class="cl-item" data-vid="'+it.id+'"><span class="box">'+icon('i-check')+'</span><span class="cl-txt">'+it.txt+'</span></div>').join('')+'</div>').join('');
+function renderTasksView(){
+  const items=[];
+  TRIP.forEach(s=>(s.tasks||[]).forEach(t=>items.push({t,assoc:s.name})));
+  (META.tasks||[]).forEach(t=>{const sn=t.stop?((TRIP.find(x=>x.id===t.stop)||{}).name):null;items.push({t,assoc:sn||'Whole trip'});});
+  let h='<div class="stop"><div class="stop-head"><h2>Tasks &amp; reminders</h2></div>';
+  h+='<p class="cl-lede">Practical things to do before and during the trip. Tap the box to mark done (saved on this phone). “Add to Todoist” opens Todoist with the task prefilled and copies the text as a fallback — tasks stay here either way.</p>';
+  if(!items.length)return h+'<p class="cl-empty">No tasks yet.</p></div>';
+  const by={};items.forEach(x=>{(by[x.assoc]=by[x.assoc]||[]).push(x.t);});
+  const order=['Whole trip',...TRIP.map(s=>s.name)];
+  const keys=Object.keys(by).sort((a,b)=>order.indexOf(a)-order.indexOf(b));
+  h+=keys.map(k=>'<div class="cl-group"><h3>'+esc(k)+'</h3>'+by[k].map(t=>renderTask(t,false,null)).join('')+'</div>').join('');
+  return h+'</div>';
 }
-function renderChecklist(){
-  const {verify,action}=buildChecklist();
-  return '<div class="stop"><div class="stop-head"><h2>Pre-trip checklist</h2></div>'+
-    '<p class="hook" style="color:var(--muted);margin:12px 0 0">Tap an item to tick it off — saved on this phone. <b>Verify</b> = facts that drift (hours, prices, bus times). <b>Actions</b> = things to book or buy before you go.</p>'+
-    '<div class="cl-tabs"><button class="cl-tab" type="button" data-cl="verify" aria-pressed="true">Verify · '+verify.length+'</button>'+
-    '<button class="cl-tab" type="button" data-cl="action" aria-pressed="false">Actions · '+action.length+'</button></div>'+
-    '<div class="cl-panel" id="cl-verify">'+clGroups(verify)+'</div>'+
-    '<div class="cl-panel" id="cl-action" hidden>'+clGroups(action)+'</div></div>';
+function renderChecklist(){   // now the CRITICAL pre-trip checklist (§3)
+  const crit=META.critical||[];
+  let h='<div class="stop"><div class="stop-head"><h2>Critical pre-trip checklist</h2></div>';
+  h+='<p class="cl-lede">High-consequence items only — entry rules, insurance, mobile data, money, borders. Tap the box to mark done. These are the things that can derail the trip if missed.</p>';
+  if(!crit.length)return h+'<p class="cl-empty">Nothing flagged.</p></div>';
+  h+=crit.map(c=>renderTask(c,true,null)).join('');
+  return h+'</div>';
 }
 
 /* --- persisted stores (declared before views render — card pages read notes) --- */
@@ -3379,12 +4502,15 @@ const places=LS.get('places',{});          // { id:{w,d,s} }
 const verified=LS.get('verified',{});      // { vid:1 }
 const booked=LS.get('booked',{});          // { stopid:1 }
 const notes=LS.get('notes',{});            // { id:"free text" } (11.6 note field)
+const bases=LS.get('bases',{});            // §4 user base per stop { stopid:{label,kind,lat?,lng?} }
+const tdone=LS.get('tasksdone',{});        // §2/§3 task + critical completion { taskid:1 }
 
 // --- build all views into #app ---
 const app=document.getElementById('app');
 let viewsHTML='<section class="view" id="view-overview" hidden>'+renderOverview()+'</section>';
 TRIP.forEach(s=>{viewsHTML+='<section class="view stopview" id="view-'+s.id+'" data-stop="'+s.id+'" hidden>'+renderStop(s)+'</section>';});
 viewsHTML+='<section class="view" id="view-transit" hidden>'+renderTransit()+'</section>';
+viewsHTML+='<section class="view" id="view-tasks" hidden>'+renderTasksView()+'</section>';
 viewsHTML+='<section class="view" id="view-checklist" hidden>'+renderChecklist()+'</section>';
 viewsHTML+='<section class="view" id="view-card" hidden></section>';
 app.innerHTML=viewsHTML;
@@ -3396,7 +4522,8 @@ const tnMenu=document.getElementById('tnMenu');
 tnMenu.innerHTML=
   '<a href="#/overview">'+icon('i-view')+' Overview &amp; about</a>'+
   '<a href="#/transit">'+icon('i-bus')+' Getting between stops</a>'+
-  '<a href="#/checklist">'+icon('i-check')+' Pre-trip checklist</a>';
+  '<a href="#/tasks">'+icon('i-list')+' Tasks &amp; reminders</a>'+
+  '<a href="#/checklist">'+icon('i-check')+' Critical pre-trip checklist</a>';
 const tnMore=document.getElementById('tnMore');
 function closeMenu(){tnMenu.hidden=true;tnMore.setAttribute('aria-expanded','false');}
 tnMore.addEventListener('click',()=>{const open=tnMenu.hidden;tnMenu.hidden=!open;tnMore.setAttribute('aria-expanded',open?'true':'false');});
@@ -3453,7 +4580,7 @@ function doExport(){
   TRIP.forEach(s=>{
     const picks=allCards(s).map(p=>({p,st:places[p.id]||{}})).filter(x=>x.st.w||x.st.d);
     if(!picks.length)return;
-    lines.push('## '+s.name+' · '+s.when);
+    lines.push('## '+s.name+(s.when?' · '+s.when:''));
     const noteLine=p=>{const n=notes[p.id];if(n)lines.push('     · '+n);};
     picks.filter(x=>x.st.w&&!x.st.d).forEach(x=>{lines.push('  ☆ '+x.p.nm+(x.p.neighborhood?' — '+x.p.neighborhood:''));noteLine(x.p);});
     picks.filter(x=>x.st.d).forEach(x=>{lines.push('  ✓ '+x.p.nm+(x.p.neighborhood?' — '+x.p.neighborhood:''));noteLine(x.p);});
@@ -3492,9 +4619,38 @@ app.addEventListener('click',e=>{
   // booked toggle
   const bk=e.target.closest('.bookbtn');
   if(bk){const sid=bk.getAttribute('data-book');if(booked[sid])delete booked[sid];else booked[sid]=1;LS.set('booked',booked);applyBooked();return;}
-  // checklist tabs
-  const tab=e.target.closest('.cl-tab');
-  if(tab){const which=tab.getAttribute('data-cl'),view=tab.closest('.view');view.querySelectorAll('.cl-tab').forEach(t=>t.setAttribute('aria-pressed',t===tab?'true':'false'));view.querySelector('#cl-verify').hidden=which!=='verify';view.querySelector('#cl-action').hidden=which!=='action';return;}
+  // §4 — base: open/close the edit form
+  const be=e.target.closest('[data-baseedit]');
+  if(be){const f=document.getElementById('baseform-'+be.getAttribute('data-baseedit'));if(f)f.classList.toggle('open');return;}
+  // §4 — base: save (label + optional "lat, lng")
+  const bsv=e.target.closest('[data-basesave]');
+  if(bsv){
+    const sid=bsv.getAttribute('data-basesave'), form=document.getElementById('baseform-'+sid);
+    const label=(form.querySelector('.bf-label').value||'').trim();
+    if(!label){showOff('Enter a base area or address');return;}
+    const b={label,kind:'area'};
+    const m=(form.querySelector('.bf-coords').value||'').match(/(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)/);
+    if(m){b.lat=+m[1];b.lng=+m[2];}
+    bases[sid]=b;LS.set('bases',bases);rerenderStop(sid);showOff('✓ base saved');return;
+  }
+  // §4 — base: clear my base / cancel the form
+  const bcl=e.target.closest('[data-baseclear]');
+  if(bcl){const sid=bcl.getAttribute('data-baseclear');delete bases[sid];LS.set('bases',bases);rerenderStop(sid);showOff('base cleared');return;}
+  const bcn=e.target.closest('[data-basecancel]');
+  if(bcn){const f=document.getElementById('baseform-'+bcn.getAttribute('data-basecancel'));if(f)f.classList.remove('open');return;}
+  // §2/§3 — task / critical completion toggle
+  const tbx=e.target.closest('[data-taskbox]');
+  if(tbx){const id=tbx.getAttribute('data-taskbox');if(tdone[id])delete tdone[id];else tdone[id]=1;LS.set('tasksdone',tdone);applyTasks();return;}
+  // §2/§3 — Add to Todoist: copy the title as a universal fallback, let the link open Todoist prefilled
+  const td=e.target.closest('[data-todoist]');
+  if(td){const t=td.getAttribute('data-todoist')||'';try{if(navigator.clipboard)navigator.clipboard.writeText(t);}catch(_){}showOff('✓ copied — opening Todoist');return;}
+  // §5 — "Research in Claude Code": copy a focused prompt for the open question
+  const rb=e.target.closest('[data-research]');
+  if(rb){
+    const fp=findPlace(rb.getAttribute('data-research-sid'),rb.getAttribute('data-research'));
+    if(fp){const txt=researchPrompt(fp.s,fp.p);try{if(navigator.clipboard)navigator.clipboard.writeText(txt);}catch(_){}showOff('✓ research prompt copied — paste into Claude Code');}
+    return;
+  }
   // theme + export
   if(e.target.closest('#btnTheme')){cycleTheme();return;}
   if(e.target.closest('#btnExport')){doExport();return;}
@@ -3529,31 +4685,74 @@ app.addEventListener('input',e=>{
 /* --- section open/closed memory (semantic data-sec keys, both levels) --- */
 const secState=LS.get('sections',{});      // { 'stopid:sec': bool }
 let modeDriving=false;                       // true while a mode preset drives section state (don't persist those)
-document.querySelectorAll('.stopview').forEach(view=>{
+// bindSections is re-callable (rerenderStop replaces a view's DOM) — the __secbound
+// flag stops a re-render from stacking duplicate toggle listeners.
+function bindSections(view){
   const sid=view.getAttribute('data-stop');
   view.querySelectorAll('details[data-sec]').forEach(d=>{
     const k=sid+':'+d.getAttribute('data-sec'); d.setAttribute('data-sk',k);
     if(k in secState)d.open=secState[k];
-    d.addEventListener('toggle',()=>{if(modeDriving)return;secState[k]=d.open;LS.set('sections',secState);});
+    if(!d.__secbound){d.__secbound=1;d.addEventListener('toggle',()=>{if(modeDriving)return;secState[k]=d.open;LS.set('sections',secState);});}
   });
-});
+}
+document.querySelectorAll('.stopview').forEach(bindSections);
 
-/* --- tag / tier / time (+ saved / hide-done) filters, scoped to the active stop view --- */
-const F={tags:new Set(),tier:0,wantOnly:false,hideDone:false,when:new Set()};
+/* §2/§3 — apply task/critical completion state */
+function applyTasks(scope){
+  (scope||document).querySelectorAll('.task[data-task]').forEach(el=>{
+    const on=!!tdone[el.getAttribute('data-task')];
+    el.classList.toggle('is-done',on);
+    const box=el.querySelector('.task-box'); if(box)box.setAttribute('aria-pressed',on?'true':'false');
+  });
+}
+/* §4 — re-render a stop view in place (after base add/edit/clear changes its distances) */
+function rerenderStop(sid){
+  const view=document.getElementById('view-'+sid), s=TRIP.find(x=>x.id===sid);
+  if(!view||!s)return;
+  view.innerHTML=renderStop(s);
+  view.querySelectorAll('.card[data-id]').forEach(applyPlace);
+  bindSections(view);
+  applyTasks(view);
+  reflow(view); applySections(); applyFilters();
+}
+
+/* --- v5 grouped filters (Time / Purpose / Duration / Constraints & state), scoped to the active stop view.
+   Semantics: OR *within* a group (any selected chip matches), AND *between* groups. A card that LACKS a
+   group's attribute does NOT match a selection in that group (fixes the legacy `any`-always-matches defect:
+   we filter on the authored `data-time[]`, never the derived single-value `data-when`). --- */
+const PURPOSE_LABEL={explore:'Explore',eat:'Eat',work:'Work',social:'Social',recovery:'Recovery'};
+const COOL_TAGS=Object.keys(TAG).filter(k=>TAG[k].cool);   // heat-relief tags (swim, shade, …) → Heat-safe filter
+const NEAR_KM=2.0;                                         // "Near base" = within ~2 km straight-line (≈25 min walk)
+const PLACE_IX={};                                         // id → {s,p}, for runtime near-base distance lookups
+TRIP.forEach(s=>allCards(s).forEach(p=>{PLACE_IX[p.id]={s,p};}));
+function isNearBase(id){
+  const ix=PLACE_IX[id]; if(!ix)return false;
+  const d=baseDistance(ix.s,ix.p);                         // null when base or place lacks coords → not near
+  return !!d&&d.km<=NEAR_KM;
+}
+const F={time:new Set(),purpose:new Set(),dur:new Set(),nearBase:false,bf:false,heatSafe:false,saved:false,notDone:false};
 function applyFilters(){
   const scope=document.querySelector('.view.active');
   if(!scope||!scope.classList.contains('stopview'))return;
   scope.querySelectorAll('.card:not(.avoid)').forEach(c=>{
-    const tier=+(c.getAttribute('data-tier')||0);
+    const id=c.getAttribute('data-id');
+    const ctime=(c.getAttribute('data-time')||'').split(' ').filter(Boolean);
+    const cpurpose=(c.getAttribute('data-purpose')||'').split(' ').filter(Boolean);
+    const cdur=c.getAttribute('data-dur')||'';
+    const cbf=c.getAttribute('data-bf')==='1';
     const ctags=(c.getAttribute('data-tags')||'').split(' ').filter(Boolean);
-    const cw=c.getAttribute('data-when')||'any';
-    const st=places[c.getAttribute('data-id')]||{};
+    const st=places[id]||{};
     let show=true;
-    if(F.tier&&tier<F.tier)show=false;
-    if(show&&F.tags.size)show=[...F.tags].some(t=>ctags.includes(t));
-    if(show&&F.when.size)show=(cw==='any'||F.when.has(cw));
-    if(show&&F.wantOnly&&!st.w)show=false;
-    if(show&&F.hideDone&&st.d)show=false;
+    // Time / Purpose / Duration — OR within group; a card lacking the attribute never matches a selection.
+    if(show&&F.time.size)   show=ctime.some(t=>F.time.has(t));
+    if(show&&F.purpose.size)show=cpurpose.some(t=>F.purpose.has(t));
+    if(show&&F.dur.size)    show=F.dur.has(cdur);
+    // Constraints & state — each an independent AND condition.
+    if(show&&F.nearBase) show=isNearBase(id);
+    if(show&&F.bf)       show=cbf;
+    if(show&&F.heatSafe) show=ctags.some(t=>COOL_TAGS.includes(t));
+    if(show&&F.saved)    show=!!st.w;
+    if(show&&F.notDone)  show=!st.d;
     c.classList.toggle('filtered',!show);
   });
   scope.querySelectorAll('.subgrp').forEach(sg=>{
@@ -3577,62 +4776,67 @@ function applyFilters(){
     es.hidden=false;
   }else if(es){es.hidden=true;}
 }
-function filtersActive(){return !!(F.tier||F.tags.size||F.when.size||F.wantOnly||F.hideDone);}
+function filtersActive(){return !!(F.time.size||F.purpose.size||F.dur.size||F.nearBase||F.bf||F.heatSafe||F.saved||F.notDone);}
 function updateFilterBadge(){
   const b=document.getElementById('filterToggle'); if(!b)return;
   let badge=b.querySelector('.fbadge');
   if(!badge){badge=document.createElement('span');badge.className='fbadge';b.appendChild(badge);}
-  const n=(F.tier?1:0)+F.tags.size+F.when.size+(F.wantOnly?1:0)+(F.hideDone?1:0);
+  const n=F.time.size+F.purpose.size+F.dur.size+(F.nearBase?1:0)+(F.bf?1:0)+(F.heatSafe?1:0)+(F.saved?1:0)+(F.notDone?1:0);
   if(n>0){badge.textContent=n;badge.hidden=false;}else{badge.hidden=true;}
 }
 function clearFilters(){
-  F.tags.clear();F.tier=0;F.wantOnly=false;F.hideDone=false;F.when.clear();
+  F.time.clear();F.purpose.clear();F.dur.clear();
+  F.nearBase=F.bf=F.heatSafe=F.saved=F.notDone=false;
   const bar=document.getElementById('filterbar');
-  if(bar){
-    bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
-    const t0=bar.querySelector('.chip.tier[data-tier="0"]'); if(t0)t0.setAttribute('aria-pressed','true');
-  }
+  if(bar)bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
   applyFilters();updateFilterBadge();
 }
 (function buildFilterBar(){
-  const present=new Set();
-  TRIP.forEach(s=>allCards(s).forEach(p=>{(p.tags||[]).forEach(t=>present.add(t));if(p.fr)present.add('fr');}));
-  const tagOrder=Object.keys(TAG).filter(k=>present.has(k));
-  const tierChips=[['All',0],['★★+',2],['★★★',3]].map(([l,v])=>
-    '<button class="chip tier" type="button" data-tier="'+v+'" aria-pressed="'+(v===0?'true':'false')+'">'+l+'</button>').join('');
-  let tagChips=tagOrder.map(k=>'<button class="chip tag" type="button" data-tag="'+k+'" aria-pressed="false">'+icon(TAG[k].i)+' '+TAG[k].l+'</button>').join('');
-  if(present.has('fr'))tagChips+='<button class="chip tag" type="button" data-tag="fr" aria-pressed="false">'+icon('i-star')+' friend rec</button>';
+  // presence scan — show a chip only for a value that actually occurs in the trip data
+  const times=new Set(),purposes=new Set(),durs=new Set();
+  let hasCool=false,hasBf=false,hasBaseCoords=false;
+  TRIP.forEach(s=>{
+    if(s.base&&typeof s.base.lat==='number')hasBaseCoords=true;
+    allCards(s).forEach(p=>{
+      (p.time||[]).forEach(t=>times.add(t));
+      (p.purpose||[]).forEach(t=>purposes.add(t));
+      if(p.dur)durs.add(p.dur);
+      if(p.bf)hasBf=true;
+      if((p.tags||[]).some(t=>TAG[t]&&TAG[t].cool))hasCool=true;
+    });
+  });
+  const TIME_ORDER=['morning','daytime','evening'], TIME_IC={morning:'i-sun',daytime:'i-clock',evening:'i-music'};
+  const PURPOSE_ORDER=['explore','eat','work','social','recovery'];
+  const DUR_ORDER=['quick','2-3h','half-day','full-day'];
+  const fchip=(cls,attr,val,label,icn)=>'<button class="chip '+cls+'" type="button" '+attr+'="'+val+'" aria-pressed="false">'+(icn?icon(icn)+' ':'')+label+'</button>';
+  const cchip=(key,label,icn)=>'<button class="chip cons" type="button" data-cons="'+key+'" aria-pressed="false">'+icon(icn)+' '+label+'</button>';
+  let html='';
+  const timeChips=TIME_ORDER.filter(t=>times.has(t)).map(t=>fchip('time','data-time',t,TIME_LABEL[t],TIME_IC[t])).join('');
+  if(timeChips)html+='<span class="flabel">Time</span><div class="fgroup times">'+timeChips+'</div><span class="fsep"></span>';
+  const purposeChips=PURPOSE_ORDER.filter(t=>purposes.has(t)).map(t=>fchip('purpose','data-purpose',t,PURPOSE_LABEL[t])).join('');
+  if(purposeChips)html+='<span class="flabel">Purpose</span><div class="fgroup purposes">'+purposeChips+'</div><span class="fsep"></span>';
+  const durChips=DUR_ORDER.filter(t=>durs.has(t)).map(t=>fchip('dur','data-dur',t,DUR_LABEL[t])).join('');
+  if(durChips)html+='<span class="flabel">Duration</span><div class="fgroup durs">'+durChips+'</div><span class="fsep"></span>';
+  let cons='';
+  if(hasBaseCoords)cons+=cchip('nearBase','Near base','i-route');
+  if(hasBf)        cons+=cchip('bf','Budget-friendly','i-wallet');
+  if(hasCool)      cons+=cchip('heatSafe','Heat-safe','i-tree');
+  cons+=cchip('saved','Saved','i-bookmark');
+  cons+=cchip('notDone','Not done','i-check');
+  html+='<span class="flabel">Show</span><div class="fgroup cons-grp">'+cons+'</div>';
+  html+='<button class="fclear" type="button">Clear</button>';
   const bar=document.getElementById('filterbar');
-  bar.innerHTML=
-    '<span class="flabel">Rank</span><div class="fgroup tiers">'+tierChips+'</div>'+
-    '<span class="fsep"></span>'+
-    '<span class="flabel">Time</span><div class="fgroup whens">'+
-      '<button class="chip when" type="button" data-when="morning" aria-pressed="false">'+icon('i-sun')+' Morning</button>'+
-      '<button class="chip when" type="button" data-when="evening" aria-pressed="false">'+icon('i-music')+' Evening</button>'+
-    '</div>'+
-    '<span class="fsep"></span>'+
-    '<span class="flabel">Type</span><div class="fgroup tags">'+tagChips+'</div>'+
-    '<span class="fsep"></span>'+
-    '<button class="chip" type="button" id="fWant" aria-pressed="false">'+icon('i-bookmark')+' Saved</button>'+
-    '<button class="chip" type="button" id="fHideDone" aria-pressed="false">'+icon('i-check')+' Hide done</button>'+
-    '<button class="fclear" type="button">Clear</button>';
+  bar.innerHTML=html;
   bar.addEventListener('click',e=>{
     const t=e.target.closest('.chip,.fclear'); if(!t)return;
-    if(t.classList.contains('fclear')){
-      clearFilters(); return;
-    }else if(t.classList.contains('tier')){
-      F.tier=+t.getAttribute('data-tier');
-      bar.querySelectorAll('.chip.tier').forEach(c=>c.setAttribute('aria-pressed',c===t?'true':'false'));
-    }else if(t.classList.contains('when')){
-      const wv=t.getAttribute('data-when'), on=t.getAttribute('aria-pressed')==='true';
-      t.setAttribute('aria-pressed',on?'false':'true');
-      on?F.when.delete(wv):F.when.add(wv);
-    }else if(t.classList.contains('tag')){
-      const tag=t.getAttribute('data-tag'), on=t.getAttribute('aria-pressed')==='true';
-      t.setAttribute('aria-pressed',on?'false':'true');
-      on?F.tags.delete(tag):F.tags.add(tag);
-    }else if(t.id==='fWant'){F.wantOnly=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.wantOnly?'true':'false');}
-    else if(t.id==='fHideDone'){F.hideDone=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.hideDone?'true':'false');}
+    if(t.classList.contains('fclear')){clearFilters(); return;}
+    const on=t.getAttribute('aria-pressed')==='true';
+    t.setAttribute('aria-pressed',on?'false':'true');
+    const now=!on;   // true → just turned ON
+    if(t.classList.contains('time')){const v=t.getAttribute('data-time');now?F.time.add(v):F.time.delete(v);}
+    else if(t.classList.contains('purpose')){const v=t.getAttribute('data-purpose');now?F.purpose.add(v):F.purpose.delete(v);}
+    else if(t.classList.contains('dur')){const v=t.getAttribute('data-dur');now?F.dur.add(v):F.dur.delete(v);}
+    else if(t.classList.contains('cons')){F[t.getAttribute('data-cons')]=now;}
     applyFilters();updateFilterBadge();
   });
 })();
@@ -3686,6 +4890,7 @@ document.querySelectorAll('#app .card[data-id]').forEach(applyPlace);
 reflow(document);
 applyVerified();
 applyBooked();
+applyTasks();
 applyTheme(LS.get('theme','auto'));
 
 /* ===== router (top-level routes + #/{stop}/{card-slug} card pages) ===== */

@@ -202,7 +202,6 @@ footer{margin-top:40px;padding:16px max(18px,env(safe-area-inset-left)) 24px;bor
 .chip{font-family:var(--sans);font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:6px 11px;min-height:40px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,border-color .15s}
 .chip .ic{font-size:13px}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip.tier[aria-pressed="true"]{background:var(--star);color:#211d16;border-color:var(--star)}
 .fclear{font-family:var(--sans);font-size:12px;color:var(--muted);background:transparent;border:none;text-decoration:underline;cursor:pointer;padding:6px;min-height:34px}
 .toolbar #filterToggle{margin-right:auto}
 .toolbar #filterToggle[aria-pressed="true"]{background:var(--surface-2);color:var(--ink);border-color:var(--line-2)}
@@ -4717,22 +4716,43 @@ function rerenderStop(sid){
   reflow(view); applySections(); applyFilters();
 }
 
-/* --- tag / tier / time (+ saved / hide-done) filters, scoped to the active stop view --- */
-const F={tags:new Set(),tier:0,wantOnly:false,hideDone:false,when:new Set()};
+/* --- v5 grouped filters (Time / Purpose / Duration / Constraints & state), scoped to the active stop view.
+   Semantics: OR *within* a group (any selected chip matches), AND *between* groups. A card that LACKS a
+   group's attribute does NOT match a selection in that group (fixes the legacy `any`-always-matches defect:
+   we filter on the authored `data-time[]`, never the derived single-value `data-when`). --- */
+const PURPOSE_LABEL={explore:'Explore',eat:'Eat',work:'Work',social:'Social',recovery:'Recovery'};
+const COOL_TAGS=Object.keys(TAG).filter(k=>TAG[k].cool);   // heat-relief tags (swim, shade, …) → Heat-safe filter
+const NEAR_KM=2.0;                                         // "Near base" = within ~2 km straight-line (≈25 min walk)
+const PLACE_IX={};                                         // id → {s,p}, for runtime near-base distance lookups
+TRIP.forEach(s=>allCards(s).forEach(p=>{PLACE_IX[p.id]={s,p};}));
+function isNearBase(id){
+  const ix=PLACE_IX[id]; if(!ix)return false;
+  const d=baseDistance(ix.s,ix.p);                         // null when base or place lacks coords → not near
+  return !!d&&d.km<=NEAR_KM;
+}
+const F={time:new Set(),purpose:new Set(),dur:new Set(),nearBase:false,bf:false,heatSafe:false,saved:false,notDone:false};
 function applyFilters(){
   const scope=document.querySelector('.view.active');
   if(!scope||!scope.classList.contains('stopview'))return;
   scope.querySelectorAll('.card:not(.avoid)').forEach(c=>{
-    const tier=+(c.getAttribute('data-tier')||0);
+    const id=c.getAttribute('data-id');
+    const ctime=(c.getAttribute('data-time')||'').split(' ').filter(Boolean);
+    const cpurpose=(c.getAttribute('data-purpose')||'').split(' ').filter(Boolean);
+    const cdur=c.getAttribute('data-dur')||'';
+    const cbf=c.getAttribute('data-bf')==='1';
     const ctags=(c.getAttribute('data-tags')||'').split(' ').filter(Boolean);
-    const cw=c.getAttribute('data-when')||'any';
-    const st=places[c.getAttribute('data-id')]||{};
+    const st=places[id]||{};
     let show=true;
-    if(F.tier&&tier<F.tier)show=false;
-    if(show&&F.tags.size)show=[...F.tags].some(t=>ctags.includes(t));
-    if(show&&F.when.size)show=(cw==='any'||F.when.has(cw));
-    if(show&&F.wantOnly&&!st.w)show=false;
-    if(show&&F.hideDone&&st.d)show=false;
+    // Time / Purpose / Duration — OR within group; a card lacking the attribute never matches a selection.
+    if(show&&F.time.size)   show=ctime.some(t=>F.time.has(t));
+    if(show&&F.purpose.size)show=cpurpose.some(t=>F.purpose.has(t));
+    if(show&&F.dur.size)    show=F.dur.has(cdur);
+    // Constraints & state — each an independent AND condition.
+    if(show&&F.nearBase) show=isNearBase(id);
+    if(show&&F.bf)       show=cbf;
+    if(show&&F.heatSafe) show=ctags.some(t=>COOL_TAGS.includes(t));
+    if(show&&F.saved)    show=!!st.w;
+    if(show&&F.notDone)  show=!st.d;
     c.classList.toggle('filtered',!show);
   });
   scope.querySelectorAll('.subgrp').forEach(sg=>{
@@ -4756,62 +4776,67 @@ function applyFilters(){
     es.hidden=false;
   }else if(es){es.hidden=true;}
 }
-function filtersActive(){return !!(F.tier||F.tags.size||F.when.size||F.wantOnly||F.hideDone);}
+function filtersActive(){return !!(F.time.size||F.purpose.size||F.dur.size||F.nearBase||F.bf||F.heatSafe||F.saved||F.notDone);}
 function updateFilterBadge(){
   const b=document.getElementById('filterToggle'); if(!b)return;
   let badge=b.querySelector('.fbadge');
   if(!badge){badge=document.createElement('span');badge.className='fbadge';b.appendChild(badge);}
-  const n=(F.tier?1:0)+F.tags.size+F.when.size+(F.wantOnly?1:0)+(F.hideDone?1:0);
+  const n=F.time.size+F.purpose.size+F.dur.size+(F.nearBase?1:0)+(F.bf?1:0)+(F.heatSafe?1:0)+(F.saved?1:0)+(F.notDone?1:0);
   if(n>0){badge.textContent=n;badge.hidden=false;}else{badge.hidden=true;}
 }
 function clearFilters(){
-  F.tags.clear();F.tier=0;F.wantOnly=false;F.hideDone=false;F.when.clear();
+  F.time.clear();F.purpose.clear();F.dur.clear();
+  F.nearBase=F.bf=F.heatSafe=F.saved=F.notDone=false;
   const bar=document.getElementById('filterbar');
-  if(bar){
-    bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
-    const t0=bar.querySelector('.chip.tier[data-tier="0"]'); if(t0)t0.setAttribute('aria-pressed','true');
-  }
+  if(bar)bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
   applyFilters();updateFilterBadge();
 }
 (function buildFilterBar(){
-  const present=new Set();
-  TRIP.forEach(s=>allCards(s).forEach(p=>{(p.tags||[]).forEach(t=>present.add(t));if(p.fr)present.add('fr');}));
-  const tagOrder=Object.keys(TAG).filter(k=>present.has(k));
-  const tierChips=[['All',0],['★★+',2],['★★★',3]].map(([l,v])=>
-    '<button class="chip tier" type="button" data-tier="'+v+'" aria-pressed="'+(v===0?'true':'false')+'">'+l+'</button>').join('');
-  let tagChips=tagOrder.map(k=>'<button class="chip tag" type="button" data-tag="'+k+'" aria-pressed="false">'+icon(TAG[k].i)+' '+TAG[k].l+'</button>').join('');
-  if(present.has('fr'))tagChips+='<button class="chip tag" type="button" data-tag="fr" aria-pressed="false">'+icon('i-star')+' friend rec</button>';
+  // presence scan — show a chip only for a value that actually occurs in the trip data
+  const times=new Set(),purposes=new Set(),durs=new Set();
+  let hasCool=false,hasBf=false,hasBaseCoords=false;
+  TRIP.forEach(s=>{
+    if(s.base&&typeof s.base.lat==='number')hasBaseCoords=true;
+    allCards(s).forEach(p=>{
+      (p.time||[]).forEach(t=>times.add(t));
+      (p.purpose||[]).forEach(t=>purposes.add(t));
+      if(p.dur)durs.add(p.dur);
+      if(p.bf)hasBf=true;
+      if((p.tags||[]).some(t=>TAG[t]&&TAG[t].cool))hasCool=true;
+    });
+  });
+  const TIME_ORDER=['morning','daytime','evening'], TIME_IC={morning:'i-sun',daytime:'i-clock',evening:'i-music'};
+  const PURPOSE_ORDER=['explore','eat','work','social','recovery'];
+  const DUR_ORDER=['quick','2-3h','half-day','full-day'];
+  const fchip=(cls,attr,val,label,icn)=>'<button class="chip '+cls+'" type="button" '+attr+'="'+val+'" aria-pressed="false">'+(icn?icon(icn)+' ':'')+label+'</button>';
+  const cchip=(key,label,icn)=>'<button class="chip cons" type="button" data-cons="'+key+'" aria-pressed="false">'+icon(icn)+' '+label+'</button>';
+  let html='';
+  const timeChips=TIME_ORDER.filter(t=>times.has(t)).map(t=>fchip('time','data-time',t,TIME_LABEL[t],TIME_IC[t])).join('');
+  if(timeChips)html+='<span class="flabel">Time</span><div class="fgroup times">'+timeChips+'</div><span class="fsep"></span>';
+  const purposeChips=PURPOSE_ORDER.filter(t=>purposes.has(t)).map(t=>fchip('purpose','data-purpose',t,PURPOSE_LABEL[t])).join('');
+  if(purposeChips)html+='<span class="flabel">Purpose</span><div class="fgroup purposes">'+purposeChips+'</div><span class="fsep"></span>';
+  const durChips=DUR_ORDER.filter(t=>durs.has(t)).map(t=>fchip('dur','data-dur',t,DUR_LABEL[t])).join('');
+  if(durChips)html+='<span class="flabel">Duration</span><div class="fgroup durs">'+durChips+'</div><span class="fsep"></span>';
+  let cons='';
+  if(hasBaseCoords)cons+=cchip('nearBase','Near base','i-route');
+  if(hasBf)        cons+=cchip('bf','Budget-friendly','i-wallet');
+  if(hasCool)      cons+=cchip('heatSafe','Heat-safe','i-tree');
+  cons+=cchip('saved','Saved','i-bookmark');
+  cons+=cchip('notDone','Not done','i-check');
+  html+='<span class="flabel">Show</span><div class="fgroup cons-grp">'+cons+'</div>';
+  html+='<button class="fclear" type="button">Clear</button>';
   const bar=document.getElementById('filterbar');
-  bar.innerHTML=
-    '<span class="flabel">Rank</span><div class="fgroup tiers">'+tierChips+'</div>'+
-    '<span class="fsep"></span>'+
-    '<span class="flabel">Time</span><div class="fgroup whens">'+
-      '<button class="chip when" type="button" data-when="morning" aria-pressed="false">'+icon('i-sun')+' Morning</button>'+
-      '<button class="chip when" type="button" data-when="evening" aria-pressed="false">'+icon('i-music')+' Evening</button>'+
-    '</div>'+
-    '<span class="fsep"></span>'+
-    '<span class="flabel">Type</span><div class="fgroup tags">'+tagChips+'</div>'+
-    '<span class="fsep"></span>'+
-    '<button class="chip" type="button" id="fWant" aria-pressed="false">'+icon('i-bookmark')+' Saved</button>'+
-    '<button class="chip" type="button" id="fHideDone" aria-pressed="false">'+icon('i-check')+' Hide done</button>'+
-    '<button class="fclear" type="button">Clear</button>';
+  bar.innerHTML=html;
   bar.addEventListener('click',e=>{
     const t=e.target.closest('.chip,.fclear'); if(!t)return;
-    if(t.classList.contains('fclear')){
-      clearFilters(); return;
-    }else if(t.classList.contains('tier')){
-      F.tier=+t.getAttribute('data-tier');
-      bar.querySelectorAll('.chip.tier').forEach(c=>c.setAttribute('aria-pressed',c===t?'true':'false'));
-    }else if(t.classList.contains('when')){
-      const wv=t.getAttribute('data-when'), on=t.getAttribute('aria-pressed')==='true';
-      t.setAttribute('aria-pressed',on?'false':'true');
-      on?F.when.delete(wv):F.when.add(wv);
-    }else if(t.classList.contains('tag')){
-      const tag=t.getAttribute('data-tag'), on=t.getAttribute('aria-pressed')==='true';
-      t.setAttribute('aria-pressed',on?'false':'true');
-      on?F.tags.delete(tag):F.tags.add(tag);
-    }else if(t.id==='fWant'){F.wantOnly=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.wantOnly?'true':'false');}
-    else if(t.id==='fHideDone'){F.hideDone=t.getAttribute('aria-pressed')!=='true';t.setAttribute('aria-pressed',F.hideDone?'true':'false');}
+    if(t.classList.contains('fclear')){clearFilters(); return;}
+    const on=t.getAttribute('aria-pressed')==='true';
+    t.setAttribute('aria-pressed',on?'false':'true');
+    const now=!on;   // true → just turned ON
+    if(t.classList.contains('time')){const v=t.getAttribute('data-time');now?F.time.add(v):F.time.delete(v);}
+    else if(t.classList.contains('purpose')){const v=t.getAttribute('data-purpose');now?F.purpose.add(v):F.purpose.delete(v);}
+    else if(t.classList.contains('dur')){const v=t.getAttribute('data-dur');now?F.dur.add(v):F.dur.delete(v);}
+    else if(t.classList.contains('cons')){F[t.getAttribute('data-cons')]=now;}
     applyFilters();updateFilterBadge();
   });
 })();

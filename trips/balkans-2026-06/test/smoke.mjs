@@ -164,5 +164,98 @@ bud = document.getElementById('view-budapest');
 const sampleRow = bud.querySelector('.card.row[data-purpose]');
 ok(sampleRow && sampleRow.hasAttribute('data-time') && sampleRow.hasAttribute('data-dur') && sampleRow.hasAttribute('data-bf') && sampleRow.hasAttribute('data-rs'), 'filter data-attributes present on rows');
 
+// 10. §10/§13 — grouped filter engine (Time / Purpose / Duration / Constraints), defect fix, combos, empty-clear, no leak
+nav('#/budapest');
+bud = document.getElementById('view-budapest');
+const bar = document.getElementById('filterbar');
+const fclick = el => el && el.dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
+const cardsOf = v => [...v.querySelectorAll('.card:not(.avoid)')];
+const vis = v => cardsOf(v).filter(c => !c.classList.contains('filtered'));
+const clearF = () => fclick(bar.querySelector('.fclear'));
+
+// filter bar reveal + four-group rebuild (legacy Rank/Type chips dropped per Stage-3 redesign)
+ok(bar.hasAttribute('hidden'), 'filter bar starts hidden');
+fclick(document.getElementById('filterToggle'));
+ok(!bar.hasAttribute('hidden'), 'Filters toggle reveals the bar');
+ok(!bar.querySelector('.chip.tier') && !bar.querySelector('.chip.tag'), 'legacy Rank-tier & Type-tag chips removed');
+ok(bar.querySelector('.chip.time') && bar.querySelector('.chip.purpose') && bar.querySelector('.chip.cons'), 'Time / Purpose / Constraints chip groups present');
+
+// (a) Time filter + the `any`-defect fix: a card with NO data-time must NOT match a time selection
+const morningChip = bar.querySelector('.chip.time[data-time="morning"]');
+ok(morningChip, 'Morning time chip present');
+const noTimeCard = cardsOf(bud).find(c => !(c.getAttribute('data-time') || '').trim());
+ok(noTimeCard, 'precondition: at least one Budapest card has empty data-time');
+fclick(morningChip);
+ok(vis(bud).length > 0 && vis(bud).every(c => (c.getAttribute('data-time') || '').split(' ').includes('morning')), 'Time=Morning: every visible card is tagged morning');
+ok(noTimeCard.classList.contains('filtered'), 'DEFECT FIX: a card lacking data-time is hidden under a time filter (no longer "any"-matched)');
+clearF();
+ok(vis(bud).length === cardsOf(bud).length, 'Clear restores all cards');
+
+// (b) OR within a group: Morning OR Evening
+const eveningChip = bar.querySelector('.chip.time[data-time="evening"]');
+fclick(morningChip);
+if (eveningChip) fclick(eveningChip);
+ok(vis(bud).every(c => { const t = (c.getAttribute('data-time') || '').split(' '); return t.includes('morning') || (eveningChip && t.includes('evening')); }), 'OR within Time group (morning ∪ evening)');
+clearF();
+
+// (c) Purpose filter — a single present purpose leaves a non-empty, correct set
+const purposeChip = bar.querySelector('.chip.purpose');
+const pv = purposeChip.getAttribute('data-purpose');
+fclick(purposeChip);
+ok(vis(bud).length > 0 && vis(bud).every(c => (c.getAttribute('data-purpose') || '').split(' ').includes(pv)), 'Purpose filter: visible cards all carry the selected purpose');
+clearF();
+
+// (d) AND between groups: Time ∩ Purpose (soundness — visible cards satisfy both)
+fclick(morningChip);
+fclick(purposeChip);
+ok(vis(bud).every(c => { const t = (c.getAttribute('data-time') || '').split(' '); const p = (c.getAttribute('data-purpose') || '').split(' '); return t.includes('morning') && p.includes(pv); }), 'AND between groups: visible cards satisfy BOTH Time and Purpose');
+clearF();
+
+// (e) Duration constraint, if any present
+const durChip = bar.querySelector('.chip.dur');
+if (durChip) {
+  const dv = durChip.getAttribute('data-dur');
+  fclick(durChip);
+  ok(vis(bud).every(c => (c.getAttribute('data-dur') || '') === dv), 'Duration filter: visible cards all match the selected duration');
+  clearF();
+}
+
+// (f) Budget-friendly constraint
+const bfChip = bar.querySelector('.chip.cons[data-cons="bf"]');
+if (bfChip) {
+  fclick(bfChip);
+  ok(vis(bud).every(c => c.getAttribute('data-bf') === '1'), 'Budget-friendly: visible cards all have data-bf=1');
+  clearF();
+}
+
+// (g) Saved constraint — ervin-szabo-library was saved in test 8
+nav('#/budapest');
+bud = document.getElementById('view-budapest');
+fclick(bar.querySelector('.chip.cons[data-cons="saved"]'));
+const placesLS = () => JSON.parse(window.localStorage.getItem('balkans:places') || '{}');
+const visSaved = vis(bud);
+ok(visSaved.length >= 1 && visSaved.every(c => (placesLS()[c.getAttribute('data-id')] || {}).w), 'Saved filter: only saved cards visible');
+clearF();
+
+// (h) empty-state + inline clear: Sofia has no saved card → Saved filter guts the view
+nav('#/sofia');
+const sof2 = document.getElementById('view-sofia');
+fclick(bar.querySelector('.chip.cons[data-cons="saved"]'));
+ok(vis(sof2).length === 0, 'Sofia has no saved cards → all filtered');
+const es = sof2.querySelector('.filter-empty');
+ok(es && !es.hidden, 'empty-state appears when a filter guts the view');
+fclick(es.querySelector('.fclear-inline'));
+ok(vis(sof2).length === cardsOf(sof2).length && (!sof2.querySelector('.filter-empty') || sof2.querySelector('.filter-empty').hidden), 'inline Clear restores cards and hides empty-state');
+
+// (i) no cross-destination leak: filtering the active view, then switching + clearing, leaves the new view unfiltered
+nav('#/budapest');
+bud = document.getElementById('view-budapest');
+fclick(morningChip);
+ok(cardsOf(bud).filter(c => c.classList.contains('filtered')).length > 0, 'morning filter hides some Budapest cards');
+nav('#/belgrade');
+const beg2 = document.getElementById('view-belgrade');
+clearF();
+ok(vis(beg2).length === cardsOf(beg2).length, 'after Clear, Belgrade shows all cards (no stuck cross-destination filter)');
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

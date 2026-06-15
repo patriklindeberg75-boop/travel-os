@@ -1,3 +1,93 @@
+# v5 — Dossier v5 upgrade (2026-06-15)
+
+A multi-layer upgrade of the dossier **and** its generation system, from a
+13-point operator spec. Delivered in three staged checkpoints (Stage 1 data
+model + build; Stage 2 renderer; Stage 3 filters + this changelog). All new
+fields are optional and backward-compatible — older dossiers keep working.
+
+### Stage 1 — data model + build (committed earlier)
+- New durable schema all future dossiers inherit: trip-level `meta.tasks[]` (§2)
+  and `meta.critical[]` (§3) replacing the old keyword-derived checklist;
+  per-stop `intro` (§1), plain `temp` (§1), `base{}` (§4), `foodToTry[]` (§8),
+  `resources[]` (§6), `tasks[]` (§2); per-place `time[]` (§7), `purpose[]` (§10),
+  `dur` (§10), `bestTime`, `rs`/`rsNote` (§5), `tips[]` (§9), `pt` on activities.
+- `build.mjs` is the single authority for derived fields: `bf` (budget-friendly)
+  from price/free signals, `rs` by real research completeness (hook + ≥1 fact →
+  `researched`, else `needs`; **never** auto-`verified`), purpose default from
+  `cat`, and all ids. Writes a `research-todo.md` worklist. Validation aborts the
+  build on any malformed authored value — a clean build is the gate.
+- Honest status, not blanket: 39 places resolved to `needs` (real open
+  questions), the rest `researched`, **zero** auto-`verified`. Coordinates are
+  never fabricated — places without them keep name-based Maps links and join
+  `coords-missing.md`.
+
+### Stage 2 — renderer (committed earlier)
+- Rendered every new field: §1 intro + plain temp pill, §2 tasks view + Todoist
+  deep-link, §3 critical checklist, §4 base block with from-base distance
+  estimates (or a directions link when coords are absent), §5 research status
+  badges + a "Research in Claude Code" prompt for `needs` items, §6 per-stop
+  Resources, §7 best-time, §8 food split ("Food to try" dishes vs "Places to
+  eat" venues), §9 richer index rows + Tips. jsdom smoke suite: 52 assertions.
+
+### Stage 3 — grouped filters + the time-filter defect fix (this checkpoint)
+- **Filter bar rebuilt into four groups:** **Time** (Morning / Daytime /
+  Evening), **Purpose** (Explore / Eat / Work / Social / Recovery), **Duration**
+  (Quick / 2–3h / Half-day / Full-day), and **Show** (Near base / Budget-friendly
+  / Heat-safe / Saved / Not done). Semantics: **OR within a group, AND between
+  groups.** A chip only appears when that value actually occurs in the trip data.
+- **Defect fixed (the central Stage-3 reason):** the old engine filtered on the
+  derived single-value `data-when` with `show = (cw==='any' || …)`, so `any`
+  always matched a selected time block — the time filter never excluded anything.
+  The engine now filters on the authored `data-time[]` array and enforces the
+  §10 rule: **a card lacking a group's attribute does NOT match a selection in
+  that group.** Same rule applied uniformly to Purpose, Duration, and the
+  constraints. Verified by a smoke-test assertion that a card with empty
+  `data-time` is hidden under a Morning filter.
+- **Legacy Rank-tier and Type-tag filters dropped.** Purpose subsumes the useful
+  part of Type; Heat-safe (from `cool` tags) is surfaced as a constraint. Cleaner
+  four-group bar instead of five loosely-related rows.
+- **Near base** computes a live straight-line distance at filter time (≤ ~2 km)
+  using the user's current base — so it reflects a base the user adds at runtime;
+  cards without computable distance never match (no false precision).
+- **Empty-state + Clear** preserved and re-tested; active filters stay visible
+  (badge count on the toggle); filtering is scoped to the active stop view (no
+  cross-destination leak).
+- **Smoke suite extended to 72 assertions** (20 new filter-matrix tests: each
+  group, OR/AND combinations, the defect fix, empty-clear, destination-switch).
+- SW cache → `balkans-v5-0`; `site/` bundle re-synced.
+
+### §11 route decision — recommendation (NOT decided here)
+
+The open product question (template §11): should the dossier become **fully
+destination-based** (drop the route/leg scaffolding entirely) or **keep the
+provisional route** as subordinate context? My recommendation, for the operator
+to decide:
+
+- **Recommendation: keep the provisional route, subordinate — do not go fully
+  destination-based.** The renderer already treats `when`/`inLeg`/`outLeg`/`legs`
+  as optional and renders them quietly, so the cost of keeping them is near zero,
+  while the value is real and route-specific:
+  - The **Belgrade → Prizren leg carries a hard border warning** (don't backtrack
+    into Serbia from Kosovo — entry-stamp issue). That safety note only makes
+    sense in a route context; dropping the route would orphan it.
+  - **Two legs are genuinely hard** (Ohrid → Sofia, 7–10+h via Skopje; Belgrade →
+    Prizren, the long overland leg). A flat destination list hides the travel-day
+    reality that should shape how many nights each stop gets.
+  - The v4.5 move already de-dated the trip (night ranges, not a calendar), which
+    captured the operator's "flexible, not a fixed schedule" intent **without**
+    discarding stop order or legs. That is the right altitude — flexible
+    sequence, preserved logistics — and going fully destination-based would
+    overshoot it.
+- **What I'd avoid:** elevating the route back into a day-by-day itinerary (the
+  v4.x direction was explicitly away from that). Keep legs on the Transit view +
+  a subordinate line per stop; don't reintroduce per-day plans.
+- **If the operator does want fully destination-based:** it's cheap to do later —
+  remove `legs`/`when`/`inLeg`/`outLeg` from the data and the renderer already
+  no-ops on their absence. The decision is reversible, so deferring it costs
+  nothing.
+
+---
+
 # v4.5 — Flexible (date-free) itinerary (2026-06-15)
 
 Operator wants a flexible itinerary, not a fixed calendar. Removed all exact
