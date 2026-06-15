@@ -415,6 +415,104 @@ details.ninfo .sec-body{padding:0 0 12px}
 .card.row .rnm{white-space:normal;overflow:visible;text-overflow:clip;min-width:55%}
 /* single-metric summary */
 .chips{grid-template-columns:1fr}
+
+/* ===== v5 (intro · plain temp · tasks · critical · resources · base/distance · research status · food-to-try · richer rows · tips) ===== */
+/* §1 destination intro + plain temperature */
+.intro{font-size:14px;line-height:1.6;color:var(--muted);margin:12px 0 4px}
+.stop-head .tempchip{margin-left:auto;font-size:12.5px;font-weight:600;padding:3px 11px;border-radius:999px;background:var(--surface-2);color:var(--ink);display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.stop-head .tempchip .ic{font-size:13px;color:var(--muted)}
+.ov-temp{flex:none;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--surface-2);color:var(--ink);white-space:nowrap}
+
+/* §4 base + distance */
+.base-block{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:13px 15px;margin:0 0 14px}
+.base-block .bhead{display:flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:6px}
+.base-block .bhead .ic{color:var(--accent);font-size:15px}
+.base-cur{font-size:14px;line-height:1.5;margin:0 0 9px}
+.base-cur .blabel{font-weight:500}
+.base-cur .bkind{font-size:11.5px;color:var(--faint);margin-left:6px}
+.base-none{font-size:13.5px;color:var(--muted);line-height:1.5;margin:0 0 9px}
+.basebtn{font-family:var(--sans);font-size:12.5px;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent);border-radius:999px;padding:7px 13px;min-height:38px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.basebtn.ghost{color:var(--muted);background:var(--surface-2);border-color:var(--line)}
+.baseform{margin-top:10px;display:none}
+.baseform.open{display:block}
+.baseform label{display:block;font-size:11.5px;color:var(--faint);margin:6px 0 3px}
+.baseform input{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:9px 11px}
+.baseform .brow{display:flex;gap:8px;margin-top:10px}
+.baseform .brow button{flex:1;min-height:40px;border-radius:999px;font-family:var(--sans);font-size:12.5px;cursor:pointer;border:1px solid var(--line)}
+.baseform .bsave{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.baseform .bcancel{background:var(--surface-2);color:var(--muted)}
+.baseform .bhint{font-size:11.5px;color:var(--faint);margin-top:8px;line-height:1.4}
+.distchip{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--accent-ink);background:var(--accent-bg);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.distchip .ic{font-size:12px}
+a.distchip{text-decoration:none}
+.distchip.est::after{content:"~"}
+.pgdist{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent);border-radius:999px;padding:6px 12px;min-height:36px;text-decoration:none;margin:2px 0 6px}
+.pgdist .ic{font-size:14px;color:var(--accent)}
+
+/* §5 research status */
+.rs-dot{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;border-radius:999px;padding:1px 8px;letter-spacing:.02em}
+.rs-dot .ic{font-size:11px}
+.rs-needs{color:var(--heat-ink);background:var(--heat-bg)}
+.rs-researched{color:var(--muted);background:var(--surface-2)}
+.rs-verified{color:var(--accent-ink);background:var(--accent-bg)}
+.card.row .rs-dot{font-size:10px;padding:1px 7px}
+.rs-line{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:2px 0 8px}
+.researchbtn{font-family:var(--sans);font-size:12px;color:var(--heat-ink);background:var(--heat-bg);border:1px solid var(--heat);border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.researchbtn .ic{font-size:13px}
+.rs-note{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 8px;border-left:2px solid var(--heat);padding:2px 0 2px 11px}
+
+/* §8 food-to-try */
+.ftry{margin-bottom:8px}
+.ftry .fname{font-weight:600;font-size:14px}
+.ftry .fwhat{font-size:13.5px;color:var(--ink);line-height:1.5}
+.ftry .fhow{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px}
+.ftry-item{padding:10px 0;border-bottom:1px solid var(--line)}
+.ftry-item:last-child{border-bottom:none}
+
+/* §6 resources */
+.res-item{display:block;padding:11px 13px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:7px;text-decoration:none;color:var(--ink)}
+.res-item:active{opacity:.7}
+.res-top{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.res-ttl{font-weight:500;font-size:14px;flex:1}
+.res-type{flex:none;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-bg);border-radius:999px;padding:2px 8px}
+.res-why{font-size:13px;color:var(--muted);line-height:1.45}
+.res-link{font-size:11.5px;color:var(--accent-ink);margin-top:3px;display:inline-flex;align-items:center;gap:5px;word-break:break-all}
+.res-link .ic{font-size:12px;color:var(--accent);flex:none}
+
+/* §2/§3 tasks + critical checklist */
+.cl-lede{font-size:13.5px;color:var(--muted);line-height:1.5;margin:12px 0 4px}
+.task{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 14px;margin-bottom:9px}
+.task.crit{border-left:3px solid var(--danger)}
+.task.is-done{opacity:.6}
+.task-top{display:flex;align-items:flex-start;gap:10px}
+.task-box{flex:none;width:22px;height:22px;border:1.7px solid var(--line-2);border-radius:6px;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;color:transparent;cursor:pointer;background:transparent}
+.task.is-done .task-box{background:var(--accent);border-color:var(--accent);color:#fff}
+.task-ttl{flex:1;font-weight:600;font-size:14.5px;line-height:1.4}
+.task.is-done .task-ttl{text-decoration:line-through;text-decoration-color:var(--faint);color:var(--muted)}
+.task-meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0 32px}
+.task-tag{font-size:10.5px;font-weight:600;letter-spacing:.03em;color:var(--muted);background:var(--surface-2);border-radius:999px;padding:2px 8px}
+.task-tag.due{color:var(--heat-ink);background:var(--heat-bg)}
+.task-how{font-size:13px;color:var(--muted);line-height:1.5;margin:7px 0 0 32px}
+.task-acts{display:flex;flex-wrap:wrap;gap:8px;margin:9px 0 0 32px}
+.tlink,.todoist{font-family:var(--sans);font-size:12px;border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.tlink{color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent)}
+.todoist{color:var(--fr-ink);background:var(--fr-bg);border:1px solid var(--fr)}
+.tlink .ic,.todoist .ic{font-size:13px}
+
+/* §9 richer index rows (secondary line) + detail tips */
+.card.row .rowsub{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:5px 9px;margin-top:3px}
+.card.row .reason{flex-basis:100%;font-size:12.5px;color:var(--muted);line-height:1.4}
+.card.row .rmeta{flex:none;font-size:11px;color:var(--faint);display:inline-flex;align-items:center;gap:3px}
+.card.row .rmeta .ic{font-size:12px}
+.card.row.is-done .rowsub,.card.row.is-skip .rowsub{display:none}
+.tips{margin:10px 0 4px;border-top:1px solid var(--line);padding-top:10px}
+.tips .tips-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.tips .tips-h .ic{color:var(--accent);font-size:14px}
+.tips ul{margin:0;padding:0;list-style:none}
+.tips li{font-size:13.5px;line-height:1.5;color:var(--ink);padding:3px 0 3px 18px;position:relative}
+.tips li::before{content:"";position:absolute;left:3px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.besttime{font-size:13px;color:var(--accent-ink);background:var(--accent-bg);border-radius:var(--r);padding:8px 11px;line-height:1.5;margin:0 0 9px;display:flex;gap:7px;align-items:flex-start}
+.besttime .ic{color:var(--accent);font-size:14px;margin-top:.15em;flex:none}
 </style>
 </head>
 <body>
@@ -442,6 +540,9 @@ details.ninfo .sec-body{padding:0 0 12px}
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4h11l-2.2 3.5L17 11H6"/></symbol>
   <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 4h10v16l-5-3.5L7 20z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M5 19h3l9-9-3-3-9 9z"/><path d="M14 6l3 3"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.1" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.1" fill="currentColor" stroke="none"/></symbol>
 </svg>
 
 <nav class="topnav" id="topnav">
@@ -3848,6 +3949,82 @@ function icon(id){return '<svg class="ic"><use href="#'+id+'"/></svg>';}
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 function kebab(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
 
+/* ===== v5 helpers (base/distance · research status · todoist · time blocks) ===== */
+const TIME_LABEL={morning:'Morning',daytime:'Daytime',evening:'Evening'};
+const DUR_LABEL={quick:'Quick','2-3h':'2–3 hrs','half-day':'Half-day','full-day':'Full-day'};
+const RS_META={
+  needs:{l:'Needs research',cls:'rs-needs',i:'i-alert'},
+  researched:{l:'Researched',cls:'rs-researched',i:'i-check'},
+  verified:{l:'Verified',cls:'rs-verified',i:'i-check'}
+};
+function hasCoords(p){return typeof p.lat==='number'&&typeof p.lng==='number';}
+// §4 — effective base = user-entered (localStorage) wins over authored default.
+function effectiveBase(s){
+  const u=(typeof bases!=='undefined'&&bases[s.id])||null;
+  if(u&&u.label)return u;
+  if(s.base&&s.base.label)return s.base;
+  return null;
+}
+function haversineKm(a,b){
+  const R=6371,toR=x=>x*Math.PI/180;
+  const dLat=toR(b.lat-a.lat),dLng=toR(b.lng-a.lng);
+  const h=Math.sin(dLat/2)**2+Math.cos(toR(a.lat))*Math.cos(toR(b.lat))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+// {km, walkMin} ESTIMATE (straight-line, ~5 km/h) — never a real route — or null.
+function baseDistance(s,p){
+  const b=effectiveBase(s);
+  if(!b||typeof b.lat!=='number'||typeof b.lng!=='number'||!hasCoords(p))return null;
+  const km=haversineKm(b,p);
+  return {km,walkMin:Math.max(1,Math.round(km/5*60))};
+}
+function dirLink(s,p){
+  const b=effectiveBase(s);
+  const dest=hasCoords(p)?(p.lat+','+p.lng):[p.nm,p.neighborhood,p.city].filter(Boolean).join(' ');
+  const origin=b?((typeof b.lat==='number')?(b.lat+','+b.lng):b.label):'';
+  let u='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(dest);
+  if(origin)u+='&origin='+encodeURIComponent(origin);
+  return u;
+}
+// row/detail "from your base" marker — estimate when coords allow, else a directions link, else ''.
+function baseMarker(s,p){
+  const b=effectiveBase(s); if(!b)return '';
+  const d=baseDistance(s,p);
+  const txt=d?(d.km<3?('~'+d.walkMin+' min walk'):('~'+d.km.toFixed(1)+' km')):'from base';
+  return '<a class="distchip" href="'+dirLink(s,p)+'" target="_blank" rel="noopener" aria-label="Directions from your base">'+icon('i-route')+' '+txt+'</a>';
+}
+function rsBadge(p,withLabel){
+  const m=RS_META[p.rs||'needs']; if(!m)return '';
+  return '<span class="rs-dot '+m.cls+'">'+icon(m.i)+(withLabel?' '+m.l:'')+'</span>';
+}
+// Todoist deep-link: web quick-add prefills the title where supported; the click
+// handler also copies the title as a universal fallback. No API integration.
+function todoistUrl(title,note){
+  let u='https://todoist.com/add?content='+encodeURIComponent(title);
+  if(note)u+='&description='+encodeURIComponent(note);
+  return u;
+}
+function researchPrompt(s,p){
+  const lines=['Research this place for my Balkans trip and tell me what I should know before going:','',
+    'Place: '+p.nm,'Where: '+[p.neighborhood,p.city].filter(Boolean).join(', '),'Stop: '+s.name];
+  if(p.rsNote)lines.push('Open question: '+p.rsNote);
+  lines.push('','Confirm current opening hours/days, price, and any booking or seasonal-schedule',
+    'detail. Flag anything time-sensitive to re-check for my exact dates.');
+  return lines.join('\n');
+}
+// §9 — index-row secondary line: one-line reason + time block(s) + duration + from-base distance.
+function rowSub(s,p){
+  const reason=p.hook?firstClause(p.hook):'';
+  const tb=(p.time||[]).map(t=>TIME_LABEL[t]).filter(Boolean).join(' / ');
+  let meta='';
+  if(tb)meta+='<span class="rmeta">'+icon('i-clock')+' '+tb+'</span>';
+  if(p.dur&&DUR_LABEL[p.dur])meta+='<span class="rmeta">'+icon('i-sun')+' '+DUR_LABEL[p.dur]+'</span>';
+  const dist=baseMarker(s,p);
+  const rs=(p.rs==='needs'||p.rs==='verified')?rsBadge(p,false):'';
+  if(!reason&&!meta&&!dist&&!rs)return '';
+  return '<div class="rowsub">'+(reason?'<span class="reason">'+esc(reason)+'</span>':'')+meta+dist+rs+'</div>';
+}
+
 // self-labeling badge tooltips (U-7) — tap a badge to see what it means.
 const TIP={
   cool:'Heat-relief — shade, water or altitude.',
@@ -3898,7 +4075,13 @@ function tagHTML(k){
 function frHTML(){return '<span class="tag fr has-tip" data-tip="'+TIP.fr+'">'+icon('i-star')+' friend rec</span>';}
 function ptHTML(p){return p.pt?'<span class="pt has-tip" data-tip="'+TIP.pt+'">'+'€'.repeat(p.pt)+'</span>':'';}
 function dataAttrs(p){
-  return ' data-id="'+(p.id||'')+'" data-tier="'+(p.t||0)+'" data-when="'+(p.when||'any')+'" data-tags="'+((p.tags||[]).join(' ')+(p.fr?' fr':'')).trim()+'"';
+  return ' data-id="'+(p.id||'')+'" data-tier="'+(p.t||0)+'" data-when="'+(p.when||'any')+'"'+
+    ' data-time="'+((p.time||[]).join(' '))+'"'+
+    ' data-purpose="'+((p.purpose||[]).join(' '))+'"'+
+    ' data-dur="'+(p.dur||'')+'"'+
+    ' data-bf="'+(p.bf?'1':'')+'"'+
+    ' data-rs="'+(p.rs||'')+'"'+
+    ' data-tags="'+((p.tags||[]).join(' ')+(p.fr?' fr':'')).trim()+'"';
 }
 
 /* ===== index rows (11.6 — list rows are a pure index; prose on card page) */
@@ -3913,7 +4096,8 @@ function row(s,p){
     (p.fr?'<span class="rdot fr has-tip" data-tip="'+TIP.fr+'">'+icon('i-star')+'</span>':'')+
     stars(p.t)+ptHTML(p)+
     (area?'<span class="areachip">'+icon('i-pin')+' '+area+'</span>':'')+
-    pin+'</div>';
+    pin+
+    rowSub(s,p)+'</div>';
 }
 function avoidRow(s,p){
   const pin=p.map_link?'<a class="rpin" href="'+p.map_link+'" target="_blank" rel="noopener" aria-label="Open in Google Maps">'+icon('i-pin')+'</a>':'';
@@ -3949,19 +4133,59 @@ function stayHTML(s){
   b+='<button class="bookbtn" type="button" data-book="'+s.id+'" aria-pressed="false">'+icon('i-bed')+' Mark booked</button>';
   return b;
 }
+/* §4 — base + distance block (authored default OR user-entered; user wins) */
+function baseBlockHTML(s){
+  const b=effectiveBase(s);
+  const u=bases[s.id];
+  const isUser=!!(u&&u.label);
+  const uLabel=isUser?esc(u.label).replace(/"/g,'&quot;'):'';
+  const uCoords=(isUser&&typeof u.lat==='number')?(u.lat+', '+u.lng):'';
+  let h='<div class="base-block">';
+  h+='<div class="bhead">'+icon('i-pin')+' Your base in '+esc(s.name)+'</div>';
+  if(b){
+    h+='<p class="base-cur"><span class="blabel">'+esc(b.label)+'</span>'+
+       '<span class="bkind">'+(b.kind==='address'?'address':'area')+(isUser?' · yours':' · suggested')+'</span></p>';
+    h+='<button class="basebtn ghost" type="button" data-baseedit="'+s.id+'">'+icon('i-edit')+' '+(isUser?'Edit base':'Use my own base')+'</button>';
+  }else{
+    h+='<p class="base-none">No base set yet. Add your accommodation area or address to get estimated travel times from your base on every place — you can add it later.</p>';
+    h+='<button class="basebtn" type="button" data-baseedit="'+s.id+'">'+icon('i-pin')+' Add your base</button>';
+  }
+  h+='<div class="baseform" id="baseform-'+s.id+'">'+
+     '<label>Accommodation area or address</label>'+
+     '<input type="text" class="bf-label" value="'+uLabel+'" placeholder="e.g. Palace Quarter, District VIII">'+
+     '<label>Coordinates — optional, for distance estimates (lat, lng)</label>'+
+     '<input type="text" class="bf-coords" value="'+uCoords+'" placeholder="e.g. 47.4895, 19.068">'+
+     '<div class="brow"><button type="button" class="bsave" data-basesave="'+s.id+'">Save base</button>'+
+       (isUser?'<button type="button" class="bcancel" data-baseclear="'+s.id+'">Clear mine</button>'
+              :'<button type="button" class="bcancel" data-basecancel="'+s.id+'">Cancel</button>')+'</div>'+
+     '<p class="bhint">Distances are rough straight-line estimates for orientation — tap a place’s distance for real directions. Without coordinates you still get a directions link.</p>'+
+     '</div>';
+  h+='</div>';
+  return h;
+}
 function renderStop(s){
   let h='<div class="stop">';
-  h+='<div class="stop-head"><h2>'+s.name+'</h2><span class="when">'+s.when+'</span>'+
-     '<span class="heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></div>';
+  // §1 — plain temperature (no commentary); §11 — `when` is optional (route subordinate).
+  h+='<div class="stop-head"><h2>'+s.name+'</h2>'+
+     (s.when?'<span class="when">'+s.when+'</span>':'')+
+     (s.temp?'<span class="tempchip">'+icon('i-temp')+' '+esc(s.temp)+'</span>':'')+'</div>';
+  // §1 — destination introduction
+  if(s.intro)h+='<p class="intro">'+esc(s.intro)+'</p>';
   if(s.photo)h+='<img class="hero" src="'+s.photo+'" alt="" width="740" height="360" loading="lazy">';
 
-  // summary card — author round 2026-06-11: climate chip dropped (the stop-head
-  // pill already says it), "Start here" green box dropped, top-3 strip dropped.
+  // summary card — author round 2026-06-11: climate chip dropped, "Start here" box dropped, top-3 strip dropped.
+  // §11 — In/Out transit line renders only when route legs are present (optional).
   h+='<div class="summary"><div class="chips">'+
-     '<div class="metric"><div class="lab">'+icon('i-wallet')+' Budget</div><div class="val">'+s.budget+'</div></div>'+
+     '<div class="metric"><div class="lab">'+icon('i-wallet')+' Budget</div><div class="val">'+(s.budget||'—')+'</div></div>'+
      '</div>'+
-     '<div class="transit">'+icon('i-bus')+'<div><b style="color:var(--ink);font-weight:500">In:</b> '+s.inLeg+' &nbsp;·&nbsp; <b style="color:var(--ink);font-weight:500">Out:</b> '+s.outLeg+'</div></div>'+
+     ((s.inLeg||s.outLeg)?'<div class="transit">'+icon('i-bus')+'<div>'+
+       (s.inLeg?'<b style="color:var(--ink);font-weight:500">In:</b> '+s.inLeg:'')+
+       (s.inLeg&&s.outLeg?' &nbsp;·&nbsp; ':'')+
+       (s.outLeg?'<b style="color:var(--ink);font-weight:500">Out:</b> '+s.outLeg:'')+
+       '</div></div>':'')+
      '</div>';
+  // §4 — base + distance block
+  h+=baseBlockHTML(s);
 
   // 1 — Activities
   const actGroups=foldGroups(ACT_ORDER,s);
@@ -3978,12 +4202,30 @@ function renderStop(s){
   if(foodN){
     let body=groupsHTML(s,foodGroups);
     if(s.doNote2)body+='<p class="note">'+s.doNote2+'</p>';
-    h+=sectionFix('Food','i-eat',body,false,foodN,'food');
+    h+=sectionFix('Places to eat','i-eat',body,false,foodN,'food');
+  }
+
+  // 2b — Food to try (§8 — dishes, distinct from the venue list above)
+  if(s.foodToTry&&s.foodToTry.length){
+    const body=s.foodToTry.map(f=>'<div class="ftry-item">'+
+      '<div class="fname">'+esc(f.name)+'</div>'+
+      '<div class="fwhat">'+esc(f.what)+'</div>'+
+      (f.how?'<div class="fhow">'+esc(f.how)+'</div>':'')+'</div>').join('');
+    h+=sectionFix('Food to try','i-eat',body,false,s.foodToTry.length,'foodtry');
   }
 
   // 3 — Work cafés
   const wk=allCards(s).filter(p=>inCat(p,'work'));
   if(wk.length)h+=sectionFix('Work cafés','i-coffee','<div class="cards">'+wk.map(p=>row(s,p)).join('')+'</div>',false,wk.length,'work');
+
+  // 3b — Resources (§6 — per-destination deeper reading)
+  if(s.resources&&s.resources.length){
+    const body=s.resources.map(r=>'<a class="res-item" href="'+r.link+'" target="_blank" rel="noopener">'+
+      '<div class="res-top"><span class="res-ttl">'+esc(r.title)+'</span><span class="res-type">'+esc(r.type)+'</span></div>'+
+      '<div class="res-why">'+esc(r.why)+'</div>'+
+      '<span class="res-link">'+icon('i-link')+' '+esc(r.link.replace(/^https?:\/\//,''))+'</span></a>').join('');
+    h+=sectionFix('Resources','i-bookmark',body,false,s.resources.length,'resources');
+  }
 
   // 4 — General information (11.4: Avoid · Getting around · Timing · Money & basics · Where to stay)
   let info='';
@@ -4054,12 +4296,28 @@ function renderCardPage(s,p,isAvoid){
   (p.also||[]).forEach(k=>{if(CATS[k])tags+='<span class="tag">'+icon(CATS[k].i)+' '+CATS[k].s+'</span>';});
   tags+=ptHTML(p);
   h+='<div class="tags">'+tags+'</div>';
+  // §5 — research status (subtle badge) + "Research in Claude Code" affordance for `needs`
+  const rsv=p.rs||'needs';
+  h+='<div class="rs-line">'+rsBadge(p,true)+
+     (rsv==='needs'?'<button class="researchbtn" type="button" data-research="'+slugOf(p,s)+'" data-research-sid="'+s.id+'">'+icon('i-flag')+' Research in Claude Code</button>':'')+
+     '</div>';
+  if(rsv==='needs'&&p.rsNote)h+='<p class="rs-note">'+esc(p.rsNote)+'</p>';
   if(p.photo)h+='<img class="pgphoto" src="'+p.photo+'" alt="" loading="lazy">';
   h+='<p class="hook pg">'+p.hook+'</p>';
+  // §7 — best-time nuance (free text: sunrise, avoid-midday-heat, market days)
+  if(p.bestTime)h+='<div class="besttime">'+icon('i-clock')+'<span>'+esc(p.bestTime)+'</span></div>';
   if(p.facts&&p.facts.length)h+='<div class="facts">'+p.facts.map(x=>'<span>'+icon(x[0])+' '+x[1]+'</span>').join('')+'</div>';
   h+=workMetaHTML(p);
+  // §9 — Tips / "How to enjoy this"
+  if(p.tips&&p.tips.length)h+='<div class="tips"><div class="tips-h">'+icon('i-star')+' How to enjoy this</div><ul>'+p.tips.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></div>';
   const ar=AVOID_REF[p.id];
   if(ar)h+='<a class="warnchip" href="#/'+ar.sid+'/'+ar.slug+'">'+icon('i-alert')+' Tourist-trap counterpart: '+ar.nm+'</a>';
+  // §4 — from-your-base distance (estimate when coords allow, else directions)
+  if(effectiveBase(s)){
+    const d=baseDistance(s,p);
+    const lbl=d?(d.km<3?('~'+d.walkMin+' min walk from your base · directions'):('~'+d.km.toFixed(1)+' km from your base · directions')):'Directions from your base';
+    h+='<a class="pgdist" href="'+dirLink(s,p)+'" target="_blank" rel="noopener">'+icon('i-route')+' '+lbl+'</a>';
+  }
   h+=mapRowHTML(p);
   h+='<div class="acts">'+
     '<button class="act want" type="button" data-act="want" aria-pressed="false">'+icon('i-bookmark')+' Save</button>'+
@@ -4119,7 +4377,7 @@ function renderMapPage(s){
 const SHORT={budapest:'BUD',belgrade:'BEG',prizren:'PRZ',ohrid:'OHR',sofia:'SOF'};
 function shortName(s){return SHORT[s.id]||s.name.slice(0,3).toUpperCase();}
 const STOP_IDS=TRIP.map(s=>s.id);
-const ROUTES=['overview',...STOP_IDS,'transit','checklist'];
+const ROUTES=['overview',...STOP_IDS,'transit','tasks','checklist'];
 
 // localStorage, guarded for file:// / private-mode (degrades to in-memory).
 const LS={
@@ -4166,11 +4424,12 @@ function renderOverview(){
       '<span class="pill warn">'+icon('i-temp')+' Heat-aware</span>'+
     '</div></header>';
   h+='<div class="ov-stops">'+TRIP.map(s=>
-    '<a class="ov-stop" href="#/'+s.id+'"><span class="ov-nm">'+s.name+'</span><span class="ov-when">'+s.when+'</span>'+
-    '<span class="ov-heat '+(s.heat?'flag':'cool')+'">'+s.heatLabel+'</span></a>').join('')+'</div>';
+    '<a class="ov-stop" href="#/'+s.id+'"><span class="ov-nm">'+s.name+'</span><span class="ov-when">'+(s.when||'')+'</span>'+
+    (s.temp?'<span class="ov-temp">'+esc(s.temp)+'</span>':'')+'</a>').join('')+'</div>';
   h+='<div class="ov-links">'+
     '<a href="#/transit">'+icon('i-bus')+' Getting between stops</a>'+
-    '<a href="#/checklist">'+icon('i-check')+' Pre-trip checklist</a></div>';
+    '<a href="#/tasks">'+icon('i-list')+' Tasks &amp; reminders</a>'+
+    '<a href="#/checklist">'+icon('i-check')+' Critical pre-trip checklist</a></div>';
   h+='<div class="ov-tools">'+
     '<button id="btnTheme" type="button">'+icon('i-sun')+' Theme: <span id="themeLab">auto</span></button>'+
     '<button id="btnExport" type="button">'+icon('i-check')+' Export my picks</button></div>';
@@ -4198,36 +4457,45 @@ function renderTransit(){
   return h;
 }
 
-// D11 / U-1 — derive verify + action items from EXISTING copy only (mechanical keyword scan).
 function firstClause(s){s=(s||'').trim();const m=s.match(/^[^.;—]+/);return m?m[0].trim():s;}
-function buildChecklist(){
-  const verify=[], action=[];
-  const actRe=/\b(book|buy|confirm|download|reserve|pre-?book|pre-?purchase)\b/i;
-  const verRe=/€|closed|opening|\bhours\b|\bsunday\b|\bmonday\b|timetable|schedule|seasonal/i;
-  LEGS.forEach(l=>{ if(legNeedsConfirm(l)) verify.push({id:'leg:'+kebab(l.ttl), txt:'Confirm '+l.ttl+(l.spec?' ('+l.spec+')':''), grp:'Transport'}); });
-  TRIP.forEach(s=>{
-    allCards(s).forEach(p=>{
-      const txtsrc=(p.hook||'')+' '+(p.facts||[]).map(f=>f[1]).join(' ');
-      if(actRe.test(txtsrc)) action.push({id:'act:'+p.id, txt:p.nm+' — '+firstClause(p.hook), grp:s.name});
-      if(verRe.test(txtsrc)) verify.push({id:'ver:'+p.id, txt:p.nm+' — verify hours / price', grp:s.name});
-    });
-  });
-  return {verify,action};
+
+/* §2/§3 — authored Tasks + Critical checklist (replaces the old keyword-derived
+   verify/action scan: tasks are now explicit structured data, not text matches). */
+function renderTask(t,isCrit,assocLabel){
+  let h='<div class="task'+(isCrit?' crit':'')+'" data-task="'+t.id+'">';
+  h+='<div class="task-top"><button class="task-box" type="button" data-taskbox="'+t.id+'" aria-pressed="false" aria-label="Mark done">'+icon('i-check')+'</button>'+
+     '<span class="task-ttl">'+esc(t.title)+'</span></div>';
+  let meta='';
+  if(assocLabel)meta+='<span class="task-tag">'+esc(assocLabel)+'</span>';
+  if(t.due)meta+='<span class="task-tag due">'+esc(t.due)+'</span>';
+  if(meta)h+='<div class="task-meta">'+meta+'</div>';
+  if(t.how)h+='<p class="task-how">'+esc(t.how)+'</p>';
+  let acts='';
+  if(t.link)acts+='<a class="tlink" href="'+t.link+'" target="_blank" rel="noopener">'+icon('i-link')+' Open link</a>';
+  acts+='<a class="todoist" href="'+todoistUrl(t.title,t.how)+'" target="_blank" rel="noopener" data-todoist="'+esc(t.title).replace(/"/g,'&quot;')+'">'+icon('i-check')+' Add to Todoist</a>';
+  h+='<div class="task-acts">'+acts+'</div>';
+  return h+'</div>';
 }
-function clGroups(items){
-  if(!items.length)return '<p class="cl-empty">Nothing flagged here.</p>';
-  const by={}; items.forEach(it=>{(by[it.grp]=by[it.grp]||[]).push(it);});
-  return Object.keys(by).map(g=>'<div class="cl-group"><h3>'+g+'</h3>'+
-    by[g].map(it=>'<div class="cl-item" data-vid="'+it.id+'"><span class="box">'+icon('i-check')+'</span><span class="cl-txt">'+it.txt+'</span></div>').join('')+'</div>').join('');
+function renderTasksView(){
+  const items=[];
+  TRIP.forEach(s=>(s.tasks||[]).forEach(t=>items.push({t,assoc:s.name})));
+  (META.tasks||[]).forEach(t=>{const sn=t.stop?((TRIP.find(x=>x.id===t.stop)||{}).name):null;items.push({t,assoc:sn||'Whole trip'});});
+  let h='<div class="stop"><div class="stop-head"><h2>Tasks &amp; reminders</h2></div>';
+  h+='<p class="cl-lede">Practical things to do before and during the trip. Tap the box to mark done (saved on this phone). “Add to Todoist” opens Todoist with the task prefilled and copies the text as a fallback — tasks stay here either way.</p>';
+  if(!items.length)return h+'<p class="cl-empty">No tasks yet.</p></div>';
+  const by={};items.forEach(x=>{(by[x.assoc]=by[x.assoc]||[]).push(x.t);});
+  const order=['Whole trip',...TRIP.map(s=>s.name)];
+  const keys=Object.keys(by).sort((a,b)=>order.indexOf(a)-order.indexOf(b));
+  h+=keys.map(k=>'<div class="cl-group"><h3>'+esc(k)+'</h3>'+by[k].map(t=>renderTask(t,false,null)).join('')+'</div>').join('');
+  return h+'</div>';
 }
-function renderChecklist(){
-  const {verify,action}=buildChecklist();
-  return '<div class="stop"><div class="stop-head"><h2>Pre-trip checklist</h2></div>'+
-    '<p class="hook" style="color:var(--muted);margin:12px 0 0">Tap an item to tick it off — saved on this phone. <b>Verify</b> = facts that drift (hours, prices, bus times). <b>Actions</b> = things to book or buy before you go.</p>'+
-    '<div class="cl-tabs"><button class="cl-tab" type="button" data-cl="verify" aria-pressed="true">Verify · '+verify.length+'</button>'+
-    '<button class="cl-tab" type="button" data-cl="action" aria-pressed="false">Actions · '+action.length+'</button></div>'+
-    '<div class="cl-panel" id="cl-verify">'+clGroups(verify)+'</div>'+
-    '<div class="cl-panel" id="cl-action" hidden>'+clGroups(action)+'</div></div>';
+function renderChecklist(){   // now the CRITICAL pre-trip checklist (§3)
+  const crit=META.critical||[];
+  let h='<div class="stop"><div class="stop-head"><h2>Critical pre-trip checklist</h2></div>';
+  h+='<p class="cl-lede">High-consequence items only — entry rules, insurance, mobile data, money, borders. Tap the box to mark done. These are the things that can derail the trip if missed.</p>';
+  if(!crit.length)return h+'<p class="cl-empty">Nothing flagged.</p></div>';
+  h+=crit.map(c=>renderTask(c,true,null)).join('');
+  return h+'</div>';
 }
 
 /* --- persisted stores (declared before views render — card pages read notes) --- */
@@ -4235,12 +4503,15 @@ const places=LS.get('places',{});          // { id:{w,d,s} }
 const verified=LS.get('verified',{});      // { vid:1 }
 const booked=LS.get('booked',{});          // { stopid:1 }
 const notes=LS.get('notes',{});            // { id:"free text" } (11.6 note field)
+const bases=LS.get('bases',{});            // §4 user base per stop { stopid:{label,kind,lat?,lng?} }
+const tdone=LS.get('tasksdone',{});        // §2/§3 task + critical completion { taskid:1 }
 
 // --- build all views into #app ---
 const app=document.getElementById('app');
 let viewsHTML='<section class="view" id="view-overview" hidden>'+renderOverview()+'</section>';
 TRIP.forEach(s=>{viewsHTML+='<section class="view stopview" id="view-'+s.id+'" data-stop="'+s.id+'" hidden>'+renderStop(s)+'</section>';});
 viewsHTML+='<section class="view" id="view-transit" hidden>'+renderTransit()+'</section>';
+viewsHTML+='<section class="view" id="view-tasks" hidden>'+renderTasksView()+'</section>';
 viewsHTML+='<section class="view" id="view-checklist" hidden>'+renderChecklist()+'</section>';
 viewsHTML+='<section class="view" id="view-card" hidden></section>';
 app.innerHTML=viewsHTML;
@@ -4252,7 +4523,8 @@ const tnMenu=document.getElementById('tnMenu');
 tnMenu.innerHTML=
   '<a href="#/overview">'+icon('i-view')+' Overview &amp; about</a>'+
   '<a href="#/transit">'+icon('i-bus')+' Getting between stops</a>'+
-  '<a href="#/checklist">'+icon('i-check')+' Pre-trip checklist</a>';
+  '<a href="#/tasks">'+icon('i-list')+' Tasks &amp; reminders</a>'+
+  '<a href="#/checklist">'+icon('i-check')+' Critical pre-trip checklist</a>';
 const tnMore=document.getElementById('tnMore');
 function closeMenu(){tnMenu.hidden=true;tnMore.setAttribute('aria-expanded','false');}
 tnMore.addEventListener('click',()=>{const open=tnMenu.hidden;tnMenu.hidden=!open;tnMore.setAttribute('aria-expanded',open?'true':'false');});
@@ -4309,7 +4581,7 @@ function doExport(){
   TRIP.forEach(s=>{
     const picks=allCards(s).map(p=>({p,st:places[p.id]||{}})).filter(x=>x.st.w||x.st.d);
     if(!picks.length)return;
-    lines.push('## '+s.name+' · '+s.when);
+    lines.push('## '+s.name+(s.when?' · '+s.when:''));
     const noteLine=p=>{const n=notes[p.id];if(n)lines.push('     · '+n);};
     picks.filter(x=>x.st.w&&!x.st.d).forEach(x=>{lines.push('  ☆ '+x.p.nm+(x.p.neighborhood?' — '+x.p.neighborhood:''));noteLine(x.p);});
     picks.filter(x=>x.st.d).forEach(x=>{lines.push('  ✓ '+x.p.nm+(x.p.neighborhood?' — '+x.p.neighborhood:''));noteLine(x.p);});
@@ -4348,9 +4620,38 @@ app.addEventListener('click',e=>{
   // booked toggle
   const bk=e.target.closest('.bookbtn');
   if(bk){const sid=bk.getAttribute('data-book');if(booked[sid])delete booked[sid];else booked[sid]=1;LS.set('booked',booked);applyBooked();return;}
-  // checklist tabs
-  const tab=e.target.closest('.cl-tab');
-  if(tab){const which=tab.getAttribute('data-cl'),view=tab.closest('.view');view.querySelectorAll('.cl-tab').forEach(t=>t.setAttribute('aria-pressed',t===tab?'true':'false'));view.querySelector('#cl-verify').hidden=which!=='verify';view.querySelector('#cl-action').hidden=which!=='action';return;}
+  // §4 — base: open/close the edit form
+  const be=e.target.closest('[data-baseedit]');
+  if(be){const f=document.getElementById('baseform-'+be.getAttribute('data-baseedit'));if(f)f.classList.toggle('open');return;}
+  // §4 — base: save (label + optional "lat, lng")
+  const bsv=e.target.closest('[data-basesave]');
+  if(bsv){
+    const sid=bsv.getAttribute('data-basesave'), form=document.getElementById('baseform-'+sid);
+    const label=(form.querySelector('.bf-label').value||'').trim();
+    if(!label){showOff('Enter a base area or address');return;}
+    const b={label,kind:'area'};
+    const m=(form.querySelector('.bf-coords').value||'').match(/(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)/);
+    if(m){b.lat=+m[1];b.lng=+m[2];}
+    bases[sid]=b;LS.set('bases',bases);rerenderStop(sid);showOff('✓ base saved');return;
+  }
+  // §4 — base: clear my base / cancel the form
+  const bcl=e.target.closest('[data-baseclear]');
+  if(bcl){const sid=bcl.getAttribute('data-baseclear');delete bases[sid];LS.set('bases',bases);rerenderStop(sid);showOff('base cleared');return;}
+  const bcn=e.target.closest('[data-basecancel]');
+  if(bcn){const f=document.getElementById('baseform-'+bcn.getAttribute('data-basecancel'));if(f)f.classList.remove('open');return;}
+  // §2/§3 — task / critical completion toggle
+  const tbx=e.target.closest('[data-taskbox]');
+  if(tbx){const id=tbx.getAttribute('data-taskbox');if(tdone[id])delete tdone[id];else tdone[id]=1;LS.set('tasksdone',tdone);applyTasks();return;}
+  // §2/§3 — Add to Todoist: copy the title as a universal fallback, let the link open Todoist prefilled
+  const td=e.target.closest('[data-todoist]');
+  if(td){const t=td.getAttribute('data-todoist')||'';try{if(navigator.clipboard)navigator.clipboard.writeText(t);}catch(_){}showOff('✓ copied — opening Todoist');return;}
+  // §5 — "Research in Claude Code": copy a focused prompt for the open question
+  const rb=e.target.closest('[data-research]');
+  if(rb){
+    const fp=findPlace(rb.getAttribute('data-research-sid'),rb.getAttribute('data-research'));
+    if(fp){const txt=researchPrompt(fp.s,fp.p);try{if(navigator.clipboard)navigator.clipboard.writeText(txt);}catch(_){}showOff('✓ research prompt copied — paste into Claude Code');}
+    return;
+  }
   // theme + export
   if(e.target.closest('#btnTheme')){cycleTheme();return;}
   if(e.target.closest('#btnExport')){doExport();return;}
@@ -4385,14 +4686,36 @@ app.addEventListener('input',e=>{
 /* --- section open/closed memory (semantic data-sec keys, both levels) --- */
 const secState=LS.get('sections',{});      // { 'stopid:sec': bool }
 let modeDriving=false;                       // true while a mode preset drives section state (don't persist those)
-document.querySelectorAll('.stopview').forEach(view=>{
+// bindSections is re-callable (rerenderStop replaces a view's DOM) — the __secbound
+// flag stops a re-render from stacking duplicate toggle listeners.
+function bindSections(view){
   const sid=view.getAttribute('data-stop');
   view.querySelectorAll('details[data-sec]').forEach(d=>{
     const k=sid+':'+d.getAttribute('data-sec'); d.setAttribute('data-sk',k);
     if(k in secState)d.open=secState[k];
-    d.addEventListener('toggle',()=>{if(modeDriving)return;secState[k]=d.open;LS.set('sections',secState);});
+    if(!d.__secbound){d.__secbound=1;d.addEventListener('toggle',()=>{if(modeDriving)return;secState[k]=d.open;LS.set('sections',secState);});}
   });
-});
+}
+document.querySelectorAll('.stopview').forEach(bindSections);
+
+/* §2/§3 — apply task/critical completion state */
+function applyTasks(scope){
+  (scope||document).querySelectorAll('.task[data-task]').forEach(el=>{
+    const on=!!tdone[el.getAttribute('data-task')];
+    el.classList.toggle('is-done',on);
+    const box=el.querySelector('.task-box'); if(box)box.setAttribute('aria-pressed',on?'true':'false');
+  });
+}
+/* §4 — re-render a stop view in place (after base add/edit/clear changes its distances) */
+function rerenderStop(sid){
+  const view=document.getElementById('view-'+sid), s=TRIP.find(x=>x.id===sid);
+  if(!view||!s)return;
+  view.innerHTML=renderStop(s);
+  view.querySelectorAll('.card[data-id]').forEach(applyPlace);
+  bindSections(view);
+  applyTasks(view);
+  reflow(view); applySections(); applyFilters();
+}
 
 /* --- tag / tier / time (+ saved / hide-done) filters, scoped to the active stop view --- */
 const F={tags:new Set(),tier:0,wantOnly:false,hideDone:false,when:new Set()};
@@ -4542,6 +4865,7 @@ document.querySelectorAll('#app .card[data-id]').forEach(applyPlace);
 reflow(document);
 applyVerified();
 applyBooked();
+applyTasks();
 applyTheme(LS.get('theme','auto'));
 
 /* ===== router (top-level routes + #/{stop}/{card-slug} card pages) ===== */
