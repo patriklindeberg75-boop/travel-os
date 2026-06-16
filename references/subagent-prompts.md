@@ -42,6 +42,17 @@ Hard filters on your recommendations:
 - Inspiration sources (Instagram / TikTok / viral photos) may generate
   candidates but never justify keeping one — back every keep with a candid or
   local source (Reddit, local blog, resident rec).
+- Reality-check before keeping: a place should show normal-case signals, not
+  just one polished photo — a real review count, recent and bad-weather photos
+  (not only the hero shot), local-language reviews, and a nearby café / shop /
+  bus stop showing it is reachable and alive. A place backed only by a single
+  striking image is a candidate, not a keep: mark it low-confidence and name
+  what you could not verify (this drives the "needs research" status), rather
+  than dropping it.
+- For a place sold mainly by one striking image, name what made that photo work
+  (season, fog, drone height, no crowds, editing). If the experience depends on
+  a condition you cannot confirm holds for the trip dates, flag it low-confidence
+  — do not present it as a sure thing.
 - If you cannot find {N} items with real evidence, return fewer and say so.
   Do not pad the list.
 

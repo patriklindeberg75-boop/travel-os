@@ -5,7 +5,7 @@ created: 2026-06-16
 maintainer: Patrik
 source: outputs/idea-consolidation-pass.md
 scope: "Phase-1 research layer only (pre-trip dossier workflow). In-trip (Phase 2) and post-trip (Phase 3) ideas are parked, not planned."
-status: "Approved plan. Awaiting a build session to apply Changes A–E."
+status: "Changes A–E implemented 2026-06-16 (commit 48d98b7). Change F (Maps/photo reality-check) added and implemented 2026-06-16 S1 — see Part 2. Dry-run validation pending the next real trip."
 ---
 
 # Phase-1 Research Workflow — Idea Triage & Implementation Plan
@@ -137,8 +137,39 @@ hidden-condition discipline across all curation passes at once.
 - Routes cleanly into the existing `rs: needs` + `rsNote` mechanism and the `research-todo.md`
   worklist `build.mjs` already generates. No new field, no `build.mjs` change.
 
+### Change F — Maps/photo reality-check (#8 + #9, pre-trip half)
+**Added 2026-06-16 S1**, after a post-implementation review flagged that the original
+triage parked ideas #8 (Maps as reality-check) and #9 (reverse-engineer the photo)
+*wholesale* to Phase 2, even though — by the same pre-trip/in-trip split applied to crowd
+arbitrage (#13) — both have a pre-trip half that belongs in the research layer.
+
+**File:** `references/subagent-prompts.md` → the **"Anti-tourist guardrail"** boilerplate block,
+inserted after the inspiration-source bullet (Change A's territory).
+
+Two bullets added:
+1. **Reality-check before keeping** — a kept place must show normal-case signals (a real
+   review count, recent/bad-weather photos not just the hero shot, local-language reviews, a
+   nearby café/shop/bus showing it is reachable and alive), not just one polished photo. A
+   place backed only by a single striking image is a *candidate, not a keep*: mark it
+   low-confidence and name what could not be verified — routing into the existing
+   `rs:needs` / `rsNote` "needs research" status — **rather than dropping it.**
+2. **Deconstruct the photo** — for a place sold by one striking image, name what made the
+   photo work (season, fog, drone height, no crowds, editing); if the experience depends on
+   an unconfirmable condition for the trip dates, flag it low-confidence.
+
+**Mode-1 reconciliation (the load-bearing scope decision):** this is *candidate-discipline
+reasoning the research subagent applies from its own sources* — NOT live Google Maps
+integration, which the orchestrator does not have (the reason #8/#9 were parked). The
+hands-on "Maps detective on the ground" half stays parked for Phase 2. **Soft-flag, not
+drop** (unlike Change A's hard prune) — deliberately, to avoid compounding Change A's logged
+over-pruning watch-item.
+
+**Zero schema change:** routes into the existing `rs`/`rsNote` surface; no new
+`dossier-data.json` field, no `build.mjs` change. **Propagation:** lands in the shared
+guardrail, so it reaches all five list passes (2a, 2b, 3, 4, 5a).
+
 ### Files touched
-- `references/subagent-prompts.md` — Changes A, B, C-part, D, E (five edits to existing blocks).
+- `references/subagent-prompts.md` — Changes A, B, C-part, D, E, **F** (six edits to existing blocks).
 - `references/dossier-workflow.md` — Change C-part (Step 11 `intro` bullet, ≈line 357).
 - **Not touched:** `dossier-template.md` schema, `build.mjs`, the command shell, the agent body.
 
