@@ -644,3 +644,38 @@ None. Two new files written into outputs/ and committed (not pushed); no referen
 
 ### Open Questions
 - None blocking.
+
+## 2026-06-16 — Session S1
+
+**Mandate:** Apply the 5 prompt/synthesis edits (Changes A–E) from outputs/research-layer-implementation-plan.md to the two dossier reference files, extending existing prompt blocks with zero new schema fields — done when: all five changes applied at their verified blocks, zero-schema-change invariant confirmed, committed.
+- Out of scope: dossier-data.json schema or build.mjs changes; in-trip/post-trip ideas; build/dry-run; the four Albania-trip carryover items
+- Files in scope: references/subagent-prompts.md, references/dossier-workflow.md
+- Stop if: (none stated)
+
+Auto mode: Apply Changes A–E from outputs/research-layer-implementation-plan.md to references/subagent-prompts.md (A, B, C-part1, D, E) and references/dossier-workflow.md (C-part2). Five prompt/synthesis edits, zero schema changes.
+
+### Summary
+Applied the five approved Phase-1 research-layer changes (A–E) from `outputs/research-layer-implementation-plan.md` to the two dossier reference files. Ran in auto mode off /prime menu item #1 (carryover from the prior plan session). All edits extend existing prompt/synthesis blocks — zero new `dossier-data.json` schema fields, no `build.mjs` change. Verified all six cited blocks against the live files before editing and confirmed the zero-schema-change invariant. Committed as `48d98b7` (not pushed).
+
+### Files Created
+- `logs/session-plan-2026-06-16-S1.md` — session plan for the auto-mode change application.
+- `logs/scratchpads/2026-06-16-22-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `references/subagent-prompts.md` — Changes A (anti-tourist guardrail: hidden-condition rule + inspiration-never-decides), B (Prompt 3 experience framing + search phrasing), C-part1 (Prompt 2a/2b destination-thesis line), D (Best time crowd-mitigation window), E (Unverified permission/access flag).
+- `references/dossier-workflow.md` — Change C-part2 (Step 11 intro bullet opens each stop's `intro` with the 2–4 point thesis).
+
+### Decisions Made
+- No new analytical decisions — this session executed the already-approved, already-QC'd plan from 2026-06-16. One judgment call: skipped the context-engine pre-step in auto mode because the implementation plan is itself a precise file-level spec.
+
+### Risky actions
+None. Two reference files edited (text-only, reversible via git), committed not pushed. No schema/build changes, no external publishing, no structural change classes touched.
+
+### Next Steps
+- Research-layer plan is now fully implemented — no build session remains. Next real-trip dossier run is the dry-run validation.
+- Watch-item: Change A's "drop the place" instruction could thin long lists; if so, soften to "flag as low-confidence" (see scratchpad).
+- Still-open Albania/Balkans carryover (untouched this session): §11 route decision; pre-travel Perplexity timetable check (Veli Bej / Cogwheel / Children's Railway); optional trip-context date scrub; optional Budapest hero-pick coordinates.
+- Unbuilt: `/daily-program` in-trip workflow spec (Phase 2) at `outputs/daily-program-workflow-spec.md`.
+
+### Open Questions
+- None blocking.
