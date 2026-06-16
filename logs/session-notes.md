@@ -679,3 +679,32 @@ None. Two reference files edited (text-only, reversible via git), committed not 
 
 ### Open Questions
 - None blocking.
+
+## 2026-06-16 — Session S2 — Change F (Maps/photo reality-check) added to research layer
+
+### Summary
+Added Change F to the Phase-1 dossier research layer: the pre-trip half of previously-parked ideas #8 (Maps reality-check) and #9 (reverse-engineer the photo). Ran the full `/clarify` → `/decide` → implement chain in one session. Two bullets added to the shared anti-tourist guardrail in `references/subagent-prompts.md` (reaches all five list passes); Change F spec appended to the implementation plan and its stale "awaiting build" status flipped to implemented. Committed as `0025a31` (not pushed). Distinct second session today — `/prime` ran but never reached task-selection, so the S1 marker was not incremented; this note is filed under a manual S2 header.
+
+### Files Created
+- `logs/scratchpads/2026-06-16-22-28-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `references/subagent-prompts.md` — Change F: two bullets in the anti-tourist guardrail boilerplate (reality-check before keeping; deconstruct the inspiration photo), inserted after the inspiration-source bullet.
+- `outputs/research-layer-implementation-plan.md` — Change F spec appended to Part 2; `Files touched` updated to six edits; frontmatter status flipped to implemented.
+
+### Decisions Made
+- **Mode-1 reconciliation (load-bearing):** Change F is candidate-discipline reasoning the research subagent applies from its own sources — NOT live Maps integration. The hands-on "Maps detective on the ground" half stays parked for Phase 2. Caught by the `/decide` QC subagent, which flagged the first framing as contradicting the plan's own no-Maps parking rationale (plan:60-61).
+- **Soft-flag, not drop:** a failed reality-check routes to `rs:needs`/`rsNote` low-confidence rather than dropping the place — deliberately, to avoid compounding Change A's logged over-pruning watch-item.
+- **Placement:** shared guardrail (not the per-place-fields block) so it propagates to all five list passes; verified embedding at subagent-prompts.md:202,257,316,371,415.
+- Five `/clarify` questions settled autonomously via `/decide` (Decided 5 · paused 0).
+
+### Risky actions
+None. Two reference/plan files edited (text-only, reversible via git), committed not pushed. No schema/build change, no structural change class touched, no external publishing.
+
+### Next Steps
+- Dry-run validation of Changes A–F on the next real-trip dossier run is the only remaining research-layer work. Watch: Change F is soft-flag, so it should not thin long lists (unlike Change A's hard-drop).
+- Still-open Albania/Balkans carryover (untouched): §11 route decision; pre-travel Perplexity timetable check (Veli Bej / Cogwheel / Children's Railway); optional trip-context date scrub; optional Budapest hero-pick coordinates.
+- Unbuilt: `/daily-program` in-trip workflow spec (Phase 2) at `outputs/daily-program-workflow-spec.md`; and the review → profile/principles feedback wiring (Phase 3, not yet designed) — the biggest system-wide gap.
+
+### Open Questions
+- None blocking.
