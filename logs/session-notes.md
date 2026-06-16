@@ -616,3 +616,31 @@ None. Content/code edits to operator-owned dossier files within one trip; build 
 
 ### Open Questions
 - §11 route direction (keep-provisional vs destination-based) — recommendation given, operator's call.
+
+## 2026-06-16 — Phase-1 research-layer idea triage + implementation plan
+
+### Summary
+Took the operator's consolidated travel-improvement ideas (`outputs/idea-consolidation-pass.md`, ~42 ideas already deduped) and produced a build-ready implementation plan for the Phase-1 pre-trip research workflow. Ran `/clarify` to lock scope (Phase-1 only; plan document, not build; independent re-triage), then triaged all 14 research-plausible ideas and specified the file-level changes. Plan only — no reference files edited this session. QC'd twice (plan-mode plan file, then the written deliverable); the deliverable QC caught a count error (said "6 ideas" where the table had 7 IMPLEMENT verdicts) which was fixed. Net plan: 7 ideas → 5 prompt/synthesis edits (Changes A–E) across `references/subagent-prompts.md` + `references/dossier-workflow.md`, zero new dossier-data.json schema fields.
+
+### Files Created
+- `outputs/research-layer-implementation-plan.md` — the deliverable: triage table + file-level change spec (A–E) + risk/parked register + build sequencing.
+- `outputs/idea-consolidation-pass.md` — the operator-pasted source consolidation, saved verbatim (paste mojibake normalized) so the plan's provenance reference resolves.
+- `logs/scratchpads/2026-06-16-21-58-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- None (reference files deliberately untouched — plan-only session).
+
+### Decisions Made
+- Scope (operator, via /clarify + AskUserQuestion): Phase-1 research layer only; in-trip/post-trip ideas parked. Deliverable is a plan document, not a build. Triage done independently against the repo, free to override the consolidation's keep/cut.
+- Triage outcome (analytical): 7 IMPLEMENT (#2 hidden-condition, #3+#5 experience framing, #4 destination thesis, #7 inspiration-never-decides rule-only, #13 crowd-mitigation timing pre-trip half, #14 access/permission gap); 3 SKIP (#1 scenes overbuild, #10 recipe + #11 three-versions collide with menu-not-schedule/mobile, #6 local-language already built); 4 PARK (#8 Maps, #9 photo, #13 in-trip half → Phase 2; #12 pattern library → Phase 3).
+- QC fix: net-set count corrected 6 → 7 ideas in the deliverable (commit amended).
+
+### Risky actions
+None. Two new files written into outputs/ and committed (not pushed); no reference-file edits, no schema/build changes, no external publishing.
+
+### Next Steps
+- Build session: apply Changes A–E from `outputs/research-layer-implementation-plan.md` (Tier 1 = A,B,D,E text edits to subagent-prompts.md; Tier 2 = C in dossier-workflow.md). Verify cited blocks against live files first.
+- Carryover (still open from 2026-06-15): §11 route decision; pre-travel Perplexity timetable check (Veli Bej / Cogwheel / Children's Railway); optional trip-context date scrub; optional coordinates for new Budapest hero picks.
+
+### Open Questions
+- None blocking.
