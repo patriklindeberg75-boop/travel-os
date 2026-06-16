@@ -35,7 +35,13 @@ Hard filters on your recommendations:
   translate findings.
 - Avoid: Lonely Planet top-10s, Time Out lists, "best of {destination}" listicles,
   TripAdvisor top results without a counter-signal.
-- For every place you include, name the specific signal that made you keep it.
+- For every place you include, name the specific signal that made you keep it,
+  AND name the one condition that must be true for it to be worth it (right
+  season, market day, clear morning, last bus exists). If you cannot name that
+  condition, drop the place — it is too vague to keep.
+- Inspiration sources (Instagram / TikTok / viral photos) may generate
+  candidates but never justify keeping one — back every keep with a candid or
+  local source (Reddit, local blog, resident rec).
 - If you cannot find {N} items with real evidence, return fewer and say so.
   Do not pad the list.
 
@@ -55,7 +61,9 @@ companion can render a fact line. Substitute this block where a prompt reference
 ```
 For EACH item, also give me these fields on labelled lines (write
 "unknown" for any you genuinely cannot establish — do not guess):
-- Best time: best time of day / day of week to go (note any heat-smart window)
+- Best time: best time of day / day of week to go (note any heat-smart window),
+  INCLUDING any crowd-mitigation window (arrive before X, overnight vs day-trip,
+  shoulder hour) — timing that lets a good-but-known place still feel uncrowded
 - Time blocks: which of morning / daytime / evening this is good for (one or
   more, comma-separated — e.g. "morning, daytime"). Base it on when the place is
   actually good, not on the wording above.
@@ -69,9 +77,11 @@ For EACH item, also give me these fields on labelled lines (write
 - Tips: 1–3 short practical "how to enjoy this" notes that materially improve the
   visit (not generic travel filler) — or "none".
 - Unverified: name any fact here that is time-sensitive and should be re-checked
-  for the exact trip dates (timetable, seasonal session, renovation, closure) —
-  or "none". (This drives the research-status field: anything listed here keeps
-  the place at "needs research" until verified.)
+  for the exact trip dates (timetable, seasonal session, renovation, closure).
+  Also flag if the place needs a permission / booking / permit to enter, or if
+  the access route is non-obvious or seasonal (road closed, trail conditions,
+  gated) — or "none". (This drives the research-status field: anything listed
+  here keeps the place at "needs research" until verified.)
 
 Do not fabricate hours, prices, or coordinates. "unknown" is an acceptable and
 useful answer; a made-up number is not.
@@ -183,6 +193,10 @@ base or main hangout zones. For each:
 - Work-fit verdict: WiFi reliability for remote work, daytime cafe density
   (can I find a cafe with reliable WiFi to work 3–4 hours?), quiet-vs-buzz
 
+Also give me a 2–4 point "thesis" for {destination} as a whole — the handful of
+things this place is really about (e.g. thermal baths + imperial capital + river
+life + local neighborhoods) — so I can judge which neighborhoods deliver which.
+
 I will narrow this list to a short list after seeing all options.
 
 {anti_tourist_guardrail with section_name = "neighborhoods list"}
@@ -234,6 +248,10 @@ afterwards. Just give me the menu of options to choose from. For each place:
 - Rough location / region, and which other candidates it is near (so I can
   sequence them sensibly later)
 
+Also give me a 2–4 point "thesis" for {destination} as a whole — the handful of
+things this place is really about (e.g. mountains + Ottoman old towns + lake life
++ overland border culture) — so I can judge which stops deliver which.
+
 Places that are mass-tourism hubs without a counter-signal will be deprioritized.
 
 {anti_tourist_guardrail with section_name = "candidate places list"}
@@ -268,9 +286,13 @@ Profile (drives selection):
 Principles:
 {principles_extract}
 
-Task: Give me 15–20 hidden-gem activities in {destination}, scoped to the
-areas listed above. By "hidden gem" I mean: not the top tourist experiences,
-but specific places or experiences locals or repeat visitors recommend. Include:
+Task: Give me the 15–20 best lived experiences {destination} supports under my
+constraints (solo, working {work_load}h/week, anti-tourist), scoped to the areas
+listed above — not a list of attractions. By "hidden gem" I mean: not the top
+tourist experiences, but specific places or experiences locals or repeat visitors
+recommend. Search phrasings like "most memorable experiences in {destination}",
+"what locals do in {destination}", "spots/villages locals prefer" surface better
+candidates than "things to do in {destination}". Include:
 - A few that fit a 2–3 hour midday window (around my work schedule)
 - A few that fit evening or weekend slots
 - At least one meaningfully tied to {theme}
