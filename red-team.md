@@ -40,6 +40,12 @@ Add entries as you use the system. Review before major workflow changes.
 
 <!-- Weaknesses in the research prompts, tool assignments, or handoff mechanics -->
 
+### Pass 4 (Food) conflates "what to eat" with "where to eat" in one prompt
+- **Observation:** The Pass 4 food prompt asks for the venue list (restaurants/cafes) and the "FOOD TO TRY" dishes list in a single call. The dishes are returned as a side-section of a venue search, so the venue search isn't actually targeting the specific dishes the traveler wants.
+- **Failure mode:** Venue results are generic ("good local restaurants") rather than "where to eat the specific dishes worth trying." The natural order is inverted — you have to know the cuisine before you can sensibly pick where to eat it.
+- **Severity:** medium
+- **Fix hint:** Split Pass 4 into two sub-steps. Pass 4a = dishes/drinks discovery only ("what Bulgarian food exists, by region + season"), operator marks priorities; Pass 4b = venue search that takes the prioritized dishes as its targeting list ("where to eat X, Y, Z"). Surfaced live during the bulgaria-2026-06 dossier run (2026-06-17); handled inline that session by reordering, but the workflow reference (`references/subagent-prompts.md` Pass 4 + `references/dossier-workflow.md`) still defines the single-prompt version and should be updated.
+
 ### No research hierarchy — all eight prompts are parallel and independent
 - **Observation:** All eight section prompts (neighborhoods, accommodation, activities, food, traps, mobility, timing, music) are presented simultaneously. None depends on another's output.
 - **Failure mode:** For multi-stop trips, food/activity/mobility recommendations cannot be grounded in chosen route stops because those stops are never selected before research begins. For single-base trips it works; for country tours it does not.
