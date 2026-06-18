@@ -763,3 +763,42 @@ Feedback collection (wrap Step 6.5) did not complete — the session-feedback-co
 
 ### Open Questions
 - Pass 4b: target a Sofia tripe-soup (shkembe chorba / offal) venue, or skip it? Operator hasn't answered.
+
+## 2026-06-18 — Bulgaria dossier completed (Passes 4b–5 + synthesis)
+
+### Summary
+Resumed the Bulgaria dossier from `/prime` and drove it to completion. Processed the operator's new trip notes (Sofia sights, food items, Plovdiv, Koprivshtitsa), ran Pass 4b (food venues — 14 keeps), Pass 5 (mobility + practical logistics; 5a tourist-trap pass skipped), and synthesized the full 8-section `destination-dossier.md`. Koprivshtitsa was added as a journey-break then parked after the rail research proved a same-day stopover impossible. Also logged a new workflow gap: there is no dossier-readiness QC gate.
+
+### Files Created
+- `trips/bulgaria-2026-06/destination-dossier.md` — full 8-section dossier (EUR throughout; Koprivshtitsa/Ednorog dropped).
+- `trips/bulgaria-2026-06/dossier-data.json` — structured data companion (id/map_link fields pending a `build.mjs` run).
+- `trips/bulgaria-2026-06/dossier/pass-4-state.md` — food venue triage (14 keep, 1 cut).
+- `trips/bulgaria-2026-06/dossier/pass-5-state.md` — practicalities state (5a skipped).
+- `logs/scratchpads/2026-06-18-11-48-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/bulgaria-2026-06/trip-context.md` — Koprivshtitsa added then removed; "Parked for a future trip" rationale note added.
+- `trips/bulgaria-2026-06/dossier/pass-3-state.md` — Sofia culture cluster (Banya Bashi Mosque + Serdica) added; Koprivshtitsa marked DROPPED.
+- `trips/bulgaria-2026-06/dossier/pass-4a-dishes.md` — byurek fold-in note.
+- `red-team.md` — Phase 4 finding: missing dossier-readiness QC gate.
+- `logs/dossier-runs.md` — run record appended by the orchestrator.
+
+### Decisions Made
+- **Koprivshtitsa + Plovdiv parked** for a future central-Bulgaria trip — rail geography (Sub-Balkan vs southern mainline) made a journey-break impossible; an overnight would have cost a Bansko hiking day. Operator-directed.
+- **Sofia culture cluster** (Banya Bashi Mosque + Ancient Serdica complex) added to the Sofia stop.
+- **Tripe soup (shkembe chorba) included** in the food search (operator eats offal) → Sofia venue Shkembedzhiinitsa.
+- **Pass 5a (tourist-trap pass) skipped** by operator — anti-resort guardrail already baked into the Bansko food keeps + always-on anti-tourist filter.
+- **Currency:** dossier uses EUR throughout (Bulgaria adopted the euro 2026-01-01); cash-heavy reality preserved.
+- **Logged dossier-readiness QC gap** to red-team.md (Phase 4) at operator request.
+
+### Risky actions
+None. All writes were new/updated trip artifacts + a red-team log entry; five commits made, none pushed. No structural change class touched; no external publishing.
+
+### Next Steps
+- Verify the 3 places carried in the dossier as needs-verification: Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location.
+- Book Panichishte accommodation (flagged critical — mountain base sells out).
+- Optional: run the generic `/qc-pass` on the dossier as an interim readiness check (offered; operator hasn't decided).
+- Build session: develop the dossier-readiness QC gate (red-team Phase 4) and split Pass 4 into 4a/4b in the workflow reference files (red-team Phase 3).
+
+### Open Questions
+None — tripe-soup and Koprivshtitsa both resolved this session.
