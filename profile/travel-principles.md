@@ -138,15 +138,15 @@ Travel exists to produce experiences and memories that wouldn't be possible at h
 
 ## 4. Anti-overtourism & authenticity
 
-Travel value is destroyed by mass tourism — crowds, queues, generic infrastructure, the experience of being one of thousands.
+Travel value is destroyed by *tourist traps* — overcrowded, overpriced, obligatory-icon places where the crowd itself is the experience and only tourists are there. Popular places that genuinely hold up (locals value them too, or they're worth it with the right timing) are **not** the enemy. The thing to avoid is the "Eiffel Tower tier": the go-only-for-the-photo, tick-the-box mega-icon. "Famous" alone is never the disqualifier — the test is *"does the crowd ruin it, and does anyone but tourists value it."*
 
-### 4.1 — Filter destinations and neighborhoods against overtourism
+### 4.1 — Default to the local and off-beat; route around traps, not fame
 
-**Statement:** Default toward the local and off-beat. Heavily-touristed destinations and neighborhoods are filtered out unless §4.3 applies.
+**Statement:** Default toward the local and off-beat, and prefer less-touristed bases and neighborhoods. But "heavily-touristed" is **not** an automatic filter — a popular destination or area stays in when it genuinely holds up (§5: Lisbon, Bali, Chiang Mai, Cusco are on the table). Filter the tourist-trap tier, not everything famous.
 
-**Rationale:** Mass tourism degrades every dimension that matters — authenticity, social density (locals vs. tour groups), pace, value-for-money. The point of travel is to see how people actually live.
+**Rationale:** Mass tourism degrades the dimensions that matter — authenticity, social density (locals vs. tour groups), pace, value-for-money — but only when it tips into the trap tier. Plenty of popular places stay genuine. The point of travel is to see how people actually live, which a worthwhile-popular place can still deliver.
 
-**Application rule:** Trip-selection workflows score destinations on tourist density and filter out heavily-touristed ones. Dossier workflows score *neighborhoods within destinations* on tourist density and route accommodation/activity recommendations toward less-touristed neighborhoods. The "tourist trap warning list" output (Project Plan, Phase 1) is the operational expression of this principle.
+**Application rule:** Trip-selection workflows score destinations on tourist density as one input (not a hard gate) and lean toward less-touristed options. Dossier workflows score *neighborhoods within destinations* on tourist density and route accommodation/activity recommendations toward less-touristed neighborhoods. Individual attractions are kept or cut on the trap test (crowd-ruins-it / only-tourists-value-it), not on fame. The "tourist trap warning list" output (Project Plan, Phase 1) is the operational expression of this principle.
 
 ---
 
@@ -160,13 +160,13 @@ Travel value is destroyed by mass tourism — crowds, queues, generic infrastruc
 
 ---
 
-### 4.3 — Iconic-experience exception
+### 4.3 — Popular-and-worthwhile is fine; decline the obligatory mega-icon
 
-**Statement:** A heavily-touristed *activity* (not destination) is acceptable if (a) it's genuinely location-unique, (b) the trip's base is non-touristic, and (c) it's timed to avoid peak crowds.
+**Statement:** A popular or even iconic place is acceptable when the experience genuinely holds up — locals or repeat visitors still value it, OR it's worth it despite the crowds with the right timing. Decline the "Eiffel Tower tier": the overcrowded, overpriced, go-only-for-the-photo mega-icon you visit only to tick a box.
 
-**Rationale:** Some location-bound unique experiences are tourist-heavy by definition (the Inca Trail, Angkor Wat, a major ruin or natural wonder). Skipping them on principle costs experience-quality.
+**Rationale:** Some genuinely-unique experiences are tourist-heavy by definition (the Inca Trail, Angkor Wat, a major ruin or natural wonder) and skipping them on principle costs experience-quality. But fame cuts both ways: an obligatory icon where the crowd is the whole scene and nobody but tourists is there delivers nothing. The deciding question is not "is it famous" but "does the crowd ruin it, and does anyone but tourists value it."
 
-**Application rule:** When evaluating an iconic site, the system tests: is this the kind of unique experience that justifies the crowd cost? If yes, plan with crowd-mitigation (sunrise visits, off-season, side entrances, less-trafficked routes within the site). If it's iconic-but-generic (the main square at noon, a Michelin-listed restaurant in a tourist district), default-decline.
+**Application rule:** When evaluating a popular or iconic site, the system applies the trap test: does it hold up despite the crowds (locals present, real quality), or is it crowd-degraded and tourist-only? If it holds up, keep it and plan crowd-mitigation (sunrise visits, off-season, side entrances, less-trafficked routes within the site). If it's the obligatory-icon tier (the Eiffel Tower, the main square at noon, a Michelin-listed restaurant in a tourist district that trades on location not food), default-decline — or flag-not-recommend if it's unavoidable.
 
 ---
 
@@ -429,7 +429,8 @@ Note: AP-2 (Pack minimally) was reframed in v3 rather than cut. Packing recommen
 - **v1** — 2026-05-10. Initial document.
 - **v2** — 2026-05-10. Cut 5 personal-philosophy items not relevant to Claude Code. Tightened application rules in 3 principles. Added explicit QC framework and log.
 - **v3** — 2026-05-10. Reframed AP-2: packing recommendations are in scope for the system, so AP-2 now governs system behavior (don't default to minimalism in packing output) rather than being a marginal historical note.
-- Updates happen **only via the Phase 3 retro workflow** after a real trip.
+- **v4** — 2026-06-18. Recalibrated §4 (header, §4.1, §4.3) from a binary anti-tourism filter to a trap-tier filter: popular-and-worthwhile places are fine, only the "Eiffel Tower tier" obligatory mega-icon is declined. The keep/cut test became "does the crowd ruin it / does anyone but tourists value it" rather than fame or tourist density. **Operator-authorized ad-hoc exception to the retro-only rule below** (the workflow reference files had been recalibrated the same day and §4 needed to stay consistent with them; not deferred to the next retro).
+- Updates happen **only via the Phase 3 retro workflow** after a real trip — **except** an explicit operator-authorized exception (see v4).
 
 ### Changelog
 
@@ -438,6 +439,7 @@ Note: AP-2 (Pack minimally) was reframed in v3 rather than cut. Packing recommen
 | v1 | 2026-05-10 | Initial document. 18 principles, 9 categories. |
 | v2 | 2026-05-10 | QC pass. Cut companion-selection category, depletion override, redundant solo-default. Tightened application rules in §1.2, §4.1, §5.4. Added §11 QC log. 14 principles, 7 categories. |
 | v3 | 2026-05-10 | AP-2 reframed as system-behavior rule for packing recommendations rather than a marginal historical note. 14 principles, 7 categories. |
+| v4 | 2026-06-18 | §4 recalibrated from binary anti-tourism to trap-tier filter (popular-and-worthwhile OK; decline only the "Eiffel Tower tier"). Keep/cut test is now "crowd-ruins-it / only-tourists-value-it," not fame. Operator-authorized ad-hoc exception to the retro-only rule. 14 principles, 7 categories. |
 
 ---
 
