@@ -245,13 +245,11 @@ Reserved as the Sunday anchor (second Rila day, Jun 28). Option to pull to Satur
 
 ## OPERATOR ADDITIONS (2026-06-18 — fold into synthesis)
 
-Operator surfaced three activity additions while reviewing notes. Carry these into the dossier synthesis; they need no new research pass (Sofia sights are well-documented; Koprivshtitsa is the new journey-break stop locked in trip-context).
+Operator surfaced activity additions while reviewing notes. Carry these into the dossier synthesis; they need no new research pass (Sofia sights are well-documented).
 
 **Sofia — Culture cluster (add to Stop 1):**
 - **Banya Bashi Mosque** — Sofia centre — Ottoman-era; the city's only working mosque. Part of the central "tolerance square" cluster.
 - **Ancient Serdica Archaeological Complex** — Sofia centre — Roman ruins woven into the city centre / the "Largo"; open-access pedestrian level. Sits ~5 min from Banya Bashi, Sveta Nedelya church, and the synagogue — group these as one central walking cluster on a Sofia afternoon.
   - Note: both are low-cost / free, central, no closure constraints flagged — verify Serdica complex hours on the day.
 
-**Koprivshtitsa — journey-break activity (Sofia→Septemvri leg):**
-- **Koprivshtitsa old town** — Sredna Gora — preserved 19th-century National Revival village; cobbled streets, painted merchant houses, several house-museums (e.g. Oslekov House, Lyutov House). Genuinely anti-tourist / on-profile. Half-day wander is the activity; pick 1–2 house-museums rather than all six. Station is ~9–12km below the town (bus/shuttle connection up).
-  - Logistics (Pass 5): confirm the narrow-gauge / mainline schedule allows a half-day stopover; Sofia day-trip is the fallback.
+**Koprivshtitsa — DROPPED (2026-06-18).** Considered as a journey-break / day-trip but parked for a future central-Bulgaria trip (rail geography made the stopover impossible; an overnight would have cost a Bansko hiking day). See `trip-context.md` § Parked for a future trip. Do NOT include in synthesis.
