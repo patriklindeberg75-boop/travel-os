@@ -347,7 +347,7 @@ If 5a was skipped (all stops ≤ 2 nights), record the trap sub-sections as `5a 
 
 For each pass's approved short list and each verdict, apply:
 
-- **Anti-tourist filter.** Cross-check candidate places against principles. Remove or flag any place that triggers a mass-tourism signal.
+- **Anti-tourist filter.** Cross-check candidate places against principles. Flag or remove only the tourist-trap tier — overcrowded + overpriced + go-only-for-the-photo (the Eiffel-Tower tier). Popular or iconic places that genuinely hold up (locals value them too, or worth it with the right timing) stay; "famous" alone is not a removal trigger.
 - **Personalization filter.** For each candidate place, verify at least one PROFILE_EXTRACT preference is relevant. If no preference matches, demote or remove.
 - **Routine integration check.** For locations (Section 1) and accommodation (Section 2), verify proximity to work-friendly cafes and routine maintenance (gym / supermarket / morning coffee).
 - **Tier assignment (Sections 3 and 4).** Assign each surviving place exactly one priority tier — 🔥 HIGH, 👍 REC, or 🆗 OK — based on profile-fit strength and signal quality. Do not flatten everything to one tier; a useful split is roughly the strongest third HIGH, the middle REC, the rest OK. Float the single strongest pick to the top of its tier.

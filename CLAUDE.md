@@ -32,7 +32,7 @@ Internal documentation (architecture, prompts, workflow notes) may use desktop f
 - Weather ceiling: flag destinations over 30°C during trip dates. For multi-stop trips, flagging is per-stop (not trip-wide). (This 30°C trip-dates ceiling is the operator-relaxed value; the traveler profile's 27°C in § 8 is the stricter destination-screening default. The 30°C value here governs trip-dates flagging and takes precedence.)
 - Routine respected: day plans must accommodate work + sleep + exercise + healthy eating.
 - No custom dashboard — iPhone Notes + Google Maps are the front-end.
-- Anti-tourist filter active on all outputs: mass-tourism spots flagged, hidden gems prioritized.
+- Anti-tourist filter active on all outputs: prioritize hidden gems, and flag only the overcrowded obligatory-icon traps — the "Eiffel Tower tier": go-only-for-the-photo, overpriced, crowd-degraded. Popular or even iconic places are fine when the experience genuinely holds up (locals value it too, or it's worth it with the right timing). "Famous" or "high on TripAdvisor" alone is not grounds to exclude — the test is whether the crowd ruins it and whether anyone but tourists values it.
 - Activity cost threshold: low-cost paid activities are recommendable, not just free ones. An activity costing roughly €10–15 (or the local-currency equivalent) is fair to recommend on its merits — do not over-filter to free-only. This is a recommendation guideline within normal daily budget, not a per-trip splurge authorization; the trip's splurge posture (see `trips/{slug}/trip-context.md`) still governs higher-cost items.
 
 ## Subagent Delegation Default

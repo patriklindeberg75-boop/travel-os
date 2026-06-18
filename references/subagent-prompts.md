@@ -22,19 +22,31 @@ Library of prompt templates organized by research pass. The `dossier-orchestrato
 Every list prompt below ends with this guardrail block. Substitute `{section_name}` per prompt.
 
 ```
-Hard filters on your recommendations:
-- Exclude any place that is a top-5 TripAdvisor result for {destination} unless
-  you can name a specific counter-signal (e.g., locals still go, or a niche reason
-  it survived its popularity).
-- Exclude any place whose primary visitor base is tour groups, cruise-ship
-  day-trippers, or guided-tour buses.
+Calibrating for tourism (some popularity is fine — only the mega-traps are filtered):
+- Popular and even iconic places are ALLOWED when the experience genuinely holds
+  up: locals or repeat visitors still value it, OR it is worth it despite the
+  crowds with the right timing (early morning, off-season, side entrance). Being
+  a top-5 TripAdvisor result or simply "famous" is NOT by itself a reason to
+  exclude. The traveler does not want everything touristy filtered out — only the
+  worthless tourist traps.
+- Filter (exclude, or if iconic-and-unavoidable flag-rather-than-recommend) only
+  the tourist-trap tier: places that are overcrowded AND overpriced AND exist
+  mainly as obligatory photo-stops where the crowd itself degrades the experience
+  — the "Eiffel Tower tier" you visit only to tick a box. The test is whether the
+  crowd ruins it and whether anyone but tourists values it, not whether it is famous.
+- Be wary of places whose primary visitor base is tour groups, cruise-ship
+  day-trippers, or guided-tour buses — but if there is a real reason to go anyway
+  (genuine quality, locals present, manageable with timing), keep it and name the
+  timing condition that makes it work.
 - Prefer places named in: Reddit local subs, local food/culture blogs, residents'
   recommendations, small independent guides, and native-language sources
   (translated if needed). For destinations with thin English-language coverage,
   explicitly search in the local language (e.g., Albanian, Georgian, Kyrgyz) and
   translate findings.
-- Avoid: Lonely Planet top-10s, Time Out lists, "best of {destination}" listicles,
-  TripAdvisor top results without a counter-signal.
+- Treat Lonely Planet top-10s, Time Out lists, and "best of {destination}"
+  listicles as weak signals, not disqualifiers: a place is not dropped for
+  appearing on them, but appearing on them is not evidence it is worth it either
+  — back any keep with a local or candid signal.
 - For every place you include, name the specific signal that made you keep it,
   AND name the one condition that must be true for it to be worth it (right
   season, market day, clear morning, last bus exists). If you cannot name that
@@ -263,7 +275,10 @@ Also give me a 2–4 point "thesis" for {destination} as a whole — the handful
 things this place is really about (e.g. mountains + Ottoman old towns + lake life
 + overland border culture) — so I can judge which stops deliver which.
 
-Places that are mass-tourism hubs without a counter-signal will be deprioritized.
+Places that are mass-tourism hubs will be deprioritized only when they are also
+the tourist-trap tier (overcrowded + overpriced + go-only-for-the-photo). A
+popular or iconic place that genuinely holds up — locals value it too, or it's
+worth it with the right timing — is fine to include.
 
 {anti_tourist_guardrail with section_name = "candidate places list"}
 ```
@@ -299,9 +314,11 @@ Principles:
 
 Task: Give me the 15–20 best lived experiences {destination} supports under my
 constraints (solo, working {work_load}h/week, anti-tourist), scoped to the areas
-listed above — not a list of attractions. By "hidden gem" I mean: not the top
-tourist experiences, but specific places or experiences locals or repeat visitors
-recommend. Search phrasings like "most memorable experiences in {destination}",
+listed above — not a list of attractions. By "hidden gem" I mean: specific places
+or experiences locals or repeat visitors recommend over the obvious tourist
+checklist. A famous or popular place is fine to include when it genuinely holds
+up (locals value it too, or it's worth it with the right timing) — just don't
+include it only because it tops every list. Search phrasings like "most memorable experiences in {destination}",
 "what locals do in {destination}", "spots/villages locals prefer" surface better
 candidates than "things to do in {destination}". Include:
 - A few that fit a 2–3 hour midday window (around my work schedule)

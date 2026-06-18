@@ -17,8 +17,9 @@ Weather check: {forecast_max_celsius}°C max — {PASS | FLAGGED >30°C}
 long list of vetted options to pick from on the spot — by mood, weather, and
 energy that day. Nothing here is a fixed plan, and nothing on the trip is
 locked: night counts are a starting point, and any stop can grow or shrink if a
-place is worth more time. The dossier's only job is to keep good, non-touristy
-options within reach — never to tell you what to do.
+place is worth more time. The dossier's only job is to keep good options within
+reach — hidden gems first, plus the popular places that genuinely hold up, minus
+the obligatory-icon tourist traps — never to tell you what to do.
 ```
 
 If `forecast_max_celsius` is unknown, render the weather line as `Weather check: forecast unknown — verify before booking`.
@@ -456,8 +457,11 @@ the whole dossier for single-base).
 - Find it: {…}
 ```
 
-Anti-tourist filter applied. No item should be a top-5 TripAdvisor result
-without a counter-signal. For hikes/mountain days, append the `Hike data:` line.
+Anti-tourist filter applied: popular or iconic items are fine when the experience
+genuinely holds up; only the overcrowded obligatory-icon traps (the Eiffel-Tower
+tier — go-only-for-the-photo, overpriced, crowd-degraded) are filtered or flagged.
+"Famous" or "top-5 TripAdvisor" alone is not grounds to drop an item. For
+hikes/mountain days, append the `Hike data:` line.
 
 ### 4. Food (two distinct parts — §8)
 
