@@ -809,3 +809,36 @@ None — tripe-soup and Koprivshtitsa both resolved this session.
 - Files in scope: trips/bulgaria-2026-06/destination-dossier.md (inferred)
 - Stop if: (none stated)
 - Verify 3 needs-verification places in the Bulgaria dossier: Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location.
+
+### Summary
+Two pieces of work after `/prime`. (1) Verified the three needs-verification places in the Bulgaria dossier via web sources (auto-mode menu item #1): Baba Vuna hours + address, Bunderitsa Chalet, The Red Flat. (2) Recalibrated the anti-tourist filter from a binary "exclude famous/mass-tourism" rule to a trap-tier filter ("some touristy is OK; only the Eiffel-Tower tier is flagged"), across all four operational layers plus travel-principles §4 under an operator-authorized ad-hoc exception.
+
+### Files Created
+- `logs/session-plan-2026-06-18-S1.md` — session plan for the dossier-verify task.
+- `logs/scratchpads/2026-06-18-12-14-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/bulgaria-2026-06/destination-dossier.md` — 3 places verified/corrected + closing checklist updated.
+- `CLAUDE.md` — Hard Constraints anti-tourist line recalibrated to trap-tier.
+- `references/subagent-prompts.md` — guardrail boilerplate + deprioritize line + "hidden gem" definition recalibrated.
+- `references/dossier-template.md` — Section-3 filter note + "how to use" framing.
+- `references/dossier-workflow.md` — synthesis-step anti-tourist filter.
+- `profile/travel-principles.md` — §4 (header, §4.1, §4.3) recalibrated to v4 + changelog (operator-authorized ad-hoc exception to retro-only rule).
+
+### Decisions Made
+- **Baba Vuna**: hours verified daily 11:00–22:00; address corrected from "Tsar Simeon 16" to ul. Glazne ~67–69 (two web sources).
+- **The Red Flat**: verified as a fixed daytime apartment museum (24 Ivan Denkoglu St, daily 10:30–18:00, ~€9) — contradicts the dossier's "anti-tourist art space, evening, relocates" framing; left in place with an in-line ⚠ flag for operator decision rather than silently swapped.
+- **Anti-tourist filter recalibration** (operator-directed): binary → trap-tier; keep/cut test is "crowd-ruins-it / only-tourists-value-it," not fame.
+- **Ad-hoc principle update authorized** (operator): updated travel-principles §4 now (v4) instead of deferring to the Phase 3 retro, to keep principle and workflow consistent. Profile §5 left untouched (already aligned).
+
+### Risky actions
+Edited a Phase-0 spine file (`profile/travel-principles.md`) outside the normal retro-only update path — done under explicit operator authorization and recorded as a v4 changelog exception, so the governance trail is intact. Otherwise none.
+
+### Next Steps
+- Decide whether The Red Flat keeps its evening slot in the Bulgaria dossier or gets dropped (now verified as a daytime ticketed museum).
+- Book Panichishte accommodation (flagged critical — sells out).
+- Optional: run `/qc-pass` on the dossier as an interim readiness check.
+- Build session: dossier-readiness QC gate (red-team Phase 4) + split Pass 4 into 4a/4b in the workflow reference files (red-team Phase 3).
+
+### Open Questions
+None — all three verifications resolved; the Red Flat slot is an operator decision, not a blocker.
