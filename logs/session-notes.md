@@ -849,3 +849,39 @@ Build the dossier-readiness QC gate (red-team Phase 4) and split Pass 4 into 4a/
 - Out of scope: (none stated)
 - Files in scope: references/dossier-workflow.md (inferred); references/subagent-prompts.md if pass-4 prompts need splitting
 - Stop if: (none stated)
+
+### Summary
+Session S2 had two phases. Phase 1 (pre-compaction): split Pass 4 into 4a/4b in both reference files (`subagent-prompts.md` and `dossier-workflow.md`) and added Step 13.5 dossier-readiness QC gate (8 criteria) to the workflow. Phase 2 (post-compaction, resumed): ran /qc-pass on the Bulgaria dossier — it returned NOT-READY with 8 findings — then fixed all 8 findings across both the markdown and JSON. The Bulgaria dossier now passes all 8 readiness criteria (with two section depth exceptions explicitly documented and justified from pass-state evidence).
+
+### Files Created
+- `logs/session-plan-2026-06-18-S2.md` — session plan for S2 (created pre-compaction)
+- `logs/scratchpads/2026-06-18-wrap-S2-scratchpad.md` — continuity scratchpad (wrap)
+
+### Files Modified
+- `references/subagent-prompts.md` — Pass 4 → Prompt 4a (dishes, ChatGPT Pro) + Prompt 4b (venues, Perplexity Pro); routing table updated
+- `references/dossier-workflow.md` — Steps 7/7.5/8/8.5 for 4a/4b; Step 13.5 QC gate (8 criteria); state file refs, Step 11 source, Step 12 table, resume logic all updated
+- `red-team.md` — ADDRESSED block for Phase 3 (Pass 4 conflation) and Phase 4 (no QC gate)
+- `logs/session-notes.md` — S2 header + mandate appended (session-start); wrap summary (this write)
+- `trips/bulgaria-2026-06/destination-dossier.md` — all 8 NOT-READY QC findings resolved: 5 emoji promotions (Women's Market, SkaraBar 1, Banderishki Lakes, Banski Han, Rila Monastery → 🔥), Vihren Peak ⚠ added, Rila Section 4 expanded (3 new items → 4 total; 2 HIGH), Bansko S4 depth note, depth notes for constrained sections
+- `trips/bulgaria-2026-06/dossier-data.json` — Red Flat corrected (hook/hours/cost/find_it/time/rs), Baba Vuna corrected (find_it/hours/rs), Panichishte moved tasks→critical, 5 tier promotions (t:2→3), Lakes Chalet added to Rila eat array, meta.renderer note
+
+### Decisions Made
+- **Pass 4 split**: dishes discovery (4a) must precede venue search (4b) — inverted order was a workflow design flaw; now fixed with `{priority_dishes}` placeholder flowing 4a→4b
+- **Section depth thresholds**: ≥8 items / ≥3 HIGH for 3+ night stops; ≥4 items / ≥2 HIGH for ≤2 night stops
+- **Rila Section 4 depth**: 4 items (Valyavitsa + Lakes Chalet + village shop + guesthouse breakfast) meets the floor; pass-4a explicitly anticipated minimal Panichishte food infrastructure
+- **Bansko Section 4 depth**: 6/8 item floor — explicitly documented; pass-4 research found no additional qualifying budget-tier venues; 3 HIGH threshold met
+- **build.mjs N/A**: This trip has no HTML renderer; build.mjs is balkans-specific; criterion documented as N/A in JSON meta
+- **Baba Vuna address**: ul. Glazne ~67–69 confirmed (web 2026-06-18); original "Tsar Simeon 16" was incorrect; JSON corrected
+- **Red Flat**: Verified as daytime ticketed museum (24 Ivan Denkoglu, €9, 10:30–18:00); original "anti-tourist art/social space, evening, donation" framing was wrong; JSON corrected; keep/drop operator decision still pending
+- **Panichishte accommodation**: Reclassified from task to critical (confirmed sell-out risk: peak Lakes weekend + Sofia Live Festival overlap)
+
+### Risky actions
+None.
+
+### Next Steps
+1. Operator action: **Red Flat — keep or drop?** If keeping, it stays as 🆗 daytime culture option. If dropping, remove from both markdown Section 3 and JSON `do` array.
+2. Operator action: **Book Panichishte accommodation for Jun 27–28** (in meta.critical; real sell-out risk).
+3. Bulgaria trip departs Jun 22 — no further dossier work required unless operator directs a revision.
+
+### Open Questions
+- Red Flat: keep in dossier (🆗 daytime museum) or drop entirely?
