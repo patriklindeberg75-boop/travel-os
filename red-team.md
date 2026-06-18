@@ -154,6 +154,12 @@ Add entries as you use the system. Review before major workflow changes.
 
 <!-- Weaknesses in how research is synthesized, filtered through the profile, and formatted -->
 
+### No dossier-readiness QC pass — the dossier ships as "done" without an independent readiness check
+- **Observation:** The dossier workflow ends at synthesis (`dossier-orchestrator` writes `destination-dossier.md` and the run log), then stops. There is no gate that independently checks the first draft is *actually* "ready." A generic `/qc-pass` skill exists, but it is not dossier-aware — it does not check against the dossier-specific readiness criteria (all 8 template sections present and non-empty; personalization spine genuinely applied vs. generic output; mobile-readable / paste-ready / map-ready output standards met; every place has name + neighborhood + city for Maps; unverified-hours/location flags surfaced not buried; route/constraint decisions consistent across sections; no dropped-but-still-referenced items like a parked stop).
+- **Failure mode:** A dossier with silent gaps ships looking finished. Observed on the bulgaria-2026-06 run (2026-06-18): synthesis completed with `build.mjs` unrun (id/map_link fields empty), 3 places carrying needs-verification flags, and an outstanding Panichishte booking — all real readiness gaps that no gate is responsible for catching. Without a readiness QC, the operator discovers these on the trip, not before.
+- **Severity:** medium
+- **Fix hint:** Add a dossier-readiness QC step as the final gate of `/destination-dossier` (after synthesis, before "done"). Run it via subagent for independence (mirrors the workspace QC-independence rule). It should score the draft against an explicit dossier-readiness checklist (the criteria above) and return READY / NOT-READY with specific gaps, rather than a generic artifact QC. Surfaced and logged 2026-06-18 at operator request when the bulgaria dossier first draft completed.
+
 ---
 
 ## Phase 5 — Execution (Using the Dossier During the Trip)
