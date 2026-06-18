@@ -62,7 +62,21 @@ If `stop_weather` is empty on a multi-stop trip, fall back to the trip-wide `for
 
 All operator paste-backs use one of two formats. The orchestrator must accept both.
 
-**List narrowing (Passes 2, 3, 4, and tourist traps in Pass 5):**
+**Priority marking (Pass 4a — dishes discovery):**
+
+```
+PRIORITY: 1, 3, 5
+```
+
+or by name:
+
+```
+PRIORITY: banitsa, tarator, shkembe chorba
+```
+
+Numbers/names reference the dishes list from Prompt 4a. The selected dishes become the `{priority_dishes}` input to Prompt 4b. The operator may mark all items, or just a subset.
+
+**List narrowing (Passes 2, 3, 4b, and tourist traps in Pass 5):**
 
 ```
 KEEP:
@@ -95,9 +109,11 @@ On every invocation, before starting any pass, scan:
 `trips/{slug}/dossier/pass-*-state.md`
 
 If state files exist:
-- Identify the highest-N pass whose state has `status: complete`.
-- Resume from pass N+1.
-- Report to Patrik: "Resuming from Pass {N+1}. Passes {1..N} already complete."
+- Identify the most recently completed pass in sequence order: 2, 3, 4a, 4b, 5.
+- Resume from the next pass in that sequence.
+- Report to Patrik: "Resuming from Pass {next}. Passes {completed in order} already complete."
+
+Pass 4 has two sub-passes: `pass-4a-state.md` (dishes discovery) and `pass-4b-state.md` (venue short list). If 4a is complete but 4b is not → resume from Pass 4b (Step 8). If 4b is complete → resume from Pass 5.
 
 If no state files exist, start from Pass 2.
 
@@ -251,27 +267,74 @@ Parse KEEP selection. Write `trips/{slug}/dossier/pass-3-state.md` (same format 
 
 No trip-context.md update needed — activities are kept in the state file only.
 
-### Step 7 — Pass 4: Food long list
+### Step 7 — Pass 4a: Food and drinks discovery
 
-Read `references/subagent-prompts.md` § Pass 4 for the food prompt template (Prompt 4). Substitute same placeholders including `{approved_locations}`.
+Read `references/subagent-prompts.md` § Prompt 4a. Substitute `{destination}`, `{dates}`, `{approved_locations}`, `{profile_extract}`.
 
-Asks for 15–20 candidate food spots (mix of daytime/work-friendly and memorable-dinner), scoped to approved locations. Target tool: Perplexity Pro.
+Target tool: ChatGPT Pro. Asks for 4–8 dishes/drinks per approved area — what to eat and drink in each area, not where to eat it.
 
-### Step 8 — PAUSE: Pass 4 operator gate
+Present the Prompt 4a prompt labeled:
 
-Present the Pass 4 prompt labeled:
+- `Pass 4a — Food and drinks discovery`
+- Target tool: ChatGPT Pro
+- Expected output shape: "Numbered list. Each: dish/drink name — what it is — where locals eat/drink it — season/time relevance for the trip dates."
 
-- `Pass 4 — Food`
+End with:
+
+```
+Run this in ChatGPT Pro and paste the output back here.
+
+Then mark which dishes you want to actively hunt down. Format:
+  PRIORITY: 1, 3, 5
+  or by name: banitsa, tarator
+```
+
+Wait for paste-back + PRIORITY selection.
+
+### Step 7.5 — Ingest Pass 4a approved dishes
+
+Parse the paste-back. Resolve the PRIORITY selection (by number or name) against the full dishes list. Extract the priority dishes as a named list.
+
+Write `trips/{slug}/dossier/pass-4a-state.md`:
+
+```yaml
+---
+pass_number: 4a
+status: complete
+generated_at: {timestamp}
+gate_received_at: {timestamp}
+---
+
+## Dishes long list
+
+{full dishes list from Prompt 4a paste-back}
+
+## Priority dishes (operator-approved)
+
+{dishes matching operator's PRIORITY selection, listed by name}
+```
+
+Hold the priority dishes list as `{priority_dishes}` — substituted into Prompt 4b at Step 8.
+
+### Step 8 — Pass 4b: Venue long list
+
+Read `references/subagent-prompts.md` § Prompt 4b. Substitute the same placeholders as Prompt 4a, plus `{priority_dishes}` from Step 7.5.
+
+Target tool: Perplexity Pro. Asks for 15–20 venues grounded in the approved priority dishes — where to eat and drink them.
+
+Present the Prompt 4b prompt labeled:
+
+- `Pass 4b — Venue long list`
 - Target tool: Perplexity Pro
-- Expected output shape: "Numbered list of 15–20 places. Each: name — location, stop — type (daytime/dinner) — one-line why — source signal."
+- Expected output shape: "Numbered list of 15–20 places. Each: name — location, stop — type (daytime/dinner) — one-line why (tied to priority dishes + profile) — source signal."
 
 End with KEEP format instructions.
 
 Wait for paste-back + KEEP selection.
 
-### Step 8.5 — Ingest Pass 4 short list
+### Step 8.5 — Ingest Pass 4b short list
 
-Parse KEEP selection. Write `trips/{slug}/dossier/pass-4-state.md`.
+Parse KEEP selection. Write `trips/{slug}/dossier/pass-4b-state.md`. This file is the Pass 4 venue short list used by synthesis — format mirrors `pass-3-state.md` with `pass_number: 4b`.
 
 ### Step 9 — Pass 5: Practicalities
 
@@ -310,8 +373,8 @@ Parse each sub-section:
 - **5b (mobility):** Parse APPROVE/APPROVE WITH NOTES/REJECT verdict.
 - **5d (logistics):** Parse verdict; capture the connectivity / offline-maps / entry-admin / border content for Section 8.
 
-**De-duplication check (B3):** Skip this check entirely if 5a was not run (all stops ≤ 2 nights). Otherwise, after parsing the 5a short list, read `pass-3-state.md` and `pass-4-state.md` short lists. For each item in the 5a short list, fuzzy-match against all items in the Pass 3 and Pass 4 approved short lists. On any name overlap:
-- Remove the conflicting item from the Pass 3 or Pass 4 short list (trap wins).
+**De-duplication check (B3):** Skip this check entirely if 5a was not run (all stops ≤ 2 nights). Otherwise, after parsing the 5a short list, read `pass-3-state.md` and `pass-4b-state.md` short lists. For each item in the 5a short list, fuzzy-match against all items in the Pass 3 and Pass 4 approved short lists. On any name overlap:
+- Remove the conflicting item from the Pass 3 or Pass 4b short list (trap wins).
 - Record each conflict in the run log (Step 14) as: `De-dup: {place name} removed from Pass {N} keep-list — appears in trap list.`
 - Do not silently remove. If more than 3 conflicts arise in a single pass, surface them to Patrik before proceeding.
 
@@ -355,7 +418,7 @@ For each pass's approved short list and each verdict, apply:
 - **v5 per-place structured authoring (do/eat).** For each surviving place, author the v5 fields from research + practical judgment, NEVER by keyword-scanning the hook: `time` (which of morning/daytime/evening it's good for — empty if genuinely unsure), `purpose` (override the cat-derived default only when wrong), `dur` (quick/2-3h/half-day/full-day, omit if unknown), `bestTime` (free-text nuance — sunrise, avoid-midday-heat, market day), and `tips` (practical "how to enjoy this" advice that materially improves the visit — not generic filler). Carry `pt` on activities with an entry fee.
 - **Research status assignment (`rs`).** Assign by ACTUAL research completeness per `dossier-template.md` § Research status — never blanket-mark everything `researched`/`verified`. Set `needs` (with a concrete `rsNote` naming what remains) for any place with missing facts or time-sensitive facts unverified for the trip's dates (timetables, seasonal sessions, renovation status). Set `verified` only where you have actually checked the time-sensitive facts for THIS trip. Leave the rest to the build's completeness default.
 - **Destination intro + temp (§1).** Author a short `intro` per stop. Open it with the stop's 2–4 point thesis — the handful of things the place is really about (from the Pass 2 thesis line) — then continue with what it's like, why included, what it's good for, and how to approach it. Also author a plain `temp` string (no commentary words). Omit `temp` if no real forecast is known. (The thesis lives inside the existing `intro` field — no new schema field.)
-- **Food to try (§8).** From the Pass 4 paste-back and general knowledge, author `foodToTry` per stop — the local *dishes*, distinct from the `eat` venue list.
+- **Food to try (§8).** From the Pass 4a approved list (`pass-4a-state.md` priority dishes), author `foodToTry` per stop — the local dishes and drinks the operator prioritized, distinct from the `eat` venue list.
 - **Resources (§6).** Author `resources` per stop from research sources you are confident exist (food/transport/neighborhood guides, good articles). Never fabricate a URL — omit rather than guess.
 - **Tasks + critical checklist (§2/§3).** Author `meta.tasks` (+ stop-scoped `tasks`) for practical actions and `meta.critical` for high-consequence matters — primarily from the Pass 5d logistics paste-back (connectivity/eSIM, entry/visa, insurance, borders) plus any activity that genuinely needs advance booking and any inter-stop leg that must be reserved or confirmed. Keep `critical` high-consequence; route routine reminders to `tasks`. These are explicitly authored — do NOT keyword-derive them from place prose.
 - **Base (§4).** Where a clear accommodation area exists (from Pass 2 / Section 2), author an optional `base` default per stop (`label` + `kind`; add approximate `lat`/`lng` only for an area centroid you actually know — never fabricate precise coordinates).
@@ -385,7 +448,8 @@ Read `references/dossier-template.md` for the output structure. Produce the doss
 |---|---|
 | Pass 2 short list | Section 1 (neighborhoods) and Section 2 (accommodation) |
 | Pass 3 short list (after de-dup) | Section 3 (hidden-gem activities — cards + tiers + anchor) |
-| Pass 4 short list (after de-dup) | Section 4 (food / restaurants — cards + tiers) |
+| Pass 4a approved dishes | `foodToTry` per stop (§8) |
+| Pass 4b short list (after de-dup) | Section 4 (food / restaurants — cards + tiers) |
 | Pass 5a short list | Section 5 (tourist-trap warnings — skipped for ≤2-night stops) |
 | Pass 5b verdict | Section 6 (mobility) |
 | `timing_verdict` + `timing_notes` from trip-context.md | Section 7 (optimal timing — incl. festivals/holidays + sunrise/sunset) |
@@ -414,6 +478,28 @@ After the markdown dossier is composed, render the SAME synthesized data into `t
 
 Write to `trips/{slug}/destination-dossier.md`. If the file already exists, write to `destination-dossier-v{n}.md` where `{n}` is the next integer after the highest existing version. Do not overwrite a prior dossier silently. Write the structured companion from Step 12.5 with the matching version suffix.
 
+### Step 13.5 — Dossier-readiness QC
+
+After writing the dossier file (Step 13), run an in-context readiness check before declaring the run complete. Score the dossier against this checklist:
+
+1. **All 8 sections present and non-empty.** Sections 1–8 must exist with real content (not the `_Section incomplete — re-run prompt and re-paste._` placeholder). A missing or placeholder section is NOT-READY.
+2. **Personalization spine applied (not generic).** At least 3 profile-specific references visible in the first three sections (e.g., "work-friendly WiFi," "crowd-free morning window," "matches the anti-tourist filter"). A section consisting only of generic recommendations with no profile hook is a warning.
+3. **Mobile / map / paste-ready standards met.** No wide horizontal tables. Every place in Sections 3–4 has name + neighborhood + city (map-ready). Sections delimited by `## ` headers per the mobile-formatting rules.
+4. **Unverified flags surfaced, not buried.** Every place with `rs: needs` must carry a visible ⚠ and its `rsNote` in the card body. A place with unresolved unverified facts that does not carry a flag is NOT-READY.
+5. **`build.mjs` run (if applicable).** If the trip has a `dossier-data.json`, confirm that `build.mjs` has been run successfully since the last write — no places with empty `id` or `map_link` fields. If `build.mjs` was not run, flag it.
+6. **Route and constraint decisions consistent.** If a stop or place was explicitly parked or rejected during the research passes (e.g., a location the operator dropped in Pass 2), it must not appear in the dossier body as if it were included. Check for any named place that appears in the dossier but not in the approved short lists.
+7. **No buried critical bookings.** If any stop has a high-consequence open action — advance-booking accommodation that sells out, a permit that requires pre-trip purchase, a ferry/train leg that must be reserved — it must appear in `meta.critical`, not only in a section note.
+
+**Verdict:**
+
+- **READY** — all 7 criteria pass → proceed to Step 14.
+- **NOT-READY** — one or more criteria fail → surface each specific gap to Patrik before proceeding:
+  - List each failing criterion with a one-line description of what is missing or wrong.
+  - Ask whether Patrik wants to fix the gap now or accept the dossier with the gap noted in `meta.critical`.
+  - Do not call the dossier complete until either: (a) the gap is fixed, or (b) Patrik explicitly accepts it and it is recorded.
+
+Phase 1 note: this QC runs in-context (the orchestrator checks against the dossier it just wrote). A subagent-based independent pass is the preferred long-term form (per red-team Phase 4 fix hint), but the in-context check is sufficient at Phase 1 because the orchestrator has complete fresh context on what was written, what sources supported each place, and which items remain unresolved.
+
 ### Step 14 — Append to the run log
 
 Append to `logs/dossier-runs.md` using the format spec in that file's header. Required fields:
@@ -439,7 +525,7 @@ Return to the calling `/destination-dossier` command:
 
 - Dossier path written
 - Run-log entry written
-- Pass status summary: "Pass 2: {N} approved / {M} total. Pass 3: ... Pass 4: ... Pass 5a: ..."
+- Pass status summary: "Pass 2: {N} approved / {M} total. Pass 3: ... Pass 4a: {N} priority dishes. Pass 4b: {N} approved / {M} total. Pass 5a: ..."
 - Reminder: "Paste dossier into iPhone Notes section-by-section using `## ` headers as paste boundaries."
 
 ## What this workflow does NOT do (locked at Phase 1)

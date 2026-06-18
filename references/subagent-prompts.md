@@ -346,11 +346,61 @@ return fewer and say so.
 
 ---
 
-## Pass 4 — Food
+## Pass 4 — Food Discovery and Venues
 
-### Prompt 4 — Food and restaurant long list
+Pass 4 runs in two sub-steps. Pass 4a discovers the dishes and drinks worth hunting; the operator marks priorities. Pass 4b searches for venues to eat them, grounded in those priorities.
 
-**Target tool:** Perplexity Pro.
+### Prompt 4a — Food and drinks discovery (dishes, not venues)
+
+**Target tool:** ChatGPT Pro (prior-knowledge-rich culinary context; does not need real-time web retrieval).
+
+**When to run:** Before Prompt 4b. The operator marks priority dishes from the output; those become the `{priority_dishes}` input to Prompt 4b.
+
+**Expected output shape:** 4–8 items per approved area. Each: dish/drink name — what it is — where locals eat/drink it — season/time relevance for the trip dates.
+
+**Prompt body:**
+
+```
+Solo trip to {destination}, {dates}. I'll be spending time in:
+{approved_locations}
+
+Profile (drives what food I'll actually enjoy):
+{profile_extract}
+
+Task: Food and drinks discovery — what should I actually EAT and DRINK in these areas?
+
+Give me the local DISHES, drinks, and food experiences worth seeking out — NOT venue recommendations. Cover:
+- Traditional regional dishes with genuine local significance (not tourist adaptations)
+- Street food, market staples, and everyday items locals eat
+- Drinks and cafe culture (local coffee traditions, fermented drinks, market juices)
+- Any seasonal specialties relevant to {dates}
+
+For each:
+- Name of the dish / drink
+- What it is (one sentence: ingredients, preparation style)
+- Where locals typically eat/drink it (e.g., "from a market stall", "street bakeries at breakfast", "traditional family restaurants")
+- Season / time relevance — note if it's only available during {dates} or at a specific window
+
+Aim for 4–8 per approved area. If you cannot find 4+ items with real local grounding for an area, return fewer and say so. Do not pad.
+
+Do NOT include restaurant or venue recommendations — only the dishes and drinks themselves.
+```
+
+**After paste-back:** Present the numbered dishes list to the operator. Ask them to mark which dishes they want to actively hunt down. Format:
+
+```
+PRIORITY: 1, 3, 5   (or name each dish)
+```
+
+The operator's PRIORITY selection becomes `{priority_dishes}` for Prompt 4b.
+
+---
+
+### Prompt 4b — Venue long list (grounded in Pass 4a priority dishes)
+
+**Target tool:** Perplexity Pro (current, source-cited — real-time venue signals from local blogs and Reddit).
+
+**Depends on:** Pass 4a completed; `{priority_dishes}` = operator's approved dishes list.
 
 **Expected output shape:** Numbered list of 15–20 places, tagged as daytime/work-friendly or dinner/memorable. Each: name — location, {destination} — type — one-line why — surfacing signal — then the labelled per-place fields (best time, cost, duration, hours, find it, location).
 
@@ -364,6 +414,9 @@ Baseline ~€{budget_floor}/day; willing to splurge €{budget_splurge_lo}–
 I will be spending time in:
 {approved_locations}
 
+From research, these are the dishes and food experiences I want to hunt:
+{priority_dishes}
+
 Profile:
 {profile_extract}
 
@@ -371,7 +424,11 @@ Principles:
 {principles_extract}
 
 Task: Give me 15–20 food and restaurant recommendations in {destination},
-scoped to the areas above, mixing:
+scoped to the areas above. Ground your recommendations in the dishes listed
+above — where can I actually eat or drink them? Add any standout places that
+serve other worthwhile local food, but anchor the search in those priority dishes.
+
+Mix:
 - Daytime / work-friendly: cafes I can work from for 2–3 hours (good WiFi,
   ok with a laptop), good coffee, reasonable lunch.
 - Dinner / memorable: places worth a real dinner — local specialty,
@@ -379,22 +436,13 @@ scoped to the areas above, mixing:
   €{budget_splurge_lo}–{budget_splurge_hi} range.
 
 Tag each as "daytime" or "dinner". For each: name, neighborhood, one-line
-why (tied to profile), and the source signal that surfaced it (Reddit, local
-food blog, resident rec — name it).
+why (tied to profile and the priority dishes above), and the source signal
+that surfaced it (Reddit, local food blog, resident rec — name it).
 
 {per_place_fields}
 
 If you cannot find 15–20 items with real evidence for these areas,
 return fewer and say so.
-
-SEPARATELY, give me a short "FOOD TO TRY" list — local DISHES, drinks,
-ingredients and specialties (NOT venues), 4–8 per area. For each:
-- Name of the dish/drink
-- What it is (one line)
-- How or where locals typically eat it (one line) — e.g. "from a market stall",
-  "a breakfast pastry", "sipped after a meal"
-Keep these distinct from the venue list above; they are the "what to eat" half,
-the venues are the "where to eat" half.
 
 {anti_tourist_guardrail with section_name = "food/restaurant list"}
 ```
@@ -590,7 +638,8 @@ URLs — omit anything you cannot ground in a real source.
 | T1 | /trip-init (one-time) | Timing / weather ceiling | Perplexity Pro |
 | 2a (or 2b) | Pass 2 | Cool neighborhoods / Candidate places | ChatGPT Pro |
 | 3 | Pass 3 | Hidden-gem activities (+ per-place fields, hike data) | Perplexity Pro |
-| 4 | Pass 4 | Food / restaurants (+ per-place fields) | Perplexity Pro |
+| 4a | Pass 4a | Food and drinks discovery (dishes only — seeds Pass 4b) | ChatGPT Pro |
+| 4b | Pass 4b | Venue long list (grounded in 4a priority dishes, + per-place fields) | Perplexity Pro |
 | 5a | Pass 5 | Tourist-trap warnings (skipped for ≤2-night stops) | Perplexity Pro |
 | 5b | Pass 5 | Mobility | ChatGPT Pro |
 | 5d | Pass 5 | Practical logistics (connectivity / maps / entry) → also feeds `meta.critical`/`meta.tasks` | Perplexity Pro |

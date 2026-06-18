@@ -204,6 +204,10 @@ The following Phase 2 and Phase 3 entries above were addressed by the 5-pass fun
 - No de-duplication contract between trap-list and keep-lists (B3) → de-duplication step added to dossier-workflow.md Step 10.5: after ingesting 5a, fuzzy-match against Pass 3/4 short lists; trap wins; conflicts logged. Operator surfaced if >3 conflicts.
 - Prompt 7 timing belongs in `/trip-init` not every dossier run (S2) → timing prompt moved to Prompt T1 in subagent-prompts.md § Trip Init; `/trip-init` Step 3.5 generates, presents, and ingests it; results stored in `trip-context.md` frontmatter (`timing_verdict`, `timing_notes`, `forecast_max_celsius`); 5c removed from Pass 5 in dossier-workflow.md.
 
+**ADDRESSED (2026-06-18 session — S2):**
+- Pass 4 (Food) conflates "what to eat" with "where to eat" in one prompt → Split into Pass 4a (dishes/drinks discovery, ChatGPT Pro) and Pass 4b (venue long list grounded in 4a priority dishes, Perplexity Pro). Updated `references/subagent-prompts.md` (new Prompts 4a/4b) and `references/dossier-workflow.md` (Steps 7/7.5/8/8.5 restructured; resume logic extended for 4a/4b; foodToTry in Step 11 now sourced from Pass 4a; de-dup in Step 10.5 updated to pass-4b-state.md).
+- No dossier-readiness QC pass → Added Step 13.5 to `references/dossier-workflow.md`: in-context 7-criterion readiness check (all 8 sections present; personalization applied; mobile/map-ready standards; unverified flags surfaced; build.mjs run; route decisions consistent; no buried critical bookings). Returns READY/NOT-READY with specific gaps; NOT-READY requires operator acknowledgment before declaring done. Subagent-based independent version is the long-term form; deferred to a future phase.
+
 **STILL OPEN (deferred to post-first-trip retro):**
 - Ingestion validates shape but not quality (fabricated source signals) — red-team B4
 - Single PROFILE_EXTRACT can't capture mixed-mode trip facets — red-team A2

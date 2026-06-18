@@ -842,3 +842,10 @@ Edited a Phase-0 spine file (`profile/travel-principles.md`) outside the normal 
 
 ### Open Questions
 None — all three verifications resolved; the Red Flat slot is an operator decision, not a blocker.
+
+## 2026-06-18 — Session S2
+Build the dossier-readiness QC gate (red-team Phase 4) and split Pass 4 into 4a/4b in the workflow reference files.
+**Mandate:** Build the dossier-readiness QC gate (red-team Phase 4) and restructure Pass 4 into 4a/4b in the workflow reference files — done when: dossier-workflow.md reflects the 4a/4b split and includes a dossier-readiness QC gate; committed.
+- Out of scope: (none stated)
+- Files in scope: references/dossier-workflow.md (inferred); references/subagent-prompts.md if pass-4 prompts need splitting
+- Stop if: (none stated)
