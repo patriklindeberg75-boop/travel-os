@@ -802,3 +802,10 @@ None. All writes were new/updated trip artifacts + a red-team log entry; five co
 
 ### Open Questions
 None — tripe-soup and Koprivshtitsa both resolved this session.
+
+## 2026-06-18 — Session S1
+**Mandate:** Verify the three needs-verification places in the Bulgaria dossier (Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location) against current web sources and update the dossier — done when: each place is confirmed, corrected, or explicitly marked unverifiable in the dossier.
+- Out of scope: Panichishte booking; full QC pass; workflow build session (other carryover items)
+- Files in scope: trips/bulgaria-2026-06/destination-dossier.md (inferred)
+- Stop if: (none stated)
+- Verify 3 needs-verification places in the Bulgaria dossier: Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location.

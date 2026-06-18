@@ -141,13 +141,18 @@ history. Low-tourist, off the center.
 - Find it: ul. Lachezar Stanchev 7, Izgrev; taxi or bus from center
 
 🆗 **The Red Flat** — Sofia centre
-Anti-tourist art and social space; alternative crowd; evening option
-when KANAAL doesn't fit.
-- Best time: evening
-- Cost: low / donation
-- Duration: 2–3h
-- Hours: verify current programming on arrival
-- Find it: ask hostel for current address (relocates)
+Socialist-era apartment museum: a 1980s Bulgarian family flat preserved
+room-by-room, self-guided with an English audio guide. Hands-on — open
+the cupboards, handle the objects.
+- Best time: daytime — it closes at 18:00, so NOT an evening option
+- Cost: ~€9 ticket (not donation)
+- Duration: ~1.5h
+- Hours: daily 10:30–18:00 (verified web 2026-06-18; reserve ahead — small, limited access)
+- Find it: 24 Ivan Denkoglu St, central Sofia, ~6 min from Serdika Metro (fixed location — does not relocate)
+- ⚠ Note: this verified venue does NOT match the earlier "anti-tourist art/
+  social space, evening, donation, relocates" framing — the real Red Flat
+  is a ticketed daytime apartment museum (a mild tourist attraction).
+  Decide whether it still earns the evening slot, or drop it.
 
 🆗 **Oborishte shade walk** — Oborishte, Sofia
 Residential neighborhood stroll through leafy embassy streets; low
@@ -436,16 +441,18 @@ driver to stop — roadside, marked, takes 5 min.
 
 **Daytime / work-friendly:**
 
-👍 **Baba Vuna** — ul. Tsar Simeon 16, old town near Holy Trinity Church
+👍 **Baba Vuna** — ul. Glazne ~67–69, Bansko old town
 The cheapest venue in the entire dossier. Canteen/gostilnitsa: tray,
 point at stews and sides, pay at register. Hyper-local (Bulgarian
 Reddit, not backpacker guides).
 - Best time: lunch (arrive 12:00–13:00 before best dishes run out)
 - Cost: ~€3–5 for a full hot meal
 - Duration: quick (30 min)
-- Hours: UNVERIFIED (dynamic; often reduces in low summer season) —
-  ask hostel on arrival; have Dedo Yonkata as fallback if closed
-- Find it: ul. Tsar Simeon 16, old town, near Holy Trinity Church
+- Hours: daily 11:00–22:00 (verified web 2026-06-18 — TripAdvisor /
+  RestaurantGuru; small canteen, still worth a hostel double-check) —
+  Dedo Yonkata remains the fallback if closed
+- Find it: ul. Glazne ~67–69, Bansko old town (address corrected from
+  "Tsar Simeon 16" — web listings place it on ul. Glazne)
 - Note: cash likely; carry small notes
 
 🆗 **Bunderitsa Chalet — trail fuel** — Bunderitsa, Pirin NP
@@ -454,8 +461,10 @@ up. Not a restaurant — food availability depends on what staff brought
 up that week.
 - Best time: pre-hike (07:30–08:30)
 - Cost: ~€2–4 for soup or tea
-- Hours: UNVERIFIED (opens early for hikers; dynamic) — carry emergency
-  snacks regardless; do not rely on this as sole nutrition
+- Hours: no fixed published hours (checked web 2026-06-18 — the hut has a
+  ground-floor canteen/dining room, but mountain huts open ad-hoc for
+  hikers and post no schedule). Carry emergency snacks regardless; do not
+  rely on this as sole nutrition. Confirm at the hut on arrival.
 - Find it: on the Bunderitsa road; shuttle will pass it
 
 🆗 **Mehana Dedo Yonkata** — Pirin Str. 84, old town, Bansko
@@ -803,8 +812,9 @@ Bulgaria, full Schengen space).
   First cabin timing determines whether the early-start crowd-mitigation
   is viable.
 
-- **Confirm Baba Vuna hours on Bansko arrival day** — ask hostel on
-  check-in. Have Dedo Yonkata as the backup if closed.
+- **Baba Vuna hours verified** (daily 11:00–22:00, web 2026-06-18) —
+  a hostel double-check on check-in is still wise for a small canteen;
+  Dedo Yonkata stays the backup if closed.
 
 - **Arrange Rila Monastery transport** — 15–20 km from Panichishte;
   taxi (~€15–20) or ask accommodation about a shared shuttle.
