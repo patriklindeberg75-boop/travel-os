@@ -483,16 +483,21 @@ Write to `trips/{slug}/destination-dossier.md`. If the file already exists, writ
 After writing the dossier file (Step 13), run an in-context readiness check before declaring the run complete. Score the dossier against this checklist:
 
 1. **All 8 sections present and non-empty.** Sections 1–8 must exist with real content (not the `_Section incomplete — re-run prompt and re-paste._` placeholder). A missing or placeholder section is NOT-READY.
-2. **Personalization spine applied (not generic).** At least 3 profile-specific references visible in the first three sections (e.g., "work-friendly WiFi," "crowd-free morning window," "matches the anti-tourist filter"). A section consisting only of generic recommendations with no profile hook is a warning.
-3. **Mobile / map / paste-ready standards met.** No wide horizontal tables. Every place in Sections 3–4 has name + neighborhood + city (map-ready). Sections delimited by `## ` headers per the mobile-formatting rules.
-4. **Unverified flags surfaced, not buried.** Every place with `rs: needs` must carry a visible ⚠ and its `rsNote` in the card body. A place with unresolved unverified facts that does not carry a flag is NOT-READY.
-5. **`build.mjs` run (if applicable).** If the trip has a `dossier-data.json`, confirm that `build.mjs` has been run successfully since the last write — no places with empty `id` or `map_link` fields. If `build.mjs` was not run, flag it.
-6. **Route and constraint decisions consistent.** If a stop or place was explicitly parked or rejected during the research passes (e.g., a location the operator dropped in Pass 2), it must not appear in the dossier body as if it were included. Check for any named place that appears in the dossier but not in the approved short lists.
-7. **No buried critical bookings.** If any stop has a high-consequence open action — advance-booking accommodation that sells out, a permit that requires pre-trip purchase, a ferry/train leg that must be reserved — it must appear in `meta.critical`, not only in a section note.
+
+2. **Section depth per stop (the "menu" check).** The dossier is a menu of options to pick from on the spot — not a schedule the operator follows in full. A section is only useful if there are enough options to make a real choice. Check per stop:
+   - **3+ nights:** Sections 3 and 4 must each have at least 8 items total AND at least 3 flagged 🔥 HIGH. Fewer than 8 items or fewer than 3 HIGH-tier options means the section is too thin for real on-the-spot choice — flag NOT-READY.
+   - **≤ 2 nights:** Softer floor — at least 4 items total and 2 HIGH minimum per section. Skip Section 5 entirely (already governed by the short-stop skip rule).
+   - Spread matters too: if all items in a section are concentrated in one neighborhood / sub-area, note it — a stop with 3+ nights should have options across at least 2 areas.
+3. **Personalization spine applied (not generic).** At least 3 profile-specific references visible in the first three sections (e.g., "work-friendly WiFi," "crowd-free morning window," "matches the anti-tourist filter"). A section consisting only of generic recommendations with no profile hook is a warning.
+4. **Mobile / map / paste-ready standards met.** No wide horizontal tables. Every place in Sections 3–4 has name + neighborhood + city (map-ready). Sections delimited by `## ` headers per the mobile-formatting rules.
+5. **Unverified flags surfaced, not buried.** Every place with `rs: needs` must carry a visible ⚠ and its `rsNote` in the card body. A place with unresolved unverified facts that does not carry a flag is NOT-READY.
+6. **`build.mjs` run (if applicable).** If the trip has a `dossier-data.json`, confirm that `build.mjs` has been run successfully since the last write — no places with empty `id` or `map_link` fields. If `build.mjs` was not run, flag it.
+7. **Route and constraint decisions consistent.** If a stop or place was explicitly parked or rejected during the research passes (e.g., a location the operator dropped in Pass 2), it must not appear in the dossier body as if it were included. Check for any named place that appears in the dossier but not in the approved short lists.
+8. **No buried critical bookings.** If any stop has a high-consequence open action — advance-booking accommodation that sells out, a permit that requires pre-trip purchase, a ferry/train leg that must be reserved — it must appear in `meta.critical`, not only in a section note.
 
 **Verdict:**
 
-- **READY** — all 7 criteria pass → proceed to Step 14.
+- **READY** — all 8 criteria pass → proceed to Step 14.
 - **NOT-READY** — one or more criteria fail → surface each specific gap to Patrik before proceeding:
   - List each failing criterion with a one-line description of what is missing or wrong.
   - Ask whether Patrik wants to fix the gap now or accept the dossier with the gap noted in `meta.critical`.
