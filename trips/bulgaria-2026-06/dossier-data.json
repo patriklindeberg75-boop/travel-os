@@ -4,18 +4,13 @@
     "destination": "Bulgaria — Western Loop",
     "dates": "2026-06-22 to 2026-06-29",
     "trip_type": "multi-stop",
+    "renderer": "none — no html renderer for this trip; dossier-data.json used directly; build.mjs criterion n/a",
     "admin": {
       "visa_notes": "EU citizen entering from Schengen — no checks, no stamps, no 90-day count. Bulgaria full Schengen member since 2025-01-01.",
       "schengen_note": "Full Schengen. No border crossing warnings on this route.",
       "insurance_reminder": "EHIC does NOT cover mountain rescue. Get supplemental Bulgarian mountain insurance (PSS coverage) before departure — a few EUR for the week. Required for Pirin and Rila hikes."
     },
     "tasks": [
-      {
-        "title": "Book Panichishte accommodation for Jun 27–28",
-        "due": "Before departure",
-        "how": "Seven Rila Lakes weekend is peak; Sofia Live Festival same weekend causes spillover. Book in advance.",
-        "stop": "rila-panichishte"
-      },
       {
         "title": "Book Bansko hostel (Avalon Co-Living or similar) for Jun 24–26",
         "due": "Before departure",
@@ -63,6 +58,11 @@
         "title": "Withdraw euro cash in Sofia (and top up in Bansko)",
         "how": "Many mountain huts, village mehanas, and market stalls are card-averse. No reliable ATMs in Panichishte or at the chalets. Withdraw from bank-affiliated ATM in Sofia; top up in Bansko before Rila leg.",
         "due": "Jun 22 (Sofia arrival)"
+      },
+      {
+        "title": "Book Panichishte accommodation for Jun 27–28",
+        "how": "CONFIRMED SELL-OUT RISK: Jun 27–28 is peak demand at Seven Rila Lakes + Sofia Live Festival overflow. Hostels and small guesthouses fill early. Book now — do not leave to arrival day.",
+        "due": "Before departure"
       }
     ]
   },
@@ -190,7 +190,7 @@
         },
         {
           "nm": "Women's Market (Zhenski Pazar)",
-          "t": 2,
+          "t": 3,
           "tags": ["market", "social", "eat"],
           "hook": "The daily locals' market — vegetables, spices, street food, the city's social heartbeat.",
           "facts": [
@@ -303,28 +303,28 @@
         {
           "nm": "The Red Flat",
           "t": 1,
-          "tags": ["social", "culture"],
-          "hook": "Anti-tourist art and social space; alternative crowd; evening option when KANAAL doesn't fit.",
+          "tags": ["culture"],
+          "hook": "Socialist-era apartment museum — 1980s Bulgarian family flat preserved room-by-room; English audio guide; daytime hands-on visit.",
           "facts": [
-            ["i-clock", "evenings"],
-            ["i-wallet", "low / donation"]
+            ["i-clock", "daytime 10:30–18:00"],
+            ["i-wallet", "~€9 entry"]
           ],
-          "hours": "verify current programming on arrival",
-          "cost": "low / donation",
+          "hours": "daily 10:30–18:00 (verified web 2026-06-18)",
+          "cost": "~€9 entry (ticketed)",
           "duration": "2-3h",
-          "best_time": "evening",
-          "find_it": "ask hostel for current address — relocates",
+          "best_time": "daytime — closes 18:00, NOT an evening option",
+          "find_it": "24 Ivan Denkoglu St, central Sofia; ~6 min from Serdika Metro (fixed location — does not relocate)",
           "neighborhood": "Centre",
           "city": "Sofia",
           "lat": null,
           "lng": null,
-          "image_query": "The Red Flat Sofia alternative art space",
+          "image_query": "The Red Flat Sofia 1980s apartment museum socialist",
           "image_url": "",
-          "time": ["evening"],
-          "purpose": ["social"],
+          "time": ["daytime"],
+          "purpose": ["explore", "culture"],
           "dur": "2-3h",
-          "rs": "needs",
-          "rsNote": "Location and current programming unverified — confirm with hostel on arrival."
+          "rs": "researched",
+          "rsNote": "⚠ Real venue is a ticketed daytime apartment museum — does not match original 'anti-tourist art/social space, evening' framing. Retain or drop from the dossier."
         }
       ],
       "hoods": [
@@ -377,7 +377,7 @@
         },
         {
           "nm": "SkaraBar 1",
-          "t": 2,
+          "t": 3,
           "tags": ["eat", "social"],
           "hook": "Residential-area grill in Zaimov Park; mixed grill + mezze; away from all tourist clusters.",
           "facts": [
@@ -678,7 +678,7 @@
         },
         {
           "nm": "Banderishki Lakes",
-          "t": 2,
+          "t": 3,
           "tags": ["hike", "view"],
           "hook": "Lower Pirin lakes circuit — less effort than Sinanitsa; the recommended second-hike-day option.",
           "facts": [
@@ -935,7 +935,7 @@
         },
         {
           "nm": "Banski Han",
-          "t": 2,
+          "t": 3,
           "tags": ["eat"],
           "hook": "Arrival-night dinner near the rail/bus station — practical after the narrow-gauge journey; mehana format, no foreigner premium.",
           "facts": [
@@ -967,13 +967,13 @@
           "facts": [
             ["i-clock", "lunchtime, arrive 12:00–13:00"],
             ["i-wallet", "~€3–5 full hot meal"],
-            ["i-pin", "ul. Tsar Simeon 16, old town"]
+            ["i-pin", "ul. Glazne ~67–69, Bansko old town"]
           ],
-          "hours": "UNVERIFIED — dynamic, may reduce in low summer. Ask hostel on arrival.",
+          "hours": "daily 11:00–22:00 (verified web 2026-06-18; small canteen — hostel double-check on arrival still wise)",
           "cost": "~€3–5 for a full hot meal",
           "duration": "quick",
           "best_time": "lunchtime (arrive 12:00–13:00 before best dishes run out)",
-          "find_it": "ul. Tsar Simeon 16, old town, near Holy Trinity Church",
+          "find_it": "ul. Glazne ~67–69, old town, Bansko",
           "neighborhood": "Old Town",
           "city": "Bansko",
           "lat": null,
@@ -983,8 +983,7 @@
           "time": ["daytime"],
           "purpose": ["eat"],
           "dur": "quick",
-          "rs": "needs",
-          "rsNote": "Hours unverified — dynamic and may reduce in low summer season. Ask hostel on arrival. Have Dedo Yonkata as backup.",
+          "rs": "researched",
           "tips": [
             "Cash likely; carry small EUR notes.",
             "If closed, use Dedo Yonkata (#8) as backup."
@@ -1167,7 +1166,7 @@
         },
         {
           "nm": "Rila Monastery",
-          "t": 2,
+          "t": 3,
           "tags": ["culture", "view"],
           "hook": "UNESCO fortress monastery with exterior frescoes, carved arcades, and striped church. Sunday anchor — the default second Rila day.",
           "facts": [
@@ -1296,6 +1295,32 @@
             "At the hard cap (~€11) — worth it; this is an experience, not just a meal."
           ],
           "pt": "mid"
+        },
+        {
+          "nm": "Lakes Chalet (Sedemte Ezera hut)",
+          "t": 3,
+          "tags": ["eat"],
+          "hook": "Mountain hut within the Seven Lakes cirque — soup, tea, yogurt with wild blueberries in season; the essential hike-day fuel stop.",
+          "facts": [
+            ["i-wallet", "~€3–5 soup or tea"],
+            ["i-pin", "Seven Lakes cirque, Rila NP; marked on Mapy.cz"]
+          ],
+          "hours": "seasonal; open during main hiking season (Jun–Sep)",
+          "cost": "~€3–5 soup or tea; yogurt + berries ~€2–3 if available",
+          "duration": "quick",
+          "best_time": "mid-morning on the Seven Lakes circuit",
+          "find_it": "within the Seven Lakes cirque; marked on Mapy.cz",
+          "neighborhood": "Rila NP",
+          "city": "Panichishte",
+          "lat": null,
+          "lng": null,
+          "image_query": "Sedemte Ezera hut Seven Rila Lakes mountain hut Bulgaria",
+          "image_url": "",
+          "time": ["daytime"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": ["Carry cash — card unlikely at the chalet."]
         }
       ],
       "mobility": {

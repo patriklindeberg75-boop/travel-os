@@ -96,7 +96,7 @@ If you want a swim/soak instead: #A6 Zheleznitsa Thermal Springs
 verify current public access before going).
 Default is Zlatnite Mostove — logistics verified; others are upsides.
 
-👍 **Women's Market (Zhenski Pazar)** — Stefan Stambolov, Sofia
+🔥 **Women's Market (Zhenski Pazar)** — Stefan Stambolov, Sofia
 The daily locals' market — vegetables, fruit, spices, cheap street
 food, the city's social heartbeat. Observation + foraging in one.
 - Best time: 09:00–12:00 (stallholders packing up mid-afternoon)
@@ -245,7 +245,7 @@ starting from Oborishte. Not a stack with Banicharnitsa — pick one.
 
 **Dinner / memorable:**
 
-👍 **SkaraBar 1** — ul. Dimitar Grekov 2, Zaimov Park, Sofia
+🔥 **SkaraBar 1** — ul. Dimitar Grekov 2, Zaimov Park, Sofia
 Neighbourhood grill in a residential park area; mixed grill + mezze;
 away from any tourist cluster; fills fast on warm June evenings.
 - Best time: 19:00 arrival (outdoor seating fills by 20:00)
@@ -364,7 +364,7 @@ to the route above.
 
 **Second hike option cluster — choose on the ground (one of three):**
 
-👍 **Banderishki Lakes** — Pirin NP, Bansko
+🔥 **Banderishki Lakes** — Pirin NP, Bansko
 Lower lakes circuit from Vihren Chalet; less effort than Sinanitsa;
 good second-day hike if legs are tired from the Sinanitsa day.
 - Best time: morning start from chalet
@@ -381,6 +381,8 @@ from the previous day AND weather is clear by dawn.
 - Duration: full-day
 - Hike data: ~600 m gain from chalet · exposed ridge · carry 3L water ·
   signal: none · check conditions at chalet (snow patches possible)
+- ⚠ Conditions unverified: snow patches possible on upper Vihren ridge
+  in late June — check at the chalet before committing to the summit
 
 🆗 **Demyanitsa Valley** — Pirin NP, Bansko
 Rain-day or rest-day backup: easy valley walk, no significant gain,
@@ -495,7 +497,7 @@ in character. Vegetable sach is the order.
 - Hours: daily 12:30–23:00 (confirmed in 5d)
 - Find it: Pirin Str. 42, residential side of the old town
 
-👍 **Banski Han** — ul. Patriarh Evtimiy 2, north end near rail/bus station
+🔥 **Banski Han** — ul. Patriarh Evtimiy 2, north end near rail/bus station
 Arrival-night dinner (Wed Jun 24). Near the rail/bus station — practical
 after the narrow-gauge journey. Mehana format; no foreigner premium.
 - Best time: arrival evening (19:00–20:00)
@@ -503,6 +505,12 @@ after the narrow-gauge journey. Mehana format; no foreigner premium.
 - Duration: 1.5h
 - Hours: daily 10:00–23:00
 - Find it: ul. Patriarh Evtimiy 2, north end of Bansko near the station
+
+*(Bansko food depth: 6 venues across all meal slots at budget tier —
+breakfast/trail-fuel, daytime lunch × 2 options, arrival dinner, two
+full-evening mehanas. Pass-4 research found no additional qualifying
+venues at this budget tier in the off-season town; 6/8 floor shortfall
+acknowledged.)*
 
 ---
 
@@ -566,7 +574,7 @@ wonder and there is nothing else like it on this route.
 - Fallback: if Sat crowds are unbearable, pivot to Malyovitsa
   (see below)
 
-👍 **Rila Monastery** — Rila NP (below high country)
+🔥 **Rila Monastery** — Rila NP (below high country)
 UNESCO-listed fortress monastery; exterior frescoes, carved arcades,
 black-and-white striped church. Sunday anchor (default Jun 28).
 Can pull to Saturday afternoon if the lakes circuit ends with energy
@@ -623,6 +631,45 @@ Saturdays). Sat/Sun are busy nights — lower risk of early closure.
 - Hours: daily 10:00–00:00, to 03:00 Saturdays (confirmed)
 - Find it: Mestnost Valyavitsa, Sapareva Banya area; taxi from
   Panichishte (~€8–10, ~15 km); confirm route with accommodation
+
+---
+
+**Hike-day fuel:**
+
+🔥 **Lakes Chalet (Sedemte Ezera hut)** — Seven Lakes cirque, Rila NP
+→ *Cross-listed from Section 3.* Mountain hut within the Seven Lakes
+cirque; soup, tea, mountain yogurt with wild blueberries in season.
+The essential fuel stop on the circuit day.
+- Best time: mid-morning during the Seven Lakes circuit
+- Cost: soup or tea ~€3–5; yogurt + berries ~€2–3 if available
+- Duration: quick
+- Hours: seasonal (open Jun–Sep during main hiking season)
+- Find it: within the Seven Lakes cirque; marked on Mapy.cz
+- Note: carry cash; card unlikely
+
+---
+
+**Morning / provisions:**
+
+🆗 **Panichishte village shop** — Panichishte base village
+Pre-hike provisions: trail snacks, water, fruit. Stock up here
+before heading to Pionerska lift base.
+- Best time: early morning before departure to chairlift (~07:30)
+- Cost: ~€3–5 for snacks
+- Duration: quick
+
+🆗 **Guesthouse / hostel breakfast** — Panichishte accommodation
+Most Panichishte guesthouses offer a basic hot breakfast (eggs, bread,
+yogurt, honey). Ask about popara (warm milk + bread + honey) — the
+traditional Rila mountain morning.
+- Best time: before 08:00 on Seven Lakes hike day (early departure)
+- Cost: included or ~€3–5
+- Duration: quick
+
+*(Rila food depth: Panichishte has minimal venue infrastructure. Pass-4a
+analysis anticipated this — "one proper sit-down meal and a hut snack is
+realistic; do not over-engineer." Four options cover all meal slots for
+this 2-night stop.)*
 
 ---
 
