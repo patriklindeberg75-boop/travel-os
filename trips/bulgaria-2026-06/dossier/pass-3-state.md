@@ -240,3 +240,18 @@ Kept as the documented weather/crowd fallback for Seven Lakes only. It is NOT a 
 
 **Decision 3 — Rila Monastery (#17):**
 Reserved as the Sunday anchor (second Rila day, Jun 28). Option to pull to Saturday afternoon (Jun 27) noted — if the Seven Lakes hike on Saturday finishes with energy remaining, Rila Monastery is accessible the same afternoon (it is below the high country). This optionality should be noted in the dossier; the default is Sunday.
+
+---
+
+## OPERATOR ADDITIONS (2026-06-18 — fold into synthesis)
+
+Operator surfaced three activity additions while reviewing notes. Carry these into the dossier synthesis; they need no new research pass (Sofia sights are well-documented; Koprivshtitsa is the new journey-break stop locked in trip-context).
+
+**Sofia — Culture cluster (add to Stop 1):**
+- **Banya Bashi Mosque** — Sofia centre — Ottoman-era; the city's only working mosque. Part of the central "tolerance square" cluster.
+- **Ancient Serdica Archaeological Complex** — Sofia centre — Roman ruins woven into the city centre / the "Largo"; open-access pedestrian level. Sits ~5 min from Banya Bashi, Sveta Nedelya church, and the synagogue — group these as one central walking cluster on a Sofia afternoon.
+  - Note: both are low-cost / free, central, no closure constraints flagged — verify Serdica complex hours on the day.
+
+**Koprivshtitsa — journey-break activity (Sofia→Septemvri leg):**
+- **Koprivshtitsa old town** — Sredna Gora — preserved 19th-century National Revival village; cobbled streets, painted merchant houses, several house-museums (e.g. Oslekov House, Lyutov House). Genuinely anti-tourist / on-profile. Half-day wander is the activity; pick 1–2 house-museums rather than all six. Station is ~9–12km below the town (bus/shuttle connection up).
+  - Logistics (Pass 5): confirm the narrow-gauge / mainline schedule allows a half-day stopover; Sofia day-trip is the fallback.

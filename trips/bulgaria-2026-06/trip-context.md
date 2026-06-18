@@ -22,6 +22,7 @@ approved_locations:
   - "Sofia (Oborishte / Women's Market area)"
   - "Iskar Gorge (day-trip from Sofia)"
   - "Septemvri–Dobrinishte narrow-gauge railway (scenic transit leg)"
+  - "Koprivshtitsa (Revival-era village — half-day journey-break en route Sofia→Septemvri; Sofia day-trip as fallback)"
   - "Bansko / Pirin Mountains"
   - "Rila Mountains — Panichishte base (Seven Rila Lakes, Rila Monastery, Malyovitsa optional)"
 route_stops:
@@ -32,6 +33,7 @@ route_stops:
     nights: 3
     dates: "2026-06-24 to 2026-06-26"
     transit_in: "Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko"
+    journey_break: "Koprivshtitsa — half-day stopover in the Sredna Gora en route Sofia→Septemvri (Revival-era preserved village; on-profile, anti-tourist). 0 nights assumed; station is in the valley ~9–12km below the town (bus connection up). Rail-connection timing to confirm in Pass 5 — if the stopover doesn't fit the narrow-gauge schedule, fall back to a Sofia day-trip."
   - stop: "Rila Mountains (Panichishte base)"
     nights: 2
     dates: "2026-06-27 to 2026-06-28"
@@ -74,6 +76,7 @@ Work routine: 25h/week front-loaded Mon–Thu, done from Sofia/Plovdiv cafes/cow
 - Stop 1: Sofia — 2 nights (Jun 22–23, Mon–Tue)
 - Stop 2: Bansko / Pirin — 3 nights (Jun 24–26, Wed–Fri)
   Transit: Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko (short taxi/transfer)
+  Journey-break: Koprivshtitsa (added 2026-06-18) — half-day stopover in the Sredna Gora on the Sofia→Septemvri leg. Revival-era preserved village, anti-tourist / on-profile. 0 nights; station ~9–12km below the town. Confirm rail timing in Pass 5; Sofia day-trip is the fallback. Plovdiv was considered alongside it and left parked for a future trip.
 - Stop 3: Rila Mountains (Panichishte base) — 2 nights (Jun 27–28, Sat–Sun)
   Highlights: Seven Rila Lakes (operator opted into weekend crowds), Rila Monastery
 - Depart: Jun 29 (Mon) — return from Rila area ~2h, 0 nights

@@ -100,6 +100,10 @@ Food options here are thin — mountain hut and small local-restaurant scale. On
 
 ---
 
+## Operator additions (2026-06-18)
+
+- **Byurek (börek)** — operator flagged "burek / suberek?". This is the close cousin of banitsa (#1): the same filo-and-feta family, often egg-enriched (sirene byurek). No separate target needed — fold it in when the Pass 4b venue search targets banitsa bakeries; a good banitsa spot will typically do byurek too. Operator's other two food notes (Shopska salad, "panizza" = banitsa) are already captured as #5 and #1.
+
 ## Flags and Notes
 
 **Shkembe chorba (tripe):** Offal dish. Targeted only if operator explicitly eats offal. Needs operator confirmation before including in the Pass 4b venue search.
