@@ -1,0 +1,1338 @@
+{
+  "meta": {
+    "slug": "bulgaria-2026-06",
+    "destination": "Bulgaria — Western Loop",
+    "dates": "2026-06-22 to 2026-06-29",
+    "trip_type": "multi-stop",
+    "admin": {
+      "visa_notes": "EU citizen entering from Schengen — no checks, no stamps, no 90-day count. Bulgaria full Schengen member since 2025-01-01.",
+      "schengen_note": "Full Schengen. No border crossing warnings on this route.",
+      "insurance_reminder": "EHIC does NOT cover mountain rescue. Get supplemental Bulgarian mountain insurance (PSS coverage) before departure — a few EUR for the week. Required for Pirin and Rila hikes."
+    },
+    "tasks": [
+      {
+        "title": "Book Panichishte accommodation for Jun 27–28",
+        "due": "Before departure",
+        "how": "Seven Rila Lakes weekend is peak; Sofia Live Festival same weekend causes spillover. Book in advance.",
+        "stop": "rila-panichishte"
+      },
+      {
+        "title": "Book Bansko hostel (Avalon Co-Living or similar) for Jun 24–26",
+        "due": "Before departure",
+        "how": "Confirm availability; avoid gondola-strip hotels.",
+        "stop": "bansko"
+      },
+      {
+        "title": "Confirm narrow-gauge timetable the evening before the Bansko leg",
+        "due": "Tue Jun 23 evening",
+        "how": "bileti.bdz.bg or station board. Catch 08:55 Rodopi from Septemvri; depart Sofia ~06:30.",
+        "link": "https://bileti.bdz.bg",
+        "stop": "sofia"
+      },
+      {
+        "title": "Arrange Bansko → Panichishte relay transport (Sat Jun 27)",
+        "due": "Before Jun 27",
+        "how": "Relay: Bansko→Blagoevgrad minibus → Dupnitsa bus/train → Sapareva Banya minibus → Panichishte taxi. Allow 3–4h; start early (weekend frequency drops).",
+        "stop": "bansko"
+      },
+      {
+        "title": "Arrange Panichishte → Sofia return (Mon Jun 29)",
+        "due": "Before Jun 29",
+        "how": "Morning taxi Panichishte→Dupnitsa (~€15, ~30 min) then Union Ivkoni bus (~1h15). Depart by 07:30 for ~09:45 Sofia arrival.",
+        "link": "https://unionivkoni.com",
+        "stop": "rila-panichishte"
+      }
+    ],
+    "critical": [
+      {
+        "title": "Mountain rescue insurance — buy before departure",
+        "how": "Supplemental Bulgarian mountain insurance covering PSS rescue in Pirin and Rila. EHIC does not cover this. A few EUR for the week.",
+        "due": "Before Jun 22"
+      },
+      {
+        "title": "Download Mapy.cz offline maps (Bulgaria – South-West)",
+        "how": "Open Mapy.cz → download 'Bulgaria – South-West' region. Also download Sofia on Google Maps. Do before departing Finland — signal lost on the narrow-gauge leg.",
+        "due": "Before Jun 22"
+      },
+      {
+        "title": "Check Finnish SIM EU data cap",
+        "how": "12h/week remote work with video calls burns the EU roaming fair-use allowance faster than standard travel. Confirm your carrier's cap.",
+        "due": "Before Jun 22"
+      },
+      {
+        "title": "Withdraw euro cash in Sofia (and top up in Bansko)",
+        "how": "Many mountain huts, village mehanas, and market stalls are card-averse. No reliable ATMs in Panichishte or at the chalets. Withdraw from bank-affiliated ATM in Sofia; top up in Bansko before Rila leg.",
+        "due": "Jun 22 (Sofia arrival)"
+      }
+    ]
+  },
+  "trip": [
+    {
+      "id": "sofia",
+      "name": "Sofia",
+      "when": "2 nights · Jun 22–23 (Mon–Tue)",
+      "nights": 2,
+      "heat": false,
+      "heatLabel": "~27°C · within ceiling",
+      "climate": "~27°C",
+      "temp": "~27°C",
+      "budget": "~€50/day",
+      "start": "Zlatnite Mostove + Boyana Waterfall — city-edge Vitosha half-day; boulder field, waterfall, treeline, no tourists.",
+      "inLeg": "Arrive Jun 22",
+      "outLeg": "Sofia → Bansko via narrow-gauge, Jun 24",
+      "connectivity": {
+        "eu_roaming": true,
+        "esim_note": "Finnish SIM roams full 4G/5G in Sofia centre. No extra charge.",
+        "esim_cost_eur": null
+      },
+      "offline_map_area": "Google Maps — download Sofia region. Mapy.cz not needed for Sofia streets.",
+      "borders": "No border crossing. Within Bulgaria / Schengen.",
+      "sunrise": "05:48",
+      "sunset": "21:08",
+      "intro": "Sofia rewards the non-tourist approach: base in Oborishte, skip Vitosha Boulevard, and you find a leafy embassy-quarter neighborhood with great cafes, the best banitsa in Bulgaria, and a working locals' market two blocks away. Two days is the right amount — one serious Vitosha morning, one afternoon of central culture, two good evenings out.",
+      "base": {
+        "label": "Oborishte / Women's Market area",
+        "kind": "area"
+      },
+      "tasks": [
+        {
+          "title": "Ask hostel about Bus 66 last return time (for Vitosha hike)",
+          "due": "Evening before Vitosha morning",
+          "how": "Do not attempt Cherni Vrah (#A5) without confirming last bus back. Default to Zlatnite Mostove which has confirmed logistics."
+        },
+        {
+          "title": "Confirm narrow-gauge timetable (Septemvri → Dobrinishte)",
+          "due": "Tue Jun 23 evening",
+          "how": "bileti.bdz.bg or station board. Target 08:55 Rodopi; depart Sofia Central ~06:30."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Sofia Transport app",
+          "type": "transport",
+          "link": "",
+          "why": "Bus + metro schedules including Bus 66 to Vitosha. Download before arrival."
+        },
+        {
+          "title": "bileti.bdz.bg",
+          "type": "transport",
+          "link": "https://bileti.bdz.bg",
+          "why": "BDZ rail timetable and ticket booking for the narrow-gauge leg."
+        }
+      ],
+      "foodToTry": [
+        {
+          "name": "Banitsa",
+          "what": "Flaky phyllo pastry filled with sirene cheese (or spinach, egg). The Bulgarian breakfast.",
+          "how": "Hot from the oven at 06:00 at Banicharnitsa. Not from a cafe."
+        },
+        {
+          "name": "Shkembe chorba",
+          "what": "Tripe soup with garlic, vinegar, and chili. Morning hangover standard and a Sofia institution.",
+          "how": "At Shkembedzhiinitsa, Mon–Fri 09:00–16:00."
+        },
+        {
+          "name": "Tarator",
+          "what": "Cold yogurt and cucumber soup. Summer staple, refreshing after morning heat.",
+          "how": "Order at any traditional restaurant."
+        },
+        {
+          "name": "Lyutenitsa",
+          "what": "Roasted pepper and tomato relish. Shows up on every table.",
+          "how": "Eat with bread, not as a course."
+        },
+        {
+          "name": "Meshana skara",
+          "what": "Mixed grill plate. The staple dinner.",
+          "how": "Order the solo version at a neighbourhood grill like SkaraBar 1."
+        }
+      ],
+      "doLabel": "Do & explore",
+      "do": [
+        {
+          "nm": "Zlatnite Mostove + Boyana Waterfall",
+          "t": 3,
+          "tags": ["hike", "shade", "view"],
+          "hook": "Boulder river walk + waterfall loop on Vitosha's flanks; sub-alpine, shaded, non-tourist, city-edge.",
+          "facts": [
+            ["i-clock", "before 09:00 depart"],
+            ["i-wallet", "free"],
+            ["i-mountain", "~8–10 km loop · ~300 m gain"],
+            ["i-bus", "Bus 66 from Hladilnika"]
+          ],
+          "hours": "open access",
+          "cost": "free",
+          "duration": "half-day",
+          "best_time": "Depart before 09:00; finish before midday heat and storm risk",
+          "find_it": "Bus 66 from Hladilnika terminal → Zlatnite Mostove stop; confirm schedule at hostel evening before",
+          "neighborhood": "Vitosha",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Zlatnite Mostove golden bridges Vitosha Sofia boulder field",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["explore", "recovery"],
+          "dur": "half-day",
+          "rs": "researched",
+          "tips": [
+            "Confirm Bus 66 last return time the evening before — ask hostel. Without this you cannot attempt the Cherni Vrah variant safely.",
+            "Bring 1.5L water; there is water at the waterfall but not reliably before it.",
+            "The fork to Boyana Waterfall is signed; take the right branch off the boulder field main path."
+          ],
+          "hike": {
+            "distance": "~8–10 km loop",
+            "elevation_gain": "~300 m from bus stop",
+            "water_on_route": true,
+            "mobile_signal": false,
+            "last_transport_back": "Bus 66 — verify current schedule at hostel"
+          }
+        },
+        {
+          "nm": "Women's Market (Zhenski Pazar)",
+          "t": 2,
+          "tags": ["market", "social", "eat"],
+          "hook": "The daily locals' market — vegetables, spices, street food, the city's social heartbeat.",
+          "facts": [
+            ["i-clock", "09:00–12:00 best"],
+            ["i-wallet", "free to wander"],
+            ["i-pin", "Stefan Stambolov, Sofia"]
+          ],
+          "hours": "daily 08:00–19:00",
+          "cost": "free; €1–3 per street food item",
+          "duration": "2-3h",
+          "best_time": "09:00–12:00 (stallholders packing up mid-afternoon)",
+          "find_it": "bul. Stefan Stambolov 1202; tram/metro to Serdika then walk",
+          "neighborhood": "Zhenski Pazar",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Zhenski Pazar Women Market Sofia street food",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "eat"],
+          "dur": "2-3h",
+          "rs": "researched",
+          "tips": [
+            "Pocket safety in crowds — keep phone and wallet in front pockets.",
+            "Hot food stalls (grilled corn, burek) are near the central aisle; produce is on the perimeter."
+          ]
+        },
+        {
+          "nm": "KANAAL",
+          "t": 2,
+          "tags": ["social"],
+          "hook": "Outdoor bar in repurposed canal space; backpacker and local young crowd; primary evening anchor.",
+          "facts": [
+            ["i-clock", "evenings from 19:00"],
+            ["i-wallet", "~€3–5 beer"]
+          ],
+          "hours": "evenings; confirm current schedule",
+          "cost": "~€3–5 per drink",
+          "duration": "2-3h",
+          "best_time": "evening (from ~19:00)",
+          "find_it": "ul. Knyaz Boris I area — ask hostel for exact current location",
+          "neighborhood": "Centre",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "KANAAL bar Sofia canal outdoor social",
+          "image_url": "",
+          "time": ["evening"],
+          "purpose": ["social"],
+          "dur": "2-3h",
+          "rs": "researched"
+        },
+        {
+          "nm": "Ancient Serdica Complex + Banya Bashi Mosque",
+          "t": 1,
+          "tags": ["culture"],
+          "hook": "Roman ruins at the Largo + the city's only working Ottoman mosque — central afternoon walking cluster.",
+          "facts": [
+            ["i-clock", "afternoon"],
+            ["i-wallet", "free"],
+            ["i-pin", "Serdika metro, Sofia"]
+          ],
+          "hours": "Serdica pedestrian level: open access; Banya Bashi: daily; indoor Serdica hours: verify on day",
+          "cost": "free",
+          "duration": "2-3h",
+          "best_time": "afternoon; avoid midday heat in the open Largo",
+          "find_it": "Serdika metro station is the focal point; mosque immediately adjacent",
+          "neighborhood": "Serdika",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Ancient Serdica archaeological complex Sofia Largo",
+          "image_url": "",
+          "time": ["daytime"],
+          "purpose": ["explore", "culture"],
+          "dur": "2-3h",
+          "rs": "researched",
+          "tips": [
+            "Serdica indoor access hours are not posted online — confirm on the day. The pedestrian level is always open.",
+            "Banya Bashi is a working mosque; cover shoulders and remove shoes to enter.",
+            "Combine with Sveta Nedelya church and the Sephardic synagogue for the full central cluster — all within 10 min walk."
+          ]
+        },
+        {
+          "nm": "Museum of Socialist Art",
+          "t": 1,
+          "tags": ["culture"],
+          "hook": "Outdoor sculpture park of communist-era monumental art + film archive; unique to Sofia.",
+          "facts": [
+            ["i-clock", "Tue only this trip"],
+            ["i-wallet", "~€3–5 entry"],
+            ["i-pin", "Izgrev district, Sofia"]
+          ],
+          "hours": "closed Mondays; visit Tue Jun 23 only (sole viable window)",
+          "cost": "~€3–5 entry",
+          "duration": "2-3h",
+          "best_time": "morning Tue Jun 23 (only viable window — closed Mon)",
+          "find_it": "ul. Lachezar Stanchev 7, Izgrev; taxi or bus from centre",
+          "neighborhood": "Izgrev",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Museum of Socialist Art Sofia outdoor sculpture park",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "culture"],
+          "dur": "2-3h",
+          "rs": "researched"
+        },
+        {
+          "nm": "The Red Flat",
+          "t": 1,
+          "tags": ["social", "culture"],
+          "hook": "Anti-tourist art and social space; alternative crowd; evening option when KANAAL doesn't fit.",
+          "facts": [
+            ["i-clock", "evenings"],
+            ["i-wallet", "low / donation"]
+          ],
+          "hours": "verify current programming on arrival",
+          "cost": "low / donation",
+          "duration": "2-3h",
+          "best_time": "evening",
+          "find_it": "ask hostel for current address — relocates",
+          "neighborhood": "Centre",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "The Red Flat Sofia alternative art space",
+          "image_url": "",
+          "time": ["evening"],
+          "purpose": ["social"],
+          "dur": "2-3h",
+          "rs": "needs",
+          "rsNote": "Location and current programming unverified — confirm with hostel on arrival."
+        }
+      ],
+      "hoods": [
+        {
+          "nm": "Oborishte",
+          "base": 1,
+          "d": "Leafy embassy quarter; best cafe and bakery concentration; low tourist density. Primary base zone."
+        },
+        {
+          "nm": "Women's Market area (Stefan Stambolov / Zhenski Pazar)",
+          "base": 0,
+          "d": "Working locals' market neighborhood; street-food orbit. Daytime activity zone."
+        },
+        {
+          "nm": "Serdika central cluster",
+          "base": 0,
+          "d": "Ottoman/Roman/communist architecture overlap. Afternoon walking zone, not a work base."
+        }
+      ],
+      "stayPick": "Hostel in Oborishte / Women's Market zone — best social backpacker atmosphere, walkable to the market, 10 min to Serdika central cluster. Work cafes dense enough for full Mon–Tue work blocks.",
+      "eat": [
+        {
+          "nm": "Banicharnitsa",
+          "t": 3,
+          "tags": ["eat"],
+          "hook": "Highest-rated banitsa spot in Oborishte; Mon–Fri only — both Sofia days are weekdays.",
+          "facts": [
+            ["i-clock", "06:00–08:00 freshest"],
+            ["i-wallet", "~€1.30–2"],
+            ["i-pin", "bul. Evlogi i Hristo Georgiev 102, Oborishte"]
+          ],
+          "hours": "Mon–Fri 06:00–19:00, closed weekends",
+          "cost": "~€1.30–2 per pastry",
+          "duration": "quick",
+          "best_time": "06:00–08:00 (hot and fresh)",
+          "find_it": "bul. Evlogi i Hristo Georgiev 102, Oborishte; walk from hostel",
+          "neighborhood": "Oborishte",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Banicharnitsa Sofia banitsa pastry breakfast",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": [
+            "If walking toward Women's Market / Serdika direction, use Furna instead — do not do both on the same morning."
+          ]
+        },
+        {
+          "nm": "SkaraBar 1",
+          "t": 2,
+          "tags": ["eat", "social"],
+          "hook": "Residential-area grill in Zaimov Park; mixed grill + mezze; away from all tourist clusters.",
+          "facts": [
+            ["i-clock", "arrive 19:00 (fills by 20:00)"],
+            ["i-wallet", "~€7.50–11 solo meal"],
+            ["i-pin", "ul. Dimitar Grekov 2, Zaimov Park"]
+          ],
+          "hours": "daily 12:00–22:00",
+          "cost": "~€7.50–11 solo meal (order the solo mixed grill, not the table set)",
+          "duration": "2-3h",
+          "best_time": "19:00 (outdoor seating fills by 20:00 on warm June evenings)",
+          "find_it": "ul. Dimitar Grekov 2; short walk from Oborishte via Zaimov Park",
+          "neighborhood": "Zaimov Park",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "SkaraBar 1 Sofia grill Zaimov Park skara",
+          "image_url": "",
+          "time": ["evening"],
+          "purpose": ["eat"],
+          "dur": "2-3h",
+          "rs": "researched",
+          "tips": [
+            "Order the solo mixed grill (not the large table set) to stay within budget.",
+            "Arrive by 19:00 on warm evenings or be ready to wait for outdoor seating."
+          ],
+          "pt": "mid"
+        },
+        {
+          "nm": "Women's Market — food foraging",
+          "t": 2,
+          "tags": ["eat", "market"],
+          "hook": "Assembled daytime lunch from market stalls — the Bourdain-style solo lunch option.",
+          "facts": [
+            ["i-clock", "09:00–12:00 best selection"],
+            ["i-wallet", "~€5 assembled lunch"],
+            ["i-pin", "bul. Stefan Stambolov 1202, Sofia"]
+          ],
+          "hours": "daily 08:00–19:00",
+          "cost": "~€1–3 per item; ~€5 assembled lunch",
+          "duration": "quick",
+          "best_time": "09:00–12:00 for best selection",
+          "find_it": "bul. Stefan Stambolov 1202",
+          "neighborhood": "Zhenski Pazar",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Zhenski Pazar Women Market Sofia food stalls",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched"
+        },
+        {
+          "nm": "Supa Star",
+          "t": 2,
+          "tags": ["eat", "work"],
+          "hook": "Rotating soup counter; the work-break lunch — lighter and later than tripe soup.",
+          "facts": [
+            ["i-clock", "lunchtime 11:30–14:00"],
+            ["i-wallet", "~€2–3"],
+            ["i-pin", "ul. Tsar Ivan Shishman 8, Sofia"],
+            ["i-coffee", "work-break friendly"]
+          ],
+          "hours": "Mon–Fri 11:30–20:00, weekends 12:00–19:00",
+          "cost": "~€2–3 for large bowl + bread",
+          "duration": "quick",
+          "best_time": "lunchtime (11:30–14:00)",
+          "find_it": "ul. Tsar Ivan Shishman 8, ~10 min walk from Oborishte",
+          "neighborhood": "Centre",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Supa Star Sofia soup counter lunch",
+          "image_url": "",
+          "time": ["daytime"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched"
+        },
+        {
+          "nm": "Shkembedzhiinitsa",
+          "t": 1,
+          "tags": ["eat"],
+          "hook": "Tripe soup institution — stripped-down chorbadjiinitsa; cash only; Mon–Fri 09:00–16:00.",
+          "facts": [
+            ["i-clock", "morning 09:00–11:00"],
+            ["i-wallet", "~€2.50–4"],
+            ["i-pin", "ul. Dimitar Petkov 2, Sveta Troitsa"]
+          ],
+          "hours": "Mon–Fri 09:00–16:00, closed weekends",
+          "cost": "~€2.50–4 per bowl",
+          "duration": "quick",
+          "best_time": "09:00–11:00",
+          "find_it": "ul. Dimitar Petkov 2, Sveta Troitsa area; 15 min from centre",
+          "neighborhood": "Sveta Troitsa",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Shkembedzhiinitsa Sofia tripe soup chorba",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": ["Cash only likely — carry small EUR notes."]
+        },
+        {
+          "nm": "Furna",
+          "t": 1,
+          "tags": ["eat"],
+          "hook": "Morning banitsa near Serdika metro — route-dependent alternative to Banicharnitsa.",
+          "facts": [
+            ["i-clock", "07:30–09:00 best"],
+            ["i-wallet", "~€1.50–2.50"],
+            ["i-pin", "bul. Stefan Stambolov 3, Serdika metro"]
+          ],
+          "hours": "daily 07:30–19:30",
+          "cost": "~€1.50–2.50",
+          "duration": "quick",
+          "best_time": "07:30–09:00 (popular fillings sell out by late morning)",
+          "find_it": "bul. Stefan Stambolov 3, near Serdika metro exit",
+          "neighborhood": "Serdika",
+          "city": "Sofia",
+          "lat": null,
+          "lng": null,
+          "image_query": "Furna Sofia banitsa bakery",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": ["Use if walking toward Women's Market / Serdika direction. Do not combine with Banicharnitsa on the same morning."]
+        }
+      ],
+      "mobility": {
+        "verdict": "Walk + metro",
+        "cost": "~€2.50/day",
+        "note": "Walkable core; metro (~€0.80/tap) for longer transfers. Bus 66 for Vitosha."
+      },
+      "timing": {
+        "verdict": "ACCEPTABLE",
+        "note": "Jun 22–23 are weekdays — ideal for Sofia. Work blocks fit Mon–Tue. Sofia Live Festival is Jun 27–28 (after Sofia leg)."
+      }
+    },
+    {
+      "id": "bansko",
+      "name": "Bansko / Pirin",
+      "when": "3 nights · Jun 24–26 (Wed–Fri)",
+      "nights": 3,
+      "heat": false,
+      "heatLabel": "~22°C in town · ~12–16°C high country",
+      "climate": "~22°C",
+      "temp": "~22°C",
+      "budget": "~€45/day",
+      "start": "Sinanitsa / Muratovo Lakes hike — full-day Pirin alpine, clear mountain lakes, near-zero crowds.",
+      "inLeg": "Arrive via narrow-gauge → Dobrinishte taxi, Jun 24 ~16:00",
+      "outLeg": "Bansko → Panichishte relay, Jun 27 (start early)",
+      "connectivity": {
+        "eu_roaming": true,
+        "esim_note": "4G/5G in Bansko town. Patchy to dead zone on Pirin trails above Vihren Chalet.",
+        "esim_cost_eur": null
+      },
+      "offline_map_area": "Mapy.cz — download 'Bulgaria – South-West' offline region. Covers Vihren, Sinanitsa, Banderishki Lakes trails accurately.",
+      "borders": "No border crossing. Within Bulgaria / Schengen.",
+      "sunrise": "05:48",
+      "sunset": "21:08",
+      "intro": "Bansko in June is the ski resort with the lifts stopped — cheaper, quieter, and the mountain access (trail shuttles to Vihren Chalet) works without winter crowds. Budget filter strictly applied: old-town mehanas and the residential Pirin Street zone, never the gondola-area tourist strip. Three nights = one serious hike day, one culture half-day, one second-hike or rest day.",
+      "base": {
+        "label": "Old-town / Pirin Street zone",
+        "kind": "area"
+      },
+      "tasks": [
+        {
+          "title": "Check Baba Vuna hours on arrival day",
+          "due": "Arrival day (Wed Jun 24)",
+          "how": "Ask hostel on check-in. Have Dedo Yonkata as fallback if closed."
+        },
+        {
+          "title": "Confirm Vihren Chalet shuttle schedule for hike day(s)",
+          "due": "Evening before each hike",
+          "how": "Last shuttle back from Vihren Chalet is the key constraint. Verify with hostel or at the bus station."
+        },
+        {
+          "title": "Pre-order kapama at Zehtindjieva Kashta",
+          "due": "Day of visit (earlier in the day)",
+          "how": "Clay-pot dishes often need to be pre-ordered. Call ahead or stop by at lunch to order for dinner."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Pirin National Park official site",
+          "type": "reference",
+          "link": "https://pirinpark.bg",
+          "why": "Trail conditions and seasonal closures for Pirin NP."
+        },
+        {
+          "title": "Mapy.cz",
+          "type": "transport",
+          "link": "https://mapy.cz",
+          "why": "Definitive offline trail maps for Pirin NP. Download Bulgaria – South-West region."
+        }
+      ],
+      "foodToTry": [
+        {
+          "name": "Kapama",
+          "what": "Slow-cooked mixed meats (pork, chicken, sausage) with sauerkraut in a sealed clay pot. The Bansko regional speciality.",
+          "how": "Order at Zehtindjieva Kashta — may need advance pre-order earlier in the day."
+        },
+        {
+          "name": "Vegetable sach",
+          "what": "Mixed vegetables roasted in a curved iron pan. The local alternative to meat sach.",
+          "how": "Order at Dedo Tase."
+        },
+        {
+          "name": "Garash cake",
+          "what": "Dense walnut-chocolate cake. Bulgarian classic.",
+          "how": "Find at a bakery in the old town."
+        },
+        {
+          "name": "Tarator",
+          "what": "Cold cucumber-yogurt soup. Cooling after a hike.",
+          "how": "Order at any of the mehanas."
+        }
+      ],
+      "doLabel": "Hike & explore",
+      "do": [
+        {
+          "nm": "Pirin NP — Sinanitsa / Muratovo Lakes",
+          "t": 3,
+          "tags": ["hike", "view"],
+          "hook": "Full-day alpine circuit through Pirin's best off-radar lakes — far less crowded than Rila; clear teal water; no chairlift crowd.",
+          "facts": [
+            ["i-clock", "depart Vihren Chalet by 08:00"],
+            ["i-wallet", "~€10 shuttle + free hike"],
+            ["i-mountain", "~14–18 km · ~700–900 m gain from chalet"],
+            ["i-bus", "shuttle from Bansko bus station"]
+          ],
+          "hours": "open access; shuttle ~3×/day",
+          "cost": "~€5 each way shuttle; hike free",
+          "duration": "full-day",
+          "best_time": "Depart Vihren Chalet by 08:00; afternoon thunderstorms common after 14:00 — begin descent no later",
+          "find_it": "Shuttle to Vihren Chalet (Bunderitsa) from Bansko bus station; trail starts at chalet",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Sinanitsa lake Pirin National Park Bulgaria alpine",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "recovery"],
+          "dur": "full-day",
+          "rs": "researched",
+          "tips": [
+            "Carry 2L+ water; no reliable water sources until the lakes themselves.",
+            "Total dead zone at Sinanitsa and Muratovo — download Mapy.cz offline before leaving Bansko.",
+            "Confirm last shuttle back from Vihren Chalet the evening before — this is the trip constraint.",
+            "Baikushev's Pine is a free 5-min stop en route; ask shuttle driver to stop."
+          ],
+          "hike": {
+            "distance": "~14–18 km full circuit",
+            "elevation_gain": "~700–900 m from chalet",
+            "water_on_route": true,
+            "mobile_signal": false,
+            "last_transport_back": "last shuttle from Vihren Chalet — verify evening before"
+          }
+        },
+        {
+          "nm": "Vihren Chalet (Bunderitsa staging base)",
+          "t": 3,
+          "tags": ["hike"],
+          "hook": "The mandatory logistics hub for all Pirin high-country routes — altitude start point, condition check, water fill.",
+          "facts": [
+            ["i-clock", "arrive 07:30–08:00"],
+            ["i-wallet", "~€2–4 soup/tea"],
+            ["i-bus", "shuttle from Bansko bus station ~€5 each way"]
+          ],
+          "hours": "opens early for hikers; dynamic",
+          "cost": "~€2–4 for soup or tea",
+          "duration": "quick",
+          "best_time": "07:30–08:00 pre-hike",
+          "find_it": "on the Bunderitsa road above Bansko; shuttle will pass it",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Vihren Chalet Bunderitsa Pirin Bulgaria mountain hut",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["explore"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": [
+            "Carry emergency snacks regardless — chalet food availability is dynamic.",
+            "Check trail conditions here before committing to the route above."
+          ]
+        },
+        {
+          "nm": "Banderishki Lakes",
+          "t": 2,
+          "tags": ["hike", "view"],
+          "hook": "Lower Pirin lakes circuit — less effort than Sinanitsa; the recommended second-hike-day option.",
+          "facts": [
+            ["i-clock", "morning start from chalet"],
+            ["i-wallet", "same shuttle as Sinanitsa"],
+            ["i-mountain", "~8–12 km · ~400 m gain from chalet"]
+          ],
+          "hours": "open access",
+          "cost": "~€5 each way shuttle",
+          "duration": "half-day",
+          "best_time": "morning start from Vihren Chalet",
+          "find_it": "same staging base as Sinanitsa — Vihren Chalet",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Banderishki Lakes Pirin Bulgaria hike",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "recovery"],
+          "dur": "half-day",
+          "rs": "researched",
+          "hike": {
+            "distance": "~8–12 km",
+            "elevation_gain": "~400 m from chalet",
+            "water_on_route": true,
+            "mobile_signal": false,
+            "last_transport_back": "verify shuttle schedule the day before"
+          }
+        },
+        {
+          "nm": "Velyan's House (Velyanova Kushta)",
+          "t": 2,
+          "tags": ["culture"],
+          "hook": "Finest National Revival architecture in Bansko; painted frescoes and carved wood ceilings; arrive at opening to beat groups.",
+          "facts": [
+            ["i-clock", "09:00 opening"],
+            ["i-wallet", "~€2–3 entry"],
+            ["i-pin", "Bansko old town"]
+          ],
+          "hours": "Wed–Mon (closed Tue); all three Bansko days viable (Wed–Fri)",
+          "cost": "~€2–3 entry",
+          "duration": "quick",
+          "best_time": "09:00 (first entry; tour groups arrive from 10:00)",
+          "find_it": "Bansko old town; ask hostel for current address",
+          "neighborhood": "Old Town",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Velyanova Kushta Bansko National Revival house interior",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["explore", "culture"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": [
+            "Arrive at 09:00 — tour groups start arriving from 10:00.",
+            "Combine with Holy Trinity Church next door (free, quick)."
+          ]
+        },
+        {
+          "nm": "Vihren Peak",
+          "t": 1,
+          "tags": ["hike", "view"],
+          "hook": "The serious summit at 2,914 m — exposed rocky ridge; only if legs are fresh and weather clear.",
+          "facts": [
+            ["i-clock", "pre-dawn start from chalet"],
+            ["i-mountain", "~600 m gain from chalet · exposed ridge"]
+          ],
+          "hours": "open access; weather-dependent",
+          "cost": "same shuttle as other hikes",
+          "duration": "full-day",
+          "best_time": "pre-dawn start; summit before 10:00 before afternoon storms",
+          "find_it": "Vihren Chalet staging base; route via Vihren Hut to summit",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Vihren Peak summit Pirin Bulgaria 2914m",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["explore"],
+          "dur": "full-day",
+          "rs": "needs",
+          "rsNote": "Ridge conditions in late June unverified — snow patches possible on upper Vihren in June. Check conditions at Vihren Chalet before committing.",
+          "tips": [
+            "Carry 3L water.",
+            "Check snow conditions at the chalet — upper ridge can hold snow patches in late June.",
+            "Only attempt if legs are fully fresh from the Sinanitsa day."
+          ],
+          "hike": {
+            "distance": "~12 km round trip from chalet",
+            "elevation_gain": "~600 m from chalet",
+            "water_on_route": false,
+            "mobile_signal": false,
+            "last_transport_back": "verify shuttle — same constraint as all Pirin hikes"
+          }
+        },
+        {
+          "nm": "Holy Trinity Church + old-town cobbles",
+          "t": 1,
+          "tags": ["culture"],
+          "hook": "19th-century church with Rilski Monastery school art; combine with Velyan's House in one short cultural cluster.",
+          "facts": [
+            ["i-wallet", "free"],
+            ["i-pin", "adjacent to Velyan's House, Bansko old town"]
+          ],
+          "hours": "daily",
+          "cost": "free",
+          "duration": "quick",
+          "best_time": "morning or evening",
+          "find_it": "directly adjacent to Velyan's House in the old town",
+          "neighborhood": "Old Town",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Holy Trinity Church Bansko old town cobblestone",
+          "image_url": "",
+          "time": ["morning", "evening"],
+          "purpose": ["explore", "culture"],
+          "dur": "quick",
+          "rs": "researched"
+        },
+        {
+          "nm": "Baikushev's Pine",
+          "t": 1,
+          "tags": ["view", "culture"],
+          "hook": "1,300-year-old Bosnian pine — Bulgaria's oldest and largest tree; free roadside stop on the shuttle to Vihren.",
+          "facts": [
+            ["i-wallet", "free"],
+            ["i-clock", "en route to Vihren Chalet"],
+            ["i-bus", "ask shuttle driver to stop"]
+          ],
+          "hours": "open access",
+          "cost": "free",
+          "duration": "quick",
+          "best_time": "en route to or from Vihren Chalet on any hike day",
+          "find_it": "on the road to Vihren Chalet / Bunderitsa; marked; ask shuttle driver",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Baikushev Pine oldest Bosnian pine Bulgaria Pirin",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore"],
+          "dur": "quick",
+          "rs": "researched"
+        },
+        {
+          "nm": "Demyanitsa Valley",
+          "t": 1,
+          "tags": ["hike", "shade"],
+          "hook": "Rain-day or rest-day backup — easy flat valley walk, no significant gain, works in light rain.",
+          "facts": [
+            ["i-clock", "any time"],
+            ["i-wallet", "~€5–8 taxi"],
+            ["i-pin", "NO direct bus — taxi or 45 min walk from Bansko"]
+          ],
+          "hours": "open access",
+          "cost": "taxi ~€5–8 or walk",
+          "duration": "2-3h",
+          "best_time": "any time; works in light rain",
+          "find_it": "NO direct bus to trailhead — taxi from Bansko (~€5–8) or 45 min walk. Arrange in advance.",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Demyanitsa valley Pirin Bulgaria easy walk",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "recovery"],
+          "dur": "2-3h",
+          "rs": "researched",
+          "hike": {
+            "distance": "~6–8 km out-and-back",
+            "elevation_gain": "minimal",
+            "water_on_route": true,
+            "mobile_signal": false,
+            "last_transport_back": "return by same route or taxi"
+          }
+        }
+      ],
+      "hoods": [
+        {
+          "nm": "Old town (Pirin Street zone)",
+          "base": 1,
+          "d": "Cobblestone streets, traditional mehanas, National Revival houses. Evening and cultural zone; where the local food scene lives."
+        },
+        {
+          "nm": "Novia grad side streets",
+          "base": 0,
+          "d": "Residential zone adjacent to old town; some cafes; Zehtindjieva Kashta is here. Away from gondola tourist strip."
+        }
+      ],
+      "stayPick": "Avalon Co-Living or similar social backpacker hostel, old-town-adjacent. Check availability for Jun 24–26 before trip locks in. Avoid gondola-strip hotels entirely.",
+      "eat": [
+        {
+          "nm": "Zehtindjieva Kashta",
+          "t": 3,
+          "tags": ["eat", "social"],
+          "hook": "Primary Bansko mehana; explicitly off the gondola tourist strip; kapama, clay-pot dishes, live folk music some evenings.",
+          "facts": [
+            ["i-clock", "arrive 19:00–20:00"],
+            ["i-wallet", "~€7.50–10"],
+            ["i-pin", "ul. Georgi Kovachev 11, Novia grad"]
+          ],
+          "hours": "daily 12:00–midnight",
+          "cost": "~€7.50–10 per person",
+          "duration": "2-3h",
+          "best_time": "19:00–20:00 (fills later on Fri/weekends)",
+          "find_it": "ul. Georgi Kovachev 11, Novia grad side streets — not on the gondola/tourist strip",
+          "neighborhood": "Novia Grad",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Zehtindjieva Kashta Bansko mehana traditional Bulgarian food",
+          "image_url": "",
+          "time": ["evening"],
+          "purpose": ["eat", "social"],
+          "dur": "2-3h",
+          "rs": "researched",
+          "tips": [
+            "Pre-order kapama or clay-pot dishes earlier in the day — they need advance prep.",
+            "Away from the gondola strip; ask hostel to confirm the current walking route."
+          ]
+        },
+        {
+          "nm": "Dedo Tase",
+          "t": 3,
+          "tags": ["eat"],
+          "hook": "Village eatery on the residential Pirin Street side; vegetable sach and cheap local dishes.",
+          "facts": [
+            ["i-clock", "from 12:30"],
+            ["i-wallet", "~€5–7.50"],
+            ["i-pin", "Pirin Str. 42, residential side"]
+          ],
+          "hours": "daily 12:30–23:00 (confirmed in 5d)",
+          "cost": "~€5–7.50",
+          "duration": "2-3h",
+          "best_time": "evening meal (from 18:00)",
+          "find_it": "Pirin Str. 42, residential side of the old town",
+          "neighborhood": "Old Town",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Dedo Tase Bansko village eatery local food",
+          "image_url": "",
+          "time": ["daytime", "evening"],
+          "purpose": ["eat"],
+          "dur": "2-3h",
+          "rs": "verified",
+          "tips": ["Order the vegetable sach."]
+        },
+        {
+          "nm": "Banski Han",
+          "t": 2,
+          "tags": ["eat"],
+          "hook": "Arrival-night dinner near the rail/bus station — practical after the narrow-gauge journey; mehana format, no foreigner premium.",
+          "facts": [
+            ["i-clock", "arrival evening"],
+            ["i-wallet", "~€6–7.50"],
+            ["i-pin", "ul. Patriarh Evtimiy 2, north end near station"]
+          ],
+          "hours": "daily 10:00–23:00",
+          "cost": "~€6–7.50",
+          "duration": "2-3h",
+          "best_time": "arrival evening (19:00–20:00)",
+          "find_it": "ul. Patriarh Evtimiy 2, north end of Bansko near the rail/bus station",
+          "neighborhood": "North Bansko",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Banski Han Bansko mehana traditional restaurant",
+          "image_url": "",
+          "time": ["evening"],
+          "purpose": ["eat"],
+          "dur": "2-3h",
+          "rs": "researched"
+        },
+        {
+          "nm": "Baba Vuna",
+          "t": 2,
+          "tags": ["eat"],
+          "hook": "Cheapest venue in the dossier — canteen model, tray and point; hyper-local signal (Bulgarian Reddit); the primary daytime lunch.",
+          "facts": [
+            ["i-clock", "lunchtime, arrive 12:00–13:00"],
+            ["i-wallet", "~€3–5 full hot meal"],
+            ["i-pin", "ul. Tsar Simeon 16, old town"]
+          ],
+          "hours": "UNVERIFIED — dynamic, may reduce in low summer. Ask hostel on arrival.",
+          "cost": "~€3–5 for a full hot meal",
+          "duration": "quick",
+          "best_time": "lunchtime (arrive 12:00–13:00 before best dishes run out)",
+          "find_it": "ul. Tsar Simeon 16, old town, near Holy Trinity Church",
+          "neighborhood": "Old Town",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Baba Vuna Bansko canteen gostilnitsa local Bulgarian food",
+          "image_url": "",
+          "time": ["daytime"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "needs",
+          "rsNote": "Hours unverified — dynamic and may reduce in low summer season. Ask hostel on arrival. Have Dedo Yonkata as backup.",
+          "tips": [
+            "Cash likely; carry small EUR notes.",
+            "If closed, use Dedo Yonkata (#8) as backup."
+          ]
+        },
+        {
+          "nm": "Bunderitsa Chalet — trail fuel",
+          "t": 1,
+          "tags": ["eat"],
+          "hook": "Mountain hut trail fuel — pre-hike soup or tea on the way up; not a restaurant.",
+          "facts": [
+            ["i-clock", "pre-hike 07:30–08:30"],
+            ["i-wallet", "~€2–4"]
+          ],
+          "hours": "UNVERIFIED — opens early for hikers; dynamic",
+          "cost": "~€2–4 for soup or tea",
+          "duration": "quick",
+          "best_time": "pre-hike (07:30–08:30)",
+          "find_it": "on the Bunderitsa road; shuttle will pass it",
+          "neighborhood": "Pirin NP",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Bunderitsa chalet Pirin mountain hut Bulgaria",
+          "image_url": "",
+          "time": ["morning"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "needs",
+          "rsNote": "Hours and food availability unverified — dynamic based on what hut staff brought up. Carry emergency snacks regardless; do not rely as sole nutrition source."
+        },
+        {
+          "nm": "Mehana Dedo Yonkata",
+          "t": 1,
+          "tags": ["eat"],
+          "hook": "Backup daytime lunch — emergency fallback if Baba Vuna is closed; lower signal quality but reliable hours.",
+          "facts": [
+            ["i-wallet", "~€6–9"],
+            ["i-pin", "Pirin Str. 84, old town"]
+          ],
+          "hours": "daily 10:00–midnight",
+          "cost": "~€6–9",
+          "duration": "quick",
+          "best_time": "lunchtime or early afternoon",
+          "find_it": "Pirin Str. 84, old town",
+          "neighborhood": "Old Town",
+          "city": "Bansko",
+          "lat": null,
+          "lng": null,
+          "image_query": "Mehana Dedo Yonkata Bansko traditional restaurant",
+          "image_url": "",
+          "time": ["daytime"],
+          "purpose": ["eat"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": ["Emergency backup only — use if Baba Vuna is closed."]
+        }
+      ],
+      "mobility": {
+        "verdict": "Walk + shuttle",
+        "cost": "€5–10/day",
+        "note": "Walkable old town. Vihren Chalet: summer shuttle from Bansko bus station (~€5 each way, ~3×/day) or shared taxi."
+      },
+      "timing": {
+        "verdict": "GOOD",
+        "note": "Jun 24–26 (Wed–Fri) are the best days for Bansko — weekdays, pre-weekend, no festival congestion. Ski resort off-season means cheaper and quieter."
+      }
+    },
+    {
+      "id": "rila-panichishte",
+      "name": "Rila / Panichishte",
+      "when": "2 nights · Jun 27–28 (Sat–Sun)",
+      "nights": 2,
+      "heat": false,
+      "heatLabel": "~16–20°C",
+      "climate": "~16–20°C",
+      "temp": "~16–20°C",
+      "budget": "~€55/day (chairlift + taxi)",
+      "start": "Seven Rila Lakes — alpine cirque at 2,100 m; no comparable experience on the western Bulgaria loop.",
+      "inLeg": "Bansko → relay via Blagoevgrad/Dupnitsa/Sapareva Banya → Panichishte, Jun 27 (3–4h; start early)",
+      "outLeg": "Morning taxi Panichishte → Dupnitsa → Sofia bus, Jun 29 (depart 07:30)",
+      "connectivity": {
+        "eu_roaming": true,
+        "esim_note": "4G decent at Panichishte village and lower lakes / chairlift area. Signal drops sharply in upper lake bowls — total dead zone above the cirque.",
+        "esim_cost_eur": null
+      },
+      "offline_map_area": "Mapy.cz — same 'Bulgaria – South-West' download covers Seven Lakes circuit and Malyovitsa. Download before leaving Bansko.",
+      "borders": "No border crossing. Within Bulgaria / Schengen.",
+      "sunrise": "05:48",
+      "sunset": "21:08",
+      "intro": "Panichishte is a small base village in the Rila foothills — the jumping-off point for the Seven Lakes and Rila Monastery. Two nights is exactly right: one full day for the high-country circuit (Saturday), one day for Rila Monastery (Sunday). Weekend crowds at the Lakes are real; the mitigation is early start. Signal in the upper bowls is dead — offline maps essential.",
+      "base": {
+        "label": "Panichishte village",
+        "kind": "area"
+      },
+      "tasks": [
+        {
+          "title": "Confirm Pionerska chairlift hours for Saturday morning",
+          "due": "Fri Jun 26 evening (or Sat morning earliest)",
+          "how": "Ask Panichishte accommodation. First cabin timing determines whether early-start crowd mitigation is viable."
+        },
+        {
+          "title": "Arrange Rila Monastery transport for Sunday",
+          "due": "Sat Jun 27 evening",
+          "how": "Taxi (~€15–20 each way) or ask accommodation about a shared shuttle. 15–20 km from Panichishte; confirm route."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Bulgarian Mountain Rescue Service (PSS)",
+          "type": "reference",
+          "link": "",
+          "why": "Emergency mountain rescue for Rila. Save number before departure: +359 2 963 2000."
+        },
+        {
+          "title": "Mapy.cz",
+          "type": "transport",
+          "link": "https://mapy.cz",
+          "why": "Same Bulgaria – South-West offline region covers Seven Lakes circuit and Malyovitsa trails."
+        }
+      ],
+      "foodToTry": [
+        {
+          "name": "Rilska pastarva (trout)",
+          "what": "Freshwater trout from mountain streams; the defining Rila dish.",
+          "how": "Order grilled at Valyavitsa — the must-order item."
+        },
+        {
+          "name": "Kavarma",
+          "what": "Slow-cooked meat and vegetable stew in a clay dish. The mountain restaurant default.",
+          "how": "Order when there's no pastarva."
+        },
+        {
+          "name": "Popara",
+          "what": "Stale bread soaked in warm milk with honey. Traditional mountain breakfast.",
+          "how": "Ask at your guesthouse if they make it."
+        }
+      ],
+      "doLabel": "Hike",
+      "do": [
+        {
+          "nm": "Seven Rila Lakes",
+          "t": 3,
+          "tags": ["hike", "view"],
+          "hook": "High-country lake circuit at 2,100 m — glacial cirque, six connected alpine lakes; worth the weekend crowds with an early start.",
+          "facts": [
+            ["i-clock", "chairlift at 08:00 sharp"],
+            ["i-wallet", "~€15 chairlift + free hike"],
+            ["i-mountain", "~5–8 km circuit · ~300 m above chairlift"],
+            ["i-bus", "taxi to Pionerska base, 4 km from Panichishte"]
+          ],
+          "hours": "chairlift: seasonal — confirm with accommodation evening before",
+          "cost": "~€15 chairlift round trip; hike free",
+          "duration": "full-day",
+          "best_time": "Chairlift at 08:00 sharp (beat the day-trip crowd by 1.5h); begin descent by 14:00 (afternoon thunderstorms common)",
+          "find_it": "Morning taxi/shuttle from Panichishte to Pionerska lift base (~€5, 4 km); chairlift from there",
+          "neighborhood": "Rila NP",
+          "city": "Panichishte",
+          "lat": null,
+          "lng": null,
+          "image_query": "Seven Rila Lakes Bulgaria alpine cirque mountain circuit",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "recovery"],
+          "dur": "full-day",
+          "rs": "researched",
+          "tips": [
+            "Download Mapy.cz offline before leaving Bansko — total dead zone in the upper lake bowl.",
+            "Carry 1.5L water; there are streams between lakes but treat or carry.",
+            "Fallback: if Sat crowds are genuinely unbearable, pivot to Malyovitsa (arrange transport via accommodation).",
+            "Tell someone your plan and expected return time before heading up."
+          ],
+          "hike": {
+            "distance": "~5–8 km lake circuit",
+            "elevation_gain": "~300 m above chairlift terminus",
+            "water_on_route": true,
+            "mobile_signal": false,
+            "last_transport_back": "chairlift closes at seasonal time — confirm the evening before"
+          }
+        },
+        {
+          "nm": "Rila Monastery",
+          "t": 2,
+          "tags": ["culture", "view"],
+          "hook": "UNESCO fortress monastery with exterior frescoes, carved arcades, and striped church. Sunday anchor — the default second Rila day.",
+          "facts": [
+            ["i-clock", "early morning Sunday"],
+            ["i-wallet", "grounds free; museum ~€3"],
+            ["i-pin", "15–20 km from Panichishte; taxi or shuttle"]
+          ],
+          "hours": "daily; some interior areas restricted",
+          "cost": "grounds free; museum ~€3",
+          "duration": "2-3h",
+          "best_time": "early morning Sunday (local visitors arrive but mass tour groups not until ~10:00)",
+          "find_it": "Taxi (~€15–20) from Panichishte; or ask accommodation about shared shuttle. Confirm evening before.",
+          "neighborhood": "Rila NP",
+          "city": "Rila Monastery",
+          "lat": null,
+          "lng": null,
+          "image_query": "Rila Monastery UNESCO Bulgaria frescoes courtyard",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore", "culture"],
+          "dur": "2-3h",
+          "rs": "researched",
+          "tips": [
+            "Can pull to Sat afternoon if Seven Lakes circuit ends with energy to spare — Rila Monastery is below the high country, accessible same afternoon from Panichishte.",
+            "Cover shoulders inside the monastery complex."
+          ]
+        },
+        {
+          "nm": "Lakes Chalet (Sedemte Ezera hut)",
+          "t": 2,
+          "tags": ["eat", "hike"],
+          "hook": "Mountain hut shelter and fuel stop within the Seven Lakes cirque. Essential logistics on the circuit.",
+          "facts": [
+            ["i-wallet", "~€3–5 soup or tea"],
+            ["i-pin", "within Seven Lakes cirque; marked on Mapy.cz"]
+          ],
+          "hours": "seasonal; open during main hiking season",
+          "cost": "~€3–5 soup or tea",
+          "duration": "quick",
+          "best_time": "mid-morning on the lakes circuit",
+          "find_it": "within the Seven Lakes cirque; marked on Mapy.cz",
+          "neighborhood": "Rila NP",
+          "city": "Panichishte",
+          "lat": null,
+          "lng": null,
+          "image_query": "Sedemte Ezera hut Seven Rila Lakes mountain hut Bulgaria",
+          "image_url": "",
+          "time": ["daytime"],
+          "purpose": ["eat", "explore"],
+          "dur": "quick",
+          "rs": "researched",
+          "tips": ["Carry cash — card unlikely at the chalet."]
+        },
+        {
+          "nm": "Malyovitsa",
+          "t": 1,
+          "tags": ["hike", "view"],
+          "hook": "Documented fallback if Seven Lakes Saturday is genuinely unbearable — rugged alpine terrain, far fewer people. NOT a standalone second day.",
+          "facts": [
+            ["i-mountain", "~12–15 km · ~800 m gain · exposed upper section"]
+          ],
+          "hours": "open access; seasonal road access",
+          "cost": "transport via accommodation (~€15–20 each way from Panichishte)",
+          "duration": "full-day",
+          "best_time": "early morning start; same thunderstorm caveat as all Rila high-country",
+          "find_it": "Different valley from Panichishte — arrange transport via accommodation the evening before",
+          "neighborhood": "Rila NP",
+          "city": "Malyovitsa",
+          "lat": null,
+          "lng": null,
+          "image_query": "Malyovitsa Rila Bulgaria alpine hike",
+          "image_url": "",
+          "time": ["morning", "daytime"],
+          "purpose": ["explore"],
+          "dur": "full-day",
+          "rs": "researched",
+          "tips": [
+            "This is a Seven Lakes FALLBACK — only if Saturday crowds are genuinely unbearable.",
+            "Arrange transport via accommodation the evening before; it's in a different valley from Panichishte."
+          ],
+          "hike": {
+            "distance": "~12–15 km",
+            "elevation_gain": "~800 m from hut",
+            "water_on_route": true,
+            "mobile_signal": false,
+            "last_transport_back": "arrange via accommodation"
+          }
+        }
+      ],
+      "hoods": [
+        {
+          "nm": "Panichishte village",
+          "base": 1,
+          "d": "Small base village for Rila high country. No tourist strip; everything oriented toward the mountain. Not a work zone."
+        }
+      ],
+      "stayPick": "Panichishte village hostel or small guesthouse. Book in advance — Seven Rila Lakes weekend is peak; Jun 27–28 availability may be thin. ATMs unreliable — withdraw euros in Sofia/Bansko.",
+      "eat": [
+        {
+          "nm": "Valyavitsa",
+          "t": 3,
+          "tags": ["eat"],
+          "hook": "Post-hike dinner with rilska pastarva — mountain trout grilled fresh; the Rila experience meal.",
+          "facts": [
+            ["i-clock", "19:00–20:00 post-hike"],
+            ["i-wallet", "~€7.50–11 (trout at hard cap)"],
+            ["i-pin", "Mestnost Valyavitsa, Sapareva Banya area"]
+          ],
+          "hours": "daily 10:00–midnight, to 03:00 Saturdays (confirmed)",
+          "cost": "~€7.50–11 (freshly grilled rilska pastarva is the must-order)",
+          "duration": "2-3h",
+          "best_time": "19:00–20:00 post-hike; Sat/Sun are busy nights — lower early-closure risk",
+          "find_it": "Mestnost Valyavitsa, Sapareva Banya area; taxi from Panichishte (~€8–10, ~15 km); confirm route with accommodation",
+          "neighborhood": "Sapareva Banya area",
+          "city": "Sapareva Banya",
+          "lat": null,
+          "lng": null,
+          "image_query": "Valyavitsa restaurant Rila Sapareva Banya trout",
+          "image_url": "",
+          "time": ["evening"],
+          "purpose": ["eat"],
+          "dur": "2-3h",
+          "rs": "verified",
+          "tips": [
+            "Order the rilska pastarva (trout) — this is the must-order.",
+            "At the hard cap (~€11) — worth it; this is an experience, not just a meal."
+          ],
+          "pt": "mid"
+        }
+      ],
+      "mobility": {
+        "verdict": "Taxi + chairlift",
+        "cost": "~€20–25/day on hike days",
+        "note": "Morning taxi to Pionerska lift base (~€5, 4 km); chairlift (~€15 round trip) for Seven Lakes. Return leg (Jun 29): morning taxi to Dupnitsa then bus to Sofia."
+      },
+      "timing": {
+        "verdict": "SUBOPTIMAL",
+        "note": "Jun 27–28 is the highest-traffic weekend at Seven Lakes. Mitigation: chairlift at 08:00, at lakes before 09:30. Operator accepted this tradeoff."
+      }
+    }
+  ],
+  "legs": [
+    {
+      "ic": "i-bus",
+      "ttl": "Sofia → Bansko via narrow-gauge",
+      "spec": "BDZ mainline Sofia→Septemvri (~2h, ~€4.50) + narrow-gauge Septemvri→Dobrinishte (~4.5h, ~€3.50) + taxi to Bansko (~€5–8)",
+      "ds": "Depart Sofia Central ~06:30; catch 08:55 Rodopi narrow-gauge from Septemvri. Three narrow-gauge departures: 08:55, 12:40, 16:25 — catch the 08:55. Show-up-and-pay reliable; no advance booking required.",
+      "warn": "No A/C on vintage carriages — catch the 08:55 to avoid afternoon heat. Confirm timetable the evening before on bileti.bdz.bg.",
+      "hard": 0
+    },
+    {
+      "ic": "i-bus",
+      "ttl": "Bansko → Panichishte (relay — no direct bus)",
+      "spec": "Bansko→Blagoevgrad minibus (~1h, ~€2) → Dupnitsa bus/train (~45 min, ~€2) → Sapareva Banya minibus (~30 min, ~€1.50) → Panichishte taxi (~20 min, ~€5). Total ~€13–15.",
+      "ds": "Allow 3–4h total. Show-up-and-pay for all legs. Start early — Dupnitsa→Sapareva Banya frequency drops on weekends.",
+      "warn": "Weekend frequency reduction on the Dupnitsa–Sapareva Banya leg. Start no later than 09:00 from Bansko.",
+      "hard": 1
+    },
+    {
+      "ic": "i-bus",
+      "ttl": "Panichishte → Sofia (return, Mon Jun 29)",
+      "spec": "Morning taxi Panichishte→Dupnitsa (~30 min, ~€15) + Union Ivkoni bus Dupnitsa→Sofia Central (~1h15, ~€5). Total ~€20.",
+      "ds": "Earliest realistic arrival: depart Panichishte 07:30 → Dupnitsa 08:00 → 08:30 bus → Sofia ~09:45. Factor into any departure flights.",
+      "warn": "This is a real Monday early departure. Set alarm.",
+      "hard": 0
+    }
+  ]
+}

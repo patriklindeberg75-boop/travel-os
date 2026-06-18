@@ -57,6 +57,89 @@ Entries are listed in chronological order (most recent at bottom). Do not edit o
 
 (No runs yet. The first /destination-dossier invocation will append the first entry below.)
 
+
+## 2026-06-18 18:00 — bulgaria-2026-06
+
+- **Dossier written:** trips/bulgaria-2026-06/destination-dossier.md
+- **Structured data written:** trips/bulgaria-2026-06/dossier-data.json
+- **Trip type:** multi-stop (3 stops: Sofia 2n, Bansko 3n, Rila/Panichishte 2n)
+- **Viability verdict:** conditional (work-constraint + anti-overtourism tension at
+  the Rila weekend; operator acknowledged; weather ceiling waived)
+- **Profile version read:** v1 (universal-traveler-profile.md)
+- **Principles version read:** v3 (travel-principles.md)
+- **PROFILE_EXTRACT** (preferences applied):
+  - Anti-tourist backpacker; mass-tourism spots filtered within destination (§1, §5)
+  - Nature/outdoor STRONG: full-day hikes (ceiling respected); scenic transport /
+    journey-as-experience anchor (narrow-gauge)
+  - 25h/week remote work Mon–Thu front-loaded; reliable WiFi (Sofia/Bansko) (§3)
+  - Social hostels 25–35; ~€50/day budget baseline; €12 meal hard cap; splurge
+    on experience not comfort (§4, §9)
+  - UV/sun sensitive; morning hike timing enforced; single-day 30°C ceiling
+    applied per-stop (§8)
+- **PRINCIPLES_EXTRACT** (principles enforced):
+  - §4.1/4.3: anti-overtourism filter + iconic-experience exception. Seven Lakes
+    accepted with crowd-awareness and early-start mitigation; Malyovitsa carried
+    as documented fallback. Gondola-area Bansko venues explicitly excluded.
+  - §5.2: journey-as-experience. Narrow-gauge railway designated trip anchor (🔥).
+  - §3.2: splurge on experience, not comfort. Valyavitsa trout tagged as
+    experience-category at the budget ceiling. No resort-priced items in any section.
+  - §6.2: Mon–Thu work front-loaded. Sofia (Mon–Tue) and Bansko (Wed–Fri) used as
+    work-compatible stops; Rila weekend is work-off by design.
+  - §5.4: menu not schedule enforced throughout; option-clusters (Vitosha morning,
+    Bansko second-hike day) presented as on-the-ground choices.
+- **Pass status:**
+  - Pass 2 (locations): 12 generated → 5 approved (7 rejected) — gate received 2026-06-16
+  - Pass 3 (activities): 19 generated + 13 addendum → 25 effective keeps (9 rejected
+    + 2 cross-flagged to P5) — gate received 2026-06-17
+  - Pass 4 (food): 15 generated (10 + batch 2 of 5) → 13 approved after Ednorog
+    drop (1 rejected + 1 editorial drop = 2) — gate received 2026-06-18
+  - Pass 5a (traps): SKIPPED — operator decision. Section 5 omitted from dossier.
+  - Pass 5b (mobility): APPROVE — gate received 2026-06-18
+  - Pass 5c (timing): not run — sourced from trip-context.md timing_verdict / timing_notes
+  - Pass 5d (logistics): APPROVE — gate received 2026-06-18
+- **Section status** (final dossier):
+  - 1. Cool neighborhoods — received (3 stops)
+  - 2. Accommodation area — received (3 stops)
+  - 3. Hidden-gem activities — received (3 stops; transit leg integrated as dedicated block)
+  - 4. Food / restaurants — received (3 stops; food-to-try + venue cards per stop)
+  - 5. Tourist-trap warnings — SKIPPED (operator decision; 5a not run)
+  - 6. Mobility — received (inter-stop legs + per-stop mobility)
+  - 7. Optimal timing — received (from trip-context.md timing_verdict + timing_notes)
+  - 8. Practical logistics — received (connectivity, offline maps, entry/admin, currency)
+  - 9. Critical checklist — received (4 items)
+  - 10. Tasks and reminders — received (6 items)
+  - 11. Destination resources — received (per stop)
+- **Filtering notes:**
+  - Pass 4 editorial drop: Restaurant Ednorog (#5, Koprivshtitsa) dropped per operator
+    directive — Koprivshtitsa parked for a future central-Bulgaria trip; not in route.
+  - No ski-resort-priced items survived Bansko anti-resort filter — all 5 Bansko
+    venues were pre-screened away from gondola strip by Pass 4 triage.
+  - Seven Lakes: iconic-experience exception (§4.3) applied — crowd-acknowledged,
+    early-start mitigation documented, Malyovitsa fallback carried.
+  - No items removed by de-dup check (Pass 5a skipped; de-dup not run).
+  - Malyovitsa (#19) maintained as contingency note under Seven Lakes, not a
+    standalone activity card — per operator Decision 2 at Pass 3 gate.
+- **Operator directives folded in post-gate:**
+  - Currency correction: Bulgaria EUR since 2026-01-01; BGN figures in 5b/5d
+    paste-backs treated as legacy; EUR used throughout dossier.
+  - Dedo Tase hours resolved via 5d: daily 12:30–23:00 (rs: verified).
+  - Valyavitsa hours resolved via 5d: daily 10:00–midnight, 03:00 Saturdays
+    (rs: verified).
+  - Sofia culture cluster (Banya Bashi Mosque + Ancient Serdica complex) folded in
+    from operator addition at Pass 3 gate.
+  - Pass 5a skipped per operator; Section 5 omitted.
+- **Halt / flag notes:**
+  - Weather check FLAGGED (not halted): forecast_max_celsius: 32 overall — operator
+    waived ceiling. Per-stop check: Sofia 27°C (PASS), Rila high country 16°C (PASS).
+    The 32°C figure is legacy trip-wide; per-stop values confirm both active stops
+    are within the 30°C ceiling.
+  - Conditional viability: work constraint pushes Rila to weekend (Jun 27–28);
+    Seven Lakes weekend crowds accepted by operator at Pass 2 gate.
+  - Sofia Live Festival Jun 27–28 noted in timing section; affects Panichishte
+    accommodation availability (book in advance flagged in critical checklist).
+
+---
+
 ## 2026-06-04 — balkans-2026-06
 
 - **Dossier written:** trips/balkans-2026-06/destination-dossier.md
