@@ -18,8 +18,27 @@ stop_weather:
   - location: Plovdiv
     forecast_max_celsius: 32
 trip_type: multi-stop
-approved_locations: []
-route_stops: []
+approved_locations:
+  - "Sofia (Oborishte / Women's Market area)"
+  - "Iskar Gorge (day-trip from Sofia)"
+  - "Septemvri–Dobrinishte narrow-gauge railway (scenic transit leg)"
+  - "Bansko / Pirin Mountains"
+  - "Rila Mountains — Panichishte base (Seven Rila Lakes, Rila Monastery, Malyovitsa optional)"
+route_stops:
+  - stop: Sofia
+    nights: 2
+    dates: "2026-06-22 to 2026-06-23"
+  - stop: Bansko
+    nights: 3
+    dates: "2026-06-24 to 2026-06-26"
+    transit_in: "Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko"
+  - stop: "Rila Mountains (Panichishte base)"
+    nights: 2
+    dates: "2026-06-27 to 2026-06-28"
+  - stop: "Depart Sofia"
+    nights: 0
+    dates: "2026-06-29"
+    note: "Return from Rila area ~2h, fly/depart same day"
 viability_verdict: conditional
 viability_notes: "To satisfy the 25h/week Mon–Thu work constraint, base in the cities during the week, which pushes the Rila leg to the weekend (June 27–28). This conflicts with the anti-overtourism/quiet-nature profile: massive weekend day-tripper influx at the Seven Rila Lakes, plus Sofia Live Festival that same weekend. To satisfy the anti-overtourism and quiet-nature priorities, swap the Seven Rila Lakes for a less mainstream hike (e.g., Malyovitsa) and confine remote work entirely to Sofia/Plovdiv. €50/day budget comfortably viable via local buses and hostels. Weather ceiling waived for this trip by operator."
 viability_checked_at: "2026-06-16"
@@ -49,3 +68,18 @@ Open decision carried into the dossier (Pass 2 — locations):
 
 Work routine: 25h/week front-loaded Mon–Thu, done from Sofia/Plovdiv cafes/coworking
 (no reliable WiFi in the Rila high country).
+
+## Locked Route (confirmed after Pass 2 — 2026-06-16)
+
+- Stop 1: Sofia — 2 nights (Jun 22–23, Mon–Tue)
+- Stop 2: Bansko / Pirin — 3 nights (Jun 24–26, Wed–Fri)
+  Transit: Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko (short taxi/transfer)
+- Stop 3: Rila Mountains (Panichishte base) — 2 nights (Jun 27–28, Sat–Sun)
+  Highlights: Seven Rila Lakes (operator opted into weekend crowds), Rila Monastery
+- Depart: Jun 29 (Mon) — return from Rila area ~2h, 0 nights
+
+Approved variant: Plovdiv dropped; Bansko added as a full mountain-town stop with scenic narrow-gauge train arrival. Rila accessed from Panichishte, not day-trip from Sofia.
+
+## Operator Constraints (Post-Pass 2)
+
+**Bansko — backpacker-friendly + budget requirement (LOCKED):** Bansko operates with ski-resort pricing in winter. For this June trip, prioritize social backpacker hostels and budget options throughout. Explicitly flag and avoid ski-resort pricing traps (overpriced aprés-ski bars now operating as summer tourist traps, overpriced "adventure" package tours aimed at resort visitors). This applies to all Bansko passes: activities (Pass 3), food (Pass 4), logistics (Pass 5).

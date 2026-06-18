@@ -708,3 +708,58 @@ None. Two reference/plan files edited (text-only, reversible via git), committed
 
 ### Open Questions
 - None blocking.
+
+## 2026-06-17 — Bulgaria dossier: workflow tested end-to-end from zero (through Pass 4a)
+
+### Summary
+Drove the full Phase-1 dossier workflow from scratch on a new trip — Bulgaria western loop (Sofia → Bansko via the Septemvri–Dobrinishte scenic narrow-gauge train → Rila/Panichishte, 2026-06-22 to 2026-06-29, solo, 7 nights). Ran `/destination-check` (CONDITIONAL), `/trip-init` (scaffolded `bulgaria-2026-06`, timing SUBOPTIMAL/crowding-driven), and `/destination-dossier` through Pass 2 (locations), Pass 3 (activities + a targeted top-up addendum), and Pass 4a (dishes). Paused mid-Pass-4 before running the 4b venue prompt. Route was locked to the "Variant" (Plovdiv/Kapana dropped to keep the full train ride + a proper Bansko stop). Operator relaxed the weather ceiling and anti-tourist filter for this trip and self-manages work timing.
+
+### Files Created
+- `destination-checks/bulgaria-2026-06.md` — viability verdict (CONDITIONAL).
+- `trips/bulgaria-2026-06/trip-context.md` — trip scaffold; route + nights locked, timing fields parsed, approved_locations / route_stops populated, operator constraints (Bansko backpacker+budget) recorded.
+- `trips/bulgaria-2026-06/journal.md` — empty trip journal.
+- `trips/bulgaria-2026-06/dossier/pass-2-state.md` — locations long-list + locked route.
+- `trips/bulgaria-2026-06/dossier/pass-3-state.md` — activities short-list + merged addendum (option-clusters flagged as on-the-ground choices).
+- `trips/bulgaria-2026-06/dossier/pass-4a-dishes.md` — "what to eat" dishes reference (21 dishes, 16 in target set, mapped per stop).
+- `logs/scratchpads/2026-06-17-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `red-team.md` — logged a Phase-3 finding: Pass 4 should split dishes-discovery (4a) before venue-search (4b); workflow reference files still define the single-prompt version and should be updated in a build session.
+
+### Decisions Made
+- Route: chose the Variant (Sofia → Bansko via scenic train → Rila → Sofia), dropping Plovdiv/Kapana, to make the narrow-gauge train a real point-to-point leg rather than an awkward out-and-back. Operator-directed.
+- Relaxed two profile defaults for this trip: weather ceiling waived; anti-tourist filter relaxed (Seven Lakes weekend accepted). Operator-directed.
+- Work-timing constraint dropped from the planning logic (operator self-manages the 25h/week).
+- Reordered Pass 4 into dishes-first (4a) then venues (4b) — operator's call; also logged as a workflow fix in red-team.md.
+- Activity option-clusters (Sofia hike-vs-springs; Bansko 2nd-hike choices) deliberately left undecided in the dossier as on-the-ground choices (spontaneity principle §5.4).
+
+### Outcome
+COMPLETION: DELIVERED
+EXECUTION: OPTIMAL
+What was asked but not done: none — workflow intentionally paused mid-Pass-4 (4a done, 4b drafted) with a clean auto-resume state and one open operator question (tripe-soup venue); a designed gate, not abandonment.
+Better path: none
+Confidence: low (no formal mandate)
+
+### Session Value Audit — 80/20 Review
+TYPE: B — Dogfooding/usage test that exercised the Phase-1 dossier pipeline end-to-end on a real new trip, surfacing a design gap from real use.
+VALUE: exec=H decision=M risk=N compound=H optime=H
+SCORE: 9/10 — Clean end-to-end usage test that produced all claimed artifacts, locked a coherent route, and converted live friction (Pass 4 dishes-vs-venues ordering) into a logged, actionable workflow fix; not 10 only because the workflow reference files aren't yet patched (correctly deferred).
+GATE: N/A (feature/usage work, not a structural-change gate)
+OPPORTUNITY: Correct session — dogfooding the dossier workflow before promotion is exactly the right use; the Pass-4 ordering defect would not have surfaced any other way.
+DECISION: Repeat — running the workflow on real trips is the intended validation path and keeps surfacing genuine design signal.
+LESSON: Real-trip dogfooding surfaces prompt-ordering defects (dishes-before-venues) that paper review of the design did not catch.
+RULE: No rule candidate.
+
+### Risky actions
+None. All writes were new trip artifacts + a red-team log entry; three commits made, none pushed. No structural change class touched, no external publishing.
+
+### Session Assessment
+Feedback collection (wrap Step 6.5) did not complete — the session-feedback-collector subagent died on an API socket error before returning a summary or writing any logs. Advisory step; no friction/improvement entries captured this session. The one concrete workflow signal (Pass 4 dishes-before-venues ordering) was already logged independently to red-team.md.
+
+### Next Steps
+- Resume the dossier: re-invoke `/destination-dossier --trip bulgaria-2026-06` (auto-resumes at Pass 4b from the pass-state files).
+- First answer the open question below (tripe-soup venue), then run the Pass 4b venue prompt (already drafted) in Perplexity Pro and paste back → orchestrator writes `pass-4-state.md`.
+- Then Pass 5 (practicalities: accommodation/sleep + inter-stop transport + local mobility), then synthesis into `trips/bulgaria-2026-06/destination-dossier.md`.
+
+### Open Questions
+- Pass 4b: target a Sofia tripe-soup (shkembe chorba / offal) venue, or skip it? Operator hasn't answered.
