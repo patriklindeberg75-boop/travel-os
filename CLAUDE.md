@@ -95,7 +95,10 @@ The Phase 1 dossier workflow runs in three stages (commands) and is defined by t
 - `references/dossier-template.md` — destination dossier output structure, mobile formatting rules, multi-stop section variants.
 - `references/subagent-prompts.md` — handoff prompt templates for ChatGPT Pro and Perplexity Pro, organized by pass (Mode 1 manual delegation).
 
-Future commands (`/daily-program`, `/tomorrow-spar`) will add parallel reference files under `references/`.
+**In-trip planning:**
+- `/daily-program [--trip {slug}]` — plans tomorrow as a routed selection from the trip's existing `dossier-data.json` (no new research). Resolves the current city, runs the spine gate, shows the remaining activity long-list (minus done-ledger items) for an interactive pick, builds one walking/rest-guarded routed day, runs an independent QC pass (`day-plan-qc` agent), and writes a Notion-paste-ready plan with an inline Google Maps link per place. Methodology lives in `references/daily-program-workflow.md`; output format in `references/daily-program-template.md`. Runs inline in the main session.
+
+Future command `/tomorrow-spar` will add parallel reference files under `references/`.
 
 ## Trip Directory Convention
 
@@ -106,6 +109,8 @@ Per-trip: `trips/{slug}/`, where `{slug}` is `{destination-lowercase-kebab}-{YYY
 - `destination-dossier.md` — produced by `/destination-dossier`.
 - `dossier/pass-N-state.md` — per-pass long-list / short-list state written by the orchestrator; used for auto-resume.
 - `dossier/` — optional raw subagent paste archive.
+- `day-plans/{YYYY-MM-DD}-{city}.md` — per-day plans produced by `/daily-program`.
+- `day-plans/done.md` — running done/skipped ledger; `/daily-program` appends to it so completed activities are never recommended again.
 - `journal.md` — Patrik's own trip notes, used by Phase 3 retro.
 
 Same-destination-same-month repeats append `-b`, `-c`, etc., manually.
