@@ -57,10 +57,27 @@ Oborishte dinner").
 
 ---
 
+### Do tonight — prep & bookings
+Placed right after the theme because it is acted on **tonight**. A short bullet list
+of evening-before actions tied to tomorrow (bookings, timetable confirms, insurance,
+carry-water / download-offline-map for a hike), sourced per the workflow reference
+§ Do-tonight prep & bookings. Include the `link` when the dossier has one. **Omit
+this whole section if nothing qualifies** — do not pad it.
+
+```
+## Do tonight — prep & bookings
+- Confirm the narrow-gauge timetable for the Bansko leg — bileti.bdz.bg
+- Ask the hostel tonight: Bus 66 last return time from Zlatnite Mostove
+- Mountain-rescue insurance bought? (needed for the Pirin hike)
+```
+
+---
+
 ### B. Route logic
 2–4 short lines: why this route, the flow, where backtracking was avoided, the
 **walking-load summary** (roughly how much is on foot vs transit), where the **rest
-pocket** sits, and the **one unplanned pocket** left open.
+pocket** sits, the **one unplanned pocket** left open, and the **weather basis**
+(static dossier forecast vs Patrik's fresh read — see § Weather-reactive planning).
 
 ---
 
@@ -122,6 +139,7 @@ dialed down, e.g.:
 Spine applied: Heat timing (27°C — outdoor before midday) · Anti-tourist ·
 Routine (rest pocket + dinner) · Social (Oborishte evening).
 Dialed down: Work rhythm OFF (Sofia day is a Monday but caught up).
+Weather basis: static dossier forecast (no fresh read given).
 Reply to override any dimension for tomorrow.
 ```
 

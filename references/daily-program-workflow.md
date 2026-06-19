@@ -27,9 +27,10 @@ emits a Notion-paste-ready mini-dossier (see `daily-program-template.md`).
 - `day-plans/done.md` — the done/skipped ledger (if present).
 
 **Operator-supplied (the Step 5 pause):** must / maybe / done / skip lists, day
-type (full | half | slow | evening | nature), energy (low | medium | high), and any
-free-text constraints (last day, leaving 14:00, work-focused, craving, fresher
-forecast).
+type (full | half | slow | evening | nature), energy (low | medium | high), an
+optional **fresh weather read** for tomorrow (overrides the static forecast — see
+§ Weather-reactive planning), and any free-text constraints (last day, leaving
+14:00, work-focused, craving).
 
 ---
 
@@ -115,7 +116,7 @@ dimension in free text at the Step 5 pause.
 
 | Dimension | Default rule |
 |---|---|
-| Heat timing | ON when the stop's forecast (`stop_weather[].forecast_max_celsius`, else `forecast_max_celsius`) ≥ 28°C → outdoor in cool hours, shade/indoor midday, flag > 30°C. Else OFF. |
+| Heat timing | ON when the day's forecast ≥ 28°C → outdoor in cool hours, shade/indoor midday, flag > 30°C. Else OFF. **Forecast source:** an operator-supplied fresh read (Step 5) wins; else the stop's `stop_weather[].forecast_max_celsius`; else `forecast_max_celsius`. |
 | Anti-tourist filter | ON always — push off-beat; flag/skip only Eiffel-Tower-tier traps (crowd ruins it AND only tourists value it). |
 | Routine | ON always — protect exercise + meals + sleep; insert a rest pocket; no over-packing. |
 | Social default | ON always — pencil one evening social option (hostel-friendly). |
@@ -214,6 +215,51 @@ Keep it light — a travel day is not a full activity day.
 
 ---
 
+## Do-tonight prep & bookings (Step 7b)
+
+The plan is built the **evening before** — the moment bookings and prep actually
+matter. Assemble a short "Do tonight" list (rendered as its own section, see the
+template) from data the dossier already carries. Sources:
+
+1. **`meta.tasks[]`** — each has `title`, `due`, `how`, optional `link`, `stop`.
+   Surface any whose `due` references tomorrow / "the evening before" / tomorrow's
+   weekday, or whose `stop` matches the resolved stop and is still pending.
+2. **`meta.critical[]`** (`title`, `how`, `due`) — surface any not yet resolved that
+   gate tomorrow's plan (e.g. mountain-rescue insurance before a hike day, offline
+   maps before a no-signal leg).
+3. **Per-place prep in the chosen route** — scan the selected places' `tips[]` and
+   `hike{}` for evening-before actions: "confirm … the evening before", "ask hostel
+   for last bus", "book", "reserve", "Mon–Fri only" (timing risk), plus `hike{}`
+   flags (`last_transport_back` to confirm, `water_on_route: false` → carry water,
+   `mobile_signal: false` → download offline map).
+
+Each item is a one-line actionable with its `link` if present. Keep it tight — only
+what bears on **tomorrow**. Omit the section entirely if nothing qualifies. Do not
+invent tasks; surface only what the dossier/route already states.
+
+## Weather-reactive planning
+
+The dossier's forecast is static (captured at dossier-build time). If Patrik gives a
+**fresh weather read** for tomorrow at the Step 5 pause (e.g. `weather: rain all
+day`, `weather: 33°C and clear`), it overrides the static forecast for both the heat
+dial and routing:
+
+- **Rain / storms** → bias toward indoor, covered, and market/food picks (museums,
+  markets, covered halls, long food stops, hostel-social evenings). Move or drop
+  exposed hikes, viewpoints, and open-air anchors; if an outdoor anchor is a `must:`,
+  shift it to the driest window and flag the risk rather than silently keeping it.
+  In mountain stops, honour the dossier's "hike mornings, storms build afternoon"
+  guidance.
+- **Heat spike (> 30°C)** → harden heat timing: outdoor only in the early-morning
+  window, midday firmly indoor/shaded/water, and flag the > 30°C breach per the
+  trip's weather rule.
+- **Cool / clear improvement** → it is fine to relax an otherwise-ON heat dial and
+  open up midday outdoor options.
+
+State the weather basis used in Section B (route logic) and Section G (spine note) —
+"static dossier forecast" vs "your fresh read: {what Patrik said}" — so the plan is
+honest about what it reacted to.
+
 ## QC checklist (passed to `day-plan-qc`)
 
 The command writes the draft plan, then delegates to the `day-plan-qc` agent with
@@ -234,6 +280,13 @@ the plan path, the trip slug, and this checklist:
 8. **Notion formatting clean** — delimited sections, inline links, short lines, no
    horizontal-scroll tables, distances shown between consecutive stops, ≥ 1
    unplanned pocket called out.
+9. **Do-tonight surfaced** — if the route includes places or trip tasks with an
+   evening-before action (booking, timetable confirm, insurance, carry-water /
+   offline-map for a hike), they appear in the Do-tonight section; nothing was
+   invented that the dossier/route doesn't state.
+10. **Weather basis honoured** — if a fresh forecast was given, the plan reacted to
+    it (rain → indoor/market bias; heat spike → hardened timing) and Section B/G
+    names the basis used; if not, it used the static forecast and says so.
 
 `day-plan-qc` returns **GO** or **REVISE** with specific findings. On REVISE, the
 command applies the fixes and notes what changed; it does not re-loop indefinitely.

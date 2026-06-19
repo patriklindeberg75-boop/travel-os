@@ -1,5 +1,5 @@
 ---
-description: Plan tomorrow from an already-built dossier. Resolves the current trip + city, runs the personalization-spine gate, shows the remaining activity long-list (minus what's already done) so Patrik picks must-dos vs optional, then builds one sensibly-routed day (distances, rest, no over-walking), runs an independent QC pass, and writes a Notion-paste-ready mini-dossier where every place is a bullet with an inline Google Maps link.
+description: Plan tomorrow from an already-built dossier. Resolves the current trip + city, runs the personalization-spine gate, shows the remaining activity long-list (minus what's already done) so Patrik picks must-dos vs optional, then builds one sensibly-routed day (distances, rest, no over-walking) — re-biasing for a fresh weather read and surfacing an evening-before "do tonight" prep & booking list — runs an independent QC pass, and writes a Notion-paste-ready mini-dossier where every place is a bullet with an inline Google Maps link.
 model: opus
 ---
 
@@ -79,7 +79,9 @@ Reply with any of:
   skip: …      (not tomorrow, but keep for later)
   day type: full | half | slow | evening | nature   (default: full)
   energy: low | medium | high
-  constraints: … (e.g. leaving 14:00, work-focused, craving X, fresher forecast)
+  weather: …   (tomorrow's actual forecast if it differs from the dossier —
+               e.g. "rain all day", "33°C clear"; I'll re-bias the day)
+  constraints: … (e.g. leaving 14:00, work-focused, craving X)
 ```
 
 **Stop and wait.** Do not build the plan until Patrik responds. If he gives no day
@@ -101,8 +103,18 @@ apply the **walking-load + rest guard** (cap walking, transit for spread-out leg
 insert a rest pocket, honour routine + work block, don't over-pack) → add tightly
 controlled `[extra — not from your list]` items only when they earn it. Honour the
 priority model (must-dos first, never dropped) and the spontaneity guard (leave ≥ 1
-unplanned pocket). Format strictly per `references/daily-program-template.md`,
-building an inline Google Maps link for every place.
+unplanned pocket).
+
+If Patrik gave a `weather:` read, apply § Weather-reactive planning **before**
+locking the route (it overrides the static forecast and may flip outdoor anchors to
+indoor/market/food). State the weather basis in Sections B and G.
+
+**Step 7b — Do-tonight prep.** Assemble the evening-before action list per § Do-tonight
+prep & bookings (from `meta.tasks`/`meta.critical` + the selected route's `tips[]` /
+`hike{}`). Omit the section if nothing qualifies; never invent tasks.
+
+Format strictly per `references/daily-program-template.md`, building an inline Google
+Maps link for every place.
 
 ### Step 8 — Write the draft + independent QC
 

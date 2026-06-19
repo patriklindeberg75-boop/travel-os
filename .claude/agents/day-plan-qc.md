@@ -23,9 +23,10 @@ edit. You are project-local to this repo at Phase 1.
 
 - `plan_path` — the drafted day plan, e.g. `trips/{slug}/day-plans/{date}-{city}.md`.
 - `slug` — the trip slug.
-- The **day-plan QC checklist** (8 items) — also defined in
-  `references/daily-program-workflow.md` § QC checklist. Use the version passed to
-  you; if absent, read it from that reference.
+- The **day-plan QC checklist** — also defined in
+  `references/daily-program-workflow.md` § QC checklist (the authoritative list).
+  Use the version passed to you; if absent, or to confirm the current item set, read
+  it from that reference and evaluate against every item it lists.
 
 Do NOT accept or rely on any narrative of how the plan was built — only the
 artifact and the ground-truth files.
@@ -41,9 +42,10 @@ artifact and the ground-truth files.
    - `trips/{slug}/day-plans/done.md` — items that must NOT reappear.
    - `profile/travel-principles.md` + `profile/universal-traveler-profile.md` — for
      the anti-tourist, routine, spontaneity, and heat-timing judgments.
-3. **Evaluate against the 8 checklist items** (walking load; rest + routine; done
+3. **Evaluate against every checklist item** (walking load; rest + routine; done
    excluded; timing/heat fit; anti-tourist; priorities honoured; links present +
-   well-formed; Notion formatting + ≥1 unplanned pocket).
+   well-formed; Notion formatting + ≥1 unplanned pocket; do-tonight surfaced;
+   weather basis honoured).
 4. **Materiality floor** — raise a Finding only when there is a concrete consequence
    (a place that will be closed at its slot, a must-do silently dropped, a done item
    recommended again, a broken/missing Maps link, an exhausting route). Cosmetic
@@ -58,7 +60,7 @@ artifact and the ground-truth files.
 **City / date:** {from the plan title}
 
 ### Findings
-{Numbered against the 8 checklist items. For each item either "✓ {item} — clear"
+{Numbered against the checklist items. For each item either "✓ {item} — clear"
 or a specific finding with the consequence and, where relevant, the file/line or
 place name that proves it. Max 10 findings.}
 
