@@ -215,28 +215,6 @@ Keep it light — a travel day is not a full activity day.
 
 ---
 
-## Do-tonight prep & bookings (Step 7b)
-
-The plan is built the **evening before** — the moment bookings and prep actually
-matter. Assemble a short "Do tonight" list (rendered as its own section, see the
-template) from data the dossier already carries. Sources:
-
-1. **`meta.tasks[]`** — each has `title`, `due`, `how`, optional `link`, `stop`.
-   Surface any whose `due` references tomorrow / "the evening before" / tomorrow's
-   weekday, or whose `stop` matches the resolved stop and is still pending.
-2. **`meta.critical[]`** (`title`, `how`, `due`) — surface any not yet resolved that
-   gate tomorrow's plan (e.g. mountain-rescue insurance before a hike day, offline
-   maps before a no-signal leg).
-3. **Per-place prep in the chosen route** — scan the selected places' `tips[]` and
-   `hike{}` for evening-before actions: "confirm … the evening before", "ask hostel
-   for last bus", "book", "reserve", "Mon–Fri only" (timing risk), plus `hike{}`
-   flags (`last_transport_back` to confirm, `water_on_route: false` → carry water,
-   `mobile_signal: false` → download offline map).
-
-Each item is a one-line actionable with its `link` if present. Keep it tight — only
-what bears on **tomorrow**. Omit the section entirely if nothing qualifies. Do not
-invent tasks; surface only what the dossier/route already states.
-
 ## Weather-reactive planning
 
 The dossier's forecast is static (captured at dossier-build time). If Patrik gives a
@@ -275,18 +253,14 @@ the plan path, the trip slug, and this checklist:
 5. **Anti-tourist filter honoured** — no Eiffel-Tower-tier trap slipped in unflagged.
 6. **Priorities honoured** — every `must:` / `t: 3` anchor is present; nothing
    must-do was demoted to "skip".
-7. **Links present + well-formed** — every place in Sections C and F has an inline
-   Google Maps link built per the template's format.
+7. **Links present + well-formed** — every place in the plan has an inline Google
+   Maps link built per the template's format.
 8. **Notion formatting clean** — delimited sections, inline links, short lines, no
    horizontal-scroll tables, distances shown between consecutive stops, ≥ 1
    unplanned pocket called out.
-9. **Do-tonight surfaced** — if the route includes places or trip tasks with an
-   evening-before action (booking, timetable confirm, insurance, carry-water /
-   offline-map for a hike), they appear in the Do-tonight section; nothing was
-   invented that the dossier/route doesn't state.
-10. **Weather basis honoured** — if a fresh forecast was given, the plan reacted to
-    it (rain → indoor/market bias; heat spike → hardened timing) and Section B/G
-    names the basis used; if not, it used the static forecast and says so.
+9. **Weather basis honoured** — if a fresh forecast was given, the plan reacted to
+   it (rain → indoor/market bias; heat spike → hardened timing) and the route logic
+   intro names the basis used; if not, it used the static forecast and says so.
 
 `day-plan-qc` returns **GO** or **REVISE** with specific findings. On REVISE, the
 command applies the fixes and notes what changed; it does not re-loop indefinitely.

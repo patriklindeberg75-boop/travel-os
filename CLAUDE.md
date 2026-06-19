@@ -96,7 +96,7 @@ The Phase 1 dossier workflow runs in three stages (commands) and is defined by t
 - `references/subagent-prompts.md` — handoff prompt templates for ChatGPT Pro and Perplexity Pro, organized by pass (Mode 1 manual delegation).
 
 **In-trip planning:**
-- `/daily-program [--trip {slug}]` — plans tomorrow as a routed selection from the trip's existing `dossier-data.json` (no new research). Resolves the current city, runs the spine gate, shows the remaining activity long-list (minus done-ledger items) for an interactive pick, builds one walking/rest-guarded routed day, re-biases for a fresh weather read when given, surfaces an evening-before "do tonight" prep & booking list (from the dossier's `meta.tasks`/`critical` + per-place prep), runs an independent QC pass (`day-plan-qc` agent), and writes a Notion-paste-ready plan with an inline Google Maps link per place. Methodology lives in `references/daily-program-workflow.md`; output format in `references/daily-program-template.md`. Runs inline in the main session.
+- `/daily-program [--trip {slug}]` — plans tomorrow as a routed selection from the trip's existing `dossier-data.json` (no new research). Resolves the current city, runs the spine gate, shows the remaining activity long-list (minus done-ledger items) for an interactive pick, builds one walking/rest-guarded routed day, re-biases for a fresh weather read when given, runs an independent QC pass (`day-plan-qc` agent), and writes a Notion-paste-ready plan with an inline Google Maps link per place. Methodology lives in `references/daily-program-workflow.md`; output format in `references/daily-program-template.md`. Runs inline in the main session.
 
 Future command `/tomorrow-spar` will add parallel reference files under `references/`.
 

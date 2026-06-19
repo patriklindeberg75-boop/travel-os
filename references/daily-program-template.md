@@ -51,39 +51,13 @@ Never fabricate coordinates. (Do not call `build.mjs` — it is trip-local to
 Title line: `# {City} — {Weekday}, {Date} — {day type}` (e.g.
 `# Sofia — Monday, 22 Jun 2026 — full day`).
 
-### A. Day theme
-One line — the shape of the day (e.g. "Vitosha morning, central culture afternoon,
-Oborishte dinner").
+**Route logic intro** — 2–3 sentences immediately under the title, no header: why
+this route, the flow, where backtracking was avoided, roughly how much is on foot vs
+transit, where the rest pocket sits, the one unplanned pocket left open, and the
+weather basis (static dossier forecast vs Patrik's fresh read).
 
----
-
-### Do tonight — prep & bookings
-Placed right after the theme because it is acted on **tonight**. A short bullet list
-of evening-before actions tied to tomorrow (bookings, timetable confirms, insurance,
-carry-water / download-offline-map for a hike), sourced per the workflow reference
-§ Do-tonight prep & bookings. Include the `link` when the dossier has one. **Omit
-this whole section if nothing qualifies** — do not pad it.
-
-```
-## Do tonight — prep & bookings
-- Confirm the narrow-gauge timetable for the Bansko leg — bileti.bdz.bg
-- Ask the hostel tonight: Bus 66 last return time from Zlatnite Mostove
-- Mountain-rescue insurance bought? (needed for the Pirin hike)
-```
-
----
-
-### B. Route logic
-2–4 short lines: why this route, the flow, where backtracking was avoided, the
-**walking-load summary** (roughly how much is on foot vs transit), where the **rest
-pocket** sits, the **one unplanned pocket** left open, and the **weather basis**
-(static dossier forecast vs Patrik's fresh read — see § Weather-reactive planning).
-
----
-
-### C. The plan
-Ordered by time-of-day band. Under each band header (`**Morning**`, `**Midday**`,
-etc.), one bullet per place:
+**The plan** — time-of-day bands directly after the intro. Under each band header
+(`**Morning**`, `**Midday**`, etc.), one bullet per place:
 
 ```
 - [Zlatnite Mostove — Vitosha, Sofia](https://www.google.com/maps/search/?api=1&query=Zlatnite%20Mostove%20Vitosha%20Sofia)
@@ -106,45 +80,17 @@ block if the work dial is ON.
 
 ---
 
-### D. Optional add-ons
+### Optional add-ons
 Bullets (same place format, inline link) for `optional` items to fold in **only if
 energy permits**. Keep short.
 
 ---
 
-### E. Skip for another day
+### Skip for another day
 Pool items deliberately left out of this route, each a one-line bullet with the
-reason (backtracking, wrong timing, too far, already saturated). No links needed
-here — these are not for tomorrow's Maps list.
+reason (backtracking, wrong timing, too far, already saturated).
 
 ---
 
-### F. Google Maps list — {City} — Tomorrow
-**Every selected place** (Sections C + D) as its own bullet with an inline gmaps
-link, nothing else — built for one-tap adding to a `{City} — Tomorrow` Maps list:
-
-```
-- [Zlatnite Mostove — Vitosha, Sofia](https://www.google.com/maps/search/?api=1&query=Zlatnite%20Mostove%20Vitosha%20Sofia)
-- [Women's Market — Zhenski Pazar, Sofia](https://www.google.com/maps/search/?api=1&query=Women's%20Market%20Zhenski%20Pazar%20Sofia)
-- [Banicharnitsa — Oborishte, Sofia](https://www.google.com/maps/search/?api=1&query=Banicharnitsa%20Oborishte%20Sofia)
-```
-
----
-
-### G. Spine note
-One short block naming which spine dimensions were auto-applied and which were
-dialed down, e.g.:
-
-```
-Spine applied: Heat timing (27°C — outdoor before midday) · Anti-tourist ·
-Routine (rest pocket + dinner) · Social (Oborishte evening).
-Dialed down: Work rhythm OFF (Sofia day is a Monday but caught up).
-Weather basis: static dossier forecast (no fresh read given).
-Reply to override any dimension for tomorrow.
-```
-
----
-
-End the chat output by reminding Patrik to move Section F into his
-`{City} — Tomorrow` Google Maps list and to report back what he actually did (so the
+End the chat output by reminding Patrik to report back what he actually did (so the
 done ledger stays current).

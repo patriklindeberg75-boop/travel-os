@@ -1,5 +1,5 @@
 ---
-description: Plan tomorrow from an already-built dossier. Resolves the current trip + city, runs the personalization-spine gate, shows the remaining activity long-list (minus what's already done) so Patrik picks must-dos vs optional, then builds one sensibly-routed day (distances, rest, no over-walking) — re-biasing for a fresh weather read and surfacing an evening-before "do tonight" prep & booking list — runs an independent QC pass, and writes a Notion-paste-ready mini-dossier where every place is a bullet with an inline Google Maps link.
+description: Plan tomorrow from an already-built dossier. Resolves the current trip + city, runs the personalization-spine gate, shows the remaining activity long-list (minus what's already done) so Patrik picks must-dos vs optional, then builds one sensibly-routed day (distances, rest, no over-walking) — re-biasing for a fresh weather read — runs an independent QC pass, and writes a Notion-paste-ready plan where every place is a bullet with an inline Google Maps link.
 model: opus
 ---
 
@@ -62,7 +62,7 @@ routine, spontaneity, and heat-timing judgments.
 Apply the workflow reference § Spine auto-apply logic against `trip-context.md` + the
 resolved stop (heat from `stop_weather`/`forecast_max_celsius`; work rhythm from
 `work_load_hours_per_week` + tomorrow's weekday; splurge from the budget fields).
-Hold the result for Section G; do not show a toggle menu.
+Hold the result; do not show a toggle menu.
 
 ### Step 5 — Show the long-list & collect picks (PAUSE)
 
@@ -107,11 +107,7 @@ unplanned pocket).
 
 If Patrik gave a `weather:` read, apply § Weather-reactive planning **before**
 locking the route (it overrides the static forecast and may flip outdoor anchors to
-indoor/market/food). State the weather basis in Sections B and G.
-
-**Step 7b — Do-tonight prep.** Assemble the evening-before action list per § Do-tonight
-prep & bookings (from `meta.tasks`/`meta.critical` + the selected route's `tips[]` /
-`hike{}`). Omit the section if nothing qualifies; never invent tasks.
+indoor/market/food). State the weather basis in the route logic intro.
 
 Format strictly per `references/daily-program-template.md`, building an inline Google
 Maps link for every place.
@@ -127,16 +123,13 @@ Maps link for every place.
 
 ### Step 9 — Output
 
-Print the finished plan (Sections A–G) in chat exactly as written, then close with:
+Print the finished plan in chat exactly as written, then close with:
 
 ```
 Plan written: trips/{slug}/day-plans/{YYYY-MM-DD}-{city-kebab}.md
 QC: {GO | REVISE → fixed}
 
-Next:
-- Move Section F into a "{City} — Tomorrow" list in Google Maps.
-- Tomorrow, open that list as your route — don't re-plan.
-- After the day, tell me what you did (or didn't) so the done ledger stays current.
+After the day, tell me what you did (or didn't) so the done ledger stays current.
 ```
 
 ---
