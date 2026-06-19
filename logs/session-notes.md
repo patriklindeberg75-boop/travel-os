@@ -885,3 +885,58 @@ None.
 
 ### Open Questions
 - Red Flat: keep in dossier (🆗 daytime museum) or drop entirely?
+
+## 2026-06-19 — Built /daily-program next-day planner command
+
+### Summary
+Designed and built the `/daily-program` command — the in-trip next-day planner that
+turns an already-built destination dossier into one routed, Notion-paste-ready day
+plan. Ran the build through plan mode with an independent `/qc-pass` that caught three
+blockers (a non-existent `qc-reviewer` agent assumed for reuse; a schema mismatch —
+no `map_link`/coords in `dossier-data.json`; a false verification claim), all fixed
+before approval. After the first commit, added two operator-requested features:
+a "do tonight" prep/booking block and a weather-reactive flip. Verified the mechanics
+against the real Bulgaria dossier data at each stage.
+
+### Files Created
+- `.claude/commands/daily-program.md` — opus command, runs inline (9 steps); shows the
+  long-list, takes an interactive pick, builds a walking/rest-guarded routed day, delegates QC.
+- `references/daily-program-workflow.md` — methodology contract: halts, done-ledger spec,
+  spine auto-apply, selection/routing logic, do-tonight sourcing, weather-reactive planning, QC checklist.
+- `references/daily-program-template.md` — Notion-first output contract + inline Google Maps link format.
+- `.claude/agents/day-plan-qc.md` — minimal independent QC reviewer (read-only; Read/Glob/Grep).
+- `logs/scratchpads/2026-06-19-15-58-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `CLAUDE.md` — registered `/daily-program` + its two reference files under Workflow References;
+  added `day-plans/{date}-{city}.md` + `day-plans/done.md` to the Trip Directory Convention.
+
+### Decisions Made
+- Output target: Notion-first with an inline gmaps link per place (overrides the dossier's
+  no-inline-links rule for this artifact only).
+- Done-tracking: persistent append-only ledger at `trips/{slug}/day-plans/done.md`.
+- Spine: auto-apply defaults + note which were applied (no per-run toggle menu).
+- Flow: show long-list → operator picks must/optional → build plan.
+- Architecture: no orchestrator agent — run inline in the main session (operator-in-the-loop);
+  independent QC via a new minimal `day-plan-qc` agent (travel-os has no reusable `qc-reviewer`).
+- Feature scope: added #1 (do-tonight prep/booking) and #4 (weather-reactive flip);
+  deferred #2 (work-block placement) and #3 (daylight/time-budget math) per the MVP rule.
+- QC auto-fixes (from /qc-pass on the plan): build links inline; cluster by neighborhood
+  (no coords); derive priority from integer `t`; corrected the false verification step.
+
+### Risky actions
+The new command + agent are `/risk-check` change-class artifacts; they received an
+independent `/qc-pass` at the PLAN stage but the final built files were verified only
+by in-session data checks, not an independent QC subagent. Low blast radius (project-local,
+additive, no shared-state mutation). Noted for the QC-PENDING consideration below.
+
+### Next Steps
+- Push gate at end of this wrap (operator confirms). NOTE: this repo pushes to the personal
+  `patriklindeberg75-boop` account — switch gh account before pushing.
+- Optional: run `/refinement-pass` over the final command + references (operator hadn't decided).
+- Real-trip validation: run `/daily-program` on a live Bulgaria day (trip starts Jun 22) to
+  exercise the interactive pick, live `day-plan-qc`, and Notion paste. Running it before Jun 22
+  hits the intended "city unresolvable" halt.
+
+### Open Questions
+- Run `/refinement-pass` now, or after the first real-trip use?

@@ -217,3 +217,17 @@
 **Context:** Red-team Phase 4 finding: no independent readiness check existed before declaring the dossier done. The first production run (Bulgaria) revealed multiple gaps only surfaced by an external QC subagent.
 **Rationale:** The depth floor ensures the dossier serves its purpose as a "menu to pick from on the spot" — a single HIGH item per section doesn't give enough optionality for a multi-night stop. The 3+/≤2 night distinction reflects actual use: longer stops have more decisions to make and genuinely need more options. The QC is an in-context check at the orchestrator layer (not a subagent), consistent with the current Phase 1 tooling posture (manual delegation, no API automation).
 **Alternatives considered:** (a) Flat threshold regardless of stop length — rejected as too strict for 1-night stops and too lenient for 3-night stays. (b) Subagent-based QC (independent context) — deferred; in-context check is the MVP. The red-team.md notes the subagent upgrade as a long-term improvement.
+
+---
+
+**Date:** 2026-06-19
+**Decision:** /daily-program runs inline in the main session with no orchestrator agent; independent QC is delegated to a new minimal `day-plan-qc` agent rather than reusing an existing reviewer.
+**Context:** The existing dossier workflow uses a thin command → `dossier-orchestrator` agent pattern. The day-planner's flow is operator-in-the-loop (show long-list → wait for picks → build plan), and travel-os has no general `qc-reviewer` agent to reuse (only `dossier-orchestrator`). The pre-existing spec had proposed a `daily-program-orchestrator` subagent.
+**Rationale:** A subagent invoked via Task runs to completion and cannot cleanly pause mid-run for the operator's pick; the interactive selection belongs in the main session. The workspace QC-independence rule is still satisfied by a small purpose-built `day-plan-qc` reviewer (read-only, fresh context). Net: 4 files (command + 2 references + 1 QC agent), no orchestrator — simpler than the spec and more reliable for the interactive flow.
+**Alternatives considered:** (a) Build the proposed `daily-program-orchestrator` subagent per spec — rejected: awkward halt/resume around the operator pick. (b) Reuse a `qc-reviewer` agent — rejected: none exists in travel-os (the /qc-pass on the plan caught this assumption). (c) Inline self-QC with no subagent — rejected: violates the QC-independence rule for a risk-class artifact.
+
+**Date:** 2026-06-19
+**Decision:** Day-plan output is Notion-first with an inline Google Maps link per place, and done-tracking uses a persistent append-only ledger (`day-plans/done.md`).
+**Context:** Operator asked for output "easy to add to a Notion page" with a gmaps link per place, and for the planner to know what's already been done. The system's standard output target is iPhone Notes (no inline links), and the dossier PWA's done-state isn't readable by the workflow.
+**Rationale:** The Notion paste target genuinely benefits from inline clickable links, so this artifact overrides the dossier's no-links rule. A persistent ledger means the operator states done/skipped once and never re-states it; done items auto-exclude on future runs.
+**Alternatives considered:** (a) Notes-first plain text (system default) — rejected: loses the per-place clickable link the operator asked for. (b) Operator re-states done items each run (MVP from spec) — rejected in favor of the ledger so the operator never repeats themselves. Feature set #2/#3 deferred per the MVP "prove on a real trip first" rule.
