@@ -259,8 +259,8 @@ the plan path, the trip slug, and this checklist:
    horizontal-scroll tables, distances shown between consecutive stops, ≥ 1
    unplanned pocket called out.
 9. **Weather basis honoured** — if a fresh forecast was given, the plan reacted to
-   it (rain → indoor/market bias; heat spike → hardened timing) and the route logic
-   intro names the basis used; if not, it used the static forecast and says so.
+   it (rain → indoor/market bias; heat spike → hardened timing). If not, the static
+   dossier forecast was used and the routing reflects it.
 
 `day-plan-qc` returns **GO** or **REVISE** with specific findings. On REVISE, the
 command applies the fixes and notes what changed; it does not re-loop indefinitely.

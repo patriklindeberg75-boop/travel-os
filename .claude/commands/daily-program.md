@@ -107,7 +107,7 @@ unplanned pocket).
 
 If Patrik gave a `weather:` read, apply § Weather-reactive planning **before**
 locking the route (it overrides the static forecast and may flip outdoor anchors to
-indoor/market/food). State the weather basis in the route logic intro.
+indoor/market/food).
 
 Format strictly per `references/daily-program-template.md`, building an inline Google
 Maps link for every place.

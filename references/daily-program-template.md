@@ -51,12 +51,7 @@ Never fabricate coordinates. (Do not call `build.mjs` — it is trip-local to
 Title line: `# {City} — {Weekday}, {Date} — {day type}` (e.g.
 `# Sofia — Monday, 22 Jun 2026 — full day`).
 
-**Route logic intro** — 2–3 sentences immediately under the title, no header: why
-this route, the flow, where backtracking was avoided, roughly how much is on foot vs
-transit, where the rest pocket sits, the one unplanned pocket left open, and the
-weather basis (static dossier forecast vs Patrik's fresh read).
-
-**The plan** — time-of-day bands directly after the intro. Under each band header
+**The plan** — time-of-day bands start immediately after the title. Under each band header
 (`**Morning**`, `**Midday**`, etc.), one bullet per place:
 
 ```
