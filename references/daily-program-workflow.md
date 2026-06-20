@@ -95,9 +95,18 @@ File: `trips/{slug}/day-plans/done.md`. Append-only. One dated line per run:
 2026-06-23: SkaraBar 1; Oborishte cafes
 ```
 
-- **Updated in Step 6**, immediately after the Step 5 pick, from the operator's
-  `done:` (and `skip:`) statement — it records what actually happened, not what was
-  planned.
+- **Confirmed first, every run (Step 4.5).** Before the long-list is shown, the
+  command's first operator-facing question is always "what did you actually do since
+  {last ledger date}?" The done-ledger is the *only* source of truth for done-status:
+  a `day-plans/{date}-{city}.md` file records what was *planned*, never what happened,
+  and the planner must never infer an activity is done from a plan file or from its
+  own prior recommendations. Detect the reporting gap (any day from the last ledger
+  line up to today with no ledger entry — especially today, and any day that has a
+  plan file but no matching ledger line) and ask Patrik to report it. A plan file's
+  items may be listed only as a "planned, not confirmed" memory jog — never pre-ticked.
+- **Updated in Step 6**, from both the Step 4.5 up-front confirmation and any
+  `done:`/`skip:` given in the Step 5 pick — it records what actually happened, not
+  what was planned.
 - `done:` items are permanently excluded from future long lists.
 - `skip:` items are excluded from **this** run's pool but remain recallable on later
   runs (skip ≠ done). Track skips on the same line prefixed `skip:` so the

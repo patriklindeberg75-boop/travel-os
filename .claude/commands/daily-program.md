@@ -64,9 +64,43 @@ resolved stop (heat from `stop_weather`/`forecast_max_celsius`; work rhythm from
 `work_load_hours_per_week` + tomorrow's weekday; splurge from the budget fields).
 Hold the result; do not show a toggle menu.
 
+### Step 4.5 — Confirm what's been done since the ledger (PAUSE — ASK THIS FIRST)
+
+**This is always your first operator-facing question. Do not present the long-list,
+and do not infer done-status from anything, until Patrik answers it.**
+
+The done-ledger (`day-plans/done.md`) is the *only* source of truth for what's been
+done. A `day-plans/{date}-{city}.md` file records what was *planned*, never what
+actually happened — never treat a plan file (or your own prior recommendations) as
+evidence an activity was done.
+
+1. Find the last dated line in `day-plans/done.md` (its date = `last_ledger_date`;
+   if the file is absent or has no dated line, `last_ledger_date` = trip start).
+2. Detect the reporting gap: any day from `last_ledger_date` up to **today** that has
+   no ledger line is unreported — especially today, and any day with a
+   `day-plans/{date}-{city}.md` file but no matching ledger entry.
+3. Ask, in plain language:
+
+   ```
+   Before I plan tomorrow — what did you actually do since {last_ledger_date}?
+   The ledger's last entry is {last_ledger_date}, so I have no record of {gap days}.
+   (I won't assume — a plan file only shows what was planned, not what you did.)
+   List whatever you did/skipped and I'll update the ledger before building tomorrow.
+   ```
+
+   If a plan file exists for a gap day, you may list its items as a *memory jog*
+   only — clearly flagged as "planned, not confirmed" — to make recall easier. Never
+   pre-tick them.
+
+4. **Stop and wait.** On reply, treat the stated activities as `done:` (and any
+   `skip:`), update the ledger per Step 6's spec immediately, and re-filter the pool
+   *before* showing the long-list. If Patrik says nothing was done (or "skip this"),
+   record nothing and proceed.
+
 ### Step 5 — Show the long-list & collect picks (PAUSE)
 
-Present the remaining pool ranked by `t` (3 = 🔥, 2 = 👍, 1 = 🆗). For each place
+Present the remaining pool (already re-filtered by Step 4.5's update) ranked by `t`
+(3 = 🔥, 2 = 👍, 1 = 🆗). For each place
 show: name + `neighborhood`, the `hook` description, and key facts (`best_time`,
 `cost`, `duration`). Mark which look like must-dos (🔥 / anchors) vs optional, so
 choosing is easy. Then ask Patrik for, in free text:
@@ -92,7 +126,9 @@ type, default to full day and say so.
 Append a dated line to `trips/{slug}/day-plans/done.md` per the workflow reference
 § Done-ledger spec — `done:` items (permanent) and `skip:` items (this-run only,
 prefixed `skip:`). Create the file with a header on first write; never overwrite
-prior lines. Re-filter the pool with the new exclusions.
+prior lines. Re-filter the pool with the new exclusions. This captures both the
+Step 4.5 up-front "what did you do since the ledger" answer and any `done:`/`skip:`
+given in the Step 5 pick.
 
 ### Step 7 — Build the routed plan
 
@@ -147,3 +183,7 @@ After the day, tell me what you did (or didn't) so the done ledger stays current
   non-negotiable (travel-principles § 5.4 + § 6.1).
 - The done ledger is the system's memory of what's done — keep it current in Step 6
   before filtering, so the same place is never recommended twice.
+- **Never infer done-status.** Your first operator-facing question is always Step 4.5
+  ("what did you actually do since the ledger?"). A plan file shows what was planned,
+  not what happened — do not treat plan files or your own prior recommendations as
+  evidence an activity was done. Only the ledger and Patrik's own report count.
