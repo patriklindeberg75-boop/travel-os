@@ -940,3 +940,37 @@ additive, no shared-state mutation). Noted for the QC-PENDING consideration belo
 
 ### Open Questions
 - Run `/refinement-pass` now, or after the first real-trip use?
+
+## 2026-06-22 — Bulgaria trip replanned (Thursday departure, Sapareva Banya, moderate hike)
+
+### Summary
+In-trip iteration of the Bulgaria plan (bulgaria-2026-06) off the existing dossier — no new
+research. Restructured the back half of the trip (Rila base Panichishte → Sapareva Banya, monastery
+dropped, Sunday-evening Sofia return), shifted the Bansko departure to Thursday to bank a Sofia work
+day, and swapped the Pirin hike to the moderate Banderishki Lakes while keeping both lake hikes.
+Verified bus/chairlift/taxi logistics via web search and cut the Rila day from ~€60 to ~€25. Plan of
+record updated in trip-context.md across three commits.
+
+### Files Created
+- logs/scratchpads/2026-06-22-21-24-scratchpad.md — full session-state continuity scratchpad
+
+### Files Modified
+- trips/bulgaria-2026-06/trip-context.md — route_stops frontmatter + Locked Route prose + two Route Revision sections (3 commits)
+
+### Decisions Made
+- Narrow-gauge train: take the 12:40 departure (arrive Bansko ~17:00) over the 08:55
+- Rila base: Panichishte → Sapareva Banya; Rila Monastery dropped; return via the Dupnitsa hop (Union Ivkoni)
+- Seven Rila Lakes access: no chairlift — hike up/down, share-taxi/hitch the road (budget; ~€25 day vs ~€60)
+- Sofia→Bansko departure moved to Thursday Jun 25 (Sofia 3n / Bansko 2n); Wed Jun 24 = full Sofia work day
+- Pirin hike = Banderishki Lakes (moderate) over Sinanitsa/Muratovo; both lake hikes kept (Banderishki Fri + Seven Rila Lakes Sun)
+
+### Risky actions
+None.
+
+### Next Steps
+- Book Sapareva Banya (Jun 27) + Sofia return bed (Jun 28); mountain-rescue insurance; Mapy.cz "Bulgaria – South-West" offline; withdraw euro cash in Sofia.
+- Optionally update destination-dossier.md return-leg section (still describes the old Panichishte relay) to match the revised route.
+- Use /daily-program to generate fully-routed per-day plans during the trip.
+
+### Open Questions
+- Sync destination-dossier.md to the revised route, or leave it as the original research record? (trip-context.md is authoritative.)
