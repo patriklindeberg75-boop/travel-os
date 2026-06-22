@@ -99,9 +99,10 @@ Approved variant: Plovdiv dropped; Bansko added as a full mountain-town stop wit
 End of trip restructured per operator:
 - Rila base moved from **Panichishte (2 nights)** to **Sapareva Banya (1 night, Jun 27)** — 3 km from the Pionerska lift, cheaper, and with onward Sofia links. Avoids the Panichishte 4-leg return relay.
 - **Rila Monastery dropped** — parked for a future central-Bulgaria trip alongside Plovdiv/Koprivshtitsa.
-- **Seven Rila Lakes** done Sun Jun 28 (early chairlift), then travel to Sofia the same evening via the **Dupnitsa hop** (Union Ivkoni, frequent + cheap). Operator OK arriving Sofia ~21:00–22:00.
+- **Seven Rila Lakes** done Sun Jun 28 (early start), then travel to Sofia the same evening via the **Dupnitsa hop** (Union Ivkoni, frequent + cheap). Operator OK arriving Sofia ~21:00–22:00. Lift-vs-hike access is cost-driven: chairlift ~€16 return + ~€15-each-way private taxi to Pionerska is over budget — default to hiking up/down and sharing/hitching the access road (~€10 day total).
 - **Sofia return night added (Jun 28)** + relaxed half-day Mon Jun 29 before a **17:00 flight**.
-Reason: operator needs to be in Sofia by Sunday evening and wants the cheapest, simplest Rila→Sofia connection.
+- **Friday Jun 26 second Bansko hike dropped** — repurposed as a recovery + remote-work + light-culture day in Bansko (Velyan's House / old-town cluster + a cafe work block). Removes a third consecutive big-mountain day; Thu Sinanitsa/Muratovo and Sun Seven Rila Lakes remain the two headliners. Bansko stays **3 nights** — trimming to 2 would just relocate a night to Sapareva Banya (no work-grade WiFi) and saves nothing, since total trip nights are fixed at 7 by the Mon 17:00 flight.
+Reason: operator optimizing for budget, a realistic work week, and avoiding hike fatigue before the Rila weekend.
 
 ## Operator Constraints (Post-Pass 2)
 
