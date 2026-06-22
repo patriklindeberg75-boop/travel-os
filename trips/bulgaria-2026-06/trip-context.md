@@ -23,7 +23,7 @@ approved_locations:
   - "Iskar Gorge (day-trip from Sofia)"
   - "Septemvri–Dobrinishte narrow-gauge railway (scenic transit leg)"
   - "Bansko / Pirin Mountains"
-  - "Rila Mountains — Panichishte base (Seven Rila Lakes, Rila Monastery, Malyovitsa optional)"
+  - "Rila Mountains — Sapareva Banya base (Seven Rila Lakes; Malyovitsa optional; Rila Monastery dropped)"
 route_stops:
   - stop: Sofia
     nights: 2
@@ -32,13 +32,19 @@ route_stops:
     nights: 3
     dates: "2026-06-24 to 2026-06-26"
     transit_in: "Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko"
-  - stop: "Rila Mountains (Panichishte base)"
-    nights: 2
-    dates: "2026-06-27 to 2026-06-28"
+  - stop: "Sapareva Banya (Rila / Seven Lakes base)"
+    nights: 1
+    dates: "2026-06-27"
+    transit_in: "Bansko → Blagoevgrad → Dupnitsa → Sapareva Banya relay (~3–4h)"
+    note: "3 km from Panichishte / Pionerska lift; cheaper than Panichishte; onward Sofia links"
+  - stop: "Sofia (return)"
+    nights: 1
+    dates: "2026-06-28"
+    transit_in: "Seven Rila Lakes day, then Sapareva Banya → Dupnitsa (minibus/taxi) → Sofia (Union Ivkoni, every 2h, ~€3.58–5); arrive ~21:00–22:00 OK"
   - stop: "Depart Sofia"
     nights: 0
     dates: "2026-06-29"
-    note: "Return from Rila area ~2h, fly/depart same day"
+    note: "Half-day in Sofia; flight departs 17:00"
 viability_verdict: conditional
 viability_notes: "To satisfy the 25h/week Mon–Thu work constraint, base in the cities during the week, which pushes the Rila leg to the weekend (June 27–28). This conflicts with the anti-overtourism/quiet-nature profile: massive weekend day-tripper influx at the Seven Rila Lakes, plus Sofia Live Festival that same weekend. To satisfy the anti-overtourism and quiet-nature priorities, swap the Seven Rila Lakes for a less mainstream hike (e.g., Malyovitsa) and confine remote work entirely to Sofia/Plovdiv. €50/day budget comfortably viable via local buses and hostels. Weather ceiling waived for this trip by operator."
 viability_checked_at: "2026-06-16"
@@ -79,11 +85,23 @@ Work routine: 25h/week front-loaded Mon–Thu, done from Sofia/Plovdiv cafes/cow
 
 **Koprivshtitsa + Plovdiv — both parked, not in this route.**
 Koprivshtitsa was considered as a journey-break on the Sofia→Bansko run but DROPPED: it sits on the Sub-Balkan line (running east toward Karlovo), not the southern mainline to Septemvri, so it cannot be reached as a same-day stopover en route to the scenic train (rejoining the route requires a ~2–2.5h Plovdiv detour). The only way to include it was as an overnight, which would have cost a Bansko Pirin hiking day (3 nights → 2) — operator chose the mountains. A Sofia day-trip was also declined (it would have eaten one of only two Sofia days, cutting the Vitosha morning). Both Koprivshtitsa and Plovdiv sit on Bulgaria's central/eastern corridor and pair naturally — carry them to a future central-Bulgaria trip. Western loop kept clean.
-- Stop 3: Rila Mountains (Panichishte base) — 2 nights (Jun 27–28, Sat–Sun)
-  Highlights: Seven Rila Lakes (operator opted into weekend crowds), Rila Monastery
-- Depart: Jun 29 (Mon) — return from Rila area ~2h, 0 nights
+- Stop 3: Rila / Seven Rila Lakes — Sapareva Banya base — 1 night (Jun 27, Sat)
+  Transit in: Bansko → Blagoevgrad → Dupnitsa → Sapareva Banya relay (~3–4h)
+  Highlight: Seven Rila Lakes (Sun Jun 28, early chairlift; weekend crowds accepted)
+- Stop 4: Sofia (return) — 1 night (Jun 28, Sun) — arrive ~21:00–22:00 after the lakes day
+  Transit: Sapareva Banya → Dupnitsa (minibus/taxi) → Sofia (Union Ivkoni, every 2h, ~€3.58–5)
+- Depart: Jun 29 (Mon) — half-day in Sofia; flight departs 17:00
 
-Approved variant: Plovdiv dropped; Bansko added as a full mountain-town stop with scenic narrow-gauge train arrival. Rila accessed from Panichishte, not day-trip from Sofia.
+Approved variant: Plovdiv dropped; Bansko added as a full mountain-town stop with scenic narrow-gauge train arrival.
+
+## Route Revision (2026-06-22, in-trip)
+
+End of trip restructured per operator:
+- Rila base moved from **Panichishte (2 nights)** to **Sapareva Banya (1 night, Jun 27)** — 3 km from the Pionerska lift, cheaper, and with onward Sofia links. Avoids the Panichishte 4-leg return relay.
+- **Rila Monastery dropped** — parked for a future central-Bulgaria trip alongside Plovdiv/Koprivshtitsa.
+- **Seven Rila Lakes** done Sun Jun 28 (early chairlift), then travel to Sofia the same evening via the **Dupnitsa hop** (Union Ivkoni, frequent + cheap). Operator OK arriving Sofia ~21:00–22:00.
+- **Sofia return night added (Jun 28)** + relaxed half-day Mon Jun 29 before a **17:00 flight**.
+Reason: operator needs to be in Sofia by Sunday evening and wants the cheapest, simplest Rila→Sofia connection.
 
 ## Operator Constraints (Post-Pass 2)
 
