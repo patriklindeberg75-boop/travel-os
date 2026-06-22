@@ -974,3 +974,47 @@ None.
 
 ### Open Questions
 - Sync destination-dossier.md to the revised route, or leave it as the original research record? (trip-context.md is authoritative.)
+
+## 2026-06-22 — Sofia day plan (Tue Jun 23) via /daily-program
+
+### Summary
+Ran /daily-program to plan Sofia for Tuesday Jun 23 — the first day plan of the live
+Bulgaria trip (bulgaria-2026-06). Routed selection from the existing dossier, no new
+research. Operator constraint: afternoon→evening only, 1pm start; staying at Hostel Mostel.
+Built a compact central walking day around the operator's explicit picks, ran an independent
+QC pass, applied the two fixes it returned.
+
+### Files Created
+- trips/bulgaria-2026-06/day-plans/2026-06-23-sofia.md — the routed day plan
+- trips/bulgaria-2026-06/day-plans/ — directory created (first day plan of the trip)
+- logs/scratchpads/2026-06-22-22-40-scratchpad.md — continuity scratchpad
+
+### Files Modified
+- None (besides the wrap logs)
+
+### Decisions Made
+- Added operator-requested off-pool places as labelled [extra — not from your list]:
+  Alexander Nevsky Cathedral, Ivan Vazov National Theatre + City Garden, Old Palace/National
+  Gallery — flagged as unresearched, verify hours on the day.
+- Justified Alexander Nevsky against the anti-tourist filter (operator asked why it wasn't on
+  the dossier list): holds up under the v4 trap-test (free, working cathedral, locals value it).
+- Sequenced Museum of Socialist Art first — Tuesday is its only viable window all trip, hard
+  ~17:30 close + metro detour. Made Old Palace interior optional to avoid over-packing.
+- Morning-only t:3 items (Vitosha hike, Women's Market, morning banitsa) moved to "Skip for
+  another day" with reasons — not silently dropped.
+- QC (day-plan-qc) REVISE → fixed: Supa Star hours (was "closes 14:00", dossier says Mon–Fri
+  11:30–20:00); Supa Star + KANAAL Maps links missing neighborhood segment.
+
+### Risky actions
+None.
+
+### Next Steps
+- After the day, operator reports what was actually done → update day-plans/done.md (not yet
+  created) so completed activities auto-exclude on the next run.
+- Run /daily-program for the next Sofia/trip day.
+- Carryover (still open): bookings — Sapareva Banya (Jun 27), Sofia return bed (Jun 28),
+  mountain-rescue insurance, Mapy.cz offline map, euro cash; optional destination-dossier.md
+  return-leg sync to the revised route.
+
+### Open Questions
+None.
