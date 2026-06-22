@@ -26,12 +26,14 @@ approved_locations:
   - "Rila Mountains — Sapareva Banya base (Seven Rila Lakes; Malyovitsa optional; Rila Monastery dropped)"
 route_stops:
   - stop: Sofia
-    nights: 2
-    dates: "2026-06-22 to 2026-06-23"
-  - stop: Bansko
     nights: 3
-    dates: "2026-06-24 to 2026-06-26"
-    transit_in: "Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko"
+    dates: "2026-06-22 to 2026-06-24"
+    note: "Wed Jun 24 is a full Sofia work day (extra night added vs original 2n)"
+  - stop: Bansko
+    nights: 2
+    dates: "2026-06-25 to 2026-06-26"
+    transit_in: "Thu Jun 25: Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge 12:40 (~4.5h) + Dobrinishte → Bansko; arrive ~17:00"
+    note: "Fri Jun 26 is the single Pirin hike day — Banderishki Lakes (moderate)"
   - stop: "Sapareva Banya (Rila / Seven Lakes base)"
     nights: 1
     dates: "2026-06-27"
@@ -77,9 +79,10 @@ Work routine: 25h/week front-loaded Mon–Thu, done from Sofia/Plovdiv cafes/cow
 
 ## Locked Route (confirmed after Pass 2 — 2026-06-16)
 
-- Stop 1: Sofia — 2 nights (Jun 22–23, Mon–Tue)
-- Stop 2: Bansko / Pirin — 3 nights (Jun 24–26, Wed–Fri)
-  Transit: Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge (~5h) + Dobrinishte → Bansko (short taxi/transfer)
+- Stop 1: Sofia — 3 nights (Jun 22–24, Mon–Wed) [revised: was 2n; +1 work day]
+- Stop 2: Bansko / Pirin — 2 nights (Jun 25–26, Thu–Fri) [revised: was 3n]
+  Transit in: Thu Jun 25 — Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge 12:40 (~4.5h) + Dobrinishte → Bansko; arrive ~17:00
+  Pirin hike: Fri Jun 26 — Banderishki Lakes (moderate; chosen over the strenuous Sinanitsa/Muratovo)
 
 ## Parked for a future trip (decided 2026-06-18)
 
@@ -87,7 +90,7 @@ Work routine: 25h/week front-loaded Mon–Thu, done from Sofia/Plovdiv cafes/cow
 Koprivshtitsa was considered as a journey-break on the Sofia→Bansko run but DROPPED: it sits on the Sub-Balkan line (running east toward Karlovo), not the southern mainline to Septemvri, so it cannot be reached as a same-day stopover en route to the scenic train (rejoining the route requires a ~2–2.5h Plovdiv detour). The only way to include it was as an overnight, which would have cost a Bansko Pirin hiking day (3 nights → 2) — operator chose the mountains. A Sofia day-trip was also declined (it would have eaten one of only two Sofia days, cutting the Vitosha morning). Both Koprivshtitsa and Plovdiv sit on Bulgaria's central/eastern corridor and pair naturally — carry them to a future central-Bulgaria trip. Western loop kept clean.
 - Stop 3: Rila / Seven Rila Lakes — Sapareva Banya base — 1 night (Jun 27, Sat)
   Transit in: Bansko → Blagoevgrad → Dupnitsa → Sapareva Banya relay (~3–4h)
-  Highlight: Seven Rila Lakes (Sun Jun 28, early chairlift; weekend crowds accepted)
+  Highlight: Seven Rila Lakes (Sun Jun 28, early start, hike up — no chairlift; weekend crowds accepted)
 - Stop 4: Sofia (return) — 1 night (Jun 28, Sun) — arrive ~21:00–22:00 after the lakes day
   Transit: Sapareva Banya → Dupnitsa (minibus/taxi) → Sofia (Union Ivkoni, every 2h, ~€3.58–5)
 - Depart: Jun 29 (Mon) — half-day in Sofia; flight departs 17:00
@@ -101,8 +104,17 @@ End of trip restructured per operator:
 - **Rila Monastery dropped** — parked for a future central-Bulgaria trip alongside Plovdiv/Koprivshtitsa.
 - **Seven Rila Lakes** done Sun Jun 28 (early start), then travel to Sofia the same evening via the **Dupnitsa hop** (Union Ivkoni, frequent + cheap). Operator OK arriving Sofia ~21:00–22:00. Lift-vs-hike access is cost-driven: chairlift ~€16 return + ~€15-each-way private taxi to Pionerska is over budget — default to hiking up/down and sharing/hitching the access road (~€10 day total).
 - **Sofia return night added (Jun 28)** + relaxed half-day Mon Jun 29 before a **17:00 flight**.
-- **Friday Jun 26 second Bansko hike dropped** — repurposed as a recovery + remote-work + light-culture day in Bansko (Velyan's House / old-town cluster + a cafe work block). Removes a third consecutive big-mountain day; Thu Sinanitsa/Muratovo and Sun Seven Rila Lakes remain the two headliners. Bansko stays **3 nights** — trimming to 2 would just relocate a night to Sapareva Banya (no work-grade WiFi) and saves nothing, since total trip nights are fixed at 7 by the Mon 17:00 flight.
+- ~~Friday Jun 26 second Bansko hike dropped; Bansko stays 3 nights~~ — **SUPERSEDED by Route Revision 2 below.**
 Reason: operator optimizing for budget, a realistic work week, and avoiding hike fatigue before the Rila weekend.
+
+## Route Revision 2 (2026-06-22, in-trip — supersedes the Bansko 3-night / Sofia 2-night allocation above)
+
+Departure-day and hike decisions, locked by operator:
+- **Depart Sofia for Bansko on Thursday Jun 25, not Wednesday.** Adds a 3rd Sofia night (Mon–Wed); **Wed Jun 24 becomes a full Sofia work day** — the best WiFi of the trip, which fixes the tight Mon–Thu work week. Net: one night moves Bansko → Sofia (cost-neutral; total stays 7 nights).
+- **Bansko → 2 nights (Thu eve + Fri).** Thu is the narrow-gauge travel day (arrive ~17:00); **Fri Jun 26 is the single Pirin hike day.**
+- **Pirin hike = Banderishki Lakes (moderate)** — chosen over the strenuous Sinanitsa/Muratovo full-day. ~8–12 km, ~400 m gain, lower lakes, less boulder-hopping — the right load for a day after travel and before Sunday's Seven Rila Lakes. Sinanitsa kept only as an "if feeling strong" upgrade.
+- **Both lake hikes kept:** Banderishki (Fri) + Seven Rila Lakes (Sun), split by the Sat travel relay. Operator accepts the Fri-hike / Sat-travel / Sun-hike sequence; the moderate Friday choice keeps fatigue manageable.
+Reason: operator wanted the extra Sofia work day, a moderate (not strenuous) Pirin hike, and to keep both the Pirin and Rila lake experiences.
 
 ## Operator Constraints (Post-Pass 2)
 
