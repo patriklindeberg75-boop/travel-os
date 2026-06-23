@@ -21,32 +21,30 @@ trip_type: multi-stop
 approved_locations:
   - "Sofia (Oborishte / Women's Market area)"
   - "Iskar Gorge (day-trip from Sofia)"
-  - "Septemvri–Dobrinishte narrow-gauge railway (scenic transit leg)"
+  - "Plovdiv (Old Town / Kapana) — added back 2026-06-23 (Route Revision 3)"
+  - "Septemvri–Dobrinishte narrow-gauge railway (scenic transit leg — now Plovdiv → Bansko)"
   - "Bansko / Pirin Mountains"
-  - "Rila Mountains — Sapareva Banya base (Seven Rila Lakes; Malyovitsa optional; Rila Monastery dropped)"
+  - "Rila Mountains — DROPPED 2026-06-23 (Sapareva Banya bed too expensive; Seven Rila Lakes + Rila Monastery parked for a future central-Bulgaria trip)"
 route_stops:
   - stop: Sofia
     nights: 3
     dates: "2026-06-22 to 2026-06-24"
-    note: "Wed Jun 24 is a full Sofia work day (extra night added vs original 2n)"
+    note: "Mon–Wed work days (best WiFi of the trip); in progress"
+  - stop: Plovdiv
+    nights: 1
+    dates: "2026-06-25"
+    transit_in: "Thu Jun 25: Sofia → Plovdiv mainline (~2h, frequent)"
+    note: "Work-from-Plovdiv day (closes the Mon–Thu work week) + evening Old Town / Roman theatre / Kapana"
   - stop: Bansko
-    nights: 2
-    dates: "2026-06-25 to 2026-06-26"
-    transit_in: "Thu Jun 25: Sofia → Septemvri mainline (~2h) + Septemvri–Dobrinishte narrow-gauge 12:40 (~4.5h) + Dobrinishte → Bansko; arrive ~17:00"
-    note: "Fri Jun 26 is the single Pirin hike day — Banderishki Lakes (moderate)"
-  - stop: "Sapareva Banya (Rila / Seven Lakes base)"
-    nights: 1
-    dates: "2026-06-27"
-    transit_in: "Bansko → Blagoevgrad → Dupnitsa → Sapareva Banya relay (~3–4h)"
-    note: "3 km from Panichishte / Pionerska lift; cheaper than Panichishte; onward Sofia links"
-  - stop: "Sofia (return)"
-    nights: 1
-    dates: "2026-06-28"
-    transit_in: "Seven Rila Lakes day, then Sapareva Banya → Dupnitsa (minibus/taxi) → Sofia (Union Ivkoni, every 2h, ~€3.58–5); arrive ~21:00–22:00 OK"
-  - stop: "Depart Sofia"
+    nights: 3
+    dates: "2026-06-26 to 2026-06-28"
+    transit_in: "Fri Jun 26: Plovdiv → Septemvri mainline (~40min) + Septemvri–Dobrinishte narrow-gauge 12:40 (~4.5h) + Dobrinishte → Bansko; arrive ~17:30"
+    note: "Fri = scenic narrow-gauge travel-in + light old town. Sat + Sun = two Pirin hike days: Banderishki Lakes (moderate) + Sinanitsa/Muratovo Lakes (the Bansko flagship)"
+  - stop: "Depart (Bansko → Sofia → fly)"
     nights: 0
     dates: "2026-06-29"
-    note: "Half-day in Sofia; flight departs 17:00"
+    transit_in: "Mon Jun 29: Bansko → Sofia direct bus (~3h, Union Ivkoni/others, frequent); leave ~09:00–10:00, airport by early afternoon"
+    note: "No Sofia return night — fly out via Monday-morning transfer; flight departs 17:00"
 viability_verdict: conditional
 viability_notes: "To satisfy the 25h/week Mon–Thu work constraint, base in the cities during the week, which pushes the Rila leg to the weekend (June 27–28). This conflicts with the anti-overtourism/quiet-nature profile: massive weekend day-tripper influx at the Seven Rila Lakes, plus Sofia Live Festival that same weekend. To satisfy the anti-overtourism and quiet-nature priorities, swap the Seven Rila Lakes for a less mainstream hike (e.g., Malyovitsa) and confine remote work entirely to Sofia/Plovdiv. €50/day budget comfortably viable via local buses and hostels. Weather ceiling waived for this trip by operator."
 viability_checked_at: "2026-06-16"
@@ -115,6 +113,18 @@ Departure-day and hike decisions, locked by operator:
 - **Pirin hike = Banderishki Lakes (moderate)** — chosen over the strenuous Sinanitsa/Muratovo full-day. ~8–12 km, ~400 m gain, lower lakes, less boulder-hopping — the right load for a day after travel and before Sunday's Seven Rila Lakes. Sinanitsa kept only as an "if feeling strong" upgrade.
 - **Both lake hikes kept:** Banderishki (Fri) + Seven Rila Lakes (Sun), split by the Sat travel relay. Operator accepts the Fri-hike / Sat-travel / Sun-hike sequence; the moderate Friday choice keeps fatigue manageable.
 Reason: operator wanted the extra Sofia work day, a moderate (not strenuous) Pirin hike, and to keep both the Pirin and Rila lake experiences.
+
+## Route Revision 3 (2026-06-23, in-trip — supersedes the Rila / Sapareva Banya leg above)
+
+Rila leg cut for cost; Plovdiv added back; Bansko extended. New shape: **Sofia → Plovdiv (1n) → Bansko (3n) → Sofia (fly out)** — a clean forward loop, no backtracking.
+
+- **Rila leg DROPPED entirely.** The Sapareva Banya bed (the cheap Rila option) was still too expensive, and doing the Seven Rila Lakes without an overnight near the trailhead isn't realistic (pre-dawn start + full alpine hike + onward travel, all with luggage). Seven Rila Lakes + Rila Monastery parked for a future central-Bulgaria trip (alongside Plovdiv's deeper visit + Koprivshtitsa).
+- **Plovdiv added back — 1 night (Thu Jun 25).** Dropped back in Pass 2 to make room for Bansko; now reachable on the way without backtracking. Thursday is a work-from-Plovdiv day (good WiFi, closes the Mon–Thu work week) + evening Old Town / Roman theatre / Kapana. A highlight taste, not a deep stay.
+- **Bansko → 3 nights (Fri–Sun, Jun 26–28).** The freed Rila night goes here, giving **two full Pirin hike days**: Banderishki Lakes (moderate) + Sinanitsa/Muratovo Lakes (the dossier's #1 Bansko pick — quieter than Seven Rila Lakes, no chairlift crowd). This swaps the crowded weekend Rila lakes for quieter Pirin alpine — a strict upgrade on the anti-overtourism profile.
+- **Scenic narrow-gauge railway preserved**, now ridden **Plovdiv → Bansko** (Fri Jun 26): Plovdiv → Septemvri mainline (~40min) → narrow-gauge 12:40 → Dobrinishte → Bansko (~17:30). Ridden once, inbound; no double-back.
+- **No Sofia return night.** Fly out via a Monday-morning Bansko → Sofia transfer (~3h direct bus; leave ~09:00–10:00, airport by early afternoon for the 17:00 flight). Trade vs the old plan: Monday is a travel day, not a relaxed Sofia half-day.
+
+Reason: operator optimizing for cost (no Rila bed), keeping the work week in good-WiFi cities Mon–Thu, getting both Pirin hikes on the work-off weekend, and adding a real cultural city (Plovdiv) — all within the 7 fixed nights.
 
 ## Operator Constraints (Post-Pass 2)
 
