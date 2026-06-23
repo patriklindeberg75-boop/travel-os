@@ -1018,3 +1018,45 @@ None.
 
 ### Open Questions
 None.
+
+## 2026-06-23 — Bulgaria route replan (Revision 3): drop Rila, add Plovdiv, extend Bansko
+
+### Summary
+Mid-trip conversational replanning of the live Bulgaria trip (bulgaria-2026-06; operator
+currently in Sofia). Cut the expensive Rila/Sapareva Banya overnight, added Plovdiv back as a
+1-night stop, and gave the freed night to Bansko (now 3 nights, two Pirin hikes). New route:
+**Sofia → Plovdiv (1n) → Bansko (3n) → Sofia fly-out** — a clean forward loop. No new research;
+committed to trip-context.md. One follow-on question (Bansko 3n vs 2n+Sofia-Sunday) deferred.
+
+### Files Created
+- logs/scratchpads/2026-06-23-19-30-scratchpad.md — continuity scratchpad
+
+### Files Modified
+- trips/bulgaria-2026-06/trip-context.md — frontmatter route_stops + approved_locations
+  rewritten; new prose "Route Revision 3 (2026-06-23, in-trip)" section added
+
+### Decisions Made
+- Dropped the Rila leg entirely (Sapareva Banya bed still too expensive; Seven Rila Lakes not
+  feasible without a trailhead overnight). Seven Lakes + Rila Monastery parked for a future
+  central-Bulgaria trip.
+- Added Plovdiv back (1 night, Thu Jun 25) — reachable without backtracking via
+  Plovdiv→Septemvri→narrow-gauge→Bansko. Work-from-Plovdiv day + evening Old Town/Kapana.
+- Bansko → 3 nights (Fri–Sun, Jun 26–28); freed Rila night becomes a 2nd Pirin hike day
+  (Banderishki + Sinanitsa). Swaps crowded weekend Rila lakes for quieter Pirin alpine.
+- No Sofia return night — fly out via a Monday-morning Bansko→Sofia transfer.
+
+### Risky actions
+None.
+
+### Next Steps
+- DEFERRED decision: Bansko 3 nights (current) vs 2 nights + a Sofia-return Sunday night (do a
+  shorter hike then bus to Sofia same day) for a safer Monday flight buffer. If the operator
+  picks the 2n variant, update trip-context.md (Route Revision 4). trip-context currently
+  reflects the 3-night version.
+- Bookings still open: Plovdiv bed (Thu Jun 25), Bansko hostel (Jun 26–28). Dropped: Sapareva
+  Banya booking + Rila chairlift/mountain-rescue items.
+- Optional: research-pass Plovdiv before building a Plovdiv day plan (it was parked, so it's NOT
+  in the vetted dossier). Then /daily-program for the next day.
+
+### Open Questions
+- Bansko 3n vs 2n+Sofia-Sunday (see Next Steps) — operator chose to settle later.
