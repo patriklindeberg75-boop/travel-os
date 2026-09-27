@@ -27,8 +27,11 @@ yet been demonstrated in this reconciliation.
 - Keep Apple Notes as the working itinerary. Start with notes Patrik shares;
   investigate MCP access or Google Docs only if useful. No switch is committed.
 - Defer calendar integration; no current calendar commitments were supplied.
-- Keep the existing traveler preferences provisionally, with trip-specific
-  overrides. Give ordinary opinions and recommendations while Patrik decides.
+- Re-interview Patrik about travel preferences and principles before relying on
+  the old profile for personalized recommendations. The earlier statement that
+  preferences broadly hold is provisional, not blanket revalidation. Distinguish
+  lasting preferences from trip-specific overrides. Give ordinary opinions and
+  recommendations while Patrik decides.
 - Save explicit decisions and submitted ideas. Ask before promoting incidental
   remarks into lasting preferences.
 - On receiving a Reel, save its ideas, insights, and source, then wait for further
@@ -73,6 +76,31 @@ One Italy–Morocco trip folder is a reasonable initial implementation choice.
   the investigation. Existing unrelated untracked files must be preserved.
 
 ## Proposed implementation sequence
+
+### 0. Re-interview Patrik and refresh travel assumptions
+
+Required by Patrik in the September 27 follow-up. Read the existing profile and
+principles as hypotheses to revisit, not as constraints that predetermine answers.
+Use a conversational interview that accepts dictated responses and asks what has
+changed through actual travel experience, including what worked or failed during
+the Balkans trip. Do not infer that experience from the placeholder journal.
+
+Cover travel purpose, solo versus companion travel, pace and spontaneity, work
+needs, accommodation and social preferences, activities and physical capability,
+food, mobility, packing, climate and sun sensitivity, budget and splurges, and
+risk tolerance. Revisit the strength of old rules, their exceptions, and tensions
+between the profile and principles; invite preferences the old documents missed.
+
+Separate stable preferences from Italy–Morocco circumstances and temporary moods.
+Summarize what is confirmed, changed, retired, or unresolved, then have Patrik
+confirm the interpretation before updating the profile and principles. Date and
+record attributable changes; do not convert unanswered questions into defaults.
+This requested refresh is part of reconciliation and need not wait for a post-trip
+retro. The interview is not yet conducted.
+
+Check: revised profile and principles reflect confirmed interview answers,
+remaining uncertainty is explicit, and personalized planning uses the refreshed
+versions. Structural setup and integration tests can proceed independently.
 
 ### 1. Establish usable repository instructions and memory
 
@@ -165,7 +193,9 @@ has been tested in this session.
 
 ## Next action
 
-Begin with repository reconciliation and basic library/trip memory, then prove
-cloud capture and retrieval early. Resolve infrastructure limits through tests;
+Begin with the travel-preference interview and refresh. Repository reconciliation,
+basic library/trip memory, and early cloud capture/retrieval tests can proceed
+independently, but personalized recommendations must use the confirmed refresh.
+Resolve infrastructure limits through tests;
 ask Patrik only when a discovered limit requires a meaningful scope, cost, or
 experience decision. Use Italy–Morocco as the first practical trial.
