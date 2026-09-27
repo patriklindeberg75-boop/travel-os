@@ -1,8 +1,8 @@
 Travel Principles
 
-**Version:** v5
-**Last updated:** 2026-09-27 — partial reconciliation approved in conversation.
-**Review status:** The popularity exception in §4 and work exclusion in §6.2 are confirmed; other inherited rules remain subject to the ongoing preference refresh. This is not blanket revalidation.
+**Version:** v6
+**Last updated:** 2026-09-27 — preference-refresh round completed and approved.
+**Review status:** September decisions below govern. Historical QC and changelog entries describe earlier versions, not active requirements.
 **Created:** 2026-05-10
 **Owner:** Patrik
 **Role in system:** Personalization spine #2 — read alongside the Universal Traveler Profile by every workflow in the Claude Code travel planning system before generating user-facing output.
@@ -11,14 +11,14 @@ Travel Principles
 
 ## How to use this document
 
-This document captures *decision rules* — how Patrik decides — across all solo trips of 1+ week duration. Paired with the Universal Traveler Profile, which captures *what Patrik prefers*. Together they form the personalization spine the planning system reads before any output.
+This document captures *decision rules* — how Patrik decides — across trips of any duration, with or without companions. Paired with the Universal Traveler Profile, which captures *what Patrik prefers*. Together they form the personalization spine the planning system reads before any output.
 
-The Profile filters destinations and activities against tastes. Principles filter and shape choices when tastes alone don't decide — which destination among viable ones, when to splurge, what to bail on, what counts as "special" enough to override caps.
+The Profile filters destinations and activities against tastes. Principles filter and shape choices when tastes alone don't decide — which destination among viable ones, when to splurge, what to bail on, how to weigh experience against cost and practical constraints.
 
 **Application discipline:**
 
-- Each principle has a **statement, rationale, and application rule**. The application rule is the only part the planning system uses operationally; the rationale exists so Claude Code can evaluate edge cases.
-- **Tensions between principles are documented explicitly** in §8.
+- Apply the current guidance below. Retained rationales explain preferences; they do not add hidden requirements.
+- Practical tradeoffs are summarized in §8.
 - **Anti-principles** in §9 document things that look like principles but Patrik has rejected.
 - Updates require Patrik's confirmation through a preference interview or post-trip retro; incidental remarks do not silently change standing principles.
 
@@ -36,7 +36,7 @@ The trip's structure — destination, dates, route, daily flow — is Patrik's c
 
 **Rationale:** Travel agency is the point. Outsourcing the choice undermines the experience.
 
-**Application rule:** When multiple destinations, routes, or extensions pass all filters, the system presents candidates with comparative analysis and lets Patrik pick. It does not rank, recommend, or auto-select. This applies at trip-selection (Phase 4) and at any in-trip decision point with multiple viable options.
+**Application rule:** When multiple destinations, routes, or extensions pass all filters, the system presents candidates with comparative analysis and lets Patrik pick. It may rank options and give a clear recommendation, but does not treat that recommendation as a confirmed decision or auto-select. This applies at trip-selection (Phase 4) and at any in-trip decision point with multiple viable options.
 
 ---
 
@@ -46,7 +46,7 @@ The trip's structure — destination, dates, route, daily flow — is Patrik's c
 
 **Rationale:** Dependence on others' logistics forces playing by their rules — schedule, pace, priorities. It ruins flow.
 
-**Application rule:** When a draft trip plan involves staying with someone or relying on someone else's transport for more than a brief overlap (1–2 days), flag it as a structural risk. Hostel bookings, public transport, and rentals Patrik controls are the default.
+**Application rule:** Explain practical dependencies when they affect a route or accommodation choice. Do not infer a problem from the length of a friend visit or impose a duration limit.
 
 ---
 
@@ -62,35 +62,9 @@ The trip's structure — destination, dates, route, daily flow — is Patrik's c
 
 ## 2. Friend visits
 
-Friend visits operate under a separate, stricter set of rules than trip-mate travel. Solo-system context: friend visits are the only case where Patrik's solo trip overlaps another person's life for more than a passing day.
-
-### 2.1 — Friends are Plan B, the trip is Plan A
-
-**Statement:** A trip's structure is determined by Patrik's own goals. Visiting a friend is added on, never the spine.
-
-**Rationale:** Friend visits inherit the friend's home routine, pace, and obligations. As guest, Patrik can't dictate what the friend does in their own city. Building a trip *around* a friend visit cedes control of the entire trip; building a trip with a friend visit *as a stop* preserves agency.
-
-**Application rule:** When a friend visit is on the table, the system structures the trip with the friend stop as one node among others. If a destination is *only* viable because the friend lives there, treat that as a Plan B trip and weight accordingly — i.e., the system flags it as friend-driven, not trip-driven, and surfaces alternative destinations Patrik could pick instead.
-
----
-
-### 2.2 — Maximum 4–5 days at a friend's place
-
-**Statement:** Friend visits cap at 4–5 days, even with strong friends.
-
-**Rationale:** Beyond 4–5 days the dynamic flattens — there's only so much catching up, and after that the visit becomes routine without the autonomy of solo travel. International friend visits in particular get boring after the first day or two of catch-up.
-
-**Application rule:** Hard cap on the friend-stop duration in any itinerary. The system flags any plan extending beyond 5 days at a friend's place as structurally bad and proposes a structure where the friend stop is shorter and Patrik moves to solo accommodation for the remainder.
-
----
-
-### 2.3 — Comfort and stimulation filter
-
-**Statement:** Only visit friends Patrik feels genuinely comfortable *and* stimulated with for the full visit duration.
-
-**Rationale:** The 4–5 day cap is a maximum, not a target. Some friends can't sustain even 2 days of company without strain. The visit is only worth doing if the friend clears both bars.
-
-**Application rule:** When a friend visit is proposed, the system asks Patrik to confirm explicitly: is this someone he's comfortable with for 4–5 days, *and* someone whose company is stimulating for that duration? Both must be yes. If either is no, the system proposes shortening to 1–2 days or dropping the visit.
+Friend visits and companion choices belong to Patrik. Do not enforce a 4–5 day
+cap, require a compatibility interview, or insist that friends are only Plan B.
+Explain practical consequences when relevant, without judging personal choices.
 
 ---
 
@@ -104,27 +78,21 @@ Travel exists to produce experiences and memories that wouldn't be possible at h
 
 **Rationale:** Generic restaurants, generic shopping, generic comforts are *transferable consumption* — could happen anywhere. Spending trip time and budget on them is leak.
 
-**Application rule:** When recommending activities or accommodations, the system tags each as *location-bound* (the geography, culture, people, or moment is the experience) or *transferable* (could happen in any country). Default-decline transferable consumption. Default-include location-bound experience even if it costs more, within the §3.2 splurge limits.
+**Application rule:** When recommending activities or accommodations, the system tags each as *location-bound* (the geography, culture, people, or moment is the experience) or *transferable* (could happen in any country). Prefer distinctive local experiences, but do not prohibit ordinary comforts. Default-include location-bound experience even if it costs more, with costs presented for individual consideration under §3.2.
 
 ---
 
-### 3.2 — Splurge only on experience, never on comfort
+### 3.2 — Assess special spending individually
 
-**Statement:** Within the splurge tolerance (€100–150, Profile §9), spending is justified for unique experience and never for comfort.
+Use the Profile's approximate €40/day average for accommodation, food, ordinary
+activities, and local transport. Show major transfers and exceptional excursions
+separately so their extra cost is visible. The former automatic €100–150 allowance
+and ban on comfort spending are retired. Explain value and tradeoffs; Patrik decides.
 
-**Rationale:** Comfort splurges (nice hotel rooms, business-class transit, luxury meals) are transferable consumption at premium prices — the worst case under §3.1. Experience splurges (a dive certification, a multi-day boat trip, a guided trek) buy memory that's location-bound. The €100–150 ceiling exists for the latter, not the former.
+### 3.3 — A trip theme is optional
 
-**Application rule:** When the system surfaces a splurge candidate, it tags it as *experience* or *comfort*. Experience splurges enter the per-trip splurge list. Comfort splurges are dropped regardless of whether they fit the budget tier.
-
----
-
-### 3.3 — Every trip has a theme
-
-**Statement:** Every trip has a specific theme, goal, or agenda — even a loose one.
-
-**Rationale:** A theme directs decisions before they need to be made. Without one, default-tourism fills the vacuum. Themes can be loose ("see how the Balkans live") or specific ("volcano-and-jungle Costa Rica") — what matters is that one exists.
-
-**Application rule:** Trip selection workflows must produce a theme before the destination dossier is generated. The theme is an input to every downstream workflow. The system rejects trip plans without a stated theme and asks Patrik to articulate one before proceeding.
+A theme can help when Patrik supplies one, but must never be required before
+research, trip setup, or planning. Current interests and opportunities suffice.
 
 ---
 
@@ -144,7 +112,7 @@ Travel exists to produce experiences and memories that wouldn't be possible at h
 not an absolute exclusion. Keep a popular town eligible when its exceptional
 hostel community and nearby adventures justify the crowds. This exception takes
 precedence over the destination exclusions in §4.1–4.2 and the non-touristic-base
-condition in §4.3 and Tension 3 below; it does not remove crowd mitigation for
+condition in §4.3; it does not remove crowd mitigation for
 individual activities. Prefer smaller places and opportunities for local contact.
 
 Travel value is destroyed by mass tourism — crowds, queues, generic infrastructure, the experience of being one of thousands.
@@ -183,13 +151,11 @@ Travel value is destroyed by mass tourism — crowds, queues, generic infrastruc
 
 How Patrik moves between places, and how movement integrates with experience.
 
-### 5.1 — Don't churn through places
+### 5.1 — Keep the pace flexible
 
-**Statement:** Match the Profile's 2–6 day stay pattern. Avoid moving too far or too frequently.
-
-**Rationale:** Churn destroys depth. Two days in five places produces ten airport queues and zero memory. The unique-experience principle (§3.1) requires enough time in each place to actually have the experience.
-
-**Application rule:** Itinerary workflows enforce the Profile's 2–6 day default and flag any plan that moves faster. (This restates a Profile rule; included here because it's principle-shaped and the Profile rule alone doesn't capture the *rationale*.)
+Treat 2–6 days per place as a loose guide. Longer stays are welcome when people
+and activities are good; do not impose a stay cap or force a move. Explain travel
+time and opportunity costs when relevant.
 
 ---
 
@@ -203,13 +169,11 @@ How Patrik moves between places, and how movement integrates with experience.
 
 ---
 
-### 5.3 — Road-trip pace cap
+### 5.3 — Choose transport for the experience and access
 
-**Statement:** On road trips: avoid highways, cap daily driving at ~2 hours or 200 km.
-
-**Rationale:** A road trip's value is the route, not the destination. Highway driving and long days defeat the point — they convert a road trip into pure transit.
-
-**Application rule:** When generating road-trip itineraries, the system constrains daily driving to ~2h/200km and biases toward scenic secondary roads over highways. Scope: *daily driving* cap within the road-trip mode, not an absolute travel-time cap. A long transfer day between regions is a separate move and operates outside this rule.
+Prioritize scenic public transport. Consider scooters or rental cars when they
+substantially improve access to villages and nature. Explain time and cost
+tradeoffs rather than enforcing the old two-hour/200-km driving cap.
 
 ---
 
@@ -223,17 +187,13 @@ How Patrik moves between places, and how movement integrates with experience.
 
 ---
 
-## 6. Routine maintenance
+## 6. Personal routine
 
-Travel doesn't suspend Patrik's baseline routine. Sleep, exercise, and eating quality are protected.
+### 6.1 — Personal routine belongs to Patrik
 
-### 6.1 — Maintain physiological baseline
-
-**Statement:** Sleep, exercise, and eating quality are protected during travel. Travel is anti-routine for *experience*, not anti-routine for *body*.
-
-**Rationale:** Without the baseline, energy and judgment degrade fast on a trip. The push principle, the social density, the long days only work if the body is intact.
-
-**Application rule:** Day-plan workflows treat sleep, exercise, and meal slots as default scaffolding. The system flags days that compress these slots beyond recovery — no exercise window for >3 consecutive days, late dinners pushing sleep below baseline, repeated skipped breakfasts. See §8 Tension 1 for spontaneity-vs-routine resolution.
+Do not prescribe exercise quotas, meal schedules, sleep routines, or recovery
+rules. When relevant to a proposed activity, explain practical consequences and
+respond to Patrik's stated energy and preferences.
 
 ---
 
@@ -248,99 +208,20 @@ commitment only when Patrik explicitly supplies it for the current request.
 
 ## 7. Energy management
 
-Sustaining energy across a multi-week trip requires explicit limits on energy-draining activities.
-
-### 7.1 — No multi-night drinking unless special
-
-**Statement:** Don't drink heavily on consecutive nights unless the night is *special*. Default cap aligns with Profile §5: 1–2 drinking nights per week.
-
-**Rationale:** Multi-night drinking drains the next day. The cost isn't the night — it's the lost productive day after, the missed sunrise hike, the degraded work block on Tuesday. Trip experience density depends on next-day energy.
-
-**Application rule:** When the system spots multi-night drinking in a draft itinerary, flag it. Override: a *named* special event — a festival, a defined cultural night, a once-in-the-trip pub crawl — clears the cap. "It's been a fun crowd at the hostel" doesn't qualify. The override is rare and pre-named, not in-the-moment rationalization. The system requires the trigger to be named in the itinerary or day-plan when the cap is exceeded.
+Partying is optional. Do not impose drinking-frequency caps or require a named
+special event to permit a night out. Discuss practical next-day consequences
+when relevant, without policing personal choices.
 
 ---
 
-## 8. Tensions and resolution rules
+## 8. Tradeoffs
 
-Where principles point in different directions, these resolutions govern.
-
-### Tension 1 — Spontaneity (§5.4) vs. Routine maintenance (§6.1)
-
-**Conflict:** Spontaneity requires unplanned space; routine requires daily structure.
-
-**Resolution:** Routine is the *default daily envelope*; spontaneity operates within it on most days, outside it on rare days. Routine is protected as a *weekly average*, not a daily one. A spontaneous late night or 12-hour travel day is fine if the surrounding days re-establish baseline.
-
-**Application:** Day-plan workflow uses routine slots as default scaffolding. When in-trip sparring evaluates a spontaneous opportunity, it checks recovery space in the surrounding 48h. If yes, take it. If no, decline.
-
----
-
-### Tension 2 — Push (§3.4) vs. Routine maintenance (§6.1)
-
-**Conflict:** Push principle rewards discomfort; routine principle protects baseline comfort.
-
-**Resolution:** They operate in different domains. Routine governs *physiological baseline* (sleep, exercise, eating). Push governs *experience quality* (social novelty, physical challenge, cultural immersion). They don't compete for the same hours — a hard hike with strangers is push *and* routine-compatible if recovery space exists.
-
-**Application:** When the system flags a challenging opportunity, it does not invoke routine maintenance as a counter unless the opportunity *specifically* threatens sleep, exercise, or eating in a way recovery can't repair.
-
----
-
-### Tension 3 — Anti-overtourism (§4.1) vs. Iconic experiences (§3.1)
-
-**Conflict:** Anti-overtourism filters tourist-heavy locations; some location-bound unique experiences are tourist-heavy by definition.
-
-**Resolution:** Codified directly as §4.3 (iconic-experience exception). Anti-overtourism applies to destinations and neighborhoods. Iconic-experience inclusion applies to specific activities within destinations, with crowd-mitigation requirements.
-
-**Application:** See §4.3 application rule.
-
----
-
-### Tension 4 — Solo trip shape vs. Social in-trip mode
-
-**Conflict:** Profile §1 says solo traveler; Profile §4 says default-prefer joining groups.
-
-**Resolution:** Solo is the *trip-shape* default; social is the *in-trip-mode* default. The trip is solo (no pre-arranged companion); inside the trip, social is the default mode (hostels, group activities, ad-hoc groups). The bail-out rule (§1.3) is a quality filter on social opportunities, not a bias toward isolation.
-
-**Application:** Trip-shape decisions default solo. Daily activity decisions inside the trip default social. Bail when social is clearly not working.
-
----
-
-### Tension 5 — Independence (§1.2) vs. Multi-day group adventures (Profile §4)
-
-**Conflict:** Independence bans dependence on others' logistics; the Profile endorses 4–5 day group adventures with strangers (for example, boat trips; hikes are limited to two days under the refreshed Profile).
-
-**Resolution:** Independence governs *who chose the structure*. A pre-arranged group adventure that Patrik opted into knowing the structure is independence-compatible — the choice was his. The principle bans being *dragged* into others' plans, not opting into structured group experiences.
-
-**Application:** Evaluate group/multi-day adventures by the opt-in test. Friends-as-Plan-B fails (their itinerary, you're guest). Hostel-organized boat trip passes (their itinerary, but Patrik bought the ticket knowing it).
-
----
-
-### Tension 6 — Theme (§3.3) vs. Spontaneity (§5.4)
-
-**Conflict:** Theme prescribes intentional trip design; spontaneity requires unplanned space.
-
-**Resolution:** Theme is the *frame*; spontaneity is the *fill*. Theme picks destination, season, rough activity mix. Spontaneity governs day-to-day execution.
-
-**Application:** Pre-trip outputs commit to theme and direction. Day-plans hold loose. Day-before sparring is the spontaneity engine.
-
----
-
-### Tension 7 — Friends as Plan B (§2.1) vs. Friend filter (§2.3)
-
-**Conflict:** Plan B framing treats friend visits as add-ons; the filter implies careful selection.
-
-**Resolution:** They operate at different gates. The filter governs *whether* to include a friend visit at all. Plan B framing governs *how* the visit fits into the trip structure. A friend who passes the filter still gets Plan B treatment within the trip.
-
-**Application:** Filter first (would 4–5 days with this friend be fun?). If yes, structure the trip with the friend stop as an addition, not the spine.
-
----
-
-### Tension 8 — Energy cap (§7.1) vs. "Special" nightlife (Profile §5)
-
-**Conflict:** Energy principle caps multi-night drinking; Profile lists special nightlife (festivals, live music, bonfires) as a soft activity.
-
-**Resolution:** "Special" must be *infrequent and named*. A festival weekend, a defined cultural event, a once-in-the-trip pub crawl clears the bar. "It's been a fun crowd at the hostel" doesn't.
-
-**Application:** When the system spots multi-night drinking in a draft itinerary, flag it. Allow the override only if a named special trigger is present and recorded in the itinerary or day-plan.
+- Balance local encounters with social hostel life; neither needs a fixed quota.
+- Popular places remain eligible when exceptional hostel community and nearby adventures justify crowds; apply practical crowd mitigation where useful.
+- Preserve spontaneity and loose two-to-three-day proposals. A recommendation is not a commitment.
+- Group adventures are optional. Hiking still has the explicitly confirmed two-day maximum.
+- Scenic journeys are valuable, but show their time and cost against faster alternatives.
+- Do not reconstruct retired personal-routine, friend-visit, or theme requirements through tradeoff rules.
 
 ---
 
@@ -352,38 +233,26 @@ Things that look like principles but Patrik has rejected. Documented to prevent 
 
 Appeared in older P4 (Travel Rhythm) notes. The Profile §2 explicitly contradicts: "Full travel days are fine. Don't artificially cap travel time at 4–5h." The Profile is newer and load-bearing. The 4–5h cap is rejected. The remaining travel-rhythm rules (§5.1–5.3) survive on their own merits.
 
-### AP-2 — "Pack minimally, only the small green backpack"
+### AP-2 — Enforce a fixed packing style
 
-Raw-notes packing constraint that surfaces periodically. Profile §7 locks the actual stable preference: backpack-heavy, main pack + daypack, one bag per category. Minimal packing is rejected as a default.
-
-**System-relevance:** Packing recommendations are in scope for the system (warm layers for cool destinations, scooter-appropriate clothing, dive gear vs. rent-on-arrival, etc.). When generating packing recommendations, the system defaults to the Profile §7 backpack-heavy pattern and does *not* drift toward minimalism just because Patrik mentioned it once. The "small green backpack" framing should not appear in recommendations.
+Neither minimal packing nor a heavy-backpack setup is a standing requirement.
+Ask about actual baggage only when it changes transport, accommodation, or activity advice.
 
 ---
 
-## 10. Deliberate omissions
+## 10. Matters left to Patrik or the current request
 
-Decision-rule areas where Patrik considered but did not commit to a stable rule, *or* areas that are personal-philosophy rather than system-actionable.
-
-**Personal-philosophy omissions** (cut in v2 as not system-relevant):
-
-- **Companion selection rules** — System is solo-only. Companion compatibility, group dynamic, conflict-prone people, calibrating expectations to companion mindset — none of this is acted on by Claude Code.
-- **General "comfort-zone push" beyond activity ordering** — The depletion override is self-knowledge, not system-actionable. Push is preserved in operational form as §3.4 (ordering bias toward novel/challenging options); the broader life-philosophy framing is omitted.
-- **Solo-as-default principle** — Already a system constraint (Context Pack). Restating as principle adds nothing operational.
-
-**Genuinely-no-stable-rule omissions:**
-
-- **How to decide between two viable destinations** — no auto-tiebreaker. Captured in §1.1 (system surfaces, Patrik picks).
-- **When to extend a stay mid-trip** — no stable rule. Per-place judgment.
-- **When to leave a place that isn't working** — no stable rule. Per-place judgment.
-- **How to decide whether to join a group activity** — captured at activity-time via §1.3 (bail-out) rather than entry-filter.
-- **How to push past discomfort vs. respect it** — no stable rule beyond the depletion-signaling pattern in §3.4.
-- **Daily rhythm pattern (cafe-work-restaurant-walk-read)** — classified as preference, not principle.
+No standing rules govern companion compatibility, friend-visit length, personal
+routines, packing style, jet-lag tolerance, or a required trip theme. Work management
+is outside the assistant's remit. No exact temperature cutoff applies; sun
+sensitivity remains manageable context. Ask only when an unanswered detail
+materially changes the current request.
 
 ---
 
 ## 11. QC log
 
-QC pass on whether each principle is actually useful for Claude Code, applied at v2.
+Historical QC pass applied at v2. Entries below do not validate or reinstate rules retired in v6.
 
 **Framework:**
 
@@ -438,6 +307,7 @@ Note: AP-2 (Pack minimally) was reframed in v3 rather than cut. Packing recommen
 
 | Version | Date | Changes |
 | --- | --- | --- |
+| v6 | 2026-09-27 | Applied approved budget, transport, flexible pace, and personal-choice boundaries; retired conflicting routine, friend-visit, packing, and theme rules. |
 | v5 | 2026-09-27 | Retired work-hour and weekday scheduling; clarified that group-adventure guidance does not override the two-day hiking maximum. |
 | v4 | 2026-09-27 | Added the approved popular-town exception and its precedence over conflicting destination exclusions. Marked the refresh as partial and allowed confirmed interview updates. |
 | v1 | 2026-05-10 | Initial document. 18 principles, 9 categories. |

@@ -15,7 +15,7 @@ If either file is empty or missing, halt and ask Patrik to provide it. Do not ge
 
 - Phase 0 (personalization spine) is a hard prerequisite — do not start Phase 1 build work until both profile files are populated.
 - Phase transitions require Patrik's explicit approval. Each phase ends with a written retro.
-- Profile and principles are updated only via the Phase 3 retro workflow, never ad-hoc.
+- Profile and principles may be updated through a preference interview or post-trip retro when Patrik confirms the changes.
 
 ## Output Standards
 
@@ -28,11 +28,12 @@ Internal documentation (architecture, prompts, workflow notes) may use desktop f
 
 ## Hard Constraints
 
-- Solo trips only. 1+ week duration only.
-- Sun sensitivity is manageable, not a hard constraint (confirmed 2026-09-27). Historical 27°C/30°C thresholds remain unreviewed and must not act as confirmed hard exclusions during reconciliation. Use current weather as practical context.
-- Work-hour management is outside the assistant's remit (confirmed 2026-09-27). Do not ask for hours or schedule work blocks. Respect only specific commitments supplied for a request. Other routine preferences remain subject to the ongoing profile refresh.
+- Solo backpacking is the usual context, not a restriction. Support companions and trips of any duration; no mandatory trip theme.
+- Sun sensitivity is manageable, not a hard constraint (confirmed 2026-09-27). The old numeric temperature thresholds are retired as standing requirements. Use current weather as practical context.
+- Work-hour management is outside the assistant's remit (confirmed 2026-09-27). Do not ask for hours or schedule work blocks. Respect only specific commitments supplied for a request. Do not enforce personal routine, drinking, friend-visit, packing, or jet-lag rules; explain practical consequences only when relevant.
 - No custom dashboard — iPhone Notes + Google Maps are the front-end.
-- Anti-tourist filter active on all outputs: mass-tourism spots flagged, hidden gems prioritized.
+- Prefer smaller places and local encounters, but keep popular towns eligible when exceptional hostel community and nearby adventures justify crowds.
+- The September 2026 profile and principles override conflicting preference rules in legacy dossier commands and reference files. The preference-refresh round is complete; legacy workflow reconciliation remains pending.
 
 ## Subagent Delegation Default
 

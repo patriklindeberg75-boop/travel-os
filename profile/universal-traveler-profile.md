@@ -1,22 +1,22 @@
 Universal Traveler Profile
 
-**Version:** v3
-**Last updated:** 2026-09-27 — partial preference refresh approved in conversation.
-**Review status:** Experiential direction, work exclusion, approximate daily budget, hiking duration, and manageable sun sensitivity confirmed. Other inherited preferences and numeric limits remain provisional; this is not full revalidation.
+**Version:** v4
+**Last updated:** 2026-09-27 — preference-refresh round completed and approved.
+**Review status:** Confirmed September preferences govern. Retired requirements below must not be reapplied; remaining inherited details are background suggestions, not newly verified facts or automatic exclusions.
 **Created:** 2026-05-10
 **Owner:** Patrik
-**Role in system:** Personalization spine #1 — read by every workflow in the Claude Code travel planning system before generating user-facing output. Paired with the Travel Principles document (forthcoming).
+**Role in system:** Personalization spine #1 — read by every workflow in the Claude Code travel planning system before generating user-facing output. Paired with the Travel Principles document.
 **Storage location:** Claude Code project repo, root path. Suggested filename: `universal-traveler-profile.md`. Update through confirmed preference interviews or retros.
 
 ---
 
 ## How to use this document
 
-This profile captures travel preferences that are **stable across all 1+ week solo trips, regardless of destination, season, or theme**. It is *not* a trip plan and contains no trip-specific framing.
+This profile captures travel preferences that are **useful across trips, with trip-specific circumstances supplied separately**. It is *not* a trip plan and contains no trip-specific framing.
 
 Every preference is labeled with a **strength**:
 
-- **STRONG** — Always apply. Filter destinations, activities, and recommendations against this. Violation is a deal-breaker.
+- **STRONG** — Give substantial weight when recommending; not automatically a veto. Only explicitly confirmed limits, such as the two-day hiking maximum, are hard constraints.
 - **SOFT** — Apply unless context overrides. Default behavior, flexible.
 - **CONTEXTUAL** — Apply only when a specific trigger condition is met. The trigger is documented inline.
 
@@ -45,7 +45,7 @@ Updates require Patrik's confirmation through a preference interview or post-tri
 
 **What travel is NOT (STRONG, all):**
 
-- Not relaxation or chilling.
+- Exploration and shared experiences are priorities; rest is a personal choice, not prohibited.
 - Not luxury or resort-style comfort.
 - Not tourist-trap consumption.
 
@@ -59,7 +59,7 @@ Updates require Patrik's confirmation through a preference interview or post-tri
 
 ## 2. Trip shape
 
-**Solo trips, 1+ week duration.** Hard floor (CP-locked). No upper limit.
+Solo backpacking is the usual context, not a scope restriction. Shorter trips and trips with companions are supported; there is no minimum trip duration.
 
 **Trip duration default: no stable typical length.** Mix of short and long trips. Workflows must always treat duration as a trip-specific input.
 
@@ -67,14 +67,9 @@ Updates require Patrik's confirmation through a preference interview or post-tri
 
 **Stay duration per location:**
 
-- **STRONG:** 2–6 days per location is the default rhythm.
-- **SOFT:** Avoid >6 days unless special reason.
-- **CONTEXTUAL override:** Extend to 7–10 days in **base-town mode** — when the location functions as a hub for multiple radiating activities. Common triggers:
-
-Trigger is judgment-based, not rule-based. Workflows should *surface* the option when conditions suggest it but never auto-apply.
-    - Trekking base for multiple full-day hike radials
-    - Dive base, climbing base, or similar activity hub
-    - Particularly good hostel/community worth staying in
+- 2–6 days is a loose guide, not an enforced range.
+- Stay longer when the people, activities, or opportunities justify it. No fixed extension cap.
+- Keep plans flexible; do not force movement to satisfy a numeric rhythm.
 
 **Travel-day tolerance:**
 
@@ -110,7 +105,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 **Social composition:**
 
-- **STRONG:** Target community is travelers, digital nomads, and backpackers aged 25–35 (fixed range — does not auto-age).
+- Prioritize sociable solo travelers and a compatible atmosphere. Age is context, not a strict 25–35 filter.
 - **STRONG:** Backpacker-heavy spots over mass tourism.
 
 **Social behavior:**
@@ -124,7 +119,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 **Friends from home:**
 
-- **STRONG:** Rarely travel with friends from home; prefer ad-hoc groups via hostels and tours. Reinforces and refines the CP-locked rule (friends as Plan B, max 4–5 days at a friend's place).
+- Solo travel and ad-hoc groups are the usual preference, not a ban on companions. Friend visits have no enforced duration cap or mandatory compatibility interview.
 
 **Social vs. solo balance: no stable ratio.** Workflows should not enforce a percentage split. Default lean is social, but per-trip / per-mood judgment.
 
@@ -141,9 +136,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 - **Nature and outdoor adventure.** Hiking, waterfalls, caves, scenic terrain.
 - **Hiking specifically:** prefer one-day hikes; maximum two-day hikes. Duration does not establish fitness for every route. Confirmed 2026-09-27.
 - **Quiet, clear-water beaches with few people.** Crowded beaches do not satisfy this preference.
-- **Off-beat exploration by local mobility.** The principle is *off-beat exploration*; the favored vehicle depends on geography:
-    - **Scooter** in scooter-friendly geographies (Southeast Asia, Mediterranean, Greek islands, etc.) — capability is strong (very experienced rider).
-    - **Locally appropriate substitutes** elsewhere: long-distance bus, marshrutka, rental car, train, bike.
+- **Off-beat exploration by local mobility.** Prioritize scenic public transport. Consider scooters or rental cars when they substantially improve access to villages and nature; explain time and cost tradeoffs.
 - **Observing how local people live.** Authentic daily life over staged cultural performance.
 - **Scenic transport / journey-as-experience.** Scenic buses, trains, boats; multi-day boat trips combining transport + accommodation + social.
 
@@ -180,9 +173,9 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 - Luxury or resort-style accommodations.
 - Destinations with poor weather for the travel period.
 
-### Activity rhythm rules (STRONG)
+### Activity rhythm
 
-- **Party frequency: 1–2x per week maximum** anywhere — hard rule.
+- Drinking frequency, exercise, meals, and rest are personal choices. Do not enforce quotas or a routine; flag practical consequences only when relevant.
 - **CONTEXTUAL:** Consider timing and shade when helpful; sun sensitivity is manageable and not a hard activity exclusion (see §8).
 
 ---
@@ -200,28 +193,26 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 **Movement capability:**
 
-- **STRONG:** Very experienced scooter rider. Off-beat exploration is a top mode; scooter is the favored vehicle in scooter-friendly geographies, with locally appropriate substitutes elsewhere (see §5).
-- **STRONG:** Moderate fitness level. Comfortable with physical adventures, ATV, scooter.
+- Earlier profile reports scooter experience; this is background, not proof of current eligibility for a particular rental. Scenic public transport is the first option; consider rentals for meaningful access benefits (see §5).
+- Earlier profile describes moderate fitness and comfort with physical adventures. Check route-specific demands when material rather than inferring capability from preferred hike duration.
 - **Confirmed 2026-09-27:** Prefer one-day hikes; two days is the maximum hiking duration.
 
 **Packing style:**
 
-- **STRONG:** Backpack-heavy — main pack + daypack, one bag per category. Not minimalist / not carry-on-only.
+- No standing packing requirement. Ask about actual baggage only when it affects the request.
 
 **Travel onboarding:**
 
-- **STRONG:** Jet lag barely affects me. Day 1 is a real activity day — workflows should not pad the first day.
+- No assumed jet-lag tolerance or mandatory full first day. Ask about arrival and energy only when relevant.
 
 ---
 
 ## 8. Climate & body
 
-Historical temperature preferences below are not revalidated by the September 2026 sun-sensitivity answer. Do not treat them as confirmed hard screening limits during reconciliation:
-
-- **STRONG (CP-aligned):** Trip-average temperature ceiling: **27°C**. Used for destination screening — will I go there at all in those dates?
-- **STRONG:** Single-day activity ceiling: **30°C**. Used for daily activity feasibility — if a day exceeds this, shift to indoor / shaded / early-morning activity.
-- **STRONG positive target:** Comfort range is **20–27°C**. Workflows should aim for this, not just avoid the ceiling.
-- **STRONG:** Open to any climate within the ceiling — cool/cold destinations are fully on the table, not just warm ones.
+No fixed temperature thresholds or required climate band. The old 27°C/30°C
+limits and 20–27°C target are retired as standing requirements. Use actual
+conditions and their practical consequences; ask about tolerance only when it
+materially changes a recommendation.
 
 UV and sun sensitivity:
 
@@ -236,11 +227,11 @@ Rain:
 
 ## 9. Budget
 
-- **Confirmed 2026-09-27:** Daily budget around **€40**, an approximate target rather than a rigid cap. Coverage of major transfers and exceptional activities has not been newly specified.
-- **STRONG (CP-locked):** Splurge tolerance €100–150 for unique experiences.
-- **SOFT:** Balance splurge days with cheaper days (discipline pattern, not a rigid rule).
-- **SOFT:** Low-budget accommodation as default.
-- **Per-trip artifact:** Each trip should have its own *splurge list*. The universal profile does not enumerate splurge categories — they're trip-specific (e.g., diving certification in tropical trips, multi-day hut treks in alpine trips, etc.).
+- Around **€40/day on average** for accommodation, food, ordinary activities, and local transport; a rough target rather than a rigid daily cap.
+- Show major transfers and exceptional excursions separately, while making their additional cost clear.
+- Assess special experiences individually. The old automatic €100–150 splurge allowance is retired.
+- Low-budget accommodation is the usual preference. Comfort spending is Patrik's choice, not prohibited.
+- No mandatory splurge list.
 
 ---
 
@@ -254,7 +245,7 @@ Rain:
 
 ## 11. Planning dimensions
 
-Eight dimensions every trip-planning workflow should consider. **The list is stable; the ranking is per-trip** (the universal profile does not enforce an order — each trip's theme drives weighting).
+Eight dimensions every trip-planning workflow should consider. **The list is stable; the ranking is per-trip** (the universal profile does not enforce an order — current interests and circumstances drive weighting; no trip theme is required).
 
 1. Hostel / backpacker community strength.
 2. Natural beauty and outdoor activities.
@@ -269,11 +260,11 @@ Eight dimensions every trip-planning workflow should consider. **The list is sta
 
 ## 12. Deliberate omissions
 
-The following common traveler-profile sections are **deliberately absent** from this v1 profile because no stable preference exists. Workflows must not fabricate defaults here — these are per-trip decisions:
+The following common traveler-profile sections are **not assigned a standing rule** in this profile because no stable preference exists. Workflows must not fabricate defaults here — these are per-trip decisions:
 
 - **Urban vs. rural lean** — resolved in the September 2026 interview: smaller towns and villages preferred over cities (see §5).
 - **Coastal vs. inland** — no stable preference.
-- **Climate type** beyond the ceiling rule — open to any (no tropical / temperate / cool default).
+- **Climate type** — no required climate band or numeric temperature ceiling.
 - **Trip duration default** — varies; treat as a trip-specific input.
 - **Seasonality** — no avoided or preferred months.
 - **Route shape** — linear / loop / hub-and-spoke per-trip.
@@ -295,6 +286,13 @@ These absences are themselves information. Future retros may surface stable pref
 - Each update increments the version, dates the change, and logs what changed and why.
 
 ### Changelog
+
+**v4 — 2026-09-27**
+
+- Approved budget coverage, separate major-transfer/exceptional-excursion costs, and individual assessment of special spending.
+- Prioritized scenic public transport with rentals when useful; confirmed flexible stay duration and atmosphere over age filters.
+- Retired enforced personal routines, friend-visit caps, packing and jet-lag assumptions, fixed temperature thresholds, mandatory themes, and solo/minimum-duration restrictions.
+- Completed this interview round; remaining inherited details are background rather than newly confirmed requirements.
 
 **v3 — 2026-09-27**
 

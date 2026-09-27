@@ -130,7 +130,7 @@ Summarize what is confirmed, changed, retired, or unresolved, then have Patrik
 confirm the interpretation before updating the profile and principles. Date and
 record attributable changes; do not convert unanswered questions into defaults.
 This requested refresh is part of reconciliation and need not wait for a post-trip
-retro. The interview is underway; it is not complete.
+retro. This preference-refresh round is complete: Patrik approved the final five recommendations after providing the practical constraints. Remaining inherited details are background suggestions, not automatically revalidated requirements.
 
 Confirmed in the September 27 experiential interview: local encounters combined
 with social backpacker life; smaller towns and villages preferred over cities;
@@ -139,11 +139,19 @@ popular towns eligible when exceptional hostel community and nearby adventures
 justify the crowds; using social hostels as the usual base with occasional village
 stays for compelling local interaction; and prioritizing conversation, outings,
 and shared dinners with partying optional. These answers are recorded in profile
-v3 and principles v5. A subsequent explicit answer excluded work-hour management,
+v4 and principles v6. A subsequent explicit answer excluded work-hour management,
 set the daily budget around €40, preferred one-day hikes with a two-day maximum,
 and confirmed that sun sensitivity is manageable rather than a hard constraint.
-Pace and other unreviewed assumptions, including numeric temperature and splurge
-limits, remain provisional; do not call the entire profile revalidated.
+Final approved decisions: €40/day is a rough average covering accommodation, food,
+ordinary activities, and local transport; major transfers and exceptional excursions
+are shown separately. Special spending is assessed individually rather than using
+an automatic €100–150 allowance. Prioritize scenic public transport, with rentals
+when they substantially improve access. Keep 2–6 days as a loose stay guide and
+allow longer stays when worthwhile. Prefer compatible social atmosphere over an
+age filter. Retire enforced personal routines, friend-visit caps, packing and jet-lag
+assumptions, numeric temperature thresholds, mandatory themes, and solo/minimum-trip
+restrictions. These decisions refresh the operating profile without claiming that
+every inherited factual detail was individually reconfirmed.
 
 Check: revised profile and principles reflect confirmed interview answers,
 remaining uncertainty is explicit, and personalized planning uses the refreshed
@@ -245,9 +253,11 @@ has been tested in this session.
 
 ## Next action
 
-Begin with the travel-preference interview and refresh. Repository reconciliation,
-basic library/trip memory, and early cloud capture/retrieval tests can proceed
-independently, but personalized recommendations must use the confirmed refresh.
+The preference-refresh round is complete (profile v4, principles v6). Next prove
+the phone capture/retrieval/update path with the laptop offline before committing
+to a cloud foundation; repository instruction reconciliation and basic library/trip
+memory can proceed alongside that test. Personalized recommendations use the
+confirmed profile and must not reinstate retired rules.
 Resolve infrastructure limits through tests;
 ask Patrik only when a discovered limit requires a meaningful scope, cost, or
 experience decision. Use Italy–Morocco as the first practical trial.
