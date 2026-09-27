@@ -14,7 +14,7 @@ A configured remote is not proof that local changes are pushed or cloud-accessib
 | Library and trip records | Complete for local foundation | One supplied inspiration entry and an approximate Italy/Morocco brief. No invented bookings. |
 | Legacy entry points | Migrated and read back | Active commands use shared workflows. Dossier command and agent are paused. Historical reference bodies are preserved. |
 | Local record checks | Passed within bounded scope | Local links and anchors resolve. Scratch-copy scenarios covered retrieval, capture, repeated capture, tentative accommodation, reported booking correction, and retrieval after updates. |
-| Live travel research | Not tested | Use a real route or activity question with current sources. |
+| Live travel research | Partial live test | Morocco base comparison saved with price examples, sources, conflicts, and access gaps. Dated route verification, weather-aware 2–3 day planning, and changed-plan replay remain open. |
 | Media intake | One live YouTube summary test passed | Billy Martin automatic captions retrieved temporarily and read through the closing remarks. Attributed summaries saved and retrieved locally. Audio fidelity, full transcript delivery, Instagram, and cloud acquisition remain unverified. |
 | Proposed travel skills | Candidates only | Qualify boundaries through real requests before packaging. Reflection remains later. |
 | Phone/cloud access | Deferred until last | Test durable save, fresh retrieval, correction, and laptop-offline access. |

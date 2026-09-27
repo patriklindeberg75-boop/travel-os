@@ -33,13 +33,17 @@ have been supplied. Work-hour planning is outside the assistant's remit.
 
 ## Selected ideas and research
 
-No specific library idea has been selected for this trip. No current route or
-activity research has been completed. See the [library](../../library/README.md)
-for reusable inspiration without treating it as an itinerary.
+No destination has been confirmed as a trip stop. The
+[Morocco base comparison](research/morocco-bases-comparison.md), checked September 27,
+compares Imlil, Tafraoute, Taghazout, and Imsouane. Accommodation examples and access
+gaps are documented; no dated route is confirmed. See the
+[library](../../library/README.md) for reusable inspiration.
 
 ## Latest proposal
 
-None requested or saved yet. Keep future proposals distinct from commitments.
+The September 27 comparison proposes Taghazout as a social-base candidate and Imlil
+as a mountain complement, with Tafraoute and Imsouane optional. This is an assistant
+recommendation, not Patrik's selection or a dated itinerary. Arrival city remains open.
 
 ## Decision history
 
