@@ -1,0 +1,281 @@
+{
+  "route": "R2",
+  "consequential": false,
+  "classification": {
+    "input": {
+      "output": "memo",
+      "use": "internal",
+      "scope": "single_deliverable",
+      "consequence": "ordinary",
+      "thesis_grade": false
+    },
+    "result": {
+      "floor": "R2",
+      "override": "none",
+      "reasons": [
+        "claim-bearing memo"
+      ],
+      "route": "R2",
+      "transition": "initial"
+    }
+  },
+  "frame": {
+    "brief_alignment": {
+      "status": "aligned",
+      "reason": "User approved hypothetical Marrakech planning check, not actual itinerary commitments."
+    },
+    "objectives": [
+      {
+        "id": "planning",
+        "question": "Can public route evidence support a conditional three-day Marrakech–Imlil proposal and a coherent revision after a changed starting location?",
+        "decision_use": "Exercise local planning workflow; no booking or operational departure approval.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Primary route and accommodation evidence, activity/holiday checks, explicit unavailable forecasts and dates, original and revised outputs.",
+          "minimum_source_class": "Local providers and official sources; labeled secondary leads when primary detail unavailable.",
+          "change_condition": "Missing last departures, date-specific inventory or unsafe weather invalidate a tight connection or guaranteed hike."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "A hypothetical conditional proposal can be grounded in published evidence while future availability and forecasts remain unknown."
+        }
+      }
+    ]
+  },
+  "delivery": {
+    "requesting_owner": "Patrik / Travel OS",
+    "brief_source": "pipeline/checks/marrakech-planning/brief.md",
+    "brief_sha256": "244de3212f13e9cec4d59d212069f5e28d2870658af57a06ad50d750ba296296",
+    "execution_repository": "/Users/patrik.lindeberg/Claude Code/personal/travel-os",
+    "deliverable_path": "pipeline/checks/marrakech-planning/result.md",
+    "contract_record_path": "pipeline/checks/marrakech-planning/record.json",
+    "receiving_owner": "Patrik / Travel OS",
+    "return_target": "pipeline/pipeline-state.md",
+    "state": "delivered",
+    "evidence": "Result and record stored in pipeline/checks; progress index links the hypothetical demonstration separately from actual trip state."
+  },
+  "claims": [
+    {
+      "id": "taxi",
+      "claim": "The June 25 2025 guide describes shared taxis via Asni, variable departure ranks, departures when full and estimated journey times; private transfer lead is 60–90 euros per vehicle, not a 2026 quote.",
+      "source": "https://atlaspeaksimlil.com/marrakech-to-imlil-how-to-get-there/",
+      "locator": "Shared Grand Taxi, Private Transfer and FAQ",
+      "source_date": "2025-06-25",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "hostel",
+      "claim": "Property description lists dorms, breakfast, communal spaces and airport transfer prices; September reviews by Sasha and Karine differ on experience; checkout times conflict.",
+      "source": "https://www.hostelworld.com/hostels/p/33753/hostel-riad-marrakech-rouge/",
+      "locator": "About, House Rules, Reviews",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "beds",
+      "claim": "Property advertises Targa dorm at 12 euros per person or 36 euros for room; this is not dated availability.",
+      "source": "https://www.atlasguest.com/our-rooms/",
+      "locator": "Targa Dorm Room",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "lastleg",
+      "claim": "Tamatert directions describe a final 30 minute walk or 10–15 minute drive from Imlil centre.",
+      "source": "https://www.atlasguest.com/",
+      "locator": "Directions To Tamatert Guesthouse",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "services",
+      "claim": "Tamatert advertises guiding and transfers; hosted testimonials include both meeting people and being alone in a dorm.",
+      "source": "https://www.atlasguest.com/our-services/",
+      "locator": "Facilities and testimonials, Moritz 2025-04-28 and Vlad 2024-12-27",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "walks",
+      "claim": "Dar Adrar advertises arrangement of local day walks.",
+      "source": "https://www.daradrar.com/",
+      "locator": "Day Walk and Excursions from Dar adrar",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "demands",
+      "claim": "Atlas Peaks estimates 1.5–2 hours for a waterfall loop and 5–6 hours with 750–850m ascent for Tizi nMzik.",
+      "source": "https://atlaspeaksimlil.com/imlil-day-hikes-6-best-routes-with-maps-times/",
+      "locator": "Day Hikes 1 and 4",
+      "source_date": "2025-06-26",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "weather",
+      "claim": "Official vigilance describes risks over the next 24–48 hours, not October conditions at September retrieval.",
+      "source": "https://vigilance.marocmeteo.ma/?q=fr/meteo/guide",
+      "locator": "La carte vigilance Météorologique",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "national",
+      "claim": "National calendar lists October 31 and no fixed national holiday October 19–21; religious dates are Hijri.",
+      "source": "https://www.maroc.ma/fr/le-maroc/fetes-nationales-et-religieuses",
+      "locator": "Fêtes nationales and Fêtes religieuses",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "holidaydates",
+      "claim": "The 2026 table has no national holiday October 19–21.",
+      "source": "https://www.officeholidays.com/countries/morocco",
+      "locator": "List of Holidays in Morocco in 2026",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "ministry",
+      "claim": "The general ministry holiday table omits October 31 which the national calendar includes.",
+      "source": "https://www.mmsp.gov.ma/fr/nos-metiers/horaires-de-travail-et-jours-f%C3%A9ri%C3%A9s",
+      "locator": "Les jours fériés table",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "proposal",
+      "claim": "A morning transfer separated from the main day walk and a location-aware revision are reasonable conditional proposals; affordability and October operation remain unproven.",
+      "source": "pipeline/checks/marrakech-planning/result.md",
+      "locator": "Original proposal and Changed-location replay",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "PROXY-SUPPORTED",
+      "strength": "proxy",
+      "status": "inference",
+      "basis_claim_ids": [
+        "taxi",
+        "hostel",
+        "beds",
+        "lastleg",
+        "services",
+        "walks",
+        "demands",
+        "weather",
+        "national",
+        "holidaydates",
+        "ministry"
+      ]
+    }
+  ],
+  "question": "Can public route evidence support a conditional three-day Marrakech–Imlil proposal and a coherent revision after a changed starting location?",
+  "memo": "pipeline/checks/marrakech-planning/result.md",
+  "strongest_countercase": "Published room prices and informal taxi guidance cannot establish dated availability or the 40 euro average. Hostel reviews include adverse evidence; quiet village stays do not guarantee social company.",
+  "unknowns": [
+    "Future weather, road/path conditions and dated availability.",
+    "Exact taxi stand, fares, last departures, guide quote, single dorm-bed sale and taxes.",
+    "Fresh-session and phone/cloud behavior are outside the observed local demonstration."
+  ],
+  "axcion_implications": [],
+  "citation_exceptions": [],
+  "objective_assessments": [
+    {
+      "objective_id": "planning",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "taxi",
+        "hostel",
+        "beds",
+        "lastleg",
+        "services",
+        "walks",
+        "demands",
+        "weather",
+        "national",
+        "holidaydates",
+        "ministry",
+        "proposal"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Completed conditional workflow exercise and changed-location replay. The accepted objective does not claim verified future departures, prices or weather; these remain explicit preconditions to operational use."
+    }
+  ],
+  "sufficiency": {
+    "verdict": "sufficient-with-ceiling",
+    "permission_ceiling": "PROXY-SUPPORTED",
+    "reason": "Published facts support a hypothetical proposal, not verified operational readiness or guaranteed affordability."
+  },
+  "research_loop": [
+    {
+      "objective_id": "planning",
+      "current_coverage": "Existing preferences and approved hypothetical scope; no dated transport proof.",
+      "highest_materiality_gap": "Route, accommodation and conditions for a three-day proposal.",
+      "action": {
+        "kind": "retrieval",
+        "target": "Local provider route and room pages, official holidays and weather sources.",
+        "summary": "Read primary accommodation pages and official conditions sources; use dated guide estimates with limits."
+      },
+      "result": "Supported a via-Asni route and village base; exact departures, October availability and future weather unavailable.",
+      "effect": "Separate transfer from main walk and label prices as advertised or allocations.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "planning",
+      "current_coverage": "Conditional proposal supported; review quality, budget and revision remain to reconcile.",
+      "highest_materiality_gap": "False certainty about social fit, dated operation and obsolete transfer after correction.",
+      "action": {
+        "kind": "contradiction_reconciliation",
+        "target": "Guest reviews, holiday calendars and original versus revised outputs.",
+        "summary": "Retain contrary guest reports, distinguish date-specific from general sources, and replay changed starting location."
+      },
+      "result": "Removed inbound transfer in revised output and changed future budget from 120 to 80 euros; no actual trip state changed.",
+      "effect": "Local conditional demonstration complete; operational check remains open.",
+      "decision": "stop"
+    }
+  ],
+  "stopping_record": {
+    "objective_id": "planning",
+    "highest_materiality_gap": "False certainty about social fit, dated operation and obsolete transfer after correction.",
+    "last_action": "Retain contrary guest reports, distinguish date-specific from general sources, and replay changed starting location.",
+    "effect": "Local conditional demonstration complete; operational check remains open.",
+    "decision": "stop",
+    "reason": "Further generic browsing cannot validate October weather or guarantee informal taxi departures; conditional planning and revision are demonstrated."
+  }
+}

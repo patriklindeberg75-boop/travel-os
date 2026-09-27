@@ -18,8 +18,11 @@ Patrik decide, research, and prepare suggestions he can use there.
 
 Local capture, retrieval, and trip corrections have been exercised in a temporary
 copy. A supplied inspiration entry is saved in the real library. Fresh-conversation
-retrieval, live research, short-horizon planning, media acquisition, and mobile use
-still need real-world verification.
+retrieval and mobile use still need real-world verification. Live research and
+YouTube caption intake have bounded evidence. A
+[hypothetical planning check](checks/marrakech-planning/result.md) now demonstrates
+a short proposal and changed-location revision. Dated operational travel checks,
+actual forecast use and Instagram intake remain open.
 
 ## Agreed boundaries
 
