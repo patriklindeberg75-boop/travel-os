@@ -35,7 +35,14 @@ Use the installed `media-transcriber` skill for supported YouTube and Instagram
 acquisition. Read its current instructions and check its required runtime. Its local
 helpers are not bundled into this repo and are not proven available in the cloud.
 
-Keep readable transcripts and evidence at the acquisition workflow's permitted
+For approved YouTube idea extraction, use the existing media-transcriber dependency
+to analyze public captions temporarily outside Git. Missing license metadata alone
+must not block an attributed summary. Save concise insights with source and timestamp
+links, and state caption coverage and limitations. Do not claim complete coverage or
+audio verification unless established. Temporary analysis does not authorize delivery
+or archival of a full transcript; full-text retention rules still apply.
+
+When full-text retention is permitted, keep transcripts and evidence at the acquisition workflow's permitted
 location. Link them from the idea record. If a source pack is local-only, say so;
 a local filesystem reference is not a portable cloud integration. Source URLs and
 saved insights must remain useful without that pack.

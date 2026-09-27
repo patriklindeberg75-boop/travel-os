@@ -6,8 +6,8 @@ follow [the assistant workflow](../references/assistant-workflows.md).
 
 ## Ideas
 
-- [Morocco inspiration from Billy Martin](ideas/morocco-billy-martin.md). Mountain,
-  surf, and desert leads from the creator's description. Transcript extraction pending.
+- [Morocco inspiration from Billy Martin](ideas/morocco-billy-martin.md). Caption-based ideas for family stays,
+  scenic journeys, and local encounters, plus description-based destination leads.
 - [Shared outdoor adventures](ideas/shared-outdoor-adventures.md). Volcano hikes and
   lagoon outings with hostel travelers. Supplied inspiration, not destination research.
 
@@ -18,9 +18,7 @@ and applicability. The empty collection is not evidence that advice was research
 
 ## Media intake
 
-Billy Martin's Morocco video is saved as a source link with description-based leads.
-Public metadata access worked; English automatic captions were listed. Full
-transcript extraction remains pending because the acquisition playbook's retention
-basis is unestablished. No video, transcript, or Instagram collection was acquired.
-Video processing depends on the installed media-transcriber workflow and actual
-runtime availability.
+Billy Martin's Morocco video completed a live caption-to-summary test. The available
+English automatic-caption track was read and attributed ideas were saved. Full
+transcripts are not stored here. Audio fidelity, Instagram intake, and cloud
+acquisition remain unverified.
