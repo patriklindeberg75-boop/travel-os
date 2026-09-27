@@ -1,7 +1,7 @@
 [mcp_servers.google_maps]
 url = "https://mapstools.googleapis.com/mcp"
-env_http_headers = { "X-Goog-Api-Key" = "GOOGLE_MAPS_API_KEY" }
+http_headers_helper = "python3 '/Users/patrik.lindeberg/Claude Code/personal/travel-os/scripts/google-maps-keychain-headers.py'"
 enabled = false
 required = false
-startup_timeout_sec = 20
+startup_timeout_sec = 30
 tool_timeout_sec = 60
