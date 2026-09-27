@@ -75,6 +75,40 @@ One Italy–Morocco trip folder is a reasonable initial implementation choice.
 - No new assistant runtime, library, or Italy–Morocco trip folder was found during
   the investigation. Existing unrelated untracked files must be preserved.
 
+## Proposed skills
+
+Added at Patrik's request. These are candidates to qualify against real requests,
+not implemented capabilities or a commitment to build five separate skills.
+
+| Proposed skill | Example request | Purpose and responsibility |
+| --- | --- | --- |
+| **`travel-companion`** | “Should I stay another day or move on?” | Reads the current trip, commitments, preferences, and recent decisions. Weighs options against work, energy, weather, and social opportunities. Keeps confirmed decisions distinct from possibilities. |
+| **`travel-research`** | “How can I reach this village tomorrow and still make my evening call?” | Investigates departure points, connections, last departures, booking requirements, total journey cost, and fallback options. Records when information was checked and distinguishes confirmed schedules from estimates. |
+| **`travel-library`** | “Save this reel”; “What have I collected about Morocco?” | Captures and retrieves destination ideas and reusable travel advice. Preserves the source, why it interested Patrik when known, where it applies, and whether it is suggested, researched, or personally tried. |
+| **`trip-manager`** | “Start my Italy–Morocco trip”; “I changed my accommodation” | Maintains each trip's dates, bookings, route, open decisions, and concise current brief. Handles changes without promoting tentative ideas into commitments or leaving contradictory current plans. |
+| **`travel-reflection` — later** | “That hostel looked perfect but didn't work for me” | Captures what happened and why, then proposes lessons or preference changes. Distinguishes temporary circumstances and a bad day from evidence for changing the standing profile. |
+
+### Proposed boundaries and qualification
+
+Establish shared trip and library records before qualifying the skill split.
+`trip-manager` owns updates to the repository's current trip record; the other
+skills consult that record and route trip changes through the same update rules,
+rather than maintaining competing plans. Apple Notes remains the working
+itinerary, and the repository brief reflects the latest context Patrik shares.
+Calendar integration remains deferred; commitments can be supplied in conversation.
+
+`travel-library` owns reusable ideas and advice and reuses media-transcriber for
+supported acquisition. Extraction does not imply further travel research.
+`travel-research` supplies checked evidence, not booking decisions.
+`travel-companion` uses that evidence and the refreshed profile to discuss choices
+and propose flexible plans. `travel-reflection` proposes enduring changes for
+Patrik to confirm; the initial preference interview does not depend on building it.
+
+Qualification should exercise capture and retrieval, practical research, sparring,
+and a changed trip commitment using real examples. Preserve these responsibilities
+even if some are better served by repository instructions or existing skills.
+No new skill should duplicate the existing transcription backend.
+
 ## Proposed implementation sequence
 
 ### 0. Re-interview Patrik and refresh travel assumptions
@@ -113,6 +147,10 @@ reusable travel advice, source references, a small index, and one folder per
 trip. Separate tentative ideas, confirmed decisions, and checked research.
 Avoid a second editable copy of the Apple Notes itinerary. Store the latest
 shared context with its date so the assistant knows what may be stale.
+
+Use these shared records to qualify `travel-library` and `trip-manager` first.
+Qualify `travel-research` and `travel-companion` through the practical research and
+planning checks below. Keep `travel-reflection` as a later addition.
 
 Check: save a supplied idea, retrieve it from a fresh conversation, and distinguish
 it from a booking or approved itinerary. Verify that old dossier instructions no
