@@ -15,7 +15,7 @@ A configured remote is not proof that local changes are pushed or cloud-accessib
 | Legacy entry points | Migrated and read back | Active commands use shared workflows. Dossier command and agent are paused. Historical reference bodies are preserved. |
 | Local record checks | Passed within bounded scope | Local links and anchors resolve. Scratch-copy scenarios covered retrieval, capture, repeated capture, tentative accommodation, reported booking correction, and retrieval after updates. |
 | Live travel research | Not tested | Use a real route or activity question with current sources. |
-| Media intake | Not tested | No supplied video or collection has been acquired. |
+| Media intake | Partial live test | Billy Martin video metadata and caption availability retrieved. Description-based leads saved in the library. Full-text retention basis unestablished; no transcript acquired. |
 | Proposed travel skills | Candidates only | Qualify boundaries through real requests before packaging. Reflection remains later. |
 | Phone/cloud access | Deferred until last | Test durable save, fresh retrieval, correction, and laptop-offline access. |
 | Notes/calendar/collection connections | Not connected | Notes can be shared manually. Calendar is deferred. Collection import remains unverified. |
