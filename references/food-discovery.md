@@ -19,6 +19,10 @@ release; [assistant workflows](assistant-workflows.md) govern saved records.
 A request to save a food link alone belongs to travel-library and does not trigger
 restaurant research. A recommendation remains a suggestion, not a booking.
 
+Google Maps connection setup and its current verification state are in
+[Google Maps MCP](google-maps-mcp.md). Use it when available for place checks,
+with web research retained for food judgments.
+
 ## Principles
 
 - Find people who know the food, then follow specific dishes and preparations.

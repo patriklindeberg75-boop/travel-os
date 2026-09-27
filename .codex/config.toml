@@ -1,0 +1,7 @@
+[mcp_servers.google_maps]
+url = "https://mapstools.googleapis.com/mcp"
+env_http_headers = { "X-Goog-Api-Key" = "GOOGLE_MAPS_API_KEY" }
+enabled = false
+required = false
+startup_timeout_sec = 20
+tool_timeout_sec = 60
