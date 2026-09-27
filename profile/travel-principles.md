@@ -1,8 +1,8 @@
 Travel Principles
 
-**Version:** v4
+**Version:** v5
 **Last updated:** 2026-09-27 — partial reconciliation approved in conversation.
-**Review status:** The popularity exception in §4 is confirmed; other inherited rules remain subject to the ongoing preference refresh. This is not blanket revalidation.
+**Review status:** The popularity exception in §4 and work exclusion in §6.2 are confirmed; other inherited rules remain subject to the ongoing preference refresh. This is not blanket revalidation.
 **Created:** 2026-05-10
 **Owner:** Patrik
 **Role in system:** Personalization spine #2 — read alongside the Universal Traveler Profile by every workflow in the Claude Code travel planning system before generating user-facing output.
@@ -13,7 +13,7 @@ Travel Principles
 
 This document captures *decision rules* — how Patrik decides — across all solo trips of 1+ week duration. Paired with the Universal Traveler Profile, which captures *what Patrik prefers*. Together they form the personalization spine the planning system reads before any output.
 
-The Profile filters destinations and activities against tastes. Principles filter and shape choices when tastes alone don't decide — which destination among viable ones, when to splurge, what to bail on, how to allocate work days, what counts as "special" enough to override caps.
+The Profile filters destinations and activities against tastes. Principles filter and shape choices when tastes alone don't decide — which destination among viable ones, when to splurge, what to bail on, what counts as "special" enough to override caps.
 
 **Application discipline:**
 
@@ -237,18 +237,12 @@ Travel doesn't suspend Patrik's baseline routine. Sleep, exercise, and eating qu
 
 ---
 
-### 6.2 — Front-load work to Mon–Thu
+### 6.2 — Leave work management to Patrik
 
-**Statement:** The 25h/week work load (Profile §3) is front-loaded to Monday–Thursday by default. Friday–Sunday is open.
-
-**Rationale:** Hostels, group activities, and social density pulse on weekends. Mon–Thu work and Fri–Sun open maximizes overlap with social windows.
-
-**Application rule:** Day-plan workflows default to scheduling work blocks on Mon–Thu, leaving Fri–Sun open. Two override conditions, applied *within* the work block:
-
-- **Weather override** — if the weather forecast makes a specific Mon–Thu day clearly the best activity day of the week (and a normally-open day worse), swap.
-- **Travel-day override** — travel days take priority over their weekday slot. A long bus that lands on Tuesday means Tuesday is a travel day; the work it would have absorbed shifts to Friday.
-
-The override applies *within* the structure — it doesn't dissolve Mon–Thu into a free-for-all. Default holds unless one of the two triggers fires.
+**Confirmed 2026-09-27:** Work hours are outside the travel assistant's remit.
+The former 25h/week and Mon–Thu scheduling rule is retired. Do not ask for work
+hours, reserve work blocks, or move work between days. Respect a specific time
+commitment only when Patrik explicitly supplies it for the current request.
 
 ---
 
@@ -312,7 +306,7 @@ Where principles point in different directions, these resolutions govern.
 
 ### Tension 5 — Independence (§1.2) vs. Multi-day group adventures (Profile §4)
 
-**Conflict:** Independence bans dependence on others' logistics; the Profile endorses 4–5 day group adventures with strangers (boat trips, group hikes).
+**Conflict:** Independence bans dependence on others' logistics; the Profile endorses 4–5 day group adventures with strangers (for example, boat trips; hikes are limited to two days under the refreshed Profile).
 
 **Resolution:** Independence governs *who chose the structure*. A pre-arranged group adventure that Patrik opted into knowing the structure is independence-compatible — the choice was his. The principle bans being *dragged* into others' plans, not opting into structured group experiences.
 
@@ -444,6 +438,7 @@ Note: AP-2 (Pack minimally) was reframed in v3 rather than cut. Packing recommen
 
 | Version | Date | Changes |
 | --- | --- | --- |
+| v5 | 2026-09-27 | Retired work-hour and weekday scheduling; clarified that group-adventure guidance does not override the two-day hiking maximum. |
 | v4 | 2026-09-27 | Added the approved popular-town exception and its precedence over conflicting destination exclusions. Marked the refresh as partial and allowed confirmed interview updates. |
 | v1 | 2026-05-10 | Initial document. 18 principles, 9 categories. |
 | v2 | 2026-05-10 | QC pass. Cut companion-selection category, depletion override, redundant solo-default. Tightened application rules in §1.2, §4.1, §5.4. Added §11 QC log. 14 principles, 7 categories. |

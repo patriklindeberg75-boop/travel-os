@@ -15,7 +15,7 @@ Patrik decide, research, and prepare suggestions he can use there.
 2. Investigate travel questions and routes with sources, current checks where
    needed, and concise practical answers that reduce Patrik's research burden.
 3. Propose flexible plans for the next two or three days using current trip
-   context, weather, opening days, holidays, transport, and work needs.
+   context, weather, opening days, holidays, transport, and any specific commitments Patrik supplies.
 
 Planning and decisions are documented. None of these operational outcomes has
 yet been demonstrated in this reconciliation.
@@ -27,6 +27,7 @@ yet been demonstrated in this reconciliation.
 - Keep Apple Notes as the working itinerary. Start with notes Patrik shares;
   investigate MCP access or Google Docs only if useful. No switch is committed.
 - Defer calendar integration; no current calendar commitments were supplied.
+- Work-hour management is outside the assistant's remit. Do not ask for work hours or schedule work blocks; only respect specific commitments explicitly supplied for a request.
 - Re-interview Patrik about travel preferences and principles before relying on
   the old profile for personalized recommendations. The earlier statement that
   preferences broadly hold is provisional, not blanket revalidation. Distinguish
@@ -55,7 +56,7 @@ not confirmed bookings. This later statement replaces the original rough
 "in one week" timing for planning purposes.
 
 No arrival city, fixed route, booked transport, accommodation, exact end date,
-or trip-specific work schedule has been supplied. Do not manufacture these.
+has been supplied. Do not manufacture these or request a work schedule.
 One Italy–Morocco trip folder is a reasonable initial implementation choice.
 
 ## What exists and what needs reconciliation
@@ -82,7 +83,7 @@ not implemented capabilities or a commitment to build five separate skills.
 
 | Proposed skill | Example request | Purpose and responsibility |
 | --- | --- | --- |
-| **`travel-companion`** | “Should I stay another day or move on?” | Reads the current trip, commitments, preferences, and recent decisions. Weighs options against work, energy, weather, and social opportunities. Keeps confirmed decisions distinct from possibilities. |
+| **`travel-companion`** | “Should I stay another day or move on?” | Reads the current trip, commitments, preferences, and recent decisions. Weighs options against explicitly supplied commitments, energy, weather, and social opportunities; does not manage work hours. Keeps confirmed decisions distinct from possibilities. |
 | **`travel-research`** | “How can I reach this village tomorrow and still make my evening call?” | Investigates departure points, connections, last departures, booking requirements, total journey cost, and fallback options. Records when information was checked and distinguishes confirmed schedules from estimates. |
 | **`travel-library`** | “Save this reel”; “What have I collected about Morocco?” | Captures and retrieves destination ideas and reusable travel advice. Preserves the source, why it interested Patrik when known, where it applies, and whether it is suggested, researched, or personally tried. |
 | **`trip-manager`** | “Start my Italy–Morocco trip”; “I changed my accommodation” | Maintains each trip's dates, bookings, route, open decisions, and concise current brief. Handles changes without promoting tentative ideas into commitments or leaving contradictory current plans. |
@@ -119,8 +120,7 @@ Use a conversational interview that accepts dictated responses and asks what has
 changed through actual travel experience, including what worked or failed during
 the Balkans trip. Do not infer that experience from the placeholder journal.
 
-Cover travel purpose, solo versus companion travel, pace and spontaneity, work
-needs, accommodation and social preferences, activities and physical capability,
+Cover travel purpose, solo versus companion travel, pace and spontaneity, accommodation and social preferences, activities and physical capability,
 food, mobility, packing, climate and sun sensitivity, budget and splurges, and
 risk tolerance. Revisit the strength of old rules, their exceptions, and tensions
 between the profile and principles; invite preferences the old documents missed.
@@ -139,9 +139,11 @@ popular towns eligible when exceptional hostel community and nearby adventures
 justify the crowds; using social hostels as the usual base with occasional village
 stays for compelling local interaction; and prioritizing conversation, outings,
 and shared dinners with partying optional. These answers are recorded in profile
-v2 and principles v4. Work, budget, pace, physical limits, heat tolerance, and other
-unreviewed assumptions remain provisional; continue the interview before calling
-the profile refreshed.
+v3 and principles v5. A subsequent explicit answer excluded work-hour management,
+set the daily budget around €40, preferred one-day hikes with a two-day maximum,
+and confirmed that sun sensitivity is manageable rather than a hard constraint.
+Pace and other unreviewed assumptions, including numeric temperature and splurge
+limits, remain provisional; do not call the entire profile revalidated.
 
 Check: revised profile and principles reflect confirmed interview answers,
 remaining uncertainty is explicit, and personalized planning uses the refreshed
@@ -196,7 +198,8 @@ weather, opening days, holidays, and booking conditions when planning dates
 approach; saved inspiration is not current operational evidence.
 
 Plan two or three days from the latest shared notes and stated location. Account
-for work, travel time, weather, geography, closures, and flexible alternatives.
+for explicitly supplied commitments, travel time, weather, geography, closures,
+and flexible alternatives. Do not plan work hours.
 Return a short Apple Notes-friendly proposal. Ask for missing facts only when
 they materially affect the answer.
 

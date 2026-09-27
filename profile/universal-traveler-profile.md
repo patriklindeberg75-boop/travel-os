@@ -1,12 +1,12 @@
 Universal Traveler Profile
 
-**Version:** v2
+**Version:** v3
 **Last updated:** 2026-09-27 — partial preference refresh approved in conversation.
-**Review status:** Experiential direction confirmed; other inherited preferences and numeric limits remain provisional pending the remaining interview. Do not treat this as full revalidation.
+**Review status:** Experiential direction, work exclusion, approximate daily budget, hiking duration, and manageable sun sensitivity confirmed. Other inherited preferences and numeric limits remain provisional; this is not full revalidation.
 **Created:** 2026-05-10
 **Owner:** Patrik
 **Role in system:** Personalization spine #1 — read by every workflow in the Claude Code travel planning system before generating user-facing output. Paired with the Travel Principles document (forthcoming).
-**Storage location:** Claude Code project repo, root path. Suggested filename: `universal-traveler-profile.md`. Update only via Phase 3 retro workflow.
+**Storage location:** Claude Code project repo, root path. Suggested filename: `universal-traveler-profile.md`. Update through confirmed preference interviews or retros.
 
 ---
 
@@ -69,10 +69,9 @@ Updates require Patrik's confirmation through a preference interview or post-tri
 
 - **STRONG:** 2–6 days per location is the default rhythm.
 - **SOFT:** Avoid >6 days unless special reason.
-- **CONTEXTUAL override:** Extend to 7–10 days in **base-town mode** — when the location functions as a hub for multiple radiating activities or workdays. Common triggers:
+- **CONTEXTUAL override:** Extend to 7–10 days in **base-town mode** — when the location functions as a hub for multiple radiating activities. Common triggers:
 
 Trigger is judgment-based, not rule-based. Workflows should *surface* the option when conditions suggest it but never auto-apply.
-    - Nomad-hub during a heavy work week
     - Trekking base for multiple full-day hike radials
     - Dive base, climbing base, or similar activity hub
     - Particularly good hostel/community worth staying in
@@ -86,12 +85,12 @@ Trigger is judgment-based, not rule-based. Workflows should *surface* the option
 
 ---
 
-## 3. Work integration
+## 3. Work is outside the assistant's remit
 
-- **STRONG (CP-locked):** 25h/week remote work.
-- **STRONG (CP-locked):** Reliable WiFi at least 4 days per week.
-- **STRONG:** Flexible schedule — work blocks adapt around activities.
-- **CONTEXTUAL pair:** Alternate between digital nomad hubs (during heavier work weeks) and raw backpacker towns (during lighter work weeks). The strategy itself is STRONG; which mode applies is contextual.
+Confirmed 2026-09-27: Patrik manages his own work. Do not ask for weekly work
+hours, schedule work blocks, allocate workdays, or enforce the former 25h/week
+and four-days-of-WiFi assumptions. Only account for a specific time commitment
+when Patrik explicitly supplies it as a constraint for a request.
 
 **Hostel kitchen access:** not required.
 
@@ -140,7 +139,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 - **Smaller towns and villages over cities.** Prefer accessible nature and places with varied activities. This is a preference, not an absolute city exclusion. Confirmed 2026-09-27.
 - **Shared experiences.** Value activities that combine meeting people with a memorable experience, such as a volcano hike or lagoon outing with hostel travelers. Examples are inspiration, not mandatory activities or confirmed physical capability.
 - **Nature and outdoor adventure.** Hiking, waterfalls, caves, scenic terrain.
-- **Hiking specifically:** ceiling is full-day hikes — multi-day treks are not viable as defaults (capability ceiling, not preference).
+- **Hiking specifically:** prefer one-day hikes; maximum two-day hikes. Duration does not establish fitness for every route. Confirmed 2026-09-27.
 - **Quiet, clear-water beaches with few people.** Crowded beaches do not satisfy this preference.
 - **Off-beat exploration by local mobility.** The principle is *off-beat exploration*; the favored vehicle depends on geography:
     - **Scooter** in scooter-friendly geographies (Southeast Asia, Mediterranean, Greek islands, etc.) — capability is strong (very experienced rider).
@@ -184,7 +183,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 ### Activity rhythm rules (STRONG)
 
 - **Party frequency: 1–2x per week maximum** anywhere — hard rule.
-- **Sunrise/sunset hike timing** to avoid midday sun (see §8).
+- **CONTEXTUAL:** Consider timing and shade when helpful; sun sensitivity is manageable and not a hard activity exclusion (see §8).
 
 ---
 
@@ -203,7 +202,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 - **STRONG:** Very experienced scooter rider. Off-beat exploration is a top mode; scooter is the favored vehicle in scooter-friendly geographies, with locally appropriate substitutes elsewhere (see §5).
 - **STRONG:** Moderate fitness level. Comfortable with physical adventures, ATV, scooter.
-- **STRONG ceiling:** Full-day hikes maximum. Multi-day treks not viable.
+- **Confirmed 2026-09-27:** Prefer one-day hikes; two days is the maximum hiking duration.
 
 **Packing style:**
 
@@ -217,7 +216,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 ## 8. Climate & body
 
-Two-tier temperature rule (resolved from Asia 25 profile + Context Pack):
+Historical temperature preferences below are not revalidated by the September 2026 sun-sensitivity answer. Do not treat them as confirmed hard screening limits during reconciliation:
 
 - **STRONG (CP-aligned):** Trip-average temperature ceiling: **27°C**. Used for destination screening — will I go there at all in those dates?
 - **STRONG:** Single-day activity ceiling: **30°C**. Used for daily activity feasibility — if a day exceeds this, shift to indoor / shaded / early-morning activity.
@@ -226,8 +225,8 @@ Two-tier temperature rule (resolved from Asia 25 profile + Context Pack):
 
 UV and sun sensitivity:
 
-- **STRONG:** Significant UV / sun sensitivity. Cannot tolerate prolonged direct sun.
-- **STRONG follow-on:** Outdoor activities should be timed to avoid midday sun (sunrise/sunset hiking, shade availability is a destination factor).
+- **Confirmed 2026-09-27:** Significant sun sensitivity remains, but Patrik has ways to manage it; it is not a hard constraint.
+- Consider timing and shade where useful, without automatically rejecting a destination or activity because of sun exposure. The coping methods were not specified; do not invent them.
 
 Rain:
 
@@ -237,7 +236,7 @@ Rain:
 
 ## 9. Budget
 
-- **STRONG (CP-locked):** ~€50/day baseline, all-in (accommodation + food + activities).
+- **Confirmed 2026-09-27:** Daily budget around **€40**, an approximate target rather than a rigid cap. Coverage of major transfers and exceptional activities has not been newly specified.
 - **STRONG (CP-locked):** Splurge tolerance €100–150 for unique experiences.
 - **SOFT:** Balance splurge days with cheaper days (discipline pattern, not a rigid rule).
 - **SOFT:** Low-budget accommodation as default.
@@ -261,9 +260,9 @@ Eight dimensions every trip-planning workflow should consider. **The list is sta
 2. Natural beauty and outdoor activities.
 3. Opportunities to meet people.
 4. Authentic local experiences.
-5. WiFi reliability for work.
+5. Practical access and transport feasibility.
 6. Weather conditions for travel dates.
-7. Budget compatibility (~€50/day baseline).
+7. Budget compatibility (around €40/day).
 8. Balance of adventure / culture / social.
 
 ---
@@ -296,6 +295,10 @@ These absences are themselves information. Future retros may surface stable pref
 - Each update increments the version, dates the change, and logs what changed and why.
 
 ### Changelog
+
+**v3 — 2026-09-27**
+
+- Patrik explicitly excluded work-hour planning, set the daily budget around €40, preferred one-day hikes with a two-day maximum, and confirmed sun sensitivity is manageable rather than a hard constraint. Old numeric temperature limits and splurge allowances are not newly confirmed.
 
 **v2 — 2026-09-27**
 

@@ -29,8 +29,8 @@ Internal documentation (architecture, prompts, workflow notes) may use desktop f
 ## Hard Constraints
 
 - Solo trips only. 1+ week duration only.
-- Weather ceiling: flag destinations over 30°C during trip dates. For multi-stop trips, flagging is per-stop (not trip-wide). (This 30°C trip-dates ceiling is the operator-relaxed value; the traveler profile's 27°C in § 8 is the stricter destination-screening default. The 30°C value here governs trip-dates flagging and takes precedence.)
-- Routine respected: day plans must accommodate work + sleep + exercise + healthy eating.
+- Sun sensitivity is manageable, not a hard constraint (confirmed 2026-09-27). Historical 27°C/30°C thresholds remain unreviewed and must not act as confirmed hard exclusions during reconciliation. Use current weather as practical context.
+- Work-hour management is outside the assistant's remit (confirmed 2026-09-27). Do not ask for hours or schedule work blocks. Respect only specific commitments supplied for a request. Other routine preferences remain subject to the ongoing profile refresh.
 - No custom dashboard — iPhone Notes + Google Maps are the front-end.
 - Anti-tourist filter active on all outputs: mass-tourism spots flagged, hidden gems prioritized.
 
