@@ -13,8 +13,9 @@ follow [the assistant workflow](../references/assistant-workflows.md).
 
 ## Tips and best practices
 
-No tips have been captured yet. Save future advice under `tips/` with its source
-and applicability. The empty collection is not evidence that advice was researched.
+- [Morocco backpacking tips](tips/morocco-backpacking.md). Attributed advice on local
+  encounters, social stays, hammams, cash, shared taxis and Friday food arrangements,
+  with conflicting advice and source limits retained. Researched September 27, 2026.
 
 ## Media intake
 

@@ -1,0 +1,202 @@
+{
+  "route": "R2",
+  "classification": {
+    "input": {
+      "output": "memo",
+      "use": "internal",
+      "scope": "single_deliverable",
+      "consequence": "ordinary",
+      "thesis_grade": false
+    },
+    "result": {
+      "floor": "R2",
+      "override": "none",
+      "reasons": [
+        "claim-bearing memo"
+      ],
+      "route": "R2",
+      "transition": "initial"
+    }
+  },
+  "consequential": false,
+  "frame": {
+    "brief_alignment": {
+      "status": "aligned",
+      "reason": "User corrected destination-comparison scope to reading Morocco backpacking tips."
+    },
+    "objectives": [
+      {
+        "id": "tips",
+        "question": "Which practical Morocco backpacking tips are useful for Patrik, and which source claims need qualification?",
+        "decision_use": "Build a reusable advice library, not a route or booking decision.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Several attributable traveler and guide sources; practical takeaways with source dates, anecdotes and uncertainty distinguished.",
+          "minimum_source_class": "Firsthand traveler accounts plus established guides or local sources.",
+          "change_condition": "Contradictory or overgeneralized advice is qualified rather than repeated as a universal rule."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public guides support bounded practical tips, without date-specific operational claims."
+        }
+      }
+    ]
+  },
+  "delivery": {
+    "requesting_owner": "Patrik / Travel OS",
+    "brief_source": "library/tips/evidence/morocco-backpacking-brief.md",
+    "brief_sha256": "423a7058bb1bcb5765c9f9abb412728d1e3dbd4d7ef57b95c0cce692ec77161e",
+    "execution_repository": "/Users/patrik.lindeberg/Claude Code/personal/travel-os",
+    "deliverable_path": "library/tips/morocco-backpacking.md",
+    "contract_record_path": "library/tips/evidence/morocco-backpacking-record.json",
+    "receiving_owner": "Patrik / Travel OS",
+    "return_target": "library/README.md",
+    "state": "delivered",
+    "evidence": "Tips file written and linked from library/README.md; source claims and qualifications included."
+  },
+  "claims": [
+    {
+      "id": "regional",
+      "claim": "Bron recommends regional clusters and describes a coastal surf scene.",
+      "source": "https://www.indietraveller.co/morocco-travel-guide/",
+      "locator": "Introduction and backpacking map; indexed extract only",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "everyday",
+      "claim": "Tourism office promotes village walks, conversation and tea as cultural experiences.",
+      "source": "https://www.visitmorocco.com/en/art-living-0",
+      "locator": "Art of living opening paragraphs",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "customs",
+      "claim": "Travelers advise photo consent and describe neighborhood hammams and Friday food closures; their tipping and hitchhiking statements require qualification.",
+      "source": "https://www.journalofnomads.com/23-travel-tips-for-morocco/",
+      "locator": "Sections 1, 3, 7, 12, 18, 22",
+      "source_date": "2025-03-08",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "cash",
+      "claim": "Rough Guides advises cash and small notes for small businesses and rural areas, and describes tipping expectations.",
+      "source": "https://www.roughguides.com/morocco/travel-tips/",
+      "locator": "How should I handle money and payments in Morocco?",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "taxis",
+      "claim": "Lonely Planet distinguishes urban petits taxis from longer-distance shared grands taxis.",
+      "source": "https://www.lonelyplanet.com/articles/getting-around-morocco",
+      "locator": "Indexed extract: taxi distinction; full page unavailable",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "application",
+      "claim": "For Patrik, use these sources as practical prompts about shared activities, local encounters, cash, taxi terms and local opening arrangements; do not treat anecdotes as universal rules.",
+      "source": "library/tips/morocco-backpacking.md",
+      "locator": "Numbered tips and qualifications",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "PROXY-SUPPORTED",
+      "strength": "proxy",
+      "status": "inference",
+      "basis_claim_ids": [
+        "regional",
+        "everyday",
+        "customs",
+        "cash",
+        "taxis"
+      ]
+    }
+  ],
+  "question": "Which practical Morocco backpacking tips are useful for Patrik, and which source claims need qualification?",
+  "memo": "library/tips/morocco-backpacking.md",
+  "strongest_countercase": "Broad traveler generalizations conflict: no tipping culture versus tipping expected. Personal experiences and promotional hospitality claims cannot establish universal norms.",
+  "unknowns": [
+    "Local opening times, fares, availability and individual experiences vary; this is advice reading, not operational verification.",
+    "Two sources were read only through indexed extracts."
+  ],
+  "axcion_implications": [],
+  "citation_exceptions": [],
+  "objective_assessments": [
+    {
+      "objective_id": "tips",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "regional",
+        "everyday",
+        "customs",
+        "cash",
+        "taxis",
+        "application"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Completed bounded advice reading with source-specific caveats. Future operational checks are outside this request."
+    }
+  ],
+  "sufficiency": {
+    "verdict": "sufficient-with-ceiling",
+    "permission_ceiling": "PROXY-SUPPORTED",
+    "reason": "Attributions are directly supported; personalized applications remain recommendations based on guide and anecdotal evidence."
+  },
+  "research_loop": [
+    {
+      "objective_id": "tips",
+      "current_coverage": "Initial discovery after user correction",
+      "highest_materiality_gap": "Useful advice beyond destination ranking",
+      "action": {
+        "kind": "retrieval",
+        "target": "Backpacker accounts and established guides",
+        "summary": "Read backpacker tips, guide advice and local tourism context."
+      },
+      "result": "Identified eight useful practices and varying source quality.",
+      "effect": "Replaced destination comparison with library advice.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "tips",
+      "current_coverage": "Advice from multiple sources",
+      "highest_materiality_gap": "Overgeneralization and conflicting customs advice",
+      "action": {
+        "kind": "contradiction_reconciliation",
+        "target": "Tipping, Friday closures, photography and hitchhiking claims",
+        "summary": "Compare claims and retain only bounded advice with qualifications."
+      },
+      "result": "Tipping conflict explicit; local variation and anecdotal limits retained.",
+      "effect": "Sufficient for a practical tips collection, not universal or operational guarantees.",
+      "decision": "stop"
+    }
+  ],
+  "stopping_record": {
+    "objective_id": "tips",
+    "highest_materiality_gap": "Overgeneralization and conflicting customs advice",
+    "last_action": "Compare claims and retain only bounded advice with qualifications.",
+    "effect": "Sufficient for a practical tips collection, not universal or operational guarantees.",
+    "decision": "stop",
+    "reason": "More general guides unlikely to improve this bounded collection; revisit specific practices when requested."
+  }
+}

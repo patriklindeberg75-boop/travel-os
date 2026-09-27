@@ -1,0 +1,88 @@
+{
+  "route": "R2",
+  "classification": {
+    "input": {
+      "output": "memo",
+      "use": "internal",
+      "scope": "single_deliverable",
+      "consequence": "ordinary",
+      "thesis_grade": false
+    },
+    "result": {
+      "floor": "R2",
+      "override": "none",
+      "reasons": [
+        "claim-bearing memo"
+      ],
+      "route": "R2",
+      "transition": "initial"
+    }
+  },
+  "consequential": false,
+  "frame": {
+    "brief_alignment": {
+      "status": "aligned",
+      "reason": "Deepens the existing personal shortlist without claiming future availability or a booked route."
+    },
+    "objectives": [
+      {
+        "id": "access",
+        "question": "What transport evidence and unresolved gaps change the feasibility of these four bases without a rental car?",
+        "decision_use": "Choose which bases deserve a flexible stay or further dated checks.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Operator route/pickup information where available, explicit source conflicts and remaining verification needs.",
+          "minimum_source_class": "Primary operators/properties first; independent traveler evidence for atmosphere, explicitly bounded.",
+          "change_condition": "Contradictory current evidence or better fit/cost/access changes the provisional ranking."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public sources can improve the shortlist while leaving future availability and unverified logistics explicit."
+        }
+      },
+      {
+        "id": "social",
+        "question": "Which accommodation candidates have credible social evidence beyond generic marketing?",
+        "decision_use": "Choose which bases deserve a flexible stay or further dated checks.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Property facilities plus independently hosted guest observations where available; distinguish review dates and property claims.",
+          "minimum_source_class": "Primary operators/properties first; independent traveler evidence for atmosphere, explicitly bounded.",
+          "change_condition": "Contradictory current evidence or better fit/cost/access changes the provisional ranking."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public sources can improve the shortlist while leaving future availability and unverified logistics explicit."
+        }
+      },
+      {
+        "id": "budget",
+        "question": "Does better cost and activity evidence change the recommendation for the \u20ac40 average?",
+        "decision_use": "Choose which bases deserve a flexible stay or further dated checks.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Advertised per-person/room rates, inclusions and activities, with date and currency limits; challenge the ranking.",
+          "minimum_source_class": "Primary operators/properties first; independent traveler evidence for atmosphere, explicitly bounded.",
+          "change_condition": "Contradictory current evidence or better fit/cost/access changes the provisional ranking."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public sources can improve the shortlist while leaving future availability and unverified logistics explicit."
+        }
+      }
+    ]
+  },
+  "delivery": {
+    "requesting_owner": "Patrik / Travel OS",
+    "brief_source": "trips/italy-morocco-2026-10/research/morocco-followup-brief.md",
+    "brief_sha256": "287f227ff46b16655adb2d11b5906e1706bf389cfef5a86c0b1b04d7154f1ccb",
+    "execution_repository": "/Users/patrik.lindeberg/Claude Code/personal/travel-os",
+    "deliverable_path": "trips/italy-morocco-2026-10/research/morocco-followup.md",
+    "contract_record_path": "trips/italy-morocco-2026-10/research/morocco-followup-record.json",
+    "receiving_owner": "Patrik / Travel OS",
+    "return_target": "trips/italy-morocco-2026-10/trip-context.md",
+    "state": "awaiting-handoff",
+    "evidence": "Unfinished off-scope draft. Corrected request delivered in library/tips/morocco-backpacking.md; this record is not a completed workflow."
+  },
+  "execution_status": "abandoned-after-user-scope-correction"
+}
