@@ -1,0 +1,386 @@
+{
+  "route": "R2",
+  "classification": {
+    "input": {
+      "output": "memo",
+      "use": "internal",
+      "scope": "single_deliverable",
+      "consequence": "ordinary",
+      "thesis_grade": false
+    },
+    "result": {
+      "floor": "R2",
+      "override": "none",
+      "reasons": [
+        "claim-bearing memo"
+      ],
+      "route": "R2",
+      "transition": "initial"
+    }
+  },
+  "consequential": false,
+  "frame": {
+    "brief_alignment": {
+      "status": "aligned",
+      "reason": "Preserves food-discovery research, a playbook proposal and optional Maps assessment. No installation or actual Marrakech shortlist."
+    },
+    "objectives": [
+      {
+        "id": "method",
+        "question": "Which evidence and search practices can help find worthwhile local food while reducing hype and tourist-trap risk?",
+        "decision_use": "Produce a proposal for Patrik, not install tools or recommend unverified restaurants.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Attributable food-travel practitioner advice and counterevidence about ratings or heuristics, with limits.",
+          "minimum_source_class": "Firsthand specialist advice for discovery; primary provider documents for tools; owner records for integration.",
+          "change_condition": "Contrary evidence or access limitations change the proposed step or confidence, rather than being discarded."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public evidence and permitted owner records support a bounded proposal. No claim to guarantee taste or prove a universally best method."
+        }
+      },
+      {
+        "id": "tools",
+        "question": "Would Maps or a similar integration materially help, and what are its capability limits?",
+        "decision_use": "Produce a proposal for Patrik, not install tools or recommend unverified restaurants.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Current official provider documentation about retrieval, review coverage and integration prerequisites.",
+          "minimum_source_class": "Firsthand specialist advice for discovery; primary provider documents for tools; owner records for integration.",
+          "change_condition": "Contrary evidence or access limitations change the proposed step or confidence, rather than being discarded."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public evidence and permitted owner records support a bounded proposal. No claim to guarantee taste or prove a universally best method."
+        }
+      },
+      {
+        "id": "proposal",
+        "question": "How should these findings become a usable Travel OS food-discovery playbook?",
+        "decision_use": "Produce a proposal for Patrik, not install tools or recommend unverified restaurants.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Current owner workflow and relevant preferences, plus explicit proposed gates and acceptance checks.",
+          "minimum_source_class": "Firsthand specialist advice for discovery; primary provider documents for tools; owner records for integration.",
+          "change_condition": "Contrary evidence or access limitations change the proposed step or confidence, rather than being discarded."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public evidence and permitted owner records support a bounded proposal. No claim to guarantee taste or prove a universally best method."
+        }
+      }
+    ]
+  },
+  "delivery": {
+    "requesting_owner": "Patrik / Travel OS",
+    "brief_source": "pipeline/proposals/food-discovery/brief.md",
+    "brief_sha256": "bb7255918dcbc23dbf58740b3e72804becfc8e654898156004b0e3125a7cde87",
+    "execution_repository": "/Users/patrik.lindeberg/Claude Code/personal/travel-os",
+    "deliverable_path": "pipeline/proposals/food-discovery/proposal.md",
+    "contract_record_path": "pipeline/proposals/food-discovery/record.json",
+    "receiving_owner": "Patrik / Travel OS",
+    "return_target": "pipeline/proposals/food-discovery/proposal.md",
+    "state": "delivered",
+    "evidence": "Proposal and original brief saved in Travel OS; discoverable through pipeline state link and final response. Proposal status explicit."
+  },
+  "claims": [
+    {
+      "id": "wiens",
+      "claim": "Mark Wiens describes local blogs/forums, local-language reviews, walking and personal recommendations as food-discovery methods.",
+      "source": "https://www.migrationology.com/faqs/",
+      "locator": "How do you decide which restaurants and street food vendors to eat from?",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "steves",
+      "claim": "Rick Steves recommends side streets, short seasonal menus and local custom in a Europe-focused script.",
+      "source": "https://classroom.ricksteves.com/videos/eating-smartly-in-europe",
+      "locator": "Complete Video Script, paragraphs on location and menu; year produced 2025",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "ettenberg",
+      "claim": "Jodi Ettenberg suggests searching for food hubs/markets and inexpensive meals near universities.",
+      "source": "https://www.legalnomads.com/travel-resources/",
+      "locator": "Accommodation search paragraph and street-food tips",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "review-study",
+      "claim": "Luca and Zervas study review fraud incentives using Yelp-filtered restaurant reviews as a proxy; the abstract also discusses unfavorable fake reviews.",
+      "source": "https://pubsonline.informs.org/doi/10.1287/mnsc.2015.2304",
+      "locator": "Abstract; full paper not used",
+      "source_date": "2016-01-28",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "review-policy",
+      "claim": "Google prohibits paid or incentivized reviews and rating manipulation.",
+      "source": "https://support.google.com/business/answer/7400114?hl=en",
+      "locator": "Fake Engagement and Rating Manipulation",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "maps-tools",
+      "claim": "Official Maps Grounding Lite MCP documents place search, weather, walking/driving routes and place-resolution tools; search returns summaries with attribution.",
+      "source": "https://developers.google.com/maps/ai/grounding-lite/reference/mcp",
+      "locator": "MCP Tools, search_places and compute_routes; table also lists resolution tools",
+      "source_date": "2026-06-05",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "maps-setup",
+      "claim": "Google documents Grounding Lite Cloud/API credential setup, per-request billing, a prototype demo key, attribution and model/data-use restrictions.",
+      "source": "https://developers.google.com/maps/ai/grounding-lite",
+      "locator": "Billing and quotas; Policies; Configure LLMs; source last updated",
+      "source_date": "2026-09-24",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "places-sample",
+      "claim": "Places API returns at most five reviews sorted by relevance.",
+      "source": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "locator": "Place fields: reviews[]",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "places-policy",
+      "claim": "Places API documentation describes caching and attribution restrictions, Place ID storage exception and separate EEA conditions.",
+      "source": "https://developers.google.com/maps/documentation/places/web-service/policies",
+      "locator": "Policies, Exceptions from caching restrictions, EEA and attribution sections",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "owner",
+      "claim": "Travel OS already assigns fresh investigation to travel-research, retention to shared workflows, choices to travel-companion, and confirmed changes to trip-manager.",
+      "source": "references/assistant-workflows.md",
+      "locator": "Current working tree at 17ee91467531b1263ecbb9c5eec7078d3e4b2b89; research/capture sections, corroborated by .agents/skills/travel-research/SKILL.md",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "profile",
+      "claim": "Patrik prefers local food and markets without over-weighting food curation; about EUR40 per day covers accommodation, food and other ordinary spending.",
+      "source": "profile/universal-traveler-profile.md",
+      "locator": "Sections 6 and 9 at 17ee91467531b1263ecbb9c5eec7078d3e4b2b89",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "design",
+      "claim": "Use one dish-first food-discovery reference under travel-research, with explicit evidence coverage, value checks, optional Maps pilot and separate quality/logistics confidence.",
+      "source": "pipeline/proposals/food-discovery/proposal.md",
+      "locator": "Proposed workflow; Tools and integration choice; Proposed implementation",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "PROXY-SUPPORTED",
+      "strength": "proxy",
+      "status": "inference",
+      "basis_claim_ids": [
+        "wiens",
+        "steves",
+        "ettenberg",
+        "review-study",
+        "review-policy",
+        "maps-tools",
+        "maps-setup",
+        "places-sample",
+        "places-policy",
+        "owner",
+        "profile"
+      ]
+    }
+  ],
+  "question": "How should Travel OS discover worthwhile local food and reduce tourist-trap/hype risk, with optional Maps support?",
+  "memo": "pipeline/proposals/food-discovery/proposal.md",
+  "strongest_countercase": "Obscure venues often have sparse evidence, while famous venues may deliver excellent meals. Strong corroboration requirements can reproduce popularity bias. Preserve promising low-evidence leads separately and do not use tourist presence, menu language or review counts as automatic verdicts.",
+  "unknowns": [
+    "The proposed method has not been shown to improve actual meal outcomes; source heuristics are largely practitioner experience.",
+    "No live Maps call, host compatibility, account-specific terms, cost estimate or provider data-retention implementation was tested.",
+    "No real Marrakech shortlist or dietary/meal brief was executed; those belong to the proposed pilot."
+  ],
+  "axcion_implications": [],
+  "citation_exceptions": [],
+  "objective_assessments": [
+    {
+      "objective_id": "method",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "wiens",
+        "steves",
+        "ettenberg",
+        "review-study",
+        "review-policy",
+        "design"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Multiple practitioners plus primary evidence on review limitations support a bounded proposed method. Historical evidence and heuristics do not certify individual venues."
+    },
+    {
+      "objective_id": "tools",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "maps-tools",
+        "maps-setup",
+        "places-sample",
+        "places-policy",
+        "design"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Official documentation supports a conditional integration choice, with incomplete review access and retention/host checks explicitly unresolved for installation."
+    },
+    {
+      "objective_id": "proposal",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "owner",
+        "profile",
+        "design"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Proposal fits existing skill ownership, user preferences and request scope. Behavioral and real-meal evaluation are future acceptance checks, not claimed outcomes."
+    }
+  ],
+  "sufficiency": {
+    "verdict": "sufficient-with-ceiling",
+    "permission_ceiling": "PROXY-SUPPORTED",
+    "reason": "Source attributions are supported; combined workflow and tool preference remain a proposed judgment, not a validated algorithm or installed service."
+  },
+  "research_loop": [
+    {
+      "objective_id": "method",
+      "current_coverage": "Preflight passed; food-discovery evidence not yet collected",
+      "highest_materiality_gap": "How practitioners find worthwhile local food",
+      "action": {
+        "kind": "retrieval",
+        "target": "Food writers and traveler resources",
+        "summary": "Read Wiens FAQ, Steves script and Ettenberg resources."
+      },
+      "result": "Identified local-language, neighborhood, dish and word-of-mouth leads.",
+      "effect": "Treat these as candidate discovery, not automatic quality judgments.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "method",
+      "current_coverage": "Practitioner heuristics collected",
+      "highest_materiality_gap": "Risk of confusing popularity, appearance and authenticity with quality",
+      "action": {
+        "kind": "counter_search",
+        "target": "Primary review research and Google contribution policy",
+        "summary": "Check contrary evidence about review reliability and test common heuristic assumptions."
+      },
+      "result": "Review manipulation includes favorable and unfavorable claims; source advice is context-specific.",
+      "effect": "Separate evidence strength from popularity and avoid automatic fake-review or tourist-trap labels.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "tools",
+      "current_coverage": "Existing browsing available; no Maps-specific callable tool discovered",
+      "highest_materiality_gap": "Whether a Maps integration would supply the evidence needed",
+      "action": {
+        "kind": "source_verification",
+        "target": "Official Google Maps Grounding Lite and Places documentation",
+        "summary": "Read current tool reference, setup guide, review field and product policies."
+      },
+      "result": "Official MCP offers practical geospatial context; Places review sample is capped; retention and host compatibility need checks.",
+      "effect": "Recommend browsing first and conditional official MCP pilot; do not promise complete review access or transit timetables.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "proposal",
+      "current_coverage": "Methods and tool options supported; existing skill ownership inspected",
+      "highest_materiality_gap": "Smallest useful implementation and evidence limits",
+      "action": {
+        "kind": "accept_uncertainty",
+        "target": "Travel OS owner workflows and the completed proposal",
+        "summary": "Reconcile the proposed steps with owner records and bound untested claims."
+      },
+      "result": "A single reference can add food-specific questions without duplicating research or capture; real pilot remains unrun.",
+      "effect": "Deliver a proposal with explicit adoption checks. Further broad reading is unlikely to change this choice; actual meals and connector tests are the next useful evidence.",
+      "decision": "stop"
+    }
+  ],
+  "stopping_record": {
+    "objective_id": "proposal",
+    "highest_materiality_gap": "Smallest useful implementation and evidence limits",
+    "last_action": "Reconcile the proposed steps with owner records and bound untested claims.",
+    "effect": "Deliver a proposal with explicit adoption checks. Further broad reading is unlikely to change this choice; actual meals and connector tests are the next useful evidence.",
+    "decision": "stop",
+    "reason": "Evidence is sufficient to choose a bounded pilot and draft the playbook; more generic guides cannot establish taste outcomes or account compatibility."
+  },
+  "retrieval_notes": {
+    "retained_context": "Intelligence lexical searches food and maps returned no registered matches. No personal travel material selected for Axc\u00edon Intelligence intake.",
+    "queries": [
+      "how find good local restaurants travel food writer avoid tourist traps",
+      "site.migrationology.com how find local food restaurants travel",
+      "site.ricksteves.com travel tips eating finding restaurants locals",
+      "site.legalnomads.com resources food travelers find food local dishes",
+      "site.hbs.edu restaurant reviews fake reviews Luca Zervas fraud Yelp",
+      "site.developers.google.com maps MCP server places reviews",
+      "site.developers.google.com maps places api reviews maximum five sorted relevance"
+    ],
+    "access_limits": [
+      "Outside Online article open failed and was not used.",
+      "No review-platform UI or live Maps API data retrieved.",
+      "Provider docs establish documented capability, not client compatibility."
+    ],
+    "context_check": "Existing read-only delegate explained skill ownership; parent inspected the same originals. Not an independent research-validation claim."
+  },
+  "saved_project_registration": {
+    "state": "pending",
+    "reason": "Automatic approval review rejected registration in the separate Axc\u00edon Research repository because the user authorized a Travel OS proposal, not export of the personal request and source path. No registry entry was created. Original deliverable remains in Travel OS.",
+    "proposed_id": "travel-os-food-discovery-proposal-20260927"
+  }
+}
