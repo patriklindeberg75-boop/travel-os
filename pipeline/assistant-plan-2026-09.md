@@ -86,13 +86,17 @@ One Italy–Morocco trip folder is a reasonable initial implementation choice.
 Added at Patrik's request. On September 27, Patrik explicitly authorized building
 travel-library and trip-manager. Their repository-local implementations are at
 [travel-library](../.agents/skills/travel-library/SKILL.md) and
-[trip-manager](../.agents/skills/trip-manager/SKILL.md). Travel-research and
-travel-companion remain candidates to implement; travel-reflection remains later.
+[trip-manager](../.agents/skills/trip-manager/SKILL.md). Patrik then authorized
+[travel-research](../.agents/skills/travel-research/SKILL.md) and
+[travel-companion](../.agents/skills/travel-companion/SKILL.md), now implemented
+alongside them. Travel-reflection remains later.
 Skill implementation does not establish media, Notes or cloud integrations.
 The first two skills passed structural validation and a bounded independent
 [behavior check](checks/travel-skills/verification.md).
+Research and companion passed structural validation and seven
+[supplied-evidence cases](checks/research-companion-skills/verification.md).
 
-| Proposed skill | Example request | Purpose and responsibility |
+| Skill | Example request | Purpose and responsibility |
 | --- | --- | --- |
 | **`travel-companion`** | “Should I stay another day or move on?” | Reads the current trip, commitments, preferences, and recent decisions. Weighs options against explicitly supplied commitments, energy, weather, and social opportunities; does not manage work hours. Keeps confirmed decisions distinct from possibilities. |
 | **`travel-research`** | “How can I reach this village tomorrow and still make my evening call?” | Investigates departure points, connections, last departures, booking requirements, total journey cost, and fallback options. Records when information was checked and distinguishes confirmed schedules from estimates. |
@@ -102,7 +106,7 @@ The first two skills passed structural validation and a bounded independent
 
 ### Proposed boundaries and qualification
 
-The shared trip and library records now support the first two skills.
+The shared trip and library records support all four implemented skills.
 `trip-manager` owns updates to the repository's current trip record; the other
 skills consult that record and route trip changes through the same update rules,
 rather than maintaining competing plans. Apple Notes remains the working
@@ -275,9 +279,10 @@ subsequent live YouTube, research and local planning evidence.
 Phone/cloud testing is deferred at Patrik's September 27 request because he has no
 time for it. Instagram testing is also skipped for now. Resume either when requested.
 Local research, YouTube summary intake and hypothetical planning have bounded
-evidence. Patrik then authorized travel-library and trip-manager implementation.
-These are now repository-local skills; travel-research and travel-companion remain
-the next proposed skill work. Actual forecast and dated travel checks remain
+evidence. Patrik subsequently authorized all four core travel skills, now
+implemented in this repository. Use them on real requests and correct demonstrated
+gaps. No additional skill or integration is automatically commissioned.
+Actual forecast and dated travel checks remain
 necessary when real trip details are available. Deferral does not establish either integration's
 capability or remove it from the longer-term ideas.
 The preference-refresh round is complete. Use the confirmed profile without

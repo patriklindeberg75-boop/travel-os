@@ -6,6 +6,8 @@ slash commands, a trip theme, exact dates, or a dossier to begin.
 The repository-local [travel-library](.agents/skills/travel-library/SKILL.md) and
 [trip-manager](.agents/skills/trip-manager/SKILL.md) skills handle saved knowledge
 and trip records. You can also explicitly request `$travel-library` or `$trip-manager`.
+Use [travel-research](.agents/skills/travel-research/SKILL.md) for investigations and
+[travel-companion](.agents/skills/travel-companion/SKILL.md) for choices and short plans.
 
 ## Save something worth remembering
 
@@ -43,6 +45,6 @@ management is outside the assistant's remit.
 ## Continue setup
 
 The [reconciliation plan](pipeline/assistant-plan-2026-09.md) owns remaining work.
-The preference interview, local record foundation and first two skill implementations
-are complete. Travel-research and travel-companion remain unbuilt. Instagram and
+The preference interview, local record foundation and four skill implementations
+are complete. Travel-reflection remains deferred. Instagram and
 phone/cloud tests are deferred. Do not assume local saves are available from your phone.

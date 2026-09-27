@@ -1,0 +1,4 @@
+interface:
+  display_name: "Travel Companion"
+  short_description: "Weigh travel choices and plan the next few days"
+  default_prompt: "Use $travel-companion to help me decide what to do next from my current trip context and preferences."

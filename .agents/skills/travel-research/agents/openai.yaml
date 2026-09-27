@@ -1,0 +1,4 @@
+interface:
+  display_name: "Travel Research"
+  short_description: "Check travel facts, routes and practical advice"
+  default_prompt: "Use $travel-research to investigate this travel question with sources, checked dates and practical uncertainties."

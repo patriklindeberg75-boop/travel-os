@@ -22,13 +22,15 @@ research, trip updates, and flexible planning.
 
 ## Implementation status
 
-The local instructions, library and trip records are established. Two repository-local
+The local instructions, library and trip records are established. Four repository-local
 skills are implemented:
 
 - [travel-library](.agents/skills/travel-library/SKILL.md) saves and retrieves ideas and advice.
 - [trip-manager](.agents/skills/trip-manager/SKILL.md) reconciles trip briefs and decisions.
+- [travel-research](.agents/skills/travel-research/SKILL.md) investigates advice, routes and feasibility.
+- [travel-companion](.agents/skills/travel-companion/SKILL.md) weighs choices and proposes flexible plans.
 
-Travel-research and travel-companion are not yet built. Travel-reflection is deferred.
+Travel-reflection is deferred.
 Live research, YouTube summaries and hypothetical planning have bounded evidence.
 Instagram and phone/cloud testing are deferred at Patrik's request.
 Notes, calendar, and Instagram collection integrations are not connected.

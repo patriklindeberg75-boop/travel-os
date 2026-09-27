@@ -13,6 +13,8 @@ mandatory dossier, fixed itinerary, trip theme, or manual cross-model handoff is
 - For capture, retrieval, research, or changes, use `references/assistant-workflows.md`.
 - For library capture and retrieval, use `.agents/skills/travel-library/SKILL.md`.
   For trip creation, current briefs and changes, use `.agents/skills/trip-manager/SKILL.md`.
+- For fresh travel investigation, use `.agents/skills/travel-research/SKILL.md`.
+  For choices and flexible plans, use `.agents/skills/travel-companion/SKILL.md`.
 - For implementation and unfinished integrations, read
   `pipeline/assistant-plan-2026-09.md` and `pipeline/pipeline-state.md`.
 
@@ -58,9 +60,9 @@ transcription. The workflow guide explains source and media handling.
 
 Read back each changed record before saying it is saved. A local commit does not
 prove that a cloud or phone session can retrieve it. Phone/cloud and Instagram
-testing are deferred at Patrik's request. Travel-library and trip-manager are
-implemented as repository-local skills. Travel-research and travel-companion are
-not yet built; travel-reflection remains deferred.
+testing are deferred at Patrik's request. Travel-library, trip-manager,
+travel-research and travel-companion are implemented as repository-local skills.
+Travel-reflection remains deferred.
 
 ## Repository changes and external actions
 
