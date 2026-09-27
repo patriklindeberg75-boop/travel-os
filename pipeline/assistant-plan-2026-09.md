@@ -22,7 +22,8 @@ retrieval and mobile use still need real-world verification. Live research and
 YouTube caption intake have bounded evidence. A
 [hypothetical planning check](checks/marrakech-planning/result.md) now demonstrates
 a short proposal and changed-location revision. Dated operational travel checks,
-actual forecast use and Instagram intake remain open.
+actual forecast use remain open. Patrik skipped Instagram testing for now on
+September 27; intake remains unverified.
 
 ## Agreed boundaries
 
@@ -263,10 +264,12 @@ has been tested in this session.
 
 ## Next action
 
-Exercise practical research, media intake, and the proposed skill boundaries on
-real requests using the completed local foundation.
-Run the phone/cloud save, retrieval, and update test last. This order follows
-Patrik's explicit correction and replaces the earlier early-cloud-test proposal.
+Proceed next to the phone/cloud save, retrieval and update check. Local research,
+YouTube summary intake and hypothetical planning have bounded evidence. Patrik
+skipped Instagram testing for now on September 27. This preserves phone/cloud
+testing as the last implementation check; actual forecast and dated travel checks
+remain necessary when real trip details are available. Skipping Instagram testing
+does not establish its capability or remove it from the longer-term ideas.
 The preference-refresh round is complete. Use the confirmed profile without
 reinstating retired rules. Ask only when a material scope or experience decision
 cannot be resolved through authorized local work.

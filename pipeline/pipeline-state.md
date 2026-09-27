@@ -15,9 +15,9 @@ A configured remote is not proof that local changes are pushed or cloud-accessib
 | Legacy entry points | Migrated and read back | Active commands use shared workflows. Dossier command and agent are paused. Historical reference bodies are preserved. |
 | Local record checks | Passed within bounded scope | Local links and anchors resolve. Scratch-copy scenarios covered retrieval, capture, repeated capture, tentative accommodation, reported booking correction, and retrieval after updates. |
 | Live travel research | Partial live test | Base comparison and reusable Morocco backpacking tips saved. [Hypothetical Marrakech planning check](checks/marrakech-planning/result.md) demonstrates a sourced three-day proposal and changed-location revision. Exact transport fares/last departures, dated accommodation, guide cost and actual forecast-based planning remain unverified. |
-| Media intake | One live YouTube summary test passed | Billy Martin automatic captions retrieved temporarily and read through the closing remarks. Attributed summaries saved and retrieved locally. Audio fidelity, full transcript delivery, Instagram, and cloud acquisition remain unverified. |
+| Media intake | One live YouTube summary test passed; Instagram testing skipped for now | Patrik skipped the Instagram check on September 27. Billy Martin caption summaries were saved and retrieved locally. Audio fidelity, full transcript delivery, Instagram and cloud acquisition remain unverified. |
 | Proposed travel skills | Candidates only | Qualify boundaries through real requests before packaging. Reflection remains later. |
-| Phone/cloud access | Deferred until last | Test durable save, fresh retrieval, correction, and laptop-offline access. |
+| Phone/cloud access | Next implementation check | Instagram testing was skipped at Patrik's request. Test durable save, fresh retrieval, correction and laptop-offline access. External setup or publication still needs authorization. |
 | Notes/calendar/collection connections | Not connected | Notes can be shared manually. Calendar is deferred. Collection import remains unverified. |
 
 No assistant service, scheduled task, hosting, or new external integration has been
