@@ -1,6 +1,8 @@
 Universal Traveler Profile
 
-**Version:** v1
+**Version:** v2
+**Last updated:** 2026-09-27 — partial preference refresh approved in conversation.
+**Review status:** Experiential direction confirmed; other inherited preferences and numeric limits remain provisional pending the remaining interview. Do not treat this as full revalidation.
 **Created:** 2026-05-10
 **Owner:** Patrik
 **Role in system:** Personalization spine #1 — read by every workflow in the Claude Code travel planning system before generating user-facing output. Paired with the Travel Principles document (forthcoming).
@@ -20,7 +22,7 @@ Every preference is labeled with a **strength**:
 
 A few preferences are explicitly marked **"no stable preference."** This is *deliberate signal*, not an oversight: it means workflows should not assume a default and should treat that dimension as a per-trip decision.
 
-This profile is updated only via the Phase 3 retro workflow after a real trip — never ad-hoc.
+Updates require Patrik's confirmation through a preference interview or post-trip retro; incidental remarks do not silently change standing preferences.
 
 ---
 
@@ -37,6 +39,7 @@ This profile is updated only via the Phase 3 retro workflow after a real trip �
 
 - Learning, exploring, experiencing, meeting people.
 - Authentic local experiences.
+- Visiting local villages, talking with local people, and understanding their lives, alongside meeting other travelers.
 - Backpacker lifestyle over tourist attractions.
 - Adventure and human connection above comfort.
 
@@ -101,6 +104,8 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 **Accommodation:**
 
 - **STRONG:** Hostels with strong social atmosphere. Purpose: meeting other travelers, digital nomads, backpackers, entrepreneurs.
+- **Confirmed 2026-09-27:** Especially value meeting other solo travelers. Prioritize easy conversation, communal spaces, shared excursions, and sociable dinners; partying is optional, not the measure of a social hostel.
+- **Default confirmed 2026-09-27:** Use social hostels as the usual base for exploring nearby villages, with occasional village stays when there is a compelling opportunity for local interaction. No fixed ratio is required.
 - **SOFT:** Low-budget default.
 - **CONTEXTUAL:** Award-winning or unique hostels are an exception worth taking — trigger: hostel offers exceptional social/community experience AND is reasonably priced (not luxury).
 
@@ -132,6 +137,8 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 ### Strong categories (always factor into destination assessment)
 
+- **Smaller towns and villages over cities.** Prefer accessible nature and places with varied activities. This is a preference, not an absolute city exclusion. Confirmed 2026-09-27.
+- **Shared experiences.** Value activities that combine meeting people with a memorable experience, such as a volcano hike or lagoon outing with hostel travelers. Examples are inspiration, not mandatory activities or confirmed physical capability.
 - **Nature and outdoor adventure.** Hiking, waterfalls, caves, scenic terrain.
 - **Hiking specifically:** ceiling is full-day hikes — multi-day treks are not viable as defaults (capability ceiling, not preference).
 - **Quiet, clear-water beaches with few people.** Crowded beaches do not satisfy this preference.
@@ -169,7 +176,7 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 
 - **Mass-tourism *spots*** — specific attractions, beaches, or neighborhoods within a destination. Operates at the *within-destination* level: prefer backpacker zones, non-tourist neighborhoods, off-beat sub-areas.
     - A destination is **not** filtered out solely on tourism volume if compensating factors apply (strong hostel/social scene, accessible off-beat zones).
-    - Lisbon, Bali, Chiang Mai, Cusco, etc. are touristy *and* legitimately on the table.
+    - **Confirmed 2026-09-27:** A popular town remains eligible when an exceptional hostel community and nearby adventures justify the crowds. Popularity alone is not a veto.
 - Generic, average nightlife and clubs.
 - Luxury or resort-style accommodations.
 - Destinations with poor weather for the travel period.
@@ -265,7 +272,7 @@ Eight dimensions every trip-planning workflow should consider. **The list is sta
 
 The following common traveler-profile sections are **deliberately absent** from this v1 profile because no stable preference exists. Workflows must not fabricate defaults here — these are per-trip decisions:
 
-- **Urban vs. rural lean** — no stable preference.
+- **Urban vs. rural lean** — resolved in the September 2026 interview: smaller towns and villages preferred over cities (see §5).
 - **Coastal vs. inland** — no stable preference.
 - **Climate type** beyond the ceiling rule — open to any (no tropical / temperate / cool default).
 - **Trip duration default** — varies; treat as a trip-specific input.
@@ -285,10 +292,16 @@ These absences are themselves information. Future retros may surface stable pref
 ## 13. Versioning & update protocol
 
 - **v1** — Created 2026-05-10 from Asia 25 traveler profile + structured extraction (Passes 1–9 of the Universal Traveler Profile session methodology).
-- Updates happen **only via the Phase 3 retro workflow** after a real trip. No ad-hoc mid-trip changes.
+- Updates require Patrik's confirmation through a preference interview or post-trip retro. Distinguish enduring changes from trip-specific circumstances.
 - Each update increments the version, dates the change, and logs what changed and why.
 
 ### Changelog
+
+**v2 — 2026-09-27**
+
+- Patrik described his desired mix of local encounters, social hostels, smaller places, nature, shared adventures, scenic journeys, and local food, then approved the three follow-up recommendations.
+- Added the smaller-place preference, social-hostel base pattern with occasional village stays, and sociable rather than party-led hostel criteria. Confirmed the exception for popular towns with exceptional community and adventures.
+- Scenic journeys and local food remain aligned with the experiential direction. Work, budget, pace, physical limits, heat tolerance, and other unreviewed constraints are not revalidated by this approval.
 
 **v1 — 2026-05-10**
 

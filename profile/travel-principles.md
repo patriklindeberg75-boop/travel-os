@@ -1,6 +1,8 @@
 Travel Principles
 
-**Version:** v3
+**Version:** v4
+**Last updated:** 2026-09-27 — partial reconciliation approved in conversation.
+**Review status:** The popularity exception in §4 is confirmed; other inherited rules remain subject to the ongoing preference refresh. This is not blanket revalidation.
 **Created:** 2026-05-10
 **Owner:** Patrik
 **Role in system:** Personalization spine #2 — read alongside the Universal Traveler Profile by every workflow in the Claude Code travel planning system before generating user-facing output.
@@ -18,7 +20,7 @@ The Profile filters destinations and activities against tastes. Principles filte
 - Each principle has a **statement, rationale, and application rule**. The application rule is the only part the planning system uses operationally; the rationale exists so Claude Code can evaluate edge cases.
 - **Tensions between principles are documented explicitly** in §8.
 - **Anti-principles** in §9 document things that look like principles but Patrik has rejected.
-- This document is updated **only via the Phase 3 retro workflow**, never ad-hoc.
+- Updates require Patrik's confirmation through a preference interview or post-trip retro; incidental remarks do not silently change standing principles.
 
 **Scope discipline (added in v2):** This document only contains principles Claude Code can actually apply in workflows. Personal-philosophy statements that aren't system-actionable were cut. See §10 (Deliberate omissions) and the QC log at §11 for what was removed and why.
 
@@ -137,6 +139,13 @@ Travel exists to produce experiences and memories that wouldn't be possible at h
 ---
 
 ## 4. Anti-overtourism & authenticity
+
+**September 2026 confirmed exception:** Avoiding popular places is a preference,
+not an absolute exclusion. Keep a popular town eligible when its exceptional
+hostel community and nearby adventures justify the crowds. This exception takes
+precedence over the destination exclusions in §4.1–4.2 and the non-touristic-base
+condition in §4.3 and Tension 3 below; it does not remove crowd mitigation for
+individual activities. Prefer smaller places and opportunities for local contact.
 
 Travel value is destroyed by mass tourism — crowds, queues, generic infrastructure, the experience of being one of thousands.
 
@@ -429,12 +438,13 @@ Note: AP-2 (Pack minimally) was reframed in v3 rather than cut. Packing recommen
 - **v1** — 2026-05-10. Initial document.
 - **v2** — 2026-05-10. Cut 5 personal-philosophy items not relevant to Claude Code. Tightened application rules in 3 principles. Added explicit QC framework and log.
 - **v3** — 2026-05-10. Reframed AP-2: packing recommendations are in scope for the system, so AP-2 now governs system behavior (don't default to minimalism in packing output) rather than being a marginal historical note.
-- Updates happen **only via the Phase 3 retro workflow** after a real trip.
+- Updates require Patrik's confirmation through a preference interview or post-trip retro.
 
 ### Changelog
 
 | Version | Date | Changes |
 | --- | --- | --- |
+| v4 | 2026-09-27 | Added the approved popular-town exception and its precedence over conflicting destination exclusions. Marked the refresh as partial and allowed confirmed interview updates. |
 | v1 | 2026-05-10 | Initial document. 18 principles, 9 categories. |
 | v2 | 2026-05-10 | QC pass. Cut companion-selection category, depletion override, redundant solo-default. Tightened application rules in §1.2, §4.1, §5.4. Added §11 QC log. 14 principles, 7 categories. |
 | v3 | 2026-05-10 | AP-2 reframed as system-behavior rule for packing recommendations rather than a marginal historical note. 14 principles, 7 categories. |

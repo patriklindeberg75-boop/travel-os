@@ -130,7 +130,18 @@ Summarize what is confirmed, changed, retired, or unresolved, then have Patrik
 confirm the interpretation before updating the profile and principles. Date and
 record attributable changes; do not convert unanswered questions into defaults.
 This requested refresh is part of reconciliation and need not wait for a post-trip
-retro. The interview is not yet conducted.
+retro. The interview is underway; it is not complete.
+
+Confirmed in the September 27 experiential interview: local encounters combined
+with social backpacker life; smaller towns and villages preferred over cities;
+nature, shared adventures, scenic journeys, and local food. Patrik approved keeping
+popular towns eligible when exceptional hostel community and nearby adventures
+justify the crowds; using social hostels as the usual base with occasional village
+stays for compelling local interaction; and prioritizing conversation, outings,
+and shared dinners with partying optional. These answers are recorded in profile
+v2 and principles v4. Work, budget, pace, physical limits, heat tolerance, and other
+unreviewed assumptions remain provisional; continue the interview before calling
+the profile refreshed.
 
 Check: revised profile and principles reflect confirmed interview answers,
 remaining uncertainty is explicit, and personalized planning uses the refreshed
