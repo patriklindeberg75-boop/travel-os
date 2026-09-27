@@ -17,7 +17,7 @@ A configured remote is not proof that local changes are pushed or cloud-accessib
 | Live travel research | Partial live test | Base comparison and reusable Morocco backpacking tips saved. [Hypothetical Marrakech planning check](checks/marrakech-planning/result.md) demonstrates a sourced three-day proposal and changed-location revision. Exact transport fares/last departures, dated accommodation, guide cost and actual forecast-based planning remain unverified. |
 | Media intake | One live YouTube summary test passed; Instagram testing skipped for now | Patrik skipped the Instagram check on September 27. Billy Martin caption summaries were saved and retrieved locally. Audio fidelity, full transcript delivery, Instagram and cloud acquisition remain unverified. |
 | Proposed travel skills | Candidates only | Qualify boundaries through real requests before packaging. Reflection remains later. |
-| Phone/cloud access | Next implementation check | Instagram testing was skipped at Patrik's request. Test durable save, fresh retrieval, correction and laptop-offline access. External setup or publication still needs authorization. |
+| Phone/cloud access | Deferred at Patrik's request | On September 27, Patrik postponed this check because he has no time for it. Resume durable save, fresh retrieval, correction and laptop-offline testing when requested. External setup or publication still needs authorization. |
 | Notes/calendar/collection connections | Not connected | Notes can be shared manually. Calendar is deferred. Collection import remains unverified. |
 
 No assistant service, scheduled task, hosting, or new external integration has been
