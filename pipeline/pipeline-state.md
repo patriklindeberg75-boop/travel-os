@@ -23,6 +23,14 @@ A configured remote is not proof that local changes are pushed or cloud-accessib
 No assistant service, scheduled task, hosting, or new external integration has been
 installed. Local authoring and checks do not establish adoption or mobile readiness.
 
+On 2026-09-27, the shared Research `playbooks/youtube-intelligence.md` gained a
+summary-only route matching the successful Billy Martin extraction. The installed
+media-transcriber skill resolves this live playbook, so no cached skill was edited.
+A before/after comparison confirmed only the added section changed, and a separate
+instruction review found no blocking contradiction. Full-transcript retention and
+its helper guard remain unchanged. This shared edit is local and uncommitted because
+the playbook was already untracked work; it has not been published or cloud-verified.
+
 The scratch scenarios used synthetic records in a temporary copy. Their outputs
 were read back, and no synthetic records entered the real library or trip folders.
 These checks do not prove fresh-conversation retrieval, live research, or phone
