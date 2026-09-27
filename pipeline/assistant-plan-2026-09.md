@@ -81,10 +81,16 @@ One Italy–Morocco trip folder is a reasonable initial implementation choice.
 - No new assistant runtime, library, or Italy–Morocco trip folder was found during
   the investigation. Existing unrelated untracked files must be preserved.
 
-## Proposed skills
+## Travel skills
 
-Added at Patrik's request. These are candidates to qualify against real requests,
-not implemented capabilities or a commitment to build five separate skills.
+Added at Patrik's request. On September 27, Patrik explicitly authorized building
+travel-library and trip-manager. Their repository-local implementations are at
+[travel-library](../.agents/skills/travel-library/SKILL.md) and
+[trip-manager](../.agents/skills/trip-manager/SKILL.md). Travel-research and
+travel-companion remain candidates to implement; travel-reflection remains later.
+Skill implementation does not establish media, Notes or cloud integrations.
+The first two skills passed structural validation and a bounded independent
+[behavior check](checks/travel-skills/verification.md).
 
 | Proposed skill | Example request | Purpose and responsibility |
 | --- | --- | --- |
@@ -96,7 +102,7 @@ not implemented capabilities or a commitment to build five separate skills.
 
 ### Proposed boundaries and qualification
 
-Establish shared trip and library records before qualifying the skill split.
+The shared trip and library records now support the first two skills.
 `trip-manager` owns updates to the repository's current trip record; the other
 skills consult that record and route trip changes through the same update rules,
 rather than maintaining competing plans. Apple Notes remains the working
@@ -168,7 +174,8 @@ Local implementation authorized after the preference interview. Shared instructi
 a dated trip brief, and library records are implemented. Local links, historical
 preservation, and six scratch-copy record scenarios passed. This completes the
 local foundation scope. Fresh-conversation retrieval remains to be checked during
-real use. No standalone skills or cloud integration are implied.
+real use. This foundation milestone alone did not include skills or cloud
+integration; the first two skills were added in the later authorized implementation.
 
 Reconcile CLAUDE.md, add Codex-facing AGENTS.md, and replace stale current-state
 guidance with pointers to this direction, preserving history. Keep the assistant
@@ -260,17 +267,18 @@ Official documentation inspected September 27, 2026:
 Media acquisition instructions were inspected through the installed
 media-transcriber skill and Research playbooks. No source acquisition, cloud
 runtime, authenticated collection import, phone workflow, or Notes integration
-has been tested in this session.
+had been tested at that initial investigation stage. See current progress for
+subsequent live YouTube, research and local planning evidence.
 
 ## Next action
 
 Phone/cloud testing is deferred at Patrik's September 27 request because he has no
 time for it. Instagram testing is also skipped for now. Resume either when requested.
 Local research, YouTube summary intake and hypothetical planning have bounded
-evidence. Further local library or assistant work can proceed under a separately
-agreed request without these integrations. No replacement implementation step has
-been selected. Actual forecast and dated travel checks remain necessary when real
-trip details are available. Deferral does not establish either integration's
+evidence. Patrik then authorized travel-library and trip-manager implementation.
+These are now repository-local skills; travel-research and travel-companion remain
+the next proposed skill work. Actual forecast and dated travel checks remain
+necessary when real trip details are available. Deferral does not establish either integration's
 capability or remove it from the longer-term ideas.
 The preference-refresh round is complete. Use the confirmed profile without
 reinstating retired rules. Ask only when a material scope or experience decision

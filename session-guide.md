@@ -3,6 +3,10 @@
 Open this repository in your agent and speak or type normally. You do not need
 slash commands, a trip theme, exact dates, or a dossier to begin.
 
+The repository-local [travel-library](.agents/skills/travel-library/SKILL.md) and
+[trip-manager](.agents/skills/trip-manager/SKILL.md) skills handle saved knowledge
+and trip records. You can also explicitly request `$travel-library` or `$trip-manager`.
+
 ## Save something worth remembering
 
 Send a note or link and say "Save this idea" or "Keep this travel tip".
@@ -39,6 +43,6 @@ management is outside the assistant's remit.
 ## Continue setup
 
 The [reconciliation plan](pipeline/assistant-plan-2026-09.md) owns remaining work.
-The preference interview and local record foundation are complete. Next exercise
-research and media intake on real sources and qualify the proposed skill boundaries.
-Phone/cloud testing is last. Do not assume local saves are available from your phone.
+The preference interview, local record foundation and first two skill implementations
+are complete. Travel-research and travel-companion remain unbuilt. Instagram and
+phone/cloud tests are deferred. Do not assume local saves are available from your phone.

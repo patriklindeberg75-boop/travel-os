@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trip Manager"
+  short_description: "Keep trip context and decisions up to date"
+  default_prompt: "Use $trip-manager to update my trip brief from these notes, keeping possibilities distinct from confirmed arrangements."

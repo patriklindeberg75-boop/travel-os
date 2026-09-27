@@ -1,0 +1,4 @@
+interface:
+  display_name: "Travel Library"
+  short_description: "Save and retrieve travel ideas and advice"
+  default_prompt: "Use $travel-library to save this travel idea with its source and useful insights."

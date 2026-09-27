@@ -22,9 +22,15 @@ research, trip updates, and flexible planning.
 
 ## Implementation status
 
-The local instructions, library, and trip records are established. The five proposed
-travel skills are not installed. Live research and media acquisition still need
-real-source trials. Phone/cloud verification comes last, as requested.
+The local instructions, library and trip records are established. Two repository-local
+skills are implemented:
+
+- [travel-library](.agents/skills/travel-library/SKILL.md) saves and retrieves ideas and advice.
+- [trip-manager](.agents/skills/trip-manager/SKILL.md) reconciles trip briefs and decisions.
+
+Travel-research and travel-companion are not yet built. Travel-reflection is deferred.
+Live research, YouTube summaries and hypothetical planning have bounded evidence.
+Instagram and phone/cloud testing are deferred at Patrik's request.
 Notes, calendar, and Instagram collection integrations are not connected.
 
 The [reconciliation plan](pipeline/assistant-plan-2026-09.md) records approved decisions
