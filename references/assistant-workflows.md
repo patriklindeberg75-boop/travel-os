@@ -98,6 +98,10 @@ reconcile the existing files before retrying so a correction is not logged twice
 
 ## Research a practical question
 
+For food discovery, restaurant evaluation or local ordering tips, apply the
+[food discovery playbook](food-discovery.md). Capture-only requests still use the
+library workflow above.
+
 Read relevant trip context and preferences. Ask for the location, date, or time
 constraint only if it changes the answer. Use the available browsing/research tools
 directly. There is no required external prompt handoff or dossier funnel.

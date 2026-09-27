@@ -20,7 +20,7 @@ A configured remote is not proof that local changes are pushed or cloud-accessib
 | Travel-research and travel-companion | Implemented as repository-local skills | Structural validation and seven supplied-evidence cases passed. [Verification and limits](checks/research-companion-skills/verification.md). Live research-backend execution and automatic selection are not established by these tests. Travel-reflection remains deferred. |
 | Phone/cloud access | Deferred at Patrik's request | On September 27, Patrik postponed this check because he has no time for it. Resume durable save, fresh retrieval, correction and laptop-offline testing when requested. External setup or publication still needs authorization. |
 | Notes/calendar/collection connections | Not connected | Notes can be shared manually. Calendar is deferred. Collection import remains unverified. |
-| Food discovery | Researched proposal, not active | [Food-discovery proposal](proposals/food-discovery/proposal.md) defines dish-first discovery, evidence and value checks, local food tips, and a conditional official Maps MCP pilot. Awaiting proposal decision; no integration installed. |
+| Food discovery | Markdown playbook available | [Food discovery playbook](../references/food-discovery.md) is linked from the research workflow. Covers dish-first discovery, evidence and value checks, and local food tips. Live Marrakech pilot and Maps integration remain untested; no connector installed. |
 
 No assistant service, scheduled task, hosting, or new external integration has been
 installed. Local authoring and checks do not establish adoption or mobile readiness.
