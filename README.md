@@ -1,25 +1,33 @@
 # Travel OS
 
-Patrik's personal travel assistant and canonical collection of travel ideas,
-research, and reusable advice. Apple Notes remains the working itinerary;
-calendar integration is deferred.
+Travel OS is Patrik's personal travel assistant and collection of travel ideas,
+research, and reusable advice. Apple Notes remains the working itinerary.
+The assistant operates through conversation using the records in this repository.
 
-## Current direction
+## Start here
 
-Start with [the September 2026 reconciliation plan](pipeline/assistant-plan-2026-09.md).
-It records the decisions approved in the September 27 conversation, the proposed
-implementation sequence, and the integration questions still to test.
+- [Session guide](session-guide.md) for everyday requests.
+- [Travel library](library/README.md) for ideas and reusable advice.
+- [Trips](trips/README.md) for current and historical trip records.
+- [Italy and Morocco](trips/italy-morocco-2026-10/trip-context.md) for the upcoming trip.
 
-The repository currently contains the earlier dossier workflows and the Balkans
-June 2026 trip. The assistant described in the new plan is **not yet implemented**.
-Earlier pipeline documents, session guides, and dossier-specific rules describe
-the previous design; they are not evidence that the new capabilities work.
+## Preferences and instructions
 
-## Existing material
+The September 2026 preference interview is complete.
+[Traveler profile](profile/universal-traveler-profile.md) and
+[travel principles](profile/travel-principles.md) govern personalized recommendations.
+[AGENTS.md](AGENTS.md) supplies the shared instructions for Codex and Claude Code.
+[Assistant workflows](references/assistant-workflows.md) define capture, retrieval,
+research, trip updates, and flexible planning.
 
-- [Traveler profile](profile/universal-traveler-profile.md)
-- [Travel principles](profile/travel-principles.md)
-- [Balkans trip](trips/balkans-2026-06/trip-context.md)
+## Implementation status
 
-The profile broadly remains relevant. The reconciliation plan identifies rules
-to update before operating the new assistant.
+The local instructions, library, and trip records are established. The five proposed
+travel skills are not installed. Live research and media acquisition still need
+real-source trials. Phone/cloud verification comes last, as requested.
+Notes, calendar, and Instagram collection integrations are not connected.
+
+The [reconciliation plan](pipeline/assistant-plan-2026-09.md) records approved decisions
+and remaining work. [Current progress](pipeline/pipeline-state.md) distinguishes
+local checks from unverified integrations. Earlier pipeline documents and Balkans
+dossier material remain historical records, not current assistant requirements.

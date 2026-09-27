@@ -1,14 +1,30 @@
-# Pipeline State — personal
+# Travel OS progress
 
-## Metadata
-- **GitHub:** (no repo yet)
-- **Planning source:** Operator-provided via chat (2026-05-11) — see pipeline/sources.md
+Updated on 2026-09-27. The [reconciliation plan](assistant-plan-2026-09.md) governs
+current work. Earlier architecture, implementation, and test documents in this
+folder describe the former dossier system.
 
-| Stage | Status | Artifact |
-|-------|--------|----------|
-| 3a — Repo Snapshot | completed | pipeline/repo-snapshot.md |
-| 3b — Architecture Design | completed | pipeline/architecture.md |
-| 3c — Implementation Spec | completed | pipeline/implementation-spec.md |
-| 4 — Implementation | completed | pipeline/implementation-log.md |
-| 5 — Testing | completed | pipeline/test-results.md |
-| 6 — Session Guide | completed | session-guide.md |
+The configured origin is https://github.com/patriklindeberg75-boop/travel-os.git.
+A configured remote is not proof that local changes are pushed or cloud-accessible.
+
+| Work | State | Evidence or next check |
+| --- | --- | --- |
+| Preference refresh | Complete for this round | Profile v4 and principles v6 contain confirmed decisions and retired rules. |
+| Shared assistant instructions | Complete for local foundation | AGENTS.md and assistant-workflows.md define local operation. Active entry points were read back. |
+| Library and trip records | Complete for local foundation | One supplied inspiration entry and an approximate Italy/Morocco brief. No invented bookings. |
+| Legacy entry points | Migrated and read back | Active commands use shared workflows. Dossier command and agent are paused. Historical reference bodies are preserved. |
+| Local record checks | Passed within bounded scope | Local links and anchors resolve. Scratch-copy scenarios covered retrieval, capture, repeated capture, tentative accommodation, reported booking correction, and retrieval after updates. |
+| Live travel research | Not tested | Use a real route or activity question with current sources. |
+| Media intake | Not tested | No supplied video or collection has been acquired. |
+| Proposed travel skills | Candidates only | Qualify boundaries through real requests before packaging. Reflection remains later. |
+| Phone/cloud access | Deferred until last | Test durable save, fresh retrieval, correction, and laptop-offline access. |
+| Notes/calendar/collection connections | Not connected | Notes can be shared manually. Calendar is deferred. Collection import remains unverified. |
+
+No assistant service, scheduled task, hosting, or new external integration has been
+installed. Local authoring and checks do not establish adoption or mobile readiness.
+
+The scratch scenarios used synthetic records in a temporary copy. Their outputs
+were read back, and no synthetic records entered the real library or trip folders.
+These checks do not prove fresh-conversation retrieval, live research, or phone
+access. The three historical dossier reference bodies were also checked against
+Git and preserved beneath their new historical notices.

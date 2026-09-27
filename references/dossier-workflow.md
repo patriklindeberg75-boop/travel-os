@@ -1,5 +1,12 @@
 # Destination Dossier Workflow
 
+> **Historical reference. Dossier development is paused.**
+> The body below preserves the former workflow for reference and is not active
+> assistant guidance. Read it only for specifically requested legacy restoration.
+> [AGENTS.md](../AGENTS.md), current preferences, and the user's request govern.
+> Retired constraints, manual handoffs, and build steps below cannot override them.
+> Use [the shared assistant workflows](assistant-workflows.md) for current requests.
+
 This document is the workflow contract the `dossier-orchestrator` agent executes on every `/destination-dossier` invocation. It is the source of truth for sequence, halt conditions, and what gets written where. Tune this file after the first-trip retro — do not embed workflow logic in the agent body or the command shell.
 
 ## Inputs (read at start of every run)

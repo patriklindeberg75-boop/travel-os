@@ -1,5 +1,12 @@
 # Destination Dossier — Output Template
 
+> **Historical reference. Dossier development is paused.**
+> The body below preserves the former workflow for reference and is not active
+> assistant guidance. Read it only for specifically requested legacy restoration.
+> [AGENTS.md](../AGENTS.md), current preferences, and the user's request govern.
+> Retired constraints, manual handoffs, and build steps below cannot override them.
+> Use [the shared assistant workflows](assistant-workflows.md) for current requests.
+
 This document specifies the structure of the destination dossier output. The `dossier-orchestrator` agent reads this at the format step. Tune section list and place-line format here — not in the agent.
 
 Per Decision 7 (operator-confirmed in `pipeline/decisions.md`), the dossier output contains NO grounding evidence block. Grounding data is logged to `logs/dossier-runs.md`. The output stays clean.

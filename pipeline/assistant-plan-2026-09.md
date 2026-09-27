@@ -1,8 +1,7 @@
 # Travel assistant reconciliation — September 2026
 
 Recorded: 2026-09-27. Source: Patrik's investigation and grilling conversation.
-Status: direction and operating preferences approved; implementation sequence
-below is a proposed plan, not evidence of completed setup or integration.
+Status: direction and operating preferences approved. The local foundation is implemented and its bounded record checks passed. See [current progress](pipeline-state.md) for verification and remaining integrations. Phone/cloud testing is last at Patrik's explicit request.
 
 ## Purpose and practical outcomes
 
@@ -17,8 +16,10 @@ Patrik decide, research, and prepare suggestions he can use there.
 3. Propose flexible plans for the next two or three days using current trip
    context, weather, opening days, holidays, transport, and any specific commitments Patrik supplies.
 
-Planning and decisions are documented. None of these operational outcomes has
-yet been demonstrated in this reconciliation.
+Local capture, retrieval, and trip corrections have been exercised in a temporary
+copy. A supplied inspiration entry is saved in the real library. Fresh-conversation
+retrieval, live research, short-horizon planning, media acquisition, and mobile use
+still need real-world verification.
 
 ## Agreed boundaries
 
@@ -55,11 +56,11 @@ in Italy, then perhaps three weeks in Morocco. These are approximate intentions,
 not confirmed bookings. This later statement replaces the original rough
 "in one week" timing for planning purposes.
 
-No arrival city, fixed route, booked transport, accommodation, exact end date,
+No arrival city, fixed route, booked transport, accommodation, or exact end date
 has been supplied. Do not manufacture these or request a work schedule.
 One Italy–Morocco trip folder is a reasonable initial implementation choice.
 
-## What exists and what needs reconciliation
+## Initial investigation findings, before foundation changes
 
 - Profile and principles are populated. They contain reusable personalization.
 - The implemented travel commands are destination-check, trip-init, and
@@ -159,6 +160,12 @@ versions. Structural setup and integration tests can proceed independently.
 
 ### 1. Establish usable repository instructions and memory
 
+Local implementation authorized after the preference interview. Shared instructions,
+a dated trip brief, and library records are implemented. Local links, historical
+preservation, and six scratch-copy record scenarios passed. This completes the
+local foundation scope. Fresh-conversation retrieval remains to be checked during
+real use. No standalone skills or cloud integration are implied.
+
 Reconcile CLAUDE.md, add Codex-facing AGENTS.md, and replace stale current-state
 guidance with pointers to this direction, preserving history. Keep the assistant
 usable through ordinary conversation rather than requiring slash commands.
@@ -177,23 +184,7 @@ Check: save a supplied idea, retrieve it from a fresh conversation, and distingu
 it from a booking or approved itinerary. Verify that old dossier instructions no
 longer govern ordinary assistant requests.
 
-### 2. Prove phone access and durable saving while the laptop is offline
-
-Test Codex Cloud with this repository as a candidate execution environment.
-Verify research access, reading the current branch, and how approved new knowledge
-becomes available to a later task. A cloud-task diff alone is not canonical memory.
-Do not require Patrik to manage Git for every saved idea.
-
-Test dictated input and written results on the actual phone. Separately test live
-voice retrieval, fresh research, and saving; preserve the accepted fallback if
-the complete voice route is unavailable. Do not build a custom service merely
-to assume this gap away. External account setup and publication are not implied
-by this plan.
-
-Check: with the laptop offline, capture an idea and retrieve it in a subsequent
-phone interaction. Report any manual save/review step before adopting the route.
-
-### 3. Add research and short-horizon planning
+### 2. Add research and short-horizon planning
 
 Give the assistant a repository-native research workflow for destinations,
 transport, and activity feasibility, using available research tools. Replace the
@@ -214,7 +205,7 @@ they materially affect the answer.
 Check: research one real Italy or Morocco route and propose a short plan using
 Patrik's supplied context; revise it after a changed location or weather forecast.
 
-### 4. Add media intake and reusable learning
+### 3. Add media intake and reusable learning
 
 Reuse the installed media-transcriber skill and its existing Axcíon Research
 helpers; do not copy or create a competing acquisition backend. Verify actual
@@ -233,6 +224,22 @@ text. Authentication scope and inaccessible items need explicit handling.
 Check: extract useful ideas from real supplied sources, recover their provenance,
 and keep partial acquisition visibly partial. Save links even when extraction
 must wait. Basic library capture need not wait for bulk import.
+
+### 4. Prove phone access and durable saving while the laptop is offline
+
+Test Codex Cloud with this repository as a candidate execution environment.
+Verify research access, reading the current branch, and how approved new knowledge
+becomes available to a later task. A cloud-task diff alone is not canonical memory.
+Do not require Patrik to manage Git for every saved idea.
+
+Test dictated input and written results on the actual phone. Separately test live
+voice retrieval, fresh research, and saving; preserve the accepted fallback if
+the complete voice route is unavailable. Do not build a custom service merely
+to assume this gap away. External account setup and publication are not implied
+by this plan.
+
+Check: with the laptop offline, capture an idea and retrieve it in a subsequent
+phone interaction. Report any manual save/review step before adopting the route.
 
 ## Integration evidence and remaining limits
 
@@ -253,11 +260,10 @@ has been tested in this session.
 
 ## Next action
 
-The preference-refresh round is complete (profile v4, principles v6). Next prove
-the phone capture/retrieval/update path with the laptop offline before committing
-to a cloud foundation; repository instruction reconciliation and basic library/trip
-memory can proceed alongside that test. Personalized recommendations use the
-confirmed profile and must not reinstate retired rules.
-Resolve infrastructure limits through tests;
-ask Patrik only when a discovered limit requires a meaningful scope, cost, or
-experience decision. Use Italy–Morocco as the first practical trial.
+Exercise practical research, media intake, and the proposed skill boundaries on
+real requests using the completed local foundation.
+Run the phone/cloud save, retrieval, and update test last. This order follows
+Patrik's explicit correction and replaces the earlier early-cloud-test proposal.
+The preference-refresh round is complete. Use the confirmed profile without
+reinstating retired rules. Ask only when a material scope or experience decision
+cannot be resolved through authorized local work.
