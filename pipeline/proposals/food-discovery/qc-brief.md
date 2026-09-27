@@ -1,0 +1,1 @@
+Then, do a qc pass on this proposal. does it make sense? check what professional food bloggers process looks like, how they find good local food spots while traveling. There has to be some best principles to follow. Let's try to refine our approach

@@ -1,0 +1,220 @@
+{
+  "route": "R2",
+  "classification": {
+    "input": {
+      "output": "memo",
+      "use": "internal",
+      "scope": "single_deliverable",
+      "consequence": "ordinary",
+      "thesis_grade": false
+    },
+    "result": {
+      "floor": "R2",
+      "override": "none",
+      "reasons": [
+        "claim-bearing memo"
+      ],
+      "route": "R2",
+      "transition": "initial"
+    }
+  },
+  "consequential": false,
+  "frame": {
+    "brief_alignment": {
+      "status": "aligned",
+      "reason": "New focused QC investigation into professional food-discovery methods, with authorized refinement of local playbook; not a connector refresh."
+    },
+    "objectives": [
+      {
+        "id": "qc",
+        "question": "How do experienced food writers discover and judge local food, and which practices should refine this playbook?",
+        "decision_use": "Refine the food-discovery playbook from attributable practitioner methods.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Several firsthand descriptions from food professionals, including discovery and judgment, contrasted with current playbook.",
+          "minimum_source_class": "Practitioner-authored accounts, interviews with identifiable food writers, or professional editorial standards.",
+          "change_condition": "Evidence favors flexible on-the-ground discovery or taste calibration over rigid remote corroboration."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public evidence and permitted owner records support a bounded proposal. No claim to guarantee taste or prove a universally best method."
+        }
+      }
+    ]
+  },
+  "delivery": {
+    "requesting_owner": "Patrik / Travel OS",
+    "brief_source": "pipeline/proposals/food-discovery/qc-brief.md",
+    "brief_sha256": "03f8acbf71bd05d665ad39873520317c2b1cbae3e243dd731dfe4dc3dfbc4529",
+    "execution_repository": "/Users/patrik.lindeberg/Claude Code/personal/travel-os",
+    "deliverable_path": "pipeline/proposals/food-discovery/qc.md",
+    "contract_record_path": "pipeline/proposals/food-discovery/qc-record.json",
+    "receiving_owner": "Patrik / Travel OS",
+    "return_target": "references/food-discovery.md",
+    "state": "delivered",
+    "evidence": "QC memo and record saved, current playbook refined and linked to QC. Original proposal retained."
+  },
+  "claims": [
+    {
+      "id": "dyukova",
+      "claim": "Dyukova starts with expert sources, studies cuisine, records dishes and maps alternatives; also uses personal rating cutoffs and detailed schedules.",
+      "source": "https://thatswhatshehad.substack.com/p/how-i-find-good-food-anywhere",
+      "locator": "My Best Practices and My Step-by-Step Process",
+      "source_date": "2026-01-23",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "wiens",
+      "claim": "Wiens describes local blogs, local-language reviews, walking and recommendations from local contacts.",
+      "source": "https://migrationology.com/faqs/",
+      "locator": "How do you decide which restaurants and street food vendors to eat from?",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "eckhardt",
+      "claim": "Eckhardt describes speaking Turkish and meeting cooks through conversations in markets, villages and eating places.",
+      "source": "https://www.onceuponatiffin.com/post/2017/11/29/a-roving-appetite-an-interview-with-robyn-eckhardt",
+      "locator": "Question: How did you go about finding people to talk to?",
+      "source_date": "2017-11-29",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "critics",
+      "claim": "Kramer and Sutton describe local networks, repeat visits, anonymity and editorial selection.",
+      "source": "https://www.eater.com/2019/8/23/20828032/restaurant-critics-reviews-food-secrets",
+      "locator": "Picking restaurants is a process; transcript paragraphs on networks, omitted visits and anonymity",
+      "source_date": "2019-08-23",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "anconitano",
+      "claim": "Anconitano describes Maps-first discovery, recent reviews, resident recommendations and walking; uses personal rating cutoffs and broad local-crowd claims.",
+      "source": "https://thefoodellers.com/tips/how-to-find-restaurants-when-traveling/",
+      "locator": "Google Maps Explore; Ask a Local; Get Lost; Follow the lines",
+      "source_date": "2025-10-02",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "prior",
+      "claim": "The prior playbook specified roughly six candidates, a three-to-six-month review target and independent corroboration for a strong recommendation.",
+      "source": "references/food-discovery.md",
+      "locator": "Historical commit f133e8d, sections 3 and 4; current file has superseded these instructions",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "refinement",
+      "claim": "Replace arbitrary quotas with proportionate investigation; add source fit, food-specific detail, optional on-arrival exploration and feedback tied to actual meals.",
+      "source": "pipeline/proposals/food-discovery/qc.md",
+      "locator": "Findings and repairs",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "PROXY-SUPPORTED",
+      "strength": "proxy",
+      "status": "inference",
+      "basis_claim_ids": [
+        "dyukova",
+        "wiens",
+        "eckhardt",
+        "critics",
+        "anconitano",
+        "prior"
+      ]
+    }
+  ],
+  "question": "How do experienced food writers discover and judge local food, and which practices should refine this playbook?",
+  "memo": "pipeline/proposals/food-discovery/qc.md",
+  "strongest_countercase": "Practitioners disagree on expert-first versus Maps-first discovery. More food research may worsen an urgent meal decision. Keep flexible effort and optional exploration.",
+  "unknowns": [
+    "No controlled comparison establishes best principles or validates the revised process.",
+    "No live Marrakech recommendation, meal outcome, or agent behavior test was run.",
+    "Prior Maps facts were not refreshed in this QC."
+  ],
+  "axcion_implications": [],
+  "citation_exceptions": [],
+  "objective_assessments": [
+    {
+      "objective_id": "qc",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "dyukova",
+        "wiens",
+        "eckhardt",
+        "critics",
+        "anconitano",
+        "prior",
+        "refinement"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Firsthand practitioner methods support bounded refinements; disagreement and non-transferable professional resources are explicit."
+    }
+  ],
+  "sufficiency": {
+    "verdict": "sufficient-with-ceiling",
+    "permission_ceiling": "PROXY-SUPPORTED",
+    "reason": "Attributions are supported; refinements are design judgments awaiting use."
+  },
+  "research_loop": [
+    {
+      "objective_id": "qc",
+      "current_coverage": "Original playbook inspected; R2 preflight passed",
+      "highest_materiality_gap": "Concrete practitioner discovery and judgment processes",
+      "action": {
+        "kind": "retrieval",
+        "target": "Food blogger methods and interviews",
+        "summary": "Read firsthand methods from bloggers and food writers."
+      },
+      "result": "Found expert-first and Maps-first approaches, local networks, dish detail and walking.",
+      "effect": "Discovery needs a stronger role alongside remote verification.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "qc",
+      "current_coverage": "Multiple attributable practitioner methods",
+      "highest_materiality_gap": "Which tactics should not transfer to this traveler",
+      "action": {
+        "kind": "contradiction_reconciliation",
+        "target": "Rating thresholds, candidate quotas, source counts, schedules and professional tasting practices",
+        "summary": "Compare conflicting tactics and refine the owner playbook proportionately."
+      },
+      "result": "Removed arbitrary quotas; added source fit, optional exploration and scoped feedback while retaining claim checks.",
+      "effect": "Deliver a refined playbook with explicit limits. Actual use is the next informative test.",
+      "decision": "stop"
+    }
+  ],
+  "stopping_record": {
+    "objective_id": "qc",
+    "highest_materiality_gap": "Which tactics should not transfer to this traveler",
+    "last_action": "Compare conflicting tactics and refine the owner playbook proportionately.",
+    "effect": "Deliver a refined playbook with explicit limits. Actual use is the next informative test.",
+    "decision": "stop",
+    "reason": "More generic advice is unlikely to alter these repairs; real use is needed to establish utility."
+  },
+  "registration": {
+    "state": "not-attempted",
+    "reason": "Prior cross-repository registration rejection remains applicable; no new authorization. Evidence stays in Travel OS."
+  }
+}

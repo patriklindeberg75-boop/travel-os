@@ -5,16 +5,33 @@ local ordering practices. Start with dishes and experiences, then find places wi
 specific evidence for them. Popularity, obscurity and star ratings alone do not
 establish quality or value.
 
-Maintained in Travel OS. Created 2026-09-27 from the
+Maintained in Travel OS. Refined after a practitioner-method QC pass on 2026-09-27.
+Based on the
 [researched proposal](../pipeline/proposals/food-discovery/proposal.md).
 This is operational guidance, not a validated predictor of meal quality. A live
-Marrakech pilot and Maps integration remain untested.
+Marrakech pilot and Maps integration remain untested. See the
+[QC findings and changes](../pipeline/proposals/food-discovery/qc.md).
 
 Use it through [travel-research](../.agents/skills/travel-research/SKILL.md) and the
 installed research-workflow-v2. The shared research method governs evidence and
 release; [assistant workflows](assistant-workflows.md) govern saved records.
 A request to save a food link alone belongs to travel-library and does not trigger
 restaurant research. A recommendation remains a suggestion, not a booking.
+
+## Principles
+
+- Find people who know the food, then follow specific dishes and preparations.
+  A writer's fame or a review count is weaker than relevant firsthand detail.
+- Match the recommendation to Patrik's taste, budget and current situation.
+  Expertise and personal fit are separate judgments.
+- Combine advance research with optional discovery on foot. Leave room for an
+  unexpected stall, bakery or conversation to change the choice.
+- Recommend a dish at a place, under stated conditions. One praised dish does not
+  establish that the whole menu is good or consistently available.
+- Scale verification to the commitment. A nearby inexpensive snack needs less
+  investigation than a long detour or an expensive dinner.
+- Describe evidence and uncertainty honestly. The assistant cannot taste food;
+  firsthand meal observations belong to their actual author or to Patrik.
 
 ## Workflow
 
@@ -36,12 +53,29 @@ Classify through the installed research-workflow-v2. A narrow fact check may qua
 for R1; a saved comparative memo usually needs R2. This playbook adds food questions
 to that method without replacing its evidence, preflight or release requirements.
 
-### 2. Learn what to look for before choosing where to eat
+### 2. Find knowledgeable sources and learn what to order
+
+Find a few relevant sources before expanding the restaurant list. Prefer named
+writers with repeated experience of the city or cuisine, clear visit descriptions
+and useful dish-level detail. Check whether the meal was ordinary paid dining,
+a hosted visit or unclear. Hosting does not erase observations, but special
+access may not represent what Patrik can buy. Publication prestige alone is not
+proof of a visit, independence or matching taste.
+
+Use previously reported meals to calibrate a source when such feedback exists.
+Do not invent a track record. A reliable fine-dining critic may still be a poor
+match for a cheap market lunch. Treat an all-positive list as potentially curated;
+lack of negative posts alone does not prove dishonesty.
 
 Build a small food brief from local food writers, cooks, regional guides and venue
 menus. Identify dishes, local spellings, ingredients, usual eating occasions and
 which preparations or specialties the sources praise. Separate documented local
 practice from a writer's preference. Explain unfamiliar dishes in plain language.
+Record what the source thinks makes a good version, such as a stated texture,
+cooking technique or preparation to order. Attribute these judgments and allow
+regional variations. Photos may show a dish or price; they cannot establish taste.
+Include everyday meals, bakeries, snacks and markets. Local food can also include
+migrant and contemporary cooking; it need not be an old national signature dish.
 
 For a Marrakech run, start with a verified dish vocabulary and search combinations
 of dish, neighborhood and city in English, French and Arabic where useful. Verify
@@ -65,14 +99,19 @@ Use several kinds of lead rather than several copies of one list:
 - Maps or another directory for nearby alternatives and exact location.
 - Patrik's saved sources, recommendations from people and reported discoveries.
 
-For a researched shortlist, start with roughly six candidates and inspect the
-best three or four. This is a starting effort limit, not a quota or statistical
-sample. Broaden only if the usable choices do not meet the request. Include a
+Begin with the strongest leads near the places Patrik expects to visit. Group
+options geographically and keep a convenient fallback. Expand the search only
+when the available choices do not meet the request or a special meal warrants it.
+There is no required candidate count or fixed review threshold. Include a
 less-obvious option when there is a real lead; never fill a "hidden gem" slot with
 a random low-review business. Keep famous options eligible.
 
 When Patrik wants help asking locally, suggest a precise question such as
 "Where did you last eat this dish, what did you order, and what did you pay?"
+Ask food workers or knowledgeable residents about their own experience rather
+than assuming every resident is a food expert. Useful follow-ups include what
+makes that version good, when the dish is served and which nearby alternative
+they would choose. Follow a promising recommendation to its specific reason.
 Keep recommendations from staff or guides attributed and note known commercial
 ties. Do not contact anyone on his behalf without authorization.
 
@@ -91,17 +130,21 @@ For each place, record one compact evidence note:
 | Counterevidence | Recent concrete complaints, contrary experiences, closures or changes. Separate food complaints from dislike of decor or queues. |
 | Coverage | Which reviews/pages were actually accessible, their dates and selection method. An API-selected sample is not a chronological review audit. |
 
-Prefer recent evidence for prices and operations. Seek the last three to six months
-of diner evidence when available, but do not impose a universal expiry on food
-writing. Older accounts can establish a lead; new ownership or repeated recent
+Check prices and operations for the intended visit. Read recent diner evidence
+when available, particularly after a change of ownership, menu or service.
+Do not impose a universal three- or six-month expiry on food writing. Older
+accounts can establish a lead; new ownership or repeated recent
 complaints can overturn it. Review what is actually available rather than claiming
 a fixed number of reviews was checked.
 
-For a strong recommendation, seek both a specific credible food account and
-corroboration from a different origin, plus enough current logistics to act.
+Weight the quality and relevance of an account before counting sources. A detailed
+firsthand recommendation from a knowledgeable source may justify trying a nearby,
+inexpensive meal. Label a single-source basis. Seek independent corroboration when
+a costly detour, conflicting accounts or a stronger claim makes it useful.
 A restaurant's menu can corroborate a dish and price, but cannot independently
-prove taste. If coverage is sparse, keep a good lead as "promising, lightly
-documented" instead of discarding it or inventing support.
+prove taste. Sparse coverage is uncertainty, not evidence of poor food. Keep a
+promising lead available without calling it proven or demanding that others have
+already discovered it.
 
 ### 5. Challenge hype and judge value
 
@@ -121,7 +164,26 @@ counts and distant locations do not prove a gem. Do not infer customers' residen
 or ethnicity from photographs. Treat unusual review patterns as uncertainty,
 not an automated fake-review verdict.
 
-### 6. Recommend briefly and stop
+### 6. Leave room to discover and decide on arrival
+
+When Patrik wants to explore, offer a bounded food area or market visit with a
+known fallback instead of insisting on a named winner. Research useful serving
+times where possible. Participation is optional; do not assign him a research
+chore or promise access to kitchens or homes.
+
+Using what Patrik reports or shares, help him assess what is being prepared,
+which dishes people are ordering, the visible menu and prices, and the apparent
+wait. Ask what the kitchen is known for or what is good today. Staff suggestions
+are leads, not independent validation. Confirm portion and price before ordering.
+A queue may reflect several things; neither a queue nor an empty room at an odd
+hour decides quality. Never claim to see or smell a place remotely.
+
+If appropriate, start with a small order and choose more after tasting. Patrik
+can prefer a spontaneous, lightly documented option or leave when the price or
+experience does not fit. These observations do not certify hygiene or resolve
+an allergy question.
+
+### 7. Recommend briefly and stop
 
 Give one first choice and at most two useful alternatives. Compare food fit,
 value, experience and journey effort in words, not an uncalibrated numerical score.
@@ -144,7 +206,7 @@ had a contrary-evidence check, and another feasible search is unlikely to change
 the choice. An unresolved gap can produce a conditional recommendation; do not
 hide it to satisfy the output shape. Recheck volatile facts on the intended day.
 
-### 7. Retain useful knowledge and learn from actual meals
+### 8. Retain useful knowledge and learn from actual meals
 
 Follow the existing [record workflows](assistant-workflows.md).
 Store reusable cuisine and ordering advice in the library. Keep a coherent city
@@ -153,6 +215,10 @@ Put date-specific trip research under that trip and link shared knowledge.
 
 Preserve suggested, researched and personally tried as distinct states. When
 Patrik reports a meal, save the dish, paid price, date and what worked or failed.
+Separate food execution, personal taste, service, value and company or atmosphere.
+If known, retain which source led there so later advice can use actual feedback.
+Do not infer consistency from one visit or transfer one dish's success to a whole
+menu.
 One poor dinner can update that venue's note without changing his standing
 preferences. This uses existing capture behavior; travel-reflection remains
 deferred. Do not initiate an automatic post-meal questionnaire.
