@@ -1,0 +1,311 @@
+{
+  "route": "R2",
+  "classification": {
+    "input": {
+      "output": "memo",
+      "use": "internal",
+      "scope": "single_deliverable",
+      "consequence": "ordinary",
+      "thesis_grade": false
+    },
+    "result": {
+      "floor": "R2",
+      "override": "none",
+      "reasons": [
+        "claim-bearing memo"
+      ],
+      "route": "R2",
+      "transition": "initial"
+    }
+  },
+  "consequential": false,
+  "frame": {
+    "brief_alignment": {
+      "status": "aligned",
+      "reason": "Find affordable Marrakech food suggestions and test the approved playbook. No visit date or neighborhood specified; no claim of availability now."
+    },
+    "objectives": [
+      {
+        "id": "food",
+        "question": "Which Marrakech food spots and dishes are worthwhile for Patrik, given local-food interests and an approximately EUR40 total daily budget?",
+        "decision_use": "Choose a small useful food shortlist, with costs and evidence limits.",
+        "required": true,
+        "evidence_set_point": {
+          "minimum_evidence": "Attributable dish-specific accounts, location evidence and accessible cost/operational evidence, plus counter-search.",
+          "minimum_source_class": "Firsthand food writing and venue menus; directory reviews as attributed secondary evidence.",
+          "change_condition": "Concrete value or quality problems overturn an otherwise promising recommendation."
+        },
+        "researchability": {
+          "disposition": "proceed",
+          "reason": "Public sources support conditional suggestions, not guaranteed taste or future service."
+        }
+      }
+    ]
+  },
+  "delivery": {
+    "requesting_owner": "Patrik / Travel OS",
+    "brief_source": "library/ideas/marrakech-food-brief.md",
+    "brief_sha256": "ba317be17f4bcbc3917bb9d0322d6e8a82147d4eba61a3fe0b357a0809c34b3f",
+    "execution_repository": "/Users/patrik.lindeberg/Claude Code/personal/travel-os",
+    "deliverable_path": "library/ideas/marrakech-food.md",
+    "contract_record_path": "library/ideas/marrakech-food-record.json",
+    "receiving_owner": "Patrik / Travel OS",
+    "return_target": "library/README.md",
+    "state": "delivered",
+    "evidence": "Shortlist and record saved, linked from library index and playbook trial note."
+  },
+  "claims": [
+    {
+      "id": "elle-writer",
+      "claim": "Leroy recommends Chez Elle rfissa and seffa from repeated visits.",
+      "source": "https://www.lespetitesjambes.com/maroc/restaurant-traditionnel-marrakech/",
+      "locator": "Chez Elle section; byline and commercial links",
+      "source_date": "2024-08-17",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "elle-menu",
+      "claim": "Glovo lists rfissa and seffa at 60 MAD each.",
+      "source": "https://glovoapp.com/en/ma/marrakech/stores/chez-elle-snack",
+      "locator": "Plats",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "elle-location",
+      "claim": "Directory lists 19 Bd Allal Al Fassi and selected positive diner accounts.",
+      "source": "https://restaurantguru.com/Chez-elle-snack-Marrakesh",
+      "locator": "Address and visible reviews",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "amal-ops",
+      "claim": "Amal publishes lunch hours, Friday couscous and its training purpose.",
+      "source": "https://amalnonprofit.org/gueliz.html",
+      "locator": "Opening hours, address, Friday booking guidance",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "amal-menu",
+      "claim": "Official PDF prices Friday couscous at 95 MAD in English and French.",
+      "source": "https://amalnonprofit.org/gueliz-menu.pdf",
+      "locator": "Pages 3 and 7, Friday item",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "amal-diners",
+      "claim": "Visible diner accounts praise couscous; an older report quotes 70 MAD.",
+      "source": "https://www.tripadvisor.com/Restaurant_Review-g293734-d4209997-Reviews-Amal-Marrakech_Marrakech_Safi.html",
+      "locator": "Visible couscous review dated 2023-09-20 and later diner accounts",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "bej-menu",
+      "claim": "JBUJB lists 250 g skewers and chops at 50 MAD each.",
+      "source": "https://jbujb.ma/en/business/restaurant-chez-bejgueni-540",
+      "locator": "Menu",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "bej-reviews",
+      "claim": "Tripadvisor lists no.21; visible 2025 reviews disagree on food quality and value.",
+      "source": "https://www.tripadvisor.fr/Restaurant_Review-g293734-d19030816-Reviews-Chez_Bejgueni-Marrakech_Marrakech_Safi.html",
+      "locator": "Address; January and July 2025 accounts",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "bej-address-conflict",
+      "claim": "Wanderlog instead lists no.10 on the same street.",
+      "source": "https://wanderlog.com/fr/place/details/1524198",
+      "locator": "Address",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "lamine-positive",
+      "claim": "A firsthand 2023 account praises medina lamb dishes.",
+      "source": "https://thatbestbite.com/2023/01/04/lamb-tagia-and-mechoui-at-chez-lamine/",
+      "locator": "Dinner and return lunch descriptions",
+      "source_date": "2023-01-04",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "lamine-counter",
+      "claim": "Kien withdrew his Lamine recommendation after a 2025 visit and reports unwanted extras elsewhere in the square.",
+      "source": "https://whereandwander.com/jemaa-el-fna-best-place-mechoui-alley/",
+      "locator": "Chez Lamine; Order directly from the menu; last visit and update dates",
+      "source_date": "2026-08-19",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "lamine-reviews",
+      "claim": "Selected medina reviews include toughness and bone-heavy portion complaints as well as praise.",
+      "source": "https://wanderlog.com/fr/place/details/1235436/chez-lamine-hadj-mustapha-jemaa-el-fna",
+      "locator": "Visible Ilham J review dated 2025-10-28 and surrounding accounts",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "amal-old-price",
+      "claim": "Petit Fute still quotes 70 DH for Friday couscous.",
+      "source": "https://www.petitfute.com/v48159-marrakech/c1165-restaurants/c1031-cuisines-du-monde/1528565-restaurant-de-l-association-amal.html",
+      "locator": "Practical information",
+      "source_date": "undated",
+      "retrieval_date": "2026-09-27",
+      "permission": "SUPPORTED",
+      "strength": "direct",
+      "status": "evidence"
+    },
+    {
+      "id": "choice",
+      "claim": "Start with Chez Elle; Amal and Bejgueni are alternatives with distinct evidence limits. Deprioritize Lamine medina.",
+      "source": "library/ideas/marrakech-food.md",
+      "locator": "Recommendations and hype check",
+      "source_date": "2026-09-27",
+      "retrieval_date": "2026-09-27",
+      "permission": "PROXY-SUPPORTED",
+      "strength": "proxy",
+      "status": "inference",
+      "basis_claim_ids": [
+        "elle-writer",
+        "elle-menu",
+        "elle-location",
+        "amal-ops",
+        "amal-menu",
+        "amal-diners",
+        "bej-menu",
+        "bej-reviews",
+        "bej-address-conflict",
+        "lamine-positive",
+        "lamine-counter",
+        "lamine-reviews",
+        "amal-old-price"
+      ]
+    }
+  ],
+  "question": "Which Marrakech food spots and dishes are worthwhile for Patrik, given local-food interests and an approximately EUR40 total daily budget?",
+  "memo": "library/ideas/marrakech-food.md",
+  "strongest_countercase": "Taste is subjective; Chez Elle dish-specific evidence is largely one writer, Bejgueni has contrary diner evidence, and travel distance may outweigh any advantage.",
+  "unknowns": [
+    "Diet, neighbourhood and intended meal date unknown.",
+    "No full meal bills or current dine-in quotes for Chez Elle and Bejgueni; no guarantee of availability.",
+    "Selected public reviews only; no tasting or full Maps review access."
+  ],
+  "axcion_implications": [],
+  "citation_exceptions": [],
+  "objective_assessments": [
+    {
+      "objective_id": "food",
+      "coverage": "full",
+      "conclusion_status": "inference",
+      "claim_ids": [
+        "elle-writer",
+        "elle-menu",
+        "elle-location",
+        "amal-ops",
+        "amal-menu",
+        "amal-diners",
+        "bej-menu",
+        "bej-reviews",
+        "bej-address-conflict",
+        "lamine-positive",
+        "lamine-counter",
+        "lamine-reviews",
+        "amal-old-price",
+        "choice"
+      ],
+      "material_gaps": [
+        "none material"
+      ],
+      "scope_change": "none",
+      "reason": "Enough for conditional advance suggestions; limits remain material only to a meal-specific operational decision, which was not requested."
+    }
+  ],
+  "sufficiency": {
+    "verdict": "sufficient-with-ceiling",
+    "permission_ceiling": "PROXY-SUPPORTED",
+    "reason": "Attributions and posted prices supported; personal-fit recommendations are judgments, not tasted outcomes."
+  },
+  "research_loop": [
+    {
+      "objective_id": "food",
+      "current_coverage": "Playbook and preferences read; R2 preflight passed.",
+      "highest_materiality_gap": "Dish-level leads and useful price evidence",
+      "action": {
+        "kind": "retrieval",
+        "target": "Food writers, venue and menu pages",
+        "summary": "Find specific dish recommendations and identify locations."
+      },
+      "result": "Found Chez Elle, Amal, Bejgueni and Lamine leads.",
+      "effect": "Check price and quality conflicts before selecting.",
+      "decision": "continue"
+    },
+    {
+      "objective_id": "food",
+      "current_coverage": "Dish leads, official menu and selected reviews available.",
+      "highest_materiality_gap": "Stale prices and contrary meal experiences",
+      "action": {
+        "kind": "contradiction_reconciliation",
+        "target": "Amal price and Lamine/Bejgueni quality accounts",
+        "summary": "Compare original menus with older quotes and read contrary firsthand accounts."
+      },
+      "result": "Amal now posts 95 MAD; removed Lamine from preferred three; kept Bejgueni conditional.",
+      "effect": "Deliver three advance suggestions with costs and limits; stop until meal context changes.",
+      "decision": "stop"
+    }
+  ],
+  "stopping_record": {
+    "objective_id": "food",
+    "highest_materiality_gap": "Stale prices and contrary meal experiences",
+    "effect": "Deliver three advance suggestions with costs and limits; stop until meal context changes.",
+    "decision": "stop",
+    "last_action": "Compare original menus with older quotes and read contrary firsthand accounts.",
+    "reason": "Further broad searches unlikely to improve this shortlist; neighbourhood, date, diet or actual meal feedback would change the next check."
+  },
+  "registration": {
+    "state": "not-attempted",
+    "reason": "Prior separate-repository registration rejection remains applicable. No new authorization; records stay in Travel OS."
+  }
+}

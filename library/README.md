@@ -6,6 +6,9 @@ follow [the assistant workflow](../references/assistant-workflows.md).
 
 ## Ideas
 
+- [Marrakech food shortlist](ideas/marrakech-food.md). Dish-led options at Chez Elle,
+  Amal and Chez Bejgueni, with dated prices and contrary evidence. Researched September 27, 2026.
+
 - [Morocco inspiration from Billy Martin](ideas/morocco-billy-martin.md). Caption-based ideas for family stays,
   scenic journeys, and local encounters, plus description-based destination leads.
 - [Shared outdoor adventures](ideas/shared-outdoor-adventures.md). Volcano hikes and

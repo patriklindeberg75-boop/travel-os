@@ -8,8 +8,9 @@ establish quality or value.
 Maintained in Travel OS. Refined after a practitioner-method QC pass on 2026-09-27.
 Based on the
 [researched proposal](../pipeline/proposals/food-discovery/proposal.md).
-This is operational guidance, not a validated predictor of meal quality. A live
-Marrakech pilot and Maps integration remain untested. See the
+This is operational guidance, not a validated predictor of meal quality. A first
+[Marrakech desktop research trial](../library/ideas/marrakech-food.md) ran on 2026-09-27.
+Meal quality, phone/cloud use and Maps integration remain unverified. See the
 [QC findings and changes](../pipeline/proposals/food-discovery/qc.md).
 
 Use it through [travel-research](../.agents/skills/travel-research/SKILL.md) and the
