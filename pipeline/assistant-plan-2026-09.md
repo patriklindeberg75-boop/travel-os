@@ -3,6 +3,12 @@
 Recorded: 2026-09-27. Source: Patrik's investigation and grilling conversation.
 Status: direction and operating preferences approved. The local foundation is implemented and its bounded record checks passed. See [current progress](pipeline-state.md) for verification and remaining integrations. Phone/cloud testing is last at Patrik's explicit request.
 
+October 7 update: [approved travel-project defaults](decisions.md#2026-10-07--travel-project-and-sparring-defaults)
+extend this plan. Today/tomorrow is now the planning default, with a loose view of
+the following two or three days. [ChatGPT Project preparation](../references/chatgpt-project-setup.md)
+is saved locally; exact plan-source selection and target-project retrieval/saving
+remain open. Apple Notes remains the working itinerary until a replacement is designated.
+
 ## Purpose and practical outcomes
 
 Make this repository a useful personal travel assistant and a canonical home for

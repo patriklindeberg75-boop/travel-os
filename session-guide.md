@@ -38,9 +38,17 @@ Ask a concrete question, such as "How can I reach this village tomorrow?" Supply
 an origin and date when needed. The assistant uses available research tools and
 records sources, checked dates, and consequential uncertainty.
 
-For planning, share your location and relevant commitments, then ask for the next
-two or three days. The result stays a proposal until you choose it. Work-hour
+For planning, share your location and relevant commitments, then ask for today or
+tomorrow, with a loose view of the following two or three days. The result stays
+a proposal until you choose it. Work-hour
 management is outside the assistant's remit.
+
+## Use a ChatGPT Project
+
+Copy the [project instructions](references/chatgpt-project-instructions.md) and
+load the files named in the [setup notes](references/chatgpt-project-setup.md).
+The [travel goals](profile/travel-goals.md) explain success and sidequests.
+External retrieval and saving have not yet been verified in the target project.
 
 ## Continue setup
 

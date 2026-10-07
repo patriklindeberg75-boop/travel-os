@@ -1,15 +1,17 @@
 # Travel OS progress
 
-Updated on 2026-09-27. The [reconciliation plan](assistant-plan-2026-09.md) governs
-current work. Earlier architecture, implementation, and test documents in this
-folder describe the former dossier system.
+Updated on 2026-10-07. The approved October 7 defaults in
+[decisions](decisions.md#2026-10-07--travel-project-and-sparring-defaults) extend
+the [September reconciliation plan](assistant-plan-2026-09.md). Earlier architecture,
+implementation, and test documents in this folder describe the former dossier system.
 
 The configured origin is https://github.com/patriklindeberg75-boop/travel-os.git.
 A configured remote is not proof that local changes are pushed or cloud-accessible.
 
 | Work | State | Evidence or next check |
 | --- | --- | --- |
-| Preference refresh | Complete for this round | Profile v4 and principles v6 contain confirmed decisions and retired rules. |
+| Preference refresh | Updated after approved October 7 defaults | Profile v5, principles v7, and travel goals cover success, sidequests, local tips, and same-day sparring. September budget and hiking limits remain. |
+| ChatGPT Project preparation | Files prepared locally | [Instructions](../references/chatgpt-project-instructions.md) and [setup notes](../references/chatgpt-project-setup.md) are ready. No external project created. Exact authoritative Drive document, target-project retrieval, and durable saving remain unverified. Apple Notes stays authoritative until a replacement is designated. |
 | Shared assistant instructions | Complete for local foundation | AGENTS.md and assistant-workflows.md define local operation. Active entry points were read back. |
 | Library and trip records | Complete for local foundation | One supplied inspiration entry and an approximate Italy/Morocco brief. No invented bookings. |
 | Legacy entry points | Migrated and read back | Active commands use shared workflows. Dossier command and agent are paused. Historical reference bodies are preserved. |

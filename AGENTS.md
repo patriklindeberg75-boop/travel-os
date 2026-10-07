@@ -7,7 +7,8 @@ mandatory dossier, fixed itinerary, trip theme, or manual cross-model handoff is
 ## Read the relevant current records
 
 - For personalized advice, read `profile/universal-traveler-profile.md` and
-  `profile/travel-principles.md`. The September 2026 refresh governs preferences.
+  `profile/travel-principles.md` and `profile/travel-goals.md`. The October 7
+  goals and sparring defaults extend the September 2026 preferences.
 - For a trip request, use `trips/README.md` to find the named trip, then read its
   `trip-context.md`. Do not pick a trip by directory modification time.
 - For capture, retrieval, research, or changes, use `references/assistant-workflows.md`.
@@ -24,8 +25,11 @@ Preserve the Balkans artifacts. Resume dossier work only when explicitly request
 
 ## Keep facts, ideas, and decisions distinct
 
-Apple Notes is Patrik's working itinerary. The repo holds a dated brief of the
-latest context he shares, not an automatically synchronized copy. Never claim to
+Apple Notes is Patrik's working itinerary until he designates a replacement.
+The approved direction is one accessible authoritative working plan; no Drive
+document has yet been selected. Do not maintain competing editable itineraries.
+The repo holds a dated brief of the latest context he shares, not an automatically
+synchronized copy. Never claim to
 have read Notes, a calendar, or a private collection without actually accessing it.
 Explicit corrections replace the current brief. Preserve superseded decisions in
 the trip decision log. Suggestions, approximate dates, and research are not bookings.
@@ -51,8 +55,10 @@ Sun sensitivity is manageable context, not a hard exclusion.
 
 Give a clear recommendation and its tradeoffs. Keep travel answers readable on a
 phone and easy to copy into Apple Notes. Use place, locality, and country for map
-searches. Propose two or three days at a time without turning the proposal into a
-commitment. Ask only for missing facts that materially change the answer.
+searches. Focus on today or tomorrow, with a loose view of the following two or
+three days. Include sidequests, local tips, and an unfamiliar option where useful.
+A recommendation is not a commitment. Ask only for missing facts that materially
+change the answer.
 
 Use available research tools directly. Check changeable facts against current
 sources and disclose uncertainty. Do not fabricate live schedules or successful

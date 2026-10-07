@@ -1,17 +1,17 @@
 Travel Principles
 
-**Version:** v6
-**Last updated:** 2026-09-27 — preference-refresh round completed and approved.
-**Review status:** September decisions below govern. Historical QC and changelog entries describe earlier versions, not active requirements.
+**Version:** v7
+**Last updated:** 2026-10-07 — same-day sparring and discovery defaults approved.
+**Review status:** October 7 approved decisions extend the September preferences. Historical QC and changelog entries describe earlier versions, not active requirements.
 **Created:** 2026-05-10
 **Owner:** Patrik
-**Role in system:** Personalization spine #2 — read alongside the Universal Traveler Profile by every workflow in the Claude Code travel planning system before generating user-facing output.
+**Role:** Decision guidance, read alongside the [traveler profile](universal-traveler-profile.md) and [travel goals](travel-goals.md).
 
 ---
 
 ## How to use this document
 
-This document captures *decision rules* — how Patrik decides — across trips of any duration, with or without companions. Paired with the Universal Traveler Profile, which captures *what Patrik prefers*. Together they form the personalization spine the planning system reads before any output.
+This document captures *decision rules* — how Patrik decides — across trips of any duration, with or without companions. Paired with the Universal Traveler Profile, which captures *what Patrik prefers*. Read them alongside the travel goals when making personalized recommendations.
 
 The Profile filters destinations and activities against tastes. Principles filter and shape choices when tastes alone don't decide — which destination among viable ones, when to splurge, what to bail on, how to weigh experience against cost and practical constraints.
 
@@ -22,7 +22,7 @@ The Profile filters destinations and activities against tastes. Principles filte
 - **Anti-principles** in §9 document things that look like principles but Patrik has rejected.
 - Updates require Patrik's confirmation through a preference interview or post-trip retro; incidental remarks do not silently change standing principles.
 
-**Scope discipline (added in v2):** This document only contains principles Claude Code can actually apply in workflows. Personal-philosophy statements that aren't system-actionable were cut. See §10 (Deliberate omissions) and the QC log at §11 for what was removed and why.
+The [travel goals](travel-goals.md) explain what makes a successful day and how local encounters, sidequests, and shared adventures contribute. The historical QC log records earlier edits; it adds no active requirements.
 
 ---
 
@@ -36,7 +36,7 @@ The trip's structure — destination, dates, route, daily flow — is Patrik's c
 
 **Rationale:** Travel agency is the point. Outsourcing the choice undermines the experience.
 
-**Application rule:** When multiple destinations, routes, or extensions pass all filters, the system presents candidates with comparative analysis and lets Patrik pick. It may rank options and give a clear recommendation, but does not treat that recommendation as a confirmed decision or auto-select. This applies at trip-selection (Phase 4) and at any in-trip decision point with multiple viable options.
+**Application rule:** When multiple destinations, routes, or extensions pass all filters, the system gives a clear recommendation with its tradeoff and useful alternatives, and lets Patrik pick. It may rank options and give a clear recommendation, but does not treat that recommendation as a confirmed decision or auto-select. This applies to choosing a trip and to decisions during travel.
 
 ---
 
@@ -78,7 +78,7 @@ Travel exists to produce experiences and memories that wouldn't be possible at h
 
 **Rationale:** Generic restaurants, generic shopping, generic comforts are *transferable consumption* — could happen anywhere. Spending trip time and budget on them is leak.
 
-**Application rule:** When recommending activities or accommodations, the system tags each as *location-bound* (the geography, culture, people, or moment is the experience) or *transferable* (could happen in any country). Prefer distinctive local experiences, but do not prohibit ordinary comforts. Default-include location-bound experience even if it costs more, with costs presented for individual consideration under §3.2.
+**Application rule:** When recommending activities or accommodations, prefer experiences whose geography, culture, people, or moment makes them distinctive. Famous sights can qualify, but fame alone adds little. Prioritize local encounters and low-cost, high-value shared adventures. Do not prohibit ordinary comforts; explain extra spending for individual consideration under §3.2.
 
 ---
 
@@ -96,54 +96,41 @@ research, trip setup, or planning. Current interests and opportunities suffice.
 
 ---
 
-### 3.4 — Bias toward harder and more novel options
+### 3.4 — Offer an unfamiliar option
 
-**Statement:** When evaluating multiple viable activities, default toward the more challenging or novel option.
+Regularly suggest one unfamiliar activity and explain its appeal. Novelty can be
+social or cultural, not only physically harder. Do not turn every day into a
+challenge. Adapt when Patrik says he is tired or wants something easy.
 
-**Rationale:** Comfort-zone push is what produces the experiences travel exists for. The biased default doesn't replace Patrik's judgment — it changes which option the system surfaces first.
+### 3.5 — Leave room for sidequests and local tips
 
-**Application rule:** When generating activity recommendations or day-plan options, the system orders alternatives by novelty/challenge first, comfort options second. Patrik's depletion is self-reported (the system can't detect it) — when Patrik signals he's depleted, the system inverts the order until told otherwise.
+A sidequest is an unexpected detour prompted by curiosity or people met while
+traveling: an outing, village visit, local recommendation, unfamiliar activity,
+or interesting invitation. Treat these as worthwhile possibilities.
 
----
-
-## 4. Anti-overtourism & authenticity
-
-**September 2026 confirmed exception:** Avoiding popular places is a preference,
-not an absolute exclusion. Keep a popular town eligible when its exceptional
-hostel community and nearby adventures justify the crowds. This exception takes
-precedence over the destination exclusions in §4.1–4.2 and the non-touristic-base
-condition in §4.3; it does not remove crowd mitigation for
-individual activities. Prefer smaller places and opportunities for local contact.
-
-Travel value is destroyed by mass tourism — crowds, queues, generic infrastructure, the experience of being one of thousands.
-
-### 4.1 — Filter destinations and neighborhoods against overtourism
-
-**Statement:** Default toward the local and off-beat. Heavily-touristed destinations and neighborhoods are filtered out unless §4.3 applies.
-
-**Rationale:** Mass tourism degrades every dimension that matters — authenticity, social density (locals vs. tour groups), pace, value-for-money. The point of travel is to see how people actually live.
-
-**Application rule:** Trip-selection workflows score destinations on tourist density and filter out heavily-touristed ones. Dossier workflows score *neighborhoods within destinations* on tourist density and route accommodation/activity recommendations toward less-touristed neighborhoods. The "tourist trap warning list" output (Project Plan, Phase 1) is the operational expression of this principle.
+Encourage asking hostel staff, travelers, and locals what is happening today.
+Assess their tips for fit and practical feasibility; a tip is a lead, not verified
+transport, safety, price, or availability evidence. Suggest natural conversation
+opportunities and optional starters without imposing quotas or treating people
+as attractions. A promising shared experience can outweigh the theoretically
+best destination.
 
 ---
 
-### 4.2 — Avoid mainstream backpacker hubs
+## 4. Crowds, authenticity, and worthwhile exceptions
 
-**Statement:** Backpacker-heavy is not enough — the *type* of backpacker scene matters. Default-decline mainstream backpacker hubs.
+Prefer local, smaller, and off-beat places. Avoid generic tourist traps and
+crowd-heavy experiences, including homogenized backpacker scenes; popularity
+alone is not a destination veto.
 
-**Rationale:** Mainstream backpacker scenes have the same homogenization problem as mass tourism — same crowd, same activities, same Instagram script. The Profile's preference for backpacker-heavy spots assumes *interesting* backpackers, not the Bali-Canggu / Koh-Phangan-in-season / Pai-in-high-season template.
+Keep a popular place eligible when its community, activity, or setting makes it
+worthwhile. Exceptional hostel friendships and nearby adventures can justify a
+busy base. A quiet village does not automatically provide local connection.
 
-**Application rule:** Destination-level filter at trip selection. Within destinations, the system trusts hostel choice (Profile §4) to handle social composition.
-
----
-
-### 4.3 — Iconic-experience exception
-
-**Statement:** A heavily-touristed *activity* (not destination) is acceptable if (a) it's genuinely location-unique, (b) the trip's base is non-touristic, and (c) it's timed to avoid peak crowds.
-
-**Rationale:** Some location-bound unique experiences are tourist-heavy by definition (the Inca Trail, Angkor Wat, a major ruin or natural wonder). Skipping them on principle costs experience-quality.
-
-**Application rule:** When evaluating an iconic site, the system tests: is this the kind of unique experience that justifies the crowd cost? If yes, plan with crowd-mitigation (sunrise visits, off-season, side entrances, less-trafficked routes within the site). If it's iconic-but-generic (the main square at noon, a Michelin-listed restaurant in a tourist district), default-decline.
+For a distinctive iconic experience, weigh its value against the crowd cost and
+use practical crowd mitigation where useful. Do not require a non-touristic base
+as a condition for doing it. Give the tradeoff rather than applying conflicting
+blanket exclusions.
 
 ---
 
@@ -177,13 +164,16 @@ tradeoffs rather than enforcing the old two-hour/200-km driving cap.
 
 ---
 
-### 5.4 — Spontaneity is required
+### 5.4 — Plan today and tomorrow, leaving room to change
 
-**Statement:** Every trip must contain unplanned space. The system never produces hour-by-hour week-ahead itineraries.
+Focus on today or tomorrow by default, with a loose view of the following two or
+three days. Leave room for chance encounters, local tips, and better opportunities.
+Look further ahead for consequential transport, scarce availability, specific
+commitments, or when asked. Avoid rigid hour-by-hour week-ahead itineraries.
 
-**Rationale:** Pre-booked rigid itineraries kill the part of travel that produces real memory — chance encounters, unexpected detours, the morning where something better than the plan emerges.
-
-**Application rule:** Pre-trip outputs (destination dossiers, theme, accommodation bookings) commit to direction. Day-plans are loose by design — the day-before sparring workflow (Project Plan, Phase 2) is the spontaneity engine. The system never generates an hour-by-hour week-ahead plan; if asked to, it pushes back and proposes the day-before sparring pattern instead.
+When waiting to book has a meaningful downside, explain what it could cost or
+rule out. Recommend booking only the parts where preserving flexibility carries
+that downside. A recommendation remains a proposal until Patrik chooses it.
 
 ---
 
@@ -218,7 +208,7 @@ when relevant, without policing personal choices.
 
 - Balance local encounters with social hostel life; neither needs a fixed quota.
 - Popular places remain eligible when exceptional hostel community and nearby adventures justify crowds; apply practical crowd mitigation where useful.
-- Preserve spontaneity and loose two-to-three-day proposals. A recommendation is not a commitment.
+- Focus on today or tomorrow, with a loose view of the following two or three days. A recommendation is not a commitment.
 - Group adventures are optional. Hiking still has the explicitly confirmed two-day maximum.
 - Scenic journeys are valuable, but show their time and cost against faster alternatives.
 - Do not reconstruct retired personal-routine, friend-visit, or theme requirements through tradeoff rules.
@@ -252,7 +242,7 @@ materially changes the current request.
 
 ## 11. QC log
 
-Historical QC pass applied at v2. Entries below do not validate or reinstate rules retired in v6.
+Historical material retained below: its dossier phases, Claude Code framing, and obsolete constraints are not active guidance. QC pass applied at v2. Entries below do not validate or reinstate rules retired in v6.
 
 **Framework:**
 
@@ -307,6 +297,7 @@ Note: AP-2 (Pack minimally) was reframed in v3 rather than cut. Packing recommen
 
 | Version | Date | Changes |
 | --- | --- | --- |
+| v7 | 2026-10-07 | Applied all seventeen approved interview defaults: same-day focus, sidequests, local tips, unfamiliar options, and worthwhile popular-place exceptions. Removed obsolete dossier language and conflicting crowd rules from active guidance; retained historical QC and version history. |
 | v6 | 2026-09-27 | Applied approved budget, transport, flexible pace, and personal-choice boundaries; retired conflicting routine, friend-visit, packing, and theme rules. |
 | v5 | 2026-09-27 | Retired work-hour and weekday scheduling; clarified that group-adventure guidance does not override the two-day hiking maximum. |
 | v4 | 2026-09-27 | Added the approved popular-town exception and its precedence over conflicting destination exclusions. Marked the refresh as partial and allowed confirmed interview updates. |

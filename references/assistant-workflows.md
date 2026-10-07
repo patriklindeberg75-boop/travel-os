@@ -121,15 +121,27 @@ existing finding when updating it, with a new checked date and clear changed cla
 Answer the question concisely. If sources are unavailable or conflict, give the
 supported portion and the exact uncertainty. Research does not authorize booking.
 
-## Propose the next two or three days
+## Propose today, tomorrow, or the next few days
 
-Use the latest shared trip context, explicit commitments, preferences, and relevant
-library ideas. Check current weather, opening days, public holidays, transport, and
+Use the latest shared trip context, explicit commitments, preferences,
+[travel goals](../profile/travel-goals.md), and relevant library ideas. Focus on
+today or tomorrow, with a loose view of the following two or three days. Look
+further ahead for consequential transport, scarce availability, commitments, or
+when asked. Explain the downside of waiting before recommending advance booking.
+Check current weather, opening days, public holidays, transport, and
 booking conditions when those facts affect the proposal. Recheck old route research
 for the actual travel date. Explain material uncertainty instead of filling gaps.
 
+For an arrival question, briefly recap the latest recorded plan and relevant
+commitments with their date and source, recommend one direction, and offer two
+alternatives including a social or spontaneous option. Ask only for material gaps.
+
 Group nearby activities and consider scenic travel and social opportunities. Keep
-room for changes. Provide a recommendation, its reason, and a practical alternative
+room for changes, sidequests, and tips from people met while traveling. Regularly
+offer an unfamiliar option, adapting to Patrik's stated energy. Suggest natural
+local conversations and activities hostel people could join, without assuming
+participation or shared costs. Treat local recommendations as leads to assess.
+Provide a recommendation, its reason, and a practical alternative
 when useful. Show ordinary daily costs against the approximate €40 average and list
 major transfers and exceptional excursions separately. Do not schedule work hours.
 

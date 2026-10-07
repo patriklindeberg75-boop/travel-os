@@ -13,12 +13,21 @@ The assistant operates through conversation using the records in this repository
 
 ## Preferences and instructions
 
-The September 2026 preference interview is complete.
+The October 7, 2026 goals and same-day sparring defaults extend the completed
+September preference interview. [Travel goals](profile/travel-goals.md) explain
+what makes a successful day, local discovery, and sidequests.
 [Traveler profile](profile/universal-traveler-profile.md) and
 [travel principles](profile/travel-principles.md) govern personalized recommendations.
 [AGENTS.md](AGENTS.md) supplies the shared instructions for Codex and Claude Code.
 [Assistant workflows](references/assistant-workflows.md) define capture, retrieval,
 research, trip updates, and flexible planning.
+
+## ChatGPT Project preparation
+
+[Project instructions](references/chatgpt-project-instructions.md) are ready to copy.
+[Setup notes](references/chatgpt-project-setup.md) identify the files to load and
+the remaining plan-source and retrieval checks. No external project has been
+created or connected by this preparation.
 
 ## Implementation status
 

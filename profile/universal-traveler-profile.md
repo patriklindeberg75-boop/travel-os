@@ -1,12 +1,12 @@
 Universal Traveler Profile
 
-**Version:** v4
-**Last updated:** 2026-09-27 — preference-refresh round completed and approved.
-**Review status:** Confirmed September preferences govern. Retired requirements below must not be reapplied; remaining inherited details are background suggestions, not newly verified facts or automatic exclusions.
+**Version:** v5
+**Last updated:** 2026-10-07 — travel goals and same-day sparring defaults approved.
+**Review status:** October 7 approved goals extend the confirmed September preferences. Retired requirements below must not be reapplied; remaining inherited details are background suggestions, not newly verified facts or automatic exclusions.
 **Created:** 2026-05-10
 **Owner:** Patrik
-**Role in system:** Personalization spine #1 — read by every workflow in the Claude Code travel planning system before generating user-facing output. Paired with the Travel Principles document.
-**Storage location:** Claude Code project repo, root path. Suggested filename: `universal-traveler-profile.md`. Update through confirmed preference interviews or retros.
+**Role:** Enduring travel preferences, paired with [travel goals](travel-goals.md) and [decision principles](travel-principles.md).
+**Storage location:** `profile/universal-traveler-profile.md` in Travel OS. Update through confirmed interviews or retros.
 
 ---
 
@@ -55,6 +55,15 @@ Updates require Patrik's confirmation through a preference interview or post-tri
 - Trajectory is toward continuous nomadic lifestyle.
 - The profile reflects current state. As actual lifestyle shifts, update via retro.
 
+### Approved goals and discovery style — October 7, 2026
+
+A good travel day brings meaningful connection, a memorable experience, or an
+unexpected discovery; it need not include all three or any famous sights. Favor
+low-cost, high-value shared adventures and natural opportunities to talk to locals.
+Keep room for sidequests and tips from people met along the way. Regularly suggest
+one unfamiliar option, adapting to Patrik's stated energy and wishes. See
+[travel goals](travel-goals.md) for the fuller meaning and keys to success.
+
 ---
 
 ## 2. Trip shape
@@ -74,7 +83,7 @@ Solo backpacking is the usual context, not a scope restriction. Shorter trips an
 **Travel-day tolerance:**
 
 - **STRONG:** Full travel days are fine. Don't artificially cap travel time at 4–5h.
-- **STRONG:** Scenic when reasonable, fast when distance demands. Journey-as-experience is preferred (see §6) but not at the cost of irrational time loss.
+- **STRONG:** Scenic when reasonable, fast when distance demands. Journey-as-experience is preferred (see §5) but not at the cost of irrational time loss.
 
 **Route shape: no stable preference.** Linear, loop, hub-and-spoke — all per-trip.
 
@@ -185,7 +194,6 @@ These are inseparable: hostels-with-social-atmosphere is fundamentally a *social
 - **STRONG:** Local food markets, authentic eateries, street food (Bourdain-style).
 - **STRONG framing:** Food is enjoyed but not the #1 priority. Workflows should not over-weight food curation at the expense of other dimensions.
 - **No stable healthy-eating definition.** Per-trip / per-day judgment.
-    - *Note: the Context Pack lists "healthy eating" as routine maintenance, but no stable rule operationalizes it for me. Captured honestly here rather than fabricated.*
 
 ---
 
@@ -286,6 +294,12 @@ These absences are themselves information. Future retros may surface stable pref
 - Each update increments the version, dates the change, and logs what changed and why.
 
 ### Changelog
+
+**v5 — 2026-10-07**
+
+- Patrik approved all seventeen interview defaults for a ChatGPT Project travel companion.
+- Added the success definition, sidequests, local discovery, and unfamiliar-option guidance; linked the travel goals record.
+- Existing September budget, hiking limits, and other preferences remain in force.
 
 **v4 — 2026-09-27**
 

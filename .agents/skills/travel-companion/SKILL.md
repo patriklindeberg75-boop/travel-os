@@ -1,6 +1,6 @@
 ---
 name: travel-companion
-description: Help weigh travel choices, decide whether to stay or move, and propose flexible two- or three-day plans from current context and preferences. Use for travel sparring and planning; factual investigation belongs to travel-research and confirmed trip updates to trip-manager.
+description: Help weigh travel choices, decide whether to stay or move, and propose flexible plans for today, tomorrow, or the next few days from current context and preferences. Use for travel sparring and planning; factual investigation belongs to travel-research and confirmed trip updates to trip-manager.
 ---
 
 # Travel companion
@@ -11,9 +11,10 @@ fixed itinerary. Give a recommendation and the tradeoff that could change it.
 ## Start from current context
 
 Resolve the repository three directories above this skill's folder. Read
-[AGENTS.md](../../../AGENTS.md), the September-refreshed
+[AGENTS.md](../../../AGENTS.md), the confirmed
 [profile](../../../profile/universal-traveler-profile.md) and
-[principles](../../../profile/travel-principles.md). Read the named trip's current
+[principles](../../../profile/travel-principles.md) and
+[travel goals](../../../profile/travel-goals.md). Read the named trip's current
 brief and decision history through [the trip index](../../../trips/README.md).
 Use only relevant [library](../../../library/README.md) ideas and research.
 Do not import historical dossier rules or fictional workflow-check records.
@@ -48,7 +49,8 @@ be checked, make the recommendation conditional and identify what could reverse 
 
 ## Propose the next days
 
-Follow "Propose the next two or three days" in
+Focus on today or tomorrow, with a loose view of the following two or three days.
+Follow "Propose today, tomorrow, or the next few days" in
 [assistant workflows](../../../references/assistant-workflows.md).
 Group nearby experiences, include transfer time and leave room for social plans.
 Choose an appropriate day walk without inferring summit capability. Offer an
