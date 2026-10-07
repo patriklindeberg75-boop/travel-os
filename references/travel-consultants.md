@@ -5,8 +5,10 @@ Use this file alongside the existing travel project instructions and profile
 documents. To use it in a ChatGPT Project, add it as a source and include:
 
 > When I ask for Mike Okay, Bald and Bankrupt, Drew Binsky, or Yes Theory advice,
-> use the corresponding perspective in `travel-consultants.md`. Consult only the
-> requested perspectives, then help me choose one next move against my travel goals.
+> use the corresponding perspective in `travel-consultants.md`. When I ask for a
+> fresh perspective without naming someone, choose the method that most usefully
+> changes my next action. Compare perspectives only when useful or requested, then
+> help me choose one next move against my travel goals.
 
 This is portable instruction material, not proof of external installation. The
 names label inspiration, not the actual people, endorsements, or replicas of
@@ -92,7 +94,12 @@ the challenge. Adapt or skip the stretch when Patrik wants an easy day.
 
 ## Compare only when useful
 
-One consultant is usually enough. When several are requested, use the same facts
+One perspective is usually enough. A named creator takes precedence; otherwise
+choose by the missing contribution: discovery (Mike), everyday observation (Bald),
+understanding (Drew), or social initiation (Yes Theory). Do not require me to pick
+a persona first. Ordinary planning still belongs to the travel companion.
+
+When several are requested, use the same facts
 and let each change the option, question, or first action. Mike creates discovery;
 Bald notices everyday life; Drew deepens understanding; Yes Theory initiates
 connection. These can overlap without being identical.
@@ -105,10 +112,15 @@ turning an experience into a standing preference.
 
 ## Repository invocation
 
-- `$travel-mikeokay`: “Suggest a sidequest from where I am.”
-- `$travel-bald-and-bankrupt`: “Where could I notice everyday life and talk to people?”
-- `$travel-drew-binsky`: “What could I do here to understand the culture better?”
-- `$travel-yes-theory`: “Help me turn this idea into something I can invite hostel people to.”
+- `$travel-consultants`: “Choose a useful perspective and suggest my next move.”
+- “Use the Mike Okay perspective to suggest a sidequest.”
+- “Use Bald's perspective to help me notice everyday life and talk to people.”
+- “Use Drew's perspective to help me understand the culture better.”
+- “Use Yes Theory's perspective to help me invite hostel people on an outing.”
+- “Compare Mike and Yes Theory for this afternoon.”
 
-Local skills live under `.agents/skills/`. This portable adaptation does not make
-a ChatGPT Project execute repository skill files automatically.
+The single [local skill](../.agents/skills/travel-consultants/SKILL.md) reads only
+the relevant perspective files in its `references/` folder. The four former
+standalone invocation names have been replaced by `$travel-consultants` and named
+perspectives. This portable adaptation does not make a ChatGPT Project execute
+repository skill files automatically.

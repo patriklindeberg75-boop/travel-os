@@ -1,5 +1,10 @@
 # Travel consultant checks — 2026-10-07
 
+Current structure: one `travel-consultants` router with four supporting perspective
+files. Patrik approved consolidation after the initial four-skill creation. The
+initial checks below remain historical evidence for the methods; the consolidation
+checks at the end cover the current structure.
+
 Scope approved in the side conversation: all eleven consultant defaults, followed
 by “Proceed.” Four repository-local skills and portable project instructions;
 bounded first-party research; distinct advice, normal automatic discovery, and
@@ -85,3 +90,28 @@ advice. They do not establish actual invocation in a fresh session, creator-fait
 emulation, real-world usefulness, current Tirana options, or ChatGPT Project access.
 No subagents were used. No real trip record, enduring preference, account,
 external project, or connected document was changed by these exercises.
+
+## Consolidation checks
+
+The router passed the bundled skill validator. Its UI metadata parses, its
+invocation matches `$travel-consultants`, and local links resolve. The perspective
+bodies were preserved from the original skills; repeated shared guidance now
+lives in the router. Old standalone skill entrypoints were removed, and README
+and portable invocation guidance now point to the router.
+
+Author routing walkthrough, not independent model execution:
+
+| Request | Selected method and reason |
+| --- | --- |
+| “Find me a sidequest nearby.” | Mike: generate and follow a discovery lead. |
+| “Where can I notice everyday life?” | Bald: ordinary settings and conversational entry. |
+| “Help me understand this food tradition.” | Drew: a cultural question, even though food/conversation overlaps with Bald. |
+| “I want lunch with people but hesitate to invite anyone.” | Yes Theory: the missing action is social initiation, not food research. |
+| “Use Mike to help me invite people on a detour.” | Mike: explicit creator choice wins; do not silently switch to Yes Theory. |
+| “Compare Mike and Yes Theory.” | Read those two references and synthesize a discovery-versus-initiation tradeoff. |
+| “What bus should I take tomorrow?” | Ordinary route/planning work stays with research/companion; no automatic persona panel. |
+
+Shared budget, low-energy, hiking-limit, and unverified-return cases remain governed
+by the router and the preserved method bodies. No subagents, external project
+updates, real trip changes, or new creator research were needed for consolidation.
+Fresh-session automatic selection and real-world usefulness remain unverified.

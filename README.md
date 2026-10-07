@@ -39,12 +39,11 @@ repository-local skills are implemented:
 - [travel-research](.agents/skills/travel-research/SKILL.md) investigates advice, routes and feasibility.
 - [travel-companion](.agents/skills/travel-companion/SKILL.md) weighs choices and proposes flexible plans.
 
-Four [creator-inspired travel consultants](references/travel-consultants.md) add
-distinct perspectives: [Mike Okay](.agents/skills/travel-mikeokay/SKILL.md) for
-sidequests, [Bald and Bankrupt](.agents/skills/travel-bald-and-bankrupt/SKILL.md) for
-everyday local life, [Drew Binsky](.agents/skills/travel-drew-binsky/SKILL.md) for
-cultural understanding, and [Yes Theory](.agents/skills/travel-yes-theory/SKILL.md)
-for initiating shared adventures. The guide includes portable project instructions;
+One [travel-consultants router](.agents/skills/travel-consultants/SKILL.md) selects
+among four supporting perspectives: Mike Okay for sidequests, Bald and Bankrupt
+for everyday local life, Drew Binsky for cultural understanding, and Yes Theory
+for initiating shared adventures. The [consultant guide](references/travel-consultants.md)
+includes portable project instructions;
 [source notes](references/travel-consultant-sources.md) and
 [bounded checks](pipeline/checks/travel-consultants/verification.md) state the evidence
 and remaining real-use limits. Consult one or compare requested perspectives.

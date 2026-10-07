@@ -1,0 +1,4 @@
+interface:
+  display_name: "Travel Consultants"
+  short_description: "Choose a useful creator-inspired travel perspective"
+  default_prompt: "Use $travel-consultants to choose a useful perspective and suggest my next travel move."
