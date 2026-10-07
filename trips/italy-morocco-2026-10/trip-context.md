@@ -1,18 +1,19 @@
 # Italy and Morocco, October 2026
 
-Status is planning. Last shared context is from Patrik's September 27, 2026 conversation.
+Status is planning. Last shared context is from Patrik's October 7, 2026 conversation.
 Apple Notes remains the working itinerary. This brief is not automatically synchronized.
 Current location is unknown.
 
 ## Approximate outline
 
-- Arrive in Italy around October 12, 2026.
-- Stay in Italy for roughly one week.
+- Arrive on October 10, 2026 in the evening; stay until October 17.
+- Tropea is the destination Patrik has asked to plan. Arrival airport or station,
+  accommodation, and whether the whole stay is in Tropea remain unknown.
 - Continue to Morocco for perhaps three weeks.
 
-These are intentions, not confirmed travel arrangements. No exact Morocco arrival
-or final departure date has been supplied. The later October 12 estimate replaces
-the earlier rough statement that departure was in one week.
+The Italy dates were supplied by Patrik on October 7; no booking details were
+reported. They replace the September 27 estimate of arrival around October 12.
+No exact Morocco arrival or final departure date has been supplied.
 
 ## Confirmed commitments and bookings
 
@@ -27,13 +28,13 @@ have been supplied. Work-hour planning is outside the assistant's remit.
 ## Open decisions
 
 - Arrival city and airport in Italy.
-- Places to visit and length of individual stays.
+- Tropea accommodation, nearby outings, and length of individual stays.
 - Transport between Italy and Morocco, and within each country.
 - Accommodation, activities, and the return date.
 
 ## Selected ideas and research
 
-No destination has been confirmed as a trip stop. The
+Tropea planning is requested; no accommodation or activities are confirmed. The
 [Morocco base comparison](research/morocco-bases-comparison.md), checked September 27,
 compares Imlil, Tafraoute, Taghazout, and Imsouane. Accommodation examples and access
 gaps are documented; no dated route is confirmed. See the

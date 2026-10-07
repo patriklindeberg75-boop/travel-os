@@ -3,8 +3,9 @@
 ## Current planning
 
 - [Italy and Morocco, October 2026](italy-morocco-2026-10/trip-context.md).
-  Approximate intentions only. Italy arrival around October 12, roughly one week
-  there, then perhaps three weeks in Morocco. No bookings supplied.
+  Italy/Tropea planning: arrival October 10 in the evening, staying until October
+  17, as supplied October 7. Then perhaps three weeks in Morocco. No booking
+  details supplied.
 
 ## Previous trips
 
