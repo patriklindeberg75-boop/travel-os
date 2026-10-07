@@ -7,7 +7,7 @@ Current location is unknown.
 ## Approximate outline
 
 - Arrive at Lamezia Terme airport on October 10, 2026 in the evening; stay until
-  October 17. Exact landing time is unknown.
+  October 17. Landing time supplied by Patrik: 21:00, treated as Italy local time.
 - Tropea is the destination Patrik has asked to plan. Accommodation and whether
   the whole stay is in Tropea remain unknown.
 - Continue to Morocco for perhaps three weeks.
@@ -28,7 +28,7 @@ have been supplied. Work-hour planning is outside the assistant's remit.
 
 ## Open decisions
 
-- Exact landing time at Lamezia Terme and transfer to Tropea.
+- Arrival-night transfer from Lamezia Terme to Tropea and a late-arrival fallback.
 - Tropea accommodation, nearby outings, and length of individual stays.
 - Transport between Italy and Morocco, and within each country.
 - Accommodation, activities, and the return date.
@@ -36,6 +36,9 @@ have been supplied. Work-hour planning is outside the assistant's remit.
 ## Selected ideas and research
 
 Tropea planning is requested; no accommodation or activities are confirmed. The
+[arrival-transfer check](research/lamezia-tropea-arrival.md), checked October 7,
+establishes the Airlink route but does not verify an onward train after landing.
+The
 [Morocco base comparison](research/morocco-bases-comparison.md), checked September 27,
 compares Imlil, Tafraoute, Taghazout, and Imsouane. Accommodation examples and access
 gaps are documented; no dated route is confirmed. See the
@@ -45,7 +48,17 @@ gaps are documented; no dated route is confirmed. See the
 
 The September 27 comparison proposes Taghazout as a social-base candidate and Imlil
 as a mountain complement, with Tafraoute and Imsouane optional. This is an assistant
-recommendation, not Patrik's selection or a dated itinerary. Arrival city remains open.
+recommendation, not Patrik's selection or a dated itinerary. Morocco arrival city
+remains open.
+
+## Drive planning document
+
+The existing [Italy and Morocco current plan](https://docs.google.com/document/d/1b1aBnBfK-JlHtPNhBJvvBP5GRyddDhbH7EXjzfg8M18/edit)
+was read and updated on October 7 with the supplied Italy dates, Lamezia Terme
+arrival at 21:00, and Tropea planning request. Readback verified the update.
+This is a manual update, not automatic synchronization or a designation replacing
+Apple Notes as the authoritative working itinerary. A separate Tropea possibilities
+document is still to be created as planning develops.
 
 ## Decision history
 

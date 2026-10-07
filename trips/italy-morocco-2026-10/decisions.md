@@ -18,4 +18,8 @@ point, accommodation, and booking details remain unknown; the dates alone do not
 establish a booking. The earlier tentative Morocco outline is unchanged.
 
 Patrik subsequently identified Lamezia Terme as the arrival airport. Exact landing
-time and transfer arrangements remain unknown.
+time and transfer arrangements remained unknown at that point.
+
+Patrik then supplied a 21:00 landing time, treated as Italy local time. Transfer
+and accommodation remain open. The existing Drive current-plan document was
+manually updated and read back with these details; no booking was made.
