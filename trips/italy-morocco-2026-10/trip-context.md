@@ -6,9 +6,10 @@ Current location is unknown.
 
 ## Approximate outline
 
-- Arrive on October 10, 2026 in the evening; stay until October 17.
-- Tropea is the destination Patrik has asked to plan. Arrival airport or station,
-  accommodation, and whether the whole stay is in Tropea remain unknown.
+- Arrive at Lamezia Terme airport on October 10, 2026 in the evening; stay until
+  October 17. Exact landing time is unknown.
+- Tropea is the destination Patrik has asked to plan. Accommodation and whether
+  the whole stay is in Tropea remain unknown.
 - Continue to Morocco for perhaps three weeks.
 
 The Italy dates were supplied by Patrik on October 7; no booking details were
@@ -27,7 +28,7 @@ have been supplied. Work-hour planning is outside the assistant's remit.
 
 ## Open decisions
 
-- Arrival city and airport in Italy.
+- Exact landing time at Lamezia Terme and transfer to Tropea.
 - Tropea accommodation, nearby outings, and length of individual stays.
 - Transport between Italy and Morocco, and within each country.
 - Accommodation, activities, and the return date.
