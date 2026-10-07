@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bald and Bankrupt \u2014 Everyday Places"
+  short_description: "Explore everyday places through local conversation"
+  default_prompt: "Use $travel-bald-and-bankrupt to suggest one useful next move from my current travel context."

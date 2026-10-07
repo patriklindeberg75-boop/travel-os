@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mike Okay \u2014 Sidequests"
+  short_description: "Find a flexible detour and a useful first move"
+  default_prompt: "Use $travel-mikeokay to suggest one useful next move from my current travel context."

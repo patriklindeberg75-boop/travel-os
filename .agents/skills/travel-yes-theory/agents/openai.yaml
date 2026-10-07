@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yes Theory \u2014 Shared Stretch"
+  short_description: "Turn social hesitation into an optional shared adventure"
+  default_prompt: "Use $travel-yes-theory to suggest one useful next move from my current travel context."

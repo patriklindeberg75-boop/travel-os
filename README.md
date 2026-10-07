@@ -31,13 +31,23 @@ created or connected by this preparation.
 
 ## Implementation status
 
-The local instructions, library and trip records are established. Four repository-local
-skills are implemented:
+The local instructions, library and trip records are established. Four core
+repository-local skills are implemented:
 
 - [travel-library](.agents/skills/travel-library/SKILL.md) saves and retrieves ideas and advice.
 - [trip-manager](.agents/skills/trip-manager/SKILL.md) reconciles trip briefs and decisions.
 - [travel-research](.agents/skills/travel-research/SKILL.md) investigates advice, routes and feasibility.
 - [travel-companion](.agents/skills/travel-companion/SKILL.md) weighs choices and proposes flexible plans.
+
+Four [creator-inspired travel consultants](references/travel-consultants.md) add
+distinct perspectives: [Mike Okay](.agents/skills/travel-mikeokay/SKILL.md) for
+sidequests, [Bald and Bankrupt](.agents/skills/travel-bald-and-bankrupt/SKILL.md) for
+everyday local life, [Drew Binsky](.agents/skills/travel-drew-binsky/SKILL.md) for
+cultural understanding, and [Yes Theory](.agents/skills/travel-yes-theory/SKILL.md)
+for initiating shared adventures. The guide includes portable project instructions;
+[source notes](references/travel-consultant-sources.md) and
+[bounded checks](pipeline/checks/travel-consultants/verification.md) state the evidence
+and remaining real-use limits. Consult one or compare requested perspectives.
 
 Travel-reflection is deferred.
 Live research, YouTube summaries and hypothetical planning have bounded evidence.

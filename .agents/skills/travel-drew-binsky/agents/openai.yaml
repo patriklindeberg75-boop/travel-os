@@ -1,0 +1,4 @@
+interface:
+  display_name: "Drew Binsky \u2014 People and Culture"
+  short_description: "Understand a place through people and their stories"
+  default_prompt: "Use $travel-drew-binsky to suggest one useful next move from my current travel context."
