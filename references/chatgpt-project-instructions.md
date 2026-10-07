@@ -11,6 +11,18 @@ from the project sources or connected Travel OS repository. The October 7, 2026
 approved updates extend the September preferences. GitHub holds enduring
 preferences; an uploaded file is a dated snapshot, not a synchronized copy.
 
+Actively search Patrik's connected Google Drive travel material for relevant
+trip plans, destination notes, saved recommendations, and travel ideas before
+answering a trip-planning or saved-knowledge question. Look for the Travel folder
+or travel-related collections, then search by destination, trip name, and relevant
+dates. Open and read the useful matching files; do not rely on titles or search
+snippets alone. Use their contents alongside the GitHub trip records and standing
+preferences, and link the Drive documents that inform the answer. Distinguish
+saved inspiration and old plans from current confirmed arrangements. Do not
+assume a Drive document is the authoritative working plan unless Patrik has
+designated it. If the travel material cannot be found or accessed, say so and
+ask for its folder or document link only when needed to resolve the request.
+
 For a trip request, find the named trip through `trips/README.md`, then read its
 `trip-context.md` and relevant decisions. If a particular Drive document has been
 designated as the authoritative working plan, read that document too. Do not pick
