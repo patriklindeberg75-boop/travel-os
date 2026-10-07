@@ -29,20 +29,49 @@ Library of prompt templates organized by research pass. The `dossier-orchestrato
 Every list prompt below ends with this guardrail block. Substitute `{section_name}` per prompt.
 
 ```
-Hard filters on your recommendations:
-- Exclude any place that is a top-5 TripAdvisor result for {destination} unless
-  you can name a specific counter-signal (e.g., locals still go, or a niche reason
-  it survived its popularity).
-- Exclude any place whose primary visitor base is tour groups, cruise-ship
-  day-trippers, or guided-tour buses.
+Calibrating for tourism (some popularity is fine — only the mega-traps are filtered):
+- Popular and even iconic places are ALLOWED when the experience genuinely holds
+  up: locals or repeat visitors still value it, OR it is worth it despite the
+  crowds with the right timing (early morning, off-season, side entrance). Being
+  a top-5 TripAdvisor result or simply "famous" is NOT by itself a reason to
+  exclude. The traveler does not want everything touristy filtered out — only the
+  worthless tourist traps.
+- Filter (exclude, or if iconic-and-unavoidable flag-rather-than-recommend) only
+  the tourist-trap tier: places that are overcrowded AND overpriced AND exist
+  mainly as obligatory photo-stops where the crowd itself degrades the experience
+  — the "Eiffel Tower tier" you visit only to tick a box. The test is whether the
+  crowd ruins it and whether anyone but tourists values it, not whether it is famous.
+- Be wary of places whose primary visitor base is tour groups, cruise-ship
+  day-trippers, or guided-tour buses — but if there is a real reason to go anyway
+  (genuine quality, locals present, manageable with timing), keep it and name the
+  timing condition that makes it work.
 - Prefer places named in: Reddit local subs, local food/culture blogs, residents'
   recommendations, small independent guides, and native-language sources
   (translated if needed). For destinations with thin English-language coverage,
   explicitly search in the local language (e.g., Albanian, Georgian, Kyrgyz) and
   translate findings.
-- Avoid: Lonely Planet top-10s, Time Out lists, "best of {destination}" listicles,
-  TripAdvisor top results without a counter-signal.
-- For every place you include, name the specific signal that made you keep it.
+- Treat Lonely Planet top-10s, Time Out lists, and "best of {destination}"
+  listicles as weak signals, not disqualifiers: a place is not dropped for
+  appearing on them, but appearing on them is not evidence it is worth it either
+  — back any keep with a local or candid signal.
+- For every place you include, name the specific signal that made you keep it,
+  AND name the one condition that must be true for it to be worth it (right
+  season, market day, clear morning, last bus exists). If you cannot name that
+  condition, drop the place — it is too vague to keep.
+- Inspiration sources (Instagram / TikTok / viral photos) may generate
+  candidates but never justify keeping one — back every keep with a candid or
+  local source (Reddit, local blog, resident rec).
+- Reality-check before keeping: a place should show normal-case signals, not
+  just one polished photo — a real review count, recent and bad-weather photos
+  (not only the hero shot), local-language reviews, and a nearby café / shop /
+  bus stop showing it is reachable and alive. A place backed only by a single
+  striking image is a candidate, not a keep: mark it low-confidence and name
+  what you could not verify (this drives the "needs research" status), rather
+  than dropping it.
+- For a place sold mainly by one striking image, name what made that photo work
+  (season, fog, drone height, no crowds, editing). If the experience depends on
+  a condition you cannot confirm holds for the trip dates, flag it low-confidence
+  — do not present it as a sure thing.
 - If you cannot find {N} items with real evidence, return fewer and say so.
   Do not pad the list.
 
@@ -62,14 +91,27 @@ companion can render a fact line. Substitute this block where a prompt reference
 ```
 For EACH item, also give me these fields on labelled lines (write
 "unknown" for any you genuinely cannot establish — do not guess):
-- Best time: best time of day / day of week to go (note any heat-smart window)
+- Best time: best time of day / day of week to go (note any heat-smart window),
+  INCLUDING any crowd-mitigation window (arrive before X, overnight vs day-trip,
+  shoulder hour) — timing that lets a good-but-known place still feel uncrowded
+- Time blocks: which of morning / daytime / evening this is good for (one or
+  more, comma-separated — e.g. "morning, daytime"). Base it on when the place is
+  actually good, not on the wording above.
 - Cost: a real price anchor in LOCAL currency (coffee / a meal / a beer / entry)
-- Duration: how long to budget for a visit
+- Duration: pick ONE — quick (under ~1h) / 2-3h / half-day / full-day
 - Hours: opening hours and days closed
 - Find it: nearest landmark or street; for hidden spots, how to actually find it
 - Location: street address or rough coordinates if you have them, for a map pin
 - Tags: pick 1–3 from this EXACT list (no others): work, eat, sleep, swim,
   shade, hike, social, market, culture, view
+- Tips: 1–3 short practical "how to enjoy this" notes that materially improve the
+  visit (not generic travel filler) — or "none".
+- Unverified: name any fact here that is time-sensitive and should be re-checked
+  for the exact trip dates (timetable, seasonal session, renovation, closure).
+  Also flag if the place needs a permission / booking / permit to enter, or if
+  the access route is non-obvious or seasonal (road closed, trail conditions,
+  gated) — or "none". (This drives the research-status field: anything listed
+  here keeps the place at "needs research" until verified.)
 
 Do not fabricate hours, prices, or coordinates. "unknown" is an acceptable and
 useful answer; a made-up number is not.
@@ -181,6 +223,10 @@ base or main hangout zones. For each:
 - Work-fit verdict: WiFi reliability for remote work, daytime cafe density
   (can I find a cafe with reliable WiFi to work 3–4 hours?), quiet-vs-buzz
 
+Also give me a 2–4 point "thesis" for {destination} as a whole — the handful of
+things this place is really about (e.g. thermal baths + imperial capital + river
+life + local neighborhoods) — so I can judge which neighborhoods deliver which.
+
 I will narrow this list to a short list after seeing all options.
 
 {anti_tourist_guardrail with section_name = "neighborhoods list"}
@@ -232,7 +278,14 @@ afterwards. Just give me the menu of options to choose from. For each place:
 - Rough location / region, and which other candidates it is near (so I can
   sequence them sensibly later)
 
-Places that are mass-tourism hubs without a counter-signal will be deprioritized.
+Also give me a 2–4 point "thesis" for {destination} as a whole — the handful of
+things this place is really about (e.g. mountains + Ottoman old towns + lake life
++ overland border culture) — so I can judge which stops deliver which.
+
+Places that are mass-tourism hubs will be deprioritized only when they are also
+the tourist-trap tier (overcrowded + overpriced + go-only-for-the-photo). A
+popular or iconic place that genuinely holds up — locals value it too, or it's
+worth it with the right timing — is fine to include.
 
 {anti_tourist_guardrail with section_name = "candidate places list"}
 ```
@@ -266,9 +319,15 @@ Profile (drives selection):
 Principles:
 {principles_extract}
 
-Task: Give me 15–20 hidden-gem activities in {destination}, scoped to the
-areas listed above. By "hidden gem" I mean: not the top tourist experiences,
-but specific places or experiences locals or repeat visitors recommend. Include:
+Task: Give me the 15–20 best lived experiences {destination} supports under my
+constraints (solo, working {work_load}h/week, anti-tourist), scoped to the areas
+listed above — not a list of attractions. By "hidden gem" I mean: specific places
+or experiences locals or repeat visitors recommend over the obvious tourist
+checklist. A famous or popular place is fine to include when it genuinely holds
+up (locals value it too, or it's worth it with the right timing) — just don't
+include it only because it tops every list. Search phrasings like "most memorable experiences in {destination}",
+"what locals do in {destination}", "spots/villages locals prefer" surface better
+candidates than "things to do in {destination}". Include:
 - A few that fit a 2–3 hour midday window (around my work schedule)
 - A few that fit evening or weekend slots
 - At least one meaningfully tied to {theme}
@@ -294,11 +353,61 @@ return fewer and say so.
 
 ---
 
-## Pass 4 — Food
+## Pass 4 — Food Discovery and Venues
 
-### Prompt 4 — Food and restaurant long list
+Pass 4 runs in two sub-steps. Pass 4a discovers the dishes and drinks worth hunting; the operator marks priorities. Pass 4b searches for venues to eat them, grounded in those priorities.
 
-**Target tool:** Perplexity Pro.
+### Prompt 4a — Food and drinks discovery (dishes, not venues)
+
+**Target tool:** ChatGPT Pro (prior-knowledge-rich culinary context; does not need real-time web retrieval).
+
+**When to run:** Before Prompt 4b. The operator marks priority dishes from the output; those become the `{priority_dishes}` input to Prompt 4b.
+
+**Expected output shape:** 4–8 items per approved area. Each: dish/drink name — what it is — where locals eat/drink it — season/time relevance for the trip dates.
+
+**Prompt body:**
+
+```
+Solo trip to {destination}, {dates}. I'll be spending time in:
+{approved_locations}
+
+Profile (drives what food I'll actually enjoy):
+{profile_extract}
+
+Task: Food and drinks discovery — what should I actually EAT and DRINK in these areas?
+
+Give me the local DISHES, drinks, and food experiences worth seeking out — NOT venue recommendations. Cover:
+- Traditional regional dishes with genuine local significance (not tourist adaptations)
+- Street food, market staples, and everyday items locals eat
+- Drinks and cafe culture (local coffee traditions, fermented drinks, market juices)
+- Any seasonal specialties relevant to {dates}
+
+For each:
+- Name of the dish / drink
+- What it is (one sentence: ingredients, preparation style)
+- Where locals typically eat/drink it (e.g., "from a market stall", "street bakeries at breakfast", "traditional family restaurants")
+- Season / time relevance — note if it's only available during {dates} or at a specific window
+
+Aim for 4–8 per approved area. If you cannot find 4+ items with real local grounding for an area, return fewer and say so. Do not pad.
+
+Do NOT include restaurant or venue recommendations — only the dishes and drinks themselves.
+```
+
+**After paste-back:** Present the numbered dishes list to the operator. Ask them to mark which dishes they want to actively hunt down. Format:
+
+```
+PRIORITY: 1, 3, 5   (or name each dish)
+```
+
+The operator's PRIORITY selection becomes `{priority_dishes}` for Prompt 4b.
+
+---
+
+### Prompt 4b — Venue long list (grounded in Pass 4a priority dishes)
+
+**Target tool:** Perplexity Pro (current, source-cited — real-time venue signals from local blogs and Reddit).
+
+**Depends on:** Pass 4a completed; `{priority_dishes}` = operator's approved dishes list.
 
 **Expected output shape:** Numbered list of 15–20 places, tagged as daytime/work-friendly or dinner/memorable. Each: name — location, {destination} — type — one-line why — surfacing signal — then the labelled per-place fields (best time, cost, duration, hours, find it, location).
 
@@ -312,6 +421,9 @@ Baseline ~€{budget_floor}/day; willing to splurge €{budget_splurge_lo}–
 I will be spending time in:
 {approved_locations}
 
+From research, these are the dishes and food experiences I want to hunt:
+{priority_dishes}
+
 Profile:
 {profile_extract}
 
@@ -319,7 +431,11 @@ Principles:
 {principles_extract}
 
 Task: Give me 15–20 food and restaurant recommendations in {destination},
-scoped to the areas above, mixing:
+scoped to the areas above. Ground your recommendations in the dishes listed
+above — where can I actually eat or drink them? Add any standout places that
+serve other worthwhile local food, but anchor the search in those priority dishes.
+
+Mix:
 - Daytime / work-friendly: cafes I can work from for 2–3 hours (good WiFi,
   ok with a laptop), good coffee, reasonable lunch.
 - Dinner / memorable: places worth a real dinner — local specialty,
@@ -327,8 +443,8 @@ scoped to the areas above, mixing:
   €{budget_splurge_lo}–{budget_splurge_hi} range.
 
 Tag each as "daytime" or "dinner". For each: name, neighborhood, one-line
-why (tied to profile), and the source signal that surfaced it (Reddit, local
-food blog, resident rec — name it).
+why (tied to profile and the priority dishes above), and the source signal
+that surfaced it (Reddit, local food blog, resident rec — name it).
 
 {per_place_fields}
 
@@ -490,6 +606,38 @@ Keep it tight and factual. Cite sources for entry rules and roaming coverage.
 
 ---
 
+### Prompt 6 — Destination resources (optional, per stop)
+
+**Target tool:** Perplexity Pro (source-grounded — returns real, current links).
+
+**When to run:** Optional, after the short lists are settled. Populates each
+stop's `resources` (§6). Skip for a stop if good links don't surface — an empty
+Resources section is fine; a fabricated link is not.
+
+**Expected output shape:** Per approved area, 2–5 resources. Each:
+title — type — link — one-line why it's useful.
+
+**Prompt body:**
+
+```
+Solo trip to {destination}, {dates}. Areas:
+{approved_locations}
+
+For each area, give me 2–5 genuinely useful resources for deeper reading and
+planning — pick from these types only: food guide, article, transport guide,
+neighborhood guide, research source, reference. For each:
+- Title
+- Type (one of the above)
+- Link (a real, working URL — if you are not confident it exists, leave it out)
+- One line on why it's useful
+
+Prefer local food/culture blogs, resident guides, official transport sites, and
+high-quality long-form articles over generic "top 10" listicles. Do not invent
+URLs — omit anything you cannot ground in a real source.
+```
+
+---
+
 ## Routing summary
 
 | Prompt | When | Section | Target |
@@ -497,10 +645,12 @@ Keep it tight and factual. Cite sources for entry rules and roaming coverage.
 | T1 | /trip-init (one-time) | Timing / weather ceiling | Perplexity Pro |
 | 2a (or 2b) | Pass 2 | Cool neighborhoods / Candidate places | ChatGPT Pro |
 | 3 | Pass 3 | Hidden-gem activities (+ per-place fields, hike data) | Perplexity Pro |
-| 4 | Pass 4 | Food / restaurants (+ per-place fields) | Perplexity Pro |
+| 4a | Pass 4a | Food and drinks discovery (dishes only — seeds Pass 4b) | ChatGPT Pro |
+| 4b | Pass 4b | Venue long list (grounded in 4a priority dishes, + per-place fields) | Perplexity Pro |
 | 5a | Pass 5 | Tourist-trap warnings (skipped for ≤2-night stops) | Perplexity Pro |
 | 5b | Pass 5 | Mobility | ChatGPT Pro |
-| 5d | Pass 5 | Practical logistics (connectivity / maps / entry) | Perplexity Pro |
+| 5d | Pass 5 | Practical logistics (connectivity / maps / entry) → also feeds `meta.critical`/`meta.tasks` | Perplexity Pro |
+| 6 | Optional (post-shortlist) | Destination resources (§6) | Perplexity Pro |
 
 Routing rationale: ChatGPT Pro for ideation / synthesis / prior-knowledge-heavy sections; Perplexity Pro for current-source-cited sections (food trends, current event signals, real-time trap signals from Reddit and local blogs, timing/weather, and logistics/entry-rule verification). Pass 1 viability also uses Perplexity Pro (see `/destination-check`).
 

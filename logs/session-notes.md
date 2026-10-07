@@ -538,3 +538,525 @@ None. (Renderer/CSS/sw edits to operator-owned dossier files; jsdom-verified non
 ### Open Questions
 - M4: does iOS 18 render the status bar unreadably in installed standalone + dark theme? (Device check required before any fix.)
 - What was the operator's truncated "- make …" feedback item (carried from 06-11)?
+
+## 2026-06-15 — Budapest dossier: sights expansion + cost rule + date-free flexible itinerary
+
+### Summary
+Budapest-focused work on the Balkans dossier (`trips/balkans-2026-06/`), three commits, push pending. Added 8 new see/do cards to Budapest (do: 8 → 16) — 7 free + BKK-travelcard-only must-sees plus Veli Bej Baths — selected against the personalization spine and a live weather check (Jun 18 ~31°C breaks the 30°C daily ceiling, so the set leans shade/cool-air/hills). Added an activity cost-threshold rule to the project CLAUDE.md (~€10–15 activities are recommendable, not free-only). Then removed all exact dates from the user-facing dossier per operator request, converting the five stops to flexible night ranges.
+
+### Files Created
+- `logs/scratchpads/2026-06-15-14-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/dossier-data.json` — 8 new Budapest `do` cards (v4.4); all 5 stops' `when`/leg/transit-checklist dates removed and converted to night ranges (v4.5).
+- `trips/balkans-2026-06/index.html` — rebuilt from data (build.mjs) twice.
+- `trips/balkans-2026-06/sw.js` + `site/sw.js` — cache bump v4-5 → v4-6 → v4-7.
+- `trips/balkans-2026-06/site/index.html` — deploy bundle re-synced.
+- `trips/balkans-2026-06/coords-missing.md` — regenerated (now 112 cards; 8 new Budapest entries, 4 ★).
+- `trips/balkans-2026-06/CHANGES.md` — new v4.4 and v4.5 sections.
+- `CLAUDE.md` — added activity cost-threshold rule under Hard Constraints.
+
+### Decisions Made
+- Selected/shortlisted Budapest sights and made the must-see call when the operator explicitly asked for a recommendation (profile §1.1 normally has the system surface, operator pick; the direct ask overrides).
+- No coordinates authored for the 8 new cards — build.mjs never fabricates coords; name-based Maps links + coords worklist instead.
+- Did NOT change the route/Belgrade-bus date (operator's 3-day stay was only "might"); subsequently moot once all dates were removed in v4.5.
+- Left `trip-context.md` frontmatter dates (Jun 16–29) intact — internal scaffolding that may feed weather/heat tooling; only the user-facing dossier was de-dated.
+
+### Risky actions
+None. (Content/data edits to operator-owned dossier files + one CLAUDE.md rule addition; build self-check passed each run; no push; no external publishing. jsdom smoke suite was unavailable (/tmp cleared) but changes were data/content-only with no renderer/CSS edits.)
+
+### Next Steps
+- Operator to confirm push at the wrap push gate (3 travel-os commits queued; ai-resources also has 1 pre-existing unpushed commit).
+- Optional: scrub `trip-context.md` frontmatter dates too for full internal/external consistency.
+- Before travel: verify schedule-dependent picks (Veli Bej session times; Cogwheel / Children's Railway timetables) — offer a Perplexity prompt.
+- Optional: author coordinates for the new hero picks (Citadella, Margitsziget, Kerepesi, Erzsébet-kilátó) to put them on the in-app map.
+
+### Open Questions
+- Does the operator want `trip-context.md` dates removed as well, or kept as the trip's scoping record?
+
+## 2026-06-15 — Session S1
+
+**Mandate:** Complete dossier v5 Stage 3 for trips/balkans-2026-06 (filter bar rebuild + `any`-defect fix + smoke tests + CHANGES.md v5 + §11 route recommendation + deploy sync + SW bump) — done when: Stage 3 committed, build green, smoke tests pass, site/ synced, SW cache bumped.
+- Out of scope: deciding the §11 route for the operator (recommend only); pushing (gated to /wrap-session)
+- Files in scope: trips/balkans-2026-06/index.html, build.mjs, dossier-data.json, test/smoke.mjs, CHANGES.md, sw.js, site/sw.js, site/index.html
+- Stop if: operator confirms imminent departure and asks to freeze the live app
+- Context pack: output/context-packs/project-20260615-7b3e2/pack.md
+
+Complete dossier v5 Stage 3: rebuild the §10 filter bar (Time/Purpose/Duration/State groups), fix the `any`-match defect, extend smoke tests, write CHANGES.md v5 entry + §11 route recommendation, sync deploy bundle, bump SW cache, commit.
+
+### Summary
+Completed dossier v5 Stage 3 for `trips/balkans-2026-06`, finishing the full v5 upgrade (Stages 1–3 now all delivered). Rebuilt the §10 filter bar into four groups (Time / Purpose / Duration / Show) with OR-within / AND-between semantics, and fixed the central time-filter defect: the old engine filtered on the derived single-value `data-when` with `cw==='any'||…` so a selected time block never excluded anything. The engine now filters on the authored `data-time[]` and enforces that a card lacking a group's attribute does not match a selection in that group. Extended the jsdom smoke suite 52 → 72 assertions, wrote the CHANGES.md v5 entry + a §11 route recommendation, synced the deploy bundle, and bumped the SW cache. Committed as `f61729c`.
+
+### Files Created
+- `logs/scratchpads/2026-06-15-15-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/balkans-2026-06/index.html` — filter engine rebuilt; `any`-defect fixed; legacy Rank-tier + Type-tag chips dropped; dead `.chip.tier` CSS removed; data block rebuilt.
+- `trips/balkans-2026-06/site/index.html` — deploy bundle re-synced.
+- `trips/balkans-2026-06/sw.js` + `trips/balkans-2026-06/site/sw.js` — SW cache `balkans-v4-7` → `balkans-v5-0`.
+- `trips/balkans-2026-06/test/smoke.mjs` — extended 52 → 72 assertions (20 new filter-matrix tests).
+- `trips/balkans-2026-06/CHANGES.md` — v5 entry (Stages 1–3 recap) + §11 route recommendation.
+
+### Decisions Made
+- Filter semantics: OR within a group, AND between groups; a card lacking a group's attribute does NOT match a selection in that group (this is the defect fix). Filters on authored `data-time[]`, never derived `data-when`.
+- Q1 (operator gate default): dropped legacy Rank-tier + Type-tag filters; Heat-safe surfaced as a constraint instead.
+- Q2 (operator gate default): §11 route recommendation written into the CHANGES.md v5 entry.
+- Near base computes a live straight-line distance (≤2.0 km) at filter time, so it reflects a runtime-added base; cards without computable distance never match.
+- §11 route: wrote a recommendation (keep provisional route subordinate; do NOT go fully destination-based) — did NOT decide it; that remains the operator's call.
+
+### Risky actions
+None. Content/code edits to operator-owned dossier files within one trip; build self-check green each run; jsdom smoke 72/72; no push; no external publishing.
+
+### Next Steps
+- Push the 4 pending travel-os commits once GitHub is reachable (network was down at /prime; push gated to this wrap).
+- Operator decision owed: §11 route — keep-provisional (recommended) vs fully destination-based.
+- Optional: scrub `trip-context.md` frontmatter dates (Jun 16–29) for internal/external consistency.
+- Pre-travel: Perplexity prompt to verify Veli Bej session times + Cogwheel / Children's Railway timetables.
+- Optional: author coordinates for the new Budapest hero picks (Citadella, Margitsziget, Kerepesi, Erzsébet-kilátó).
+
+### Open Questions
+- §11 route direction (keep-provisional vs destination-based) — recommendation given, operator's call.
+
+## 2026-06-16 — Phase-1 research-layer idea triage + implementation plan
+
+### Summary
+Took the operator's consolidated travel-improvement ideas (`outputs/idea-consolidation-pass.md`, ~42 ideas already deduped) and produced a build-ready implementation plan for the Phase-1 pre-trip research workflow. Ran `/clarify` to lock scope (Phase-1 only; plan document, not build; independent re-triage), then triaged all 14 research-plausible ideas and specified the file-level changes. Plan only — no reference files edited this session. QC'd twice (plan-mode plan file, then the written deliverable); the deliverable QC caught a count error (said "6 ideas" where the table had 7 IMPLEMENT verdicts) which was fixed. Net plan: 7 ideas → 5 prompt/synthesis edits (Changes A–E) across `references/subagent-prompts.md` + `references/dossier-workflow.md`, zero new dossier-data.json schema fields.
+
+### Files Created
+- `outputs/research-layer-implementation-plan.md` — the deliverable: triage table + file-level change spec (A–E) + risk/parked register + build sequencing.
+- `outputs/idea-consolidation-pass.md` — the operator-pasted source consolidation, saved verbatim (paste mojibake normalized) so the plan's provenance reference resolves.
+- `logs/scratchpads/2026-06-16-21-58-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- None (reference files deliberately untouched — plan-only session).
+
+### Decisions Made
+- Scope (operator, via /clarify + AskUserQuestion): Phase-1 research layer only; in-trip/post-trip ideas parked. Deliverable is a plan document, not a build. Triage done independently against the repo, free to override the consolidation's keep/cut.
+- Triage outcome (analytical): 7 IMPLEMENT (#2 hidden-condition, #3+#5 experience framing, #4 destination thesis, #7 inspiration-never-decides rule-only, #13 crowd-mitigation timing pre-trip half, #14 access/permission gap); 3 SKIP (#1 scenes overbuild, #10 recipe + #11 three-versions collide with menu-not-schedule/mobile, #6 local-language already built); 4 PARK (#8 Maps, #9 photo, #13 in-trip half → Phase 2; #12 pattern library → Phase 3).
+- QC fix: net-set count corrected 6 → 7 ideas in the deliverable (commit amended).
+
+### Risky actions
+None. Two new files written into outputs/ and committed (not pushed); no reference-file edits, no schema/build changes, no external publishing.
+
+### Next Steps
+- Build session: apply Changes A–E from `outputs/research-layer-implementation-plan.md` (Tier 1 = A,B,D,E text edits to subagent-prompts.md; Tier 2 = C in dossier-workflow.md). Verify cited blocks against live files first.
+- Carryover (still open from 2026-06-15): §11 route decision; pre-travel Perplexity timetable check (Veli Bej / Cogwheel / Children's Railway); optional trip-context date scrub; optional coordinates for new Budapest hero picks.
+
+### Open Questions
+- None blocking.
+
+## 2026-06-16 — Session S1
+
+**Mandate:** Apply the 5 prompt/synthesis edits (Changes A–E) from outputs/research-layer-implementation-plan.md to the two dossier reference files, extending existing prompt blocks with zero new schema fields — done when: all five changes applied at their verified blocks, zero-schema-change invariant confirmed, committed.
+- Out of scope: dossier-data.json schema or build.mjs changes; in-trip/post-trip ideas; build/dry-run; the four Albania-trip carryover items
+- Files in scope: references/subagent-prompts.md, references/dossier-workflow.md
+- Stop if: (none stated)
+
+Auto mode: Apply Changes A–E from outputs/research-layer-implementation-plan.md to references/subagent-prompts.md (A, B, C-part1, D, E) and references/dossier-workflow.md (C-part2). Five prompt/synthesis edits, zero schema changes.
+
+### Summary
+Applied the five approved Phase-1 research-layer changes (A–E) from `outputs/research-layer-implementation-plan.md` to the two dossier reference files. Ran in auto mode off /prime menu item #1 (carryover from the prior plan session). All edits extend existing prompt/synthesis blocks — zero new `dossier-data.json` schema fields, no `build.mjs` change. Verified all six cited blocks against the live files before editing and confirmed the zero-schema-change invariant. Committed as `48d98b7` (not pushed).
+
+### Files Created
+- `logs/session-plan-2026-06-16-S1.md` — session plan for the auto-mode change application.
+- `logs/scratchpads/2026-06-16-22-30-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `references/subagent-prompts.md` — Changes A (anti-tourist guardrail: hidden-condition rule + inspiration-never-decides), B (Prompt 3 experience framing + search phrasing), C-part1 (Prompt 2a/2b destination-thesis line), D (Best time crowd-mitigation window), E (Unverified permission/access flag).
+- `references/dossier-workflow.md` — Change C-part2 (Step 11 intro bullet opens each stop's `intro` with the 2–4 point thesis).
+
+### Decisions Made
+- No new analytical decisions — this session executed the already-approved, already-QC'd plan from 2026-06-16. One judgment call: skipped the context-engine pre-step in auto mode because the implementation plan is itself a precise file-level spec.
+
+### Risky actions
+None. Two reference files edited (text-only, reversible via git), committed not pushed. No schema/build changes, no external publishing, no structural change classes touched.
+
+### Next Steps
+- Research-layer plan is now fully implemented — no build session remains. Next real-trip dossier run is the dry-run validation.
+- Watch-item: Change A's "drop the place" instruction could thin long lists; if so, soften to "flag as low-confidence" (see scratchpad).
+- Still-open Albania/Balkans carryover (untouched this session): §11 route decision; pre-travel Perplexity timetable check (Veli Bej / Cogwheel / Children's Railway); optional trip-context date scrub; optional Budapest hero-pick coordinates.
+- Unbuilt: `/daily-program` in-trip workflow spec (Phase 2) at `outputs/daily-program-workflow-spec.md`.
+
+### Open Questions
+- None blocking.
+
+## 2026-06-16 — Session S2 — Change F (Maps/photo reality-check) added to research layer
+
+### Summary
+Added Change F to the Phase-1 dossier research layer: the pre-trip half of previously-parked ideas #8 (Maps reality-check) and #9 (reverse-engineer the photo). Ran the full `/clarify` → `/decide` → implement chain in one session. Two bullets added to the shared anti-tourist guardrail in `references/subagent-prompts.md` (reaches all five list passes); Change F spec appended to the implementation plan and its stale "awaiting build" status flipped to implemented. Committed as `0025a31` (not pushed). Distinct second session today — `/prime` ran but never reached task-selection, so the S1 marker was not incremented; this note is filed under a manual S2 header.
+
+### Files Created
+- `logs/scratchpads/2026-06-16-22-28-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `references/subagent-prompts.md` — Change F: two bullets in the anti-tourist guardrail boilerplate (reality-check before keeping; deconstruct the inspiration photo), inserted after the inspiration-source bullet.
+- `outputs/research-layer-implementation-plan.md` — Change F spec appended to Part 2; `Files touched` updated to six edits; frontmatter status flipped to implemented.
+
+### Decisions Made
+- **Mode-1 reconciliation (load-bearing):** Change F is candidate-discipline reasoning the research subagent applies from its own sources — NOT live Maps integration. The hands-on "Maps detective on the ground" half stays parked for Phase 2. Caught by the `/decide` QC subagent, which flagged the first framing as contradicting the plan's own no-Maps parking rationale (plan:60-61).
+- **Soft-flag, not drop:** a failed reality-check routes to `rs:needs`/`rsNote` low-confidence rather than dropping the place — deliberately, to avoid compounding Change A's logged over-pruning watch-item.
+- **Placement:** shared guardrail (not the per-place-fields block) so it propagates to all five list passes; verified embedding at subagent-prompts.md:202,257,316,371,415.
+- Five `/clarify` questions settled autonomously via `/decide` (Decided 5 · paused 0).
+
+### Risky actions
+None. Two reference/plan files edited (text-only, reversible via git), committed not pushed. No schema/build change, no structural change class touched, no external publishing.
+
+### Next Steps
+- Dry-run validation of Changes A–F on the next real-trip dossier run is the only remaining research-layer work. Watch: Change F is soft-flag, so it should not thin long lists (unlike Change A's hard-drop).
+- Still-open Albania/Balkans carryover (untouched): §11 route decision; pre-travel Perplexity timetable check (Veli Bej / Cogwheel / Children's Railway); optional trip-context date scrub; optional Budapest hero-pick coordinates.
+- Unbuilt: `/daily-program` in-trip workflow spec (Phase 2) at `outputs/daily-program-workflow-spec.md`; and the review → profile/principles feedback wiring (Phase 3, not yet designed) — the biggest system-wide gap.
+
+### Open Questions
+- None blocking.
+
+## 2026-06-17 — Bulgaria dossier: workflow tested end-to-end from zero (through Pass 4a)
+
+### Summary
+Drove the full Phase-1 dossier workflow from scratch on a new trip — Bulgaria western loop (Sofia → Bansko via the Septemvri–Dobrinishte scenic narrow-gauge train → Rila/Panichishte, 2026-06-22 to 2026-06-29, solo, 7 nights). Ran `/destination-check` (CONDITIONAL), `/trip-init` (scaffolded `bulgaria-2026-06`, timing SUBOPTIMAL/crowding-driven), and `/destination-dossier` through Pass 2 (locations), Pass 3 (activities + a targeted top-up addendum), and Pass 4a (dishes). Paused mid-Pass-4 before running the 4b venue prompt. Route was locked to the "Variant" (Plovdiv/Kapana dropped to keep the full train ride + a proper Bansko stop). Operator relaxed the weather ceiling and anti-tourist filter for this trip and self-manages work timing.
+
+### Files Created
+- `destination-checks/bulgaria-2026-06.md` — viability verdict (CONDITIONAL).
+- `trips/bulgaria-2026-06/trip-context.md` — trip scaffold; route + nights locked, timing fields parsed, approved_locations / route_stops populated, operator constraints (Bansko backpacker+budget) recorded.
+- `trips/bulgaria-2026-06/journal.md` — empty trip journal.
+- `trips/bulgaria-2026-06/dossier/pass-2-state.md` — locations long-list + locked route.
+- `trips/bulgaria-2026-06/dossier/pass-3-state.md` — activities short-list + merged addendum (option-clusters flagged as on-the-ground choices).
+- `trips/bulgaria-2026-06/dossier/pass-4a-dishes.md` — "what to eat" dishes reference (21 dishes, 16 in target set, mapped per stop).
+- `logs/scratchpads/2026-06-17-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `red-team.md` — logged a Phase-3 finding: Pass 4 should split dishes-discovery (4a) before venue-search (4b); workflow reference files still define the single-prompt version and should be updated in a build session.
+
+### Decisions Made
+- Route: chose the Variant (Sofia → Bansko via scenic train → Rila → Sofia), dropping Plovdiv/Kapana, to make the narrow-gauge train a real point-to-point leg rather than an awkward out-and-back. Operator-directed.
+- Relaxed two profile defaults for this trip: weather ceiling waived; anti-tourist filter relaxed (Seven Lakes weekend accepted). Operator-directed.
+- Work-timing constraint dropped from the planning logic (operator self-manages the 25h/week).
+- Reordered Pass 4 into dishes-first (4a) then venues (4b) — operator's call; also logged as a workflow fix in red-team.md.
+- Activity option-clusters (Sofia hike-vs-springs; Bansko 2nd-hike choices) deliberately left undecided in the dossier as on-the-ground choices (spontaneity principle §5.4).
+
+### Outcome
+COMPLETION: DELIVERED
+EXECUTION: OPTIMAL
+What was asked but not done: none — workflow intentionally paused mid-Pass-4 (4a done, 4b drafted) with a clean auto-resume state and one open operator question (tripe-soup venue); a designed gate, not abandonment.
+Better path: none
+Confidence: low (no formal mandate)
+
+### Session Value Audit — 80/20 Review
+TYPE: B — Dogfooding/usage test that exercised the Phase-1 dossier pipeline end-to-end on a real new trip, surfacing a design gap from real use.
+VALUE: exec=H decision=M risk=N compound=H optime=H
+SCORE: 9/10 — Clean end-to-end usage test that produced all claimed artifacts, locked a coherent route, and converted live friction (Pass 4 dishes-vs-venues ordering) into a logged, actionable workflow fix; not 10 only because the workflow reference files aren't yet patched (correctly deferred).
+GATE: N/A (feature/usage work, not a structural-change gate)
+OPPORTUNITY: Correct session — dogfooding the dossier workflow before promotion is exactly the right use; the Pass-4 ordering defect would not have surfaced any other way.
+DECISION: Repeat — running the workflow on real trips is the intended validation path and keeps surfacing genuine design signal.
+LESSON: Real-trip dogfooding surfaces prompt-ordering defects (dishes-before-venues) that paper review of the design did not catch.
+RULE: No rule candidate.
+
+### Risky actions
+None. All writes were new trip artifacts + a red-team log entry; three commits made, none pushed. No structural change class touched, no external publishing.
+
+### Session Assessment
+Feedback collection (wrap Step 6.5) did not complete — the session-feedback-collector subagent died on an API socket error before returning a summary or writing any logs. Advisory step; no friction/improvement entries captured this session. The one concrete workflow signal (Pass 4 dishes-before-venues ordering) was already logged independently to red-team.md.
+
+### Next Steps
+- Resume the dossier: re-invoke `/destination-dossier --trip bulgaria-2026-06` (auto-resumes at Pass 4b from the pass-state files).
+- First answer the open question below (tripe-soup venue), then run the Pass 4b venue prompt (already drafted) in Perplexity Pro and paste back → orchestrator writes `pass-4-state.md`.
+- Then Pass 5 (practicalities: accommodation/sleep + inter-stop transport + local mobility), then synthesis into `trips/bulgaria-2026-06/destination-dossier.md`.
+
+### Open Questions
+- Pass 4b: target a Sofia tripe-soup (shkembe chorba / offal) venue, or skip it? Operator hasn't answered.
+
+## 2026-06-18 — Bulgaria dossier completed (Passes 4b–5 + synthesis)
+
+### Summary
+Resumed the Bulgaria dossier from `/prime` and drove it to completion. Processed the operator's new trip notes (Sofia sights, food items, Plovdiv, Koprivshtitsa), ran Pass 4b (food venues — 14 keeps), Pass 5 (mobility + practical logistics; 5a tourist-trap pass skipped), and synthesized the full 8-section `destination-dossier.md`. Koprivshtitsa was added as a journey-break then parked after the rail research proved a same-day stopover impossible. Also logged a new workflow gap: there is no dossier-readiness QC gate.
+
+### Files Created
+- `trips/bulgaria-2026-06/destination-dossier.md` — full 8-section dossier (EUR throughout; Koprivshtitsa/Ednorog dropped).
+- `trips/bulgaria-2026-06/dossier-data.json` — structured data companion (id/map_link fields pending a `build.mjs` run).
+- `trips/bulgaria-2026-06/dossier/pass-4-state.md` — food venue triage (14 keep, 1 cut).
+- `trips/bulgaria-2026-06/dossier/pass-5-state.md` — practicalities state (5a skipped).
+- `logs/scratchpads/2026-06-18-11-48-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/bulgaria-2026-06/trip-context.md` — Koprivshtitsa added then removed; "Parked for a future trip" rationale note added.
+- `trips/bulgaria-2026-06/dossier/pass-3-state.md` — Sofia culture cluster (Banya Bashi Mosque + Serdica) added; Koprivshtitsa marked DROPPED.
+- `trips/bulgaria-2026-06/dossier/pass-4a-dishes.md` — byurek fold-in note.
+- `red-team.md` — Phase 4 finding: missing dossier-readiness QC gate.
+- `logs/dossier-runs.md` — run record appended by the orchestrator.
+
+### Decisions Made
+- **Koprivshtitsa + Plovdiv parked** for a future central-Bulgaria trip — rail geography (Sub-Balkan vs southern mainline) made a journey-break impossible; an overnight would have cost a Bansko hiking day. Operator-directed.
+- **Sofia culture cluster** (Banya Bashi Mosque + Ancient Serdica complex) added to the Sofia stop.
+- **Tripe soup (shkembe chorba) included** in the food search (operator eats offal) → Sofia venue Shkembedzhiinitsa.
+- **Pass 5a (tourist-trap pass) skipped** by operator — anti-resort guardrail already baked into the Bansko food keeps + always-on anti-tourist filter.
+- **Currency:** dossier uses EUR throughout (Bulgaria adopted the euro 2026-01-01); cash-heavy reality preserved.
+- **Logged dossier-readiness QC gap** to red-team.md (Phase 4) at operator request.
+
+### Risky actions
+None. All writes were new/updated trip artifacts + a red-team log entry; five commits made, none pushed. No structural change class touched; no external publishing.
+
+### Next Steps
+- Verify the 3 places carried in the dossier as needs-verification: Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location.
+- Book Panichishte accommodation (flagged critical — mountain base sells out).
+- Optional: run the generic `/qc-pass` on the dossier as an interim readiness check (offered; operator hasn't decided).
+- Build session: develop the dossier-readiness QC gate (red-team Phase 4) and split Pass 4 into 4a/4b in the workflow reference files (red-team Phase 3).
+
+### Open Questions
+None — tripe-soup and Koprivshtitsa both resolved this session.
+
+## 2026-06-18 — Session S1
+**Mandate:** Verify the three needs-verification places in the Bulgaria dossier (Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location) against current web sources and update the dossier — done when: each place is confirmed, corrected, or explicitly marked unverifiable in the dossier.
+- Out of scope: Panichishte booking; full QC pass; workflow build session (other carryover items)
+- Files in scope: trips/bulgaria-2026-06/destination-dossier.md (inferred)
+- Stop if: (none stated)
+- Verify 3 needs-verification places in the Bulgaria dossier: Baba Vuna hours, Bunderitsa Chalet hours, The Red Flat location.
+
+### Summary
+Two pieces of work after `/prime`. (1) Verified the three needs-verification places in the Bulgaria dossier via web sources (auto-mode menu item #1): Baba Vuna hours + address, Bunderitsa Chalet, The Red Flat. (2) Recalibrated the anti-tourist filter from a binary "exclude famous/mass-tourism" rule to a trap-tier filter ("some touristy is OK; only the Eiffel-Tower tier is flagged"), across all four operational layers plus travel-principles §4 under an operator-authorized ad-hoc exception.
+
+### Files Created
+- `logs/session-plan-2026-06-18-S1.md` — session plan for the dossier-verify task.
+- `logs/scratchpads/2026-06-18-12-14-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `trips/bulgaria-2026-06/destination-dossier.md` — 3 places verified/corrected + closing checklist updated.
+- `CLAUDE.md` — Hard Constraints anti-tourist line recalibrated to trap-tier.
+- `references/subagent-prompts.md` — guardrail boilerplate + deprioritize line + "hidden gem" definition recalibrated.
+- `references/dossier-template.md` — Section-3 filter note + "how to use" framing.
+- `references/dossier-workflow.md` — synthesis-step anti-tourist filter.
+- `profile/travel-principles.md` — §4 (header, §4.1, §4.3) recalibrated to v4 + changelog (operator-authorized ad-hoc exception to retro-only rule).
+
+### Decisions Made
+- **Baba Vuna**: hours verified daily 11:00–22:00; address corrected from "Tsar Simeon 16" to ul. Glazne ~67–69 (two web sources).
+- **The Red Flat**: verified as a fixed daytime apartment museum (24 Ivan Denkoglu St, daily 10:30–18:00, ~€9) — contradicts the dossier's "anti-tourist art space, evening, relocates" framing; left in place with an in-line ⚠ flag for operator decision rather than silently swapped.
+- **Anti-tourist filter recalibration** (operator-directed): binary → trap-tier; keep/cut test is "crowd-ruins-it / only-tourists-value-it," not fame.
+- **Ad-hoc principle update authorized** (operator): updated travel-principles §4 now (v4) instead of deferring to the Phase 3 retro, to keep principle and workflow consistent. Profile §5 left untouched (already aligned).
+
+### Risky actions
+Edited a Phase-0 spine file (`profile/travel-principles.md`) outside the normal retro-only update path — done under explicit operator authorization and recorded as a v4 changelog exception, so the governance trail is intact. Otherwise none.
+
+### Next Steps
+- Decide whether The Red Flat keeps its evening slot in the Bulgaria dossier or gets dropped (now verified as a daytime ticketed museum).
+- Book Panichishte accommodation (flagged critical — sells out).
+- Optional: run `/qc-pass` on the dossier as an interim readiness check.
+- Build session: dossier-readiness QC gate (red-team Phase 4) + split Pass 4 into 4a/4b in the workflow reference files (red-team Phase 3).
+
+### Open Questions
+None — all three verifications resolved; the Red Flat slot is an operator decision, not a blocker.
+
+## 2026-06-18 — Session S2
+Build the dossier-readiness QC gate (red-team Phase 4) and split Pass 4 into 4a/4b in the workflow reference files.
+**Mandate:** Build the dossier-readiness QC gate (red-team Phase 4) and restructure Pass 4 into 4a/4b in the workflow reference files — done when: dossier-workflow.md reflects the 4a/4b split and includes a dossier-readiness QC gate; committed.
+- Out of scope: (none stated)
+- Files in scope: references/dossier-workflow.md (inferred); references/subagent-prompts.md if pass-4 prompts need splitting
+- Stop if: (none stated)
+
+### Summary
+Session S2 had two phases. Phase 1 (pre-compaction): split Pass 4 into 4a/4b in both reference files (`subagent-prompts.md` and `dossier-workflow.md`) and added Step 13.5 dossier-readiness QC gate (8 criteria) to the workflow. Phase 2 (post-compaction, resumed): ran /qc-pass on the Bulgaria dossier — it returned NOT-READY with 8 findings — then fixed all 8 findings across both the markdown and JSON. The Bulgaria dossier now passes all 8 readiness criteria (with two section depth exceptions explicitly documented and justified from pass-state evidence).
+
+### Files Created
+- `logs/session-plan-2026-06-18-S2.md` — session plan for S2 (created pre-compaction)
+- `logs/scratchpads/2026-06-18-wrap-S2-scratchpad.md` — continuity scratchpad (wrap)
+
+### Files Modified
+- `references/subagent-prompts.md` — Pass 4 → Prompt 4a (dishes, ChatGPT Pro) + Prompt 4b (venues, Perplexity Pro); routing table updated
+- `references/dossier-workflow.md` — Steps 7/7.5/8/8.5 for 4a/4b; Step 13.5 QC gate (8 criteria); state file refs, Step 11 source, Step 12 table, resume logic all updated
+- `red-team.md` — ADDRESSED block for Phase 3 (Pass 4 conflation) and Phase 4 (no QC gate)
+- `logs/session-notes.md` — S2 header + mandate appended (session-start); wrap summary (this write)
+- `trips/bulgaria-2026-06/destination-dossier.md` — all 8 NOT-READY QC findings resolved: 5 emoji promotions (Women's Market, SkaraBar 1, Banderishki Lakes, Banski Han, Rila Monastery → 🔥), Vihren Peak ⚠ added, Rila Section 4 expanded (3 new items → 4 total; 2 HIGH), Bansko S4 depth note, depth notes for constrained sections
+- `trips/bulgaria-2026-06/dossier-data.json` — Red Flat corrected (hook/hours/cost/find_it/time/rs), Baba Vuna corrected (find_it/hours/rs), Panichishte moved tasks→critical, 5 tier promotions (t:2→3), Lakes Chalet added to Rila eat array, meta.renderer note
+
+### Decisions Made
+- **Pass 4 split**: dishes discovery (4a) must precede venue search (4b) — inverted order was a workflow design flaw; now fixed with `{priority_dishes}` placeholder flowing 4a→4b
+- **Section depth thresholds**: ≥8 items / ≥3 HIGH for 3+ night stops; ≥4 items / ≥2 HIGH for ≤2 night stops
+- **Rila Section 4 depth**: 4 items (Valyavitsa + Lakes Chalet + village shop + guesthouse breakfast) meets the floor; pass-4a explicitly anticipated minimal Panichishte food infrastructure
+- **Bansko Section 4 depth**: 6/8 item floor — explicitly documented; pass-4 research found no additional qualifying budget-tier venues; 3 HIGH threshold met
+- **build.mjs N/A**: This trip has no HTML renderer; build.mjs is balkans-specific; criterion documented as N/A in JSON meta
+- **Baba Vuna address**: ul. Glazne ~67–69 confirmed (web 2026-06-18); original "Tsar Simeon 16" was incorrect; JSON corrected
+- **Red Flat**: Verified as daytime ticketed museum (24 Ivan Denkoglu, €9, 10:30–18:00); original "anti-tourist art/social space, evening, donation" framing was wrong; JSON corrected; keep/drop operator decision still pending
+- **Panichishte accommodation**: Reclassified from task to critical (confirmed sell-out risk: peak Lakes weekend + Sofia Live Festival overlap)
+
+### Risky actions
+None.
+
+### Next Steps
+1. Operator action: **Red Flat — keep or drop?** If keeping, it stays as 🆗 daytime culture option. If dropping, remove from both markdown Section 3 and JSON `do` array.
+2. Operator action: **Book Panichishte accommodation for Jun 27–28** (in meta.critical; real sell-out risk).
+3. Bulgaria trip departs Jun 22 — no further dossier work required unless operator directs a revision.
+
+### Open Questions
+- Red Flat: keep in dossier (🆗 daytime museum) or drop entirely?
+
+## 2026-06-19 — Built /daily-program next-day planner command
+
+### Summary
+Designed and built the `/daily-program` command — the in-trip next-day planner that
+turns an already-built destination dossier into one routed, Notion-paste-ready day
+plan. Ran the build through plan mode with an independent `/qc-pass` that caught three
+blockers (a non-existent `qc-reviewer` agent assumed for reuse; a schema mismatch —
+no `map_link`/coords in `dossier-data.json`; a false verification claim), all fixed
+before approval. After the first commit, added two operator-requested features:
+a "do tonight" prep/booking block and a weather-reactive flip. Verified the mechanics
+against the real Bulgaria dossier data at each stage.
+
+### Files Created
+- `.claude/commands/daily-program.md` — opus command, runs inline (9 steps); shows the
+  long-list, takes an interactive pick, builds a walking/rest-guarded routed day, delegates QC.
+- `references/daily-program-workflow.md` — methodology contract: halts, done-ledger spec,
+  spine auto-apply, selection/routing logic, do-tonight sourcing, weather-reactive planning, QC checklist.
+- `references/daily-program-template.md` — Notion-first output contract + inline Google Maps link format.
+- `.claude/agents/day-plan-qc.md` — minimal independent QC reviewer (read-only; Read/Glob/Grep).
+- `logs/scratchpads/2026-06-19-15-58-scratchpad.md` — continuity scratchpad.
+
+### Files Modified
+- `CLAUDE.md` — registered `/daily-program` + its two reference files under Workflow References;
+  added `day-plans/{date}-{city}.md` + `day-plans/done.md` to the Trip Directory Convention.
+
+### Decisions Made
+- Output target: Notion-first with an inline gmaps link per place (overrides the dossier's
+  no-inline-links rule for this artifact only).
+- Done-tracking: persistent append-only ledger at `trips/{slug}/day-plans/done.md`.
+- Spine: auto-apply defaults + note which were applied (no per-run toggle menu).
+- Flow: show long-list → operator picks must/optional → build plan.
+- Architecture: no orchestrator agent — run inline in the main session (operator-in-the-loop);
+  independent QC via a new minimal `day-plan-qc` agent (travel-os has no reusable `qc-reviewer`).
+- Feature scope: added #1 (do-tonight prep/booking) and #4 (weather-reactive flip);
+  deferred #2 (work-block placement) and #3 (daylight/time-budget math) per the MVP rule.
+- QC auto-fixes (from /qc-pass on the plan): build links inline; cluster by neighborhood
+  (no coords); derive priority from integer `t`; corrected the false verification step.
+
+### Risky actions
+The new command + agent are `/risk-check` change-class artifacts; they received an
+independent `/qc-pass` at the PLAN stage but the final built files were verified only
+by in-session data checks, not an independent QC subagent. Low blast radius (project-local,
+additive, no shared-state mutation). Noted for the QC-PENDING consideration below.
+
+### Next Steps
+- Push gate at end of this wrap (operator confirms). NOTE: this repo pushes to the personal
+  `patriklindeberg75-boop` account — switch gh account before pushing.
+- Optional: run `/refinement-pass` over the final command + references (operator hadn't decided).
+- Real-trip validation: run `/daily-program` on a live Bulgaria day (trip starts Jun 22) to
+  exercise the interactive pick, live `day-plan-qc`, and Notion paste. Running it before Jun 22
+  hits the intended "city unresolvable" halt.
+
+### Open Questions
+- Run `/refinement-pass` now, or after the first real-trip use?
+
+## 2026-06-22 — Bulgaria trip replanned (Thursday departure, Sapareva Banya, moderate hike)
+
+### Summary
+In-trip iteration of the Bulgaria plan (bulgaria-2026-06) off the existing dossier — no new
+research. Restructured the back half of the trip (Rila base Panichishte → Sapareva Banya, monastery
+dropped, Sunday-evening Sofia return), shifted the Bansko departure to Thursday to bank a Sofia work
+day, and swapped the Pirin hike to the moderate Banderishki Lakes while keeping both lake hikes.
+Verified bus/chairlift/taxi logistics via web search and cut the Rila day from ~€60 to ~€25. Plan of
+record updated in trip-context.md across three commits.
+
+### Files Created
+- logs/scratchpads/2026-06-22-21-24-scratchpad.md — full session-state continuity scratchpad
+
+### Files Modified
+- trips/bulgaria-2026-06/trip-context.md — route_stops frontmatter + Locked Route prose + two Route Revision sections (3 commits)
+
+### Decisions Made
+- Narrow-gauge train: take the 12:40 departure (arrive Bansko ~17:00) over the 08:55
+- Rila base: Panichishte → Sapareva Banya; Rila Monastery dropped; return via the Dupnitsa hop (Union Ivkoni)
+- Seven Rila Lakes access: no chairlift — hike up/down, share-taxi/hitch the road (budget; ~€25 day vs ~€60)
+- Sofia→Bansko departure moved to Thursday Jun 25 (Sofia 3n / Bansko 2n); Wed Jun 24 = full Sofia work day
+- Pirin hike = Banderishki Lakes (moderate) over Sinanitsa/Muratovo; both lake hikes kept (Banderishki Fri + Seven Rila Lakes Sun)
+
+### Risky actions
+None.
+
+### Next Steps
+- Book Sapareva Banya (Jun 27) + Sofia return bed (Jun 28); mountain-rescue insurance; Mapy.cz "Bulgaria – South-West" offline; withdraw euro cash in Sofia.
+- Optionally update destination-dossier.md return-leg section (still describes the old Panichishte relay) to match the revised route.
+- Use /daily-program to generate fully-routed per-day plans during the trip.
+
+### Open Questions
+- Sync destination-dossier.md to the revised route, or leave it as the original research record? (trip-context.md is authoritative.)
+
+## 2026-06-22 — Sofia day plan (Tue Jun 23) via /daily-program
+
+### Summary
+Ran /daily-program to plan Sofia for Tuesday Jun 23 — the first day plan of the live
+Bulgaria trip (bulgaria-2026-06). Routed selection from the existing dossier, no new
+research. Operator constraint: afternoon→evening only, 1pm start; staying at Hostel Mostel.
+Built a compact central walking day around the operator's explicit picks, ran an independent
+QC pass, applied the two fixes it returned.
+
+### Files Created
+- trips/bulgaria-2026-06/day-plans/2026-06-23-sofia.md — the routed day plan
+- trips/bulgaria-2026-06/day-plans/ — directory created (first day plan of the trip)
+- logs/scratchpads/2026-06-22-22-40-scratchpad.md — continuity scratchpad
+
+### Files Modified
+- None (besides the wrap logs)
+
+### Decisions Made
+- Added operator-requested off-pool places as labelled [extra — not from your list]:
+  Alexander Nevsky Cathedral, Ivan Vazov National Theatre + City Garden, Old Palace/National
+  Gallery — flagged as unresearched, verify hours on the day.
+- Justified Alexander Nevsky against the anti-tourist filter (operator asked why it wasn't on
+  the dossier list): holds up under the v4 trap-test (free, working cathedral, locals value it).
+- Sequenced Museum of Socialist Art first — Tuesday is its only viable window all trip, hard
+  ~17:30 close + metro detour. Made Old Palace interior optional to avoid over-packing.
+- Morning-only t:3 items (Vitosha hike, Women's Market, morning banitsa) moved to "Skip for
+  another day" with reasons — not silently dropped.
+- QC (day-plan-qc) REVISE → fixed: Supa Star hours (was "closes 14:00", dossier says Mon–Fri
+  11:30–20:00); Supa Star + KANAAL Maps links missing neighborhood segment.
+
+### Risky actions
+None.
+
+### Next Steps
+- After the day, operator reports what was actually done → update day-plans/done.md (not yet
+  created) so completed activities auto-exclude on the next run.
+- Run /daily-program for the next Sofia/trip day.
+- Carryover (still open): bookings — Sapareva Banya (Jun 27), Sofia return bed (Jun 28),
+  mountain-rescue insurance, Mapy.cz offline map, euro cash; optional destination-dossier.md
+  return-leg sync to the revised route.
+
+### Open Questions
+None.
+
+## 2026-06-23 — Bulgaria route replan (Revision 3): drop Rila, add Plovdiv, extend Bansko
+
+### Summary
+Mid-trip conversational replanning of the live Bulgaria trip (bulgaria-2026-06; operator
+currently in Sofia). Cut the expensive Rila/Sapareva Banya overnight, added Plovdiv back as a
+1-night stop, and gave the freed night to Bansko (now 3 nights, two Pirin hikes). New route:
+**Sofia → Plovdiv (1n) → Bansko (3n) → Sofia fly-out** — a clean forward loop. No new research;
+committed to trip-context.md. One follow-on question (Bansko 3n vs 2n+Sofia-Sunday) deferred.
+
+### Files Created
+- logs/scratchpads/2026-06-23-19-30-scratchpad.md — continuity scratchpad
+
+### Files Modified
+- trips/bulgaria-2026-06/trip-context.md — frontmatter route_stops + approved_locations
+  rewritten; new prose "Route Revision 3 (2026-06-23, in-trip)" section added
+
+### Decisions Made
+- Dropped the Rila leg entirely (Sapareva Banya bed still too expensive; Seven Rila Lakes not
+  feasible without a trailhead overnight). Seven Lakes + Rila Monastery parked for a future
+  central-Bulgaria trip.
+- Added Plovdiv back (1 night, Thu Jun 25) — reachable without backtracking via
+  Plovdiv→Septemvri→narrow-gauge→Bansko. Work-from-Plovdiv day + evening Old Town/Kapana.
+- Bansko → 3 nights (Fri–Sun, Jun 26–28); freed Rila night becomes a 2nd Pirin hike day
+  (Banderishki + Sinanitsa). Swaps crowded weekend Rila lakes for quieter Pirin alpine.
+- No Sofia return night — fly out via a Monday-morning Bansko→Sofia transfer.
+
+### Risky actions
+None.
+
+### Next Steps
+- DEFERRED decision: Bansko 3 nights (current) vs 2 nights + a Sofia-return Sunday night (do a
+  shorter hike then bus to Sofia same day) for a safer Monday flight buffer. If the operator
+  picks the 2n variant, update trip-context.md (Route Revision 4). trip-context currently
+  reflects the 3-night version.
+- Bookings still open: Plovdiv bed (Thu Jun 25), Bansko hostel (Jun 26–28). Dropped: Sapareva
+  Banya booking + Rila chairlift/mountain-rescue items.
+- Optional: research-pass Plovdiv before building a Plovdiv day plan (it was parked, so it's NOT
+  in the vetted dossier). Then /daily-program for the next day.
+
+### Open Questions
+- Bansko 3n vs 2n+Sofia-Sunday (see Next Steps) — operator chose to settle later.
